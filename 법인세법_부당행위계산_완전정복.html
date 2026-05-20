@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 부당행위계산의 부인 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee; --bg2:#ece9e1; --white:#fff;
+  --t1:#0d0b08; --t2:#1e1b14; --t3:#3c3a2e; --t4:#5e5c50;
+  --navy:#071830; --navy2:#0d2d5e;
+  --blue:#0a3a70; --blue2:#1660b8; --blue-lt:#d4e8f8;
+  --red:#5c0c18; --red2:#a01828; --red-lt:#f8d4da;
+  --green:#083a1c; --green2:#156638; --green-lt:#cceedd;
+  --orange:#4e2000; --orange2:#a04400; --orange-lt:#fce0c0;
+  --purple:#2c0c54; --purple2:#6020b0; --purple-lt:#e8d4f8;
+  --teal:#043030; --teal2:#0a6868; --teal-lt:#c4eaea;
+  --gold:#6e4c00; --gold2:#b07800; --gold-lt:#fef0b4;
+  --bdr:#b0a890; --bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.85;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#04111e 0%,#071830 45%,#1a0830 100%);color:#fff;padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(135deg,transparent,transparent 60px,rgba(255,255,255,.015) 60px,rgba(255,255,255,.015) 61px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-kicker{display:inline-block;background:var(--red2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 18px;margin-bottom:20px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;line-height:1.25;color:#fff;}
+.hero h1 em{color:#f08080;font-style:normal;}
+.hero-sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.65);letter-spacing:.5px;}
+.hero-chips{margin-top:22px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.hero-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;padding:4px 14px;}
+
+/* TOC */
+.toc{background:#fff;border-bottom:3px solid var(--red);padding:12px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:1000px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:12px;font-weight:700;color:var(--red);text-decoration:none;padding:3px 9px;border:1px solid var(--red);}
+.toc a:hover{background:var(--red);color:#fff;}
+
+/* WRAP */
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 80px;}
+
+/* CHAPTER */
+.chapter{margin-top:52px;}
+.ch-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:12px;margin-bottom:26px;}
+.ch-badge{font-family:'Noto Serif KR',serif;font-size:12px;font-weight:900;padding:6px 16px;margin-right:16px;color:#fff;white-space:nowrap;letter-spacing:.5px;}
+.b1{background:var(--navy);}  .b2{background:var(--red);}
+.b3{background:var(--orange);} .b4{background:var(--green);}
+.b5{background:var(--purple);} .b6{background:var(--teal);}
+.b7{background:var(--gold);}
+.ch-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.1rem,2.5vw,1.45rem);font-weight:900;color:var(--t1);}
+.ch-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+/* INTRO */
+.intro{padding:24px 28px;margin-bottom:20px;border-left:6px solid;color:#fff;}
+.intro.i1{background:var(--navy);border-color:#80c0ff;}
+.intro.i2{background:var(--red);border-color:#f08090;}
+.intro.i3{background:var(--orange);border-color:#f0a050;}
+.intro.i4{background:var(--green);border-color:#60e090;}
+.intro.i5{background:var(--purple);border-color:#c090f8;}
+.intro.i6{background:var(--teal);border-color:#60d0d0;}
+.intro .icon{font-size:1.9rem;display:block;margin-bottom:8px;}
+.intro p{font-size:14.5px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i4 strong{color:#90ffcc;}
+.intro.i5 strong{color:#e0c0ff;}
+.intro.i6 strong{color:#80ffff;}
+
+/* LAW CARD */
+.lc{border:2px solid var(--bdr);background:#fff;margin-bottom:16px;}
+.lc-hd{padding:11px 20px;display:flex;align-items:center;gap:10px;}
+.lc-hd.h1{background:var(--navy);}  .lc-hd.h2{background:var(--red);}
+.lc-hd.h3{background:var(--orange);} .lc-hd.h4{background:var(--green);}
+.lc-hd.h5{background:var(--purple);} .lc-hd.h6{background:var(--teal);}
+.lc-hd.h7{background:var(--gold);}
+.lc-no{background:var(--gold2);color:#fff;font-size:11px;font-weight:900;padding:2px 10px;letter-spacing:.5px;white-space:nowrap;}
+.lc-ti{font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;color:#fff;}
+.lc-body{padding:20px 24px;}
+.cl{background:var(--bg2);border-left:4px solid;padding:11px 15px;margin-bottom:9px;font-size:13.5px;line-height:1.95;color:var(--t2);}
+.cl:last-child{margin-bottom:0;}
+.cl.n{border-color:var(--navy);}  .cl.r{border-color:var(--red);}
+.cl.o{border-color:var(--orange);} .cl.g{border-color:var(--green);}
+.cl.p{border-color:var(--purple);} .cl.t{border-color:var(--teal);}
+.cn{font-weight:900;margin-right:5px;}
+.cn.n{color:var(--navy);} .cn.r{color:var(--red);}
+.cn.o{color:var(--orange);} .cn.g{color:var(--green);}
+.cn.p{color:var(--purple);} .cn.t{color:var(--teal);}
+
+/* EASY */
+.easy{position:relative;background:var(--gold-lt);border:2px solid var(--gold2);padding:30px 26px 22px;margin:6px 0 20px;}
+.easy::before{content:attr(data-label);position:absolute;top:-13px;left:14px;background:var(--gold2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.easy p{font-size:14px;line-height:2.1;color:var(--t1);margin-top:6px;}
+.easy .ok{color:var(--green);font-weight:700;} .easy .bad{color:var(--red);font-weight:700;}
+.easy .hl{color:var(--orange);font-weight:700;} .easy .bl{color:var(--navy);font-weight:700;}
+
+/* STORY */
+.story{background:#101008;border-left:5px solid var(--gold2);padding:24px 28px;margin:8px 0 20px;}
+.story-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);font-weight:900;margin-bottom:12px;}
+.story p{font-size:14px;line-height:2.15;color:#f0ece0;}
+.story strong{color:#ffe080;} .story .ok{color:#50e090;font-weight:700;}
+.story .bad{color:#ff8080;font-weight:700;} .story .hl{color:#ffd050;font-weight:700;}
+
+/* FORMULA */
+.formula{background:var(--navy);color:#fff;padding:18px 24px;margin:10px 0;text-align:center;line-height:2.2;}
+.formula .fm{font-size:1rem;color:#80e0ff;font-weight:700;}
+.formula .fn{font-size:12px;color:rgba(255,255,255,.7);}
+.formula.r{background:var(--red);} .formula.o{background:var(--orange);}
+.formula.g{background:var(--green);} .formula.p{background:var(--purple);}
+
+/* PANEL */
+.panel{padding:14px 18px;margin:8px 0;font-size:14px;line-height:2;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--blue-lt);border-color:var(--blue);}
+.panel.pr{background:var(--red-lt);border-color:var(--red);}
+.panel.pg{background:var(--green-lt);border-color:var(--green);}
+.panel.po{background:var(--orange-lt);border-color:var(--orange);}
+.panel.pp{background:var(--purple-lt);border-color:var(--purple);}
+.panel.pt{background:var(--teal-lt);border-color:var(--teal);}
+.panel.pgold{background:var(--gold-lt);border-color:var(--gold2);}
+
+/* TABLE */
+.tw{overflow-x:auto;margin:8px 0 18px;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+thead th{background:var(--navy);color:#fff;padding:11px 14px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.5px;}
+thead th.r{background:var(--red);} thead th.g{background:var(--green);}
+thead th.o{background:var(--orange);} thead th.p{background:var(--purple);}
+thead th.t{background:var(--teal);}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--green);font-weight:700;} .tba{color:var(--red);font-weight:700;}
+.thl{color:var(--orange);font-weight:700;} .tbl{color:var(--navy);font-weight:700;}
+.tpu{color:var(--purple);font-weight:700;}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:8px 0 18px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:8px 0 18px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+.gc{border:2px solid var(--bdr);background:var(--white);padding:18px;}
+.gc .gct{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:8px;border-bottom:2px solid;margin-bottom:12px;}
+.gc.navy .gct{color:var(--navy);border-color:var(--navy);}
+.gc.red .gct{color:var(--red);border-color:var(--red);}
+.gc.green .gct{color:var(--green);border-color:var(--green);}
+.gc.orange .gct{color:var(--orange);border-color:var(--orange);}
+.gc.purple .gct{color:var(--purple);border-color:var(--purple);}
+.gc.teal .gct{color:var(--teal);border-color:var(--teal);}
+.gc ul{list-style:none;font-size:13px;line-height:2;color:var(--t2);}
+.gc.green ul li::before{content:'✅ ';}
+.gc.red   ul li::before{content:'❌ ';}
+.gc.navy  ul li::before{content:'▶ ';}
+.gc.orange ul li::before{content:'🔶 ';}
+.gc.purple ul li::before{content:'◆ ';}
+.gc.teal   ul li::before{content:'● ';}
+.gc p{font-size:13px;color:var(--t2);line-height:1.85;margin-bottom:4px;}
+.gc strong{color:var(--t1);}
+
+/* SECTION H3 */
+.sh3{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:900;color:var(--t1);margin:24px 0 12px;padding-left:10px;border-left:4px solid var(--navy);}
+.sh3.r{border-color:var(--red);} .sh3.g{border-color:var(--green);}
+.sh3.o{border-color:var(--orange);} .sh3.p{border-color:var(--purple);}
+
+/* FLOW */
+.flow{background:#fff;border:2px solid var(--bdr);padding:26px;margin:10px 0 18px;}
+.fl-row{display:flex;align-items:stretch;gap:12px;}
+.fl-ax{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.fl-ci{width:36px;height:36px;border-radius:50%;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fl-ci.n{background:var(--navy);} .fl-ci.r{background:var(--red);}
+.fl-ci.o{background:var(--orange);} .fl-ci.g{background:var(--green);}
+.fl-ci.p{background:var(--purple);}
+.fl-ln{width:2px;flex:1;background:var(--bdr2);min-height:14px;margin:2px 0;}
+.fl-bd{padding:3px 0 22px;flex:1;}
+.fl-bd h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:3px;}
+.fl-bd p{font-size:13px;color:var(--t3);line-height:1.75;}
+.fl-res{margin-top:14px;background:var(--navy);color:#fff;text-align:center;padding:12px;font-size:14px;font-weight:700;}
+.fl-res.r{background:var(--red);}
+
+/* BIG NUMBER */
+.big-no{
+  display:inline-block;
+  background:var(--red);color:#fff;
+  font-family:'Noto Serif KR',serif;
+  font-size:2.5rem;font-weight:900;
+  width:60px;height:60px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:10px;
+}
+
+/* TYPE CARD */
+.type-card{
+  border:2px solid var(--bdr);background:#fff;
+  padding:20px 22px;margin-bottom:12px;
+  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+}
+.type-num{
+  background:var(--navy);color:var(--gold-lt);
+  font-family:'Noto Serif KR',serif;
+  font-weight:900;font-size:1.1rem;
+  padding:8px 12px;white-space:nowrap;
+  align-self:start;
+}
+.type-body h4{font-size:14.5px;font-weight:900;color:var(--t1);margin-bottom:4px;}
+.type-body p{font-size:13px;color:var(--t2);line-height:1.8;}
+.type-body .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;margin-right:4px;margin-bottom:4px;color:#fff;}
+.tag.r{background:var(--red);} .tag.o{background:var(--orange);}
+.tag.g{background:var(--green);} .tag.n{background:var(--navy);}
+.tag.p{background:var(--purple);}
+
+/* COMPARE GRID */
+.comp-wrap{background:#fff;border:2px solid var(--bdr);margin:10px 0 18px;overflow:hidden;}
+.comp-head{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--navy);color:#fff;}
+.comp-head .ch-cell{padding:12px 16px;font-size:12px;font-weight:900;letter-spacing:.5px;border-right:1px solid rgba(255,255,255,.2);}
+.comp-head .ch-cell:last-child{border-right:none;}
+.comp-row{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--bdr2);}
+.comp-row:last-child{border-bottom:none;}
+.comp-row:nth-child(even){background:var(--bg2);}
+.comp-cell{padding:11px 16px;font-size:13px;color:var(--t2);border-right:1px solid var(--bdr2);vertical-align:top;}
+.comp-cell:last-child{border-right:none;}
+.comp-cell strong{color:var(--t1);}
+
+/* SEMUJOJEONG CARD */
+.sj-card{border:2px solid;padding:20px 22px;margin-bottom:12px;}
+.sj-card.income{border-color:var(--red);background:#fff8f8;}
+.sj-card.expense{border-color:var(--orange);background:#fff8f0;}
+.sj-card.neutral{border-color:var(--navy);background:var(--blue-lt);}
+.sj-label{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.sj-card.income .sj-label{color:var(--red);}
+.sj-card.expense .sj-label{color:var(--orange);}
+.sj-card.neutral .sj-label{color:var(--navy);}
+.sj-card h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:6px;}
+.sj-card p{font-size:13px;color:var(--t2);line-height:1.8;}
+
+/* SUMMARY */
+.summary{background:#0c0a08;color:#f4f0e4;padding:44px 36px;margin-top:60px;text-align:center;border-top:4px solid var(--red2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.45rem;color:#f08080;margin-bottom:26px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:900px;margin:0 auto 20px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(240,128,128,.3);padding:16px 18px;}
+.sc .st{color:#f08080;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:8px;}
+.sc p{font-size:12.5px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.summary .note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;letter-spacing:.5px;}
+
+footer{background:#070504;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:1px solid var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.chapter{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">세법 강의 노트 Vol.5</div>
+    <h1>법인세법 완전정복<br><em>부당행위계산의 부인</em></h1>
+    <p class="hero-sub">법 제52조 · 시행령 제87~89조 | 국세기본법 시행령 제1조의2 | 시행 2026.01.02</p>
+    <div class="hero-chips">
+      <span class="hero-chip">⚖️ 의의·요건</span>
+      <span class="hero-chip">👥 특수관계인 범위</span>
+      <span class="hero-chip">📋 9가지 유형</span>
+      <span class="hero-chip">📐 시가 산정</span>
+      <span class="hero-chip">💹 자산군별 비교</span>
+      <span class="hero-chip">🔢 부인금액 계산</span>
+      <span class="hero-chip">📊 세무조정 방식</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">목차</span>
+    <a href="#ch1">① 의의·요건</a>
+    <a href="#ch2">② 특수관계인</a>
+    <a href="#ch3">③ 부당행위 유형</a>
+    <a href="#ch4">④ 시가 산정</a>
+    <a href="#ch5">⑤ 자산군별 비교</a>
+    <a href="#ch6">⑥ 부인금액 계산</a>
+    <a href="#ch7">⑦ 세무조정</a>
+    <a href="#sum">핵심요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══════════════════════════
+     CH1. 의의와 요건
+═══════════════════════════ -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Chapter 01</span>
+    <h2>부당행위계산의 부인 — 의의와 성립 요건</h2>
+    <span class="ref">법 제52조</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">⚖️</span>
+    <p>
+      <strong>부당행위계산의 부인</strong>이란, 내국법인이 특수관계인과의 거래에서<br>
+      시가와 다른 가격을 사용하여 세금 부담을 부당하게 줄인 경우,<br>
+      과세당국이 그 거래를 <strong>시가 기준으로 재계산</strong>하여 과세하는 제도입니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 제52조</span><span class="lc-ti">부당행위계산의 부인</span></div>
+    <div class="lc-body">
+      <div class="cl n"><span class="cn n">①</span>납세지 관할 세무서장 또는 관할지방국세청장은 내국법인의 행위 또는 소득금액의 계산이 <strong>특수관계인과의 거래로 인하여</strong> 그 법인의 소득에 대한 <strong>조세의 부담을 부당하게 감소시킨 것으로 인정되는 경우</strong>에는 그 법인의 행위 또는 소득금액의 계산과 관계없이 그 법인의 각 사업연도의 소득금액을 계산한다.</div>
+      <div class="cl n"><span class="cn n">②</span>제1항 적용 시 <strong>건전한 사회 통념 및 상거래 관행과 특수관계인이 아닌 자 간의 정상적인 거래에서 적용되거나 적용될 것으로 판단되는 가격(시가)</strong>을 기준으로 한다.</div>
+      <div class="cl n"><span class="cn n">③</span>내국법인은 각 사업연도에 특수관계인과 거래한 내용에 관한 <strong>명세서를 납세지 관할 세무서장에게 제출</strong>하여야 한다.</div>
+    </div>
+  </div>
+
+  <!-- 성립 3대 요건 -->
+  <div class="sh3">성립 3대 요건 — 모두 충족해야 적용</div>
+  <div class="g3">
+    <div class="gc navy">
+      <div class="gct">요건 ① 주체</div>
+      <p><strong>내국법인</strong>이어야 합니다.<br>
+      외국법인에는 적용되지 않으며 (별도 이전가격 규정 적용),<br>
+      법인이 거래의 주체가 되어야 합니다.</p>
+    </div>
+    <div class="gc red">
+      <div class="gct">요건 ② 상대방</div>
+      <p>거래 상대방이 <strong>특수관계인</strong>이어야 합니다.<br>
+      비특수관계인과의 거래는 적용 대상이 아닙니다.<br>
+      (비특수관계인의 경우 기부금 규정 적용 가능)</p>
+    </div>
+    <div class="gc orange">
+      <div class="gct">요건 ③ 효과</div>
+      <p>그 거래로 인하여 법인의 <strong>조세 부담이 부당하게 감소</strong>되어야 합니다.<br>
+      경제적 합리성이 없는 거래로 세금이 줄어든 경우에 해당합니다.</p>
+    </div>
+  </div>
+
+  <div class="panel pr">
+    ⚠️ <strong>중요 원칙:</strong> 부당행위계산 부인은 법인의 <strong>행위 자체를 무효화</strong>하는 것이 아닙니다.<br>
+    민법상 거래는 그대로 유효하되, <strong>세금 계산만 시가 기준으로 재산정</strong>하는 것입니다.<br>
+    즉, "거래의 사실"은 인정하고, "세금 계산의 방법"만 바꿉니다.
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 부당행위계산 부인이란?">
+    <p>
+      👨‍👧 아빠(대주주)가 운영하는 A회사가 자녀(주주)의 B회사에<br>
+      시가 10억 원짜리 건물을 1억 원에 팔았어요!<br><br>
+      → A회사 입장에서 9억 원의 이익을 포기한 거예요.<br>
+      → 세금도 9억 원만큼 덜 내게 됩니다.<br><br>
+      국세청은 이렇게 말해요: <span class="bad">"그 거래는 인정하지만, 세금은 10억 원에 판 것으로 계산할게요!"</span><br><br>
+      이게 바로 <span class="bl">부당행위계산의 부인</span>입니다.<br>
+      특수관계인끼리 <span class="hl">가격을 조작해서 세금을 줄이는 것</span>을 막는 제도예요.
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════
+     CH2. 특수관계인 범위
+═══════════════════════════ -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Chapter 02</span>
+    <h2>누구와 거래할 때? — 특수관계인의 범위</h2>
+    <span class="ref">법 §2 ①12 · 국세기본법 시행령 §1조의2 · 법인세법 시행령 §87조</span>
+  </div>
+
+  <div class="intro i2">
+    <span class="icon">👥</span>
+    <p>
+      <strong>특수관계인</strong>이란 법인과 경제적·법적으로 밀접하게 연결된 자로,<br>
+      <strong>① 친족관계</strong> <strong>② 경제적 연관관계</strong> <strong>③ 경영지배관계</strong>로 구분됩니다.<br>
+      국세기본법 시행령 제1조의2에 규정된 범위가 법인세법에도 준용됩니다.
+    </p>
+  </div>
+
+  <!-- 특수관계인 3대 유형 -->
+  <div class="tw">
+    <table>
+      <thead><tr><th>유형</th><th>관계 내용</th><th>구체적 범위</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="tbl"><strong>① 친족관계</strong></td>
+          <td>혈족·인척 등</td>
+          <td>
+            • 4촌 이내의 혈족<br>
+            • 3촌 이내의 인척<br>
+            • 배우자 (사실혼 포함)<br>
+            • 친양자로 입양된 자 및 그 배우자와 직계비속
+          </td>
+        </tr>
+        <tr>
+          <td class="tbl"><strong>② 경제적 연관관계</strong></td>
+          <td>임원·주주 등</td>
+          <td>
+            • 임원과 그 친족<br>
+            • <strong>발행주식 총수의 30% 이상</strong>을 직접 또는 간접 보유한 주주<br>
+            • 30% 이상 주주의 친족<br>
+            • 법인의 자금·자산을 실질적으로 지배하는 자
+          </td>
+        </tr>
+        <tr>
+          <td class="tbl"><strong>③ 경영지배관계</strong></td>
+          <td>지배·피지배 법인</td>
+          <td>
+            • 법인이 <strong>직접 또는 간접으로 50% 이상</strong> 출자한 법인<br>
+            • 동일인이 법인과 다른 법인 모두 30% 이상 지배하는 경우 해당 법인<br>
+            • 법인의 임원이 이사의 과반수이거나 설립에 관여한 비영리법인<br>
+            • 특수관계인의 특수관계인 (간접 특수관계)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sh3 r">특수관계인 판단 시 핵심 기준</div>
+  <div class="g2">
+    <div class="gc navy">
+      <div class="gct">📊 지분율 기준</div>
+      <ul>
+        <li>주주: 발행주식 <strong>30% 이상</strong> 보유</li>
+        <li>계열법인: 직·간접 <strong>50% 이상</strong> 출자</li>
+        <li>간접보유 포함 (지분율 합산 판단)</li>
+        <li>의결권 없는 주식도 포함</li>
+      </ul>
+    </div>
+    <div class="gc red">
+      <div class="gct">⏰ 판단 시점</div>
+      <ul>
+        <li>거래 당시를 기준으로 판단</li>
+        <li>거래 후 관계가 소멸해도 부인 가능</li>
+        <li>거래 전에 관계가 성립하면 해당</li>
+        <li>대여 시점 기준 (가지급금 특수관계)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 특수관계인">
+    <p>
+      🏢 A법인과 특수관계인이 되는 경우:<br><br>
+      <span class="bl">👨‍👩‍👧 A법인의 대표이사 아들</span> → 친족관계 ✅<br>
+      <span class="bl">📊 A법인 주식 35% 보유자</span> → 경제적 연관(30% 이상) ✅<br>
+      <span class="bl">🏭 A법인이 지분 60% 투자한 B법인</span> → 경영지배(50% 이상) ✅<br>
+      <span class="bl">👥 대표이사가 동시에 지배하는 C법인</span> → 경영지배관계 ✅<br><br>
+      반면, <span class="bad">완전히 무관한 경쟁사와의 거래</span> → 특수관계인 ❌ → 부당행위계산 부인 적용 안 됨
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════
+     CH3. 부당행위 9가지 유형
+═══════════════════════════ -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Chapter 03</span>
+    <h2>어떤 경우에 해당하나? — 부당행위계산 9가지 유형</h2>
+    <span class="ref">시행령 제88조 ①</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="icon">📋</span>
+    <p>
+      시행령 제88조 제1항은 <strong>9가지 유형</strong>을 열거하고 있으며,<br>
+      크게 <strong>자산 거래 유형</strong>과 <strong>자금·용역 거래 유형</strong>으로 나눌 수 있습니다.<br>
+      이 중 어느 하나에 해당하면 부당행위계산으로 봅니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">시행령 제88조①</span><span class="lc-ti">부당행위계산의 유형 (9가지)</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">1호</span><strong>자산을 시가보다 높은 가액으로 매입 또는 현물출자</strong>받았거나 그 자산을 과대상각한 경우</div>
+      <div class="cl o"><span class="cn o">2호</span><strong>무수익 자산을 매입·현물출자</strong>받았거나 그 자산에 대한 비용을 부담한 경우</div>
+      <div class="cl o"><span class="cn o">3호</span>자산을 시가보다 <strong>낮은 가액으로 양도하거나 현물출자</strong>한 경우</div>
+      <div class="cl o"><span class="cn o">4호</span><strong>불량자산을 차환</strong>하거나 불량채권을 양수한 경우</div>
+      <div class="cl o"><span class="cn o">5호</span>출연금을 대신 부담하거나 <strong>경제적 이익을 무상·저율로 제공</strong>한 경우</div>
+      <div class="cl o"><span class="cn o">6호</span><strong>금전·자산·용역을 무상 또는 시가보다 낮은 이율·요율·임대료로 제공</strong>한 경우</div>
+      <div class="cl o"><span class="cn o">7호</span><strong>금전·자산·용역을 시가보다 높은 이율·요율·임대료로 차용</strong>하거나 제공받은 경우</div>
+      <div class="cl o"><span class="cn o">8호</span>그 밖에 법인의 이익을 분여하였다고 인정되는 경우로서 <strong>대통령령으로 정하는 경우</strong></div>
+      <div class="cl o"><span class="cn o">단서</span>시가와 거래가액의 차이가 <strong>시가의 5% 또는 3억원 미만</strong>인 경우 → 부당행위계산 적용 제외</div>
+    </div>
+  </div>
+
+  <!-- 유형별 상세 카드 -->
+  <div class="sh3 o">유형별 상세 분류</div>
+
+  <!-- 자산 거래 그룹 -->
+  <div class="type-card">
+    <div class="type-num">유형<br>1·3호</div>
+    <div class="type-body">
+      <h4>🏠 자산의 고가매입 / 저가양도</h4>
+      <span class="tag r">익금 감소</span><span class="tag o">손금 증가</span>
+      <p>
+        <strong>1호 — 고가매입:</strong> 시가 1억 원 자산을 특수관계인에게서 2억 원에 산 경우<br>
+        → 법인이 시가 초과분 1억 원만큼 더 지출 → 손금 과다, 세금 감소<br><br>
+        <strong>3호 — 저가양도:</strong> 시가 1억 원 자산을 특수관계인에게 3,000만 원에 판 경우<br>
+        → 법인이 시가 미달분 7,000만 원만큼 수익 미인식 → 익금 감소, 세금 감소
+      </p>
+    </div>
+  </div>
+
+  <div class="type-card">
+    <div class="type-num">유형<br>6·7호</div>
+    <div class="type-body">
+      <h4>💰 금전 무상·저율 대여 / 고율 차용</h4>
+      <span class="tag r">이자수익 미계상</span><span class="tag o">이자비용 과다</span>
+      <p>
+        <strong>6호 — 무상·저율 대여:</strong> 법인이 특수관계인에게 10억 원을 무이자로 빌려준 경우<br>
+        → 당연히 받아야 할 이자(시가이율 × 원금)를 받지 않음 → 익금 미계상<br><br>
+        <strong>7호 — 고율 차용:</strong> 법인이 특수관계인에게서 10억 원을 연 20% 이자로 빌린 경우 (시장이율 5%)<br>
+        → 초과 이자 지급 → 손금 과다계상
+      </p>
+    </div>
+  </div>
+
+  <div class="type-card">
+    <div class="type-num">유형<br>2·4호</div>
+    <div class="type-body">
+      <h4>🗑️ 무수익 자산 취득 / 불량자산 차환</h4>
+      <span class="tag o">손금 증가</span><span class="tag n">자산 손상</span>
+      <p>
+        <strong>2호 — 무수익 자산:</strong> 수익을 전혀 창출하지 못하는 자산을 특수관계인에게서 매입하거나 관련 비용을 부담하는 경우<br><br>
+        <strong>4호 — 불량자산 차환:</strong> 특수관계인의 회수 불능 불량채권을 법인이 대신 인수하거나 교환하는 경우<br>
+        → 법인이 손실을 부담해 특수관계인을 지원하는 효과
+      </p>
+    </div>
+  </div>
+
+  <div class="type-card">
+    <div class="type-num">유형<br>5·8호</div>
+    <div class="type-body">
+      <h4>🎁 경제적 이익 무상 제공 / 기타</h4>
+      <span class="tag r">익금 미계상</span><span class="tag p">포괄조항</span>
+      <p>
+        <strong>5호:</strong> 출연금을 대신 부담하거나 법인의 경제적 이익을 무상·저율로 제공한 경우<br><br>
+        <strong>8호 (포괄조항):</strong> 위 각호 외에 법인의 이익을 분여하였다고 인정되는 경우<br>
+        → 법원칙상 열거 외의 새로운 유형에도 대응 가능
+      </p>
+    </div>
+  </div>
+
+  <!-- 5% / 3억 기준 -->
+  <div class="panel pr">
+    🔑 <strong>적용 제외 기준 (시행령 §88① 단서):</strong><br>
+    시가와 거래가액의 차이가 <strong>①시가의 5% 미만</strong> 이고 <strong>②3억 원 미만</strong>인 경우 → 부당행위계산 부인 적용 안 됨<br>
+    ※ 두 요건을 모두 충족해야 제외 (어느 하나라도 넘으면 적용됨)
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════
+     CH4. 시가 산정
+═══════════════════════════ -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Chapter 04</span>
+    <h2>시가(時價) 산정 방법</h2>
+    <span class="ref">법 §52② · 시행령 §89조</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="icon">📐</span>
+    <p>
+      부당행위계산 부인의 기준이 되는 <strong>시가</strong>는 건전한 상거래 관행과<br>
+      비특수관계인 간 정상거래에서 적용될 가격을 의미합니다.<br>
+      시가는 <strong>우선순위</strong>에 따라 단계적으로 산정합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">시행령 §89조</span><span class="lc-ti">시가의 범위 등</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">① 1순위</span>해당 거래와 <strong>유사한 상황에서 특수관계인 외 불특정 다수인과 계속 거래한 가격</strong> 또는 특수관계인이 아닌 제3자 간에 일반적으로 거래된 가격이 있는 경우 그 가격</div>
+      <div class="cl g"><span class="cn g">② 2순위</span>1순위 가격이 없는 경우 → <strong>감정기관의 감정가액</strong> (감정평가법인 감정가격)</div>
+      <div class="cl g"><span class="cn g">③ 3순위 (주식)</span>주식 상장법인: <strong>평균 종가</strong>를 기준으로 산정<br>비상장주식: <strong>상속세 및 증여세법 §60조·§63조</strong>에 따른 평가액</div>
+      <div class="cl g"><span class="cn g">④ 금전 대여</span>가지급금 등 금전의 대여 · 차용: <strong>당좌대출이자율</strong> (현행 4.6%)</div>
+    </div>
+  </div>
+
+  <div class="sh3 g">자산 유형별 시가 산정 방법</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">자산 유형</th><th class="g">1차 시가 기준</th><th class="g">없는 경우</th><th class="g">특이사항</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>부동산</strong></td>
+          <td class="tbl">유사 거래 실거래가</td>
+          <td class="thl">감정평가액</td>
+          <td>기준시가는 보충적 적용</td>
+        </tr>
+        <tr>
+          <td><strong>상장주식</strong></td>
+          <td class="tbl">거래일 종가 (평균거래가)</td>
+          <td class="tbl">거래소 최종 시세가</td>
+          <td>평가기간 2개월 평균 종가</td>
+        </tr>
+        <tr>
+          <td><strong>비상장주식</strong></td>
+          <td class="tbl">유사 거래 사례가</td>
+          <td class="thl">상증세법 §63 보충적 평가<br>(순손익가치+순자산가치)</td>
+          <td>특수관계인 거래는 시가 인정 불가</td>
+        </tr>
+        <tr>
+          <td><strong>금전 대여</strong></td>
+          <td class="tbl">약정이자율 (시장이자율)</td>
+          <td class="thl"><strong>당좌대출이자율(4.6%)</strong></td>
+          <td>무이자 포함, 가중평균차입이자율 사용 가능</td>
+        </tr>
+        <tr>
+          <td><strong>동산·기계</strong></td>
+          <td class="tbl">유사 거래가격</td>
+          <td class="thl">감정평가액</td>
+          <td>장부가 ≠ 시가 주의</td>
+        </tr>
+        <tr>
+          <td><strong>용역</strong></td>
+          <td class="tbl">제3자 용역 단가</td>
+          <td class="thl">원가 + 통상 이윤</td>
+          <td>용역의 종류에 따라 다양</td>
+        </tr>
+        <tr>
+          <td><strong>임대료</strong></td>
+          <td class="tbl">인근 유사 임대 시세</td>
+          <td class="thl">임대보증금 기준 환산 임대료</td>
+          <td>환산이율 연 3.5% (기준금리 연동)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="formula g">
+    <div class="fm">【금전 대여 시가이자율】 = Max(가중평균차입이자율, 당좌대출이자율 4.6%)</div>
+    <div class="fn">무이자 또는 저율 대여 시 — 시가이자율 × 대여원금 = 정상이자(시가)</div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════
+     CH5. 자산군별 공통점·차이점
+═══════════════════════════ -->
+<section class="chapter" id="ch5">
+  <div class="ch-hd">
+    <span class="ch-badge b5">Chapter 05</span>
+    <h2>자산군별 부당행위계산 — 공통점과 차이점</h2>
+    <span class="ref">시행령 §88~89조 종합</span>
+  </div>
+
+  <div class="intro i5">
+    <span class="icon">💹</span>
+    <p>
+      자산 유형에 따라 부당행위계산 부인의 <strong>적용 방식과 시가 산정 기준</strong>이 달라집니다.<br>
+      <strong>공통점:</strong> 모두 시가 기준으로 재계산, 5%·3억 기준 적용, 특수관계인과 거래 要<br>
+      <strong>차이점:</strong> 시가 산정 방법, 부인 방향(익금·손금), 세무조정 방식이 다릅니다.
+    </p>
+  </div>
+
+  <!-- 자산군별 비교표 -->
+  <div class="comp-wrap">
+    <div class="comp-head">
+      <div class="ch-cell">구분</div>
+      <div class="ch-cell">고가매입 (법인이 매수자)</div>
+      <div class="ch-cell">저가양도 (법인이 매도자)</div>
+    </div>
+    <!-- 부동산 -->
+    <div class="comp-row">
+      <div class="comp-cell"><strong>🏠 부동산</strong></div>
+      <div class="comp-cell">
+        시가 초과분 → <strong>손금불산입</strong><br>
+        취득가액 조정 없음 (세무상 취득가 감액)<br>
+        시가: 실거래가·감정평가액
+      </div>
+      <div class="comp-cell">
+        시가 미달분 → <strong>익금산입</strong><br>
+        양도차익은 시가 기준 재계산<br>
+        소득처분: 배당·상여·기타소득
+      </div>
+    </div>
+    <!-- 주식 -->
+    <div class="comp-row">
+      <div class="comp-cell"><strong>📈 주식</strong></div>
+      <div class="comp-cell">
+        시가 초과분 → <strong>손금불산입</strong><br>
+        비상장주식: 상증세법 보충적 평가<br>
+        상장주식: 평균 종가 기준
+      </div>
+      <div class="comp-cell">
+        시가 미달분 → <strong>익금산입</strong><br>
+        저가양도 시 상대방에게 증여세 이슈<br>
+        증여세와 이중과세 조정 필요
+      </div>
+    </div>
+    <!-- 금전 -->
+    <div class="comp-row">
+      <div class="comp-cell"><strong>💰 금전 대여</strong></div>
+      <div class="comp-cell">
+        고율 차용 (7호): 초과이자 → <strong>손금불산입</strong><br>
+        정상이율 초과분 손금불산입<br>
+        적수 × 이율차이로 계산
+      </div>
+      <div class="comp-cell">
+        무상·저율 대여 (6호): 미수이자 → <strong>익금산입</strong><br>
+        당좌대출이자율 기준 이자 계산<br>
+        가지급금 이자율 적용
+      </div>
+    </div>
+    <!-- 임대 -->
+    <div class="comp-row">
+      <div class="comp-cell"><strong>🏢 부동산 임대</strong></div>
+      <div class="comp-cell">
+        고가 임차 (7호): 초과임대료 → <strong>손금불산입</strong><br>
+        시세 임대료 초과분 부인
+      </div>
+      <div class="comp-cell">
+        저가·무상 임대 (6호): 미수임대료 → <strong>익금산입</strong><br>
+        임대보증금 환산 임대료 기준
+      </div>
+    </div>
+    <!-- 용역 -->
+    <div class="comp-row">
+      <div class="comp-cell"><strong>🔧 용역 제공</strong></div>
+      <div class="comp-cell">
+        고가 용역 수수 (7호): 초과금액 → <strong>손금불산입</strong>
+      </div>
+      <div class="comp-cell">
+        저가·무상 용역 제공 (6호): 차액 → <strong>익금산입</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- 공통점 vs 차이점 -->
+  <div class="g2" style="margin-top:20px;">
+    <div class="gc green">
+      <div class="gct">✅ 자산군 공통점</div>
+      <ul>
+        <li>시가와 거래가 비교가 기본 원칙</li>
+        <li>5%·3억 기준 미만 시 적용 제외</li>
+        <li>특수관계인과의 거래 요건 동일</li>
+        <li>세무조정 결과 소득처분 필요</li>
+        <li>거래 무효가 아닌 세금 재계산</li>
+        <li>손금불산입 또는 익금산입으로 조정</li>
+      </ul>
+    </div>
+    <div class="gc red">
+      <div class="gct">❌ 자산군별 차이점</div>
+      <ul>
+        <li>시가 산정 방법 상이<br>(부동산↔주식↔금전 각기 다름)</li>
+        <li>부인 방향 (익금↔손금) 거래에 따라 다름</li>
+        <li>소득처분 상대방이 다를 수 있음</li>
+        <li>금전대여: 적수×이율 차이로 계산</li>
+        <li>주식: 상증세법 평가 준용</li>
+        <li>임대: 환산이율(3.5%) 별도 적용</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════
+     CH6. 부인금액 계산
+═══════════════════════════ -->
+<section class="chapter" id="ch6">
+  <div class="ch-hd">
+    <span class="ch-badge b6">Chapter 06</span>
+    <h2>부인되는 금액의 계산 방식</h2>
+    <span class="ref">시행령 §88~89조</span>
+  </div>
+
+  <div class="intro i6">
+    <span class="icon">🔢</span>
+    <p>
+      부인 금액은 <strong>시가와 거래가액의 차이</strong>를 기준으로 계산합니다.<br>
+      거래 유형에 따라 익금산입액 또는 손금불산입액이 달라집니다.
+    </p>
+  </div>
+
+  <!-- 계산 공식별 정리 -->
+  <div class="sh3 t">① 자산 고가매입 (1호) — 손금불산입</div>
+  <div class="formula">
+    <div class="fm">부인액 = 매입가액 − 시가 → 초과분 손금불산입</div>
+    <div class="fn">단, 차이가 시가의 5% 미만이고 3억 원 미만이면 부인 안 함</div>
+  </div>
+  <div class="story">
+    <div class="story-lbl">📖 계산 예시 — 자산 고가매입</div>
+    <p>A법인이 특수관계인 B로부터 토지를 <span class="hl">5억 원</span>에 매입 (시가 <span class="hl">3억 원</span>)<br>
+    차이 2억 원 / 시가의 5% = 1,500만 원 → <span class="bad">2억 원 > 1,500만 원 AND 3억 원 미만 기준 초과</span><br>
+    → 초과분 <span class="bad">2억 원 손금불산입</span> (A법인이 B에게 이익 분여한 것으로 봄)<br>
+    세무조정: 손금불산입 2억 원 → <span class="ok">소득처분: B에 대한 배당(주주이면) 또는 상여(임원이면)</span></p>
+  </div>
+
+  <div class="sh3 t">② 자산 저가양도 (3호) — 익금산입</div>
+  <div class="formula r">
+    <div class="fm">부인액 = 시가 − 양도가액 → 미달분 익금산입</div>
+    <div class="fn">양도 수익을 시가 기준으로 재계산하여 과세</div>
+  </div>
+  <div class="story">
+    <div class="story-lbl">📖 계산 예시 — 저가양도</div>
+    <p>A법인이 특수관계인 C에게 건물을 <span class="hl">2억 원</span>에 양도 (시가 <span class="hl">8억 원</span>)<br>
+    차이 6억 원 → <span class="bad">시가의 5%(4,000만 원) 초과, 3억 원도 초과</span><br>
+    → 미달분 <span class="bad">6억 원 익금산입</span><br>
+    세무조정: 익금산입 6억 원 → <span class="ok">소득처분: C에 대한 배당 또는 상여 등</span></p>
+  </div>
+
+  <div class="sh3 t">③ 금전 무이자 대여 (6호) — 익금산입</div>
+  <div class="formula g">
+    <div class="fm">인정이자 = 대여원금 × 당좌대출이자율(4.6%) × (대여일수 ÷ 365)</div>
+    <div class="fn">= 대여원금 × 시가이자율 × 적수(日數) / 365 — 미수이자를 익금산입</div>
+  </div>
+  <div class="story">
+    <div class="story-lbl">📖 계산 예시 — 무이자 대여 인정이자</div>
+    <p>A법인이 특수관계인 D(주주)에게 <span class="hl">10억 원</span>을 1년간 무이자로 대여<br>
+    당좌대출이자율 4.6% 적용<br>
+    인정이자 = 10억 × 4.6% × 365/365 = <span class="hl">4,600만 원</span><br>
+    → <span class="bad">4,600만 원 익금산입</span><br>
+    → 소득처분: D(주주)에 대한 <span class="ok">배당으로 처분</span></p>
+  </div>
+
+  <div class="sh3 t">④ 부동산 무상 임대 (6호) — 익금산입</div>
+  <div class="formula">
+    <div class="fm">임대료 인정액 = 부동산 시가 × 3.5% (부동산 임대료 환산이율)</div>
+    <div class="fn">또는 인근 유사 임대 시세가 있으면 시세 적용 (보증금 포함 환산)</div>
+  </div>
+
+  <!-- 5%·3억 기준 계산 예시 -->
+  <div class="sh3 t">⑤ 5%·3억 기준 적용 예시</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="t">시가</th><th class="t">거래가액</th><th class="t">차이</th><th class="t">시가의 5%</th><th class="t">적용 여부</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>10억 원</td><td>9억 원</td>
+          <td class="thl">1억 원</td>
+          <td>5,000만 원</td>
+          <td class="tba">✅ 적용 (차이 1억 > 5,000만, 3억 미만이지만 5% 초과)</td>
+        </tr>
+        <tr>
+          <td>10억 원</td><td>9.8억 원</td>
+          <td class="tok">2,000만 원</td>
+          <td>5,000만 원</td>
+          <td class="tok">❌ 제외 (2,000만 < 5,000만 AND < 3억)</td>
+        </tr>
+        <tr>
+          <td>100억 원</td><td>98억 원</td>
+          <td class="tba">2억 원</td>
+          <td>5억 원</td>
+          <td class="tok">❌ 제외 (2억 < 5억 AND < 3억 두 조건 모두 충족)</td>
+        </tr>
+        <tr>
+          <td>100억 원</td><td>96억 원</td>
+          <td class="tba">4억 원</td>
+          <td>5억 원</td>
+          <td class="tba">✅ 적용 (4억 > 3억 초과 — 어느 하나라도 넘으면 적용)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════
+     CH7. 세무조정 방식
+═══════════════════════════ -->
+<section class="chapter" id="ch7">
+  <div class="ch-hd">
+    <span class="ch-badge b7">Chapter 07</span>
+    <h2>세무조정 방식 — 소득금액 조정과 소득처분</h2>
+    <span class="ref">법 §52 · §67 · 시행령 §88조</span>
+  </div>
+
+  <div class="intro i6" style="background:var(--gold);">
+    <span class="icon">📊</span>
+    <p>
+      부당행위계산 부인은 <strong>두 단계</strong>로 세무조정이 이루어집니다.<br>
+      1단계: 소득금액 조정 (익금산입 또는 손금불산입)<br>
+      2단계: 소득처분 — 조정된 금액을 <strong>누구에게 귀속</strong>시키느냐를 결정
+    </p>
+  </div>
+
+  <!-- 조정 유형별 -->
+  <div class="sh3">① 세무조정 유형별 처리</div>
+
+  <div class="sj-card income">
+    <div class="sj-label">📈 익금산입 — 수익이 과소 계상된 경우</div>
+    <h4>적용 거래: 저가양도(3호), 무상·저율 대여(6호), 무상임대(6호)</h4>
+    <p>
+      법인이 받아야 할 금액보다 적게 받았거나 무상으로 제공한 경우<br>
+      → 시가와 실제가의 <strong>차액을 익금에 산입</strong> (소득금액 증가)<br>
+      → 세무조정: <strong>익금산입 ○○원</strong>
+    </p>
+  </div>
+
+  <div class="sj-card expense">
+    <div class="sj-label">📉 손금불산입 — 비용이 과다 계상된 경우</div>
+    <h4>적용 거래: 고가매입(1호), 고율 차용(7호), 과대상각</h4>
+    <p>
+      법인이 지불해야 할 금액보다 많이 지불했거나 비용을 과다 계상한 경우<br>
+      → 시가 초과분을 <strong>손금에서 불산입</strong> (소득금액 증가)<br>
+      → 세무조정: <strong>손금불산입 ○○원</strong>
+    </p>
+  </div>
+
+  <!-- 소득처분 표 -->
+  <div class="sh3">② 소득처분 — 부인액의 귀속 결정</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>이익 분여 상대방</th><th>소득처분 방식</th><th>효과</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>주주인 개인</strong></td>
+          <td class="tba">배당 (Dividend)</td>
+          <td>상대방(주주)에게 소득세 부과 (배당소득)</td>
+        </tr>
+        <tr>
+          <td><strong>임원</strong></td>
+          <td class="tba">상여 (Bonus)</td>
+          <td>해당 임원에게 소득세 부과 (근로소득)</td>
+        </tr>
+        <tr>
+          <td><strong>직원</strong></td>
+          <td class="tba">상여 (Bonus)</td>
+          <td>해당 직원에게 소득세 부과 (근로소득)</td>
+        </tr>
+        <tr>
+          <td><strong>법인 주주</strong></td>
+          <td class="tba">배당 (법인간)</td>
+          <td>수취 법인의 수입배당금 익금 처리</td>
+        </tr>
+        <tr>
+          <td><strong>그 외</strong></td>
+          <td class="tba">기타사외유출</td>
+          <td>귀속 불분명 시 또는 법인 외부 유출</td>
+        </tr>
+        <tr>
+          <td><strong>법인 내부 보유</strong></td>
+          <td class="tok">유보 (사내)</td>
+          <td>법인 자산 증가 — 나중에 처분 시 정산</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 전체 흐름도 -->
+  <div class="sh3">③ 부당행위계산 부인 전체 처리 흐름</div>
+  <div class="flow">
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci n">1</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>특수관계인과 거래 발생 확인</h4>
+        <p>거래 당사자가 국세기본법상 특수관계인에 해당하는지 검토</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci r">2</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>시가와 거래가액 비교</h4>
+        <p>시가 산정 (실거래가·감정가·당좌대출이자율 등) → 거래가액과 차이 계산</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci o">3</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>5%·3억 기준 검토</h4>
+        <p>차이가 시가의 5% 미만 AND 3억 원 미만이면 → 부인 제외<br>어느 하나라도 초과 → 다음 단계 진행</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci n">4</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>세무조정 (익금산입 or 손금불산입)</h4>
+        <p>저가양도·무상대여 → 익금산입 / 고가매입·과다이자 → 손금불산입</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci g">5</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>소득처분 결정</h4>
+        <p>이익 분여 상대방이 주주이면 → 배당 / 임직원이면 → 상여 / 기타 → 기타사외유출</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci p">6</div></div>
+      <div class="fl-bd" style="padding-bottom:0;">
+        <h4>상대방 원천징수 및 납부</h4>
+        <p>소득처분에 따라 상대방에게 원천세 징수 의무 발생 (법인세 신고 시 명세서 제출)</p>
+      </div>
+    </div>
+    <div class="fl-res">✅ 법인세 과세표준 증가 → 법인세 추가 납부 + 상대방 소득세 부과!</div>
+  </div>
+
+  <!-- 종합 사례 -->
+  <div class="story">
+    <div class="story-lbl">📖 종합 사례 — 저가양도 전체 세무처리</div>
+    <p>
+      <strong>㈜한국산업</strong>(A법인)이 대주주 박○○씨 소유의 B법인에<br>
+      시가 <span class="hl">10억 원</span>짜리 공장 건물을 <span class="hl">4억 원</span>에 양도했습니다.<br><br>
+      <strong>Step 1 — 특수관계인 확인:</strong><br>
+      박○○씨가 A법인 주식 40% 보유 → <span class="ok">특수관계인 ✅</span><br><br>
+      <strong>Step 2 — 시가·거래가 차이 계산:</strong><br>
+      차이 = 10억 − 4억 = <span class="bad">6억 원</span><br>
+      시가의 5% = 5,000만 원 → 6억 원 > 5,000만 원 → <span class="bad">기준 초과, 부인 적용</span><br><br>
+      <strong>Step 3 — 세무조정:</strong><br>
+      → <strong>익금산입 6억 원</strong> (A법인 소득 6억 원 증가)<br><br>
+      <strong>Step 4 — 소득처분:</strong><br>
+      이익 분여 상대방: B법인(법인 주주) → <span class="hl">배당으로 소득처분</span><br><br>
+      <strong>결과:</strong><br>
+      A법인: 법인세 과세표준 6억 원 증가 → 법인세 추가 납부<br>
+      B법인: 6억 원 수입배당금으로 처리 → 수입배당 익금불산입 검토 필요
+    </p>
+  </div>
+
+  <!-- 소득처분 vs 유보 비교 -->
+  <div class="sh3">④ 사외유출 vs 유보 — 핵심 구분</div>
+  <div class="g2">
+    <div class="gc red">
+      <div class="gct">🔴 사외유출 (배당·상여·기타사외유출)</div>
+      <p>부인 금액이 <strong>법인 외부로 나간 경우</strong><br>
+      상대방(주주·임직원 등)에게 귀속<br>
+      상대방에게 <strong>소득세·원천세 부과</strong><br>
+      예: 저가양도로 인한 부인액 → 구매자에게 배당</p>
+    </div>
+    <div class="gc navy">
+      <div class="gct">🔵 유보 (법인 내부)</div>
+      <p>부인 금액이 <strong>법인 내부에 남은 경우</strong><br>
+      상대방 원천세 없음<br>
+      자산·부채 조정으로 처리<br>
+      예: 고가매입 → 법인 취득가액 과다 → 유보 처리</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SUMMARY ═══ -->
+<section class="summary" id="sum">
+  <h3>🏆 부당행위계산 부인 핵심 총정리</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">⚖️ 의의</div>
+      <p>특수관계인 거래로 <strong>조세 부담 부당 감소</strong> 시<br>
+      시가 기준으로 소득금액 재계산<br>
+      거래 무효가 아닌 세금 재계산</p>
+    </div>
+    <div class="sc">
+      <div class="st">👥 특수관계인</div>
+      <p><strong>친족(4촌 혈족·3촌 인척)</strong><br>
+      주주(30% 이상), 임원, 지배법인<br>
+      50% 이상 출자 법인 포함</p>
+    </div>
+    <div class="sc">
+      <div class="st">📋 9가지 유형</div>
+      <p>고가매입(1호), 무수익자산(2호)<br>
+      <strong>저가양도(3호)</strong>, 불량자산(4호)<br>
+      무상대여(6호), 고율차용(7호) 등</p>
+    </div>
+    <div class="sc">
+      <div class="st">📐 5%·3억 기준</div>
+      <p>차이 &lt; <strong>시가의 5%</strong> AND &lt; <strong>3억 원</strong><br>
+      → 부당행위계산 적용 제외<br>
+      어느 하나 초과 시 전액 부인</p>
+    </div>
+    <div class="sc">
+      <div class="st">🔢 부인금액</div>
+      <p>저가양도: <strong>시가−양도가 → 익금산입</strong><br>
+      고가매입: <strong>매입가−시가 → 손금불산입</strong><br>
+      무이자: <strong>원금×4.6%×일수/365</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">📊 세무조정</div>
+      <p>소득금액 조정(익금산입·손금불산입)<br>
+      소득처분: 주주→<strong>배당</strong>, 임직원→<strong>상여</strong><br>
+      법인 내부 → <strong>유보</strong></p>
+    </div>
+  </div>
+  <p class="note">법인세법 제52조 · 시행령 제87~89조 · 국세기본법 시행령 제1조의2 | 시행 2026.01.02<br>본 자료는 학습 목적의 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div>
+<footer>법인세법 §52 · 시행령 §87~89 · 국세기본법 시행령 §1의2 | 시행 2026.01.02</footer>
+</body>
+</html>

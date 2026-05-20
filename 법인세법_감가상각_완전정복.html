@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 감가상각 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ==========================================
+   색상 원칙: 흰/연한 배경 + 짙은 검정 글씨
+   모든 배경색에서 텍스트 명도비 7:1 이상 보장
+========================================== */
+:root {
+  --white:       #ffffff;
+  --bg-page:     #f5f3ee;
+  --bg-soft:     #eceae4;
+  --bg-card:     #ffffff;
+
+  --text-1:      #0d0c09;   /* 제목 */
+  --text-2:      #1e1c15;   /* 본문 */
+  --text-3:      #38362c;   /* 서브 */
+  --text-4:      #5a5848;   /* 캡션 */
+
+  --blue:        #0b3a6e;
+  --blue-lt:     #d8e8f8;
+  --green:       #0c4a28;
+  --green-lt:    #d0ecdc;
+  --red:         #6b0d1a;
+  --red-lt:      #fad4da;
+  --orange:      #5c2800;
+  --orange-lt:   #fde0c0;
+  --purple:      #3a1260;
+  --purple-lt:   #ead8f8;
+  --teal:        #084040;
+  --teal-lt:     #cceaea;
+  --gold:        #7a4f00;
+  --gold-lt:     #fef0c0;
+  --gold-border: #b07800;
+
+  --border-dark: #8a8070;
+  --border-mid:  #c0b8a8;
+  --border-lt:   #ddd8cc;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg-page);
+  color:var(--text-1);
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:15px;
+  line-height:1.85;
+}
+
+/* ─── HERO ─── */
+.hero{
+  background:linear-gradient(135deg,#062240 0%,#0b3a6e 60%,#0d4f40 100%);
+  color:#fff;
+  padding:64px 24px 56px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    45deg,transparent,transparent 40px,
+    rgba(255,255,255,.02) 40px,rgba(255,255,255,.02) 41px
+  );
+}
+.hero-inner{position:relative;z-index:1;}
+.hero-badge{
+  display:inline-block;
+  background:var(--gold-border);color:#fff;
+  font-size:11px;font-weight:900;letter-spacing:3px;
+  padding:4px 16px;margin-bottom:20px;text-transform:uppercase;
+}
+.hero h1{
+  font-family:'Noto Serif KR',serif;
+  font-size:clamp(1.8rem,4.5vw,3rem);
+  font-weight:900;line-height:1.25;color:#fff;
+}
+.hero h1 .acc{color:#7adfd8;}
+.hero-sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.75);letter-spacing:.5px;}
+.hero-chips{margin-top:24px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.hero-chip{
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);
+  color:#fff;font-size:12px;padding:4px 14px;
+}
+
+/* ─── TOC ─── */
+.toc{
+  background:#fff;border-bottom:3px solid var(--blue);
+  padding:14px 0;position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+.toc-inner{
+  max-width:980px;margin:0 auto;padding:0 20px;
+  display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;
+}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--text-4);letter-spacing:1px;margin-right:4px;}
+.toc a{
+  font-size:12px;font-weight:700;color:var(--blue);
+  text-decoration:none;padding:3px 10px;border:1px solid var(--blue);
+  transition:all .15s;
+}
+.toc a:hover{background:var(--blue);color:#fff;}
+
+/* ─── WRAPPER ─── */
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 80px;}
+
+/* ─── CHAPTER ─── */
+.chapter{margin-top:56px;}
+.ch-hd{
+  display:flex;align-items:center;gap:0;
+  border-bottom:3px solid var(--text-1);
+  padding-bottom:12px;margin-bottom:28px;
+}
+.ch-badge{
+  font-family:'Noto Serif KR',serif;
+  font-size:12px;font-weight:900;
+  padding:6px 16px;margin-right:16px;
+  color:#fff;white-space:nowrap;letter-spacing:.5px;
+}
+.ch-badge.b1{background:var(--blue);}
+.ch-badge.b2{background:var(--green);}
+.ch-badge.b3{background:var(--red);}
+.ch-badge.b4{background:var(--orange);}
+.ch-badge.b5{background:var(--purple);}
+.ch-badge.b6{background:var(--teal);}
+.ch-badge.b7{background:var(--gold);}
+.ch-badge.b8{background:#3d2000;}
+
+.ch-hd h2{
+  font-family:'Noto Serif KR',serif;
+  font-size:clamp(1.15rem,2.5vw,1.5rem);
+  font-weight:900;color:var(--text-1);
+}
+.ch-hd .ch-ref{
+  margin-left:auto;font-size:11px;
+  color:var(--text-4);letter-spacing:1px;white-space:nowrap;
+}
+
+/* ─── INTRO BOX ─── */
+.intro{
+  padding:26px 30px;margin-bottom:22px;
+  border-left:6px solid;
+}
+.intro.i1{background:var(--blue);border-color:#5daaf0;color:#fff;}
+.intro.i2{background:var(--green);border-color:#5dcc90;color:#fff;}
+.intro.i3{background:var(--red);border-color:#f08090;color:#fff;}
+.intro.i4{background:var(--orange);border-color:#f0a050;color:#fff;}
+.intro.i5{background:var(--purple);border-color:#c090f8;color:#fff;}
+.intro.i6{background:var(--teal);border-color:#60d0d0;color:#fff;}
+.intro.i7{background:var(--gold);border-color:#f0d060;color:#fff;}
+.intro.i8{background:#3d2000;border-color:#f0a060;color:#fff;}
+
+.intro .ib-icon{font-size:2rem;display:block;margin-bottom:10px;}
+.intro p{font-size:15px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i2 strong{color:#90ffcc;}
+.intro.i3 strong{color:#ffb0b8;}
+.intro.i5 strong{color:#e0c0ff;}
+.intro.i6 strong{color:#80ffff;}
+
+/* ─── LAW CARD ─── */
+.law-card{border:2px solid var(--border-dark);background:#fff;margin-bottom:18px;}
+.lc-hd{
+  padding:12px 22px;display:flex;align-items:center;gap:12px;
+}
+.lc-hd.h1{background:var(--blue);}
+.lc-hd.h2{background:var(--green);}
+.lc-hd.h3{background:var(--red);}
+.lc-hd.h4{background:var(--orange);}
+.lc-hd.h5{background:var(--purple);}
+.lc-hd.h6{background:var(--teal);}
+.lc-hd.h7{background:var(--gold);}
+.lc-hd.h8{background:#3d2000;}
+
+.lc-no{
+  background:var(--gold-border);color:#fff;
+  font-size:11px;font-weight:900;
+  padding:3px 12px;letter-spacing:.5px;white-space:nowrap;
+}
+.lc-title{
+  font-family:'Noto Serif KR',serif;
+  font-size:15px;font-weight:700;color:#fff;
+}
+.lc-body{padding:22px 26px;}
+
+.clause{
+  background:var(--bg-soft);border-left:4px solid;
+  padding:12px 16px;margin-bottom:10px;
+  font-size:14px;line-height:1.95;color:var(--text-2);
+}
+.clause:last-child{margin-bottom:0;}
+.clause.c1{border-color:var(--blue);}
+.clause.c2{border-color:var(--green);}
+.clause.c3{border-color:var(--red);}
+.clause.c4{border-color:var(--orange);}
+.clause.c5{border-color:var(--purple);}
+.clause.c6{border-color:var(--teal);}
+.clause.c7{border-color:var(--gold);}
+.clause.c8{border-color:#5a3800;}
+
+.cn{font-weight:900;margin-right:6px;}
+.cn.c1{color:var(--blue);}
+.cn.c2{color:var(--green);}
+.cn.c3{color:var(--red);}
+.cn.c4{color:var(--orange);}
+.cn.c5{color:var(--purple);}
+.cn.c6{color:var(--teal);}
+.cn.c7{color:var(--gold);}
+.cn.c8{color:#5a3800;}
+
+/* ─── EASY BOX ─── */
+.easy{
+  position:relative;
+  background:var(--gold-lt);
+  border:2px solid var(--gold-border);
+  padding:32px 28px 24px;
+  margin:6px 0 22px;
+}
+.easy::before{
+  content:attr(data-label);
+  position:absolute;top:-14px;left:16px;
+  background:var(--gold-border);color:#fff;
+  font-size:11px;font-weight:900;padding:3px 14px;letter-spacing:1px;
+}
+.easy p{font-size:14.5px;line-height:2.1;color:var(--text-1);margin-top:6px;}
+.easy .ok  {color:var(--green);font-weight:700;}
+.easy .bad {color:var(--red);font-weight:700;}
+.easy .hl  {color:var(--orange);font-weight:700;}
+.easy .bl  {color:var(--blue);font-weight:700;}
+
+/* ─── STORY ─── */
+.story{
+  background:#141210;border-left:5px solid var(--gold-border);
+  padding:26px 30px;margin:8px 0 22px;
+}
+.story-lbl{
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold-border);font-weight:900;margin-bottom:12px;
+}
+.story p{font-size:14.5px;line-height:2.15;color:#f0ece0;}
+.story strong{color:#ffe080;}
+.story .ok {color:#50e090;font-weight:700;}
+.story .bad{color:#ff8080;font-weight:700;}
+.story .hl {color:#ffd050;font-weight:700;}
+
+/* ─── COMPARE COLUMNS ─── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0 20px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:10px 0 20px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+
+.gcol{
+  border:2px solid var(--border-mid);background:#fff;
+  padding:20px;
+}
+.gcol .gc-title{
+  font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;
+  padding-bottom:10px;border-bottom:2px solid;margin-bottom:14px;
+}
+.gcol.go .gc-title{color:var(--green);border-color:var(--green);}
+.gcol.bad .gc-title{color:var(--red);border-color:var(--red);}
+.gcol.neutral .gc-title{color:var(--blue);border-color:var(--blue);}
+.gcol.orange .gc-title{color:var(--orange);border-color:var(--orange);}
+.gcol.purple .gc-title{color:var(--purple);border-color:var(--purple);}
+.gcol.teal .gc-title{color:var(--teal);border-color:var(--teal);}
+
+.gcol ul{list-style:none;font-size:13.5px;line-height:2;color:var(--text-2);}
+.gcol.go  ul li::before{content:'✅ ';}
+.gcol.bad ul li::before{content:'❌ ';}
+.gcol.neutral ul li::before{content:'▶ ';}
+.gcol.orange  ul li::before{content:'🔶 ';}
+.gcol.purple  ul li::before{content:'◆ ';}
+.gcol.teal    ul li::before{content:'● ';}
+.gcol p{font-size:13.5px;color:var(--text-2);line-height:1.85;}
+
+/* ─── TABLE ─── */
+.tbl-wrap{overflow-x:auto;margin:8px 0 20px;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+thead th{
+  background:var(--blue);color:#fff;
+  padding:12px 16px;text-align:left;
+  font-size:12px;font-weight:700;letter-spacing:.5px;
+}
+thead th.g{background:var(--green);}
+thead th.r{background:var(--red);}
+thead th.o{background:var(--orange);}
+thead th.p{background:var(--purple);}
+thead th.t{background:var(--teal);}
+
+tbody td{
+  padding:11px 16px;border-bottom:1px solid var(--border-lt);
+  color:var(--text-2);vertical-align:top;
+}
+tbody tr:nth-child(even) td{background:var(--bg-soft);}
+.td-ok {color:var(--green);font-weight:700;}
+.td-bad{color:var(--red);font-weight:700;}
+.td-hl {color:var(--orange);font-weight:700;}
+.td-bl {color:var(--blue);font-weight:700;}
+.td-pu {color:var(--purple);font-weight:700;}
+
+/* ─── PANEL ─── */
+.panel{
+  padding:16px 20px;margin:10px 0;
+  font-size:14px;line-height:2;color:var(--text-1);
+  font-weight:500;border-left:5px solid;
+}
+.panel.pb{background:var(--blue-lt); border-color:var(--blue);}
+.panel.pg{background:var(--green-lt);border-color:var(--green);}
+.panel.pr{background:var(--red-lt);  border-color:var(--red);}
+.panel.po{background:var(--orange-lt);border-color:var(--orange);}
+.panel.pp{background:var(--purple-lt);border-color:var(--purple);}
+.panel.pt{background:var(--teal-lt); border-color:var(--teal);}
+.panel.pgold{background:var(--gold-lt);border-color:var(--gold-border);}
+
+/* ─── FORMULA BOX ─── */
+.formula{
+  background:#0b3a6e;color:#fff;
+  padding:20px 24px;margin:12px 0;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:15px;font-weight:700;
+  text-align:center;line-height:2.2;
+}
+.formula .f-main{font-size:1.1rem;color:#7adfd8;}
+.formula .f-note{font-size:12px;font-weight:400;color:rgba(255,255,255,.7);}
+
+/* ─── FLOW ─── */
+.flow-box{background:#fff;border:2px solid var(--border-dark);padding:28px;margin:10px 0 20px;}
+.fl-row{display:flex;align-items:stretch;gap:14px;}
+.fl-axis{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.fl-circle{
+  width:38px;height:38px;
+  font-weight:900;font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;color:#fff;flex-shrink:0;
+}
+.fl-circle.b1{background:var(--blue);}
+.fl-circle.b2{background:var(--green);}
+.fl-circle.b3{background:var(--red);}
+.fl-circle.b4{background:var(--orange);}
+.fl-circle.b5{background:var(--purple);}
+.fl-circle.b6{background:var(--teal);}
+.fl-circle.b7{background:var(--gold);}
+
+.fl-line{width:3px;flex:1;background:var(--border-mid);min-height:16px;margin:3px 0;}
+.fl-body{padding:4px 0 24px;flex:1;}
+.fl-body h4{font-size:14px;font-weight:900;color:var(--text-1);margin-bottom:3px;}
+.fl-body p{font-size:13.5px;color:var(--text-3);line-height:1.8;}
+.fl-result{
+  margin-top:16px;background:var(--blue);color:#fff;
+  text-align:center;padding:13px;font-size:14.5px;font-weight:700;
+}
+
+/* ─── SECTION HEADING ─── */
+.sec-h3{
+  font-family:'Noto Serif KR',serif;
+  font-size:1.05rem;font-weight:900;color:var(--text-1);
+  margin:30px 0 14px;padding-left:12px;border-left:4px solid var(--blue);
+}
+.sec-h3.g{border-color:var(--green);}
+.sec-h3.r{border-color:var(--red);}
+.sec-h3.o{border-color:var(--orange);}
+.sec-h3.p{border-color:var(--purple);}
+.sec-h3.t{border-color:var(--teal);}
+
+/* ─── BADGE INLINE ─── */
+.ibadge{
+  display:inline-block;font-size:11px;font-weight:900;
+  padding:2px 8px;margin-right:4px;vertical-align:middle;color:#fff;
+}
+.ibadge.b{background:var(--blue);}
+.ibadge.g{background:var(--green);}
+.ibadge.r{background:var(--red);}
+.ibadge.o{background:var(--orange);}
+
+/* ─── SUMMARY ─── */
+.summary{
+  background:#10100e;color:#f4f0e4;
+  padding:48px 36px;margin-top:64px;text-align:center;
+  border-top:4px solid var(--gold-border);
+}
+.summary h3{
+  font-family:'Noto Serif KR',serif;
+  font-size:1.5rem;color:#ffd060;margin-bottom:28px;
+}
+.sum-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;max-width:860px;margin:0 auto 24px;text-align:left;
+}
+.sc{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,208,96,.35);
+  padding:16px 18px;
+}
+.sc .sc-t{
+  color:#ffd060;font-size:11px;font-weight:900;
+  letter-spacing:1px;margin-bottom:8px;
+}
+.sc p{font-size:13px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.summary .note{
+  font-size:11px;color:rgba(244,240,228,.35);
+  margin-top:16px;letter-spacing:.5px;
+}
+
+footer{
+  background:#080806;color:rgba(244,240,228,.3);
+  text-align:center;padding:20px;
+  font-size:11px;letter-spacing:1px;
+}
+hr.div{border:none;border-top:1px solid var(--border-lt);margin:40px 0 0;}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.chapter{animation:fadeUp .4s ease both;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">세법 강의 노트 Vol.3</div>
+    <h1>법인세법 완전정복<br><span class="acc">감가상각</span></h1>
+    <p class="hero-sub">법인세법 제23조 · 시행령 제24조~제34조 | 시행 2026.01.02</p>
+    <div class="hero-chips">
+      <span class="hero-chip">🏭 감가상각자산</span>
+      <span class="hero-chip">📐 상각방법 비교</span>
+      <span class="hero-chip">📊 상각범위액 계산</span>
+      <span class="hero-chip">⚖️ 시부인</span>
+      <span class="hero-chip">🔄 의제상각</span>
+      <span class="hero-chip">🔀 방법변경</span>
+      <span class="hero-chip">💼 양도·재평가</span>
+      <span class="hero-chip">⭐ 특례</span>
+    </div>
+  </div>
+</header>
+
+<!-- TOC -->
+<nav class="toc">
+  <div class="toc-inner">
+    <span class="toc-lbl">목차</span>
+    <a href="#ch1">① 기본 개념</a>
+    <a href="#ch2">② 상각방법 비교</a>
+    <a href="#ch3">③ 상각범위액 계산</a>
+    <a href="#ch4">④ 시부인</a>
+    <a href="#ch5">⑤ 의제상각</a>
+    <a href="#ch6">⑥ 방법변경</a>
+    <a href="#ch7">⑦ 양도·재평가</a>
+    <a href="#ch8">⑧ 특례</a>
+    <a href="#sum">핵심요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════
+     CH1. 감가상각 기본개념
+══════════════════════════════ -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Chapter 01</span>
+    <h2>감가상각이란? — 기본 개념</h2>
+    <span class="ch-ref">법인세법 제23조 | 시행령 제24조</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="ib-icon">🏭</span>
+    <p>
+      건물·기계·특허권 등 오래 사용하는 자산은 시간이 지날수록 가치가 줄어듭니다.<br>
+      <strong>감가상각</strong>이란 이 감소분을 매년 나눠서 비용(손금)으로 인식하는 제도입니다.<br>
+      세법은 법인이 <strong>결산에서 계상한 감가상각비</strong>를 한도(상각범위액) 이내에서만 손금으로 인정합니다.
+    </p>
+  </div>
+
+  <!-- 법 제23조 -->
+  <div class="law-card">
+    <div class="lc-hd h1">
+      <span class="lc-no">법 제23조</span>
+      <span class="lc-title">감가상각비의 손금불산입</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c1">
+        <span class="cn c1">①</span>내국법인이 각 사업연도의 결산을 확정할 때 토지를 제외한 건물, 기계 및 장치, 특허권 등 감가상각자산에 대한 감가상각비를 손비로 계상한 경우에는 <strong>상각범위액의 범위 내</strong>에서 손금에 산입하고, 상각범위액을 초과하는 금액은 <strong>손금에 산입하지 아니</strong>한다.
+      </div>
+      <div class="clause c1">
+        <span class="cn c1">②</span>한국채택국제회계기준(K-IFRS) 적용 법인의 유형자산·무형자산은 일정 기준에 따라 <strong>추가 손금산입</strong>이 가능하다.
+      </div>
+      <div class="clause c1">
+        <span class="cn c1">③</span>법인세를 <strong>면제·감면</strong>받은 경우에는 상각범위액만큼을 <strong>반드시 손금에 산입</strong>하여야 한다 (의제상각).
+      </div>
+      <div class="clause c1">
+        <span class="cn c1">⑤</span>상각범위액을 초과하여 손금 불산입된 금액(<strong>상각부인액</strong>)은 그 후 사업연도에 시인부족액 범위 내에서 손금에 산입한다.
+      </div>
+    </div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 감가상각이란?">
+    <p>
+      🚗 회사가 5,000만 원짜리 트럭을 샀어요. 이 트럭은 5년 쓰면 고물이 돼요.<br>
+      그럼 5,000만 원을 한 해에 다 비용으로 쓰면 안 될까요?<br><br>
+      세법은 이렇게 말해요: <span class="bl">"5년에 걸쳐 매년 1,000만 원씩 비용으로 인정해 드릴게요!"</span><br><br>
+      이게 바로 <span class="hl">감가상각</span>입니다!<br><br>
+      ⚠️ 단, 한 해에 2,000만 원을 비용으로 계상하면?<br>
+      → 세법이 정한 한도(상각범위액) 1,000만 원만 인정 → 초과분 1,000만 원은 <span class="bad">손금불산입(세금에서 빼주지 않음)</span>
+    </p>
+  </div>
+
+  <h3 class="sec-h3">감가상각자산의 범위 (시행령 제24조)</h3>
+  <div class="g2">
+    <div class="gcol neutral">
+      <div class="gc-title">유형자산</div>
+      <ul>
+        <li>건물 및 구축물</li>
+        <li>기계 및 장치</li>
+        <li>선박, 항공기, 차량운반구</li>
+        <li>공구, 기구, 비품</li>
+        <li>동물, 식물</li>
+      </ul>
+    </div>
+    <div class="gcol purple">
+      <div class="gc-title">무형자산</div>
+      <ul>
+        <li>영업권, 디자인권, 실용신안권</li>
+        <li>특허권, 상표권, 어업권</li>
+        <li>광업권, 전기·가스·수도 공급시설</li>
+        <li>개발비, 사용수익기부자산</li>
+        <li>주파수이용권, 공항시설관리권</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel pr">
+    ❌ <strong>감가상각 불가 자산:</strong> 토지 (가치가 소멸되지 않음), 건설 중인 자산 (아직 사용 전), 시간의 경과로 가치가 감소하지 않는 자산
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ══════════════════════════════
+     CH2. 상각방법 비교
+══════════════════════════════ -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Chapter 02</span>
+    <h2>감가상각방법 — 무신고 vs 신고 선택</h2>
+    <span class="ch-ref">시행령 제26조 · 제26조의2</span>
+  </div>
+
+  <div class="intro i2">
+    <span class="ib-icon">📐</span>
+    <p>
+      법인이 감가상각방법을 <strong>신고하지 않으면</strong> 자산 유형에 따라 법에서 정한 방법이 강제 적용됩니다.<br>
+      반면 <strong>신고 시 선택</strong>할 수 있는 방법이 자산별로 다릅니다.
+    </p>
+  </div>
+
+  <!-- 법 조문 -->
+  <div class="law-card">
+    <div class="lc-hd h2">
+      <span class="lc-no">시행령 제26조</span>
+      <span class="lc-title">상각범위액의 계산 — 상각방법</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c2">
+        <span class="cn c2">① 1호</span><strong>건축물과 무형자산(일부 제외):</strong> 정액법
+      </div>
+      <div class="clause c2">
+        <span class="cn c2">① 2호</span><strong>건축물 외 유형자산(기계·장치·차량·선박 등):</strong> 정률법 또는 정액법 (법인이 납세지 관할세무서장에게 신고한 방법)
+      </div>
+      <div class="clause c2">
+        <span class="cn c2">① 3~9호</span><strong>광업용 유형자산 및 무형자산:</strong> 생산량비례법 또는 정액법<br>
+        <strong>개발비:</strong> 사용 가능한 날부터 20년 이내 정액법<br>
+        <strong>주파수이용권·공항시설관리권 등:</strong> 주무관청 인가기간 또는 존속기간 내 정액법
+      </div>
+      <div class="clause c2">
+        <span class="cn c2">⑤</span><strong>미신고 시 적용 방법(기본값):</strong><br>
+        건축물·무형자산 → 정액법 / 기계·장치 등 → 정률법
+      </div>
+    </div>
+  </div>
+
+  <!-- 방법별 비교표 -->
+  <h3 class="sec-h3 g">자산별 상각방법 종합 비교표</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>자산 구분</th>
+          <th class="g">무신고 시 (기본 적용)</th>
+          <th>신고 시 선택 가능</th>
+          <th>공통점</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>건축물</strong></td>
+          <td class="td-ok">정액법 (강제)</td>
+          <td class="td-bl">정액법만 가능 (선택 없음)</td>
+          <td>정액법으로 고정</td>
+        </tr>
+        <tr>
+          <td><strong>기계·장치·차량 등<br>건축물 외 유형자산</strong></td>
+          <td class="td-ok">정률법</td>
+          <td class="td-bl">정률법 또는 정액법</td>
+          <td>정률법 포함 가능</td>
+        </tr>
+        <tr>
+          <td><strong>무형자산 (일반)</strong></td>
+          <td class="td-ok">정액법 (강제)</td>
+          <td class="td-bl">정액법만 가능</td>
+          <td>정액법으로 고정</td>
+        </tr>
+        <tr>
+          <td><strong>광업용 유형·무형자산</strong></td>
+          <td class="td-ok">생산량비례법</td>
+          <td class="td-bl">생산량비례법 또는 정액법</td>
+          <td>생산량비례법 포함</td>
+        </tr>
+        <tr>
+          <td><strong>개발비</strong></td>
+          <td class="td-ok">20년 이내 정액법</td>
+          <td class="td-bl">20년 이내 정액법</td>
+          <td>정액법 고정</td>
+        </tr>
+        <tr>
+          <td><strong>주파수이용권 등</strong></td>
+          <td class="td-ok">인가기간 내 정액법</td>
+          <td class="td-bl">인가기간 내 정액법</td>
+          <td>정액법 고정</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 정액법 vs 정률법 심층 비교 -->
+  <h3 class="sec-h3 g">정액법 vs 정률법 — 공통점 & 차이점</h3>
+  <div class="g2">
+    <div class="gcol neutral">
+      <div class="gc-title">📏 정액법 (Straight-Line Method)</div>
+      <ul>
+        <li>매년 <strong>동일한 금액</strong>을 상각</li>
+        <li>공식: 취득가액 × (1/내용연수)</li>
+        <li>건축물·무형자산에 강제 적용</li>
+        <li>장점: 예측 가능, 안정적</li>
+        <li>단점: 초기 절세 효과 적음</li>
+      </ul>
+    </div>
+    <div class="gcol orange">
+      <div class="gc-title">📉 정률법 (Declining-Balance Method)</div>
+      <ul>
+        <li>매년 <strong>장부가액의 일정률</strong>을 상각</li>
+        <li>공식: 장부가액(기초) × 상각률</li>
+        <li>기계·장치 등 무신고 기본값</li>
+        <li>장점: 초기에 많이 상각 → 초기 절세</li>
+        <li>단점: 후기로 갈수록 상각액 감소</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel pb">
+    <strong>공통점:</strong> ① 취득가액(또는 기준가액)을 기초로 계산 ② 내용연수 범위 내 적용 ③ 잔존가액은 취득가액의 5% 또는 0원 기준 ④ 상각범위액을 초과하면 손금불산입
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 정액법 vs 정률법">
+    <p>
+      🏗️ 1,000만 원짜리 기계, 내용연수 5년이라면:<br><br>
+      <span class="bl">【정액법】</span> 매년 똑같이 200만 원씩 → 5년간 균등 상각<br>
+      1년차: 200 / 2년차: 200 / 3년차: 200 / 4년차: 200 / 5년차: 200<br><br>
+      <span class="hl">【정률법】</span> 상각률 0.4라면 → 매년 남은 금액의 40% 상각<br>
+      1년차: 1,000×0.4=<span class="ok">400</span> / 2년차: 600×0.4=<span class="ok">240</span> / 3년차: 144 / 4년차: 86 / 5년차: 52<br><br>
+      💡 <span class="hl">정률법은 초기에 더 많이 공제</span> → 초기 절세 효과 큼!<br>
+      그래서 기계·장치처럼 초기에 많이 쓰는 자산에 유리합니다.
+    </p>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ══════════════════════════════
+     CH3. 상각범위액 계산
+══════════════════════════════ -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Chapter 03</span>
+    <h2>감가상각비 한도 — 상각범위액 계산</h2>
+    <span class="ch-ref">시행령 제26조 · 제28조 | 시행규칙 제15조</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="ib-icon">📊</span>
+    <p>
+      상각범위액은 세법상 인정되는 감가상각비의 <strong>연간 최대 한도</strong>입니다.<br>
+      이 금액 이하로만 손금산입이 가능하며, <strong>취득가액 × 상각률</strong>로 계산합니다.<br>
+      상각률은 <strong>내용연수</strong>에 따라 결정되며, 내용연수는 자산 종류별로 법으로 정합니다.
+    </p>
+  </div>
+
+  <div class="law-card">
+    <div class="lc-hd h3">
+      <span class="lc-no">시행령 제28조</span>
+      <span class="lc-title">내용연수와 상각률</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c3">
+        <span class="cn c3">① 1호</span>시험연구용자산·무형자산: 시행규칙 별표에서 정한 <strong>고정 내용연수</strong> 및 상각률 적용
+      </div>
+      <div class="clause c3">
+        <span class="cn c3">① 2호</span>그 밖의 유형자산: 시행규칙 별표의 <strong>기준내용연수 ± 25% 범위</strong>에서 법인이 신고한 내용연수 적용
+      </div>
+      <div class="clause c3">
+        <span class="cn c3">미신고 시</span>기준내용연수를 그대로 적용 (별표 기준값)
+      </div>
+    </div>
+  </div>
+
+  <!-- 상각범위액 계산 공식 -->
+  <h3 class="sec-h3 r">상각범위액 계산 공식</h3>
+
+  <div class="formula">
+    <div class="f-main">【정액법】 상각범위액 = 취득가액 × (1 ÷ 내용연수)</div>
+    <div class="f-note">단, 잔존가액을 취득가액의 5%로 보는 경우: (취득가액 - 잔존가액) × (1 ÷ 내용연수)</div>
+  </div>
+  <div class="formula" style="background:var(--orange);margin-top:2px;">
+    <div class="f-main">【정률법】 상각범위액 = 기초 장부가액(미상각잔액) × 상각률</div>
+    <div class="f-note">기초 장부가액 = 취득가액 - 전기까지 누적 감가상각액</div>
+  </div>
+  <div class="formula" style="background:var(--teal);margin-top:2px;">
+    <div class="f-main">【생산량비례법】 상각범위액 = 취득가액 × (당기 채굴량 ÷ 총 추정 매장량)</div>
+    <div class="f-note">광업용 자산에 적용</div>
+  </div>
+
+  <!-- 내용연수 주요 예시 -->
+  <h3 class="sec-h3 r">주요 자산별 기준내용연수</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>자산 구분</th>
+          <th>기준내용연수</th>
+          <th>적용 범위 (±25%)</th>
+          <th>상각방법</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>철근콘크리트 건물</td>
+          <td class="td-bl"><strong>40년</strong></td>
+          <td>30년 ~ 50년</td>
+          <td class="td-ok">정액법(강제)</td>
+        </tr>
+        <tr>
+          <td>목조 건물</td>
+          <td class="td-bl"><strong>20년</strong></td>
+          <td>15년 ~ 25년</td>
+          <td class="td-ok">정액법(강제)</td>
+        </tr>
+        <tr>
+          <td>기계 및 장치</td>
+          <td class="td-bl"><strong>8년</strong> (업종 따라 상이)</td>
+          <td>6년 ~ 10년</td>
+          <td class="td-hl">정률법(무신고 기본)</td>
+        </tr>
+        <tr>
+          <td>차량운반구</td>
+          <td class="td-bl"><strong>5년</strong></td>
+          <td>4년 ~ 6년</td>
+          <td class="td-hl">정률법(무신고 기본)</td>
+        </tr>
+        <tr>
+          <td>특허권</td>
+          <td class="td-bl"><strong>7년</strong></td>
+          <td>고정 (변경 불가)</td>
+          <td class="td-ok">정액법(강제)</td>
+        </tr>
+        <tr>
+          <td>영업권</td>
+          <td class="td-bl"><strong>5년</strong></td>
+          <td>고정 (변경 불가)</td>
+          <td class="td-ok">정액법(강제)</td>
+        </tr>
+        <tr>
+          <td>개발비</td>
+          <td class="td-bl"><strong>20년 이내</strong></td>
+          <td>법인 자율 결정</td>
+          <td class="td-ok">정액법(강제)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="story">
+    <div class="story-lbl">📖 상각범위액 계산 실전 예시</div>
+    <p>
+      <strong>㈜대한기계</strong>가 기계장치를 취득가액 <span class="hl">1,000만 원</span>에 취득, 내용연수 5년, 정률법(상각률 0.369) 적용.<br><br>
+      <strong>연도별 상각범위액 계산:</strong><br>
+      1년차: 1,000 × 0.369 = <span class="ok">369만 원</span><br>
+      2년차: (1,000-369) × 0.369 = 631 × 0.369 = <span class="ok">232.8만 원</span><br>
+      3년차: (631-232.8) × 0.369 = 398.2 × 0.369 = <span class="ok">146.9만 원</span><br>
+      …후기로 갈수록 상각액 감소<br><br>
+      만약 회사가 1년차에 <span class="bad">500만 원을 감가상각비로 계상</span>했다면?<br>
+      → 상각범위액 369만 원 초과분 <span class="bad">131만 원 = 상각부인액 → 손금불산입!</span>
+    </p>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ══════════════════════════════
+     CH4. 시부인
+══════════════════════════════ -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Chapter 04</span>
+    <h2>시부인 (是否認) — 상각부인·시인부족의 처리</h2>
+    <span class="ch-ref">법 제23조 ⑤ | 시행령 제32조</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="ib-icon">⚖️</span>
+    <p>
+      <strong>시부인(是否認)</strong>이란 세법상 상각범위액과 회사가 계상한 감가상각비를 비교하여<br>
+      초과분은 <strong>부인(손금불산입)</strong>하고, 부족분은 <strong>시인(인정)</strong>하는 세무조정 절차입니다.
+    </p>
+  </div>
+
+  <div class="law-card">
+    <div class="lc-hd h4">
+      <span class="lc-no">시행령 제32조</span>
+      <span class="lc-title">상각부인액 등의 처리</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c4">
+        <span class="cn c4">①</span><strong>상각부인액</strong>(계상액 &gt; 상각범위액인 경우 초과분)은 그 후 사업연도에 법인이 손비로 계상한 감가상각비가 상각범위액에 <strong>미달하는 경우</strong>(시인부족액) 그 미달액 한도로 <strong>손금에 산입</strong>한다.
+      </div>
+      <div class="clause c4">
+        <span class="cn c4">②</span>전기에 손금불산입된 상각부인액은 당기에 <strong>감가상각비를 계상하지 않더라도</strong> 상각범위액 범위 내에서 손금산입이 가능하다.
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sec-h3 o">시부인 2가지 유형</h3>
+  <div class="g2">
+    <div class="gcol bad">
+      <div class="gc-title">❌ 상각부인 (손금불산입)</div>
+      <p><strong>계상액 > 상각범위액</strong><br><br>
+      초과분 = <strong>상각부인액</strong><br>
+      → 당기에는 손금 불인정<br>
+      → 유보로 처분 (자산조정계정 증가)<br>
+      → 차기 이후 시인부족 발생 시 추인<br><br>
+      <strong>사유:</strong> 법인이 회계상 과도하게 감가상각비를 계상한 경우</p>
+    </div>
+    <div class="gcol go">
+      <div class="gc-title">✅ 시인부족 (추가 공제 없음)</div>
+      <p><strong>계상액 < 상각범위액</strong><br><br>
+      부족분 = <strong>시인부족액</strong><br>
+      → 추가 손금산입 <strong>불가</strong> (임의상각 원칙)<br>
+      → 단, 전기 상각부인액 있으면 그 범위서 추인<br>
+      → 법인이 적게 계상한 것은 그대로 인정<br><br>
+      <strong>사유:</strong> 결손 회피, 이익 조정 등의 이유로 의도적 미계상</p>
+    </div>
+  </div>
+
+  <div class="formula">
+    <div class="f-main">시부인 판정: 계상액 - 상각범위액</div>
+    <div class="f-note">양수(+) → 상각부인액(손금불산입 유보) | 음수(-) → 시인부족액(전기 부인액 있으면 그 범위에서 추인)</div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 시부인">
+    <p>
+      📦 세법이 "이 기계는 올해 최대 300만 원까지 비용 인정" 이라고 했는데:<br><br>
+      Case A: 회사가 500만 원 계상 → 초과 200만 원은 <span class="bad">올해 비용 안 됨 (상각부인액 200만 원)</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;→ 하지만 내년에 회사가 100만 원만 계상하면 부족분 200만 원 범위서 <span class="ok">200만 원 추인 가능!</span><br><br>
+      Case B: 회사가 100만 원만 계상 → 200만 원 부족 (시인부족액)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;→ <span class="bad">추가로 더 빼줄 수는 없음!</span> (법인 임의로 적게 계상한 것을 강제로 올려주지 않음)<br><br>
+      요약: <span class="hl">많이 계상하면 → 나중에 돌려줌 / 적게 계상하면 → 끝!</span>
+    </p>
+  </div>
+
+  <div class="story">
+    <div class="story-lbl">📖 3년에 걸친 시부인 처리 사례</div>
+    <p>
+      기계(취득가액 1,000만 원), 상각범위액 300만 원/년<br><br>
+      1년차: 회사 계상 500만 원 → <span class="bad">상각부인 200만 원 (유보)</span><br>
+      2년차: 회사 계상 100만 원 → 시인부족 200만 원 → 전기 부인액 200만 원 중 <span class="ok">200만 원 추인 → 유보 0</span><br>
+      3년차: 회사 계상 300만 원 → 상각범위액 정확히 맞음 → <span class="hl">세무조정 없음</span><br><br>
+      결론: 1년차에 부인된 200만 원은 2년차에 모두 회수됐습니다!<br>
+      상각부인액은 영구적으로 사라지는 게 아니라, <span class="ok">일시 이연</span>되는 것입니다.
+    </p>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ══════════════════════════════
+     CH5. 감가상각 의제
+══════════════════════════════ -->
+<section class="chapter" id="ch5">
+  <div class="ch-hd">
+    <span class="ch-badge b5">Chapter 05</span>
+    <h2>감가상각의 의제 — 강제 상각</h2>
+    <span class="ch-ref">법 제23조 ③ | 시행령 제30조</span>
+  </div>
+
+  <div class="intro i5">
+    <span class="ib-icon">🔄</span>
+    <p>
+      법인세를 <strong>면제·감면</strong>받은 사업연도에는 실제 감가상각비를 계상하지 않아도<br>
+      세법상 <strong>상각범위액만큼을 반드시 감가상각한 것으로 간주</strong>합니다.<br>
+      이를 <strong>감가상각의 의제(擬制)</strong>라고 합니다.
+    </p>
+  </div>
+
+  <div class="law-card">
+    <div class="lc-hd h5">
+      <span class="lc-no">시행령 제30조</span>
+      <span class="lc-title">감가상각의 의제</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c5">
+        <span class="cn c5">①</span>각 사업연도의 소득에 대하여 법과 다른 법률에 따라 <strong>법인세를 면제받거나 감면받은 경우</strong>에는 개별 자산에 대한 감가상각비가 법 제23조①에 따른 <strong>상각범위액이 되도록 감가상각비를 손금에 산입하여야</strong> 한다.
+      </div>
+      <div class="clause c5">
+        <span class="cn c5">② (K-IFRS 법인)</span>한국채택국제회계기준 적용 법인은 법 제23조②에 따라 추가로 손금에 산입할 수 있는 감가상각비를 기준으로 의제한다.
+      </div>
+    </div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 감가상각 의제">
+    <p>
+      🎁 회사가 올해 법인세 감면을 받았어요! 기뻐서 감가상각비를 0원으로 계상했습니다.<br><br>
+      세법이 말하길: <span class="bad">"안 됩니다! 감면받은 해에는 무조건 상각범위액만큼 상각한 걸로 봐요!"</span><br><br>
+      <strong>왜냐면?</strong><br>
+      → 감면 연도에 감가상각을 안 하면, 다음 해에 더 많이 상각해서 세금을 줄일 수 있어요.<br>
+      → 국가가 감면 혜택을 줬는데, 그 이후에도 계속 절세 효과를 이중으로 누리면 안 되죠!<br><br>
+      결과: 의제상각으로 장부가액이 낮아지면, 나중에 상각할 수 있는 금액도 줄어들어요.
+    </p>
+  </div>
+
+  <div class="panel pp">
+    ⚠️ <strong>의제 대상:</strong> ① 법인세법에 따른 감면 ② 조세특례제한법에 따른 감면 ③ 그 밖에 법률에 따른 감면 모두 해당<br>
+    단, <strong>세액감면</strong>이 아닌 소득공제·세액공제만 받은 경우에는 의제상각 적용 없음
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ══════════════════════════════
+     CH6. 감가상각방법 변경
+══════════════════════════════ -->
+<section class="chapter" id="ch6">
+  <div class="ch-hd">
+    <span class="ch-badge b6">Chapter 06</span>
+    <h2>감가상각방법 변경 — 시기·절차</h2>
+    <span class="ch-ref">시행령 제27조</span>
+  </div>
+
+  <div class="intro i6">
+    <span class="ib-icon">🔀</span>
+    <p>
+      원칙적으로 한 번 신고한 감가상각방법은 변경이 불가합니다.<br>
+      그러나 합병·사업 인수 등 <strong>특별한 사유</strong>가 있는 경우, 납세지 관할세무서장의 <strong>승인</strong>을 받아 변경할 수 있습니다.<br>
+      변경 신청은 <strong>변경하려는 사업연도의 종료일 이전 3개월</strong>까지 해야 합니다.
+    </p>
+  </div>
+
+  <div class="law-card">
+    <div class="lc-hd h6">
+      <span class="lc-no">시행령 제27조</span>
+      <span class="lc-title">감가상각방법의 변경</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c6">
+        <span class="cn c6">① 1호</span>상각방법이 서로 다른 법인이 <strong>합병(분할합병 포함)</strong>한 경우
+      </div>
+      <div class="clause c6">
+        <span class="cn c6">① 2호</span>상각방법이 서로 다른 사업자의 사업을 <strong>인수 또는 승계</strong>한 경우
+      </div>
+      <div class="clause c6">
+        <span class="cn c6">① 3호</span>「외국인투자촉진법」에 의하여 외국인이 <strong>출자</strong>한 경우
+      </div>
+      <div class="clause c6">
+        <span class="cn c6">① 4호</span>회계정책 변경 등 <strong>기타 기획재정부령으로 정하는 경우</strong>
+      </div>
+      <div class="clause c6">
+        <span class="cn c6">② 신청 기한</span>변경하려는 사업연도의 <strong>종료일 이전 3개월이 되는 날</strong>까지 납세지 관할세무서장에게 신고(승인 신청)
+      </div>
+    </div>
+  </div>
+
+  <h3 class="sec-h3 t">감가상각방법 변경 절차 흐름도</h3>
+  <div class="flow-box">
+    <div class="fl-row">
+      <div class="fl-axis">
+        <div class="fl-circle b1">1</div>
+        <div class="fl-line"></div>
+      </div>
+      <div class="fl-body">
+        <h4>변경 사유 발생 확인</h4>
+        <p>합병·분할합병, 사업 인수, 외국인 출자, 기타 기획재정부령 사유 해당 여부 검토</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-axis">
+        <div class="fl-circle b2">2</div>
+        <div class="fl-line"></div>
+      </div>
+      <div class="fl-body">
+        <h4>신청 기한 확인 ⚠️ 핵심!</h4>
+        <p>변경하려는 <strong>사업연도 종료일 3개월 전</strong>까지 신청<br>
+        예: 12월 결산법인 → <strong>9월 30일까지</strong> 신청 必</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-axis">
+        <div class="fl-circle b3">3</div>
+        <div class="fl-line"></div>
+      </div>
+      <div class="fl-body">
+        <h4>납세지 관할 세무서장에게 승인 신청</h4>
+        <p>감가상각방법 변경 승인신청서 제출 (시행규칙 서식 이용)</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-axis">
+        <div class="fl-circle b4">4</div>
+      </div>
+      <div class="fl-body" style="padding-bottom:0;">
+        <h4>승인 후 변경된 방법 적용</h4>
+        <p>승인받은 사업연도부터 새 상각방법 적용. 미승인 시 기존 방법 유지.</p>
+      </div>
+    </div>
+    <div class="fl-result">⏰ 12월 결산법인 기준: 매년 9월 30일까지 신청해야 당해 연도부터 변경 가능!</div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 감가상각방법 변경">
+    <p>
+      🤝 A회사(정률법 사용)와 B회사(정액법 사용)가 합병했어요.<br>
+      두 회사의 방법이 달라서 통일해야 할 필요가 생겼습니다.<br><br>
+      이런 경우: <span class="ok">세무서장 승인을 받아 변경 가능!</span><br><br>
+      ⚠️ 중요 포인트 — <span class="bad">기한을 놓치면 그해는 변경 불가!</span><br>
+      12월 결산법인이라면 → <span class="hl">9월 30일</span>까지 신청해야 그해부터 적용<br>
+      10월에 신청하면 → <span class="bad">다음 해부터 적용</span>
+    </p>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ══════════════════════════════
+     CH7. 양도 및 재평가
+══════════════════════════════ -->
+<section class="chapter" id="ch7">
+  <div class="ch-hd">
+    <span class="ch-badge b7">Chapter 07</span>
+    <h2>감가상각자산 양도 및 재평가 시 처리</h2>
+    <span class="ch-ref">법 제42조 | 시행령 제32조 · 제33조</span>
+  </div>
+
+  <div class="intro i7">
+    <span class="ib-icon">💼</span>
+    <p>
+      감가상각자산을 <strong>양도(처분)</strong>하거나 <strong>재평가</strong>하는 경우,<br>
+      세무상 장부가액(취득가액 - 누적 손금인정 감가상각액)을 기준으로<br>
+      <strong>양도차익 또는 처분손익</strong>을 계산합니다.
+    </p>
+  </div>
+
+  <h3 class="sec-h3 g" style="border-color:var(--gold);">① 감가상각자산 양도(처분) 시</h3>
+  <div class="law-card">
+    <div class="lc-hd h7">
+      <span class="lc-no">양도 처리</span>
+      <span class="lc-title">세무상 장부가액 기준 처분손익 계산</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c7">
+        <span class="cn c7">양도차익</span><strong>양도가액 - 세무상 장부가액(취득가액 - 누적 손금산입 감가상각액)</strong><br>
+        양도차익은 익금, 처분손실은 손금으로 처리
+      </div>
+      <div class="clause c7">
+        <span class="cn c7">주의</span>세무상 장부가액은 회계상 장부가액과 다를 수 있음 (상각부인액 누적분 차이 존재)<br>
+        → 상각부인액이 남아있는 경우 양도 시 그 금액 추인(손금산입)
+      </div>
+    </div>
+  </div>
+
+  <div class="formula">
+    <div class="f-main">처분손익 = 양도가액 − (취득가액 − 세무상 누적 감가상각액)</div>
+    <div class="f-note">세무상 누적 감가상각액 = 손금으로 실제 인정된 감가상각액 합계 (상각부인액 제외)</div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 감가상각자산 양도">
+    <p>
+      🚚 1,000만 원 기계를 3년간 사용 중 (세무상 누적상각 600만 원).<br>
+      이 기계를 500만 원에 팔았습니다.<br><br>
+      세무상 장부가액 = 1,000 - 600 = <span class="bl">400만 원</span><br>
+      처분이익 = 500 - 400 = <span class="ok">100만 원 → 익금(세금 내야 함)</span><br><br>
+      만약 <span class="bad">200만 원에 팔았다면</span>:<br>
+      처분손실 = 200 - 400 = <span class="bad">-200만 원 → 손금(세금 줄어듦)</span>
+    </p>
+  </div>
+
+  <h3 class="sec-h3" style="border-color:var(--gold);">② 자산 재평가 시</h3>
+  <div class="law-card">
+    <div class="lc-hd h7">
+      <span class="lc-no">법 제42조</span>
+      <span class="lc-title">자산·부채의 평가 — 재평가</span>
+    </div>
+    <div class="lc-body">
+      <div class="clause c7">
+        <span class="cn c7">원칙</span>감가상각자산의 장부가액을 임의로 증액·감액한 경우 세금 계산 시 <strong>평가 전 가액 적용</strong>. 즉, 임의 재평가는 세법상 무효.
+      </div>
+      <div class="clause c7">
+        <span class="cn c7">예외 (K-IFRS)</span>한국채택국제회계기준 적용 법인은 유형자산 재평가 시 <strong>재평가모형</strong>을 통해 장부가액 증액 가능. 단, 세법상 추가 상각은 일정 기준 내에서만 허용.
+      </div>
+      <div class="clause c7">
+        <span class="cn c7">재평가이익</span>재평가로 장부가액이 증가해도 → <strong>익금불산입</strong> (미실현이익이므로 세금 부과 없음)<br>
+        단, 재평가 자산을 이후 양도 시 → 증액된 취득가액 기준으로 양도차익 계산
+      </div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="gcol go">
+      <div class="gc-title">✅ 재평가 인정 경우</div>
+      <ul>
+        <li>K-IFRS 적용 법인의 재평가모형</li>
+        <li>보험업법 등 법률에 따른 평가증</li>
+        <li>파손·멸실로 인한 유형자산 감액</li>
+        <li>외화자산·부채의 환율 환산</li>
+      </ul>
+    </div>
+    <div class="gcol bad">
+      <div class="gc-title">❌ 재평가 불인정 (세법상 무시)</div>
+      <ul>
+        <li>시가 상승을 이유로 한 임의 증액</li>
+        <li>법적 근거 없는 자산 가치 조정</li>
+        <li>합리적 사유 없는 장부 감액</li>
+        <li>단순 시장가 반영 재평가</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ══════════════════════════════
+     CH8. 특례
+══════════════════════════════ -->
+<section class="chapter" id="ch8">
+  <div class="ch-hd">
+    <span class="ch-badge b8">Chapter 08</span>
+    <h2>감가상각 특례</h2>
+    <span class="ch-ref">시행령 제28조·제29조·제31조 | 조세특례제한법</span>
+  </div>
+
+  <div class="intro i8">
+    <span class="ib-icon">⭐</span>
+    <p>
+      일반 규정 외에 <strong>중고자산, 즉시상각, 내용연수 특례, 가속상각</strong> 등<br>
+      특정 자산이나 상황에 적용되는 <strong>특례 규정</strong>이 있습니다.
+    </p>
+  </div>
+
+  <div class="g3">
+    <!-- 특례 1 -->
+    <div class="gcol neutral">
+      <div class="gc-title">🔧 중고자산 상각특례<br>(시행령 제29조)</div>
+      <p>
+        <strong>대상:</strong> 중고자산 취득 시<br><br>
+        <strong>방법:</strong> 기준내용연수의 50% 이내로 단축 가능<br>
+        (단, 최소 2년 이상)<br><br>
+        <strong>효과:</strong> 내용연수를 단축하면 상각률 높아짐<br>
+        → 더 빠른 비용 인식 가능<br><br>
+        <strong>절차:</strong> 단축 내용연수를 납세지 관할세무서장에 신고
+      </p>
+    </div>
+    <!-- 특례 2 -->
+    <div class="gcol orange">
+      <div class="gc-title">⚡ 즉시상각 특례<br>(시행령 제31조)</div>
+      <p>
+        <strong>대상:</strong> 소액 자산 등<br><br>
+        <strong>내용:</strong><br>
+        · 취득가액 100만 원 이하 → 취득 즉시 전액 손금 가능<br>
+        · 단, 전체 수량 기준 판단<br><br>
+        <strong>효과:</strong> 감가상각 과정 없이 일시 비용 처리<br><br>
+        <strong>추가:</strong> 연구·시험용 기기도 즉시상각 허용
+      </p>
+    </div>
+    <!-- 특례 3 -->
+    <div class="gcol teal">
+      <div class="gc-title">📅 내용연수 특례<br>(시행령 제28조 ②③)</div>
+      <p>
+        <strong>내용연수 범위 조정:</strong><br>
+        기준내용연수 ±25% 범위 내 선택 가능<br><br>
+        <strong>특례 신청:</strong> 사업연도 개시일 전 3개월부터<br>
+        종료일까지 세무서장에게 신고<br><br>
+        <strong>조기 마모 자산:</strong> 기준내용연수의 50%까지 단축<br>
+        (내용연수 단축 신청서 제출 필요)
+      </p>
+    </div>
+  </div>
+
+  <h3 class="sec-h3" style="border-color:#3d2000;">조세특례제한법상 가속상각 특례</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="t">특례 종류</th>
+          <th class="t">대상</th>
+          <th class="t">특례 내용</th>
+          <th class="t">근거</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>중소기업 가속상각</strong></td>
+          <td>중소기업이 취득한 사업용자산</td>
+          <td class="td-ok">내용연수의 50% 단축 또는 상각률 3배 적용</td>
+          <td>조특법 §28</td>
+        </tr>
+        <tr>
+          <td><strong>창업중소기업 특례</strong></td>
+          <td>창업 후 4년 이내 중소기업</td>
+          <td class="td-ok">감가상각 추가 손금산입 허용</td>
+          <td>조특법 §6</td>
+        </tr>
+        <tr>
+          <td><strong>에너지절약시설 투자</strong></td>
+          <td>에너지절약 설비·설치비</td>
+          <td class="td-ok">즉시상각 또는 조기상각 허용</td>
+          <td>조특법 §25</td>
+        </tr>
+        <tr>
+          <td><strong>연구개발설비</strong></td>
+          <td>R&amp;D 전용 기기·장치</td>
+          <td class="td-ok">즉시상각 가능</td>
+          <td>조특법 §10</td>
+        </tr>
+        <tr>
+          <td><strong>환경보전시설</strong></td>
+          <td>오염방지·처리시설</td>
+          <td class="td-ok">30% 추가 손금산입</td>
+          <td>조특법 §25의2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pgold">
+    💡 <strong>K-IFRS 법인 추가 손금산입 특례 (법 제23조②):</strong><br>
+    K-IFRS 적용 법인은 IFRS상 감가상각비가 법 §23①의 손금산입액보다 큰 경우,
+    그 차액을 추가로 손금에 산입할 수 있음. (2013년 이전 취득분: 종전감가상각비 기준, 2014년 이후 취득분: 기준감가상각비 기준)
+  </div>
+</section>
+
+<!-- ══ SUMMARY ══ -->
+<section class="summary" id="sum">
+  <h3>🏆 감가상각 핵심 8가지 요약</h3>
+  <div class="sum-grid">
+    <div class="sc">
+      <div class="sc-t">① 기본개념</div>
+      <p>자산 가치 감소를 매년 비용 인식<br>
+      <strong>결산 계상 + 상각범위액 이내</strong> 조건<br>토지는 상각 불가</p>
+    </div>
+    <div class="sc">
+      <div class="sc-t">② 무신고 기본값</div>
+      <p>건축물·무형자산 → <strong>정액법</strong><br>
+      기계·장치 → <strong>정률법</strong><br>광업용 → 생산량비례법</p>
+    </div>
+    <div class="sc">
+      <div class="sc-t">③ 상각범위액</div>
+      <p>정액법: 취득가 × 1/n<br>
+      정률법: 장부가 × 상각률<br>
+      <strong>내용연수 ±25% 범위</strong> 선택 가능</p>
+    </div>
+    <div class="sc">
+      <div class="sc-t">④ 시부인</div>
+      <p>초과 계상 → <strong>상각부인(유보)</strong><br>
+      부족 계상 → 시인부족(추가 공제 불가)<br>부인액은 차기 추인 가능</p>
+    </div>
+    <div class="sc">
+      <div class="sc-t">⑤ 의제상각</div>
+      <p>법인세 <strong>감면연도</strong>에는<br>
+      반드시 상각범위액만큼 상각 처리<br>안 해도 한 것으로 간주</p>
+    </div>
+    <div class="sc">
+      <div class="sc-t">⑥ 방법변경</div>
+      <p>합병·인수 등 특별사유 시 변경 가능<br>
+      <strong>사업연도 종료일 3개월 전</strong>까지<br>세무서장 승인 신청 必</p>
+    </div>
+    <div class="sc">
+      <div class="sc-t">⑦ 양도·재평가</div>
+      <p>양도 시: 세무 장부가 기준 처분손익<br>
+      재평가: 임의 평가는 세법 무시<br>K-IFRS 재평가모형은 예외 인정</p>
+    </div>
+    <div class="sc">
+      <div class="sc-t">⑧ 특례</div>
+      <p>중고자산 50% 단축<br>
+      100만원 이하 즉시상각<br>
+      <strong>중소기업·R&amp;D 가속상각</strong> 특례</p>
+    </div>
+  </div>
+  <p class="note">법인세법 제23조 · 시행령 제24조~제34조 | 조세특례제한법 §6·§10·§25·§28 | 시행 2026.01.02<br>본 자료는 학습 목적의 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div><!-- /wrap -->
+<footer>법인세법 제23조 · 시행령 제24~34조 · 시행규칙 제15조 | 시행 2026.01.02</footer>
+
+</body>
+</html>

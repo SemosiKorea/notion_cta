@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 충당금·준비금 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --bg2:#edeae3; --white:#fff;
+  --t1:#0d0b08; --t2:#1e1b12; --t3:#3a3828; --t4:#5c5948;
+  --blue:#0a3460; --blue2:#1455a0; --blue-lt:#d4e6f8;
+  --green:#093d20; --green2:#167040; --green-lt:#cceedd;
+  --red:#5e0d18; --red2:#a01828; --red-lt:#f8d4da;
+  --orange:#4e2000; --orange2:#a04000; --orange-lt:#fce0c0;
+  --purple:#2e0c58; --purple2:#6020b0; --purple-lt:#e8d4f8;
+  --teal:#053535; --teal2:#0a7070; --teal-lt:#c8eaea;
+  --gold:#705000; --gold2:#b88000; --gold-lt:#fef0b8;
+  --navy:#0a1830; --navy2:#1a3060;
+  --bdr:#b0a890; --bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.85;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#050e1e 0%,#0a2850 50%,#0a3828 100%);color:#fff;padding:58px 24px 50px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.015) 50px,rgba(255,255,255,.015) 51px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-badge{display:inline-block;background:var(--gold2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 16px;margin-bottom:18px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:900;line-height:1.3;color:#fff;}
+.hero h1 em{color:#80e0d8;font-style:normal;}
+.hero-sub{margin-top:10px;font-size:13px;color:rgba(255,255,255,.72);letter-spacing:.5px;}
+.hero-chips{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:7px;}
+.hero-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:12px;padding:4px 13px;}
+
+/* TOC */
+.toc{background:#fff;border-bottom:3px solid var(--blue);padding:12px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:1000px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;padding:3px 9px;border:1px solid var(--blue);}
+.toc a:hover{background:var(--blue);color:#fff;}
+
+/* WRAP */
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 80px;}
+
+/* CHAPTER */
+.chapter{margin-top:52px;}
+.ch-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:12px;margin-bottom:26px;}
+.ch-badge{font-family:'Noto Serif KR',serif;font-size:12px;font-weight:900;padding:6px 16px;margin-right:16px;color:#fff;white-space:nowrap;letter-spacing:.5px;}
+.ch-badge.b1{background:var(--blue);}
+.ch-badge.b2{background:var(--green);}
+.ch-badge.b3{background:var(--orange);}
+.ch-badge.b4{background:var(--purple);}
+.ch-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.1rem,2.5vw,1.45rem);font-weight:900;color:var(--t1);}
+.ch-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+/* INTRO */
+.intro{padding:24px 28px;margin-bottom:20px;border-left:6px solid;color:#fff;}
+.intro.i1{background:var(--blue);  border-color:#80c0ff;}
+.intro.i2{background:var(--green); border-color:#60e090;}
+.intro.i3{background:var(--orange);border-color:#f0a050;}
+.intro.i4{background:var(--purple);border-color:#b080f8;}
+.intro .icon{font-size:1.9rem;display:block;margin-bottom:8px;}
+.intro p{font-size:14.5px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i2 strong{color:#90ffcc;}
+.intro.i3 strong{color:#ffcc80;}
+.intro.i4 strong{color:#e0c0ff;}
+
+/* LAW CARD */
+.lc{border:2px solid var(--bdr);background:var(--white);margin-bottom:16px;}
+.lc-hd{padding:11px 20px;display:flex;align-items:center;gap:10px;}
+.lc-hd.h1{background:var(--blue);}  .lc-hd.h2{background:var(--green);}
+.lc-hd.h3{background:var(--red);}   .lc-hd.h4{background:var(--orange);}
+.lc-hd.h5{background:var(--purple);}
+.lc-no{background:var(--gold2);color:#fff;font-size:11px;font-weight:900;padding:2px 10px;letter-spacing:.5px;white-space:nowrap;}
+.lc-ti{font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;color:#fff;}
+.lc-body{padding:20px 24px;}
+.cl{background:var(--bg2);border-left:4px solid;padding:11px 15px;margin-bottom:9px;font-size:13.5px;line-height:1.95;color:var(--t2);}
+.cl:last-child{margin-bottom:0;}
+.cl.c1{border-color:var(--blue);}  .cl.c2{border-color:var(--green);}
+.cl.c3{border-color:var(--red);}   .cl.c4{border-color:var(--orange);}
+.cl.c5{border-color:var(--purple);}
+.cn{font-weight:900;margin-right:5px;}
+.cn.b{color:var(--blue);} .cn.g{color:var(--green);} .cn.r{color:var(--red);}
+.cn.o{color:var(--orange);} .cn.p{color:var(--purple);}
+
+/* EASY */
+.easy{position:relative;background:var(--gold-lt);border:2px solid var(--gold2);padding:30px 26px 22px;margin:6px 0 20px;}
+.easy::before{content:attr(data-label);position:absolute;top:-13px;left:14px;background:var(--gold2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.easy p{font-size:14px;line-height:2.05;color:var(--t1);margin-top:6px;}
+.easy .ok{color:var(--green);font-weight:700;}  .easy .bad{color:var(--red);font-weight:700;}
+.easy .hl{color:var(--orange);font-weight:700;} .easy .bl{color:var(--blue);font-weight:700;}
+
+/* STORY */
+.story{background:#101008;border-left:5px solid var(--gold2);padding:24px 28px;margin:8px 0 20px;}
+.story-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);font-weight:900;margin-bottom:12px;}
+.story p{font-size:14px;line-height:2.1;color:#f0ece0;}
+.story strong{color:#ffe080;}
+.story .ok{color:#50e090;font-weight:700;} .story .bad{color:#ff8080;font-weight:700;}
+.story .hl{color:#ffd050;font-weight:700;}
+
+/* FORMULA */
+.formula{background:var(--blue);color:#fff;padding:18px 24px;margin:10px 0;text-align:center;line-height:2.2;}
+.formula .fm{font-size:1rem;color:#80e0ff;font-weight:700;}
+.formula .fn{font-size:12px;color:rgba(255,255,255,.7);font-weight:400;}
+.formula.g{background:var(--green);}
+.formula.o{background:var(--orange);}
+.formula.p{background:var(--purple);}
+
+/* PANEL */
+.panel{padding:14px 18px;margin:8px 0;font-size:14px;line-height:2;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--blue-lt); border-color:var(--blue);}
+.panel.pg{background:var(--green-lt);border-color:var(--green);}
+.panel.pr{background:var(--red-lt);  border-color:var(--red);}
+.panel.po{background:var(--orange-lt);border-color:var(--orange);}
+.panel.pp{background:var(--purple-lt);border-color:var(--purple);}
+.panel.pt{background:var(--teal-lt); border-color:var(--teal);}
+.panel.pg2{background:var(--gold-lt);border-color:var(--gold2);}
+
+/* TABLE */
+.tw{overflow-x:auto;margin:8px 0 18px;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+thead th{background:var(--blue);color:#fff;padding:11px 14px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.5px;}
+thead th.g{background:var(--green);} thead th.r{background:var(--red);}
+thead th.o{background:var(--orange);} thead th.p{background:var(--purple);}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--green);font-weight:700;} .tba{color:var(--red);font-weight:700;}
+.thl{color:var(--orange);font-weight:700;} .tbl{color:var(--blue);font-weight:700;}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:8px 0 18px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:8px 0 18px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+.gc{border:2px solid var(--bdr);background:var(--white);padding:18px;}
+.gc .gct{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:8px;border-bottom:2px solid;margin-bottom:12px;}
+.gc.blue .gct{color:var(--blue);border-color:var(--blue);}
+.gc.green .gct{color:var(--green);border-color:var(--green);}
+.gc.red .gct{color:var(--red);border-color:var(--red);}
+.gc.orange .gct{color:var(--orange);border-color:var(--orange);}
+.gc.purple .gct{color:var(--purple);border-color:var(--purple);}
+.gc.gold .gct{color:var(--gold);border-color:var(--gold2);}
+.gc ul{list-style:none;font-size:13px;line-height:2;color:var(--t2);}
+.gc.green ul li::before{content:'✅ ';}
+.gc.red   ul li::before{content:'❌ ';}
+.gc.blue  ul li::before{content:'▶ ';}
+.gc.orange ul li::before{content:'🔶 ';}
+.gc.purple ul li::before{content:'◆ ';}
+.gc.gold   ul li::before{content:'★ ';}
+.gc p{font-size:13px;color:var(--t2);line-height:1.85;}
+.gc strong{color:var(--t1);}
+
+/* SECTION H3 */
+.sh3{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:900;color:var(--t1);margin:26px 0 12px;padding-left:10px;border-left:4px solid var(--blue);}
+.sh3.g{border-color:var(--green);} .sh3.r{border-color:var(--red);}
+.sh3.o{border-color:var(--orange);} .sh3.p{border-color:var(--purple);}
+
+/* FLOW */
+.flow{background:var(--white);border:2px solid var(--bdr);padding:26px;margin:10px 0 18px;}
+.fl-row{display:flex;align-items:stretch;gap:13px;}
+.fl-ax{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.fl-ci{width:36px;height:36px;border-radius:50%;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fl-ci.b1{background:var(--blue);}  .fl-ci.b2{background:var(--green);}
+.fl-ci.b3{background:var(--red);}   .fl-ci.b4{background:var(--orange);}
+.fl-ci.b5{background:var(--purple);}
+.fl-ln{width:2px;flex:1;background:var(--bdr2);min-height:14px;margin:2px 0;}
+.fl-bd{padding:3px 0 22px;flex:1;}
+.fl-bd h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:3px;}
+.fl-bd p{font-size:13px;color:var(--t3);line-height:1.75;}
+.fl-res{margin-top:14px;background:var(--blue);color:#fff;text-align:center;padding:12px;font-size:14px;font-weight:700;}
+
+/* SUMMARY */
+.summary{background:#0c0c08;color:#f4f0e4;padding:44px 36px;margin-top:60px;text-align:center;border-top:4px solid var(--gold2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.45rem;color:#ffd060;margin-bottom:26px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:900px;margin:0 auto 20px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,208,96,.3);padding:16px 18px;}
+.sc .st{color:#ffd060;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:8px;}
+.sc p{font-size:12.5px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;letter-spacing:.5px;}
+
+footer{background:#070706;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:1px solid var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.chapter{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">세법 강의 노트 Vol.4</div>
+    <h1>법인세법 완전정복<br><em>충당금 · 준비금</em></h1>
+    <p class="hero-sub">법 제33조·제34조·제36~38조·제29조·제61조 | 시행 2026.01.02</p>
+    <div class="hero-chips">
+      <span class="hero-chip">💼 퇴직급여충당금</span>
+      <span class="hero-chip">🏦 퇴직연금충당금</span>
+      <span class="hero-chip">📉 대손금·대손충당금</span>
+      <span class="hero-chip">🏗️ 일시상각충당금</span>
+      <span class="hero-chip">📦 압축기장충당금</span>
+      <span class="hero-chip">📋 준비금</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">목차</span>
+    <a href="#ch1">① 퇴직급여충당금</a>
+    <a href="#ch1b">② 퇴직연금충당금</a>
+    <a href="#ch2">③ 대손금</a>
+    <a href="#ch2b">④ 대손충당금</a>
+    <a href="#ch3">⑤ 일시상각충당금</a>
+    <a href="#ch3b">⑥ 압축기장충당금</a>
+    <a href="#ch4">⑦ 준비금</a>
+    <a href="#sum">핵심요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══════════════════════════════════════
+     PART 1. 퇴직급여충당금 & 퇴직연금충당금
+═══════════════════════════════════════ -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Part 01</span>
+    <h2>퇴직급여충당금 — 한도·시부인·지급처리</h2>
+    <span class="ref">법 제33조 | 시행령 제60조</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">💼</span>
+    <p>
+      법인이 임직원의 장래 퇴직금 지급에 대비해 미리 쌓아두는 충당금입니다.<br>
+      <strong>결산 시 손비로 계상</strong>해야 하며, 세법 한도(총급여액의 5%) 이내에서만 손금 인정됩니다.<br>
+      단, <strong>확정기여형(DC형) 퇴직연금 설정자</strong>는 퇴직급여충당금 대상에서 제외됩니다.
+    </p>
+  </div>
+
+  <!-- 법 조문 -->
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 제33조</span><span class="lc-ti">퇴직급여충당금의 손금산입</span></div>
+    <div class="lc-body">
+      <div class="cl c1"><span class="cn b">①</span>내국법인이 각 사업연도의 결산을 확정할 때 임원이나 직원의 퇴직급여에 충당하기 위하여 퇴직급여충당금을 <strong>손비로 계상</strong>한 경우에는 대통령령으로 정하는 금액의 범위에서 손금에 산입한다.</div>
+      <div class="cl c1"><span class="cn b">②</span>퇴직급여충당금을 손금에 산입한 법인이 임원이나 직원에게 <strong>퇴직금을 지급</strong>하는 경우에는 그 퇴직급여충당금에서 <strong>먼저 지급</strong>한 것으로 본다.</div>
+      <div class="cl c1"><span class="cn b">③④</span>합병·분할·사업양도 시 퇴직급여충당금 승계 규정 적용.</div>
+    </div>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">시행령 제60조</span><span class="lc-ti">퇴직급여충당금 손금산입 한도</span></div>
+    <div class="lc-body">
+      <div class="cl c1"><span class="cn b">① 한도액</span>퇴직급여 지급대상 임직원에게 해당 사업연도에 지급한 <strong>총급여액의 100분의 5(5%)</strong></div>
+      <div class="cl c1"><span class="cn b">② 누적한도</span>위 ①의 금액과 <strong>퇴직급여 지급 추계액의 0%</strong>(현행 0% 적용, 실질적으로 총급여액 5%가 유일 기준)</div>
+      <div class="cl c1"><span class="cn b">확정기여형 제외</span>DC형 퇴직연금이 설정된 임직원분은 총급여 계산에서 <strong>제외</strong></div>
+    </div>
+  </div>
+
+  <!-- 한도 공식 -->
+  <div class="formula">
+    <div class="fm">퇴직급여충당금 손금산입 한도 = 해당 사업연도 총급여액 × 5%</div>
+    <div class="fn">단, 전기이월 퇴직급여충당금 잔액이 있는 경우 추계액 한도와 비교 후 작은 금액 적용</div>
+  </div>
+
+  <div class="sh3">한도 시부인 처리</div>
+  <div class="g2">
+    <div class="gc red">
+      <div class="gct">❌ 한도 초과 (손금불산입)</div>
+      <ul>
+        <li>계상액 > 한도액인 경우</li>
+        <li>초과분 = <strong>손금불산입 (유보)</strong></li>
+        <li>차기 이후 추인 불가 (영구차이 아님)</li>
+        <li>퇴직금 지급 시 충당금 먼저 상계 후 부족분 손금산입</li>
+      </ul>
+    </div>
+    <div class="gc green">
+      <div class="gct">✅ 한도 이내 (손금산입)</div>
+      <ul>
+        <li>계상액 ≤ 한도액인 경우</li>
+        <li>계상한 금액 전액 손금 인정</li>
+        <li>명세서 세무서 제출 의무</li>
+        <li>매기 한도 계산 반복</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sh3">퇴직금 지급 시 처리방법</div>
+  <div class="flow">
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b1">1</div><div class="fl-ln"></div></div>
+      <div class="fl-bd"><h4>퇴직금 지급 발생</h4><p>임직원 퇴직 시 퇴직급여 지급 의무 확정</p></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b2">2</div><div class="fl-ln"></div></div>
+      <div class="fl-bd"><h4>퇴직급여충당금과 먼저 상계 (법 §33②)</h4><p>쌓아 둔 퇴직급여충당금 잔액에서 <strong>우선 차감</strong>. 충당금을 초과하는 부분만 당기 비용 처리</p></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b3">3</div><div class="fl-ln"></div></div>
+      <div class="fl-bd"><h4>충당금 부족분: 당기 손금산입</h4><p>퇴직급여충당금 잔액을 초과한 실제 지급액 → <strong>현실적 퇴직에 해당하면 당기 손금</strong></p></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b4">4</div></div>
+      <div class="fl-bd" style="padding-bottom:0;"><h4>이후 충당금 재적립</h4><p>잔여 임직원분에 대해 다음 결산 시 한도 내에서 퇴직급여충당금 재계상</p></div>
+    </div>
+    <div class="fl-res">⚠️ 현실적 퇴직이 아닌 경우(중간정산 제외)의 퇴직급여는 손금불산입!</div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명">
+    <p>
+      회사가 직원 10명에게 연간 총급여 2억 원을 줬다면:<br>
+      → 퇴직급여충당금 한도 = 2억 × 5% = <span class="ok">1,000만 원</span><br><br>
+      회사가 2,000만 원을 계상했다면 → 초과 <span class="bad">1,000만 원 손금불산입</span><br><br>
+      직원 A가 퇴직해서 퇴직금 500만 원을 지급할 때:<br>
+      충당금 잔액 1,000만 원 → <span class="hl">500만 원 상계</span> → 충당금 잔액 500만 원 남음<br>
+      별도 당기 손금 처리 불필요 (이미 충당금으로 인정받은 비용)
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- 퇴직연금충당금 -->
+<section class="chapter" id="ch1b">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Part 01-B</span>
+    <h2>퇴직연금충당금 (확정급여형 DB형)</h2>
+    <span class="ref">시행령 제44조의2</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">🏦</span>
+    <p>
+      <strong>확정급여형(DB형) 퇴직연금</strong>을 설정한 경우, 납입한 부담금을 손금에 산입합니다.<br>
+      퇴직급여충당금과 달리 <strong>실제 납입한 부담금</strong>이 손금의 기초이며,<br>
+      과거 근무분(소급분) 부담금도 일정 요건 하에 손금 인정됩니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">시행령 제44조의2</span><span class="lc-ti">퇴직연금부담금 등의 손금산입</span></div>
+    <div class="lc-body">
+      <div class="cl c1"><span class="cn b">① DB형 한도</span>퇴직연금사업자에게 납입한 부담금 → <strong>퇴직급여 추계액 × (납입비율)</strong> 한도 내 손금</div>
+      <div class="cl c1"><span class="cn b">② 추계액 한도</span>기말 현재 전 임직원이 일시 퇴직 시 지급해야 할 <strong>퇴직급여 추계액</strong>에서 이미 납입한 금액 차감 후 잔액 한도</div>
+      <div class="cl c1"><span class="cn b">③ 과거분 부담금</span>과거 근무기간에 대한 소급 부담금: <strong>10년 이내 균등 분할</strong>하여 손금산입 가능</div>
+    </div>
+  </div>
+
+  <div class="formula g">
+    <div class="fm">DB형 퇴직연금 손금한도 = 퇴직급여 추계액 − 전기말 퇴직연금 운용자산 잔액</div>
+    <div class="fn">단, 당기 납입 부담금을 초과할 수 없음. 과거분 소급부담금은 10년 분할 손금산입</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th>퇴직급여충당금</th><th>퇴직연금충당금(DB형)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>근거</strong></td><td>법 §33, 시령 §60</td><td>시령 §44조의2</td></tr>
+        <tr><td><strong>한도</strong></td><td class="tbl">총급여액 × 5%</td><td class="tok">추계액 − 운용자산 잔액</td></tr>
+        <tr><td><strong>손금 요건</strong></td><td>결산에 손비 계상</td><td>실제 부담금 납입</td></tr>
+        <tr><td><strong>지급 처리</strong></td><td>충당금 먼저 상계</td><td>연금으로 지급 (충당금 별도)</td></tr>
+        <tr><td><strong>DC형 대상</strong></td><td class="tba">제외 (납입액 전액 손금)</td><td class="tba">해당 없음</td></tr>
+        <tr><td><strong>과거분</strong></td><td>해당 없음</td><td class="thl">10년 분할 손금산입</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════════════════
+     PART 2. 대손금 & 대손충당금
+═══════════════════════════════════════ -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Part 02</span>
+    <h2>대손금 — 요건·귀속시기</h2>
+    <span class="ref">법 제19조의2 | 시행령 제19조의2</span>
+  </div>
+
+  <div class="intro i2">
+    <span class="icon">📉</span>
+    <p>
+      <strong>대손금(貸損金)</strong>이란 법인이 보유한 채권 중 회수 불가능한 것이 확정된 금액입니다.<br>
+      <strong>회수 불능이 확정된 사업연도</strong>에 손금으로 산입하며,<br>
+      이후 회수된 금액은 <strong>회수한 사업연도의 익금</strong>에 산입합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h2"><span class="lc-no">법 제19조의2</span><span class="lc-ti">대손금의 손금산입</span></div>
+    <div class="lc-body">
+      <div class="cl c2"><span class="cn g">①</span>채무자의 <strong>파산 등 대통령령으로 정하는 사유</strong>로 회수할 수 없는 채권의 금액은 대통령령으로 정하는 사업연도의 소득금액 계산 시 <strong>손금에 산입</strong>한다.</div>
+      <div class="cl c2"><span class="cn g">② 제외</span>다음은 대손금 처리 불가: <strong>①채무보증 구상채권</strong>(일부 예외) <strong>②특수관계인 가지급금 등</strong></div>
+      <div class="cl c2"><span class="cn g">③</span>손금 산입한 대손금 중 <strong>회수한 금액</strong>은 회수한 날이 속하는 사업연도의 <strong>익금에 산입</strong>한다.</div>
+    </div>
+  </div>
+
+  <div class="sh3 g">대손 사유별 귀속시기 (시행령 제19조의2)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">대손 사유</th><th class="g">귀속시기 (손금 인식 시점)</th><th class="g">비고</th></tr></thead>
+      <tbody>
+        <tr><td>소멸시효 완성</td><td class="tok"><strong>소멸시효 완성일이 속하는 사업연도</strong></td><td>상사채권 5년, 민사채권 10년</td></tr>
+        <tr><td>채무자 파산·강제집행·형 집행</td><td class="tok"><strong>파산 확정일 등이 속하는 사업연도</strong></td><td>회수 불능 확정 시점</td></tr>
+        <tr><td>채무자 사망·실종·행방불명</td><td class="tok">사망·실종선고일 사업연도</td><td></td></tr>
+        <tr><td>회생·화의 인가 결정</td><td class="tok">회생계획 인가 결정일 사업연도</td><td>인가결정으로 소멸된 채권분</td></tr>
+        <tr><td>부도발생 후 6개월 이상 경과</td><td class="tok">6개월 경과 후 사업연도</td><td>수표·어음 부도, 중소기업 외상매출금</td></tr>
+        <tr><td>국세·지방세 체납으로 압류 불능</td><td class="tok">압류 불능 확인일 사업연도</td><td></td></tr>
+        <tr><td>채권 회수비용 > 채권가액 (30만원 이하)</td><td class="tok">해당 사업연도</td><td>소액 채권 특례</td></tr>
+        <tr><td>외상매출금 중 회수기일 2년 이상 경과분</td><td class="thl">임의 대손처리 가능</td><td>중소기업 특례</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pg">
+    ✅ <strong>대손금 처리 제외 채권:</strong> ① 채무보증 구상채권(일부 예외) ② 특수관계인에 대한 업무무관 가지급금<br>
+    → 이 채권은 설령 회수 불능이 되더라도 <strong>대손금으로 손금처리 불가</strong>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 대손금">
+    <p>
+      🏪 회사가 거래처에 물건을 팔고 외상으로 500만 원을 받아야 하는데,<br>
+      그 거래처가 부도가 났어요!<br><br>
+      이 500만 원을 <span class="bad">못 받을 것이 확실해진 날이 속하는 해</span>에<br>
+      → <span class="ok">500만 원 손금(비용)으로 처리!</span><br><br>
+      나중에 기적적으로 300만 원을 받았다면?<br>
+      → <span class="hl">받은 해의 익금(수익)으로 다시 잡아야 함</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<section class="chapter" id="ch2b">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Part 02-B</span>
+    <h2>대손충당금 — 한도·시부인</h2>
+    <span class="ref">법 제34조 | 시행령 제61조</span>
+  </div>
+
+  <div class="intro i2">
+    <span class="icon">🏦</span>
+    <p>
+      <strong>대손충당금</strong>은 장래 발생할 대손에 대비해 <strong>미리 결산에 계상</strong>하는 충당금입니다.<br>
+      매출채권 등의 <strong>기말 잔액 × 1%</strong>(금융업은 실적률) 한도 내에서 손금으로 인정됩니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h2"><span class="lc-no">법 제34조</span><span class="lc-ti">대손충당금의 손금산입</span></div>
+    <div class="lc-body">
+      <div class="cl c2"><span class="cn g">①</span>외상매출금·대여금 등 채권의 대손에 충당하기 위해 결산 시 <strong>손비로 계상</strong>한 대손충당금을 한도 내에서 손금에 산입한다.</div>
+      <div class="cl c2"><span class="cn g">③</span>대손금이 발생하면 <strong>대손충당금과 먼저 상계</strong>하고, 상계 후 남은 충당금은 <strong>다음 사업연도 익금에 산입</strong>한다.</div>
+    </div>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h2"><span class="lc-no">시행령 제61조</span><span class="lc-ti">대손충당금 한도</span></div>
+    <div class="lc-body">
+      <div class="cl c2"><span class="cn g">② 한도</span>
+        <strong>① 일반법인:</strong> 해당 사업연도 종료일 현재 채권 잔액 × <strong>1/100 (1%)</strong><br>
+        <strong>② 금융업 등:</strong> Max[1%, 과거 3년간 대손실적률] 중 큰 값<br>
+        <strong>* 단, 대손충당금 설정 제외 채권 제외 후 잔액 기준</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="formula g">
+    <div class="fm">【일반법인】 대손충당금 한도 = 기말 채권 잔액(설정 대상) × 1%</div>
+    <div class="fn">채권 잔액 = 외상매출금 + 대여금 + 이에 준하는 채권 − 대손충당금 설정 제외 채권</div>
+  </div>
+  <div class="formula g" style="margin-top:2px;">
+    <div class="fm">【금융업】 대손충당금 한도 = 채권잔액 × Max(1%, 과거 3개 사업연도 평균 대손실적률)</div>
+    <div class="fn">대손실적률 = 해당 사업연도 실제 대손금 ÷ 직전 사업연도말 채권잔액</div>
+  </div>
+
+  <div class="sh3 g">대손충당금 한도 시부인 및 익금환입 흐름</div>
+  <div class="flow">
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b1">1</div><div class="fl-ln"></div></div>
+      <div class="fl-bd"><h4>당기: 대손충당금 계상 및 시부인</h4><p>계상액 ≤ 한도 → 손금산입 / 계상액 > 한도 → 초과분 <strong>손금불산입(유보)</strong></p></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b2">2</div><div class="fl-ln"></div></div>
+      <div class="fl-bd"><h4>차기: 전기 충당금 전액 익금환입</h4><p>전기 대손충당금 잔액 → <strong>차기 익금산입</strong> (강제 환입)</p></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b3">3</div><div class="fl-ln"></div></div>
+      <div class="fl-bd"><h4>차기: 실제 대손 발생 시 충당금과 상계</h4><p>발생한 대손금 → 대손충당금과 먼저 상계 → 부족분은 당기 손금</p></div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b4">4</div></div>
+      <div class="fl-bd" style="padding-bottom:0;"><h4>차기: 대손충당금 재계상 (새로운 한도로)</h4><p>차기 기말 채권잔액 × 1% 한도로 다시 계상 → 손금산입</p></div>
+    </div>
+    <div class="fl-res">대손충당금은 매기 전액 환입 후 재계상하는 구조 — "Roll-Over" 방식!</div>
+  </div>
+
+  <div class="sh3 g">대손충당금 설정 대상 vs 제외 채권</div>
+  <div class="g2">
+    <div class="gc green">
+      <div class="gct">✅ 충당금 설정 가능 채권</div>
+      <ul>
+        <li>외상매출금 (상품·제품 판매 미수금)</li>
+        <li>가공·용역 제공 사업수입 미수금</li>
+        <li>대여금 (금전소비대차)</li>
+        <li>받을 어음, 미수금</li>
+        <li>이에 준하는 채권</li>
+      </ul>
+    </div>
+    <div class="gc red">
+      <div class="gct">❌ 충당금 설정 제외 채권</div>
+      <ul>
+        <li>채무보증 구상채권</li>
+        <li>특수관계인 업무무관 가지급금</li>
+        <li>금융업 외 법인의 대여금 중 특수관계인분</li>
+        <li>소비성 서비스업(유흥업 등) 미수금</li>
+        <li>할부매출 중 장기미수분</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="story">
+    <div class="story-lbl">📖 대손충당금 3년 사이클 사례</div>
+    <p>
+      <strong>㈜행복무역</strong>, 기말 외상매출금 10억 원, 매년 한도 1%<br><br>
+      <strong>1년차:</strong> 대손충당금 1,000만 원 계상 → <span class="ok">전액 손금 인정</span> (유보)<br>
+      <strong>2년차 초:</strong> 전기 충당금 1,000만 원 <span class="bad">익금 환입</span><br>
+      <strong>2년차 중:</strong> 거래처 A 외상 300만 원 대손 확정 → <span class="hl">충당금 300만 원 상계</span><br>
+      <strong>2년차 말:</strong> 기말 채권 잔액 11억 원 → 새 한도 1,100만 원 → <span class="ok">1,100만 원 계상·손금</span><br><br>
+      결론: 대손충당금은 매년 환입 후 새로 쌓는 구조, 실제 대손은 충당금과 먼저 상계!
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════════════════
+     PART 3. 일시상각충당금 & 압축기장충당금
+═══════════════════════════════════════ -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Part 03</span>
+    <h2>일시상각충당금 · 압축기장충당금 — 손금산입 대상·범위·기한·시기</h2>
+    <span class="ref">법 제36~38조 | 시행령 제64~66조·제98조</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="icon">🏗️</span>
+    <p>
+      국고보조금·공사부담금·보험차익으로 자산을 취득한 경우, 그 취득이익을 <strong>즉시 손금산입</strong>하는 제도입니다.<br>
+      세법상 처리 방식이 두 가지로 나뉩니다:<br>
+      <strong>① 일시상각충당금</strong> — 결산에 손비로 계상하는 방식<br>
+      <strong>② 압축기장충당금</strong> — 세무조정계산서에 계상 후 이익처분으로 적립하는 방식
+    </p>
+  </div>
+
+  <!-- 3가지 유형 비교 -->
+  <div class="sh3 o">3가지 유형별 법조문 및 주요 내용</div>
+  <div class="g3">
+    <div class="gc blue">
+      <div class="gct">① 국고보조금 (법 §36)</div>
+      <p><strong>대상:</strong> 보조금 관리법 등에 따른 국가·지자체 보조금<br><br>
+      <strong>취득 기한:</strong> 보조금 지급받은 날이 속하는 <strong>사업연도 종료일까지</strong><br>
+      (미취득 시 다음 사업연도 개시일부터 <strong>1년 이내</strong>)<br><br>
+      <strong>범위:</strong> 사업용 유형·무형자산 및 석유류<br><br>
+      <strong>손금산입:</strong> 보조금 상당액을 자산 취득연도에 손금</p>
+    </div>
+    <div class="gc orange">
+      <div class="gct">② 공사부담금 (법 §37)</div>
+      <p><strong>대상:</strong> 전기·가스·수도·통신 사업법인이 수요자·편익 수혜자로부터 받은 금전<br><br>
+      <strong>취득 기한:</strong> 공사부담금 받은 날이 속하는 <strong>사업연도 종료일까지</strong><br>
+      (미취득 시 <strong>1년 이내</strong>)<br><br>
+      <strong>범위:</strong> 해당 사업용 유형·무형자산<br><br>
+      <strong>손금산입:</strong> 부담금 상당액을 자산 취득연도에 손금</p>
+    </div>
+    <div class="gc purple">
+      <div class="gct">③ 보험차익 (법 §38)</div>
+      <p><strong>대상:</strong> 유형자산 멸실·손괴로 수령한 보험금 중 장부가 초과분<br><br>
+      <strong>취득 기한:</strong> 보험금 지급받은 날이 속하는 <strong>사업연도 종료일까지</strong><br>
+      (미취득 시 다음 사업연도 개시일부터 <strong>2년 이내</strong>) ← 국고보조금보다 1년 긺<br><br>
+      <strong>범위:</strong> 멸실 자산과 같은 종류 자산 또는 손괴 자산 개량분<br><br>
+      <strong>손금산입:</strong> 보험차익 상당액을 자산 취득연도에 손금</p>
+    </div>
+  </div>
+
+  <!-- 처리 방식 비교 -->
+  <div class="sh3 o">일시상각충당금 vs 압축기장충당금 — 처리 방식 비교</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="o">구분</th><th class="o">일시상각충당금</th><th class="o">압축기장충당금</th></tr></thead>
+      <tbody>
+        <tr><td><strong>계상 방법</strong></td><td class="tbl">결산에 <strong>손비로 직접 계상</strong></td><td class="thl">세무조정계산서 계상 + <strong>이익처분으로 적립</strong></td></tr>
+        <tr><td><strong>손금산입 방식</strong></td><td class="tbl">결산 손비 계상 금액 손금</td><td class="thl">이익처분 적립 후 손금산입</td></tr>
+        <tr><td><strong>적용 대상</strong></td><td>일반 내국법인</td><td>K-IFRS 적용 법인 등 결산조정 어려운 법인</td></tr>
+        <tr><td><strong>환입 시기</strong></td><td colspan="2" class="tok">자산 감가상각 진행에 따라 <strong>매기 분할 익금환입</strong><br>(상각률에 상당하는 금액씩 차기 익금산입)</td></tr>
+        <tr><td><strong>미사용 시</strong></td><td colspan="2" class="tba">기한 내 자산 미취득 → 미사용액 <strong>즉시 익금산입</strong> + 이자상당액 납부</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 법 조문 요약 -->
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">시행령 제98조</span><span class="lc-ti">준비금 등에 대한 손금계상 특례 (압축기장충당금)</span></div>
+    <div class="lc-body">
+      <div class="cl c4"><span class="cn o">①</span>법 제61조①에 따라 손금에 산입한 준비금(압축기장충당금 포함)은 익금 산입 시 <strong>그 적립금을 처분</strong>하여야 한다. 처분 전 익금산입 전에 사용하면 손금으로 보지 않는다.</div>
+      <div class="cl c4"><span class="cn o">②</span>내국법인이 일시상각충당금 또는 압축기장충당금을 설정한 경우, 해당 충당금은 자산의 <strong>감가상각에 따라 균등 환입</strong>된다.</div>
+    </div>
+  </div>
+
+  <div class="sh3 o">손금산입 시기 및 환입 방식</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="o">단계</th><th class="o">처리 내용</th><th class="o">세무 처리</th></tr></thead>
+      <tbody>
+        <tr><td><strong>① 보조금 등 수령연도</strong></td><td>자산 취득 시 보조금 상당액을 충당금으로 계상</td><td class="tok">손금산입 (△유보)</td></tr>
+        <tr><td><strong>② 자산 사용 연도부터</strong></td><td>감가상각 진행에 따라 충당금 분할 환입</td><td class="tba">익금산입 (유보) — 매기 상각분만큼</td></tr>
+        <tr><td><strong>③ 자산 완전 상각 시</strong></td><td>충당금 잔액 전액 익금환입</td><td class="tba">잔액 전액 익금산입</td></tr>
+        <tr><td><strong>④ 자산 처분 시</strong></td><td>처분 사업연도에 충당금 잔액 전액 환입</td><td class="tba">잔액 전액 즉시 익금산입</td></tr>
+        <tr><td><strong>⑤ 기한 내 미취득</strong></td><td>취득 기한 도과 시 전액 환입</td><td class="tba">미사용액 익금산입 + 이자상당액</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 일시상각충당금·압축기장충당금">
+    <p>
+      🏭 정부에서 공장 기계 구입 보조금 1억 원을 받아 기계를 1억 원에 샀어요.<br><br>
+      원래라면: 기계 1억 원은 자산 → 매년 감가상각으로 비용 처리<br>
+      하지만 보조금 1억 원은 수익(익금)으로도 잡아야 해서 <span class="bad">세금이 생겨요!</span><br><br>
+      이 문제를 해결하는 제도가 바로 <span class="bl">일시상각충당금(압축기장충당금)</span>입니다:<br><br>
+      → 보조금 상당액 1억 원을 <span class="ok">당장 손금(비용)으로 인식</span><br>
+      → 이후 기계를 사용하면서 감가상각이 진행되는 만큼<span class="hl"> 매년 분할 환입(익금)</span><br>
+      → 결과: 세금 부담을 <span class="hl">분산·이연</span>하는 효과!
+    </p>
+  </div>
+
+  <!-- 압축기장충당금 별도 -->
+  <section id="ch3b">
+    <div class="sh3 o">압축기장충당금 별도 정리 (세무조정 방식)</div>
+    <div class="lc">
+      <div class="lc-hd h4"><span class="lc-no">시행령 제98조②</span><span class="lc-ti">압축기장충당금의 손금산입 특례</span></div>
+      <div class="lc-body">
+        <div class="cl c4"><span class="cn o">계상 방법</span>결산에 손비로 직접 계상하지 않고, <strong>세무조정계산서에 계상</strong>하고 <strong>이익처분으로 적립</strong>한 경우에 손금으로 인정</div>
+        <div class="cl c4"><span class="cn o">활용 상황</span>K-IFRS 적용 법인처럼 결산조정이 어려운 경우, 또는 법인 선택에 따라 일시상각충당금 대신 압축기장충당금 방식 사용 가능</div>
+        <div class="cl c4"><span class="cn o">환입 방식</span>일시상각충당금과 동일: 감가상각 진행에 따라 매기 균등 환입 → 익금산입</div>
+      </div>
+    </div>
+    <div class="panel po">
+      🔑 <strong>핵심 차이:</strong> 일시상각충당금 = "결산 손비 계상" 방식 / 압축기장충당금 = "세무조정+이익처분 적립" 방식<br>
+      경제적 효과는 동일하며, 법인이 상황에 맞게 선택 가능합니다.
+    </div>
+  </section>
+</section>
+
+<hr class="dv">
+
+<!-- ═══════════════════════════════════════
+     PART 4. 준비금
+═══════════════════════════════════════ -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Part 04</span>
+    <h2>준비금 — 대상·요건·범위·기한·한도·산입시기</h2>
+    <span class="ref">법 제29~32조·제61조 | 조세특례제한법</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="icon">📋</span>
+    <p>
+      <strong>준비금</strong>은 장래의 특정 지출이나 손실에 대비하기 위해 <strong>미리 적립</strong>하는 금액입니다.<br>
+      법인세법과 조세특례제한법에 열거된 준비금만 손금으로 인정되며,<br>
+      일정 기간 내에 목적에 맞게 <strong>사용하지 않으면 익금에 환입</strong>됩니다.
+    </p>
+  </div>
+
+  <!-- 준비금 종류별 -->
+  <div class="sh3 p">① 고유목적사업준비금 (법 제29조)</div>
+  <div class="lc">
+    <div class="lc-hd h5"><span class="lc-no">법 제29조</span><span class="lc-ti">비영리내국법인의 고유목적사업준비금</span></div>
+    <div class="lc-body">
+      <div class="cl c5"><span class="cn p">대상</span>비영리내국법인 (학교법인, 의료법인, 종교법인 등)</div>
+      <div class="cl c5"><span class="cn p">요건</span>결산 시 손비로 계상하거나 세무조정계산서 계상 후 이익처분 적립</div>
+      <div class="cl c5"><span class="cn p">한도</span>
+        ① 이자소득·배당소득 전액<br>
+        ② 그 밖의 수익사업 소득 × <strong>50%</strong> (장학금 50% 이상 지출 공익법인은 <strong>80%</strong>)
+      </div>
+      <div class="cl c5"><span class="cn p">사용 기한</span>손금산입 사업연도 종료일 이후 <strong>5년</strong> 이내 사용</div>
+      <div class="cl c5"><span class="cn p">미사용 시</span>5년 내 미사용 잔액 → 익금산입 + <strong>이자상당액 납부</strong></div>
+    </div>
+  </div>
+
+  <div class="formula p">
+    <div class="fm">고유목적사업준비금 한도 = (이자소득+배당소득 전액) + (기타 수익사업 소득 × 50% 또는 80%)</div>
+    <div class="fn">5년 내 고유목적사업 등에 지출해야 하며, 미사용 시 이자상당액 추가 납부 의무</div>
+  </div>
+
+  <div class="sh3 p">② 책임준비금·비상위험준비금·해약환급금준비금 (법 제30~32조)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">준비금 종류</th><th class="p">대상 법인</th><th class="p">한도</th><th class="p">익금환입 시기</th></tr></thead>
+      <tbody>
+        <tr><td><strong>책임준비금</strong><br>(법 §30)</td><td>보험업법 외 보험사업 법인<br>(수협·신협 등)</td><td class="tbl">관련 법률에 따라 계산한 금액</td><td class="tba">다음 사업연도 또는<br>손금산입일 이후 <strong>3년 내</strong></td></tr>
+        <tr><td><strong>비상위험준비금</strong><br>(법 §31)</td><td>보험업을 하는 내국법인<br>(손해보험사 등)</td><td class="tbl">보험종목별 적립대상 보험료<br>× 금융위원회 정하는 비율</td><td class="tba">일정 사유 발생 시<br>익금환입</td></tr>
+        <tr><td><strong>해약환급금준비금</strong><br>(법 §32)</td><td>보험업법에 따른 보험회사<br>(생·손보 등)</td><td class="tbl">대통령령으로 정하는<br>계산 금액</td><td class="tba">이익처분 적립액<br>환입 방식</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sh3 p">③ 조세특례제한법상 준비금</div>
+  <div class="lc">
+    <div class="lc-hd h5"><span class="lc-no">법 제61조</span><span class="lc-ti">준비금의 손금산입 특례</span></div>
+    <div class="lc-body">
+      <div class="cl c5"><span class="cn p">①</span>내국법인이 「조세특례제한법」에 따른 준비금을 <strong>세무조정계산서에 계상</strong>하고 그 금액 상당액을 해당 사업연도의 <strong>이익처분 시 준비금으로 적립</strong>한 경우에는 그 금액을 손비로 계상한 것으로 보아 <strong>손금에 산입</strong>한다.</div>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">준비금 종류</th><th class="p">대상</th><th class="p">한도/범위</th><th class="p">사용 기한</th><th class="p">근거</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>중소기업 투자준비금</strong></td>
+          <td>중소기업</td>
+          <td class="tbl">투자계획 금액 이내</td>
+          <td class="thl">적립 후 <strong>3년</strong></td>
+          <td>조특법 §33</td>
+        </tr>
+        <tr>
+          <td><strong>해외자원개발 투자준비금</strong></td>
+          <td>해외자원 개발 법인</td>
+          <td class="tbl">사업연도 소득의 일정 비율</td>
+          <td class="thl">적립 후 <strong>5년</strong></td>
+          <td>조특법 §104조의15</td>
+        </tr>
+        <tr>
+          <td><strong>연구·인력개발준비금</strong></td>
+          <td>연구개발 투자 법인</td>
+          <td class="tbl">직전 3년 평균 연구비 × 일정률</td>
+          <td class="thl">적립 후 <strong>3년</strong></td>
+          <td>조특법 §9</td>
+        </tr>
+        <tr>
+          <td><strong>신기술사업화준비금</strong></td>
+          <td>신기술 기업</td>
+          <td class="tbl">소득의 일정 비율</td>
+          <td class="thl">적립 후 <strong>3년</strong></td>
+          <td>조특법 관련 조문</td>
+        </tr>
+        <tr>
+          <td><strong>고유목적사업준비금</strong><br>(조특법)</td>
+          <td>비영리법인 중 일부</td>
+          <td class="tbl">법 §29 준용</td>
+          <td class="thl">적립 후 <strong>5년</strong></td>
+          <td>조특법 §74</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sh3 p">준비금 공통 손금산입 시기 및 익금환입 사유</div>
+  <div class="g2">
+    <div class="gc blue">
+      <div class="gct">📅 손금산입 시기</div>
+      <ul>
+        <li>결산 시 손비로 계상한 사업연도</li>
+        <li>세무조정 계상 + 이익처분 적립한 사업연도</li>
+        <li>두 방식 모두 계상한 사업연도가 기준</li>
+      </ul>
+    </div>
+    <div class="gc red">
+      <div class="gct">❌ 익금환입 사유</div>
+      <ul>
+        <li>사용 기한 내 목적 용도로 사용 않은 잔액</li>
+        <li>준비금 목적 외 용도 사용</li>
+        <li>법인 해산·폐업</li>
+        <li>고유목적사업 전부 폐지</li>
+        <li>합병·분할 시 (승계 미신청)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel pp">
+    ⚠️ <strong>이자상당액 납부 의무:</strong> 준비금 미사용·목적 외 사용으로 익금환입 시,<br>
+    납부지연 기간에 해당하는 <strong>이자상당액을 법인세에 가산하여 납부</strong>해야 합니다.<br>
+    (고유목적사업준비금 §29⑦, 일시상각충당금 미사용 §36③ 등)
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 준비금">
+    <p>
+      🏫 학교법인 A는 수익사업(임대)으로 1억 원 소득이 생겼어요.<br>
+      이걸 고유목적사업(교육 사업)에 쓸 예정이라면:<br><br>
+      → 고유목적사업준비금 한도 = 1억 × <span class="bl">50%</span> = <span class="ok">5,000만 원 손금산입!</span><br><br>
+      하지만 이 5,000만 원을 <span class="hl">5년 안에 교육사업에 써야 해요.</span><br>
+      5년이 지나도 안 쓰면 → <span class="bad">5,000만 원 다시 익금(+이자상당액 추가 납부)!</span><br><br>
+      준비금은 <span class="hl">"나중에 꼭 써야 한다는 약속"</span>을 하고 미리 세금 혜택을 받는 제도예요.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ SUMMARY ═══ -->
+<section class="summary" id="sum">
+  <h3>🏆 4개 파트 핵심 총정리</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">💼 퇴직급여충당금</div>
+      <p>한도: <strong>총급여 × 5%</strong><br>
+      초과분: 손금불산입(유보)<br>
+      지급 시: 충당금 먼저 상계<br>
+      DB형: 추계액-운용자산 한도</p>
+    </div>
+    <div class="sc">
+      <div class="st">📉 대손금</div>
+      <p>사유: 파산·소멸시효·부도 등<br>
+      귀속: <strong>회수불능 확정 사업연도</strong><br>
+      제외: 채무보증 구상채권·가지급금<br>
+      회수 시: 회수연도 익금산입</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏦 대손충당금</div>
+      <p>한도: <strong>기말채권잔액 × 1%</strong><br>
+      금융업: Max(1%, 3년 평균 실적률)<br>
+      Roll-Over: 매기 익금환입 후 재계상<br>
+      대손 발생: 충당금 먼저 상계</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏗️ 일시상각충당금</div>
+      <p>대상: 국고보조금·공사부담금·보험차익<br>
+      기한: 수령 사업연도 종료일까지<br>(보험차익은 2년 이내)<br>
+      환입: 감가상각 진행에 따라 분할</p>
+    </div>
+    <div class="sc">
+      <div class="st">📦 압축기장충당금</div>
+      <p>방식: 세무조정 계상+이익처분 적립<br>
+      일시상각충당금과 동일 경제적 효과<br>
+      환입: 감가상각 비율로 매기 분할<br>
+      미사용: 즉시 익금+이자상당액</p>
+    </div>
+    <div class="sc">
+      <div class="st">📋 준비금</div>
+      <p>고유목적: 이자·배당 전액+수익사업×50%<br>
+      사용기한: 5년(책임준비금 3년)<br>
+      법 §61: 세무조정+이익처분 방식<br>
+      미사용: 익금산입+이자상당액</p>
+    </div>
+  </div>
+  <p class="note">법인세법 제19조의2·제29조·제33~38조·제61조 | 시행령 제44조의2·제60·61·64·65·66·98조 | 시행 2026.01.02<br>본 자료는 학습 목적 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div>
+<footer>법인세법 §19의2·§29·§33~38·§61 | 조세특례제한법 §9·§33·§74 | 시행 2026.01.02</footer>
+</body>
+</html>
