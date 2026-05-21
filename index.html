@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세모시 코리아 | 세법 강의노트</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1612;
+    --paper: #f5f0e8;
+    --accent: #c0392b;
+    --accent2: #2c3e50;
+    --muted: #8a7f72;
+    --border: #d4c9b8;
+    --card-bg: #faf7f2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(192,57,43,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(44,62,80,0.06) 0%, transparent 50%);
+  }
+
+  header {
+    padding: 60px 40px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-label::before, .header-label::after {
+    content: '';
+    height: 1px;
+    width: 30px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+
+  .header-sub {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+    margin: 36px 0 0;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: 44px 0 24px;
+  }
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    white-space: nowrap;
+  }
+  .section-count {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: all 0.3s;
+  }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+
+  /* ── 로딩 ── */
+  .loading-state {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 40px 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .spinner {
+    width: 18px; height: 18px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── 에러 ── */
+  .error-state {
+    background: #fff5f5;
+    border: 1px solid #fcc;
+    border-radius: 4px;
+    padding: 20px 24px;
+    font-size: 13px;
+    color: var(--accent);
+    line-height: 1.6;
+    display: none;
+  }
+
+  /* ── 카드 그리드 ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 26px 36px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    animation: fadeUp 0.45s ease both;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.25s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(26,22,18,0.1);
+    border-color: var(--accent);
+  }
+  .card:hover::before { transform: scaleY(1); }
+
+  .card-category {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .card-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .card-filename {
+    font-size: 11px;
+    color: var(--border);
+    font-family: monospace;
+    margin-top: 14px;
+    word-break: break-all;
+  }
+  .card-arrow {
+    position: absolute;
+    right: 20px; bottom: 18px;
+    font-size: 17px;
+    color: var(--border);
+    transition: color 0.2s, transform 0.2s;
+  }
+  .card:hover .card-arrow {
+    color: var(--accent);
+    transform: translate(3px, -3px);
+  }
+
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 40px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer p { font-size: 12px; color: var(--muted); }
+  .logo-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent2);
+    letter-spacing: 2px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    header, main, footer { padding-left: 20px; padding-right: 20px; }
+    h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">세모시 코리아 · 세무사 시험 강의노트</div>
+  <h1>세법 <em>완전정복</em><br>시리즈</h1>
+  <p class="header-sub">세무사 1차·2차 시험 대비 핵심 강의노트.<br>조문 원문과 해설을 함께 담았습니다.</p>
+  <div class="divider"></div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">강의노트 목록</span>
+    <span class="section-count" id="count">불러오는 중…</span>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="error-state" id="error">
+    파일 목록을 불러오지 못했습니다.<br>
+    GitHub API 요청 한도 초과이거나 네트워크 문제일 수 있습니다. 잠시 후 새로고침해 주세요.
+  </div>
+
+  <div class="loading-state" id="loading">
+    <div class="spinner"></div>
+    파일 목록을 불러오는 중입니다…
+  </div>
+
+  <div class="cards" id="cards"></div>
+</main>
+
+<footer>
+  <span class="logo-text">세모시 코리아</span>
+  <p>본 자료는 학습 목적의 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</footer>
+
+<script>
+  // ─────────────────────────────────────────────
+  //  설정: 레포 정보만 여기서 수정하세요
+  // ─────────────────────────────────────────────
+  const REPO_OWNER = 'SemosiKorea';
+  const REPO_NAME  = 'notion_cta';
+  const BRANCH     = 'main';
+  // ─────────────────────────────────────────────
+
+  // 파일명에서 카드 제목 추출
+  // 예) "법인세법_감가상각_완전정복.html" → { category: "법인세법", title: "감가상각 완전정복" }
+  function parseFilename(name) {
+    const base = name.replace(/\.html$/i, '');
+
+    // 패턴 1: "법인세법_감가상각_완전정복" (언더스코어 구분)
+    const parts = base.split('_');
+    if (parts.length >= 2) {
+      return {
+        category: parts[0],
+        title: parts.slice(1).join(' '),
+      };
+    }
+
+    // 패턴 2: "법인세법 총론 완전정복" (공백 구분) — 첫 단어를 카테고리로
+    const spaceParts = base.split(' ');
+    if (spaceParts.length >= 2) {
+      return {
+        category: spaceParts[0],
+        title: spaceParts.slice(1).join(' '),
+      };
+    }
+
+    return { category: '', title: base };
+  }
+
+  async function loadFiles() {
+    const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/?ref=${BRANCH}`;
+
+    try {
+      const res = await fetch(apiUrl, {
+        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      });
+
+      if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+
+      const files = await res.json();
+
+      // index.html 자신을 제외한 .html 파일만 필터
+      const htmlFiles = files.filter(f =>
+        f.type === 'file' &&
+        f.name.toLowerCase().endsWith('.html') &&
+        f.name.toLowerCase() !== 'index.html'
+      );
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('count').textContent = `${htmlFiles.length}개`;
+
+      if (htmlFiles.length === 0) {
+        document.getElementById('cards').innerHTML =
+          '<p style="color:var(--muted);font-size:14px;padding:20px 0;">등록된 강의노트가 없습니다.</p>';
+        return;
+      }
+
+      const container = document.getElementById('cards');
+
+      htmlFiles.forEach((file, i) => {
+        const { category, title } = parseFilename(file.name);
+
+        const card = document.createElement('a');
+        card.className = 'card';
+        // GitHub Pages URL은 파일명 그대로 (인코딩된 형태로도 접근 가능)
+        card.href = file.name;
+        card.style.animationDelay = `${i * 0.06}s`;
+
+        card.innerHTML = `
+          ${category ? `<div class="card-category">${category}</div>` : ''}
+          <div class="card-title">${title || file.name}</div>
+          <div class="card-filename">${file.name}</div>
+          <span class="card-arrow">↗</span>
+        `;
+
+        container.appendChild(card);
+      });
+
+    } catch (err) {
+      console.error(err);
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('count').textContent = '오류';
+      document.getElementById('error').style.display = 'block';
+    }
+  }
+
+  loadFiles();
+</script>
+
+</body>
+</html>
