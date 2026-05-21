@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 손금 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee;--bg2:#eae7df;--w:#fff;
+  --t1:#0c0a07;--t2:#1d1b12;--t3:#3a3726;--t4:#5a5748;
+  --nv:#061830;
+  --bl:#0a3868;--bl2:#1458a8;--bl-lt:#d4e6f8;
+  --rd:#5a0c18;--rd2:#9e1828;--rd-lt:#f8d4da;
+  --gn:#083a1c;--gn2:#156638;--gn-lt:#cceedd;
+  --or:#4c2000;--or2:#9e4200;--or-lt:#fce0c0;
+  --pu:#2c0c54;--pu2:#6020b0;--pu-lt:#e8d4f8;
+  --tl:#043030;--tl2:#0a6868;--tl-lt:#c4eaea;
+  --gd:#6c4a00;--gd2:#ae7600;--gd-lt:#fef0b4;
+  --bdr:#b0a890;--bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.85;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#030e1a 0%,#061830 45%,#0a2818 100%);color:#fff;padding:58px 24px 50px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.015) 50px,rgba(255,255,255,.015) 51px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-kicker{display:inline-block;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 18px;margin-bottom:18px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;line-height:1.25;color:#fff;}
+.hero h1 em{color:#80e0b0;font-style:normal;}
+.hero-sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.65);letter-spacing:.5px;}
+.hero-chips{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:7px;}
+.hero-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;padding:4px 13px;}
+
+/* ── TOC ── */
+.toc{background:#fff;border-bottom:3px solid var(--nv);padding:11px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:1040px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:11.5px;font-weight:700;color:var(--nv);text-decoration:none;padding:2px 8px;border:1px solid var(--nv);}
+.toc a:hover{background:var(--nv);color:#fff;}
+
+/* ── WRAP ── */
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px;}
+
+/* ── CHAPTER ── */
+.chapter{margin-top:52px;}
+.ch-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:11px;margin-bottom:24px;}
+.ch-badge{font-family:'Noto Serif KR',serif;font-size:11px;font-weight:900;padding:5px 14px;margin-right:14px;color:#fff;white-space:nowrap;}
+.b1{background:var(--nv);}.b2{background:var(--bl);}.b3{background:var(--gn);}
+.b4{background:var(--or);}.b5{background:var(--rd);}.b6{background:var(--pu);}
+.b7{background:var(--tl);}.b8{background:var(--gd);}
+.ch-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:900;color:var(--t1);}
+.ch-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+/* ── INTRO ── */
+.intro{padding:20px 26px;margin-bottom:18px;border-left:6px solid;color:#fff;}
+.i1{background:var(--nv);border-color:#60a0f0;}
+.i2{background:var(--bl);border-color:#80c8ff;}
+.i3{background:var(--gn);border-color:#60e090;}
+.i4{background:var(--or);border-color:#f0a050;}
+.i5{background:var(--rd);border-color:#f08090;}
+.i6{background:var(--pu);border-color:#c090f8;}
+.i7{background:var(--tl);border-color:#60d0d0;}
+.i8{background:var(--gd);border-color:#f0d060;}
+.intro .icon{font-size:1.8rem;display:block;margin-bottom:8px;}
+.intro p{font-size:14px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i3 strong{color:#90ffcc;}
+.intro.i6 strong{color:#e0c0ff;}
+
+/* ── LAW CARD ── */
+.lc{border:2px solid var(--bdr);background:#fff;margin-bottom:14px;}
+.lc-hd{padding:10px 18px;display:flex;align-items:center;gap:10px;}
+.lc-hd.h1{background:var(--nv);}.lc-hd.h2{background:var(--bl);}
+.lc-hd.h3{background:var(--gn);}.lc-hd.h4{background:var(--or);}
+.lc-hd.h5{background:var(--rd);}.lc-hd.h6{background:var(--pu);}
+.lc-hd.h7{background:var(--tl);}.lc-hd.h8{background:var(--gd);}
+.lc-no{background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:2px 9px;letter-spacing:.5px;white-space:nowrap;}
+.lc-ti{font-family:'Noto Serif KR',serif;font-size:13.5px;font-weight:700;color:#fff;}
+.lc-body{padding:18px 22px;}
+.cl{background:var(--bg2);border-left:4px solid;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.95;color:var(--t2);}
+.cl:last-child{margin-bottom:0;}
+.cl.n{border-color:var(--nv);}.cl.b{border-color:var(--bl);}
+.cl.g{border-color:var(--gn);}.cl.o{border-color:var(--or);}
+.cl.r{border-color:var(--rd);}.cl.p{border-color:var(--pu);}
+.cl.t{border-color:var(--tl);}.cl.gd{border-color:var(--gd2);}
+.cn{font-weight:900;margin-right:5px;}
+.cn.n{color:var(--nv);}.cn.b{color:var(--bl);}.cn.g{color:var(--gn);}
+.cn.o{color:var(--or);}.cn.r{color:var(--rd);}.cn.p{color:var(--pu);}
+.cn.t{color:var(--tl);}.cn.gd{color:var(--gd);}
+
+/* ── EASY BOX ── */
+.easy{position:relative;background:var(--gd-lt);border:2px solid var(--gd2);padding:28px 24px 20px;margin:6px 0 18px;}
+.easy::before{content:attr(data-label);position:absolute;top:-13px;left:14px;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.easy p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.easy .ok{color:var(--gn);font-weight:700;}.easy .bad{color:var(--rd);font-weight:700;}
+.easy .hl{color:var(--or);font-weight:700;}.easy .bl{color:var(--nv);font-weight:700;}
+
+/* ── MEMO BOX ── */
+.memo{position:relative;background:linear-gradient(135deg,#fff9ee,#fdf0c0);border:2px solid var(--gd2);border-top:4px solid var(--or2);padding:26px 22px 18px;margin:8px 0 18px;}
+.memo::before{content:attr(data-label);position:absolute;top:-14px;left:14px;background:var(--or2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.memo p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.memo .ok{color:var(--gn);font-weight:700;}.memo .bad{color:var(--rd);font-weight:700;}
+.memo .hl{color:var(--or);font-weight:700;}.memo .bl{color:var(--nv);font-weight:700;}
+
+/* ── FORMULA ── */
+.fbox{padding:16px 22px;margin:8px 0;color:#fff;text-align:center;line-height:2.3;}
+.fbox.n{background:var(--nv);}.fbox.b{background:var(--bl);}
+.fbox.g{background:var(--gn);}.fbox.o{background:var(--or);}
+.fbox.r{background:var(--rd);}.fbox.p{background:var(--pu);}
+.fbox.t{background:var(--tl);}.fbox.gd{background:var(--gd);}
+.fbox .fm{font-size:1rem;font-weight:700;}
+.fbox.n .fm,.fbox.b .fm,.fbox.t .fm{color:#80e8ff;}
+.fbox.g .fm{color:#80ffc0;}
+.fbox.o .fm{color:#ffe0a0;}
+.fbox.r .fm{color:#ffb0b8;}
+.fbox.p .fm{color:#e0c0ff;}
+.fbox.gd .fm{color:#ffe090;}
+.fbox .fn{font-size:11.5px;color:rgba(255,255,255,.72);}
+
+/* ── PANEL ── */
+.panel{padding:12px 16px;margin:6px 0;font-size:13.5px;line-height:1.95;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--bl-lt);border-color:var(--bl);}
+.panel.pr{background:var(--rd-lt);border-color:var(--rd);}
+.panel.pg{background:var(--gn-lt);border-color:var(--gn);}
+.panel.po{background:var(--or-lt);border-color:var(--or);}
+.panel.pp{background:var(--pu-lt);border-color:var(--pu);}
+.panel.pt{background:var(--tl-lt);border-color:var(--tl);}
+.panel.pgd{background:var(--gd-lt);border-color:var(--gd2);}
+
+/* ── TABLE ── */
+.tw{overflow-x:auto;margin:6px 0 16px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:var(--nv);color:#fff;padding:10px 13px;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+thead th.b{background:var(--bl);}thead th.g{background:var(--gn);}
+thead th.o{background:var(--or);}thead th.r{background:var(--rd);}
+thead th.p{background:var(--pu);}thead th.t{background:var(--tl);}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--gn);font-weight:700;}.tba{color:var(--rd);font-weight:700;}
+.thl{color:var(--or);font-weight:700;}.tbl{color:var(--nv);font-weight:700;}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 16px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 16px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+.gc{border:2px solid var(--bdr);background:var(--w);padding:16px;}
+.gc .gct{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:7px;border-bottom:2px solid;margin-bottom:10px;}
+.gc.nv .gct{color:var(--nv);border-color:var(--nv);}
+.gc.gn .gct{color:var(--gn);border-color:var(--gn);}
+.gc.rd .gct{color:var(--rd);border-color:var(--rd);}
+.gc.or .gct{color:var(--or);border-color:var(--or);}
+.gc.bl .gct{color:var(--bl);border-color:var(--bl);}
+.gc.pu .gct{color:var(--pu);border-color:var(--pu);}
+.gc ul{list-style:none;font-size:12.5px;line-height:2;color:var(--t2);}
+.gc.gn ul li::before{content:'✅ ';}
+.gc.rd ul li::before{content:'❌ ';}
+.gc.nv ul li::before{content:'▶ ';}
+.gc.or ul li::before{content:'🔶 ';}
+.gc.bl ul li::before{content:'■ ';}
+.gc.pu ul li::before{content:'◆ ';}
+.gc p{font-size:12.5px;color:var(--t2);line-height:1.85;}
+.gc strong{color:var(--t1);}
+
+/* ── SH3 ── */
+.sh3{font-family:'Noto Serif KR',serif;font-size:.97rem;font-weight:900;color:var(--t1);margin:22px 0 10px;padding-left:10px;border-left:4px solid var(--nv);}
+.sh3.b{border-color:var(--bl);}.sh3.g{border-color:var(--gn);}
+.sh3.r{border-color:var(--rd);}.sh3.o{border-color:var(--or);}
+.sh3.p{border-color:var(--pu);}.sh3.t{border-color:var(--tl);}
+
+/* ── COMPARE BOX: 원칙/예외 ── */
+.pe-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:8px 0 18px;border:2px solid var(--bdr);overflow:hidden;}
+@media(max-width:580px){.pe-grid{grid-template-columns:1fr;}}
+.pe-col{padding:18px 20px;}
+.pe-col.pri{background:#f0f7ff;border-right:2px solid var(--bdr);}
+.pe-col.exc{background:#fff8f0;}
+.pe-col h4{font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:8px;border-bottom:2px solid;margin-bottom:12px;}
+.pe-col.pri h4{color:var(--bl);border-color:var(--bl);}
+.pe-col.exc h4{color:var(--or);border-color:var(--or);}
+.pe-col ul{list-style:none;font-size:13px;line-height:2;color:var(--t2);}
+.pe-col.pri ul li::before{content:'✅ ';}
+.pe-col.exc ul li::before{content:'⚠️ ';}
+.pe-col p{font-size:13px;color:var(--t2);line-height:1.85;}
+
+/* ── CARD WITH ACCENT ── */
+.acc-card{border:2px solid var(--bdr);background:#fff;margin-bottom:14px;overflow:hidden;}
+.acc-card-hd{display:flex;align-items:center;gap:12px;padding:11px 18px;color:#fff;}
+.acc-card-hd .ac-num{font-family:'Noto Serif KR',serif;font-size:12px;font-weight:900;background:rgba(0,0,0,.2);padding:3px 10px;white-space:nowrap;}
+.acc-card-hd .ac-ti{font-size:14.5px;font-weight:900;}
+.acc-card-body{padding:16px 20px;}
+.acc-card-body .sec{margin-bottom:12px;}
+.acc-card-body .sec:last-child{margin-bottom:0;}
+.acc-card-body .sec h4{font-size:11.5px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--t4);border-bottom:1px solid var(--bdr2);padding-bottom:4px;margin-bottom:7px;}
+.acc-card-body .sec p,.acc-card-body .sec ul{font-size:13px;line-height:1.9;color:var(--t2);}
+.acc-card-body .sec ul{list-style:none;}
+.acc-card-body .sec ul li::before{content:'• ';color:var(--gd2);font-weight:900;}
+
+/* ── FLOW ── */
+.flow{background:#fff;border:2px solid var(--bdr);padding:24px;margin:10px 0 16px;}
+.fl-row{display:flex;align-items:stretch;gap:12px;}
+.fl-ax{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.fl-ci{width:34px;height:34px;border-radius:50%;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fl-ci.n{background:var(--nv);}.fl-ci.b{background:var(--bl);}
+.fl-ci.g{background:var(--gn);}.fl-ci.o{background:var(--or);}
+.fl-ci.r{background:var(--rd);}
+.fl-ln{width:2px;flex:1;background:var(--bdr2);min-height:14px;margin:2px 0;}
+.fl-bd{padding:3px 0 20px;flex:1;}
+.fl-bd h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:3px;}
+.fl-bd p{font-size:13px;color:var(--t3);line-height:1.75;}
+.fl-res{margin-top:12px;background:var(--nv);color:#fff;text-align:center;padding:12px;font-size:14px;font-weight:700;}
+
+/* ── SUMMARY ── */
+.summary{background:#0c0a08;color:#f4f0e4;padding:44px 36px;margin-top:56px;text-align:center;border-top:4px solid var(--gd2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.4rem;color:#ffd060;margin-bottom:24px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:11px;max-width:980px;margin:0 auto 18px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,208,96,.3);padding:14px 16px;}
+.sc .st{color:#ffd060;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:7px;}
+.sc p{font-size:12px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;letter-spacing:.5px;}
+
+footer{background:#070504;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:1px solid var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.chapter{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">세법 강의 노트 Vol.8</div>
+    <h1>법인세법 완전정복<br><em>손 금 (損金)</em></h1>
+    <p class="hero-sub">법 §19~§27조의2 · 시행령 §19~§50 | 시행 2026.01.02 / 2026.02.27</p>
+    <div class="hero-chips">
+      <span class="hero-chip">💡 손금 개념·범위</span>
+      <span class="hero-chip">🚫 손금불산입</span>
+      <span class="hero-chip">👔 인건비</span>
+      <span class="hero-chip">🏛️ 세금·공과금</span>
+      <span class="hero-chip">💸 과다경비</span>
+      <span class="hero-chip">🏚️ 업무무관비용</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ TOC ══ -->
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">목차</span>
+    <a href="#ch1">① 손금 개념·범위</a>
+    <a href="#ch2">② 손금불산입 개관</a>
+    <a href="#ch3">③ 인건비</a>
+    <a href="#ch4">④ 퇴직급여</a>
+    <a href="#ch5">⑤ 복리후생비·여비</a>
+    <a href="#ch6">⑥ 세금·공과금</a>
+    <a href="#ch7">⑦ 과다경비·공동경비</a>
+    <a href="#ch8">⑧ 업무무관비용</a>
+    <a href="#sum">핵심요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ════════════════════════════
+     CH1. 손금 개념·범위
+════════════════════════════ -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Chapter 01</span>
+    <h2>손금의 개념과 범위</h2>
+    <span class="ref">법 §19 · 시행령 §19</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">💡</span>
+    <p>
+      <strong>손금(損金)</strong>이란 법인의 <strong>순자산을 감소시키는 거래</strong>로 발생하는 손실·비용입니다.<br>
+      단, <strong>자본·출자의 환급·잉여금 처분·법에서 규정하는 것</strong>은 제외합니다.<br>
+      손금 = 세법상 비용 = <strong>"세금을 줄여주는 비용의 기준"</strong>
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 §19</span><span class="lc-ti">손금의 범위</span></div>
+    <div class="lc-body">
+      <div class="cl n"><span class="cn n">①</span>손금 = <strong>순자산 감소 거래</strong>로 발생하는 손실·비용<br>단, 자본·출자 환급, 잉여금 처분, 이 법에서 규정하는 것은 <strong>제외</strong></div>
+      <div class="cl n"><span class="cn n">②</span>손비는 법인의 <strong>사업과 관련</strong>하여 발생·지출된 손실·비용으로서<br><strong>통상적인 것</strong>이거나 <strong>수익과 직접 관련</strong>된 것이어야 함</div>
+    </div>
+  </div>
+
+  <div class="sh3">손금 인정의 3대 요건</div>
+  <div class="g3">
+    <div class="gc nv">
+      <div class="gct">요건 ① 사업 관련성</div>
+      <p>법인의 <strong>사업과 관련</strong>하여 발생하거나 지출된 것<br>업무무관비용은 손금 불인정</p>
+    </div>
+    <div class="gc nv">
+      <div class="gct">요건 ② 통상성</div>
+      <p>동종업계에서 <strong>일반적으로 인정되는 통상적 비용</strong><br>비상식적 과다 지출은 손금 불인정</p>
+    </div>
+    <div class="gc nv">
+      <div class="gct">요건 ③ 수익 관련성</div>
+      <p>수익 창출과 <strong>직접 관련</strong>된 것<br>①②와 OR 관계 — 둘 중 하나 충족 시 손금</p>
+    </div>
+  </div>
+
+  <div class="sh3 b">시행령 §19 — 손비의 범위 (주요 항목)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>호</th><th>항목</th><th>주요 내용</th></tr></thead>
+      <tbody>
+        <tr><td>1호</td><td><strong>원료 매입가액</strong></td><td>기업회계기준상 매입에누리·할인 제외</td></tr>
+        <tr><td>1의2호</td><td><strong>판매 부대비용</strong></td><td>보관료·포장비·운반비·판매장려금·판매수당 (사전약정 없어도 포함)</td></tr>
+        <tr><td>2호</td><td><strong>양도자산 장부가액</strong></td><td>양도 당시 세무상 장부가액</td></tr>
+        <tr><td>3호</td><td><strong>인건비</strong></td><td>100% 해외현지법인 파견 임직원 인건비 포함(조건 있음)</td></tr>
+        <tr><td>5호</td><td><strong>감가상각비</strong></td><td>유형·무형자산 감가상각비 (결산조정 요건)</td></tr>
+        <tr><td>7호</td><td><strong>차입금이자</strong></td><td>업무관련 차입금 이자 (§28 지급이자 불산입 주의)</td></tr>
+        <tr><td>10호</td><td><strong>제세공과금</strong></td><td>외국법인세액 포함 (세액공제 안 받는 경우)</td></tr>
+        <tr><td>17호</td><td><strong>미술품 취득가액</strong></td><td>거래단위별 <strong>1천만원 이하</strong>, 공개 장소 상시 전시 요건</td></tr>
+        <tr><td>18호</td><td><strong>광고선전 기증물품</strong></td><td>특정인 기증: 개당 3만원 초과 시 <strong>연간 5만원 이내</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 손금이란?">
+    <p>
+      🏪 회사 지갑이 얇아지는 모든 거래 = 손금 후보!<br><br>
+      📦 물건 만드는 재료비 → <span class="ok">손금</span><br>
+      👔 직원 월급 → <span class="ok">손금</span><br>
+      🏠 사무실 임대료 → <span class="ok">손금</span><br>
+      🎁 주주에게 배당금 지급 → <span class="bad">손금 아님!</span> (잉여금 처분)<br>
+      🏖️ 사장 개인 휴가비 → <span class="bad">손금 아님!</span> (업무무관)<br><br>
+      핵심: <span class="bl">"사업 관련 + 통상적 or 수익 관련"</span> = 손금!
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════
+     CH2. 손금불산입 개관
+════════════════════════════ -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Chapter 02</span>
+    <h2>손금불산입 항목 전체 개관</h2>
+    <span class="ref">법 §20~§28</span>
+  </div>
+
+  <div class="intro i2">
+    <span class="icon">🚫</span>
+    <p>
+      <strong>손금불산입</strong>이란 회계상 비용으로 계상했더라도 세법상 손금으로 인정하지 않는 항목입니다.<br>
+      세무조정 시 <strong>손금불산입 → 익금산입</strong>으로 과세소득에 가산합니다.
+    </p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>조문</th><th>손금불산입 항목</th><th>핵심 포인트</th></tr></thead>
+      <tbody>
+        <tr><td><strong>§20</strong></td><td>자본거래로 인한 손비</td><td>잉여금 처분 손비 계상, 주식할인발행차금</td></tr>
+        <tr><td><strong>§21</strong></td><td>세금과 공과금</td><td>법인세·벌금·가산세·부가세 매입세액 등</td></tr>
+        <tr><td><strong>§22</strong></td><td>자산 평가손실</td><td>임의 평가손실 (법정 사유 예외)</td></tr>
+        <tr><td><strong>§23</strong></td><td>감가상각비 한도초과</td><td>상각범위액 초과분 (부인액은 차기 추인)</td></tr>
+        <tr><td><strong>§24</strong></td><td>기부금 한도초과</td><td>법정·지정 기부금 한도 초과분</td></tr>
+        <tr><td><strong>§25</strong></td><td>기업업무추진비 한도초과</td><td>기본한도+수입금액한도 초과분</td></tr>
+        <tr><td><strong>§26</strong></td><td>과다경비 등</td><td>인건비·복리후생비·여비·공동경비 과다분</td></tr>
+        <tr><td><strong>§27</strong></td><td>업무무관비용</td><td>업무무관 자산 관련비, 뇌물, 노조 위반급여</td></tr>
+        <tr><td><strong>§27의2</strong></td><td>업무용승용차 관련비용</td><td>운행기록부 미작성 시 50%, 한도 초과분</td></tr>
+        <tr><td><strong>§28</strong></td><td>지급이자</td><td>채권자불명 사채이자, 비실명 이자, 건설이자, 업무무관 차입금이자</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pb">
+    💡 <strong>손금불산입 세무조정 방향:</strong><br>
+    회계상 비용 계상 → 세법상 불인정 → <strong>손금불산입 + 소득처분</strong><br>
+    소득처분: 사외유출(배당·상여 등) 또는 유보(법인 내부) 중 귀속에 따라 결정
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════
+     CH3. 인건비
+════════════════════════════ -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Chapter 03</span>
+    <h2>인건비의 원칙·예외·한도</h2>
+    <span class="ref">법 §26①1호 · 시행령 §43</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="icon">👔</span>
+    <p>
+      인건비는 원칙적으로 손금이지만, <strong>임원 인건비는 예외가 많습니다.</strong><br>
+      직원 급여는 전액 손금이나, 임원 급여·상여·퇴직급여는 <strong>한도·기준 초과 시 손금불산입</strong>입니다.<br>
+      <strong>지배주주 과다 지급분</strong>도 손금불산입 대상입니다.
+    </p>
+  </div>
+
+  <!-- 원칙·예외 비교 -->
+  <div class="sh3 g">① 급여 (상시 근무 대가)</div>
+  <div class="pe-grid">
+    <div class="pe-col pri">
+      <h4>✅ 원칙 — 손금산입</h4>
+      <ul>
+        <li>임직원에게 지급하는 급여 전액</li>
+        <li>직원 급여: 금액 제한 없이 전액</li>
+        <li>비상근 임원 급여: 부당행위 해당 않으면 손금</li>
+        <li>해외 파견 임직원 인건비 (조건 충족 시)</li>
+      </ul>
+    </div>
+    <div class="pe-col exc">
+      <h4>⚠️ 예외 — 손금불산입</h4>
+      <ul>
+        <li>이익처분에 의한 상여금 (임직원 모두)</li>
+        <li>임원 상여: <strong>급여지급기준 초과분</strong></li>
+        <li>지배주주 임직원 과다 보수: <strong>동일직위자 초과분</strong></li>
+        <li>부당행위계산 부인 해당 보수</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">시행령 §43</span><span class="lc-ti">상여금 등의 손금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">①</span><strong>이익처분 상여금</strong>: 법인이 임원·직원에게 이익처분에 의하여 지급하는 상여금 → <strong>전액 손금불산입</strong><br>
+        합명·합자회사 노무출자사원 보수도 이익처분 상여로 봄</div>
+      <div class="cl g"><span class="cn g">②</span><strong>임원 상여금 한도초과분</strong>: 정관·주총·사원총회·이사회 결의로 결정된 <strong>급여지급기준을 초과</strong>하는 금액 → 손금불산입</div>
+      <div class="cl g"><span class="cn g">③</span><strong>지배주주 임직원 과다 보수</strong>: 지배주주등인 임원·직원에게 <strong>정당한 사유 없이</strong> 동일직위 비지배주주 임직원 보수를 <strong>초과하여 지급</strong>한 경우 → 초과분 손금불산입<br>
+        <span style="font-size:12px;color:var(--t3);">※ 지배주주등: 발행주식 1% 이상 보유 + 특수관계인 합산 최다 보유</span></div>
+    </div>
+  </div>
+
+  <div class="sh3 g">② 급여지급기준 결정 방법 (임원 상여 한도 근거)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">결정 주체</th><th class="g">방법</th><th class="g">효력</th></tr></thead>
+      <tbody>
+        <tr><td>정관 직접 기재</td><td>정관에 구체적 금액·계산기준 명시</td><td class="tok">가장 확실</td></tr>
+        <tr><td>주주총회 결의</td><td>총회에서 임원 보수 한도 결의</td><td class="tok">유효</td></tr>
+        <tr><td>이사회 결의</td><td>이사회에서 임원별 보수 결의</td><td class="tok">유효</td></tr>
+        <tr><td>기준 없음</td><td>급여지급기준 미설정</td><td class="tba">상여금 전액 손금불산입</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 임원 인건비">
+    <p>
+      👩‍💼 직원 이영희씨 급여 500만 원/월 → <span class="ok">전액 손금!</span> (금액 제한 없음)<br><br>
+      👨‍💼 임원 김대표 상여금 1억 원:<br>
+      → 이사회 결의로 정해진 기준이 5천만 원이라면<br>
+      → 초과분 <span class="bad">5천만 원 손금불산입!</span><br><br>
+      💰 이익처분(배당 대신 임직원 상여):<br>
+      → 금액에 관계없이 <span class="bad">전액 손금불산입!</span><br>
+      → 이건 비용이 아니라 이익을 나눠주는 것이니까요.
+    </p>
+  </div>
+
+  <div class="memo" data-label="🧠 암기 포인트 — 임원 vs 직원 인건비">
+    <p>
+      <strong>"직원은 자유, 임원은 규정이 필요!"</strong><br><br>
+      <span class="ok">직원</span>: 급여 전액 손금 (단, 지배주주 직원은 과다지급분 불산입)<br>
+      <span class="hl">임원</span>: 급여지급기준 내에서만 손금, 초과분 불산입<br>
+      <span class="bad">이익처분 상여</span>: 임직원 구분 없이 전액 불산입<br><br>
+      <strong>지배주주 기준:</strong> 발행주식 <span class="bl">1% 이상</span> + 특수관계인 합산 <span class="bl">최다 보유</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════
+     CH4. 퇴직급여
+════════════════════════════ -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Chapter 04</span>
+    <h2>퇴직급여의 손금불산입</h2>
+    <span class="ref">시행령 §44</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="icon">🎖️</span>
+    <p>
+      퇴직급여는 <strong>현실적인 퇴직 시 지급하는 것</strong>만 손금으로 인정됩니다.<br>
+      임원 퇴직급여는 <strong>정관 규정 또는 한도액(1년 급여의 1/10 × 근속연수)</strong> 이내만 인정됩니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">시행령 §44</span><span class="lc-ti">퇴직급여의 손금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">①</span><strong>현실적 퇴직</strong>인 경우에만 손금. 현실적 퇴직에는 다음이 포함:<br>
+        1. 직원 → 임원 취임 시<br>
+        2. 조직변경·합병·분할·사업양도로 퇴직<br>
+        3. 근퇴법 §8②에 따른 중간정산<br>
+        5. 정관·퇴직급여지급규정에 따른 장기요양 등 임원 중간정산</div>
+      <div class="cl o"><span class="cn o">④ 임원한도</span>임원 퇴직급여 손금한도: 다음 중 하나<br>
+        <strong>1호</strong>: 정관에 퇴직급여 금액이 정해진 경우 → <strong>정관 금액</strong><br>
+        <strong>2호</strong>: 정관 없는 경우 → <strong>퇴직 전 1년 총급여액 × 1/10 × 근속연수</strong></div>
+    </div>
+  </div>
+
+  <div class="fbox o">
+    <div class="fm">임원 퇴직급여 한도 = 퇴직 전 1년 총급여액 × 1/10 × 근속연수</div>
+    <div class="fn">총급여액: 소득세법 §20①1·2호 금액(비과세 제외, 손금불산입 상여 제외) | 직원→임원 시 미지급 퇴직금은 직원 기간 합산 가능</div>
+  </div>
+
+  <div class="sh3 o">퇴직급여 세무조정 케이스</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="o">상황</th><th class="o">처리</th><th class="o">비고</th></tr></thead>
+      <tbody>
+        <tr><td>현실적 퇴직 + 한도 이내</td><td class="tok">전액 손금</td><td>정상 처리</td></tr>
+        <tr><td>현실적 퇴직 + 한도 초과</td><td class="tba">초과분 손금불산입</td><td>소득처분: 상여(임원)</td></tr>
+        <tr><td>현실적 퇴직 아닌 경우</td><td class="tba">전액 손금불산입</td><td>가지급금 처리</td></tr>
+        <tr><td>직원 퇴직급여</td><td class="tok">금액 제한 없이 전액 손금</td><td>한도 없음</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="memo" data-label="🧠 암기 포인트 — 임원 퇴직급여 한도">
+    <p>
+      <strong>공식: "1년 총급여 ÷ 10 × 근속연수"</strong><br><br>
+      예: 최종 1년 총급여 6,000만 원, 근속연수 10년<br>
+      → 한도 = 6,000만 × 1/10 × 10 = <span class="ok">6,000만 원</span><br><br>
+      <strong>단서:</strong> 직원 → 임원 승진 시 그때 퇴직금 안 준 경우<br>
+      → 직원 기간을 근속연수에 <span class="hl">합산 가능!</span><br><br>
+      <strong>정관 우선:</strong> 정관에 규정이 있으면 정관 금액이 한도<br>
+      → 정관 금액이 위 공식보다 커도 인정!
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════
+     CH5. 복리후생비·여비
+════════════════════════════ -->
+<section class="chapter" id="ch5">
+  <div class="ch-hd">
+    <span class="ch-badge b5">Chapter 05</span>
+    <h2>복리후생비·여비·교육훈련비</h2>
+    <span class="ref">시행령 §45 · §46</span>
+  </div>
+
+  <div class="intro i5">
+    <span class="icon">🏥</span>
+    <p>
+      복리후생비는 <strong>열거된 항목 내에서만 손금</strong>이 인정됩니다.<br>
+      여비·교육훈련비는 <strong>임직원이 아닌 지배주주에게 지급 시 손금불산입</strong>입니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h5"><span class="lc-no">시행령 §45</span><span class="lc-ti">복리후생비의 손금불산입 (열거주의)</span></div>
+    <div class="lc-body">
+      <div class="cl r"><span class="cn r">손금 인정</span>다음 항목만 손금 인정:<br>
+        1. 직장체육비 / 2. 직장문화비 / 2의2. 직장회식비<br>
+        3. 우리사주조합 운영비<br>
+        5. 국민건강보험료·노인장기요양보험 사용자 부담분<br>
+        6. 직장어린이집 운영비<br>
+        7. 고용보험 사용자 부담 보험료<br>
+        8. 사회통념상 타당한 경조사비 등 유사 비용</div>
+      <div class="cl r"><span class="cn r">손금 불인정</span>위 열거 항목 <strong>외의 복리후생비</strong>는 손금불산입<br>
+        예: 업무무관 개인 건강검진비, 과도한 경조사비(사회통념 초과분) 등</div>
+    </div>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h5"><span class="lc-no">시행령 §46</span><span class="lc-ti">여비·교육훈련비의 손금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl r"><span class="cn r">원칙</span>임원·직원에게 지급하는 여비·교육훈련비 → <strong>손금</strong></div>
+      <div class="cl r"><span class="cn r">예외</span>임원·직원이 <strong>아닌</strong> 지배주주등(특수관계인 포함)에게 지급한 여비·교육훈련비 → <strong>손금불산입</strong></div>
+    </div>
+  </div>
+
+  <div class="panel pr">
+    ⚠️ <strong>복리후생비 핵심:</strong> 열거주의 — 법에 나열된 것만 손금! 나머지는 불산입<br>
+    <strong>여비 핵심:</strong> 직원·임원이면 OK / 지배주주(임직원 아닌)이면 불산입
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════
+     CH6. 세금과 공과금
+════════════════════════════ -->
+<section class="chapter" id="ch6">
+  <div class="ch-hd">
+    <span class="ch-badge b6">Chapter 06</span>
+    <h2>세금과 공과금의 원칙·예외</h2>
+    <span class="ref">법 §21 · 시행령 §22</span>
+  </div>
+
+  <div class="intro i6">
+    <span class="icon">🏛️</span>
+    <p>
+      세금·공과금은 원칙적으로 <strong>손금</strong>이지만,<br>
+      <strong>법인세·벌금·가산세·의무 불이행 공과금</strong> 등은 <strong>손금불산입</strong>입니다.<br>
+      핵심: <strong>"제재성 부과 → 손금불산입 / 사업 관련 세금 → 손금"</strong>
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h6"><span class="lc-no">법 §21</span><span class="lc-ti">세금과 공과금의 손금불산입 (6가지)</span></div>
+    <div class="lc-body">
+      <div class="cl p"><span class="cn p">1호</span><strong>법인세·법인지방소득세</strong> (가산세 포함)<br>
+        의무 불이행으로 납부할 세액, <strong>부가가치세 매입세액</strong> (면세 등 예외 있음)</div>
+      <div class="cl p"><span class="cn p">2호</span>판매하지 않은 제품의 <strong>개별소비세·주세·교통에너지환경세 미납액</strong><br>
+        단, 제품가격에 세액 가산한 경우 제외</div>
+      <div class="cl p"><span class="cn p">3호</span><strong>벌금·과료·과태료·가산금·강제징수비</strong><br>
+        통고처분에 따른 벌금·과료 상당액 포함</div>
+      <div class="cl p"><span class="cn p">4호</span>법령에 의해 <strong>의무적으로 납부하는 것이 아닌 공과금</strong></div>
+      <div class="cl p"><span class="cn p">5호</span>법령상 <strong>의무 불이행·금지위반</strong>을 이유로 부과되는 공과금</div>
+      <div class="cl p"><span class="cn p">6호</span>연결납세 법인 간 지급금액 (§76의19②③)</div>
+    </div>
+  </div>
+
+  <div class="sh3 p">손금 항목 vs 손금불산입 항목 — 비교표</div>
+  <div class="pe-grid">
+    <div class="pe-col pri">
+      <h4>✅ 손금 인정 세금·공과금</h4>
+      <ul>
+        <li>재산세, 취득세, 등록면허세</li>
+        <li>사업소세, 지역자원시설세</li>
+        <li>종합부동산세 (업무용 자산)</li>
+        <li>부가가치세 <strong>불공제 매입세액</strong></li>
+        <li>외국납부세액 (세액공제 않는 경우)</li>
+        <li>조합·협회 회비 (영업자 단체)</li>
+        <li>환경부담금, 교통유발부담금 등 의무적 공과금</li>
+      </ul>
+    </div>
+    <div class="pe-col exc">
+      <h4>⚠️ 손금불산입 세금·공과금</h4>
+      <ul>
+        <li>법인세, 법인지방소득세</li>
+        <li>가산세, 가산금, 강제징수비</li>
+        <li>벌금, 과료, 과태료</li>
+        <li>부가가치세 공제 가능 매입세액</li>
+        <li>법령 위반 공과금 (과징금 등)</li>
+        <li>임의적 공과금 (의무 아닌 것)</li>
+        <li>자진납부 개별소비세 미납액</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sh3 p">부가가치세 매입세액의 손금 처리 — 핵심 구분</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">매입세액 유형</th><th class="p">부가세 처리</th><th class="p">법인세 처리</th><th class="p">이유</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>공제 가능 매입세액</td>
+          <td class="tok">부가세에서 공제받음</td>
+          <td class="tba">손금불산입</td>
+          <td>부가세 혜택 받았으므로 법인세 중복 혜택 방지</td>
+        </tr>
+        <tr>
+          <td>불공제 매입세액<br>(면세사업용, 접대비 관련 등)</td>
+          <td class="tba">부가세 공제 못 받음</td>
+          <td class="tok">손금산입 가능</td>
+          <td>부가세 혜택 없으므로 법인세에서 비용 인정</td>
+        </tr>
+        <tr>
+          <td>의제매입세액 공제분</td>
+          <td class="tok">부가세에서 공제</td>
+          <td class="tba">손금불산입</td>
+          <td>이중 혜택 방지</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 세금과 공과금">
+    <p>
+      🏛️ "이건 세금인데 왜 손금이 안 될까?"<br><br>
+      법인세: <span class="bad">손금 불가</span> → 법인세를 내면 과세소득이 줄어서 법인세가 또 줄어드는 순환 모순 발생!<br>
+      벌금·과태료: <span class="bad">손금 불가</span> → 나쁜 행위에 내는 벌금을 세금으로 깎아주면 벌칙 효과가 없어짐!<br><br>
+      반면,<br>
+      재산세: <span class="ok">손금 가능</span> → 사업 자산에 내는 정상 세금이니까요!<br>
+      불공제 매입세액: <span class="ok">손금 가능</span> → 부가세로 공제도 못 받는데 법인세에서도 빼주지 않으면 이중 불이익!
+    </p>
+  </div>
+
+  <div class="memo" data-label="🧠 암기 포인트 — 세금 손금불산입 기준">
+    <p>
+      <strong>"제재성 세금 = 손금불산입" 원칙 3개:</strong><br>
+      <span class="bad">①법인세(가산세)</span> — 자기 세금을 자기 비용으로 쓰는 모순 방지<br>
+      <span class="bad">②벌금·과료·과태료</span> — 제재 목적 효과 보호<br>
+      <span class="bad">③의무 불이행 공과금</span> — 위반 행위를 세금으로 보상 금지<br><br>
+      <strong>부가세 매입세액 암기:</strong><br>
+      공제받으면 → <span class="bl">법인세 손금불산입</span><br>
+      공제 못 받으면 → <span class="ok">법인세 손금산입 가능</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════
+     CH7. 과다경비·공동경비
+════════════════════════════ -->
+<section class="chapter" id="ch7">
+  <div class="ch-hd">
+    <span class="ch-badge b7">Chapter 07</span>
+    <h2>과다경비·공동경비의 손금불산입</h2>
+    <span class="ref">법 §26 · 시행령 §43~§48</span>
+  </div>
+
+  <div class="intro i7">
+    <span class="icon">💸</span>
+    <p>
+      과다경비란 통상 수준을 초과하거나 부당하다고 인정되는 비용입니다.<br>
+      법 §26은 인건비·복리후생비·여비·공동경비·업무관련성이 낮은 경비를 대상으로 합니다.<br>
+      <strong>공동경비는 분담비율 기준을 초과하는 금액이 손금불산입</strong>됩니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h7"><span class="lc-no">법 §26</span><span class="lc-ti">과다경비 등의 손금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl t"><span class="cn t">1~4호</span>다음 손비 중 <strong>과다·부당 금액</strong>은 손금불산입:<br>
+        1호 인건비 / 2호 복리후생비 / 3호 여비·교육훈련비 / 4호 공동운영·경영 손비</div>
+      <div class="cl t"><span class="cn t">5호</span>1~4호 외에 <strong>업무와 직접 관련이 적다고 인정되는 경비</strong>로서 대통령령으로 정하는 것</div>
+    </div>
+  </div>
+
+  <!-- 공동경비 상세 -->
+  <div class="sh3 t">공동경비 손금불산입 (시행령 §48)</div>
+  <div class="lc">
+    <div class="lc-hd h7"><span class="lc-no">시행령 §48</span><span class="lc-ti">공동경비의 손금불산입 — 분담기준 초과분</span></div>
+    <div class="lc-body">
+      <div class="cl t"><span class="cn t">① 1호 (출자 공동사업)</span>출자에 의한 공동사업: <strong>출자총액 중 해당 법인 출자비율</strong> → 초과분 손금불산입</div>
+      <div class="cl t"><span class="cn t">① 2호가목 (특수관계 비출자 공동사업)</span>특수관계 비출자 공동사업자 간: <strong>매출액 총액 또는 총자산가액 총액</strong> 중 해당 법인 비율<br>
+        (법인이 직전 사업연도 매출액/총자산 중 선택, 5년 연속 적용)<br>
+        단, 공동행사비·구매비·자산 공동경비는 참석인원·구매금액·지분·사용횟수 기준 가능</div>
+      <div class="cl t"><span class="cn t">① 2호나목 (비특수관계 비출자 공동사업)</span>비출자 공동사업자 간 <strong>약정 분담비율</strong>에 따름<br>
+        비율 없으면 가목 기준 적용</div>
+    </div>
+  </div>
+
+  <div class="sh3 t">공동경비 분담기준 비교</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="t">유형</th><th class="t">분담기준</th><th class="t">선택 여부</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>출자 공동사업</td>
+          <td class="tbl">출자비율</td>
+          <td>선택 불가 (출자비율 고정)</td>
+        </tr>
+        <tr>
+          <td>특수관계 비출자 공동사업</td>
+          <td class="tbl">매출액 비율 또는 총자산가액 비율</td>
+          <td class="tok">법인 선택 가능 (선택 후 5년 연속)</td>
+        </tr>
+        <tr>
+          <td>비특수관계 비출자 공동사업</td>
+          <td class="tbl">약정 분담비율 (없으면 특수관계 기준)</td>
+          <td>약정 우선</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 공동경비">
+    <p>
+      🏢 A회사(매출 60억)와 B회사(매출 40억)가 공동으로 광고비 1억 원을 지출했어요.<br>
+      두 회사는 특수관계인(계열사 관계)입니다.<br><br>
+      매출액 비율로 분담하면: A = 6,000만 원 / B = 4,000만 원<br>
+      그런데 A가 실제 8,000만 원을 부담했다면?<br>
+      → 기준 초과분 <span class="bad">2,000만 원 손금불산입!</span><br><br>
+      왜냐면: 계열사 중 한 곳에 비용을 몰아주는 이익 이전을 막기 위해서예요.
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════
+     CH8. 업무무관비용
+════════════════════════════ -->
+<section class="chapter" id="ch8">
+  <div class="ch-hd">
+    <span class="ch-badge b8">Chapter 08</span>
+    <h2>업무무관비용의 손금불산입</h2>
+    <span class="ref">법 §27 · 시행령 §49·§50</span>
+  </div>
+
+  <div class="intro i8">
+    <span class="icon">🏚️</span>
+    <p>
+      업무와 직접 관련 없는 자산의 유지·관리비용과<br>
+      업무무관 지출(주주 사택비, 뇌물, 비업무용 부동산 비용 등)은 <strong>전액 손금불산입</strong>입니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h8"><span class="lc-no">법 §27</span><span class="lc-ti">업무와 관련 없는 비용의 손금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl gd"><span class="cn gd">1호</span>업무와 <strong>직접 관련 없다고 인정되는 자산</strong>을 취득·관리함으로써 생기는 비용 등 (시행령 §49)</div>
+      <div class="cl gd"><span class="cn gd">2호</span>1호 외의 업무와 <strong>직접 관련 없다고 인정되는 지출금액</strong> (시행령 §50)</div>
+    </div>
+  </div>
+
+  <!-- 업무무관 자산 (§49) -->
+  <div class="sh3 g" style="border-color:var(--gd2);">① 업무무관 자산 (시행령 §49) — 관련 비용 전액 손금불산입</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="o">자산 종류</th><th class="o">업무무관 자산으로 보는 경우</th><th class="o">예외 (손금 인정)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>부동산</strong></td>
+          <td class="tba">법인 업무에 직접 사용하지 않는 부동산<br>(유예기간 경과 후)</td>
+          <td class="tok">법령으로 사용 금지·제한된 부동산<br>유예기간 이내 미사용 부동산<br>자산유동화 계획에 따른 부동산 등</td>
+        </tr>
+        <tr>
+          <td><strong>서화·골동품</strong></td>
+          <td class="tba">업무무관 서화·골동품</td>
+          <td class="tok">사무실·복도 등 공개 장소에<br>상시 비치·전시하는 것</td>
+        </tr>
+        <tr>
+          <td><strong>자동차·선박·항공기</strong></td>
+          <td class="tba">업무에 직접 사용하지 않는 것</td>
+          <td class="tok">저당권 실행 등 채권 변제 취득 선박<br>(3년 미경과분)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 업무무관 지출 (§50) -->
+  <div class="sh3 g" style="border-color:var(--gd2);">② 업무무관 지출 (시행령 §50) — 전액 손금불산입</div>
+  <div class="lc">
+    <div class="lc-hd h8"><span class="lc-no">시행령 §50①</span><span class="lc-ti">업무와 관련 없는 지출</span></div>
+    <div class="lc-body">
+      <div class="cl gd"><span class="cn gd">1호</span>법인이 직접 사용하지 않고 <strong>주주등(소액주주등, 소액주주인 임원·직원 제외)이 주로 사용</strong>하는 장소·건축물·물건 등의 유지비·관리비·사용료<br>
+        단, 중소기업 무상 대여 생산설비 관련 지출은 제외</div>
+      <div class="cl gd"><span class="cn gd">2호</span><strong>비소액주주이거나 출연자인 임원·친족</strong>이 사용하는 사택의 유지비·관리비·사용료</div>
+      <div class="cl gd"><span class="cn gd">3호</span>업무무관 자산(§49) 취득 자금 차입과 <strong>관련된 비용</strong></div>
+      <div class="cl gd"><span class="cn gd">4호</span>법인이 공여한 <strong>뇌물</strong>에 해당하는 금전·자산·경제적 이익</div>
+      <div class="cl gd"><span class="cn gd">5호</span>노동조합법 §24②④ 위반하여 지급하는 <strong>급여</strong></div>
+    </div>
+  </div>
+
+  <div class="sh3 g" style="border-color:var(--gd2);">소액주주등의 범위 (시행령 §50②)</div>
+  <div class="panel pgd">
+    <strong>소액주주등</strong> = 발행주식총수 또는 출자총액의 <strong>1% 미만</strong>을 소유한 주주등<br>
+    단, 지배주주등의 특수관계인은 제외 (소액주주로 보지 않음)<br><br>
+    → 소액주주등인 임원·직원이 사용하는 장소 관련 비용 = <span class="tok">손금 인정</span><br>
+    → 비소액주주(1% 이상) 또는 지배주주 특수관계인 임원·친족 사택비 = <span class="tba">손금불산입</span>
+  </div>
+
+  <div class="sh3 g" style="border-color:var(--gd2);">업무무관비용 손금불산입 판단 흐름도</div>
+  <div class="flow">
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci n">1</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>지출 발생</h4>
+        <p>비용·유지비·관리비 등 지출 발생</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b">2</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>업무 관련성 판단</h4>
+        <p>법인의 사업 목적과 직접 관련이 있는가?<br>관련 있으면 → 손금 / 없으면 → 다음 단계</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci o">3</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>자산 유형 확인 (§49)</h4>
+        <p>업무무관 부동산·서화·자동차 등 관련 비용인가?<br>해당하면 → 손금불산입 / 아니면 → 다음 단계</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci r">4</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>지출 유형 확인 (§50)</h4>
+        <p>주주 사용 장소비·사택비·뇌물·노조 위반 급여 등인가?<br>해당하면 → 손금불산입</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci g">5</div></div>
+      <div class="fl-bd" style="padding-bottom:0;">
+        <h4>결론</h4>
+        <p>위 어느 하나에 해당하면 손금불산입, 모두 해당 없으면 손금산입</p>
+      </div>
+    </div>
+    <div class="fl-res">업무무관비용 판단: 자산 관련성 → 지출 성격 → 사용자 지위 순서로 검토!</div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 업무무관비용">
+    <p>
+      🏠 회사 대주주(주식 20% 보유)가 사는 집 관리비를 회사가 냈어요.<br>
+      → <span class="bad">손금불산입!</span> (비소액주주 임원 사택비)<br><br>
+      🎨 회사가 고가 그림을 구입해 대표 집무실에 몰래 걸어뒀어요.<br>
+      → <span class="bad">손금불산입!</span> (서화·골동품 = 업무무관 자산)<br>
+      하지만 복도에 모두가 볼 수 있게 걸어뒀다면?<br>
+      → <span class="ok">손금 가능!</span> (공개 장소 상시 비치 예외)<br><br>
+      🚗 업무용이라며 산 스포츠카를 실제로는 대표자 자녀가 주로 사용:<br>
+      → <span class="bad">손금불산입!</span> (업무에 직접 사용하지 않는 자동차)
+    </p>
+  </div>
+</section>
+
+<!-- ══ SUMMARY ══ -->
+<section class="summary" id="sum">
+  <h3>🏆 법인세법 손금 핵심 총정리</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">💡 손금 개념</div>
+      <p><strong>순자산 감소 거래</strong>로 발생하는 손실·비용<br>
+      3대 요건: 사업관련성 + 통상성 + 수익관련성<br>
+      자본환급·잉여금처분 제외</p>
+    </div>
+    <div class="sc">
+      <div class="st">👔 임원 급여·상여</div>
+      <p>직원: 전액 손금<br>
+      임원: <strong>급여지급기준 이내만</strong> 손금<br>
+      이익처분 상여: <strong>전액 불산입</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🎖️ 임원 퇴직급여</div>
+      <p>한도 = <strong>1년 총급여 × 1/10 × 근속연수</strong><br>
+      정관 규정 있으면 정관 금액이 한도<br>
+      현실적 퇴직 요건 충족 필수</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏥 복리후생비</div>
+      <p><strong>열거된 항목만 손금</strong> (열거주의)<br>
+      직장체육·문화·회식비, 4대보험 등<br>
+      열거 외: 전액 손금불산입</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏛️ 세금·공과금</div>
+      <p>손금: 재산세·취득세·불공제 매입세액<br>
+      불산입: <strong>법인세·벌금·가산세</strong><br>
+      공제 매입세액: 이중혜택 방지 → 불산입</p>
+    </div>
+    <div class="sc">
+      <div class="st">💸 공동경비</div>
+      <p>출자 공동: <strong>출자비율</strong> 이내<br>
+      특수관계 비출자: <strong>매출액 또는 총자산 비율</strong> 이내 (5년 적용)<br>
+      초과분: 손금불산입</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏚️ 업무무관 자산</div>
+      <p>비업무용 부동산·자동차 관련 비용<br>
+      서화·골동품 (공개 전시 예외)<br>
+      모두 <strong>전액 손금불산입</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">💼 업무무관 지출</div>
+      <p><strong>비소액주주</strong> 사택비·장소 유지비<br>
+      뇌물·노조법 위반 급여<br>
+      소액주주(1% 미만) 임직원 장소비는 손금</p>
+    </div>
+  </div>
+  <p class="note">법인세법 §19~§27 · 시행령 §19·§43~§50 | 시행 2026.01.02(법) / 2026.02.27(시행령)<br>본 자료는 학습 목적 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div>
+<footer>법인세법 §19~§27 · 시행령 §19·§43~§50 | 시행 2026.01.02 / 2026.02.27</footer>
+</body>
+</html>
