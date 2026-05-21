@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 총론 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee;--bg2:#eae7df;--white:#fff;
+  --t1:#0c0a07;--t2:#1d1b12;--t3:#393620;--t4:#5a5848;
+  --navy:#06172e;--navy2:#0d2d5c;
+  --blue:#0a3868;--blue2:#1458a8;--blue-lt:#d4e6f8;
+  --red:#5a0c18;--red2:#9e1828;--red-lt:#f8d4da;
+  --green:#083a1c;--green2:#156638;--green-lt:#cceedd;
+  --orange:#4c2000;--orange2:#9e4200;--orange-lt:#fce0c0;
+  --purple:#2c0c54;--purple2:#6020b0;--purple-lt:#e8d4f8;
+  --teal:#043030;--teal2:#0a6868;--teal-lt:#c4eaea;
+  --gold:#6c4a00;--gold2:#ae7600;--gold-lt:#fef0b4;
+  --bdr:#b0a890;--bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.85;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#03101e 0%,#06172e 50%,#0a1028 100%);color:#fff;padding:60px 24px 52px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.015) 50px,rgba(255,255,255,.015) 51px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-kicker{display:inline-block;background:var(--gold2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 18px;margin-bottom:18px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;line-height:1.25;color:#fff;}
+.hero h1 em{color:#80d0f8;font-style:normal;}
+.hero-sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.65);letter-spacing:.5px;}
+.hero-chips{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:7px;}
+.hero-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;padding:4px 13px;}
+
+/* ── TOC ── */
+.toc{background:#fff;border-bottom:3px solid var(--navy);padding:12px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:1000px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:12px;font-weight:700;color:var(--navy);text-decoration:none;padding:3px 9px;border:1px solid var(--navy);}
+.toc a:hover{background:var(--navy);color:#fff;}
+
+/* ── WRAP ── */
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 80px;}
+
+/* ── CHAPTER ── */
+.chapter{margin-top:52px;}
+.ch-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:12px;margin-bottom:26px;}
+.ch-badge{font-family:'Noto Serif KR',serif;font-size:12px;font-weight:900;padding:6px 16px;margin-right:16px;color:#fff;white-space:nowrap;}
+.b1{background:var(--navy);}.b2{background:var(--blue);}.b3{background:var(--green);}
+.b4{background:var(--orange);}.b5{background:var(--purple);}.b6{background:var(--teal);}
+.b7{background:var(--red);}.b8{background:var(--gold);}
+.ch-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.1rem,2.5vw,1.45rem);font-weight:900;color:var(--t1);}
+.ch-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+/* ── INTRO ── */
+.intro{padding:22px 28px;margin-bottom:20px;border-left:6px solid;color:#fff;}
+.intro.i1{background:var(--navy);border-color:#60a0f0;}
+.intro.i2{background:var(--blue);border-color:#80c8ff;}
+.intro.i3{background:var(--green);border-color:#60e090;}
+.intro.i4{background:var(--orange);border-color:#f0a050;}
+.intro.i5{background:var(--purple);border-color:#c090f8;}
+.intro.i6{background:var(--teal);border-color:#60d0d0;}
+.intro.i7{background:var(--red);border-color:#f08090;}
+.intro.i8{background:var(--gold);border-color:#f0d060;}
+.intro .icon{font-size:1.9rem;display:block;margin-bottom:8px;}
+.intro p{font-size:14.5px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i3 strong{color:#90ffcc;}
+.intro.i5 strong{color:#e0c0ff;}
+.intro.i6 strong{color:#80ffff;}
+
+/* ── LAW CARD ── */
+.lc{border:2px solid var(--bdr);background:#fff;margin-bottom:16px;}
+.lc-hd{padding:11px 20px;display:flex;align-items:center;gap:10px;}
+.lc-hd.h1{background:var(--navy);}.lc-hd.h2{background:var(--blue);}
+.lc-hd.h3{background:var(--green);}.lc-hd.h4{background:var(--orange);}
+.lc-hd.h5{background:var(--purple);}.lc-hd.h6{background:var(--teal);}
+.lc-hd.h7{background:var(--red);}.lc-hd.h8{background:var(--gold);}
+.lc-no{background:var(--gold2);color:#fff;font-size:11px;font-weight:900;padding:2px 10px;letter-spacing:.5px;white-space:nowrap;}
+.lc-ti{font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;color:#fff;}
+.lc-body{padding:20px 24px;}
+.cl{background:var(--bg2);border-left:4px solid;padding:11px 15px;margin-bottom:9px;font-size:13.5px;line-height:1.95;color:var(--t2);}
+.cl:last-child{margin-bottom:0;}
+.cl.n{border-color:var(--navy);}.cl.b{border-color:var(--blue);}
+.cl.g{border-color:var(--green);}.cl.o{border-color:var(--orange);}
+.cl.p{border-color:var(--purple);}.cl.t{border-color:var(--teal);}
+.cl.r{border-color:var(--red);}.cl.gd{border-color:var(--gold2);}
+.cn{font-weight:900;margin-right:5px;}
+.cn.n{color:var(--navy);}.cn.b{color:var(--blue);}.cn.g{color:var(--green);}
+.cn.o{color:var(--orange);}.cn.p{color:var(--purple);}.cn.t{color:var(--teal);}
+.cn.r{color:var(--red);}.cn.gd{color:var(--gold);}
+
+/* ── EASY ── */
+.easy{position:relative;background:var(--gold-lt);border:2px solid var(--gold2);padding:30px 26px 22px;margin:6px 0 20px;}
+.easy::before{content:attr(data-label);position:absolute;top:-13px;left:14px;background:var(--gold2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.easy p{font-size:14px;line-height:2.1;color:var(--t1);margin-top:6px;}
+.easy .ok{color:var(--green);font-weight:700;}.easy .bad{color:var(--red);font-weight:700;}
+.easy .hl{color:var(--orange);font-weight:700;}.easy .bl{color:var(--navy);font-weight:700;}
+
+/* ── STORY ── */
+.story{background:#101008;border-left:5px solid var(--gold2);padding:24px 28px;margin:8px 0 20px;}
+.story-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);font-weight:900;margin-bottom:12px;}
+.story p{font-size:14px;line-height:2.15;color:#f0ece0;}
+.story strong{color:#ffe080;}
+.story .ok{color:#50e090;font-weight:700;}.story .bad{color:#ff8080;font-weight:700;}
+.story .hl{color:#ffd050;font-weight:700;}
+
+/* ── FORMULA ── */
+.formula{padding:16px 22px;margin:10px 0;text-align:center;line-height:2.2;color:#fff;}
+.formula.n{background:var(--navy);}.formula.b{background:var(--blue);}
+.formula.g{background:var(--green);}.formula.o{background:var(--orange);}
+.formula.p{background:var(--purple);}.formula.r{background:var(--red);}
+.formula .fm{font-size:1rem;color:#80e8ff;font-weight:700;}
+.formula .fn{font-size:12px;color:rgba(255,255,255,.7);}
+
+/* ── PANEL ── */
+.panel{padding:14px 18px;margin:8px 0;font-size:14px;line-height:2;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--blue-lt);border-color:var(--blue);}
+.panel.pr{background:var(--red-lt);border-color:var(--red);}
+.panel.pg{background:var(--green-lt);border-color:var(--green);}
+.panel.po{background:var(--orange-lt);border-color:var(--orange);}
+.panel.pp{background:var(--purple-lt);border-color:var(--purple);}
+.panel.pt{background:var(--teal-lt);border-color:var(--teal);}
+.panel.pgold{background:var(--gold-lt);border-color:var(--gold2);}
+
+/* ── TABLE ── */
+.tw{overflow-x:auto;margin:8px 0 18px;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;}
+thead th{background:var(--navy);color:#fff;padding:11px 14px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.5px;}
+thead th.b{background:var(--blue);}thead th.g{background:var(--green);}
+thead th.o{background:var(--orange);}thead th.p{background:var(--purple);}
+thead th.r{background:var(--red);}thead th.t{background:var(--teal);}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--green);font-weight:700;}.tba{color:var(--red);font-weight:700;}
+.thl{color:var(--orange);font-weight:700;}.tbl{color:var(--navy);font-weight:700;}
+.tpu{color:var(--purple);font-weight:700;}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:8px 0 18px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:8px 0 18px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+.gc{border:2px solid var(--bdr);background:var(--white);padding:18px;}
+.gc .gct{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:8px;border-bottom:2px solid;margin-bottom:12px;}
+.gc.navy .gct{color:var(--navy);border-color:var(--navy);}
+.gc.blue .gct{color:var(--blue);border-color:var(--blue);}
+.gc.green .gct{color:var(--green);border-color:var(--green);}
+.gc.red .gct{color:var(--red);border-color:var(--red);}
+.gc.orange .gct{color:var(--orange);border-color:var(--orange);}
+.gc.purple .gct{color:var(--purple);border-color:var(--purple);}
+.gc.teal .gct{color:var(--teal);border-color:var(--teal);}
+.gc ul{list-style:none;font-size:13px;line-height:2;color:var(--t2);}
+.gc.green ul li::before{content:'✅ ';}
+.gc.red   ul li::before{content:'❌ ';}
+.gc.navy  ul li::before{content:'▶ ';}
+.gc.orange ul li::before{content:'🔶 ';}
+.gc.purple ul li::before{content:'◆ ';}
+.gc.teal   ul li::before{content:'● ';}
+.gc.blue  ul li::before{content:'■ ';}
+.gc p{font-size:13px;color:var(--t2);line-height:1.85;margin-bottom:6px;}
+.gc strong{color:var(--t1);}
+
+/* ── SECTION H3 ── */
+.sh3{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:900;color:var(--t1);margin:24px 0 12px;padding-left:10px;border-left:4px solid var(--navy);}
+.sh3.b{border-color:var(--blue);}.sh3.g{border-color:var(--green);}
+.sh3.r{border-color:var(--red);}.sh3.o{border-color:var(--orange);}
+.sh3.p{border-color:var(--purple);}.sh3.t{border-color:var(--teal);}
+
+/* ── FLOW ── */
+.flow{background:#fff;border:2px solid var(--bdr);padding:26px;margin:10px 0 18px;}
+.fl-row{display:flex;align-items:stretch;gap:12px;}
+.fl-ax{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.fl-ci{width:36px;height:36px;border-radius:50%;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fl-ci.n{background:var(--navy);}.fl-ci.b{background:var(--blue);}
+.fl-ci.g{background:var(--green);}.fl-ci.o{background:var(--orange);}
+.fl-ci.p{background:var(--purple);}.fl-ci.r{background:var(--red);}
+.fl-ln{width:2px;flex:1;background:var(--bdr2);min-height:14px;margin:2px 0;}
+.fl-bd{padding:3px 0 22px;flex:1;}
+.fl-bd h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:3px;}
+.fl-bd p{font-size:13px;color:var(--t3);line-height:1.75;}
+.fl-res{margin-top:14px;background:var(--navy);color:#fff;text-align:center;padding:12px;font-size:14px;font-weight:700;}
+.fl-res.r{background:var(--red);}
+
+/* ── TAX CALC BOX ── */
+.calc-box{background:#fff;border:2px solid var(--bdr);padding:0;margin:10px 0 18px;overflow:hidden;}
+.calc-row{display:flex;align-items:stretch;border-bottom:1px solid var(--bdr2);}
+.calc-row:last-child{border-bottom:none;}
+.calc-label{background:var(--navy);color:#fff;padding:12px 18px;font-size:13px;font-weight:700;min-width:240px;display:flex;align-items:center;}
+.calc-label.sub{background:var(--blue2);padding-left:30px;}
+.calc-label.result{background:var(--red);font-size:14px;}
+.calc-label.final{background:#0a1828;font-size:15px;font-weight:900;}
+.calc-op{background:var(--bg2);color:var(--navy);padding:12px 14px;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;min-width:36px;}
+.calc-op.r{color:var(--red);}.calc-op.g{color:var(--green);}
+.calc-desc{padding:12px 16px;font-size:13px;color:var(--t2);display:flex;align-items:center;flex:1;line-height:1.6;}
+
+/* ── SOCDISPOSE ── */
+.sd-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0 18px;}
+@media(max-width:600px){.sd-grid{grid-template-columns:1fr;}}
+.sd-card{border:2px solid;padding:20px;}
+.sd-card.soc-out{border-color:var(--red);background:#fff8f8;}
+.sd-card.soc-in{border-color:var(--blue);background:var(--blue-lt);}
+.sd-card .sd-lbl{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid;}
+.sd-card.soc-out .sd-lbl{color:var(--red);border-color:var(--red);}
+.sd-card.soc-in  .sd-lbl{color:var(--blue);border-color:var(--blue);}
+.sd-card p{font-size:13px;color:var(--t2);line-height:1.85;}
+
+/* ── SUMMARY ── */
+.summary{background:#0c0a08;color:#f4f0e4;padding:44px 36px;margin-top:60px;text-align:center;border-top:4px solid var(--gold2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.45rem;color:#ffd060;margin-bottom:26px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:940px;margin:0 auto 20px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,208,96,.3);padding:16px 18px;}
+.sc .st{color:#ffd060;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:8px;}
+.sc p{font-size:12.5px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;letter-spacing:.5px;}
+
+footer{background:#070504;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:1px solid var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.chapter{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">세법 강의 노트 Vol.6</div>
+    <h1>법인세법 완전정복<br><em>총 론</em></h1>
+    <p class="hero-sub">법 제1~12조 · 제67조 · 시행령 제106조 | 시행 2026.01.02</p>
+    <div class="hero-chips">
+      <span class="hero-chip">👤 납세의무자</span>
+      <span class="hero-chip">🏦 신탁소득</span>
+      <span class="hero-chip">📅 사업연도</span>
+      <span class="hero-chip">📍 납세지</span>
+      <span class="hero-chip">🧮 세액계산구조</span>
+      <span class="hero-chip">⚙️ 결산·신고조정</span>
+      <span class="hero-chip">📤 소득처분</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">목차</span>
+    <a href="#ch1">① 납세의무자</a>
+    <a href="#ch2">② 신탁소득</a>
+    <a href="#ch3">③ 사업연도</a>
+    <a href="#ch4">④ 납세지</a>
+    <a href="#ch5">⑤ 세액계산구조</a>
+    <a href="#ch6">⑥ 결산·신고조정</a>
+    <a href="#ch7">⑦ 소득처분</a>
+    <a href="#sum">핵심요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ════════════════════════════════
+     CH1. 납세의무자 & 과세범위
+════════════════════════════════ -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Chapter 01</span>
+    <h2>납세의무자와 납세의무자별 과세범위</h2>
+    <span class="ref">법 §3·§4</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">👤</span>
+    <p>
+      법인세는 <strong>내국법인과 국내원천소득이 있는 외국법인</strong>이 납부합니다.<br>
+      납세의무자의 유형에 따라 과세되는 소득의 범위가 달라지며,<br>
+      국가·지방자치단체는 납세의무가 없습니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 제3조·제4조</span><span class="lc-ti">납세의무자 및 과세소득의 범위</span></div>
+    <div class="lc-body">
+      <div class="cl n"><span class="cn n">§3①</span>① 내국법인 ② 국내원천소득이 있는 외국법인 — 법인세 납부 의무</div>
+      <div class="cl n"><span class="cn n">§3②</span>국가·지방자치단체(지방자치단체조합 포함)는 납세의무 <strong>없음</strong></div>
+      <div class="cl n"><span class="cn n">§4①</span>내국법인 과세소득: ① 각 사업연도 소득 ② 청산소득 ③ 토지등 양도소득<br>단, <strong>비영리내국법인</strong>은 ①각 사업연도 소득 및 ③토지등 양도소득으로 <strong>한정</strong></div>
+      <div class="cl n"><span class="cn n">§4④</span>외국법인 과세소득: ① 각 사업연도의 국내원천소득 ② 토지등 양도소득</div>
+    </div>
+  </div>
+
+  <!-- 납세의무자 4유형 종합표 -->
+  <div class="sh3">납세의무자 4유형별 과세범위 완전 정리</div>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>정의</th>
+          <th>과세소득 범위</th>
+          <th>과세방식</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>영리내국법인</strong></td>
+          <td>본점·주사무소 또는<br>실질관리장소가 국내</td>
+          <td class="tok">① 각 사업연도 소득<br>② 청산소득<br>③ 토지등 양도소득</td>
+          <td class="tbl">전 세계 소득 과세<br>(무제한 납세의무)</td>
+          <td>일반 주식회사 등</td>
+        </tr>
+        <tr>
+          <td><strong>비영리내국법인</strong></td>
+          <td>민법법인, 사립학교법인,<br>법인으로 보는 단체</td>
+          <td class="thl">① 각 사업연도 소득<br>중 <strong>수익사업</strong> 소득<br>③ 토지등 양도소득</td>
+          <td class="tbl">수익사업 소득만 과세<br>청산소득 과세 없음</td>
+          <td>학교법인·종교법인 등<br>청산소득 비과세</td>
+        </tr>
+        <tr>
+          <td><strong>영리외국법인</strong></td>
+          <td>본점·주사무소가 외국<br>(실질관리 국내 아님)</td>
+          <td class="tba">① 각 사업연도<br><strong>국내원천소득</strong><br>② 토지등 양도소득</td>
+          <td class="tbl">국내원천소득 과세<br>(제한 납세의무)</td>
+          <td>외국기업 국내지점 등</td>
+        </tr>
+        <tr>
+          <td><strong>비영리외국법인</strong></td>
+          <td>외국 정부·지자체<br>비영리 외국법인</td>
+          <td class="tba"><strong>수익사업</strong>에서 생기는<br>국내원천소득만</td>
+          <td class="tbl">제한적 과세<br>(수익사업 + 국내원천)</td>
+          <td>외국 공공기관 등</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 비영리내국법인 수익사업 범위 -->
+  <div class="sh3 b">비영리내국법인의 수익사업 범위 (법 §4③)</div>
+  <div class="g2">
+    <div class="gc green">
+      <div class="gct">✅ 수익사업 (과세)</div>
+      <ul>
+        <li>제조·건설·도소매 등 한국표준산업분류 사업</li>
+        <li>이자소득, 배당소득</li>
+        <li>주식·출자지분 양도 수입</li>
+        <li>유형·무형자산 처분 수입</li>
+        <li>부동산·주식 등 양도 수입</li>
+        <li>그 밖에 대가를 얻는 계속적 행위 수입</li>
+      </ul>
+    </div>
+    <div class="gc red">
+      <div class="gct">❌ 비수익사업 (비과세)</div>
+      <ul>
+        <li>고유목적사업에서 발생한 수입</li>
+        <li>회원비·입회금·회비</li>
+        <li>고유목적자산 처분 수입 (일부)</li>
+        <li>무상으로 받은 자산·용역 가액</li>
+        <li>국고보조금·기부금 수입</li>
+        <li>청산소득 (비영리법인 제외)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 납세의무자">
+    <p>
+      🏢 삼성전자 같은 <span class="bl">영리내국법인</span> → 전 세계서 번 돈 전부 세금<br>
+      🏫 대학교 재단 같은 <span class="hl">비영리내국법인</span> → 교육 사업은 세금 없음, 학교 건물 임대료 수입은 세금 냄<br>
+      🌍 외국 회사 한국지점 <span class="bad">영리외국법인</span> → 한국에서 번 돈만 세금<br>
+      🏛️ 외국 정부기관 <span class="bad">비영리외국법인</span> → 한국에서 수익사업 한 것만 세금
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════════
+     CH2. 신탁소득
+════════════════════════════════ -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Chapter 02</span>
+    <h2>신탁소득 — 원칙적 과세요건과 예외적 과세요건</h2>
+    <span class="ref">법 §5</span>
+  </div>
+
+  <div class="intro i2">
+    <span class="icon">🏦</span>
+    <p>
+      신탁은 위탁자가 수탁자에게 재산을 맡기고, 수익자가 이익을 받는 구조입니다.<br>
+      세법상 신탁소득의 귀속을 <strong>수익자 → 수탁자 → 위탁자</strong> 3단계 우선순위로 결정합니다.<br>
+      <strong>원칙은 수익자 과세</strong>이며, 특정 요건 시 수탁자나 위탁자가 납세의무를 집니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h2"><span class="lc-no">법 제5조</span><span class="lc-ti">신탁소득</span></div>
+    <div class="lc-body">
+      <div class="cl b"><span class="cn b">① 원칙 (수익자 과세)</span>신탁재산에 귀속되는 소득에 대해서는 <strong>그 신탁의 이익을 받을 수익자</strong>가 그 신탁재산을 가진 것으로 보고 이 법을 적용한다.</div>
+      <div class="cl b"><span class="cn b">② 예외① (수탁자 과세)</span>다음 신탁으로서 대통령령이 정하는 요건 충족 시 <strong>수탁자</strong>가 법인세 납부 의무:<br>
+        1. 목적신탁 / 2. 수익증권발행신탁 / 3. 유한책임신탁 / 4. 유사 신탁<br>
+        ※ 이 경우 <strong>신탁재산별로 각각을 하나의 내국법인으로 봄</strong></div>
+      <div class="cl b"><span class="cn b">③ 예외② (위탁자 과세)</span>위탁자가 신탁재산을 <strong>실질적으로 통제</strong>하는 등 대통령령 요건 충족 시 <strong>위탁자</strong>가 법인세 납부 의무</div>
+      <div class="cl b"><span class="cn b">④ 자본시장법 적용 법인</span>자본시장법 적용 법인의 신탁재산(특별계정 제외)에 귀속되는 수입·지출은 그 법인에 귀속되는 수입·지출로 <strong>보지 아니함</strong></div>
+    </div>
+  </div>
+
+  <div class="sh3 b">신탁소득 과세 3단계 우선순위</div>
+  <div class="flow">
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci n">1</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>원칙 — 수익자 과세 (§5①)</h4>
+        <p>신탁소득은 <strong>수익자</strong>가 신탁재산을 보유한 것으로 보고 과세<br>
+        일반적인 신탁(투자신탁, 수익증권 발행된 신탁 등)에 적용</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci b">2</div><div class="fl-ln"></div></div>
+      <div class="fl-bd">
+        <h4>예외① — 수탁자 과세 (§5②) : 법인과세신탁</h4>
+        <p>목적신탁·수익증권발행신탁·유한책임신탁 등 특정 요건 충족 시<br>
+        <strong>수탁자가 납세의무</strong> / 신탁재산별로 각각 하나의 내국법인으로 간주<br>
+        투자신탁·소득세법상 수익증권 발행 신탁은 제외</p>
+      </div>
+    </div>
+    <div class="fl-row">
+      <div class="fl-ax"><div class="fl-ci g">3</div></div>
+      <div class="fl-bd" style="padding-bottom:0;">
+        <h4>예외② — 위탁자 과세 (§5③) : 위탁자 실질 지배</h4>
+        <p>위탁자가 신탁재산을 <strong>실질적으로 통제</strong>하는 경우<br>
+        신탁재산이 사실상 위탁자 소유와 다름없으므로 <strong>위탁자가 납세의무</strong></p>
+      </div>
+    </div>
+    <div class="fl-res">우선순위: 위탁자 실질지배(③) > 법인과세신탁(②) > 수익자 원칙(①)</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th>납세의무자</th><th>요건</th><th>법인 간주</th></tr></thead>
+      <tbody>
+        <tr><td><strong>원칙 (수익자)</strong></td><td class="tbl">수익자</td><td>일반 신탁</td><td>×</td></tr>
+        <tr><td><strong>예외① (수탁자)</strong></td><td class="thl">수탁자 (내국법인·거주자)</td><td>목적·수익증권발행·유한책임신탁 등</td><td class="tok">○ (신탁재산별 내국법인 간주)</td></tr>
+        <tr><td><strong>예외② (위탁자)</strong></td><td class="tba">위탁자</td><td>위탁자가 신탁재산 실질 지배</td><td>×</td></tr>
+        <tr><td><strong>자본시장법 법인</strong></td><td class="t4">별도 처리</td><td>신탁재산 수입·지출 분리</td><td>× (법인 귀속 아님)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 신탁소득">
+    <p>
+      💼 A씨가 B신탁회사에 돈을 맡기고 C씨가 이익을 받는 신탁:<br>
+      → 원칙: <span class="ok">이익 받는 C씨</span>가 세금 납부<br><br>
+      하지만 이런 경우는 달라요:<br>
+      → <span class="hl">특수한 목적신탁</span>(수익증권 발행 등): 신탁 자체를 회사처럼 보고 <span class="hl">수탁자 B</span>가 납부<br>
+      → <span class="bad">A씨(위탁자)가 사실상 마음대로 신탁 자산 조종</span>: A씨가 납부<br><br>
+      핵심: <span class="bl">실질 지배자에게 세금 부과!</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════════
+     CH3. 사업연도·의제·변경
+════════════════════════════════ -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Chapter 03</span>
+    <h2>사업연도 — 원칙·의제·변경</h2>
+    <span class="ref">법 §6·§7·§8</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="icon">📅</span>
+    <p>
+      <strong>사업연도</strong>는 법인의 소득을 계산하는 1회계기간으로, <strong>1년을 초과할 수 없습니다.</strong><br>
+      특정 사유(해산·합병·분할 등) 발생 시 사업연도는 <strong>의제(강제 종결)</strong>되며,<br>
+      변경 시 <strong>직전 사업연도 종료일부터 3개월 이내</strong>에 신고해야 합니다.
+    </p>
+  </div>
+
+  <!-- 원칙 -->
+  <div class="sh3 g">① 사업연도 원칙 (법 §6)</div>
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">법 제6조</span><span class="lc-ti">사업연도</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">①</span>사업연도는 법령·정관 등에서 정하는 1회계기간. 단, <strong>1년 초과 불가</strong></div>
+      <div class="cl g"><span class="cn g">②</span>정관 등에 규정 없는 내국법인: 따로 정하여 <strong>설립신고·사업자등록 시 함께 신고</strong></div>
+      <div class="cl g"><span class="cn g">⑤</span>신고하지 않은 경우: <strong>매년 1월 1일 ~ 12월 31일</strong>을 사업연도로 봄</div>
+    </div>
+  </div>
+
+  <!-- 사업연도 의제 -->
+  <div class="sh3 g">② 사업연도 의제 (법 §8) — 강제 종결·시작</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">사유</th><th class="g">의제 내용 (강제 사업연도 종결)</th><th class="g">특이사항</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>① 사업연도 중 해산</strong><br>(합병·분할 제외)</td>
+          <td>
+            1기: 사업연도 개시일 ~ <strong>해산등기일</strong><br>
+            2기: 해산등기일 다음날 ~ 사업연도 종료일
+          </td>
+          <td>파산 시 파산등기일 기준</td>
+        </tr>
+        <tr>
+          <td><strong>② 합병·분할로 인한 해산</strong></td>
+          <td>사업연도 개시일 ~ <strong>합병(분할)등기일</strong></td>
+          <td>피합병·피분할법인에 적용</td>
+        </tr>
+        <tr>
+          <td><strong>③ 조직변경</strong></td>
+          <td>조직변경 전의 <strong>사업연도가 계속</strong>되는 것으로 봄</td>
+          <td>사업연도 의제 없음</td>
+        </tr>
+        <tr>
+          <td><strong>④ 청산 중 잔여재산 확정</strong></td>
+          <td>사업연도 개시일 ~ <strong>잔여재산 확정일</strong></td>
+          <td>사업계속 시 별도 의제</td>
+        </tr>
+        <tr>
+          <td><strong>⑤ 연결납세방식 적용</strong></td>
+          <td>사업연도 개시일 ~ <strong>연결사업연도 개시일 전날</strong></td>
+          <td>연결 편입 첫 해</td>
+        </tr>
+        <tr>
+          <td><strong>⑥ 외국법인 국내사업장 소멸</strong></td>
+          <td>사업연도 개시일 ~ <strong>사업장 소멸일</strong></td>
+          <td>다른 사업장 계속 보유 시 예외</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 사업연도 변경 -->
+  <div class="sh3 g">③ 사업연도 변경 (법 §7)</div>
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">법 제7조</span><span class="lc-ti">사업연도의 변경</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">① 신고기한</span>직전 사업연도 <strong>종료일부터 3개월 이내</strong>에 납세지 관할 세무서장에게 신고</div>
+      <div class="cl g"><span class="cn g">② 미신고 효과</span>기한까지 신고하지 않으면 <strong>변경 없는 것</strong>으로 봄<br>단, 법령 개정으로 사업연도가 바뀐 경우 신고 없어도 변경 인정</div>
+      <div class="cl g"><span class="cn g">③ 경과기간</span>종전 사업연도 개시일 ~ 변경된 사업연도 개시일 <strong>전날</strong>까지 = 1사업연도<br>단, 그 기간이 <strong>1개월 미만</strong>이면 변경된 사업연도에 포함</div>
+    </div>
+  </div>
+
+  <div class="formula g">
+    <div class="fm">사업연도 변경 신고기한 = 직전 사업연도 종료일 + 3개월 이내</div>
+    <div class="fn">예: 12월 결산법인이 6월로 변경 시 → 12월 31일부터 3개월 이내 = 3월 31일까지 신고</div>
+  </div>
+
+  <div class="story">
+    <div class="story-lbl">📖 사업연도 변경 사례</div>
+    <p>
+      ㈜행복산업은 12월 결산(1월~12월) 법인입니다.<br>
+      6월말 결산(7월~6월)으로 변경하려면:<br><br>
+      <span class="hl">신고기한:</span> 직전 사업연도 종료일(12월 31일)부터 3개월 이내 → <strong>3월 31일까지</strong> 세무서 신고<br><br>
+      변경 시 경과 사업연도: <span class="ok">2026년 1월 1일 ~ 2026년 6월 30일</span> (6개월) = 1사업연도<br>
+      이후부터: 7월 1일 ~ 다음해 6월 30일이 정상 사업연도
+    </p>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 사업연도">
+    <p>
+      📅 사업연도 = "세금 계산하는 1년 단위"<br><br>
+      정관에 "4월~3월" 이라고 쓰여 있으면 → <span class="ok">4월~3월이 사업연도</span><br>
+      아무것도 없으면 → <span class="hl">자동으로 1월~12월</span><br><br>
+      회사가 사업연도 도중 갑자기 합병되면?<br>
+      → <span class="bad">그날로 사업연도 강제 종결!</span> (의제) → 짧은 기간이라도 세금 신고해야 해요.<br><br>
+      바꾸고 싶으면 → <span class="bl">전년도 끝나고 3개월 안에</span> 세무서에 신고!
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════════
+     CH4. 납세지
+════════════════════════════════ -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Chapter 04</span>
+    <h2>납세지 — 납세의무자별 납세지와 변경</h2>
+    <span class="ref">법 §9·§10·§11</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="icon">📍</span>
+    <p>
+      납세지란 법인세를 신고·납부하는 <strong>관할 세무서를 결정하는 기준이 되는 장소</strong>입니다.<br>
+      내국법인은 <strong>등기부상 본점·주사무소 소재지</strong>, 외국법인은 <strong>국내사업장 소재지</strong>가 원칙입니다.<br>
+      변경 시 변경일로부터 <strong>15일 이내</strong>에 신고해야 합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">법 제9조</span><span class="lc-ti">납세지</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">① 내국법인</span>등기부에 따른 <strong>본점·주사무소 소재지</strong><br>국내 본점·주사무소 없는 경우: 사업을 실질적으로 관리하는 장소의 소재지<br>법인으로 보는 단체: 대통령령으로 정하는 장소</div>
+      <div class="cl o"><span class="cn o">② 외국법인</span><strong>국내사업장 소재지</strong><br>국내사업장 없는 외국법인: 부동산소득·부동산양도소득의 경우 <strong>자산 소재지</strong></div>
+      <div class="cl o"><span class="cn o">③</span>둘 이상 국내사업장 외국법인: <strong>주된 사업장 소재지</strong> 납세지</div>
+    </div>
+  </div>
+
+  <!-- 납세지 요약표 -->
+  <div class="tw">
+    <table>
+      <thead><tr><th class="o">납세의무자</th><th class="o">납세지 원칙</th><th class="o">특수 상황</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>내국법인</strong><br>(영리·비영리)</td>
+          <td class="tbl">등기부상 <strong>본점·주사무소 소재지</strong></td>
+          <td>국내 본점 없으면 실질관리장소</td>
+        </tr>
+        <tr>
+          <td><strong>법인으로 보는 단체</strong></td>
+          <td class="tbl">대통령령으로 정하는 장소</td>
+          <td>주된 사업장 또는 거주지</td>
+        </tr>
+        <tr>
+          <td><strong>외국법인</strong><br>(국내사업장 있음)</td>
+          <td class="tbl">국내사업장 소재지</td>
+          <td>2개 이상 시 주된 사업장 소재지</td>
+        </tr>
+        <tr>
+          <td><strong>외국법인</strong><br>(국내사업장 없음)</td>
+          <td class="tbl">자산(부동산 등) 소재지</td>
+          <td>2개 이상 자산: 대통령령 정하는 장소</td>
+        </tr>
+        <tr>
+          <td><strong>원천징수의무자</strong></td>
+          <td class="tbl">원천징수의무자 소재지</td>
+          <td>국내 소재지 없으면 대통령령 장소</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 납세지 변경 -->
+  <div class="sh3 o">납세지 변경 (법 §11)</div>
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">법 제11조</span><span class="lc-ti">납세지의 변경</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">① 신고기한</span>납세지가 변경된 경우 <strong>변경된 날부터 15일 이내</strong>에 변경 후 납세지 관할 세무서장에게 신고<br>부가가치세법에 따라 변경 사실을 신고한 경우 납세지 변경신고로 봄</div>
+      <div class="cl o"><span class="cn o">② 미신고</span>신고하지 않은 경우 <strong>종전 납세지</strong>를 납세지로 함</div>
+      <div class="cl o"><span class="cn o">③ 외국법인</span>납세지를 국내에 가지지 않게 된 경우 그 사실을 신고</div>
+    </div>
+  </div>
+
+  <!-- 납세지 지정 -->
+  <div class="sh3 o">납세지 지정 (법 §10) — 과세당국이 별도 지정</div>
+  <div class="panel po">
+    🔑 관할지방국세청장·국세청장은 법인의 납세지가 <strong>부적당하다고 인정</strong>되는 경우 <strong>별도로 납세지를 지정</strong>할 수 있습니다.<br>
+    지정한 경우 해당 법인에 통지해야 합니다.
+  </div>
+
+  <div class="formula o">
+    <div class="fm">납세지 변경 신고기한 = 납세지 변경일 + 15일 이내</div>
+    <div class="fn">사업연도 변경(3개월)과 혼동 주의! 납세지 변경은 15일로 훨씬 짧습니다</div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════════
+     CH5. 법인세 계산 구조
+════════════════════════════════ -->
+<section class="chapter" id="ch5">
+  <div class="ch-hd">
+    <span class="ch-badge b5">Chapter 05</span>
+    <h2>법인세 계산 구조</h2>
+    <span class="ref">법 §13~§59</span>
+  </div>
+
+  <div class="intro i5">
+    <span class="icon">🧮</span>
+    <p>
+      법인세는 <strong>결산상 당기순이익에서 출발</strong>하여 세무조정을 거쳐 과세표준을 산출하고,<br>
+      세율을 적용한 후 각종 공제·감면을 차감하여 최종 납부세액을 계산합니다.
+    </p>
+  </div>
+
+  <div class="sh3 p">법인세 완전 계산 구조</div>
+  <div class="calc-box">
+    <div class="calc-row">
+      <div class="calc-label">결산상 당기순이익</div>
+      <div class="calc-op"></div>
+      <div class="calc-desc">기업회계기준에 따른 손익계산서상 당기순이익</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">+ 익금산입·손금불산입</div>
+      <div class="calc-op r">＋</div>
+      <div class="calc-desc">세법상 수익이지만 회계상 누락된 것, 세법상 비용 불인정 항목</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">− 손금산입·익금불산입</div>
+      <div class="calc-op g">－</div>
+      <div class="calc-desc">세법상 비용이지만 회계상 미계상, 세법상 수익 제외 항목</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label result">= 각 사업연도 소득금액</div>
+      <div class="calc-op">=</div>
+      <div class="calc-desc">세법상 과세소득의 기초</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">− 이월결손금 공제</div>
+      <div class="calc-op g">－</div>
+      <div class="calc-desc">15년 이내 이월결손금 공제 (중소기업 100%, 일반 60% 한도)</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">− 비과세소득</div>
+      <div class="calc-op g">－</div>
+      <div class="calc-desc">법령에 따라 과세하지 않는 소득</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">− 소득공제</div>
+      <div class="calc-op g">－</div>
+      <div class="calc-desc">유동화전문회사 배당소득공제 등</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label result">= 과세표준</div>
+      <div class="calc-op">=</div>
+      <div class="calc-desc">법인세율이 적용되는 기준금액</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">× 세율 적용</div>
+      <div class="calc-op">×</div>
+      <div class="calc-desc">2억 이하 9% / 2억~200억 19% / 200억~3,000억 21% / 3,000억 초과 24%</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label result">= 산출세액</div>
+      <div class="calc-op">=</div>
+      <div class="calc-desc">세율 적용 후 기본 세액</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">− 세액공제·세액감면</div>
+      <div class="calc-op g">－</div>
+      <div class="calc-desc">R&D 투자세액공제, 중소기업 특별세액감면 등</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">+ 가산세</div>
+      <div class="calc-op r">＋</div>
+      <div class="calc-desc">신고불성실·납부지연 가산세 등</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label sub">− 기납부세액</div>
+      <div class="calc-op g">－</div>
+      <div class="calc-desc">중간예납세액, 원천납부세액, 수시부과세액</div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-label final">= 차가감 납부(환급)세액</div>
+      <div class="calc-op">=</div>
+      <div class="calc-desc"><strong>최종적으로 납부하거나 환급받는 금액</strong></div>
+    </div>
+  </div>
+
+  <!-- 세율 표 -->
+  <div class="sh3 p">법인세율 (2023년~)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">과세표준 구간</th><th class="p">세율</th><th class="p">누진공제액</th></tr></thead>
+      <tbody>
+        <tr><td><strong>2억 원 이하</strong></td><td class="tok">9%</td><td>—</td></tr>
+        <tr><td><strong>2억 원 초과 ~ 200억 원 이하</strong></td><td class="thl">19%</td><td>2,000만 원</td></tr>
+        <tr><td><strong>200억 원 초과 ~ 3,000억 원 이하</strong></td><td class="tba">21%</td><td>6억 2,000만 원</td></tr>
+        <tr><td><strong>3,000억 원 초과</strong></td><td class="tba">24%</td><td>96억 2,000만 원</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════════
+     CH6. 결산조정 vs 신고조정
+════════════════════════════════ -->
+<section class="chapter" id="ch6">
+  <div class="ch-hd">
+    <span class="ch-badge b6">Chapter 06</span>
+    <h2>결산조정과 신고조정 — 원칙과 예외</h2>
+    <span class="ref">법 §23·§33·§34 등</span>
+  </div>
+
+  <div class="intro i6">
+    <span class="icon">⚙️</span>
+    <p>
+      세무조정에는 <strong>결산을 확정할 때 장부에 계상</strong>해야 인정되는 <strong>결산조정</strong>과,<br>
+      결산 계상 여부에 관계없이 <strong>세무조정계산서에 기재</strong>하면 되는 <strong>신고조정</strong>이 있습니다.<br>
+      원칙적으로 손금 항목은 결산조정이지만, 익금은 신고조정이 원칙입니다.
+    </p>
+  </div>
+
+  <div class="g2">
+    <div class="gc teal">
+      <div class="gct">⚙️ 결산조정 (임의조정)</div>
+      <p><strong>개념:</strong> 결산 시 장부·재무제표에 손비로 계상한 경우에만 세법상 손금 인정<br><br>
+      <strong>원칙:</strong> 손금 항목은 결산조정 원칙<br><br>
+      <strong>이유:</strong> 법인이 임의로 결산에 계상해야 하는 것들 — 계상 안 하면 세법도 인정 안 함<br><br>
+      <strong>주요 항목:</strong>
+      </p>
+      <ul>
+        <li>감가상각비 (§23)</li>
+        <li>퇴직급여충당금 (§33)</li>
+        <li>대손충당금 (§34)</li>
+        <li>일시상각충당금 (§36~38)</li>
+        <li>재고자산 평가손실</li>
+        <li>고유목적사업준비금 (비영리법인)</li>
+      </ul>
+    </div>
+    <div class="gc blue">
+      <div class="gct">📋 신고조정 (강제조정)</div>
+      <p><strong>개념:</strong> 결산 계상 여부와 관계없이 법인세 신고서(세무조정계산서)에 기재하면 조정 인정<br><br>
+      <strong>원칙:</strong> 익금산입·손금불산입은 신고조정 원칙<br><br>
+      <strong>이유:</strong> 과세당국이 반드시 과세해야 하는 항목이므로 법인 의사와 무관하게 강제 적용<br><br>
+      <strong>주요 항목:</strong>
+      </p>
+      <ul>
+        <li>익금산입 항목 (수익 누락 등)</li>
+        <li>손금불산입 항목 (접대비 초과 등)</li>
+        <li>부당행위계산 부인 (§52)</li>
+        <li>수입배당금 익금불산입 (§18의2)</li>
+        <li>압축기장충당금 (세무조정+이익처분)</li>
+        <li>준비금 (조특법, 이익처분 방식)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 예외사항 -->
+  <div class="sh3 t">결산조정의 예외 — 신고조정 허용 특례</div>
+  <div class="lc">
+    <div class="lc-hd h6"><span class="lc-no">특례 규정</span><span class="lc-ti">결산조정 원칙의 예외 — 신고조정으로 손금산입 가능한 경우</span></div>
+    <div class="lc-body">
+      <div class="cl t"><span class="cn t">① K-IFRS 법인</span>한국채택국제회계기준 적용 법인은 일부 결산조정 항목(감가상각비 등)을 결산에 계상하지 않아도 <strong>세무조정으로 추가 손금산입</strong> 가능 (법 §23②)</div>
+      <div class="cl t"><span class="cn t">② 압축기장충당금</span>국고보조금·보험차익 등을 결산에 계상하지 않고 <strong>세무조정계산서 계상 + 이익처분 적립</strong>으로 손금산입 허용 (법 §61)</div>
+      <div class="cl t"><span class="cn t">③ 준비금</span>조세특례제한법상 준비금 — 결산 계상 없이 <strong>세무조정계산서 계상 + 이익처분 적립</strong>으로 손금산입 (법 §61)</div>
+      <div class="cl t"><span class="cn t">④ 고유목적사업준비금</span>결산 계상 방식 또는 세무조정+이익처분 방식 <strong>둘 다 허용</strong> (비영리법인, 법 §29)</div>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="t">구분</th><th class="t">결산조정</th><th class="t">신고조정</th></tr></thead>
+      <tbody>
+        <tr><td><strong>조정 시기</strong></td><td>결산 확정 시 장부 계상</td><td>법인세 신고서 제출 시</td></tr>
+        <tr><td><strong>적용 원칙</strong></td><td class="tbl">손금항목 원칙</td><td class="tbl">익금·손금불산입 원칙</td></tr>
+        <tr><td><strong>임의성</strong></td><td>법인이 계상 여부 선택 가능</td><td>세법에 따라 강제 반영</td></tr>
+        <tr><td><strong>미계상 효과</strong></td><td class="tba">세법상 손금 불인정</td><td class="tok">결산과 무관히 조정 가능</td></tr>
+        <tr><td><strong>대표 항목</strong></td><td>감가상각비, 충당금</td><td>부당행위계산, 익금산입</td></tr>
+        <tr><td><strong>K-IFRS 특례</strong></td><td colspan="2" class="thl">K-IFRS 법인은 일부 결산조정 항목도 세무조정으로 처리 허용</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 결산조정 vs 신고조정">
+    <p>
+      📒 <span class="bl">결산조정</span>: 장부에 직접 써야 인정!<br>
+      예: 기계 감가상각비 100만 원 → 장부에 "감가상각비 100만 원" 안 쓰면 세금 혜택 없음<br>
+      법인이 선택할 수 있어요 (그래서 임의조정)<br><br>
+      📋 <span class="hl">신고조정</span>: 신고서에만 써도 인정!<br>
+      예: 부당행위계산 부인 → 법인이 장부에 안 써도 국세청이 세무신고서 기준으로 강제 조정<br>
+      법인 의사와 상관없이 적용돼요 (그래서 강제조정)
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ════════════════════════════════
+     CH7. 소득처분
+════════════════════════════════ -->
+<section class="chapter" id="ch7">
+  <div class="ch-hd">
+    <span class="ch-badge b7">Chapter 07</span>
+    <h2>소득처분 — 일반적·특수한 경우의 비교</h2>
+    <span class="ref">법 §67 · 시행령 §106조</span>
+  </div>
+
+  <div class="intro i7">
+    <span class="icon">📤</span>
+    <p>
+      <strong>소득처분</strong>이란 세무조정으로 익금산입·손금불산입된 금액이 <strong>어디로 귀속되었는지</strong>를 결정하는 절차입니다.<br>
+      귀속 대상에 따라 <strong>배당·상여·기타사외유출·유보</strong>로 나뉘며,<br>
+      소득처분에 따라 귀속자의 소득세 부담이 달라집니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h7"><span class="lc-no">법 제67조</span><span class="lc-ti">소득처분</span></div>
+    <div class="lc-body">
+      <div class="cl r"><span class="cn r">본문</span>법인세 과세표준의 신고·결정·경정 또는 수정신고가 있는 때 <strong>익금에 산입하거나 손금에 산입하지 아니한 금액</strong>은 그 귀속자 등에게 상여·배당·기타사외유출·사내유보 등 대통령령으로 정하는 바에 따라 처분한다.</div>
+    </div>
+  </div>
+
+  <!-- 소득처분 4유형 -->
+  <div class="sh3 r">소득처분 4가지 유형</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="r">처분 방법</th><th class="r">귀속 대상</th><th class="r">귀속자 세금 효과</th><th class="r">원천징수</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>① 배당</strong></td>
+          <td>주주·출자자(개인 또는 법인)</td>
+          <td class="tba">개인: 배당소득세<br>법인: 수입배당금 익금</td>
+          <td class="tok">있음 (배당소득세)</td>
+        </tr>
+        <tr>
+          <td><strong>② 상여</strong></td>
+          <td>임원·직원 (근로자)</td>
+          <td class="tba">근로소득세 부과</td>
+          <td class="tok">있음 (근로소득세)</td>
+        </tr>
+        <tr>
+          <td><strong>③ 기타소득</strong></td>
+          <td>개인 (주주·임직원 외)</td>
+          <td class="tba">기타소득세 부과</td>
+          <td class="tok">있음 (기타소득세)</td>
+        </tr>
+        <tr>
+          <td><strong>④ 기타사외유출</strong></td>
+          <td>불분명 또는 법인 외부 유출<br>(귀속자 파악 불가)</td>
+          <td class="thl">소득세 추가 부과 없음<br>(법인세만 과세)</td>
+          <td class="tba">없음</td>
+        </tr>
+        <tr>
+          <td><strong>⑤ 유보 (사내유보)</strong></td>
+          <td>법인 내부 (자산 증가)</td>
+          <td class="tok">귀속자 소득세 없음<br>(법인 자산 조정)</td>
+          <td class="tba">없음</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 일반적 소득처분 vs 특수한 경우 비교 -->
+  <div class="sh3 r">일반적 소득처분 vs 특수한 경우 소득처분</div>
+
+  <div class="sd-grid">
+    <div class="sd-card soc-out">
+      <div class="sd-lbl">📤 일반적 소득처분 — 사외유출</div>
+      <p>
+        <strong>원칙:</strong> 익금산입·손금불산입액이 <strong>법인 외부로 유출</strong>된 경우<br><br>
+        <strong>처분 방법:</strong><br>
+        • 주주에게 귀속 → <strong>배당</strong><br>
+        • 임원에게 귀속 → <strong>상여</strong><br>
+        • 직원에게 귀속 → <strong>상여</strong><br>
+        • 개인 기타 귀속 → <strong>기타소득</strong><br>
+        • 귀속 불분명 → <strong>기타사외유출</strong><br><br>
+        <strong>결과:</strong> 귀속자에게 원천세 징수 → 소득세 추가 부담
+      </p>
+    </div>
+    <div class="sd-card soc-in">
+      <div class="sd-lbl">🔵 일반적 소득처분 — 유보 (사내)</div>
+      <p>
+        <strong>원칙:</strong> 세무조정액이 <strong>법인 내부에 남아있는</strong> 경우<br><br>
+        <strong>발생 사례:</strong><br>
+        • 고가매입 → 자산 과다 → 유보(자산 감액)<br>
+        • 감가상각비 부인 → 유보(자산 환원)<br>
+        • 대손충당금 환입 → 유보<br><br>
+        <strong>결과:</strong> 원천세 없음. 나중에 자산 처분 시 정산<br><br>
+        <strong>세무조정계산서:</strong> 자본금과적립금 조정명세서(을)에 기록
+      </p>
+    </div>
+  </div>
+
+  <!-- 특수한 소득처분 -->
+  <div class="sh3 r">특수한 경우의 소득처분</div>
+  <div class="lc">
+    <div class="lc-hd h7"><span class="lc-no">시행령 §106조</span><span class="lc-ti">특수한 경우의 소득처분</span></div>
+    <div class="lc-body">
+      <div class="cl r"><span class="cn r">① 귀속 불분명</span>익금산입액의 귀속이 불분명한 경우 → <strong>대표자에게 상여</strong>로 처분<br>(대표자의 소득세 부담 발생)</div>
+      <div class="cl r"><span class="cn r">② 비용 불분명</span>증빙 없는 비용·가공경비: 지출 사실 불분명 → <strong>대표자 상여</strong><br>다만, 법인이 실제 귀속자를 소명하면 그 귀속자에게 처분</div>
+      <div class="cl r"><span class="cn r">③ 사용인에게 지급</span>사외유출된 금액이 임직원에게 귀속 → <strong>상여</strong></div>
+      <div class="cl r"><span class="cn r">④ 법인 주주</span>사외유출액이 법인 주주에게 귀속 → <strong>배당(법인간)</strong> → 수취 법인 익금</div>
+      <div class="cl r"><span class="cn r">⑤ 조세회피 목적</span>자산을 사실과 다르게 처리해 조세를 회피한 경우 → <strong>기타사외유출</strong></div>
+    </div>
+  </div>
+
+  <!-- 차이점 요약표 -->
+  <div class="sh3 r">일반적 vs 특수한 소득처분 핵심 차이점</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="r">비교 항목</th><th class="r">일반적 소득처분</th><th class="r">특수한 경우 소득처분</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>귀속자 파악</strong></td>
+          <td class="tbl">귀속자가 명확히 파악됨</td>
+          <td class="tba">귀속자 불분명</td>
+        </tr>
+        <tr>
+          <td><strong>처분 방법</strong></td>
+          <td class="tbl">귀속자에 따라 배당·상여·기타소득</td>
+          <td class="tba">원칙: <strong>대표자 상여</strong><br>(귀속 불분명 시)</td>
+        </tr>
+        <tr>
+          <td><strong>대표자 영향</strong></td>
+          <td>귀속자가 대표자가 아닐 수 있음</td>
+          <td class="tba">귀속 불분명 → <strong>대표자 상여 강제</strong></td>
+        </tr>
+        <tr>
+          <td><strong>소명 가능 여부</strong></td>
+          <td>—</td>
+          <td class="tok">실제 귀속자 소명 시 그 귀속자로 처분 변경 가능</td>
+        </tr>
+        <tr>
+          <td><strong>원천징수</strong></td>
+          <td class="tok">귀속자에 대해 발생</td>
+          <td class="tba">대표자 상여 처분 시 발생<br>(대표자 소득세 부담)</td>
+        </tr>
+        <tr>
+          <td><strong>사례</strong></td>
+          <td>저가양도 → 주주에게 배당<br>임원 초과급여 → 상여</td>
+          <td>증빙 없는 가공비용<br>귀속 불명 수익 누락</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="story">
+    <div class="story-lbl">📖 소득처분 종합 사례</div>
+    <p>
+      ㈜미래산업이 세무조사를 받아 다음 항목이 세무조정됩니다:<br><br>
+      <strong>Case 1:</strong> 대표이사 개인 여행비 500만 원을 회사 비용으로 처리 → 손금불산입 500만 원<br>
+      → 귀속자가 <span class="hl">대표이사(임원)</span>이므로 → <span class="bad">상여 처분 → 대표이사 근로소득세 부담</span><br><br>
+      <strong>Case 2:</strong> 현금 매출 누락 1,000만 원 (누구에게 갔는지 불명)<br>
+      → 귀속자 불분명 → <span class="bad">대표자 상여 처분</span> (소명 없으면 자동 대표자 귀속)<br><br>
+      <strong>Case 3:</strong> 기계 감가상각비 200만 원 부인 (결산에 계상 초과)<br>
+      → 법인 내부 자산 조정 → <span class="ok">유보 처분</span> (원천세 없음, 나중에 추인)<br><br>
+      <strong>Case 4:</strong> 시가 5억 토지를 주주 법인에 3억에 저가양도<br>
+      → 차액 2억 익금산입 → 주주 <span class="bad">법인에게 배당 처분</span> (법인간 배당)
+    </p>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 소득처분">
+    <p>
+      🧾 세무조정으로 "세금이 줄었던 돈 100만 원"을 다시 잡아냈어요.<br>
+      이 돈이 어디 갔는지에 따라 다르게 처리합니다:<br><br>
+      사장 주머니로 → <span class="bad">배당 또는 상여</span> (사장이 소득세 더 냄)<br>
+      직원 주머니로 → <span class="bad">상여</span> (직원이 소득세 더 냄)<br>
+      누가 가져갔는지 모름 → <span class="hl">기타사외유출</span> (추가 소득세 없음)<br>
+      회사 안에 여전히 있음 → <span class="ok">유보</span> (원천세 없음, 나중에 처분 시 정산)<br><br>
+      특수한 경우: <span class="bad">누가 가져갔는지 모르면 → 무조건 대표자가 가져간 것!</span>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════ SUMMARY ═══════ -->
+<section class="summary" id="sum">
+  <h3>🏆 법인세법 총론 핵심 7가지 요약</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">👤 납세의무자</div>
+      <p>영리내국: <strong>전소득 과세</strong><br>
+      비영리내국: 수익사업+토지양도<br>
+      외국법인: <strong>국내원천소득</strong> 과세<br>
+      국가·지자체: 납세의무 없음</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏦 신탁소득</div>
+      <p>원칙: <strong>수익자 과세</strong><br>
+      예외①: 수탁자 과세 (목적신탁 등)<br>
+      예외②: 위탁자 과세 (실질지배)<br>
+      우선순위: ③ > ② > ①</p>
+    </div>
+    <div class="sc">
+      <div class="st">📅 사업연도</div>
+      <p>1년 초과 불가 / 미신고: 1~12월<br>
+      의제: 해산·합병·분할 등 발생 시<br>
+      변경: <strong>직전 종료일 + 3개월</strong> 이내<br>
+      미신고 시 변경 없는 것으로 봄</p>
+    </div>
+    <div class="sc">
+      <div class="st">📍 납세지</div>
+      <p>내국법인: 등기 <strong>본점·주사무소</strong><br>
+      외국법인: <strong>국내사업장</strong> 소재지<br>
+      변경: <strong>변경일 + 15일</strong> 이내 신고<br>
+      미신고 시 종전 납세지 유지</p>
+    </div>
+    <div class="sc">
+      <div class="st">🧮 세액계산구조</div>
+      <p>순이익→세무조정→각 사업연도 소득<br>
+      →이월결손금·비과세·소득공제<br>
+      →<strong>과세표준×세율</strong>=산출세액<br>
+      →공제감면+가산세-기납부=납부세액</p>
+    </div>
+    <div class="sc">
+      <div class="st">⚙️ 결산·신고조정</div>
+      <p>결산조정: 장부 계상 必 (충당금·상각)<br>
+      신고조정: 신고서만으로 가능 (강제)<br>
+      <strong>K-IFRS 법인: 결산조정 특례</strong><br>
+      압축기장·준비금: 신고조정 허용</p>
+    </div>
+    <div class="sc">
+      <div class="st">📤 소득처분</div>
+      <p>배당(주주) / 상여(임직원)<br>
+      기타사외유출(불명) / 유보(법인내)<br>
+      <strong>귀속 불분명 → 대표자 상여</strong><br>
+      실제 귀속자 소명 시 변경 가능</p>
+    </div>
+  </div>
+  <p class="note">법인세법 제1~12조·제67조·시행령 제106조 | 시행 2026.01.02 | 본 자료는 학습 목적 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div>
+<footer>법인세법 §1~12·§67 | 시행령 §106 | 시행 2026.01.02</footer>
+</body>
+</html>
