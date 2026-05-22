@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 의제배당 & 수입배당금 익금불산입</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee;--bg2:#eae7df;--w:#fff;
+  --t1:#0c0a07;--t2:#1d1b12;--t3:#3a3726;--t4:#5a5748;
+  --nv:#061830;--nv2:#0d2d5c;
+  --bl:#0a3868;--bl2:#1458a8;--bl-lt:#d4e6f8;
+  --rd:#5a0c18;--rd2:#9e1828;--rd-lt:#f8d4da;
+  --gn:#083a1c;--gn2:#156638;--gn-lt:#cceedd;
+  --or:#4c2000;--or2:#9e4200;--or-lt:#fce0c0;
+  --pu:#2c0c54;--pu2:#6020b0;--pu-lt:#e8d4f8;
+  --tl:#043030;--tl2:#0a6868;--tl-lt:#c4eaea;
+  --gd:#6c4a00;--gd2:#ae7600;--gd-lt:#fef0b4;
+  --mg:#4a0a3a;--mg2:#9010a0;--mg-lt:#f4d8f8;
+  --bdr:#b0a890;--bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.85;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#030e1a 0%,#0a1830 40%,#1a0830 100%);color:#fff;padding:58px 24px 50px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.015) 50px,rgba(255,255,255,.015) 51px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-kicker{display:inline-block;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 18px;margin-bottom:18px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:900;line-height:1.3;color:#fff;}
+.hero h1 em{color:#80d8f8;font-style:normal;}
+.hero-sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.65);}
+.hero-chips{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:7px;}
+.hero-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;padding:4px 13px;}
+
+/* TOC */
+.toc{background:#fff;border-bottom:3px solid var(--nv);padding:11px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:1040px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:11px;font-weight:700;color:var(--nv);text-decoration:none;padding:2px 8px;border:1px solid var(--nv);}
+.toc a:hover{background:var(--nv);color:#fff;}
+
+/* WRAP */
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px;}
+
+/* CHAPTER */
+.chapter{margin-top:52px;}
+.ch-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:11px;margin-bottom:24px;}
+.ch-badge{font-family:'Noto Serif KR',serif;font-size:11px;font-weight:900;padding:5px 14px;margin-right:14px;color:#fff;white-space:nowrap;}
+.b1{background:var(--nv);}.b2{background:var(--bl);}.b3{background:var(--gn);}
+.b4{background:var(--or);}.b5{background:var(--rd);}.b6{background:var(--pu);}
+.b7{background:var(--tl);}.b8{background:var(--gd);}.b9{background:var(--mg);}
+.ch-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:900;color:var(--t1);}
+.ch-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+/* INTRO */
+.intro{padding:20px 26px;margin-bottom:18px;border-left:6px solid;color:#fff;}
+.i1{background:var(--nv);border-color:#60a0f0;}
+.i2{background:var(--bl);border-color:#80c8ff;}
+.i3{background:var(--gn);border-color:#60e090;}
+.i4{background:var(--or);border-color:#f0a050;}
+.i5{background:var(--rd);border-color:#f08090;}
+.i6{background:var(--pu);border-color:#c090f8;}
+.i7{background:var(--tl);border-color:#60d0d0;}
+.i8{background:var(--gd);border-color:#f0d060;}
+.i9{background:var(--mg);border-color:#e080f8;}
+.intro .icon{font-size:1.8rem;display:block;margin-bottom:8px;}
+.intro p{font-size:14px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i3 strong{color:#90ffcc;}
+.intro.i7 strong{color:#80ffff;}
+
+/* LAW */
+.lc{border:2px solid var(--bdr);background:#fff;margin-bottom:14px;}
+.lc-hd{padding:10px 18px;display:flex;align-items:center;gap:10px;}
+.lc-hd.h1{background:var(--nv);}.lc-hd.h2{background:var(--bl);}
+.lc-hd.h3{background:var(--gn);}.lc-hd.h4{background:var(--or);}
+.lc-hd.h5{background:var(--rd);}.lc-hd.h6{background:var(--pu);}
+.lc-hd.h7{background:var(--tl);}.lc-hd.h8{background:var(--gd);}
+.lc-hd.h9{background:var(--mg);}
+.lc-no{background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:2px 9px;letter-spacing:.5px;white-space:nowrap;}
+.lc-ti{font-family:'Noto Serif KR',serif;font-size:13.5px;font-weight:700;color:#fff;}
+.lc-body{padding:18px 22px;}
+.cl{background:var(--bg2);border-left:4px solid;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.95;color:var(--t2);}
+.cl:last-child{margin-bottom:0;}
+.cl.n{border-color:var(--nv);}.cl.b{border-color:var(--bl);}
+.cl.g{border-color:var(--gn);}.cl.o{border-color:var(--or);}
+.cl.r{border-color:var(--rd);}.cl.p{border-color:var(--pu);}
+.cl.t{border-color:var(--tl);}.cl.gd{border-color:var(--gd2);}
+.cl.mg{border-color:var(--mg2);}
+.cn{font-weight:900;margin-right:5px;}
+.cn.n{color:var(--nv);}.cn.b{color:var(--bl);}.cn.g{color:var(--gn);}
+.cn.o{color:var(--or);}.cn.r{color:var(--rd);}.cn.p{color:var(--pu);}
+.cn.t{color:var(--tl);}.cn.gd{color:var(--gd);}.cn.mg{color:var(--mg);}
+
+/* EASY */
+.easy{position:relative;background:var(--gd-lt);border:2px solid var(--gd2);padding:28px 24px 20px;margin:6px 0 18px;}
+.easy::before{content:attr(data-label);position:absolute;top:-13px;left:14px;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.easy p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.easy .ok{color:var(--gn);font-weight:700;}.easy .bad{color:var(--rd);font-weight:700;}
+.easy .hl{color:var(--or);font-weight:700;}.easy .bl{color:var(--nv);font-weight:700;}
+
+/* MEMO */
+.memo{position:relative;background:linear-gradient(135deg,#fff9ee,#fdf0c0);border:2px solid var(--gd2);border-top:4px solid var(--or2);padding:26px 22px 18px;margin:8px 0 18px;}
+.memo::before{content:attr(data-label);position:absolute;top:-14px;left:14px;background:var(--or2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.memo p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.memo .ok{color:var(--gn);font-weight:700;}.memo .bad{color:var(--rd);font-weight:700;}
+.memo .hl{color:var(--or);font-weight:700;}.memo .bl{color:var(--nv);font-weight:700;}
+
+/* FORMULA */
+.fbox{padding:16px 22px;margin:8px 0;color:#fff;text-align:center;line-height:2.3;}
+.fbox.n{background:var(--nv);}.fbox.b{background:var(--bl);}
+.fbox.g{background:var(--gn);}.fbox.o{background:var(--or);}
+.fbox.r{background:var(--rd);}.fbox.p{background:var(--pu);}
+.fbox.t{background:var(--tl);}.fbox.gd{background:var(--gd);}
+.fbox.mg{background:var(--mg);}
+.fbox .fm{font-size:1rem;font-weight:700;}
+.fbox.n .fm,.fbox.b .fm,.fbox.t .fm{color:#80e8ff;}
+.fbox.g .fm{color:#80ffc0;}.fbox.o .fm{color:#ffe0a0;}
+.fbox.r .fm{color:#ffb0b8;}.fbox.p .fm{color:#e0c0ff;}
+.fbox.gd .fm{color:#ffe090;}.fbox.mg .fm{color:#f0d0ff;}
+.fbox .fn{font-size:11.5px;color:rgba(255,255,255,.72);}
+
+/* PANEL */
+.panel{padding:12px 16px;margin:6px 0;font-size:13.5px;line-height:1.95;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--bl-lt);border-color:var(--bl);}
+.panel.pr{background:var(--rd-lt);border-color:var(--rd);}
+.panel.pg{background:var(--gn-lt);border-color:var(--gn);}
+.panel.po{background:var(--or-lt);border-color:var(--or);}
+.panel.pp{background:var(--pu-lt);border-color:var(--pu);}
+.panel.pt{background:var(--tl-lt);border-color:var(--tl);}
+.panel.pgd{background:var(--gd-lt);border-color:var(--gd2);}
+.panel.pmg{background:var(--mg-lt);border-color:var(--mg2);}
+
+/* TABLE */
+.tw{overflow-x:auto;margin:6px 0 16px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:var(--nv);color:#fff;padding:10px 13px;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+thead th.b{background:var(--bl);}thead th.g{background:var(--gn);}
+thead th.o{background:var(--or);}thead th.r{background:var(--rd);}
+thead th.p{background:var(--pu);}thead th.t{background:var(--tl);}
+thead th.mg{background:var(--mg);}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--gn);font-weight:700;}.tba{color:var(--rd);font-weight:700;}
+.thl{color:var(--or);font-weight:700;}.tbl{color:var(--nv);font-weight:700;}
+.tpu{color:var(--pu);font-weight:700;}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 16px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 16px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+.gc{border:2px solid var(--bdr);background:var(--w);padding:16px;}
+.gc .gct{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:7px;border-bottom:2px solid;margin-bottom:10px;}
+.gc.nv .gct{color:var(--nv);border-color:var(--nv);}
+.gc.gn .gct{color:var(--gn);border-color:var(--gn);}
+.gc.rd .gct{color:var(--rd);border-color:var(--rd);}
+.gc.or .gct{color:var(--or);border-color:var(--or);}
+.gc.bl .gct{color:var(--bl);border-color:var(--bl);}
+.gc.pu .gct{color:var(--pu);border-color:var(--pu);}
+.gc ul{list-style:none;font-size:12.5px;line-height:2;color:var(--t2);}
+.gc.gn ul li::before{content:'✅ ';}
+.gc.rd ul li::before{content:'❌ ';}
+.gc.nv ul li::before{content:'▶ ';}
+.gc.or ul li::before{content:'🔶 ';}
+.gc p{font-size:12.5px;color:var(--t2);line-height:1.85;}
+.gc strong{color:var(--t1);}
+
+/* SH3 */
+.sh3{font-family:'Noto Serif KR',serif;font-size:.97rem;font-weight:900;color:var(--t1);margin:22px 0 10px;padding-left:10px;border-left:4px solid var(--nv);}
+.sh3.b{border-color:var(--bl);}.sh3.g{border-color:var(--gn);}
+.sh3.r{border-color:var(--rd);}.sh3.o{border-color:var(--or);}
+.sh3.p{border-color:var(--pu);}.sh3.t{border-color:var(--tl);}
+.sh3.mg{border-color:var(--mg2);}
+
+/* TYPE CARD */
+.type-card{border:2px solid var(--bdr);background:#fff;padding:18px 20px;margin-bottom:14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;}
+.type-num{background:var(--nv);color:var(--gd-lt);font-family:'Noto Serif KR',serif;font-weight:900;font-size:1.1rem;padding:8px 12px;white-space:nowrap;align-self:start;}
+.type-body h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px;}
+.type-body p{font-size:13px;color:var(--t2);line-height:1.85;}
+.type-body .tags{margin-bottom:6px;}
+.type-body .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;margin-right:4px;margin-bottom:3px;color:#fff;}
+.tag.rd{background:var(--rd);}.tag.gn{background:var(--gn);}.tag.bl{background:var(--bl);}
+.tag.or{background:var(--or);}.tag.pu{background:var(--pu);}
+
+/* SUMMARY */
+.summary{background:#0c0a08;color:#f4f0e4;padding:44px 36px;margin-top:56px;text-align:center;border-top:4px solid var(--gd2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.4rem;color:#ffd060;margin-bottom:24px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:11px;max-width:980px;margin:0 auto 18px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,208,96,.3);padding:14px 16px;}
+.sc .st{color:#ffd060;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:7px;}
+.sc p{font-size:12px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;}
+
+footer{background:#070504;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:1px solid var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.chapter{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">세법 강의 노트 Vol.9</div>
+    <h1>법인세법 완전정복<br><em>의제배당 & 수입배당금 익금불산입</em></h1>
+    <p class="hero-sub">법 §16 · §18의2 · §18의4 · 시행령 §12~§14 · §17의2 | 시행 2026.01.02</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📋 의제배당 6유형</span>
+      <span class="hero-chip">🏗️ 자본전입 잉여금</span>
+      <span class="hero-chip">📊 무상주 지분비율</span>
+      <span class="hero-chip">🔢 의제배당 계산</span>
+      <span class="hero-chip">💼 감자·해산·합병·분할</span>
+      <span class="hero-chip">📑 자본준비금 감액</span>
+      <span class="hero-chip">🏦 내국법인 수입배당금</span>
+      <span class="hero-chip">🌏 외국자회사 수입배당금</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">목차</span>
+    <a href="#ch1">① 의제배당 개념</a>
+    <a href="#ch2">② 6가지 유형</a>
+    <a href="#ch3">③ 자본전입 잉여금</a>
+    <a href="#ch4">④ 무상주 지분비율</a>
+    <a href="#ch5">⑤ 의제배당 계산</a>
+    <a href="#ch6">⑥ 감자·해산·합병·분할</a>
+    <a href="#ch7">⑦ 자본준비금 감액</a>
+    <a href="#ch8">⑧ 내국법인 수입배당금</a>
+    <a href="#ch9">⑨ 외국자회사 수입배당금</a>
+    <a href="#sum">요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════
+     CH1. 의제배당 개념
+══════════════════════════════ -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Chapter 01</span>
+    <h2>의제배당의 의의</h2>
+    <span class="ref">법 §16①</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">💡</span>
+    <p>
+      <strong>의제배당(擬制配當)</strong>이란 실제로 이익 배당이 아니지만,<br>
+      법에서 배당받은 것으로 <strong>간주(의제)</strong>하여 익금에 산입하는 것입니다.<br>
+      취지: 법인이 실질적으로 이익을 누렸음에도 배당의 형식을 취하지 않아 과세를 회피하는 것을 방지합니다.
+    </p>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 의제배당이란?">
+    <p>
+      🏢 A법인이 B법인 주식 1,000만 원어치를 갖고 있었어요.<br>
+      B법인이 감자(자본 감소)하면서 A법인에게 2,000만 원을 돌려줬습니다.<br><br>
+      → 받은 돈(2,000만) - 원래 투자액(1,000만) = <span class="hl">초과분 1,000만 원</span><br>
+      → 이 1,000만 원은 배당이 아니지만, <span class="bl">세법에서는 배당받은 것으로 봅니다!</span><br><br>
+      이것이 바로 <span class="hl">의제배당</span>입니다.
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH2. 의제배당 6가지 유형
+══════════════════════════════ -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Chapter 02</span>
+    <h2>의제배당 6가지 유형 — 원칙과 예외</h2>
+    <span class="ref">법 §16①</span>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 §16①</span><span class="lc-ti">배당금 또는 분배금의 의제 — 6가지 유형</span></div>
+    <div class="lc-body">
+      <div class="cl n"><span class="cn n">1호</span>주식의 소각, 자본의 감소, 사원의 퇴사·탈퇴, 출자의 감소로 취득하는 금전과 그 밖의 재산 합계액이 <strong>주식 취득가액을 초과하는 금액</strong></div>
+      <div class="cl n"><span class="cn n">2호</span>잉여금의 전부·일부를 자본에 전입함으로써 취득하는 <strong>주식등의 가액</strong><br>단, 다음은 제외: 가. 상법 §459①에 따른 자본준비금(시행령 §12① 해당분) / 나. 자산재평가법 재평가적립금(토지 초과분 제외)</div>
+      <div class="cl n"><span class="cn n">3호</span>자기주식 보유 상태에서 <strong>2호 단서에 해당하는 자본전입</strong>으로 <strong>다른 주주의 지분비율이 증가</strong>한 경우 → 증가 지분비율 상당 주식 가액</div>
+      <div class="cl n"><span class="cn n">4호</span>해산법인으로부터 잔여재산 분배로 취득하는 금전·재산 가액이 <strong>주식 취득가액을 초과하는 금액</strong></div>
+      <div class="cl n"><span class="cn n">5호</span>피합병법인 주주가 취득하는 <strong>합병대가가 피합병법인 주식 취득가액을 초과하는 금액</strong></div>
+      <div class="cl n"><span class="cn n">6호</span>분할법인 주주가 취득하는 <strong>분할대가가 분할법인 주식 취득가액을 초과하는 금액</strong></div>
+    </div>
+  </div>
+
+  <div class="sh3 b">6가지 유형 비교표</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>유형</th><th>발생 원인</th><th>의제배당 금액</th><th>귀속 시기</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="tbl">1호 감자</span></td>
+          <td>주식 소각·자본감소·사원 퇴사</td>
+          <td>취득가액 − 주식 취득가액</td>
+          <td>결의일 또는 기준일</td>
+        </tr>
+        <tr>
+          <td><span class="tbl">2호 자본전입</span></td>
+          <td>이익잉여금·의제배당 대상 잉여금의 자본전입</td>
+          <td>취득 주식의 <strong>액면가액</strong></td>
+          <td>자본전입 결의일</td>
+        </tr>
+        <tr>
+          <td><span class="tbl">3호 자기주식 보유</span></td>
+          <td>비과세 잉여금 자본전입 시 지분비율 증가</td>
+          <td>증가 지분비율 × 발행 주식 가액</td>
+          <td>자본전입 결의일</td>
+        </tr>
+        <tr>
+          <td><span class="tbl">4호 해산</span></td>
+          <td>법인 해산 후 잔여재산 분배</td>
+          <td>잔여재산가액 − 주식 취득가액</td>
+          <td>잔여재산 확정일</td>
+        </tr>
+        <tr>
+          <td><span class="tbl">5호 합병</span></td>
+          <td>피합병법인 주주의 합병대가 수령</td>
+          <td>합병대가 − 주식 취득가액</td>
+          <td>합병등기일</td>
+        </tr>
+        <tr>
+          <td><span class="tbl">6호 분할</span></td>
+          <td>분할법인 주주의 분할대가 수령</td>
+          <td>분할대가 − 주식 취득가액</td>
+          <td>분할등기일</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH3. 자본전입 잉여금의 종류별 의제배당 여부
+══════════════════════════════ -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Chapter 03</span>
+    <h2>자본전입 잉여금의 종류별 의제배당 여부</h2>
+    <span class="ref">법 §16①2호 · 시행령 §12</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="icon">🏗️</span>
+    <p>
+      잉여금을 자본에 전입(무상주 발행)할 때, <strong>재원이 무엇이냐</strong>에 따라 의제배당 여부가 달라집니다.<br>
+      <strong>이익잉여금이나 의제배당 대상 자본잉여금</strong> → 의제배당 ✅<br>
+      <strong>비과세 자본준비금·재평가적립금</strong> → 의제배당 ❌
+    </p>
+  </div>
+
+  <div class="sh3 g">자본잉여금의 종류별 의제배당 여부 총정리</div>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>잉여금 종류</th>
+          <th class="g">의제배당 여부</th>
+          <th>근거 조문</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 이익잉여금 -->
+        <tr style="background:#f0fff6;">
+          <td><strong>이익잉여금</strong></td>
+          <td class="tok">✅ 의제배당 O</td>
+          <td>법 §16①2호 본문</td>
+          <td>이익의 분배 성격</td>
+        </tr>
+        <!-- 의제배당 대상 자본잉여금 -->
+        <tr style="background:#f0fff6;">
+          <td><strong>주식발행초과액 중 채무출자전환 시가 초과분</strong></td>
+          <td class="tok">✅ 의제배당 O</td>
+          <td>시령 §12①1호</td>
+          <td>§17①1호 단서 해당</td>
+        </tr>
+        <tr style="background:#f0fff6;">
+          <td><strong>자기주식 소각이익</strong><br>(소각 당시 시가 ≤ 취득가, 2년 이내)</td>
+          <td class="tok">✅ 의제배당 O</td>
+          <td>시령 §12①2호</td>
+          <td>2년 지나면 제외</td>
+        </tr>
+        <tr style="background:#f0fff6;">
+          <td><strong>적격합병 시 합병차익 중 일정 금액</strong><br>(피합병법인 의제배당 대상 잉여금 등)</td>
+          <td class="tok">✅ 의제배당 O</td>
+          <td>시령 §12①3호</td>
+          <td>합병차익 한도</td>
+        </tr>
+        <tr style="background:#f0fff6;">
+          <td><strong>적격분할 시 분할차익 중 일정 금액</strong></td>
+          <td class="tok">✅ 의제배당 O</td>
+          <td>시령 §12①4호</td>
+          <td>분할차익 한도</td>
+        </tr>
+        <!-- 비과세 자본준비금 -->
+        <tr style="background:#fff5f5;">
+          <td><strong>주식발행액면초과액 (일반)</strong></td>
+          <td class="tba">❌ 의제배당 X</td>
+          <td>법 §16①2호가목, §17①1호</td>
+          <td>자본준비금</td>
+        </tr>
+        <tr style="background:#fff5f5;">
+          <td><strong>주식의 포괄적 교환차익</strong></td>
+          <td class="tba">❌ 의제배당 X</td>
+          <td>§17①2호</td>
+          <td>자본준비금</td>
+        </tr>
+        <tr style="background:#fff5f5;">
+          <td><strong>주식의 포괄적 이전차익</strong></td>
+          <td class="tba">❌ 의제배당 X</td>
+          <td>§17①3호</td>
+          <td>자본준비금</td>
+        </tr>
+        <tr style="background:#fff5f5;">
+          <td><strong>감자차익</strong></td>
+          <td class="tba">❌ 의제배당 X</td>
+          <td>§17①4호</td>
+          <td>자본준비금</td>
+        </tr>
+        <tr style="background:#fff5f5;">
+          <td><strong>합병차익 (비과세 부분)</strong></td>
+          <td class="tba">❌ 의제배당 X</td>
+          <td>§17①5호 (시령 §12 제외 후)</td>
+          <td>자본준비금</td>
+        </tr>
+        <tr style="background:#fff5f5;">
+          <td><strong>분할차익 (비과세 부분)</strong></td>
+          <td class="tba">❌ 의제배당 X</td>
+          <td>§17①6호 (시령 §12 제외 후)</td>
+          <td>자본준비금</td>
+        </tr>
+        <!-- 재평가적립금 -->
+        <tr style="background:#fff8f0;">
+          <td><strong>재평가적립금 (토지 초과분 제외)</strong></td>
+          <td class="tba">❌ 의제배당 X</td>
+          <td>법 §16①2호나목</td>
+          <td>자산재평가법</td>
+        </tr>
+        <tr style="background:#f0fff6;">
+          <td><strong>재평가적립금 중 토지 재평가차액</strong></td>
+          <td class="tok">✅ 의제배당 O</td>
+          <td>법 §16①2호나목 괄호</td>
+          <td>토지분은 과세</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="memo" data-label="🧠 암기 포인트 — 의제배당 재원 vs 비재원">
+    <p>
+      <strong>의제배당 재원 (과세) = "이익·오염된 자본잉여금"</strong><br>
+      <span class="hl">이익잉여금</span> / <span class="hl">채무출자전환 시가 초과</span> / <span class="hl">자기주식 소각이익(2년 내)</span> / <span class="hl">토지 재평가차액</span><br><br>
+      <strong>의제배당 비재원 (비과세) = "순수 자본거래 잉여금"</strong><br>
+      <span class="ok">주발초(일반)</span> / <span class="ok">교환·이전차익</span> / <span class="ok">감자차익</span> / <span class="ok">합병·분할차익(비과세 부분)</span> / <span class="ok">재평가적립금(토지 제외)</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH4. 무상주 지분비율에 따른 의제배당
+══════════════════════════════ -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Chapter 04</span>
+    <h2>무상주 지급 시 지분비율에 따른 의제배당 구분</h2>
+    <span class="ref">법 §16①2호·3호 · 시행령 §12·§14</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="icon">📊</span>
+    <p>
+      법인이 자기주식을 보유한 상태에서 무상주를 발행할 때,<br>
+      자기주식에는 무상주가 배정되지 않으므로 <strong>다른 주주들의 지분비율이 올라가는</strong> 효과가 발생합니다.<br>
+      이 경우 <strong>재원에 따라</strong> 의제배당 여부가 달라지는 복잡한 구조가 생깁니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">법 §16①2호·3호</span><span class="lc-ti">자본전입 시 의제배당 판단 구조</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">2호 (일반 무상주)</span>잉여금의 자본전입으로 취득하는 주식 가액 → 재원이 <strong>의제배당 대상 잉여금</strong>이면 의제배당</div>
+      <div class="cl o"><span class="cn o">3호 (자기주식 보유 시)</span>자기주식 보유 상태에서 <strong>비과세 잉여금(§16①2호 단서)</strong>을 자본전입할 때<br>→ 다른 주주의 <strong>지분비율이 증가</strong>한 경우<br>→ 그 증가분에 해당하는 주식 가액을 <strong>의제배당으로 봄</strong></div>
+    </div>
+  </div>
+
+  <div class="sh3 o">2호 vs 3호 핵심 차이</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="o">구분</th><th class="o">2호</th><th class="o">3호</th></tr></thead>
+      <tbody>
+        <tr><td><strong>자본전입 재원</strong></td><td>의제배당 대상 잉여금 (이익잉여금 등)</td><td>비과세 잉여금 (자본준비금 등)</td></tr>
+        <tr><td><strong>자기주식 보유</strong></td><td>관계없음</td><td class="tbl">자기주식 보유 시에만 적용</td></tr>
+        <tr><td><strong>의제배당 금액</strong></td><td class="tok">취득 주식 액면가액 전부</td><td class="tok">지분비율 증가분에 해당하는 주식 가액</td></tr>
+        <tr><td><strong>의제배당 이유</strong></td><td>재원이 이익이므로 과세</td><td>자기주식 무배정으로 비례 이익 발생</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sh3 o">3호 계산 구조 — 자기주식 보유 시 지분비율 증가</div>
+  <div class="fbox o">
+    <div class="fm">의제배당 금액(3호) = 지분비율 증가분 × 전입 재원으로 취득하는 주식 총 가액</div>
+    <div class="fn">지분비율 증가분 = 전입 후 지분비율 − 전입 전 지분비율 (자기주식은 비례배정 불가이므로 나머지 주주 비율 상승)</div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 자기주식 보유 시 의제배당">
+    <p>
+      회사 주식 구성: A법인 40주 / B법인 40주 / 자기주식 20주 (총 100주)<br><br>
+      회사가 <span class="bl">주발초(비과세 잉여금) 100만 원</span>을 자본전입 → 무상주 100주 발행<br>
+      자기주식 20주에는 무상주 배정 ❌<br><br>
+      결과: A법인 취득 무상주 = 50주 (원래 지분율 40%인데 → 50%로 상승!)<br>
+      B법인 취득 무상주 = 50주<br><br>
+      → 비과세 재원인데 지분비율이 올랐으니<br>
+      → <span class="hl">증가분 10%(지분비율 40%→50%)에 해당하는 주식 가액 → 의제배당!</span><br><br>
+      A법인 의제배당 = (50% - 40%) × 200만 원(무상주 총액 200만) = <span class="hl">20만 원</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH5. 의제배당 계산 방법
+══════════════════════════════ -->
+<section class="chapter" id="ch5">
+  <div class="ch-hd">
+    <span class="ch-badge b5">Chapter 05</span>
+    <h2>의제배당 계산 방법</h2>
+    <span class="ref">시행령 §14</span>
+  </div>
+
+  <div class="intro i5">
+    <span class="icon">🔢</span>
+    <p>
+      의제배당 계산의 핵심은 <strong>"취득 재산 가액"과 "주식 취득가액"의 차이</strong>입니다.<br>
+      취득 재산이 주식인 경우 <strong>원칙: 액면가액</strong>,<br>
+      합병·분할 주식인 경우 <strong>원칙: 시가 또는 장부가액</strong>으로 평가합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h5"><span class="lc-no">시행령 §14</span><span class="lc-ti">재산가액의 평가</span></div>
+    <div class="lc-body">
+      <div class="cl r"><span class="cn r">①1호가목 (자본전입 무상주)</span>법 §16①2호·3호에 따른 주식 → <strong>액면가액</strong> (무액면주식: 전입금액÷신규발행주식수)</div>
+      <div class="cl r"><span class="cn r">①1호나목 (적격합병·분할 주식)</span>적격합병·분할 요건 모두 충족 시 → <strong>종전 장부가액</strong><br>(합병·분할 대가 일부를 금전으로 받고 시가 < 장부가 시 → 시가)</div>
+      <div class="cl r"><span class="cn r">①1호다목 (주식배당)</span>상법 §462의2 주식배당 → <strong>발행금액</strong></div>
+      <div class="cl r"><span class="cn r">①1호라목 (기타)</span>그 밖의 경우 → <strong>취득 당시 시가</strong></div>
+      <div class="cl r"><span class="cn r">①2호 (금전 외 재산)</span>주식 외 재산 → <strong>취득 당시 시가</strong></div>
+    </div>
+  </div>
+
+  <div class="sh3 r">의제배당 계산 유형별 공식</div>
+
+  <div class="fbox n">
+    <div class="fm">【공통 구조】 의제배당 = 취득 재산 가액 − 주식등 취득에 사용한 금액</div>
+    <div class="fn">취득 재산 가액은 재산 유형별로 다르게 평가 (아래 각 공식 참조)</div>
+  </div>
+
+  <div class="fbox b" style="margin-top:2px;">
+    <div class="fm">【자본전입 무상주 (2호)】 의제배당 = 취득 주식의 액면가액 (장부가 조정 불필요)</div>
+    <div class="fn">무상주 취득가: 의제배당 = 액면가 / 비과세 = 0 | 신·구주식 1주당 장부가 = 총장부가 ÷ 총주식수</div>
+  </div>
+
+  <div class="fbox r" style="margin-top:2px;">
+    <div class="fm">【감자(1호)】 의제배당 = 환급 금액 − 소각된 주식의 장부가액(취득가액)</div>
+    <div class="fn">주식 취득가액 = 원래 주식을 취득하는 데 사용한 금액 기준</div>
+  </div>
+
+  <div class="fbox o" style="margin-top:2px;">
+    <div class="fm">【해산(4호)】 의제배당 = 잔여재산 분배액 − 주식 취득가액</div>
+    <div class="fn">잔여재산가액: 금전은 금액 그대로, 금전 외 재산은 시가 평가</div>
+  </div>
+
+  <div class="fbox p" style="margin-top:2px;">
+    <div class="fm">【합병(5호)】 의제배당 = 합병대가 − 피합병법인 주식 취득가액</div>
+    <div class="fn">합병대가 = 합병법인 주식(시가 또는 장부가) + 금전·기타재산 | 적격합병: 주식평가액 = 종전 장부가액</div>
+  </div>
+
+  <div class="fbox t" style="margin-top:2px;">
+    <div class="fm">【분할(6호)】 의제배당 = 분할대가 − 분할법인 주식 취득가액</div>
+    <div class="fn">분할법인 주식 취득가액 = 소각·감소된 주식의 취득가액 기준 (존속분할: 감소 주식분만)</div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 의제배당 계산 핵심">
+    <p>
+      📐 의제배당 계산 공식은 <span class="bl">모든 유형에서 동일한 구조</span>:<br>
+      <span class="hl">"내가 받은 것" − "내가 원래 투자한 것" = 의제배당</span><br><br>
+      무상주(2호): 주식을 "0원"에 받은 것 → 액면가 전부가 의제배당<br>
+      감자(1호): 2,000만 원 받음 − 원래 투자 1,000만 원 = 1,000만 원 의제배당<br>
+      합병(5호): 합병대가 3억 − 피합병법인 주식 투자액 2억 = 1억 의제배당
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH6. 감자·해산·합병·분할 상세
+══════════════════════════════ -->
+<section class="chapter" id="ch6">
+  <div class="ch-hd">
+    <span class="ch-badge b6">Chapter 06</span>
+    <h2>감자·해산·합병·분할 의제배당 — 원칙·예외·계산</h2>
+    <span class="ref">법 §16①1호·4~6호 · 시행령 §14</span>
+  </div>
+
+  <div class="intro i6">
+    <span class="icon">💼</span>
+    <p>
+      감자·해산·합병·분할은 <strong>법인 구조 변경 시 발생하는 의제배당</strong>의 주요 유형입니다.<br>
+      <strong>원칙: 시가로 평가하여 차익에 과세</strong><br>
+      <strong>예외: 적격요건 충족 시 장부가액으로 평가 → 과세이연</strong>
+    </p>
+  </div>
+
+  <!-- 감자 -->
+  <div class="type-card">
+    <div class="type-num">1호<br>감자</div>
+    <div class="type-body">
+      <h4>🔻 주식 소각·자본 감소로 인한 의제배당</h4>
+      <div class="tags">
+        <span class="tag rd">익금산입</span><span class="tag gn">원칙</span>
+      </div>
+      <p>
+        <strong>원칙:</strong> 환급 금액 − 주식 취득가액 = 의제배당 → 익금산입<br><br>
+        <strong>주식 취득가액 특례 (시행령 §14③):</strong><br>
+        소각 전 2년 이내에 비과세 무상주(§16①2호 단서)를 취득한 경우<br>
+        → 그 무상주를 먼저 소각한 것으로 보고 → <strong>당초 취득가액을 0</strong>으로 봄<br>
+        → 효과: 의제배당액 증가 (비과세로 받은 무상주에도 과세)
+      </p>
+    </div>
+  </div>
+
+  <!-- 해산 -->
+  <div class="type-card">
+    <div class="type-num">4호<br>해산</div>
+    <div class="type-body">
+      <h4>🏚️ 법인 해산·잔여재산 분배로 인한 의제배당</h4>
+      <div class="tags">
+        <span class="tag rd">익금산입</span><span class="tag bl">잔여재산 확정일 기준</span>
+      </div>
+      <p>
+        <strong>계산:</strong> 잔여재산 분배액(시가) − 주식 취득가액<br><br>
+        <strong>잔여재산 가액 평가:</strong><br>
+        · 금전: 금액 그대로<br>
+        · 금전 외: 취득 당시 시가<br><br>
+        <strong>귀속 시기:</strong> 잔여재산의 가액이 확정된 날
+      </p>
+    </div>
+  </div>
+
+  <!-- 합병 -->
+  <div class="type-card">
+    <div class="type-num">5호<br>합병</div>
+    <div class="type-body">
+      <h4>🤝 피합병법인 주주의 합병 의제배당</h4>
+      <div class="tags">
+        <span class="tag rd">비적격: 시가 과세</span><span class="tag gn">적격: 장부가 과세이연</span>
+      </div>
+      <p>
+        <strong>의제배당 = 합병대가 − 피합병법인 주식 취득가액</strong><br><br>
+        <strong>합병대가 평가:</strong><br>
+        · <strong>비적격합병:</strong> 합병법인 주식 = <strong>시가</strong> + 금전·기타재산 시가<br>
+        · <strong>적격합병:</strong> 합병법인 주식 = <strong>종전 장부가액</strong> (과세이연)<br>
+        → 단, 장부가 < 시가 상황에서 금전 일부 수령 시 시가 적용<br><br>
+        <strong>귀속 시기:</strong> 합병등기일
+      </p>
+    </div>
+  </div>
+
+  <!-- 분할 -->
+  <div class="type-card">
+    <div class="type-num">6호<br>분할</div>
+    <div class="type-body">
+      <h4>✂️ 분할법인 주주의 분할 의제배당</h4>
+      <div class="tags">
+        <span class="tag rd">비적격: 시가 과세</span><span class="tag gn">적격: 장부가 과세이연</span>
+      </div>
+      <p>
+        <strong>의제배당 = 분할대가 − 분할법인 주식 취득가액</strong><br><br>
+        <strong>분할대가 평가:</strong><br>
+        · <strong>비적격분할:</strong> 분할신설법인 주식 = <strong>시가</strong><br>
+        · <strong>적격분할:</strong> 분할신설법인 주식 = <strong>종전 장부가액</strong><br><br>
+        <strong>분할법인 주식 취득가액:</strong><br>
+        · 존속분할(법인 존속): <strong>소각·감소된 주식분</strong>만 취득가액 배분<br>
+        · 소멸분할: 전체 주식 취득가액<br><br>
+        <strong>귀속 시기:</strong> 분할등기일
+      </p>
+    </div>
+  </div>
+
+  <div class="sh3 p">적격 vs 비적격 — 의제배당 과세 비교</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">구분</th><th class="p">비적격</th><th class="p">적격 (과세이연)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>합병·분할 주식 평가</strong></td><td class="tba">시가 (즉시 과세)</td><td class="tok">종전 장부가액 (이연)</td></tr>
+        <tr><td><strong>의제배당 발생 여부</strong></td><td class="tba">시가 - 취득가 = 의제배당</td><td class="tok">장부가 - 취득가 = 의제배당 (소액 또는 0)</td></tr>
+        <tr><td><strong>나중 양도 시</strong></td><td>이미 과세됐으므로 과세 없음</td><td class="tba">낮은 취득가로 양도차익 과세 (과세이연분 정산)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH7. 자본준비금 감액 의제배당
+══════════════════════════════ -->
+<section class="chapter" id="ch7">
+  <div class="ch-hd">
+    <span class="ch-badge b7">Chapter 07</span>
+    <h2>자본준비금 감액으로 받은 배당 — 의제배당 vs 익금불산입</h2>
+    <span class="ref">법 §18⑧ · §18의2②7호</span>
+  </div>
+
+  <div class="intro i7">
+    <span class="icon">📑</span>
+    <p>
+      상법 §461의2에 따라 자본준비금을 감액하여 배당을 받을 때,<br>
+      <strong>비과세 자본준비금(순수 자본거래 재원)에서 감액한 배당 → 익금불산입</strong>,<br>
+      <strong>의제배당 대상 자본준비금에서 감액한 배당 → 익금산입</strong>됩니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h7"><span class="lc-no">법 §18⑧</span><span class="lc-ti">자본준비금 감액 배당 — 익금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl gd"><span class="cn gd">원칙</span>상법 §461의2에 따라 <strong>자본준비금을 감액하여 받는 배당금액</strong><br>→ <strong>익금불산입</strong> (단, 보유 주식 장부가액 한도)</div>
+      <div class="cl gd"><span class="cn gd">예외 (익금산입)</span>다음의 자본준비금 감액 배당은 <strong>익금불산입 제외</strong> → 익금 또는 의제배당:<br>
+        나목: §16①2호가목에 해당하지 않는 자본준비금 (의제배당 대상 자본잉여금)<br>
+        나목·다목: 적격합병·적격분할 시 승계된 합병·분할차익 중 피합병·분할법인의 재평가적립금 상당액</div>
+    </div>
+  </div>
+
+  <div class="sh3" style="border-color:var(--gd2);">자본준비금 감액 배당의 세무처리 구분</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="t">자본준비금 재원</th><th class="t">세무처리</th><th class="t">수취 법인 처리</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>순수 자본거래 자본준비금<br>(주발초, 교환·이전차익 등)</td>
+          <td class="tok">익금불산입 (§18⑧ 원칙)</td>
+          <td>취득 주식 장부가액 감소</td>
+        </tr>
+        <tr>
+          <td>의제배당 대상 자본준비금<br>(합병·분할차익 중 과세 부분 등)</td>
+          <td class="tba">의제배당 → 익금산입</td>
+          <td>수입배당금 익금불산입 적용 가능</td>
+        </tr>
+        <tr>
+          <td>적격합병·분할 시 재평가적립금<br>상당액에서 지급된 자본준비금</td>
+          <td class="tba">§18의2②7호 — 수입배당금 익금불산입 배제</td>
+          <td>익금산입 (이중혜택 방지)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pgd">
+    🔑 <strong>핵심 정리:</strong><br>
+    자본준비금 감액 배당 → 원칙 <span class="tok">익금불산입</span> (순자본 환원이므로)<br>
+    단, 의제배당 대상 재원에서 온 것은 → <span class="tba">익금산입</span> (이익의 환원이므로)<br>
+    수입배당금 익금불산입 규정(§18의2)도 <strong>§18의2②7호에 따라 일부 배제</strong>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH8. 내국법인 수입배당금 익금불산입
+══════════════════════════════ -->
+<section class="chapter" id="ch8">
+  <div class="ch-hd">
+    <span class="ch-badge b8">Chapter 08</span>
+    <h2>내국법인 수입배당금액의 익금불산입</h2>
+    <span class="ref">법 §18의2 · 시행령 §17의2</span>
+  </div>
+
+  <div class="intro i8">
+    <span class="icon">🏦</span>
+    <p>
+      내국법인이 다른 내국법인으로부터 배당받을 때,<br>
+      피출자법인은 이미 법인세를 납부한 후 배당하는 것이므로<br>
+      수취 법인에게 다시 법인세를 부과하면 <strong>이중과세</strong>가 됩니다.<br>
+      이를 방지하기 위해 <strong>출자비율에 따라 일부 또는 전액을 익금불산입</strong>합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h8"><span class="lc-no">법 §18의2①</span><span class="lc-ti">내국법인 수입배당금액 익금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl gd"><span class="cn gd">원칙</span>수입배당금액 × 익금불산입률 − 차입금 이자 배분액 = 익금불산입액</div>
+      <div class="cl gd"><span class="cn gd">익금불산입률</span>출자비율 50% 이상: <strong>100%</strong> / 20~50% 미만: <strong>80%</strong> / 20% 미만: <strong>30%</strong></div>
+      <div class="cl gd"><span class="cn gd">적용 제외 법인</span>고유목적사업준비금을 손금산입하는 <strong>비영리내국법인</strong>은 적용 제외</div>
+    </div>
+  </div>
+
+  <div class="sh3 g" style="border-color:var(--gd2);">출자비율별 익금불산입률 — 법 §18의2①1호</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="t">피출자법인에 대한 출자비율</th><th class="t">익금불산입률</th><th class="t">취지</th></tr></thead>
+      <tbody>
+        <tr><td><strong>50% 이상</strong></td><td class="tok"><strong>100%</strong> (전액 불산입)</td><td>사실상 단일 기업 — 완전 이중과세 제거</td></tr>
+        <tr><td><strong>20% 이상 ~ 50% 미만</strong></td><td class="tok"><strong>80%</strong></td><td>지배적 투자 — 대부분 이중과세 제거</td></tr>
+        <tr><td><strong>20% 미만</strong></td><td class="thl"><strong>30%</strong></td><td>소수주주 — 부분적 이중과세 제거</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sh3 g" style="border-color:var(--gd2);">차입금 이자 차감 — 법 §18의2①2호</div>
+  <div class="lc">
+    <div class="lc-hd h8"><span class="lc-no">시행령 §17의2</span><span class="lc-ti">차입금 이자 차감액 계산</span></div>
+    <div class="lc-body">
+      <div class="cl gd"><span class="cn gd">차감 이유</span>수입배당금 중 차입금으로 취득한 투자분에서 나온 배당은 이자비용이 이미 손금에 산입되었으므로, 이 부분은 익금불산입에서 제외</div>
+      <div class="cl gd"><span class="cn gd">계산식</span>차입금 이자 차감액 = 법인의 차입금 이자 × (피출자법인 출자금액/자산총액) × 익금불산입률</div>
+    </div>
+  </div>
+
+  <div class="fbox gd">
+    <div class="fm">익금불산입액 = (수입배당금 × 불산입률) − (차입금이자 × 출자금액/자산총액 × 불산입률)</div>
+    <div class="fn">익금불산입액이 0보다 작으면 없는 것으로 봄 (음수 불가)</div>
+  </div>
+
+  <div class="sh3 r">적용 제외 사유 — 법 §18의2②</div>
+  <div class="lc">
+    <div class="lc-hd h8"><span class="lc-no">법 §18의2②</span><span class="lc-ti">익금불산입 적용 제외 (8가지)</span></div>
+    <div class="lc-body">
+      <div class="cl gd"><span class="cn gd">1호</span><strong>배당기준일 전 3개월 이내에 취득</strong>한 주식에서 발생한 수입배당금 → 단기 보유, 조세회피 방지</div>
+      <div class="cl gd"><span class="cn gd">3호</span>§51의2 또는 조특법 §104의31에 따라 소득공제를 받는 법인 (유동화전문회사 등)으로부터 받은 배당</div>
+      <div class="cl gd"><span class="cn gd">4호</span>법인세 비과세·면제·감면받는 법인(대통령령 한정)으로부터 받은 배당</div>
+      <div class="cl gd"><span class="cn gd">5호</span>법인과세 신탁재산의 소득공제 적용 법인으로부터 받은 배당</div>
+      <div class="cl gd"><span class="cn gd">6호</span>재평가법 §28②를 위반한 재평가적립금 감액 지급 배당</div>
+      <div class="cl gd"><span class="cn gd">7호</span>§18⑧나목·다목에 해당하는 자본준비금 감액 배당</div>
+      <div class="cl gd"><span class="cn gd">8호</span>피출자법인의 소득에 법인세가 과세되지 않은 수입배당금 (대통령령)</div>
+    </div>
+  </div>
+
+  <div class="sh3 r">출자비율 계산 기준 (시행령 §17의2①)</div>
+  <div class="panel pb">
+    출자비율 계산: 피출자법인의 <strong>배당기준일 현재 3개월 이상 계속 보유</strong>한 주식 기준<br>
+    → 배당기준일 전 3개월 이내 취득분은 제외 (§18의2②1호 적용 제외 기준과 연동)
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 수입배당금 익금불산입">
+    <p>
+      🏢 A법인이 B법인 주식 60% 보유 → B법인이 배당 1억 원을 줬습니다.<br><br>
+      B법인은 이미 법인세를 내고 배당한 거예요.<br>
+      A법인도 1억 원 전부에 세금을 내면 → <span class="bad">이중과세!</span><br><br>
+      그래서:<br>
+      출자비율 60% ≥ 50% → 익금불산입률 <span class="ok">100%</span><br>
+      → 1억 원 전부 익금불산입 (단, 차입금 이자 관련 금액은 차감)<br><br>
+      만약 출자비율이 15%였다면:<br>
+      → 불산입률 30% → 3,000만 원만 익금불산입, <span class="hl">7,000만 원은 익금산입</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     CH9. 외국자회사 수입배당금 익금불산입
+══════════════════════════════ -->
+<section class="chapter" id="ch9">
+  <div class="ch-hd">
+    <span class="ch-badge b9">Chapter 09</span>
+    <h2>외국자회사 수입배당금액의 익금불산입</h2>
+    <span class="ref">법 §18의4</span>
+  </div>
+
+  <div class="intro i9">
+    <span class="icon">🌏</span>
+    <p>
+      외국자회사는 이미 현지에서 법인세를 납부했으므로,<br>
+      국내에서 다시 과세하면 이중과세가 됩니다.<br>
+      내국법인이 외국자회사로부터 받는 배당금의 <strong>95%를 익금불산입</strong>합니다.<br>
+      (5%는 배당 관련 비용 간주)
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h9"><span class="lc-no">법 §18의4①</span><span class="lc-ti">외국자회사 수입배당금 익금불산입</span></div>
+    <div class="lc-body">
+      <div class="cl mg"><span class="cn mg">요건</span>내국법인이 출자한 <strong>외국자회사</strong>로부터 받은 배당금<br>
+        외국자회사 = 의결권 있는 발행주식 <strong>10% 이상</strong> 출자 외국법인 (해외자원개발 5%)<br>
+        + 대통령령으로 정하는 요건 충족 법인</div>
+      <div class="cl mg"><span class="cn mg">불산입률</span>수입배당금액의 <strong>95%</strong> 익금불산입 (5%는 비용 간주)</div>
+      <div class="cl mg"><span class="cn mg">②</span>외국자회사 아닌 외국법인이 자본준비금 감액 배당 시 → 그 금액의 <strong>95%</strong> 익금불산입</div>
+    </div>
+  </div>
+
+  <div class="sh3 mg">적용 제외 사유 — 법 §18의4③④</div>
+  <div class="lc">
+    <div class="lc-hd h9"><span class="lc-no">법 §18의4③④</span><span class="lc-ti">익금불산입 적용 제외</span></div>
+    <div class="lc-body">
+      <div class="cl mg"><span class="cn mg">③ (적용 자체 제외)</span>「국제조세조정법」 §27①에 따른 <strong>특정외국법인 유보소득</strong>에 대해 배당받은 것으로 보는 금액 및 그 실제 배당 → 적용 없음</div>
+      <div class="cl mg"><span class="cn mg">④1호 (익금산입)</span>조세피난처 <strong>특정외국법인</strong>으로부터 받은 수입배당금액 (대통령령 기준)</div>
+      <div class="cl mg"><span class="cn mg">④2호 (익금산입)</span><strong>혼성금융상품</strong> 거래에 따라 수취하는 배당금</div>
+      <div class="cl mg"><span class="cn mg">④3호 (익금산입)</span>①②와 유사한 것으로 대통령령으로 정하는 금액</div>
+    </div>
+  </div>
+
+  <!-- 내국법인 vs 외국자회사 비교 -->
+  <div class="sh3 mg">내국법인 수입배당금 vs 외국자회사 수입배당금 비교</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th class="b">내국법인 (§18의2)</th><th class="mg">외국자회사 (§18의4)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>적용 대상</strong></td><td>다른 내국법인으로부터 배당</td><td>외국자회사로부터 배당</td></tr>
+        <tr><td><strong>출자 요건</strong></td><td>제한 없음 (불산입률로 구분)</td><td class="tbl"><strong>10% 이상</strong> 출자 (해외자원개발 5%)</td></tr>
+        <tr><td><strong>불산입률</strong></td><td class="tbl">30%·80%·100% (출자비율별 차등)</td><td class="tpu"><strong>95% 단일 비율</strong></td></tr>
+        <tr><td><strong>차입금 이자 차감</strong></td><td class="tba">있음 (시령 §17의2)</td><td class="tok">없음</td></tr>
+        <tr><td><strong>배당기준일 3개월 제외</strong></td><td class="tba">있음 (§18의2②1호)</td><td class="tok">없음</td></tr>
+        <tr><td><strong>적용 제외 비영리</strong></td><td class="tba">고유목적사업준비금 법인 제외</td><td class="tok">별도 규정 없음</td></tr>
+        <tr><td><strong>특정외국법인 유보소득</strong></td><td>해당 없음</td><td class="tba">적용 제외 (조세피난처)</td></tr>
+        <tr><td><strong>혼성금융상품</strong></td><td>해당 없음</td><td class="tba">익금산입</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 내국법인 vs 외국자회사 수입배당금">
+    <p>
+      <span class="bl">내국법인 배당:</span> 출자비율에 따라 30%~100% 불산입 (차등)<br>
+      + 차입금 이자로 투자한 부분은 이자 차감 있음<br><br>
+      <span class="hl">외국자회사 배당:</span> 비율 관계없이 항상 <span class="ok">95% 불산입</span> (5%만 과세)<br>
+      + 차입금 이자 차감 없음 (더 단순)<br><br>
+      왜 다를까?<br>
+      내국법인은 출자비율이 높을수록 이중과세가 더 심각하니 → 차등 비율<br>
+      외국자회사는 현지 세금 납부 여부 확인이 어려우니 → 단순하게 95% 고정
+    </p>
+  </div>
+
+  <div class="memo" data-label="🧠 최종 암기 정리 — 수입배당금 익금불산입">
+    <p>
+      <strong>내국법인 3구간 (§18의2):</strong><br>
+      <span class="ok">50% 이상 → 100%</span> / <span class="hl">20~50% → 80%</span> / <span class="bad">20% 미만 → 30%</span><br>
+      공통: 차입금이자 차감 / 배당기준일 3개월 이내 취득분 제외<br><br>
+      <strong>외국자회사 (§18의4):</strong><br>
+      요건: 의결권 주식 <span class="bl">10% 이상</span> 출자 (해외자원개발 5%)<br>
+      불산입률: 무조건 <span class="ok">95%</span> (5% 비용 간주)<br>
+      제외: 특정외국법인 유보소득·혼성금융상품
+    </p>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="summary" id="sum">
+  <h3>🏆 의제배당 & 수입배당금 핵심 총정리</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">📋 의제배당 6유형</div>
+      <p>1호 감자 / 2호 자본전입 / 3호 자기주식 지분증가<br>
+      4호 해산 / 5호 합병 / 6호 분할<br>
+      <strong>공식: 취득가액 − 주식 취득가액</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🏗️ 자본전입 재원 구분</div>
+      <p>이익잉여금·채무출자전환 초과·자기주식 소각이익(2년내) → <strong>의제배당 O</strong><br>
+      주발초·감자차익·교환이전차익·재평가적립금(토지 제외) → <strong>의제배당 X</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">📊 무상주 3호 특칙</div>
+      <p>자기주식 보유 + 비과세 재원 자본전입<br>
+      → 다른 주주 <strong>지분비율 증가분 × 주식 가액 = 의제배당</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🔢 주식 평가 원칙</div>
+      <p>무상주: <strong>액면가액</strong><br>
+      비적격 합병·분할: <strong>시가</strong><br>
+      적격 합병·분할: <strong>종전 장부가액</strong> (과세이연)</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏦 내국법인 수입배당금</div>
+      <p><strong>50%↑: 100% / 20~50%: 80% / 20%↓: 30%</strong><br>
+      − 차입금 이자 차감<br>
+      제외: 3개월 내 취득·비과세 법인 등 8가지</p>
+    </div>
+    <div class="sc">
+      <div class="st">🌏 외국자회사 수입배당금</div>
+      <p>요건: <strong>10% 이상</strong> 출자 (해외자원개발 5%)<br>
+      불산입: <strong>95%</strong> (차입금 이자 차감 없음)<br>
+      제외: 특정외국법인·혼성금융상품</p>
+    </div>
+    <div class="sc">
+      <div class="st">📑 자본준비금 감액 배당</div>
+      <p>비과세 재원 → <strong>익금불산입</strong> (§18⑧)<br>
+      의제배당 재원 → <strong>익금산입</strong><br>
+      §18의2②7호: 일부 수입배당금 불산입 배제</p>
+    </div>
+    <div class="sc">
+      <div class="st">⚠️ 핵심 차이: 내국 vs 외국</div>
+      <p>내국: 출자비율별 <strong>차등</strong> + <strong>차입금이자 차감</strong><br>
+      외국: 10%이상이면 <strong>95% 단일</strong> + 차감 없음<br>
+      둘 다: 이중과세 방지 목적</p>
+    </div>
+  </div>
+  <p class="note">법인세법 §16·§17·§18⑧·§18의2·§18의4 · 시행령 §12~§14·§17의2 | 시행 2026.01.02<br>본 자료는 학습 목적 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div>
+<footer>법인세법 §16·§17·§18⑧·§18의2·§18의4 · 시행령 §12~§14·§17의2 | 시행 2026.01.02</footer>
+</body>
+</html>
