@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국세기본법 완전정복 예습자료</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg-primary: #FAFAFA;
+    --bg-card: #FFFFFF;
+    --bg-accent: #F0F4FF;
+    --bg-warning: #FFF8F0;
+    --bg-success: #F0FFF4;
+    --bg-info: #F0F8FF;
+    --text-primary: #1A1A2E;
+    --text-secondary: #4A4A6A;
+    --text-muted: #7A7A9A;
+    --accent-navy: #1A3A6B;
+    --accent-blue: #2C5AA0;
+    --accent-gold: #B8860B;
+    --accent-red: #8B1A1A;
+    --accent-green: #1A5C3A;
+    --accent-teal: #1A6B6B;
+    --border-light: #E0E4EF;
+    --border-medium: #C0C8DF;
+    --shadow-sm: 0 1px 4px rgba(26,58,107,0.08);
+    --shadow-md: 0 4px 16px rgba(26,58,107,0.10);
+    --shadow-lg: 0 8px 32px rgba(26,58,107,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    font-size: 15px;
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    background: var(--accent-navy);
+    color: #fff;
+    padding: 48px 0 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.02) 0px,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  }
+  .site-header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  .site-header .subtitle {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 8px;
+    position: relative;
+  }
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+
+  /* ─── TOC ─── */
+  .toc-wrap {
+    max-width: 1000px;
+    margin: 36px auto;
+    padding: 0 24px;
+  }
+  .toc-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent-navy);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--bg-accent);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s;
+    border: 1px solid transparent;
+  }
+  .toc-item:hover { background: #dce8ff; border-color: var(--accent-blue); }
+  .toc-num {
+    background: var(--accent-navy);
+    color: #fff;
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ─── MAIN LAYOUT ─── */
+  .main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ─── SECTION ─── */
+  .chapter {
+    margin-bottom: 56px;
+  }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--accent-navy);
+  }
+  .chapter-num {
+    background: var(--accent-navy);
+    color: #fff;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .chapter-title-box { flex: 1; }
+  .chapter-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-navy);
+    line-height: 1.3;
+  }
+  .chapter-law-ref {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  .card-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .icon { font-size: 1.1rem; }
+
+  /* ─── ANALOGY BOX ─── */
+  .analogy-box {
+    background: #FFF9E6;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+  .analogy-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .analogy-text {
+    font-size: 0.9rem;
+    color: #5C4400;
+    line-height: 1.7;
+  }
+
+  /* ─── LAW QUOTE ─── */
+  .law-quote {
+    background: #F0F4FF;
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 10px 10px 0;
+    padding: 12px 18px;
+    margin: 12px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.83rem;
+    color: #2A3A6A;
+    line-height: 1.8;
+  }
+  .law-ref {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* ─── WARNING / EXCEPTION ─── */
+  .exception-box {
+    background: #FFF0F0;
+    border-left: 4px solid var(--accent-red);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+  .exception-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .success-box {
+    background: #F0FFF4;
+    border-left: 4px solid var(--accent-green);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+  .success-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  /* ─── TABLE ─── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  thead tr {
+    background: var(--accent-navy);
+    color: #fff;
+  }
+  thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+  }
+  tbody tr { border-bottom: 1px solid var(--border-light); }
+  tbody tr:nth-child(even) { background: var(--bg-accent); }
+  tbody tr:hover { background: #dce8ff; }
+  tbody td {
+    padding: 9px 14px;
+    vertical-align: top;
+    color: var(--text-secondary);
+  }
+  tbody td:first-child { color: var(--text-primary); font-weight: 500; }
+
+  /* ─── FLOW DIAGRAM ─── */
+  .flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0;
+  }
+  .flow-step {
+    background: var(--accent-navy);
+    color: #fff;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .flow-arrow {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+  .flow-step.alt { background: var(--accent-blue); }
+  .flow-step.warn { background: var(--accent-red); }
+  .flow-step.ok { background: var(--accent-green); }
+  .flow-step.gold { background: var(--accent-gold); }
+
+  /* ─── KEYWORD TAG ─── */
+  .kw {
+    display: inline-block;
+    background: var(--bg-accent);
+    border: 1px solid var(--border-medium);
+    border-radius: 5px;
+    padding: 1px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent-navy);
+    font-weight: 600;
+  }
+
+  /* ─── HIGHLIGHT ─── */
+  .hi-gold { color: var(--accent-gold); font-weight: 700; }
+  .hi-red  { color: var(--accent-red);  font-weight: 700; }
+  .hi-blue { color: var(--accent-blue); font-weight: 700; }
+  .hi-green{ color: var(--accent-green);font-weight: 700; }
+
+  /* ─── COMPARE GRID ─── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  .compare-col {
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .compare-col.left {
+    background: #F0F4FF;
+    border: 1px solid #C0CCEE;
+  }
+  .compare-col.right {
+    background: #FFF0F0;
+    border: 1px solid #EECCCC;
+  }
+  .compare-col h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .compare-col.left h4 { color: var(--accent-blue); }
+  .compare-col.right h4 { color: var(--accent-red); }
+  .compare-col ul { padding-left: 16px; }
+  .compare-col li { font-size: 0.83rem; color: var(--text-secondary); margin-bottom: 5px; }
+
+  /* ─── SUMMARY BOX ─── */
+  .summary-card {
+    background: linear-gradient(135deg, #1A3A6B 0%, #2C5AA0 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 22px 28px;
+    margin: 24px 0;
+  }
+  .summary-card h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.0rem;
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+  .summary-card ul { padding-left: 18px; }
+  .summary-card li { font-size: 0.87rem; line-height: 1.85; opacity: 0.9; }
+
+  /* ─── STEP LIST ─── */
+  .step-list { padding: 0; list-style: none; }
+  .step-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    background: var(--accent-navy);
+    color: #fff;
+    border-radius: 50%;
+    width: 24px; height: 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ─── FOOTER ─── */
+  .site-footer {
+    background: var(--accent-navy);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 24px;
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 600px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .chapter-header { flex-direction: column; }
+    .site-header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <h1>📚 국세기본법 완전정복</h1>
+  <p class="subtitle">세무사·회계사·세무직 공무원 시험 대비 교재 예습자료</p>
+  <div class="badge-row">
+    <span class="badge">근거: 국세기본법 (법령 ID 001586)</span>
+    <span class="badge">시행령 · 시행규칙 포함</span>
+    <span class="badge">초등학생도 이해하는 쉬운 비유</span>
+    <span class="badge">2026년 최신 법령 기준</span>
+  </div>
+</header>
+
+<!-- TOC -->
+<div class="toc-wrap">
+  <div class="toc-card">
+    <div class="toc-title">📋 목차</div>
+    <div class="toc-grid">
+      <a href="#ch1" class="toc-item"><span class="toc-num">1</span>조세총론과 총칙</a>
+      <a href="#ch2" class="toc-item"><span class="toc-num">2</span>부과원칙·세법적용원칙</a>
+      <a href="#ch3" class="toc-item"><span class="toc-num">3</span>납세의무</a>
+      <a href="#ch4" class="toc-item"><span class="toc-num">4</span>납세의무의 확정</a>
+      <a href="#ch5" class="toc-item"><span class="toc-num">5</span>국세와 일반채권</a>
+      <a href="#ch6" class="toc-item"><span class="toc-num">6</span>과세</a>
+      <a href="#ch7" class="toc-item"><span class="toc-num">7</span>국세환급금·환급가산금</a>
+      <a href="#ch8" class="toc-item"><span class="toc-num">8</span>국세불복제도</a>
+      <a href="#ch9" class="toc-item"><span class="toc-num">9</span>납세자권리·과세전적부심사</a>
+    </div>
+  </div>
+</div>
+
+<div class="main-content">
+
+<!-- ===== CHAPTER 1 ===== -->
+<section class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 1</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">조세총론과 국세기본법 총칙</div>
+      <div class="chapter-law-ref">국세기본법 제1조~제13조 / 목적 · 정의 · 기간 · 기한 · 서류송달</div>
+    </div>
+  </div>
+
+  <!-- 조세의 개념 -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🏛️</span>조세란 무엇인가?</div>
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">우리 동네 놀이터·도서관·소방서는 누가 만들었나요? 바로 국가입니다. 이 시설을 유지하려면 돈이 필요한데, 국가는 모든 주민에게 "우리 모두 함께 낼게요!" 하며 걷는 돈이 바로 세금입니다. 억지로 내야 하고(강제성), 대가를 딱 정해주지 않으며(비대가성), 법에 따라야 합니다(법률주의).</div>
+    </div>
+    <div class="law-quote">
+      <span class="law-ref">국세기본법 제1조 (목적)</span>
+      이 법은 국세에 관한 기본적이고 공통적인 사항과 납세자의 권리·의무 및 권리구제에 관한 사항을 규정함으로써 과세를 공정하게 하며, 국민의 납세의무의 원활한 이행에 이바지함을 목적으로 한다.
+    </div>
+    <p style="font-size:0.87rem;color:var(--text-secondary);margin-top:10px;">국세기본법은 <span class="kw">일반법</span>이고, 개별 세법(소득세법·법인세법 등)은 <span class="kw">특별법</span>입니다. 특별법이 우선 적용됩니다(§3).</p>
+  </div>
+
+  <!-- 국세의 종류 -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🗂️</span>국세 12가지 — 꼭 외우세요!</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>세목</th><th>간단 특징</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4">소득과세</td><td>소득세</td><td>개인이 번 돈에 부과</td></tr>
+          <tr><td>법인세</td><td>법인이 번 돈에 부과</td></tr>
+          <tr><td>상속세</td><td>재산을 물려받을 때</td></tr>
+          <tr><td>증여세</td><td>재산을 선물받을 때</td></tr>
+          <tr><td rowspan="3">소비과세</td><td>부가가치세</td><td>물건 살 때 10% 추가</td></tr>
+          <tr><td>개별소비세</td><td>사치품·특정 물품</td></tr>
+          <tr><td>주세 / 교통·에너지·환경세</td><td>술 / 유류</td></tr>
+          <tr><td rowspan="3">재산과세</td><td>종합부동산세</td><td>고가 부동산 보유세</td></tr>
+          <tr><td>인지세</td><td>계약서 작성 시</td></tr>
+          <tr><td>증권거래세</td><td>주식 팔 때</td></tr>
+          <tr><td rowspan="2">목적세</td><td>교육세</td><td>교육 재원</td></tr>
+          <tr><td>농어촌특별세</td><td>농어촌 재원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="law-quote">
+      <span class="law-ref">국세기본법 제2조 제1호 가~타목</span>
+      소득세·법인세·상속세·증여세·종합부동산세·부가가치세·개별소비세·교통에너지환경세·주세·인지세·증권거래세·교육세·농어촌특별세를 국세로 한다.
+    </div>
+  </div>
+
+  <!-- ★★ 기간과 기한 상세 ★★ -->
+  <div class="card" id="detail-period">
+    <div class="card-title"><span class="icon">📅</span>★ 기간과 기한의 원칙과 예외 [중요]</div>
+
+    <div class="compare-grid">
+      <div class="compare-col left">
+        <h4>📌 기간(期間)이란?</h4>
+        <ul>
+          <li>어떤 시점부터 어떤 시점까지의 <strong>시간의 범위</strong></li>
+          <li>예: "30일 이내", "6개월", "5년"</li>
+          <li>계산: 민법의 원칙 적용(§4) — 초일불산입 원칙</li>
+        </ul>
+      </div>
+      <div class="compare-col right">
+        <h4>📌 기한(期限)이란?</h4>
+        <ul>
+          <li>신고·납부 등 <strong>행위를 해야 할 특정 날짜</strong></li>
+          <li>예: "3월 31일까지", "신고기한"</li>
+          <li>기한이 공휴일 등이면 → 다음 날이 기한(특례)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text"><strong>기간</strong>은 "숙제할 수 있는 날들의 범위(월요일~금요일)"이고, <strong>기한</strong>은 "숙제 제출 마감일(금요일)"입니다. 마감일이 토요일이면 다음 월요일로 자동 연장됩니다!</div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <strong style="font-size:0.9rem;color:var(--accent-navy);">기간 계산의 원칙 (§4)</strong>
+      <div class="law-quote">
+        <span class="law-ref">국세기본법 제4조 (기간의 계산)</span>
+        이 법 또는 세법에서 규정하는 기간의 계산은 이 법 또는 그 세법에 특별한 규정이 있는 것을 제외하고는 「민법」에 따른다.
+      </div>
+      <ul style="font-size:0.85rem;color:var(--text-secondary);padding-left:18px;margin-top:8px;">
+        <li><strong>초일불산입</strong>: 기간을 일로 정한 때 — 시작일(初日)은 계산 안 함 (예: 11월 10일부터 10일 → 11월 20일 만료)</li>
+        <li><strong>말일포함</strong>: 기간 말일은 포함됨</li>
+        <li><strong>월·연 단위</strong>: 역법(달력)에 따라 계산, 해당 날짜 없으면 말일</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:18px;">
+      <strong style="font-size:0.9rem;color:var(--accent-navy);">기한의 특례 — "이 날이 되면 다음 날로!" (§5)</strong>
+      <div class="law-quote">
+        <span class="law-ref">국세기본법 제5조 제1항</span>
+        신고·신청·청구 등의 기한이 ①토요일, ②공휴일 및 대체공휴일, ③노동절에 해당하는 경우 그 다음 날을 기한으로 한다.
+      </div>
+      <div class="exception-box">
+        <div class="exception-label">⚠️ 추가 예외 — 전자신고 장애 (§5③)</div>
+        국세정보통신망이 정전·오류 등 대통령령으로 정하는 장애로 가동 정지 시 → 장애 복구 후 신고 가능하게 된 날의 <strong>다음 날</strong>이 기한.
+      </div>
+    </div>
+
+    <div style="margin-top:18px;">
+      <strong style="font-size:0.9rem;color:var(--accent-navy);">기한의 연장 — "사정이 생기면 늘려드려요" (§6)</strong>
+      <div class="law-quote">
+        <span class="law-ref">국세기본법 제6조, 시행령 제2조~제4조</span>
+        천재지변, 화재·전화, 질병(6개월 이상), 사망, 압수·영치, 세무사 질병 등의 사유 발생 시 관할 세무서장이 기한 연장 가능.
+      </div>
+      <div class="table-wrap" style="margin-top:10px;">
+        <table>
+          <thead><tr><th>구분</th><th>원칙 연장 기간</th><th>추가 연장</th></tr></thead>
+          <tbody>
+            <tr><td>납부·신청 관련 기한</td><td>3개월 이내</td><td>사유 미소멸 시 1개월 추가</td></tr>
+            <tr><td>신고 관련 기한</td><td>9개월 이내</td><td>합산 상한</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:0.83rem;color:var(--text-secondary);margin-top:8px;">📌 신청: 기한 만료일 <strong>3일 전까지</strong> 문서로 신청 (불가 시 만료일까지)</p>
+    </div>
+  </div>
+
+  <!-- ★★ 서류 송달 ★★ -->
+  <div class="card" id="detail-delivery">
+    <div class="card-title"><span class="icon">📮</span>★ 서류 송달 방법별 원칙과 예외 [중요]</div>
+
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">세금 고지서를 전달하는 방법은 크게 세 가지입니다. ①직접 손에 건네주기(교부), ②우편으로 보내기(우편), ③카카오톡처럼 전자적으로 보내기(전자송달). 집에 없으면? 가족한테 전해주고, 그래도 안 되면? 인터넷·관보에 공고합니다(공시송달).</div>
+    </div>
+
+    <div class="table-wrap" style="margin-top:14px;">
+      <table>
+        <thead><tr><th>송달 방법</th><th>원칙</th><th>예외/특이사항</th><th>효력 발생</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>교부 (§10③)</strong></td>
+            <td>공무원이 직접 주소지에서 수령인에게 교부</td>
+            <td>수령인 부재 시: 사용인·동거인(사리 판별 가능자)에게 교부<br>수령 거부 시: 해당 장소에 置(유치)</td>
+            <td>도달한 때</td>
+          </tr>
+          <tr>
+            <td><strong>등기우편 (§10②)</strong></td>
+            <td>납부고지·독촉·강제징수·정부명령 서류는 등기우편 원칙</td>
+            <td>예외(일반우편 가능): ①소득세 중간예납 고지서 ②부가세 예정고지서 ③신고 후 미납 고지서 → 단, 고지금액이 대통령령 미만인 경우</td>
+            <td>도달한 때</td>
+          </tr>
+          <tr>
+            <td><strong>전자송달 (§10⑧)</strong></td>
+            <td>납세자 신청이 있는 경우에만 가능</td>
+            <td>3회 연속 미열람 시 → 신청 철회 간주<br>(단, 납부기한까지 전액 납부 시 예외)</td>
+            <td>전자우편주소 입력된 때 (국세정보통신망 저장 시 저장된 때)</td>
+          </tr>
+          <tr>
+            <td><strong>공시송달 (§11)</strong></td>
+            <td>국외 거주·주소불명·등기우편 반송 등</td>
+            <td>공고한 날부터 <strong>14일 경과</strong> 시 송달 간주</td>
+            <td>공고 후 14일 경과 시</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="success-box">
+      <div class="success-label">✅ 핵심 정리</div>
+      <ul style="font-size:0.85rem;padding-left:16px;color:var(--accent-green);">
+        <li>원칙: <strong>교부 → 등기우편 → 전자송달</strong> 순서</li>
+        <li>전자송달은 <strong>반드시 납세자 신청</strong> 필요 (강제 불가)</li>
+        <li>공시송달은 <strong>최후 수단</strong>, 14일 후 효력 발생</li>
+        <li>효력 발생: 원칙 <strong>도달주의</strong> (§12①)</li>
+      </ul>
+    </div>
+
+    <div class="exception-box" style="margin-top:10px;">
+      <div class="exception-label">⚠️ 특수 경우 송달</div>
+      <ul style="font-size:0.85rem;padding-left:16px;color:#8B1A1A;">
+        <li>연대납세의무자: 대표자에게 송달. <strong>단, 납부고지·독촉은 전원에게 각각 송달</strong></li>
+        <li>교정시설 수용 시: 해당 시설장에게 송달 (§8⑤)</li>
+        <li>납세관리인 있는 경우: 납부고지·독촉은 납세관리인에게 (§8④)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 2 ===== -->
+<section class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 2</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">국세부과의 원칙과 세법적용의 원칙</div>
+      <div class="chapter-law-ref">국세기본법 제14조~제20조 / 실질과세·신의성실·근거과세·소급과세금지 등</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">⚖️</span>6대 원칙 한눈에 보기</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>원칙</th><th>조문</th><th>쉬운 설명</th><th>핵심 내용</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>실질과세 원칙</strong></td>
+            <td>§14</td>
+            <td>겉모습 말고 속내용으로!</td>
+            <td>명의(이름)가 아닌 실질적 귀속자에게 과세. 우회거래도 직접 거래로 본다.</td>
+          </tr>
+          <tr>
+            <td><strong>신의성실 원칙</strong></td>
+            <td>§15</td>
+            <td>서로 약속을 지킵시다!</td>
+            <td>납세자도, 세무공무원도 신의에 따라 성실하게 행동해야 한다.</td>
+          </tr>
+          <tr>
+            <td><strong>근거과세 원칙</strong></td>
+            <td>§16</td>
+            <td>증거 없이 세금 못 매겨요!</td>
+            <td>장부·서류에 근거해야 하며, 다른 사실 발견 시 그 부분만 조사·결정 가능.</td>
+          </tr>
+          <tr>
+            <td><strong>조세감면 사후관리</strong></td>
+            <td>§17</td>
+            <td>혜택 받은 목적대로 써야 해요!</td>
+            <td>감면 취지 벗어나면 감면세액 취소·징수 가능.</td>
+          </tr>
+          <tr>
+            <td><strong>소급과세 금지</strong></td>
+            <td>§18</td>
+            <td>과거 일에 새 법 적용 금지!</td>
+            <td>납세의무 성립 후 새 세법으로 소급 과세 불가. 신뢰보호 원칙 포함.</td>
+          </tr>
+          <tr>
+            <td><strong>세무재량의 한계</strong></td>
+            <td>§19</td>
+            <td>세무공무원도 마음대로 못 해요!</td>
+            <td>재량 행사 시 과세 형평·세법 목적에 맞는 한계 엄수.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 실질과세 비유</div>
+      <div class="analogy-text">엄마가 용돈을 친구 이름으로 저축했다고 해서 친구 것이 되는 게 아니죠? 실제로 엄마 돈이면 엄마한테 세금을 매깁니다. 이게 실질과세입니다!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 3 ===== -->
+<section class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 3</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">납세의무</div>
+      <div class="chapter-law-ref">국세기본법 제21조~제26조의2 / 성립·승계·연대·소멸</div>
+    </div>
+  </div>
+
+  <!-- 납세의무 성립시기 -->
+  <div class="card" id="detail-obligation">
+    <div class="card-title"><span class="icon">🌱</span>★ 세목별 납세의무의 성립시기 [중요]</div>
+
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">식당에서 음식을 주문하면 음식이 나오는 순간 계산할 의무가 "생겨납니다(성립)". 계산대에서 영수증에 도장 찍히면 "확정"됩니다. 세금도 똑같이 ①성립 → ②확정 → ③소멸의 단계를 거칩니다!</div>
+    </div>
+
+    <div class="law-quote">
+      <span class="law-ref">국세기본법 제21조 (납세의무의 성립시기)</span>
+      국세를 납부할 의무는 이 법 및 세법에서 정하는 과세요건이 충족되면 성립한다.
+    </div>
+
+    <div class="table-wrap" style="margin-top:14px;">
+      <table>
+        <thead><tr><th>세목</th><th>성립시기</th><th>확정방식</th><th>기억 포인트</th></tr></thead>
+        <tbody>
+          <tr><td><strong>소득세·법인세</strong></td><td>과세기간 종료 시</td><td>신고확정(신고납세)</td><td>12월 31일 (법인은 사업연도 종료)</td></tr>
+          <tr><td><strong>상속세</strong></td><td>상속 개시 시(사망일)</td><td>부과확정(정부결정)</td><td>죽음의 순간에 성립</td></tr>
+          <tr><td><strong>증여세</strong></td><td>재산 취득 시</td><td>부과확정(정부결정)</td><td>받는 순간 성립</td></tr>
+          <tr><td><strong>부가가치세</strong></td><td>과세기간 종료 시<br>(수입재화: 수입신고 시)</td><td>신고확정</td><td>6월 30일 / 12월 31일</td></tr>
+          <tr><td><strong>개별소비세·주세</strong></td><td>제조장 반출 시·판매 시</td><td>신고확정</td><td>공장 문 나갈 때!</td></tr>
+          <tr><td><strong>인지세</strong></td><td>과세문서 작성 시</td><td>자동확정(성립=확정)</td><td>계약서 쓰는 순간</td></tr>
+          <tr><td><strong>증권거래세</strong></td><td>매매거래 확정 시</td><td>신고확정</td><td>주식 팔 때</td></tr>
+          <tr><td><strong>종합부동산세</strong></td><td>과세기준일(6.1)</td><td>부과확정</td><td>매년 6월 1일</td></tr>
+          <tr><td><strong>원천징수 소득·법인세</strong></td><td>소득금액 지급 시</td><td>자동확정</td><td>월급 주는 순간</td></tr>
+          <tr><td><strong>중간예납 법인세</strong></td><td>중간예납기간 종료 시</td><td>자동확정</td><td>특수: 성립=확정</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="success-box" style="margin-top:14px;">
+      <div class="success-label">✅ 자동확정 세목 암기 (성립과 동시에 확정)</div>
+      <p style="font-size:0.85rem;color:var(--accent-green);">
+        <strong>인지세, 원천징수 소득·법인세, 납세조합 징수 소득세, 중간예납 법인세(정부 미조사), 납부지연가산세(납부고지 이후)</strong>
+      </p>
+      <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:6px;">이 5가지는 별도 확정 절차 없이 성립하는 순간 세액이 자동으로 확정됩니다 (§22④).</p>
+    </div>
+  </div>
+
+  <!-- 납세의무 승계 -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🔗</span>납세의무의 승계 — "물려받은 빚"</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>원인</th><th>승계 내용</th><th>한도</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>법인 합병</strong></td>
+            <td>소멸법인의 국세·강제징수비</td>
+            <td>제한 없음(전부)</td>
+            <td>§23</td>
+          </tr>
+          <tr>
+            <td><strong>상속</strong></td>
+            <td>피상속인의 국세·강제징수비</td>
+            <td>상속받은 재산 한도 내<br>(상속인 2인 이상 → 상속분 비율 + 연대납부)</td>
+            <td>§24</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">돌아가신 할아버지가 세금을 안 낸 상태에서 집을 물려주셨다면, 그 집 가격만큼은 세금을 대신 내야 합니다. 집값보다 세금이 더 많으면? 집값까지만 내면 됩니다!</div>
+    </div>
+  </div>
+
+  <!-- 납세의무 소멸 -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🔚</span>납세의무의 소멸 사유 (§26)</div>
+    <ul class="step-list">
+      <li><span class="step-num">1</span><div><strong>납부·충당 또는 부과 취소</strong> — 가장 정상적인 소멸</div></li>
+      <li><span class="step-num">2</span><div><strong>부과제척기간 도과</strong> — 국세 부과 기간이 끝나도록 부과 안 한 경우 (§26의2)</div></li>
+      <li><span class="step-num">3</span><div><strong>소멸시효 완성</strong> — 징수권을 행사할 수 있는 기간이 지난 경우 (§27)</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 4 ===== -->
+<section class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 4</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">납세의무의 확정</div>
+      <div class="chapter-law-ref">국세기본법 제22조 / 신고확정·부과확정·자동확정 + 부과제척기간·소멸시효</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">✅</span>납세의무 확정 3가지 방식</div>
+    <div class="compare-grid">
+      <div class="compare-col left">
+        <h4>① 신고납세방식 (§22②)</h4>
+        <ul>
+          <li>납세자가 스스로 신고 → 확정</li>
+          <li>소득세·법인세·부가세·개별소비세·주세·증권거래세·교육세·교통에너지환경세·종합부동산세(신고 시)</li>
+          <li>신고 없거나 오류 시 → 정부 결정으로 확정</li>
+        </ul>
+      </div>
+      <div class="compare-col right">
+        <h4>② 부과과세방식 (§22③)</h4>
+        <ul>
+          <li>정부가 결정하는 때 확정</li>
+          <li>상속세·증여세·종합부동산세(정부부과)</li>
+          <li>납세자가 수동적</li>
+        </ul>
+      </div>
+    </div>
+    <div class="success-box" style="margin-top:14px;">
+      <div class="success-label">✅ ③ 자동확정방식 (§22④)</div>
+      <p style="font-size:0.85rem;color:var(--accent-green);">성립과 동시에 자동 확정 — 인지세, 원천징수세액, 납세조합 징수소득세, 중간예납 법인세(자진), 납부지연가산세(고지 후)</p>
+    </div>
+  </div>
+
+  <!-- ★★ 부과제척기간·소멸시효 ★★ -->
+  <div class="card" id="detail-period2">
+    <div class="card-title"><span class="icon">⏳</span>★ 부과제척기간과 소멸시효 [중요]</div>
+
+    <div class="compare-grid">
+      <div class="compare-col left">
+        <h4>📌 부과제척기간 (§26의2)</h4>
+        <ul>
+          <li>국가의 <strong>과세권</strong> 행사 기간</li>
+          <li>"세금을 부과할 수 있는 기간"</li>
+          <li>경과 시 → 납세의무 자동 소멸</li>
+          <li>민법 소멸시효 규정 <strong>비적용</strong></li>
+        </ul>
+      </div>
+      <div class="compare-col right">
+        <h4>📌 소멸시효 (§27)</h4>
+        <ul>
+          <li>국가의 <strong>징수권</strong> 행사 기간</li>
+          <li>"확정된 세금을 받아낼 수 있는 기간"</li>
+          <li>경과 시 → 징수권 소멸</li>
+          <li>민법 시효 규정 <strong>준용</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">제척기간은 "식당이 주문을 받을 수 있는 시간(영업시간)"이고, 소멸시효는 "주문을 받은 음식값을 받아낼 수 있는 기간"입니다. 영업시간이 끝나면 주문 자체가 불가, 시효가 끝나면 이미 주문된 값을 못 받아냅니다.</div>
+    </div>
+
+    <strong style="font-size:0.9rem;color:var(--accent-navy);display:block;margin:16px 0 8px;">부과제척기간 상세 (§26의2①②④)</strong>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>유형</th><th>기간</th><th>적용 세목</th></tr></thead>
+        <tbody>
+          <tr><td>일반(신고 정상)</td><td><span class="hi-blue">5년</span></td><td>대부분 세목</td></tr>
+          <tr><td>역외거래 일반</td><td><span class="hi-blue">7년</span></td><td>국제거래·국외자산</td></tr>
+          <tr><td>무신고</td><td><span class="hi-gold">7년</span> (역외 10년)</td><td>법정신고기한 미제출</td></tr>
+          <tr><td>부정행위(포탈)</td><td><span class="hi-red">10년</span> (역외 15년)</td><td>사기 등 부정행위</td></tr>
+          <tr><td>상속·증여세 일반</td><td><span class="hi-gold">10년</span></td><td>상속세·증여세</td></tr>
+          <tr><td>상속·증여세 무신고·부정</td><td><span class="hi-red">15년</span></td><td>부정포탈 or 신고 미제출</td></tr>
+          <tr><td>알게 된 날부터 기산(특례)</td><td><span class="hi-red">알게 된 날 + 1년</span></td><td>은닉재산(50억 초과) 상속·증여</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <strong style="font-size:0.9rem;color:var(--accent-navy);display:block;margin:16px 0 8px;">소멸시효 상세 (§27)</strong>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>소멸시효</th><th>기산점</th></tr></thead>
+        <tbody>
+          <tr><td>5억 원 이상 국세</td><td><span class="hi-red">10년</span></td><td>징수권 행사 가능한 날</td></tr>
+          <tr><td>5억 원 미만 국세</td><td><span class="hi-blue">5년</span></td><td>징수권 행사 가능한 날</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:14px;">
+      <strong style="font-size:0.9rem;color:var(--accent-navy);">소멸시효 중단·정지 (민법 준용)</strong>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>구분</th><th>사유</th><th>효과</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>중단</strong></td>
+              <td>납부고지, 독촉, 납부최고, 교부청구, 압류</td>
+              <td>중단 시점까지의 시효 기간 <strong>소멸</strong>, 새로 시작</td>
+            </tr>
+            <tr>
+              <td><strong>정지</strong></td>
+              <td>분납기간, 연부연납기간, 징수유예기간, 사해행위취소 소송 중</td>
+              <td>해당 기간 동안 시효 <strong>진행 멈춤</strong>, 이후 재진행</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="exception-box" style="margin-top:10px;">
+        <div class="exception-label">⚠️ 중단 vs 정지 구별!</div>
+        <p style="font-size:0.84rem;color:#8B1A1A;"><strong>중단</strong>: 쌓아온 시간이 완전 리셋! ⟳ | <strong>정지</strong>: 시계가 잠깐 멈췄다가 다시 가는 것 ⏸</p>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <strong style="font-size:0.9rem;color:var(--accent-navy);">부과제척기간 vs 소멸시효 비교표</strong>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>구분</th><th>부과제척기간</th><th>소멸시효</th></tr></thead>
+          <tbody>
+            <tr><td>대상 권리</td><td>과세권(부과권)</td><td>징수권</td></tr>
+            <tr><td>적용 기준</td><td>세법 특별 규정 우선</td><td>민법 준용</td></tr>
+            <tr><td>중단</td><td><span class="hi-red">없음</span></td><td>있음 (고지·압류 등)</td></tr>
+            <tr><td>정지</td><td>이의신청 등 결정 후 1년 특례</td><td>분납기간 등</td></tr>
+            <tr><td>경과 효과</td><td>납세의무 소멸</td><td>징수권 소멸</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 5 ===== -->
+<section class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 5</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">국세와 일반 채권과의 관계</div>
+      <div class="chapter-law-ref">국세기본법 제35조~제42조 / 국세우선권 · 제2차 납세의무</div>
+    </div>
+  </div>
+
+  <div class="card" id="detail-priority">
+    <div class="card-title"><span class="icon">🥇</span>★ 국세 우선 원칙과 예외 [중요]</div>
+
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">돈을 갚아야 할 사람이 재산을 팔아야 한다면, 국가 세금은 "먼저 줄 서는" VIP 채권자입니다. 그런데 세금보다 먼저 줄 선 사람이 있다면? 그 사람은 양보하지 않아도 됩니다. 이 줄 세우기 규칙이 국세 우선권입니다!</div>
+    </div>
+
+    <div class="law-quote">
+      <span class="law-ref">국세기본법 제35조 제1항 본문 (국세 우선 원칙)</span>
+      국세 및 강제징수비는 다른 공과금이나 그 밖의 채권에 우선하여 징수한다.
+    </div>
+
+    <div style="margin-top:14px;">
+      <strong style="font-size:0.9rem;color:var(--accent-red);">예외 — 국세보다 우선하는 채권들 (§35①단서)</strong>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>우선 채권 종류</th><th>조건</th><th>핵심 포인트</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>체납처분비·강제집행비용</strong></td>
+              <td>해당 절차에서 발생한 비용</td>
+              <td>§35①1호·2호 — 절차 비용 먼저</td>
+            </tr>
+            <tr>
+              <td><strong>법정기일 전 설정 담보채권</strong><br>(전세권·질권·저당권 등)</td>
+              <td>국세 법정기일 <strong>이전</strong>에 설정된 경우</td>
+              <td>§35①3호 — 먼저 설정한 담보가 우선<br>단, 상속·증여·종합부동산세는 담보채권보다 우선(§35③)</td>
+            </tr>
+            <tr>
+              <td><strong>소액보증금 (최우선변제)</strong></td>
+              <td>주택임대차보호법·상가임대차보호법 적용 소액</td>
+              <td>§35①4호 — 세입자 보호 최우선</td>
+            </tr>
+            <tr>
+              <td><strong>임금·퇴직금 등</strong></td>
+              <td>근로기준법·근퇴법상 최우선 임금채권</td>
+              <td>§35①5호 — 근로자 보호 최우선</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <strong style="font-size:0.9rem;color:var(--accent-navy);">법정기일이란? (§35②)</strong>
+      <div class="table-wrap" style="margin-top:8px;">
+        <table>
+          <thead><tr><th>국세 종류</th><th>법정기일</th></tr></thead>
+          <tbody>
+            <tr><td>신고납세 방식 (소득세·부가세 등)</td><td>신고일</td></tr>
+            <tr><td>정부결정·경정·수시부과</td><td>납부고지서 발송일</td></tr>
+            <tr><td>인지세·원천징수세액</td><td>납세의무 확정일</td></tr>
+            <tr><td>압류 후 확정된 국세</td><td>압류등기일 또는 등록일</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <strong style="font-size:0.9rem;color:var(--accent-navy);">압류에 의한 우선 (§36)</strong>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:6px;">국세 강제징수로 압류한 경우 → 교부청구된 다른 국세·지방세보다 <strong>압류 관련 국세 우선</strong>. 지방세 체납처분 압류 시 국세 교부청구 → 지방세 다음 순위.</p>
+    </div>
+  </div>
+
+  <!-- 제2차 납세의무 -->
+  <div class="card">
+    <div class="card-title"><span class="icon">👥</span>제2차 납세의무 — "대신 내드리겠습니다?"</div>
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">빵집 주인이 세금을 못 내면, 빵집을 함께 운영한 동업자나 대주주가 "대신 내야 할 수도" 있습니다. 본인 재산을 다 써도 부족할 때 국가가 연관된 사람에게 청구하는 제도입니다.</div>
+    </div>
+    <div class="table-wrap" style="margin-top:14px;">
+      <table>
+        <thead><tr><th>유형</th><th>의무자</th><th>한도</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td>청산인 등</td><td>해산법인 청산인·잔여재산 분배받은 자</td><td>분배·인도 재산가액</td><td>§38</td></tr>
+          <tr><td>출자자</td><td>무한책임사원·과점주주(50% 초과)</td><td>출자비율에 따른 부족액</td><td>§39</td></tr>
+          <tr><td>법인</td><td>출자자가 세금 못 낼 때 해당 법인</td><td>순자산 × 지분비율</td><td>§40</td></tr>
+          <tr><td>사업양수인</td><td>사업을 양수받은 자</td><td>양수한 재산가액</td><td>§41</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="exception-box">
+      <div class="exception-label">⚠️ 공통 요건</div>
+      <p style="font-size:0.84rem;color:#8B1A1A;">제2차 납세의무는 반드시 <strong>①본래 납세자 재산으로 충당해도 부족</strong>해야 하며, <strong>②납부고지 후 납부하지 않은 경우</strong>에만 적용됩니다. 보충적 책임!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 6 ===== -->
+<section class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 6</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">과세</div>
+      <div class="chapter-law-ref">국세기본법 제43조~제48조 / 수정신고·경정청구·기한후신고·가산세</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">📝</span>신고 관련 주요 제도</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th><th>효과</th></tr></thead>
+        <tbody>
+          <tr><td><strong>수정신고 (§45)</strong></td><td>신고 세액이 적었을 때 자발적 수정</td><td>과소신고 가산세 감면</td></tr>
+          <tr><td><strong>경정청구 (§45의2)</strong></td><td>신고 세액이 많았을 때 환급 요청</td><td>법정신고기한 후 5년 이내</td></tr>
+          <tr><td><strong>기한후신고 (§45의3)</strong></td><td>법정신고기한 경과 후 자발적 신고</td><td>무신고 가산세 감면</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">💰</span>가산세 감면 — "자진납세하면 할인!" (§48②)</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>수정신고 시기</th><th>과소신고가산세 감면율</th></tr></thead>
+        <tbody>
+          <tr><td>법정신고기한 후 <strong>1개월 이내</strong></td><td><span class="hi-green">90% 감면</span></td></tr>
+          <tr><td>1개월 초과 ~ 3개월 이내</td><td><span class="hi-green">75% 감면</span></td></tr>
+          <tr><td>3개월 초과 ~ 6개월 이내</td><td><span class="hi-blue">50% 감면</span></td></tr>
+          <tr><td>6개월 초과 ~ 1년 이내</td><td><span class="hi-blue">30% 감면</span></td></tr>
+          <tr><td>1년 초과 ~ 1년 6개월 이내</td><td>20% 감면</td></tr>
+          <tr><td>1년 6개월 초과 ~ 2년 이내</td><td>10% 감면</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem;color:var(--text-secondary);margin-top:10px;">기한후신고: 1개월 이내 50%, 3개월 이내 30%, 6개월 이내 20% 감면</p>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 7 ===== -->
+<section class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 7</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">국세환급금과 환급가산금</div>
+      <div class="chapter-law-ref">국세기본법 제51조~제52조</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">💸</span>국세환급금 — "더 낸 세금은 돌려드려요"</div>
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">물건을 10,000원 주고 샀는데 실제 가격이 8,000원이라면 2,000원을 돌려받죠? 세금도 마찬가지입니다. 잘못 내거나 초과해서 낸 세금은 국가가 돌려줘야 합니다. 여기에 이자(환급가산금)도 붙습니다!</div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>환급결정 시기</td><td>즉시 (잘못납부·초과납부·환급세액 발생 시)</td></tr>
+          <tr><td>지급 기한</td><td>환급결정일로부터 <strong>30일 이내</strong></td></tr>
+          <tr><td>충당 순서</td><td>체납세액 → 납부고지세액·자진납부세액 → 잔액 지급</td></tr>
+          <tr><td>환급가산금</td><td>기산일부터 충당·지급결정일까지의 이자 (§52)</td></tr>
+          <tr><td>20만원 이하 소액 미환급</td><td>1년 후 자동 충당 가능 (납세자 동의 간주)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="exception-box">
+      <div class="exception-label">⚠️ 환급가산금 없는 경우</div>
+      <p style="font-size:0.84rem;color:#8B1A1A;">경정청구·이의신청 등 없이 순수 고충민원으로 처리되는 환급의 경우에는 환급가산금 미가산 (§52③)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 8 ===== -->
+<section class="chapter" id="ch8">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 8</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">국세불복제도</div>
+      <div class="chapter-law-ref">국세기본법 제55조~제81조 / 이의신청·심사청구·심판청구·행정소송</div>
+    </div>
+  </div>
+
+  <div class="card" id="detail-appeal">
+    <div class="card-title"><span class="icon">⚖️</span>★ 국세불복제도 핵심 용어와 원칙·예외 [중요]</div>
+
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">억울하게 세금을 더 내게 됐다면 "이의 있습니다!" 할 수 있습니다. 먼저 세무서장에게(이의신청), 안 되면 국세청장에게(심사청구), 그래도 안 되면 조세심판원에(심판청구), 최후엔 법원에(행정소송) 가는 절차가 있습니다.</div>
+    </div>
+
+    <strong style="font-size:0.9rem;color:var(--accent-navy);display:block;margin:14px 0 8px;">핵심 용어 정리</strong>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>용어</th><th>뜻</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td><strong>처분</strong></td><td>세법에 따른 행정기관의 행위 (과세처분·경정·거부처분 포함)</td><td>§55①</td></tr>
+          <tr><td><strong>불복</strong></td><td>위법·부당한 처분에 대해 취소·변경을 구하는 행위</td><td>§55①</td></tr>
+          <tr><td><strong>이의신청</strong></td><td>처분청(세무서장·지방국세청장)에 대한 1단계 불복</td><td>§66</td></tr>
+          <tr><td><strong>심사청구</strong></td><td>국세청장에 대한 불복 (준사법적 절차)</td><td>§62~§65</td></tr>
+          <tr><td><strong>심판청구</strong></td><td>조세심판원에 대한 불복 (독립 준사법기관)</td><td>§67~§80</td></tr>
+          <tr><td><strong>각하</strong></td><td>청구 요건 미충족으로 본안 심리 없이 결정</td><td>§65①1호</td></tr>
+          <tr><td><strong>기각</strong></td><td>청구 요건은 충족하나 이유 없음으로 본안 심리 후 거부</td><td>§65①2호</td></tr>
+          <tr><td><strong>인용(취소·경정)</strong></td><td>청구가 이유 있어 처분 취소·변경</td><td>§65①3호</td></tr>
+          <tr><td><strong>재조사 결정</strong></td><td>인용 전 추가 사실확인 필요 시 처분청에 재조사 명령</td><td>§65①3호단서</td></tr>
+          <tr><td><strong>불변기간</strong></td><td>법원도 연장 불가한 절대적 기간 (행정소송 90일)</td><td>§56⑥</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <strong style="font-size:0.9rem;color:var(--accent-navy);display:block;margin:16px 0 8px;">불복 경로 및 기간</strong>
+    <div class="flow" style="margin-bottom:14px;">
+      <div class="flow-step">과세처분</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step alt">이의신청<br><small>(임의, 30일)</small></div>
+      <div class="flow-arrow">→ 또는 바로 →</div>
+      <div class="flow-step">심사청구<br><small>(국세청, 90일 결정)</small></div>
+      <div class="flow-arrow">또는</div>
+      <div class="flow-step">심판청구<br><small>(조세심판원, 90일 결정)</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step ok">행정소송<br><small>(결정통지 후 90일)</small></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>단계</th><th>대상 기관</th><th>청구 기간</th><th>결정 기간</th><th>특이사항</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>이의신청 (§66)</strong></td>
+            <td>세무서장·지방국세청장</td>
+            <td>처분 안 날 또는 통지일 <strong>90일 이내</strong></td>
+            <td>30일 이내 (항변 시 60일)</td>
+            <td>임의적 절차 — 생략 가능</td>
+          </tr>
+          <tr>
+            <td><strong>심사청구 (§61)</strong></td>
+            <td>국세청장</td>
+            <td>처분 안 날 또는 이의신청결정 통지 <strong>90일 이내</strong></td>
+            <td>90일 이내</td>
+            <td>심사·심판 중복 제기 불가</td>
+          </tr>
+          <tr>
+            <td><strong>심판청구 (§68)</strong></td>
+            <td>조세심판원</td>
+            <td>처분 안 날 <strong>90일 이내</strong></td>
+            <td>90일 이내</td>
+            <td>독립 기관, 실무상 선호</td>
+          </tr>
+          <tr>
+            <td><strong>행정소송 (§56)</strong></td>
+            <td>행정법원</td>
+            <td>결정통지 후 <strong>90일 이내</strong> (불변기간)</td>
+            <td>—</td>
+            <td>필요적 전치주의: 심사 또는 심판 후 제기</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exception-box" style="margin-top:14px;">
+      <div class="exception-label">⚠️ 주요 원칙과 예외</div>
+      <ul style="font-size:0.85rem;padding-left:16px;color:#8B1A1A;">
+        <li><strong>필요적 전치주의 원칙</strong>: 행정소송 제기 전 심사 또는 심판청구 필수 (§56②)</li>
+        <li><strong>예외</strong>: 재조사 결정에 따른 처분청 처분은 심사·심판 없이 바로 행정소송 가능 (§56②단서)</li>
+        <li><strong>심사·심판 중복 금지</strong>: 동일 처분에 심사청구와 심판청구 동시 제기 불가 (§55⑨)</li>
+        <li><strong>이의신청 후 이의 불가</strong>: 이의신청 결정에 대해 다시 이의신청 불가 (§55⑥)</li>
+        <li><strong>감사원 심사청구 예외</strong>: 감사원법에 따른 심사청구 처분 → 국세기본법 불복 대상에서 제외 (§55①2호)</li>
+      </ul>
+    </div>
+
+    <div class="success-box" style="margin-top:14px;">
+      <div class="success-label">✅ 불복 불가 처분 (§55①단서)</div>
+      <ul style="font-size:0.85rem;padding-left:16px;color:var(--accent-green);">
+        <li>조세범처벌절차법상 통고처분</li>
+        <li>감사원법에 따른 심사청구 처분 또는 그에 대한 처분</li>
+        <li>세법에 따른 과태료 부과처분</li>
+      </ul>
+    </div>
+
+    <strong style="font-size:0.9rem;color:var(--accent-navy);display:block;margin:16px 0 8px;">조세심판원 (§67~§72)</strong>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>소속</td><td>국무총리 소속 독립기관</td></tr>
+          <tr><td>구성</td><td>원장 + 상임조세심판관(임기 3년, 1회 중임) + 비상임(3년, 1회 연임)</td></tr>
+          <tr><td>조세심판관회의</td><td>주심 1 + 배석 2 이상, 3분의 2 출석·과반수 찬성</td></tr>
+          <tr><td>기피 신청</td><td>공정 심판 기대 어려운 경우 심판청구인 신청 가능 (§74)</td></tr>
+          <tr><td>병합·분리</td><td>담당 조세심판관 직권으로 가능 (§75)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHAPTER 9 ===== -->
+<section class="chapter" id="ch9">
+  <div class="chapter-header">
+    <div class="chapter-num">CH 9</div>
+    <div class="chapter-title-box">
+      <div class="chapter-title">납세자 권리와 과세전적부심사</div>
+      <div class="chapter-law-ref">국세기본법 제81조의2~§81조의15 / 납세자 권리헌장·세무조사·과세전적부심사</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🛡️</span>납세자 주요 권리</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>권리</th><th>내용</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td>납세자 권리헌장 열람권</td><td>세무조사 시 권리헌장 교부·낭독 의무</td><td>§81의2</td></tr>
+          <tr><td>성실한 납세자 추정</td><td>납세자는 성실한 것으로 추정</td><td>§81의3</td></tr>
+          <tr><td>세무조사 중복 금지</td><td>같은 과세기간·같은 세목 재조사 원칙 금지</td><td>§81의4</td></tr>
+          <tr><td>세무조사 사전통지</td><td>조사 개시 15일 전까지 통지 (일부 예외)</td><td>§81의7</td></tr>
+          <tr><td>세무조사 기간 제한</td><td>원칙 20일, 규모에 따라 조정</td><td>§81의8</td></tr>
+          <tr><td>세무조사 결과 통지</td><td>조사 결과 통지 의무</td><td>§81의12</td></tr>
+          <tr><td>비밀 유지</td><td>세무공무원의 과세정보 누설 금지</td><td>§81의13</td></tr>
+          <tr><td>납세자 보호관</td><td>권리침해 구제 지원</td><td>§81의14</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">🔍</span>과세전적부심사 — "세금 고지 전에 한 번 더 확인!"</div>
+    <div class="analogy-box">
+      <div class="analogy-label">✏️ 쉬운 비유</div>
+      <div class="analogy-text">시험 점수가 나오기 전에 "선생님, 제가 맞은 거 맞나요?" 하고 먼저 확인하는 제도입니다. 세금 고지서가 발송되기 전에 "이 세금이 맞나요?" 미리 따져볼 수 있습니다.</div>
+    </div>
+    <div class="table-wrap" style="margin-top:12px;">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>청구 시기</td><td>세무조사 결과통지 또는 과세예고통지를 받은 날부터 <strong>30일 이내</strong></td></tr>
+          <tr><td>청구 대상</td><td>해당 세무서장 또는 지방국세청장</td></tr>
+          <tr><td>결정 기간</td><td>청구일부터 <strong>30일 이내</strong></td></tr>
+          <tr><td>효과</td><td>결정 전 과세처분 보류 (집행정지 효과)</td></tr>
+          <tr><td>불청구 불이익</td><td>과세전적부심사 미청구 시 불복 자체는 가능</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="exception-box" style="margin-top:10px;">
+      <div class="exception-label">⚠️ 과세전적부심사 제외 대상</div>
+      <p style="font-size:0.84rem;color:#8B1A1A;">국세청장이 조사·결정하는 사항, 조세범 처벌절차 관련, 지방국세청장 조사 후 즉시 결정이 필요한 경우 등은 제외</p>
+    </div>
+  </div>
+
+  <!-- 전체 요약 -->
+  <div class="summary-card">
+    <h3>🎯 국세기본법 핵심 정리 — 반드시 기억하세요!</h3>
+    <ul>
+      <li>기한 특례: 공휴일·토요일·노동절이 기한이면 → <strong>다음 날이 기한</strong></li>
+      <li>서류 송달: 원칙 도달주의, 공시송달은 공고 후 <strong>14일 경과</strong> 시 효력</li>
+      <li>자동확정 세목: <strong>인지세·원천징수세액·납세조합·중간예납법인세·납부지연가산세</strong></li>
+      <li>부과제척기간: 일반 5년 → 무신고 7년 → 포탈 10년 → 상속·증여 10년 → 상속·증여 부정 15년</li>
+      <li>소멸시효: 5억 이상 10년 / 미만 5년 | 중단(리셋) vs 정지(일시멈춤)</li>
+      <li>국세 우선 예외: 법정기일 이전 담보·소액보증금·최우선임금·절차비용</li>
+      <li>불복 청구기간: 모두 <strong>90일</strong> (이의신청 결정은 30일 이내)</li>
+      <li>행정소송 전치: 반드시 심사 또는 심판청구 후 제기 (일부 예외)</li>
+    </ul>
+  </div>
+</section>
+
+</div><!-- end main-content -->
+
+<footer class="site-footer">
+  <p>본 자료는 국세기본법(법령ID: 001586, MST: 280373) 및 시행령·시행규칙에 근거하여 작성되었습니다.</p>
+  <p style="margin-top:8px;font-size:0.78rem;">세법 해석은 개별 상황에 따라 달라질 수 있으므로, 구체적 적용은 전문가 상담을 권장드립니다.</p>
+  <p style="margin-top:12px;">2026-05-23 00:00 &nbsp;|&nbsp; #국세기본법 #납세의무 #부과제척기간 #소멸시효 #서류송달 #기간기한 #국세불복 #국세우선권 #세무사시험</p>
+</footer>
+
+</body>
+</html>
