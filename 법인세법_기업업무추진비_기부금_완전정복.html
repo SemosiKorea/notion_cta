@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 기업업무추진비 & 기부금 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee;--bg2:#eae7df;--w:#fff;
+  --t1:#0c0a07;--t2:#1d1b12;--t3:#3a3726;--t4:#5a5748;
+  --nv:#061830;
+  --bl:#0a3868;--bl2:#1458a8;--bl-lt:#d4e6f8;
+  --rd:#5a0c18;--rd2:#9e1828;--rd-lt:#f8d4da;
+  --gn:#083a1c;--gn2:#156638;--gn-lt:#cceedd;
+  --or:#4c2000;--or2:#9e4200;--or-lt:#fce0c0;
+  --pu:#2c0c54;--pu2:#6020b0;--pu-lt:#e8d4f8;
+  --tl:#043030;--tl2:#0a6868;--tl-lt:#c4eaea;
+  --gd:#6c4a00;--gd2:#ae7600;--gd-lt:#fef0b4;
+  --bdr:#b0a890;--bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.85;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#03101e 0%,#061830 45%,#1a0a08 100%);color:#fff;padding:58px 24px 50px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.015) 50px,rgba(255,255,255,.015) 51px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-kicker{display:inline-block;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 18px;margin-bottom:18px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:900;line-height:1.3;color:#fff;}
+.hero h1 .a1{color:#80d8f0;}.hero h1 .a2{color:#f0b080;}
+.hero-sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.65);}
+.hero-chips{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:7px;}
+.hero-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;padding:4px 13px;}
+
+/* ── TOC ── */
+.toc{background:#fff;border-bottom:3px solid var(--nv);padding:11px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:1040px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:11px;font-weight:700;color:var(--nv);text-decoration:none;padding:2px 8px;border:1px solid var(--nv);}
+.toc a:hover{background:var(--nv);color:#fff;}
+
+/* ── PART DIVIDER ── */
+.part-div{background:var(--nv);color:#fff;padding:16px 24px;margin-top:56px;display:flex;align-items:center;gap:16px;}
+.part-div .part-label{font-size:10px;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:var(--gd-lt);}
+.part-div h2{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:900;color:#fff;}
+.part-div.p2{background:var(--or);}
+
+/* ── WRAP ── */
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px;}
+
+/* ── CHAPTER ── */
+.chapter{margin-top:44px;}
+.ch-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:11px;margin-bottom:22px;}
+.ch-badge{font-family:'Noto Serif KR',serif;font-size:11px;font-weight:900;padding:5px 14px;margin-right:14px;color:#fff;white-space:nowrap;}
+.b1{background:var(--nv);}.b2{background:var(--bl);}.b3{background:var(--gn);}
+.b4{background:var(--or);}.b5{background:var(--rd);}.b6{background:var(--pu);}
+.b7{background:var(--tl);}.b8{background:var(--gd);}
+.ch-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.05rem,2.5vw,1.35rem);font-weight:900;color:var(--t1);}
+.ch-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+/* ── INTRO ── */
+.intro{padding:18px 24px;margin-bottom:16px;border-left:6px solid;color:#fff;}
+.i1{background:var(--nv);border-color:#60a0f0;}
+.i2{background:var(--bl);border-color:#80c8ff;}
+.i3{background:var(--gn);border-color:#60e090;}
+.i4{background:var(--or);border-color:#f0a050;}
+.i5{background:var(--rd);border-color:#f08090;}
+.i6{background:var(--pu);border-color:#c090f8;}
+.i7{background:var(--tl);border-color:#60d0d0;}
+.i8{background:var(--gd);border-color:#f0d060;}
+.intro .icon{font-size:1.7rem;display:block;margin-bottom:7px;}
+.intro p{font-size:14px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i3 strong{color:#90ffcc;}
+
+/* ── LAW ── */
+.lc{border:2px solid var(--bdr);background:#fff;margin-bottom:14px;}
+.lc-hd{padding:10px 18px;display:flex;align-items:center;gap:10px;}
+.lc-hd.h1{background:var(--nv);}.lc-hd.h2{background:var(--bl);}
+.lc-hd.h3{background:var(--gn);}.lc-hd.h4{background:var(--or);}
+.lc-hd.h5{background:var(--rd);}.lc-hd.h6{background:var(--pu);}
+.lc-hd.h7{background:var(--tl);}.lc-hd.h8{background:var(--gd);}
+.lc-no{background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:2px 9px;letter-spacing:.5px;white-space:nowrap;}
+.lc-ti{font-family:'Noto Serif KR',serif;font-size:13.5px;font-weight:700;color:#fff;}
+.lc-body{padding:18px 22px;}
+.cl{background:var(--bg2);border-left:4px solid;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.95;color:var(--t2);}
+.cl:last-child{margin-bottom:0;}
+.cl.n{border-color:var(--nv);}.cl.b{border-color:var(--bl);}
+.cl.g{border-color:var(--gn);}.cl.o{border-color:var(--or);}
+.cl.r{border-color:var(--rd);}.cl.p{border-color:var(--pu);}
+.cl.t{border-color:var(--tl);}.cl.gd{border-color:var(--gd2);}
+.cn{font-weight:900;margin-right:5px;}
+.cn.n{color:var(--nv);}.cn.b{color:var(--bl);}.cn.g{color:var(--gn);}
+.cn.o{color:var(--or);}.cn.r{color:var(--rd);}.cn.p{color:var(--pu);}
+.cn.t{color:var(--tl);}.cn.gd{color:var(--gd);}
+
+/* ── EASY / MEMO ── */
+.easy{position:relative;background:var(--gd-lt);border:2px solid var(--gd2);padding:28px 24px 20px;margin:6px 0 18px;}
+.easy::before{content:attr(data-label);position:absolute;top:-13px;left:14px;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.easy p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.easy .ok{color:var(--gn);font-weight:700;}.easy .bad{color:var(--rd);font-weight:700;}
+.easy .hl{color:var(--or);font-weight:700;}.easy .bl{color:var(--nv);font-weight:700;}
+.memo{position:relative;background:linear-gradient(135deg,#fff9ee,#fdf0c0);border:2px solid var(--gd2);border-top:4px solid var(--or2);padding:26px 22px 18px;margin:8px 0 18px;}
+.memo::before{content:attr(data-label);position:absolute;top:-14px;left:14px;background:var(--or2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.memo p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.memo .ok{color:var(--gn);font-weight:700;}.memo .bad{color:var(--rd);font-weight:700;}
+.memo .hl{color:var(--or);font-weight:700;}.memo .bl{color:var(--nv);font-weight:700;}
+
+/* ── FORMULA ── */
+.fbox{padding:16px 22px;margin:8px 0;color:#fff;text-align:center;line-height:2.3;}
+.fbox.n{background:var(--nv);}.fbox.b{background:var(--bl);}
+.fbox.g{background:var(--gn);}.fbox.o{background:var(--or);}
+.fbox.r{background:var(--rd);}.fbox.p{background:var(--pu);}
+.fbox.t{background:var(--tl);}.fbox.gd{background:var(--gd);}
+.fbox .fm{font-size:1rem;font-weight:700;}
+.fbox.n .fm,.fbox.b .fm{color:#80e8ff;}
+.fbox.g .fm{color:#80ffc0;}.fbox.o .fm{color:#ffe0a0;}
+.fbox.r .fm{color:#ffb0b8;}.fbox.p .fm{color:#e0c0ff;}
+.fbox.t .fm{color:#80ffff;}.fbox.gd .fm{color:#ffe090;}
+.fbox .fn{font-size:11.5px;color:rgba(255,255,255,.72);}
+
+/* ── CALC BOX ── */
+.calc-box{background:#fff;border:2px solid var(--bdr);margin:10px 0 18px;overflow:hidden;}
+.calc-row{display:flex;align-items:stretch;border-bottom:1px solid var(--bdr2);}
+.calc-row:last-child{border-bottom:none;}
+.c-label{background:var(--nv);color:#fff;padding:12px 18px;font-size:13px;font-weight:700;min-width:220px;display:flex;align-items:center;}
+.c-label.sub{background:var(--bl2);padding-left:28px;}
+.c-label.sub2{background:var(--bl);padding-left:36px;}
+.c-label.res{background:var(--rd);font-size:14px;font-weight:900;}
+.c-label.res2{background:var(--or);font-size:13px;font-weight:900;}
+.c-label.final{background:#0a1828;font-size:14px;font-weight:900;}
+.c-op{background:var(--bg2);color:var(--nv);padding:12px 14px;font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;min-width:36px;}
+.c-op.r{color:var(--rd);}.c-op.g{color:var(--gn);}
+.c-desc{padding:12px 16px;font-size:13px;color:var(--t2);display:flex;align-items:center;flex:1;line-height:1.6;}
+
+/* ── PANEL ── */
+.panel{padding:12px 16px;margin:6px 0;font-size:13.5px;line-height:1.95;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--bl-lt);border-color:var(--bl);}
+.panel.pr{background:var(--rd-lt);border-color:var(--rd);}
+.panel.pg{background:var(--gn-lt);border-color:var(--gn);}
+.panel.po{background:var(--or-lt);border-color:var(--or);}
+.panel.pp{background:var(--pu-lt);border-color:var(--pu);}
+.panel.pt{background:var(--tl-lt);border-color:var(--tl);}
+.panel.pgd{background:var(--gd-lt);border-color:var(--gd2);}
+
+/* ── TABLE ── */
+.tw{overflow-x:auto;margin:6px 0 16px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:var(--nv);color:#fff;padding:10px 13px;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+thead th.b{background:var(--bl);}thead th.g{background:var(--gn);}
+thead th.o{background:var(--or);}thead th.r{background:var(--rd);}
+thead th.p{background:var(--pu);}thead th.t{background:var(--tl);}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--gn);font-weight:700;}.tba{color:var(--rd);font-weight:700;}
+.thl{color:var(--or);font-weight:700;}.tbl{color:var(--nv);font-weight:700;}
+
+/* ── GRID ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 16px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 16px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+.gc{border:2px solid var(--bdr);background:var(--w);padding:16px;}
+.gc .gct{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:7px;border-bottom:2px solid;margin-bottom:10px;}
+.gc.nv .gct{color:var(--nv);border-color:var(--nv);}
+.gc.gn .gct{color:var(--gn);border-color:var(--gn);}
+.gc.rd .gct{color:var(--rd);border-color:var(--rd);}
+.gc.or .gct{color:var(--or);border-color:var(--or);}
+.gc.bl .gct{color:var(--bl);border-color:var(--bl);}
+.gc.pu .gct{color:var(--pu);border-color:var(--pu);}
+.gc ul{list-style:none;font-size:12.5px;line-height:2;color:var(--t2);}
+.gc.gn ul li::before{content:'✅ ';}
+.gc.rd ul li::before{content:'❌ ';}
+.gc.nv ul li::before{content:'▶ ';}
+.gc.or ul li::before{content:'🔶 ';}
+.gc.bl ul li::before{content:'■ ';}
+.gc p{font-size:12.5px;color:var(--t2);line-height:1.85;}
+.gc strong{color:var(--t1);}
+
+/* ── SH3 ── */
+.sh3{font-family:'Noto Serif KR',serif;font-size:.97rem;font-weight:900;color:var(--t1);margin:22px 0 10px;padding-left:10px;border-left:4px solid var(--nv);}
+.sh3.b{border-color:var(--bl);}.sh3.g{border-color:var(--gn);}
+.sh3.r{border-color:var(--rd);}.sh3.o{border-color:var(--or);}
+.sh3.p{border-color:var(--pu);}.sh3.t{border-color:var(--tl);}
+
+/* ── STEP BOX ── */
+.step-wrap{margin:10px 0 18px;}
+.step-row{display:flex;gap:14px;margin-bottom:10px;align-items:start;}
+.step-num{background:var(--nv);color:var(--gd-lt);font-family:'Noto Serif KR',serif;font-weight:900;font-size:14px;padding:8px 14px;white-space:nowrap;flex-shrink:0;}
+.step-num.b2{background:var(--bl);}
+.step-num.b3{background:var(--gn);}
+.step-num.b4{background:var(--or);}
+.step-num.b5{background:var(--rd);}
+.step-body{background:#fff;border:1px solid var(--bdr2);padding:12px 16px;flex:1;}
+.step-body h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px;}
+.step-body p{font-size:13px;color:var(--t2);line-height:1.85;}
+
+/* ── SUMMARY ── */
+.summary{background:#0c0a08;color:#f4f0e4;padding:44px 36px;margin-top:56px;text-align:center;border-top:4px solid var(--gd2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.4rem;color:#ffd060;margin-bottom:24px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:11px;max-width:980px;margin:0 auto 18px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,208,96,.3);padding:14px 16px;}
+.sc .st{color:#ffd060;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:7px;}
+.sc p{font-size:12px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;}
+
+footer{background:#070504;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:1px solid var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.chapter{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">세법 강의 노트 Vol.10</div>
+    <h1>법인세법 완전정복<br>
+      <span class="a1">기업업무추진비</span> &amp; <span class="a2">기부금</span>
+    </h1>
+    <p class="hero-sub">법 §24 · §25 · 시행령 §36 · §40~§42 | 시행 2026.01.02 / 2026.02.27</p>
+    <div class="hero-chips">
+      <span class="hero-chip">🍽️ 기업업무추진비 개념·범위</span>
+      <span class="hero-chip">📅 귀속시기</span>
+      <span class="hero-chip">📐 한도 계산</span>
+      <span class="hero-chip">🎁 기부금 개념·범위</span>
+      <span class="hero-chip">📋 특례·일반 기부금</span>
+      <span class="hero-chip">🔄 이월공제 10년</span>
+    </div>
+  </div>
+</header>
+
+<!-- TOC -->
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">목차</span>
+    <a href="#p1">【기업업무추진비】</a>
+    <a href="#ch1">① 개념·범위</a>
+    <a href="#ch2">② 귀속시기</a>
+    <a href="#ch3">③ 한도·세무조정</a>
+    <a href="#p2">【기부금】</a>
+    <a href="#ch4">④ 개념·범위</a>
+    <a href="#ch5">⑤ 귀속시기·가액</a>
+    <a href="#ch6">⑥ 한도·세무조정</a>
+    <a href="#ch7">⑦ 비교 총정리</a>
+    <a href="#sum">핵심요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════════════
+     PART 1 — 기업업무추진비
+══════════════════════════════════════════ -->
+<div class="part-div" id="p1">
+  <div>
+    <div class="part-label">Part 01</div>
+    <h2>🍽️ 기업업무추진비</h2>
+  </div>
+</div>
+
+<!-- ────────────────────────
+     CH1. 기업업무추진비 개념·범위
+──────────────────────── -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Chapter 01</span>
+    <h2>기업업무추진비의 개념 및 범위 — 원칙과 예외</h2>
+    <span class="ref">법 §25①②③ · 시행령 §40·§41</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">🍽️</span>
+    <p>
+      <strong>기업업무추진비</strong>란 접대·교제·사례 등 명목 불문, 업무 관련자와 업무를 원활히 진행하기 위해 지출한 금액입니다.<br>
+      <strong>원칙: 증빙(신용카드·세금계산서 등) 갖춘 것 중 한도 이내에서 손금</strong><br>
+      <strong>예외: 건당 3만원(경조금 20만원) 초과 시 적격 증빙 필수 — 없으면 전액 손금불산입</strong>
+    </p>
+  </div>
+
+  <!-- 법 제25조 조문 -->
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 §25①</span><span class="lc-ti">기업업무추진비의 정의</span></div>
+    <div class="lc-body">
+      <div class="cl n"><span class="cn n">①</span>접대, 교제, 사례 또는 그 밖에 <strong>어떠한 명목이든</strong> 상관없이 이와 유사한 목적으로 지출한 비용으로서 내국법인이 직접 또는 간접적으로 <strong>업무와 관련이 있는 자</strong>와 <strong>업무를 원활하게 진행하기 위하여</strong> 지출한 금액</div>
+    </div>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 §25② · 시행령 §41①</span><span class="lc-ti">증빙 요건 — 건당 한도 초과 시 적격 증빙 필수</span></div>
+    <div class="lc-body">
+      <div class="cl n"><span class="cn n">②</span>한 차례 접대에 <strong>건당 한도 초과 시</strong> 다음 중 하나에 해당하지 않으면 <strong>전액 손금불산입</strong>:<br>
+        1호. 신용카드·직불카드·현금영수증 사용<br>
+        2호. 세금계산서·계산서 수취<br>
+        3호. 매입자발행 세금계산서·계산서<br>
+        4호. 원천징수영수증 (미등록 사업자 용역)</div>
+      <div class="cl n"><span class="cn n">건당 한도 (시령 §41①)</span>
+        <strong>경조금: 20만 원</strong> 이하 → 증빙 없어도 손금 가능<br>
+        <strong>그 외: 3만 원</strong> 이하 → 증빙 없어도 손금 가능<br>
+        초과 시 적격 증빙 필수 (없으면 전액 불산입)</div>
+      <div class="cl n"><span class="cn n">예외 (증빙 면제)</span>
+        ① 국외 지역에서 현금 외 수단 없는 지출<br>
+        ② 농·어민으로부터 직접 재화 구입 + 금융회사 통한 지급 + 송금명세서 제출</div>
+    </div>
+  </div>
+
+  <div class="sh3">기업업무추진비 범위 — 해당 여부 판단</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>지출 유형</th><th class="g">기업업무추진비 여부</th><th>근거·설명</th></tr></thead>
+      <tbody>
+        <tr><td>거래처 식사·골프 접대</td><td class="tok">✅ 기업업무추진비</td><td>업무 관련자와의 접대 비용</td></tr>
+        <tr><td>거래처 명절 선물세트</td><td class="tok">✅ 기업업무추진비</td><td>업무 관련 교제 목적</td></tr>
+        <tr><td>주주·임원이 부담해야 할 접대비를 법인이 지출</td><td class="tba">❌ 기업업무추진비 아님</td><td>시령 §40① — 개인 부담 성격, 상여 처리</td></tr>
+        <tr><td>직원조합(법인) 복리시설비 지출</td><td class="tba">기업업무추진비로 봄</td><td>시령 §40② — 법인 조합이면 기업업무추진비</td></tr>
+        <tr><td>직원조합(비법인) 복리시설비</td><td class="tok">법인 경리의 일부</td><td>시령 §40② — 비법인이면 내부 경비</td></tr>
+        <tr><td>광고성 물품 증정 (다수인 대상)</td><td class="tba">❌ 기업업무추진비 아님</td><td>광고선전비로 분류</td></tr>
+        <tr><td>사용인 조합 아닌 단체에 복리시설비</td><td class="tok">✅ 기업업무추진비</td><td>법인인 단체이면 기업업무추진비</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 기업업무추진비 vs 기타 비용">
+    <p>
+      🍽️ 기업업무추진비 = <span class="bl">"특정인"과 업무 관련으로 쓰는 돈</span><br><br>
+      📺 광고비: 불특정 다수에게 → <span class="ok">광고선전비</span><br>
+      🎂 직원 회식: 내부 직원 → <span class="ok">복리후생비</span><br>
+      🍽️ 거래처 접대: 업무 관련 외부인 → <span class="hl">기업업무추진비!</span><br>
+      💼 사장 개인 골프: 업무 무관 → <span class="bad">업무무관비용!</span><br><br>
+      <span class="bad">건당 3만 원(경조금 20만 원) 초과하면 반드시 신용카드 등으로 결제해야!</span><br>
+      현금으로 내고 영수증도 없으면 → 한 푼도 손금 인정 안 됩니다.
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ────────────────────────
+     CH2. 기업업무추진비 귀속시기
+──────────────────────── -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b2">Chapter 02</span>
+    <h2>기업업무추진비의 귀속시기</h2>
+    <span class="ref">시행령 §40②, 법 §40</span>
+  </div>
+
+  <div class="intro i2">
+    <span class="icon">📅</span>
+    <p>
+      기업업무추진비는 <strong>실제 지출한 날(현금주의 원칙)</strong>이 속하는 사업연도에 귀속됩니다.<br>
+      단, 미지급금으로 계상하거나 가지급금으로 처리한 경우 귀속시기 특례가 적용됩니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h2"><span class="lc-no">귀속시기 원칙</span><span class="lc-ti">기업업무추진비 귀속시기</span></div>
+    <div class="lc-body">
+      <div class="cl b"><span class="cn b">원칙</span>기업업무추진비는 <strong>지출한 날이 속하는 사업연도</strong>에 손금산입<br>
+        (다른 손비와 달리 권리의무확정주의 적용 아님 — 현금 지출 기준)</div>
+      <div class="cl b"><span class="cn b">미지급금 계상</span>기업업무추진비를 미지급금으로 계상한 경우 → <strong>실제 지출할 때까지는 손금불산입</strong><br>
+        단, 법인이 실제 지출한 날이 속하는 사업연도에 손금산입</div>
+      <div class="cl b"><span class="cn b">가지급금 계상</span>기업업무추진비를 가지급금 등으로 이연 계상한 경우 → <strong>지출한 사업연도의 기업업무추진비</strong>로 봄</div>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="b">상황</th><th class="b">귀속시기</th><th class="b">비고</th></tr></thead>
+      <tbody>
+        <tr><td>12월 31일 신용카드 결제</td><td class="tbl"><strong>당기 사업연도</strong></td><td>실제 지출일 기준</td></tr>
+        <tr><td>12월 접대 후 미지급금 계상, 1월에 지급</td><td class="tba"><strong>실제 지급한 사업연도 (차기)</strong></td><td>미지급금 → 지급일 귀속</td></tr>
+        <tr><td>접대비를 가지급금으로 처리</td><td class="thl"><strong>지출한 사업연도 (당기)</strong></td><td>가지급 계상해도 당기 처리</td></tr>
+        <tr><td>연간 지출 한도 내 분기별 지출</td><td class="tbl">각 <strong>지출일 기준</strong> 각 사업연도 산입</td><td>연간 합산하여 한도 판정</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="memo" data-label="🧠 핵심 — 기부금과 귀속시기 차이">
+    <p>
+      <strong>기업업무추진비:</strong> <span class="bl">실제 지출일</span> 기준 (현금주의)<br>
+      미지급금 계상 → <span class="bad">차기로 이연</span><br><br>
+      <strong>기부금:</strong> <span class="bl">실제 지출일</span> 기준 (현금주의 — 동일!)<br>
+      미지급금 계상 → <span class="bad">차기로 이연 (동일)</span><br>
+      가지급금 이연 → <span class="hl">당기 기부금 (동일)</span><br><br>
+      💡 <strong>둘 다 현금주의 기준이지만, 한도 계산 구조는 완전히 다릅니다!</strong>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ────────────────────────
+     CH3. 기업업무추진비 한도·세무조정
+──────────────────────── -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Chapter 03</span>
+    <h2>기업업무추진비 한도 계산과 세무조정</h2>
+    <span class="ref">법 §25④⑤ · 시행령 §42</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="icon">📐</span>
+    <p>
+      기업업무추진비 손금 한도는 <strong>기본한도 + 수입금액별 한도</strong>의 합계입니다.<br>
+      특수관계인과의 거래에서 발생한 수입금액은 한도 계산 시 <strong>10%만 적용</strong>합니다.<br>
+      부동산임대업 중심 법인 등은 합계 한도의 <strong>50%만</strong> 인정됩니다.
+    </p>
+  </div>
+
+  <!-- 한도 계산 구조 -->
+  <div class="sh3 g">Step 1 — 세무조정 전 손금 가능 금액 파악 (2단계 필터)</div>
+  <div class="step-wrap">
+    <div class="step-row">
+      <div class="step-num">STEP 1</div>
+      <div class="step-body">
+        <h4>증빙 불비 기업업무추진비 걸러내기 (법 §25②)</h4>
+        <p>건당 3만 원(경조금 20만 원) 초과 지출 중 신용카드등·세금계산서 없는 것 → <strong>전액 손금불산입</strong><br>
+        이 금액은 한도 계산 대상에서도 제외</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num b2">STEP 2</div>
+      <div class="step-body">
+        <h4>잔여 기업업무추진비에 한도 적용 (법 §25④)</h4>
+        <p>Step 1 필터 통과한 금액 중 한도 초과분 → <strong>손금불산입</strong><br>
+        한도 = 기본한도 + 수입금액별 한도</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 기본한도 -->
+  <div class="sh3 g">기본한도 (법 §25④1호)</div>
+  <div class="fbox b">
+    <div class="fm">기본한도 = A × (사업연도 월수 / 12)</div>
+    <div class="fn">A = 일반법인: 1,200만 원 / 중소기업: 3,600만 원<br>1개월 미만 → 1개월로 계산</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">구분</th><th class="g">연간 기본한도</th><th class="g">7개월 사업연도 예시</th></tr></thead>
+      <tbody>
+        <tr><td><strong>일반법인</strong></td><td class="tbl">1,200만 원</td><td class="tbl">1,200만 × 7/12 = 700만 원</td></tr>
+        <tr><td><strong>중소기업</strong></td><td class="tok">3,600만 원</td><td class="tok">3,600만 × 7/12 = 2,100만 원</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 수입금액별 한도 -->
+  <div class="sh3 g">수입금액별 한도 (법 §25④2호)</div>
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">법 §25④2호</span><span class="lc-ti">수입금액별 한도 — 누진 구조</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">수입금액</span>기업회계기준에 따른 <strong>매출액</strong> (시행령 §42① 기준)</div>
+      <div class="cl g"><span class="cn g">비율표</span>
+        가. 100억 이하: <strong>0.3%</strong><br>
+        나. 100억 초과 ~ 500억 이하: <strong>3,000만 원 + (초과액 × 0.2%)</strong><br>
+        다. 500억 초과: <strong>1억 1,000만 원 + (초과액 × 0.03%)</strong>
+      </div>
+      <div class="cl g"><span class="cn g">특수관계인 거래 수입금액</span>특수관계인과의 거래에서 발생한 수입금액 → 위 비율 적용 금액의 <strong>10%만 한도에 가산</strong></div>
+    </div>
+  </div>
+
+  <div class="fbox g">
+    <div class="fm">수입금액별 한도 = (일반 수입금액 × 비율) + (특수관계인 수입금액 × 비율 × 10%)</div>
+    <div class="fn">비율: 100억 이하 0.3% / 100~500억 구간 0.2% / 500억 초과 0.03% (누진)</div>
+  </div>
+
+  <!-- 전체 한도 -->
+  <div class="sh3 g">전체 손금 한도 계산 구조 (추가한도 포함 완전판)</div>
+  <div class="calc-box">
+    <div class="calc-row">
+      <div class="c-label">회계상 기업업무추진비 총액</div>
+      <div class="c-op"></div>
+      <div class="c-desc">결산 상 계상된 전체 기업업무추진비</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub">− ① 증빙불비 손금불산입액</div>
+      <div class="c-op r">－</div>
+      <div class="c-desc">건당 3만/20만 초과 + 적격증빙 없는 금액 → 전액 불산입</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label res">= 한도 판정 대상 금액</div>
+      <div class="c-op">=</div>
+      <div class="c-desc">증빙 갖춘 기업업무추진비만 한도 계산 대상</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub">기본한도 (법 §25④1호)</div>
+      <div class="c-op"></div>
+      <div class="c-desc">일반 1,200만 원 / 중소기업 3,600만 원 × (사업연도 월수 / 12)</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub">+ 수입금액별 한도 (법 §25④2호)</div>
+      <div class="c-op r" style="color:var(--gn);">＋</div>
+      <div class="c-desc">일반 수입금액 × 비율 + 특수관계인 수입금액 × 비율 × 10%</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label res2">= 기본 손금한도 소계 ⓐ</div>
+      <div class="c-op">=</div>
+      <div class="c-desc">부동산임대법인 등: ⓐ × 50% 적용 (법 §25⑤)</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub" style="background:#156638;">+ 문화비 추가한도 (조특법 §136③)</div>
+      <div class="c-op r" style="color:var(--gn);">＋</div>
+      <div class="c-desc">ⓐ × <strong>20%</strong> 범위 내 문화비 지출액 (2028.12.31까지)<br>부동산임대법인: (ⓐ × 50%) × 20%</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub" style="background:#0a3868;">+ 전통시장 추가한도 (조특법 §136⑥)</div>
+      <div class="c-op r" style="color:var(--gn);">＋</div>
+      <div class="c-desc">ⓐ × <strong>20%</strong> 범위 내 전통시장 지출액 (2028.12.31까지)<br>부동산임대법인: (ⓐ × 50%) × 20%</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label res" style="background:#5a0c18;">= 최종 손금한도 합계 ⓑ</div>
+      <div class="c-op">=</div>
+      <div class="c-desc">ⓐ + 문화비 추가한도 + 전통시장 추가한도 (최대 ⓐ × 140%)</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub">− ② 한도 초과 손금불산입액</div>
+      <div class="c-op r">－</div>
+      <div class="c-desc">한도 판정 대상 금액 − ⓑ = 초과분 손금불산입</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label final">= 최종 손금산입액</div>
+      <div class="c-op">=</div>
+      <div class="c-desc">= Min(한도 판정 대상 금액, ⓑ)</div>
+    </div>
+  </div>
+
+  <!-- 부동산임대업 법인 특례 -->
+  <div class="sh3 g">부동산임대업 중심 법인 — 한도 50% 추가 제한 (법 §25⑤)</div>
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">법 §25⑤ · 시행령 §42②</span><span class="lc-ti">부동산임대업 법인 한도 50% 제한 요건</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">3요건 모두 충족</span>
+        1. 지배주주등이 보유한 주식 합계 > 발행주식총수의 <strong>50% 초과</strong><br>
+        2. 부동산임대업이 주된 사업이거나 임대소득·이자소득·배당소득 합계가 매출액의 <strong>50% 이상</strong><br>
+        3. 해당 사업연도 <strong>상시근로자 수 5명 미만</strong></div>
+      <div class="cl g"><span class="cn g">효과</span>위 요건 충족 시: ⓐ = (기본한도 + 수입금액별 한도) × <strong>50%</strong><br>
+        추가한도도 이 제한된 ⓐ를 기준으로 각 20% 계산</div>
+    </div>
+  </div>
+
+  <!-- 문화비 추가한도 -->
+  <div class="sh3 g">문화비 추가한도 (조특법 §136③ · 시행령 §130⑤)</div>
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">조특법 §136③</span><span class="lc-ti">문화비 기업업무추진비 추가한도</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">적용기한</span><strong>2028년 12월 31일</strong> 이전 지출분</div>
+      <div class="cl g"><span class="cn g">추가한도</span>기본 손금한도 ⓐ의 <strong>100분의 20(20%)</strong> 범위 내 문화비 지출액 추가 손금산입</div>
+      <div class="cl g"><span class="cn g">문화비 범위 (시령 §130⑤, 16가지)</span>
+        1. 문화예술 공연·전시회·박물관 입장권<br>
+        2. 체육활동 관람 입장권<br>
+        3. 비디오물 구입<br>
+        4. 음반·음악영상물 구입<br>
+        5. 간행물 구입<br>
+        6. 문화관광축제 입장권·이용권<br>
+        7. 관광공연장 입장권<br>
+        8. 박람회 입장권<br>
+        9. 지정문화유산·국가등록문화유산·천연기념물 등 관람 입장권<br>
+        10. 문화예술 관련 강연 입장권·강연료<br>
+        11. 직접 개최하는 공연 등 문화예술행사비<br>
+        12. 문화체육관광부 후원 문화예술·체육행사 경비<br>
+        13. <strong>미술품 구입 (거래단위별 100만 원 이하)</strong><br>
+        14. 테마파크시설 입장권·이용권<br>
+        15. 수목원·정원 입장권<br>
+        16. 궤도시설 이용권
+      </div>
+    </div>
+  </div>
+
+  <div class="fbox g">
+    <div class="fm">문화비 추가한도 = Min(해당 사업연도 문화비 지출액, ⓐ × 20%)</div>
+    <div class="fn">ⓐ = 기본한도 + 수입금액별 한도 (부동산임대법인은 × 50% 적용 후 금액)</div>
+  </div>
+
+  <!-- 전통시장 추가한도 -->
+  <div class="sh3 g">전통시장 추가한도 (조특법 §136⑥ · 시행령 §130⑦⑧)</div>
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">조특법 §136⑥</span><span class="lc-ti">전통시장 기업업무추진비 추가한도</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">적용기한</span><strong>2028년 12월 31일</strong> 이전 지출분</div>
+      <div class="cl g"><span class="cn g">추가한도</span>기본 손금한도 ⓐ의 <strong>100분의 20(20%)</strong> 범위 내 전통시장 지출액 추가 손금산입</div>
+      <div class="cl g"><span class="cn g">대상 지출</span>
+        ① <strong>전통시장</strong>에서 직접 지출<br>
+        ② <strong>온누리상품권</strong>으로 지출<br>
+        ③ <strong>지역사랑상품권</strong>으로 지출 (판매대행점 발행 증명자료 포함)
+      </div>
+      <div class="cl g"><span class="cn g">요건 2가지 모두 충족 (§136⑥1·2호)</span>
+        1. 신용카드등사용금액에 해당할 것<br>
+        &nbsp;&nbsp;&nbsp;(지역사랑상품권: 판매대행점 발행 증명자료로 대체 가능)<br>
+        2. <strong>소비성서비스업(유흥업 등)</strong>을 경영하는 법인·사업자에게 지출한 것이 아닐 것
+      </div>
+    </div>
+  </div>
+
+  <div class="fbox b">
+    <div class="fm">전통시장 추가한도 = Min(해당 사업연도 전통시장 지출액, ⓐ × 20%)</div>
+    <div class="fn">요건: 신용카드등 사용 + 소비성서비스업 제외 | 온누리·지역사랑상품권 지출 포함</div>
+  </div>
+
+  <!-- 추가한도 관계 및 최종 공식 -->
+  <div class="sh3 g">두 추가한도의 관계 및 최종 한도 공식</div>
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">핵심 구조</span><span class="lc-ti">두 추가한도는 독립적으로 각각 적용</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">독립 적용</span>문화비 추가한도와 전통시장 추가한도는 <strong>서로 독립적으로 각각 ⓐ의 20%</strong>씩 적용<br>
+        → 두 추가한도를 모두 활용하면 최대 <strong>ⓐ × 40%</strong>까지 추가 가능</div>
+      <div class="cl g"><span class="cn g">합산 시 최대 한도</span>최종 손금한도 ⓑ = ⓐ + (ⓐ × 20%) + (ⓐ × 20%) = <strong>ⓐ × 140%</strong> (최대)</div>
+    </div>
+  </div>
+
+  <div class="fbox n">
+    <div class="fm">
+      【최종 손금한도 ⓑ 완전 공식】<br>
+      ⓑ = ⓐ + Min(문화비 지출액, ⓐ×20%) + Min(전통시장 지출액, ⓐ×20%)<br>
+      ⓐ = (기본한도 + 수입금액별 한도) × [1 또는 50%(부동산임대법인)]
+    </div>
+    <div class="fn">기본한도: 일반 1,200만/중소 3,600만 × 월수/12 | 수입금액별: 0.03~0.3% 누진 | 추가한도 적용기한: 2028.12.31</div>
+  </div>
+
+  <!-- 한도 구조 시각 비교표 -->
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">구분</th><th class="g">일반법인</th><th class="g">부동산임대법인 등</th><th class="g">근거</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>기본한도</strong></td>
+          <td>1,200만(일반)/3,600만(중소) × 월수/12</td>
+          <td>동일</td>
+          <td>법 §25④1호</td>
+        </tr>
+        <tr>
+          <td><strong>수입금액별 한도</strong></td>
+          <td>매출액 × 0.03~0.3% (누진)</td>
+          <td>동일</td>
+          <td>법 §25④2호</td>
+        </tr>
+        <tr>
+          <td><strong>기본 손금한도 ⓐ</strong></td>
+          <td class="tok">기본 + 수입금액별</td>
+          <td class="tba">(기본 + 수입금액별) × <strong>50%</strong></td>
+          <td>법 §25⑤</td>
+        </tr>
+        <tr>
+          <td><strong>문화비 추가한도</strong></td>
+          <td class="tok">ⓐ × 20% 한도 내</td>
+          <td class="thl">(ⓐ × 50%) × 20%<br>= ⓐ_원래 × 10% 한도 내</td>
+          <td>조특법 §136③<br>~2028.12.31</td>
+        </tr>
+        <tr>
+          <td><strong>전통시장 추가한도</strong></td>
+          <td class="tok">ⓐ × 20% 한도 내</td>
+          <td class="thl">(ⓐ × 50%) × 20%<br>= ⓐ_원래 × 10% 한도 내</td>
+          <td>조특법 §136⑥<br>~2028.12.31</td>
+        </tr>
+        <tr>
+          <td><strong>최대 손금한도 ⓑ</strong></td>
+          <td class="tok"><strong>ⓐ × 140%</strong></td>
+          <td class="thl"><strong>ⓐ_원래 × 70%</strong><br>(50% + 10% + 10%)</td>
+          <td>종합</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 세무조정 방법 -->
+  <div class="sh3 g">세무조정 방법 및 소득처분</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">손금불산입 항목</th><th class="g">세무조정</th><th class="g">소득처분</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>① 증빙불비 기업업무추진비</td>
+          <td class="tba">손금불산입</td>
+          <td class="tba"><strong>대표자 상여</strong> (특정 귀속자 있으면 그 귀속자 기준 처분)<br>귀속 불분명 → 대표자 상여</td>
+        </tr>
+        <tr>
+          <td>② 한도 초과 기업업무추진비</td>
+          <td class="tba">손금불산입</td>
+          <td class="tba"><strong>기타사외유출</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pr">
+    ⚠️ <strong>소득처분 핵심 구분:</strong><br>
+    ① 증빙불비 → <strong>대표자 상여</strong> (누군가에게 귀속된 지출로 봄)<br>
+    ② 한도 초과 → <strong>기타사외유출</strong> (적법하게 지출됐으나 세법상 한도 초과)
+  </div>
+
+  <div class="sh3 g">추가한도 포함 실전 종합 계산 사례</div>
+  <div class="easy" data-label="📖 계산 사례 — 문화비·전통시장 추가한도 반영 완전 계산">
+    <p>
+      <strong>[기본 조건]</strong><br>
+      일반법인 (12월 결산), 매출액 200억 원 (특수관계인 거래 30억 포함)<br>
+      회계상 기업업무추진비 합계: 8,500만 원<br>
+      &nbsp;&nbsp;- 증빙불비: 500만 원<br>
+      &nbsp;&nbsp;- 문화비(공연 입장권·미술품 등): 1,200만 원 (적격 증빙 완비)<br>
+      &nbsp;&nbsp;- 전통시장 지출(신용카드, 소비성서비스업 외): 800만 원<br>
+      &nbsp;&nbsp;- 일반 기업업무추진비: 6,000만 원<br><br>
+
+      <span class="bl">▶ STEP 1. 증빙불비 손금불산입</span><br>
+      증빙불비 500만 원 → <span class="bad">전액 손금불산입 (대표자 상여)</span><br>
+      한도 판정 대상 = 8,500만 − 500만 = <span class="hl">8,000만 원</span><br><br>
+
+      <span class="bl">▶ STEP 2. 기본 손금한도 ⓐ 계산</span><br>
+      기본한도 = 1,200만 × 12/12 = <span class="ok">1,200만 원</span><br>
+      수입금액별 (일반 170억):<br>
+      &nbsp;&nbsp;100억 × 0.3% = 3,000만<br>
+      &nbsp;&nbsp;(170억 − 100억) × 0.2% = 1,400만 → 소계 4,400만<br>
+      수입금액별 (특수관계인 30억): 30억 × 0.3% × 10% = 90만<br>
+      수입금액별 합계 = 4,400만 + 90만 = <span class="ok">4,490만 원</span><br>
+      <span class="bl">ⓐ = 1,200만 + 4,490만 = 5,690만 원</span><br><br>
+
+      <span class="bl">▶ STEP 3. 문화비 추가한도 (조특법 §136③)</span><br>
+      한도 = ⓐ × 20% = 5,690만 × 20% = 1,138만 원<br>
+      문화비 지출액 = 1,200만 원<br>
+      문화비 추가한도 = <span class="ok">Min(1,200만, 1,138만) = 1,138만 원</span><br><br>
+
+      <span class="bl">▶ STEP 4. 전통시장 추가한도 (조특법 §136⑥)</span><br>
+      한도 = ⓐ × 20% = 5,690만 × 20% = 1,138만 원<br>
+      전통시장 지출액 = 800만 원<br>
+      전통시장 추가한도 = <span class="ok">Min(800만, 1,138만) = 800만 원</span><br><br>
+
+      <span class="bl">▶ STEP 5. 최종 손금한도 ⓑ</span><br>
+      ⓑ = 5,690만 + 1,138만 + 800만 = <span class="ok">7,628만 원</span><br><br>
+
+      <span class="bl">▶ STEP 6. 한도 초과 손금불산입</span><br>
+      한도 판정 대상(8,000만) &gt; 최종 한도(7,628만)<br>
+      한도 초과 = 8,000만 − 7,628만 = <span class="bad">372만 원 손금불산입 (기타사외유출)</span><br><br>
+
+      <strong>최종 정리:</strong><br>
+      · 증빙불비 손금불산입: <span class="bad">500만 원</span> → 대표자 상여<br>
+      · 한도 초과 손금불산입: <span class="bad">372만 원</span> → 기타사외유출<br>
+      · 손금산입: <span class="ok">7,628만 원</span>
+    </p>
+  </div>
+
+  <div class="memo" data-label="🧠 암기 포인트 — 추가한도 3가지 키워드">
+    <p>
+      <strong>문화비 추가한도:</strong> <span class="hl">ⓐ × 20%</span>, 2028.12.31까지, 16가지 열거 (미술품 100만 이하)<br>
+      <strong>전통시장 추가한도:</strong> <span class="bl">ⓐ × 20%</span>, 2028.12.31까지, 신용카드+소비성서비스업 제외 요건<br>
+      <strong>두 추가한도는 독립적:</strong> 최대 <span class="ok">ⓐ × 40%</span> 추가 → 최종 한도 최대 <span class="ok">ⓐ × 140%</span><br><br>
+      <strong>부동산임대법인 적용 순서:</strong><br>
+      기본한도 + 수입금액별 한도 → × 50% = ⓐ → ⓐ × 20% 씩 추가한도
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════════════════
+     PART 2 — 기부금
+══════════════════════════════════════════ -->
+<div class="part-div p2" id="p2">
+  <div>
+    <div class="part-label">Part 02</div>
+    <h2>🎁 기부금</h2>
+  </div>
+</div>
+
+<!-- ────────────────────────
+     CH4. 기부금 개념·범위
+──────────────────────── -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Chapter 04</span>
+    <h2>기부금의 개념 및 범위 — 특례·일반·비지정</h2>
+    <span class="ref">법 §24①②③④ · 시행령 §36</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="icon">🎁</span>
+    <p>
+      <strong>기부금</strong>이란 사업과 <strong>직접 관계없이 무상</strong>으로 지출하는 금액입니다.<br>
+      3가지 유형: <strong>특례기부금(50% 한도), 일반기부금(10% 한도), 비지정기부금(전액 불산입)</strong><br>
+      기업업무추진비와의 차이: 업무 관련성·대가성 없음이 핵심입니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">법 §24①</span><span class="lc-ti">기부금의 정의</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">①</span>내국법인이 사업과 <strong>직접적인 관계없이</strong> 무상으로 지출하는 금액<br>
+        대통령령으로 정하는 거래를 통하여 <strong>실질적으로 증여한 것으로 인정되는 금액</strong> 포함<br>
+        (예: 시가보다 저가 양도 → 차액이 기부금 성격)</div>
+    </div>
+  </div>
+
+  <!-- 특례기부금 -->
+  <div class="sh3 o">① 특례기부금 (법 §24②1호) — 한도 50%</div>
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">법 §24②1호</span><span class="lc-ti">특례기부금 (구 법정기부금)</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">가</span>국가·지방자치단체에 무상으로 기증하는 금품 (기부금품법 적용 시 정식 접수분만)</div>
+      <div class="cl o"><span class="cn o">나</span>국방헌금과 국군장병 위문금품</div>
+      <div class="cl o"><span class="cn o">다</span>천재지변으로 생기는 이재민을 위한 구호금품</div>
+      <div class="cl o"><span class="cn o">라</span>사립학교·비영리교육재단·국립대학병원·과학기술원 등에 <strong>시설비·교육비·장학금·연구비</strong>로 지출</div>
+      <div class="cl o"><span class="cn o">마</span>지정 병원 등에 시설비·교육비·연구비로 지출</div>
+      <div class="cl o"><span class="cn o">바</span>재경부장관 지정·고시 사회복지법인에 지출하는 기부금</div>
+    </div>
+  </div>
+
+  <!-- 일반기부금 -->
+  <div class="sh3 o">② 일반기부금 (법 §24③1호) — 한도 10%</div>
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">법 §24③1호</span><span class="lc-ti">일반기부금 (구 지정기부금)</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">개념</span><strong>사회복지·문화·예술·교육·종교·자선·학술 등</strong> 공익성을 고려하여 대통령령으로 정하는 기부금<br>
+        (특례기부금 제외)</div>
+      <div class="cl o"><span class="cn o">예시</span>종교단체 기부금, 학술연구단체·문화예술단체 기부금, 비영리법인(지정 요건 충족)에의 기부금</div>
+    </div>
+  </div>
+
+  <!-- 비지정기부금 -->
+  <div class="sh3 o">③ 비지정기부금 (법 §24④) — 전액 손금불산입</div>
+  <div class="panel pr">
+    ❌ 특례기부금·일반기부금 <strong>이외의 모든 기부금 → 전액 손금불산입</strong><br>
+    예: 정치자금기부금 (일부 예외), 개인에게 무상 증여, 기부금 대상 법인 외 단체 기부
+  </div>
+
+  <!-- 3유형 비교 -->
+  <div class="sh3 o">기부금 3유형 비교표</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="o">유형</th><th class="o">대표 대상</th><th class="o">한도</th><th class="o">이월공제</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>특례기부금</strong><br>(§24②)</td>
+          <td>국가·지자체, 사립학교, 국공립병원, 이재민 구호</td>
+          <td class="tok"><strong>(기준소득 − 이월결손금) × 50%</strong></td>
+          <td class="thl">10년 이월</td>
+        </tr>
+        <tr>
+          <td><strong>일반기부금</strong><br>(§24③)</td>
+          <td>종교단체, 공익법인, 학술·문화단체</td>
+          <td class="tok"><strong>(기준소득 − 이월결손금 − 특례기부금 산입액) × 10%</strong><br>사회적기업: 30%</td>
+          <td class="thl">10년 이월</td>
+        </tr>
+        <tr>
+          <td><strong>비지정기부금</strong><br>(§24④)</td>
+          <td>위 외 모든 기부금</td>
+          <td class="tba"><strong>전액 손금불산입</strong></td>
+          <td class="tba">이월 불가</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 기부금 vs 기업업무추진비">
+    <p>
+      🍽️ <span class="bl">기업업무추진비</span>: "A거래처 부장님 덕분에 계약 성사! 저녁 식사 대접"<br>
+      → 업무 관련 + 특정인 대상 + 대가성 있음<br><br>
+      🎁 <span class="hl">기부금</span>: "수해 이재민 돕기 성금"<br>
+      → 업무 직접 관련 없음 + 무상 + 대가 없음<br><br>
+      핵심 구분:<br>
+      <span class="ok">업무 관련 있고 대가성 있음</span> → 기업업무추진비<br>
+      <span class="ok">업무 관련 없고 무상</span> → 기부금<br>
+      <span class="bad">업무 관련 있고 무상</span> → 광고선전비 or 복리후생비 등
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ────────────────────────
+     CH5. 기부금 귀속시기·가액
+──────────────────────── -->
+<section class="chapter" id="ch5">
+  <div class="ch-hd">
+    <span class="ch-badge b5">Chapter 05</span>
+    <h2>기부금의 귀속시기 및 가액 계산</h2>
+    <span class="ref">시행령 §36②③</span>
+  </div>
+
+  <div class="intro i5">
+    <span class="icon">📅</span>
+    <p>
+      기부금은 <strong>실제 지출한 날</strong>이 속하는 사업연도에 귀속됩니다.<br>
+      금전 외 자산 기부 시 가액은 <strong>재원 종류에 따라 장부가액 또는 Max(장부가, 시가)</strong>로 평가합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h5"><span class="lc-no">시행령 §36②③</span><span class="lc-ti">기부금 귀속시기 특례</span></div>
+    <div class="lc-body">
+      <div class="cl r"><span class="cn r">②</span><strong>가지급금 등으로 이연 계상</strong>한 경우 → <strong>실제 지출한 사업연도의 기부금</strong>으로 봄<br>
+        이후 사업연도에서는 기부금으로 보지 않음</div>
+      <div class="cl r"><span class="cn r">③</span><strong>미지급금으로 계상</strong>한 경우 → 실제로 <strong>지출할 때까지는 기부금으로 보지 않음</strong><br>
+        실제 지출 사업연도에 귀속</div>
+    </div>
+  </div>
+
+  <div class="sh3 r">금전 외 자산 기부 시 가액 평가 (시행령 §36①)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="r">기부금 유형</th><th class="r">가액 평가</th><th class="r">이유</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>특례기부금</strong> (§24②)</td>
+          <td class="tbl"><strong>장부가액</strong></td>
+          <td>공익성 높으므로 장부가 기준 허용</td>
+        </tr>
+        <tr>
+          <td><strong>일반기부금 — 비특수관계인</strong></td>
+          <td class="tbl"><strong>장부가액</strong></td>
+          <td>특수관계 없으므로 장부가 기준 허용</td>
+        </tr>
+        <tr>
+          <td><strong>일반기부금 — 특수관계인</strong></td>
+          <td class="tba"><strong>Max(장부가액, 시가)</strong></td>
+          <td>특수관계인에 저가 기부 시 조작 방지</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pr">
+    ⚠️ <strong>핵심: 특수관계인에게 기부 시 Max(장부가, 시가) 적용!</strong><br>
+    예: 장부가 100만 원, 시가 300만 원인 자산을 특수관계인에게 기부<br>
+    → 기부금 가액 = Max(100만, 300만) = <strong>300만 원</strong>으로 한도 계산
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ────────────────────────
+     CH6. 기부금 한도·세무조정
+──────────────────────── -->
+<section class="chapter" id="ch6">
+  <div class="ch-hd">
+    <span class="ch-badge b6">Chapter 06</span>
+    <h2>기부금 한도 계산과 세무조정 방법</h2>
+    <span class="ref">법 §24②③④⑤⑥</span>
+  </div>
+
+  <div class="intro i6">
+    <span class="icon">📐</span>
+    <p>
+      기부금 한도는 <strong>기준소득금액에서 이월결손금을 차감한 후 비율</strong>을 적용합니다.<br>
+      특례기부금 먼저 한도 산정 → 일반기부금 한도 산정 순서<br>
+      한도 초과분은 <strong>10년 이내 이월공제</strong> 가능 (이월분 먼저 공제)
+    </p>
+  </div>
+
+  <!-- 기준소득금액 -->
+  <div class="sh3 p">Step 0 — 기준소득금액 계산</div>
+  <div class="fbox p">
+    <div class="fm">기준소득금액 = 각 사업연도 소득금액 (특례·일반 기부금 손금산입 전) + 특례·일반 기부금 전액</div>
+    <div class="fn">단, 법 §44·§46·§46의5에 따른 양도손익은 제외 | 이월결손금 공제 전 금액</div>
+  </div>
+
+  <!-- 특례기부금 한도 -->
+  <div class="sh3 p">Step 1 — 특례기부금 한도 (법 §24②2호)</div>
+  <div class="fbox b">
+    <div class="fm">특례기부금 한도 = (기준소득금액 − 이월결손금) × 50%</div>
+    <div class="fn">이월결손금 80% 한도 법인은: (기준소득금액 − Min(이월결손금, 기준소득금액×80%)) × 50%</div>
+  </div>
+
+  <!-- 일반기부금 한도 -->
+  <div class="sh3 p">Step 2 — 일반기부금 한도 (법 §24③2호)</div>
+  <div class="fbox o">
+    <div class="fm">일반기부금 한도 = (기준소득금액 − 이월결손금 − 특례기부금 손금산입액) × 10%</div>
+    <div class="fn">사회적기업은 30% | 특례기부금을 먼저 차감한 후 잔액에 10% 적용</div>
+  </div>
+
+  <!-- 전체 흐름 -->
+  <div class="sh3 p">기부금 한도 계산 전체 흐름도</div>
+  <div class="calc-box">
+    <div class="calc-row">
+      <div class="c-label">기준소득금액 산정</div>
+      <div class="c-op"></div>
+      <div class="c-desc">각 사업연도 소득 + 특례·일반 기부금 전액 합산 (합병·분할 양도손익 제외)</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub">− 이월결손금 (§13①1호)</div>
+      <div class="c-op r">－</div>
+      <div class="c-desc">15년 이내 이월결손금 (80% 한도 법인은 기준소득금액의 80% 한도)</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label res">× 50% = 특례기부금 한도</div>
+      <div class="c-op"></div>
+      <div class="c-desc">특례기부금과 이월된 특례기부금을 이 한도 이내에서 손금산입</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label sub">− 특례기부금 손금산입액</div>
+      <div class="c-op r">－</div>
+      <div class="c-desc">위에서 실제 산입된 특례기부금 차감</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label res2">× 10% = 일반기부금 한도</div>
+      <div class="c-op"></div>
+      <div class="c-desc">일반기부금과 이월된 일반기부금을 이 한도 이내에서 손금산입 (사회적기업 30%)</div>
+    </div>
+    <div class="calc-row">
+      <div class="c-label final">한도 초과분 → 10년 이월</div>
+      <div class="c-op"></div>
+      <div class="c-desc">초과분은 다음 사업연도 개시일부터 10년 이내 이월·공제 (이월분 먼저 공제)</div>
+    </div>
+  </div>
+
+  <!-- 이월공제 규칙 -->
+  <div class="sh3 p">이월공제 규칙 — 법 §24⑤⑥</div>
+  <div class="lc">
+    <div class="lc-hd h6"><span class="lc-no">법 §24⑤⑥</span><span class="lc-ti">한도 초과 기부금 이월공제</span></div>
+    <div class="lc-body">
+      <div class="cl p"><span class="cn p">⑤</span>한도 초과 기부금 → <strong>다음 사업연도 개시일부터 10년 이내</strong>에 끝나는 각 사업연도에 이월하여 각 기부금 한도 내에서 손금산입</div>
+      <div class="cl p"><span class="cn p">⑥ 공제 우선순위</span>이월된 금액을 <strong>해당 사업연도 지출 기부금보다 먼저 손금산입</strong><br>
+        이월된 금액 중에서는 <strong>먼저 발생한 이월금액부터</strong> 손금산입 (선입선출)</div>
+    </div>
+  </div>
+
+  <!-- 세무조정 방법 -->
+  <div class="sh3 p">세무조정 방법 및 소득처분</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">손금불산입 항목</th><th class="p">세무조정</th><th class="p">소득처분</th><th class="p">이월 가능</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>특례기부금 한도 초과</td>
+          <td class="tba">손금불산입</td>
+          <td class="tba"><strong>기타사외유출</strong></td>
+          <td class="thl">10년 이월 가능</td>
+        </tr>
+        <tr>
+          <td>일반기부금 한도 초과</td>
+          <td class="tba">손금불산입</td>
+          <td class="tba"><strong>기타사외유출</strong></td>
+          <td class="thl">10년 이월 가능</td>
+        </tr>
+        <tr>
+          <td>비지정기부금 (전액)</td>
+          <td class="tba">손금불산입</td>
+          <td class="tba"><strong>기타사외유출</strong></td>
+          <td class="tba">이월 불가</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="📖 계산 사례 — 기부금 한도 계산">
+    <p>
+      일반법인, 기준소득금액 10억 원, 이월결손금 2억 원<br>
+      당기 특례기부금 3억 원, 일반기부금 5,000만 원<br><br>
+      <span class="bl">특례기부금 한도:</span><br>
+      (10억 − 2억) × 50% = 8억 × 50% = <span class="ok">4억 원</span><br>
+      특례기부금 3억 ≤ 한도 4억 → <span class="ok">3억 전액 손금산입</span><br><br>
+      <span class="bl">일반기부금 한도:</span><br>
+      (10억 − 2억 − 3억) × 10% = 5억 × 10% = <span class="ok">5,000만 원</span><br>
+      일반기부금 5,000만 = 한도 5,000만 → <span class="ok">5,000만 전액 손금산입</span><br><br>
+      → 한도 초과 없음! 전액 손금산입 가능
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ────────────────────────
+     CH7. 기업업무추진비 vs 기부금 비교
+──────────────────────── -->
+<section class="chapter" id="ch7">
+  <div class="ch-hd">
+    <span class="ch-badge b7">Chapter 07</span>
+    <h2>기업업무추진비 vs 기부금 — 종합 비교</h2>
+    <span class="ref">법 §24·§25 종합</span>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th class="b">기업업무추진비</th><th class="o">기부금</th></tr></thead>
+      <tbody>
+        <tr><td><strong>정의</strong></td><td>업무 관련자와 업무 원활화 위해 지출</td><td>사업과 직접 관계없이 무상 지출</td></tr>
+        <tr><td><strong>업무 관련성</strong></td><td class="tbl">있음</td><td class="tba">없음</td></tr>
+        <tr><td><strong>대가성</strong></td><td class="tbl">있음 (업무 원활화)</td><td class="tba">없음 (무상)</td></tr>
+        <tr><td><strong>귀속시기</strong></td><td>실제 지출일 기준</td><td>실제 지출일 기준 (동일)</td></tr>
+        <tr><td><strong>미지급금</strong></td><td class="tba">지급 시 귀속</td><td class="tba">지급 시 귀속 (동일)</td></tr>
+        <tr><td><strong>증빙 요건</strong></td><td class="tba">건당 3만/20만 초과 시 적격 증빙 必</td><td>별도 증빙 한도 없음</td></tr>
+        <tr><td><strong>한도 기준</strong></td><td class="tbl">기본한도 + 수입금액별 한도</td><td class="thl">기준소득금액 기반 % 비율</td></tr>
+        <tr><td><strong>한도 비율</strong></td><td class="tbl">수입금액 0.03~0.3%</td><td class="thl">50%(특례) / 10%(일반)</td></tr>
+        <tr><td><strong>이월공제</strong></td><td class="tba">없음</td><td class="tok">10년 이월 가능</td></tr>
+        <tr><td><strong>소득처분</strong></td><td>증빙불비: <strong>상여</strong><br>한도초과: <strong>기타사외유출</strong></td><td>한도초과: <strong>기타사외유출</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="memo" data-label="🧠 핵심 암기 — 두 제도의 결정적 차이">
+    <p>
+      <strong>기업업무추진비 vs 기부금 — 3가지 핵심 차이:</strong><br><br>
+      <span class="bl">① 증빙</span>: 기업업무추진비는 <span class="bad">건당 3만원 초과 시 적격 증빙 필수</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;기부금은 별도 금액 기준 증빙 요건 없음<br><br>
+      <span class="bl">② 한도 기준</span>: 기업업무추진비 = <span class="hl">수입금액(매출액) 기반</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;기부금 = <span class="hl">소득금액(이익) 기반</span><br><br>
+      <span class="bl">③ 이월공제</span>: 기업업무추진비 = <span class="bad">없음</span> (당기 소멸)<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;기부금 = <span class="ok">10년 이월 가능</span>
+    </p>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="summary" id="sum">
+  <h3>🏆 기업업무추진비 & 기부금 핵심 총정리</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">🍽️ 기업업무추진비 개념</div>
+      <p>업무관련자와 업무원활화 목적 지출<br>
+      명목 불문 (접대·교제·사례 등)<br>
+      <strong>주주·임원 개인 부담분은 제외</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">📋 증빙 요건 (2단계)</div>
+      <p>건당 <strong>3만 원 초과</strong>: 신용카드·세금계산서 必<br>
+      경조금: <strong>20만 원 초과</strong> 시 증빙 必<br>
+      증빙 없으면 <strong>전액 불산입 → 상여 처분</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">📐 기업업무추진비 한도</div>
+      <p>기본: 일반 <strong>1,200만</strong> / 중소 <strong>3,600만</strong><br>
+      수입금액별: 100억 이하 <strong>0.3%</strong> 누진<br>
+      특수관계인 수입금액 → <strong>×10% 적용</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🎁 기부금 3유형</div>
+      <p>특례: 국가·학교·병원 등 → <strong>50% 한도</strong><br>
+      일반: 종교·공익법인 등 → <strong>10% 한도</strong><br>
+      비지정: <strong>전액 불산입</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">📐 기부금 한도 계산</div>
+      <p>기준소득 − 이월결손금 = 기준액<br>
+      특례: 기준액 × <strong>50%</strong><br>
+      일반: (기준액 − 특례산입) × <strong>10%</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🔄 기부금 이월공제</div>
+      <p>한도 초과분 → <strong>10년 이월공제</strong><br>
+      이월분을 <strong>당기 지출분보다 먼저 공제</strong><br>
+      이월 간 선입선출 (먼저 발생분 먼저)</p>
+    </div>
+    <div class="sc">
+      <div class="st">📅 귀속시기 (공통)</div>
+      <p>두 제도 모두 <strong>실제 지출일 기준</strong><br>
+      미지급금 계상 → <strong>지급 시 귀속</strong><br>
+      가지급금 이연 → <strong>당기 귀속</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">⚖️ 소득처분 구분</div>
+      <p>기업업무추진비 증빙불비 → <strong>상여</strong><br>
+      기업업무추진비 한도초과 → <strong>기타사외유출</strong><br>
+      기부금 한도초과·비지정 → <strong>기타사외유출</strong></p>
+    </div>
+  </div>
+  <p class="note">법인세법 §24·§25·시행령 §36·§40~§42 | 시행 2026.01.02 / 2026.02.27<br>본 자료는 학습 목적 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div>
+<footer>법 §24·§25 · 시행령 §36·§40~§42 | 시행 2026.01.02 / 2026.02.27</footer>
+</body>
+</html>
