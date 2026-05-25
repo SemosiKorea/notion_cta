@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 손금·인건비 | 백지복습 보완 노트</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee;--bg2:#eae7df;--w:#fff;
+  --t1:#0c0a07;--t2:#1d1b12;--t3:#3a3726;--t4:#5a5748;
+  --nv:#061830;
+  --rd:#5a0c18;--rd2:#9e1828;--rd-lt:#fce8ea;
+  --gn:#083a1c;--gn2:#156638;--gn-lt:#d4f0e0;
+  --or:#4c2000;--or2:#9e4200;--or-lt:#fce0c0;
+  --bl:#0a3868;--bl2:#1458a8;--bl-lt:#d4e6f8;
+  --pu:#2c0c54;--pu2:#6020b0;--pu-lt:#e8d4f8;
+  --gd:#6c4a00;--gd2:#ae7600;--gd-lt:#fef0b4;
+  --bdr:#b0a890;--bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.9;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,#1a0808 0%,#3a0c0c 50%,#1a1008 100%);
+  color:#fff;padding:52px 24px 44px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.015) 50px,rgba(255,255,255,.015) 51px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-kicker{display:inline-block;background:var(--rd2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 18px;margin-bottom:16px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;line-height:1.3;color:#fff;}
+.hero h1 em{color:#ff9090;font-style:normal;}
+.hero-sub{margin-top:10px;font-size:13px;color:rgba(255,255,255,.65);}
+.hero-desc{
+  margin-top:18px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  display:inline-block;
+  padding:10px 24px;
+  font-size:13px;color:rgba(255,255,255,.9);
+  line-height:1.8;
+  text-align:left;
+  max-width:640px;
+}
+
+/* ── TOC ── */
+.toc{background:#fff;border-bottom:3px solid var(--rd);padding:11px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:960px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:11.5px;font-weight:700;color:var(--rd);text-decoration:none;padding:2px 8px;border:1px solid var(--rd);}
+.toc a:hover{background:var(--rd);color:#fff;}
+
+/* ── WRAP ── */
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 80px;}
+
+/* ── SECTION ── */
+.section{margin-top:48px;}
+.sec-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:10px;margin-bottom:22px;}
+.sec-badge{font-family:'Noto Serif KR',serif;font-size:11px;font-weight:900;padding:5px 14px;margin-right:14px;color:#fff;white-space:nowrap;}
+.badge-rd{background:var(--rd);}
+.badge-or{background:var(--or);}
+.badge-gn{background:var(--gn);}
+.badge-bl{background:var(--bl);}
+.badge-pu{background:var(--pu);}
+.sec-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.05rem,2.5vw,1.35rem);font-weight:900;color:var(--t1);}
+.sec-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+/* ── GAP CARD (부족 포인트 카드) ── */
+.gap-card{
+  border:0;margin-bottom:20px;overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+.gap-hd{
+  display:flex;align-items:center;gap:0;
+  padding:12px 20px;color:#fff;
+}
+.gap-hd.c-rd{background:var(--rd);}
+.gap-hd.c-or{background:var(--or);}
+.gap-hd.c-gn{background:var(--gn);}
+.gap-hd.c-bl{background:var(--bl);}
+.gap-hd.c-pu{background:var(--pu);}
+.gap-num{
+  font-family:'Noto Serif KR',serif;font-weight:900;font-size:22px;
+  margin-right:14px;opacity:.7;
+}
+.gap-title{font-size:15px;font-weight:900;}
+.gap-body{background:#fff;padding:0;}
+
+/* ── SPLIT: 네가 쓴 것 / 정확한 내용 ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+@media(max-width:580px){.split{grid-template-columns:1fr;}}
+.split-col{padding:18px 20px;}
+.split-col.wrong{background:#fff5f5;border-right:1px solid var(--bdr2);}
+.split-col.right{background:#f0fff6;}
+.split-col h4{
+  font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;
+  padding-bottom:7px;border-bottom:2px solid;margin-bottom:12px;
+}
+.split-col.wrong h4{color:var(--rd);border-color:var(--rd);}
+.split-col.right h4{color:var(--gn);border-color:var(--gn);}
+.split-col p,.split-col ul{font-size:13.5px;line-height:2;color:var(--t2);}
+.split-col ul{list-style:none;}
+.split-col.wrong ul li::before{content:'✗ ';color:var(--rd);font-weight:900;}
+.split-col.right ul li::before{content:'✓ ';color:var(--gn);font-weight:900;}
+.split-col strong{color:var(--t1);}
+.split-col .hl{color:var(--or);font-weight:700;}
+.split-col .ok{color:var(--gn);font-weight:700;}
+.split-col .bad{color:var(--rd);font-weight:700;}
+.split-col .bl{color:var(--bl);font-weight:700;}
+
+/* ── POINT BOX (핵심 포인트) ── */
+.point{
+  background:var(--gd-lt);
+  border-left:5px solid var(--gd2);
+  border-top:1px solid var(--bdr2);
+  padding:14px 20px;
+  font-size:13.5px;line-height:1.95;color:var(--t1);
+}
+.point strong{color:var(--or);}
+.point .ok{color:var(--gn);font-weight:700;}
+.point .bad{color:var(--rd);font-weight:700;}
+.point .bl{color:var(--bl);font-weight:700;}
+.point .hl{color:var(--or);font-weight:700;}
+
+/* ── FORMULA ── */
+.fbox{padding:14px 20px;margin:10px 0;color:#fff;text-align:center;line-height:2.3;}
+.fbox.rd{background:var(--rd);}
+.fbox.or{background:var(--or);}
+.fbox.gn{background:var(--gn);}
+.fbox.bl{background:var(--bl);}
+.fbox .fm{font-size:1rem;font-weight:700;color:#fff;}
+.fbox.rd .fm{color:#ffb0b8;}
+.fbox.or .fm{color:#ffe0a0;}
+.fbox.gn .fm{color:#80ffc0;}
+.fbox.bl .fm{color:#80e0ff;}
+.fbox .fn{font-size:12px;color:rgba(255,255,255,.72);}
+
+/* ── TABLE ── */
+.tw{overflow-x:auto;margin:10px 0 6px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:var(--nv);color:#fff;padding:10px 13px;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+thead th.rd{background:var(--rd);}
+thead th.or{background:var(--or);}
+thead th.gn{background:var(--gn);}
+thead th.bl{background:var(--bl);}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--gn);font-weight:700;}
+.tba{color:var(--rd);font-weight:700;}
+.thl{color:var(--or);font-weight:700;}
+.tbl{color:var(--bl);font-weight:700;}
+
+/* ── PANEL ── */
+.panel{padding:12px 16px;margin:8px 0;font-size:13.5px;line-height:1.95;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--bl-lt);border-color:var(--bl);}
+.panel.pr{background:var(--rd-lt);border-color:var(--rd);}
+.panel.pg{background:var(--gn-lt);border-color:var(--gn);}
+.panel.po{background:var(--or-lt);border-color:var(--or);}
+.panel.pp{background:var(--pu-lt);border-color:var(--pu);}
+.panel.pgd{background:var(--gd-lt);border-color:var(--gd2);}
+
+/* ── SUMMARY ── */
+.summary{background:#120a08;color:#f4f0e4;padding:44px 36px;margin-top:56px;text-align:center;border-top:4px solid var(--rd2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.35rem;color:#ff9090;margin-bottom:22px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:900px;margin:0 auto 18px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,100,100,.3);padding:14px 16px;}
+.sc .st{color:#ff9090;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:7px;}
+.sc p{font-size:12px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;}
+
+footer{background:#070504;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:2px dashed var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.section{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">🔴 백지복습 보완 노트</div>
+    <h1>법인세법 손금 · 인건비<br><em>내가 놓친 9가지 포인트</em></h1>
+    <p class="hero-sub">법 §19·§26 · 시행령 §43·§44·§45 | 시행 2026.01.02 / 2026.02.27</p>
+    <div class="hero-desc">
+      ✅ 잘 기억한 것: 손금 기본 개념, 급여 원칙(직원 전액 / 임원 기준 이내),<br>
+      이익처분 상여 전액 불산입, 직원 퇴직금 전액 손금, 임원 퇴직금 한도 개념<br>
+      ❌ 이 노트에서 보완할 것: 누락 9가지 포인트 집중 정리
+    </div>
+  </div>
+</header>
+
+<!-- TOC -->
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">보완 포인트</span>
+    <a href="#g1">① 퇴직금 공식 오류</a>
+    <a href="#g2">② 상여 기준 주체</a>
+    <a href="#g3">③ 이익처분 상여 독립 규정</a>
+    <a href="#g4">④ 지배주주 과다보수</a>
+    <a href="#g5">⑤ 비상근 임원</a>
+    <a href="#g6">⑥ 직원→임원 근속연수 합산</a>
+    <a href="#g7">⑦ 자사제품 할인 비과세 범위</a>
+    <a href="#g8">⑧ 복리후생비 열거 항목</a>
+    <a href="#g9">⑨ 현실적 퇴직 5가지</a>
+    <a href="#sum">총정리</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════
+     GAP 1. 퇴직금 공식 오류
+══════════════════════════════ -->
+<section class="section" id="g1">
+  <div class="sec-hd">
+    <span class="sec-badge badge-rd">보완 ①</span>
+    <h2>임원 퇴직급여 한도 공식 — 오류 수정</h2>
+    <span class="ref">시행령 §44④2호</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-rd">
+      <span class="gap-num">①</span>
+      <span class="gap-title">퇴직금 한도 공식: "근무월 × 10%"❌ → "1/10 × 근속연수"✅</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>❌ 내가 쓴 내용 (오류)</h4>
+          <ul>
+            <li>"퇴직하기 전 1년 급여 × 근무월 × 10%"</li>
+            <li>근무월수를 곱하는 방식으로 이해</li>
+            <li>예: 1년 급여 6,000만 × 12개월 × 10% = ?</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용 (시행령 §44④2호)</h4>
+          <ul>
+            <li>"퇴직 전 1년 총급여액 × <strong>1/10</strong> × <strong>근속연수</strong>"</li>
+            <li>1/10은 10분의 1 (즉 10%), 곱하는 것은 <strong>연수(年數)</strong></li>
+            <li>예: 1년 급여 6,000만 × 1/10 × 10년 = <strong>6,000만 원</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 공식 완전 정리:</strong><br>
+        <span class="bad">오해</span>: 1년 급여 × 월수 × 10% &nbsp;→&nbsp; <span class="ok">정확</span>: 1년 총급여 × <span class="hl">1/10</span> × <span class="hl">근속연수(년)</span><br><br>
+        예시: 최종 1년 총급여 6,000만 원, 근속연수 10년<br>
+        → 한도 = 6,000만 × 1/10 × 10 = <span class="ok">6,000만 원</span> (연 600만 원씩 10년)
+      </div>
+    </div>
+  </div>
+
+  <div class="fbox rd">
+    <div class="fm">임원 퇴직급여 손금한도 = 퇴직 전 1년 총급여액 × 1/10 × 근속연수(년)</div>
+    <div class="fn">총급여액 = 소득세법 §20①1·2호 금액 (비과세 제외 + 손금불산입 상여 제외) | 정관 규정 있으면 정관 금액이 한도 (정관 우선)</div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="rd">상황</th><th class="rd">한도 기준</th><th class="rd">초과분 처리</th></tr></thead>
+      <tbody>
+        <tr><td>정관에 퇴직급여 규정 있음</td><td class="tbl"><strong>정관 규정 금액</strong></td><td class="tba">초과분 손금불산입 → 상여 처분</td></tr>
+        <tr><td>정관 규정 없음</td><td class="tbl"><strong>1년 총급여 × 1/10 × 근속연수</strong></td><td class="tba">초과분 손금불산입 → 상여 처분</td></tr>
+        <tr><td>직원 퇴직급여</td><td class="tok"><strong>한도 없음 (전액 손금)</strong></td><td class="tok">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 2. 상여 기준 결정 주체
+══════════════════════════════ -->
+<section class="section" id="g2">
+  <div class="sec-hd">
+    <span class="sec-badge badge-or">보완 ②</span>
+    <h2>임원 상여 기준 결정 주체 — "이사회"만이 아님</h2>
+    <span class="ref">시행령 §43②</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-or">
+      <span class="gap-num">②</span>
+      <span class="gap-title">급여지급기준 결정 주체: "정관 또는 이사회"❌ → 4가지 주체✅</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>❌ 내가 쓴 내용 (불완전)</h4>
+          <ul>
+            <li>"정관 또는 이사회에서 정한 금액"</li>
+            <li>주주총회, 사원총회를 누락</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용 (시행령 §43②)</h4>
+          <ul>
+            <li><strong>정관</strong>에 기재된 급여지급기준</li>
+            <li><strong>주주총회</strong> 결의로 결정된 기준</li>
+            <li><strong>사원총회</strong> 결의로 결정된 기준</li>
+            <li><strong>이사회</strong> 결의로 결정된 기준</li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 4가지 주체 암기법: "정·주·사·이"</strong><br>
+        <span class="hl">정</span>관 / <span class="hl">주</span>주총회 / <span class="hl">사</span>원총회 / <span class="hl">이</span>사회<br><br>
+        → 이 중 하나라도 결정된 기준이 있으면, 그 기준 이내 금액만 손금<br>
+        → 4가지 모두 없으면: 임원 상여금 <span class="bad">전액 손금불산입</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="or">결정 주체</th><th class="or">효력</th><th class="or">초과 시</th></tr></thead>
+      <tbody>
+        <tr><td>정관 직접 기재</td><td class="tok">유효 (가장 확실)</td><td class="tba">초과분 손금불산입</td></tr>
+        <tr><td>주주총회 결의</td><td class="tok">유효</td><td class="tba">초과분 손금불산입</td></tr>
+        <tr><td>사원총회 결의</td><td class="tok">유효</td><td class="tba">초과분 손금불산입</td></tr>
+        <tr><td>이사회 결의</td><td class="tok">유효</td><td class="tba">초과분 손금불산입</td></tr>
+        <tr><td>아무 기준 없음</td><td class="tba">기준 미설정</td><td class="tba"><strong>전액 손금불산입</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 3. 이익처분 상여 — 독립 규정
+══════════════════════════════ -->
+<section class="section" id="g3">
+  <div class="sec-hd">
+    <span class="sec-badge badge-rd">보완 ③</span>
+    <h2>이익처분에 의한 상여 — 한도 초과와 별개의 독립 규정</h2>
+    <span class="ref">시행령 §43①</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-rd">
+      <span class="gap-num">③</span>
+      <span class="gap-title">이익처분 상여 = 한도 초과 개념이 아닌 "별개의 독립 불산입 규정"</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>❌ 혼동하기 쉬운 이해</h4>
+          <ul>
+            <li>이익처분 상여를 "한도를 초과한 상여"로 혼동</li>
+            <li>임원에게만 적용되는 것으로 오해할 수 있음</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 이해 (시행령 §43①)</h4>
+          <ul>
+            <li><strong>임원·직원 모두</strong> 해당 (직원도 포함!)</li>
+            <li>금액에 관계없이 <strong>전액 손금불산입</strong></li>
+            <li>한도 계산 없이 <strong>무조건 불산입</strong></li>
+            <li>합명·합자회사 <strong>노무출자사원 보수</strong>도 동일 취급</li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 이익처분 상여의 본질:</strong><br>
+        이익처분 = 이익을 나눠주는 행위 (배당과 같은 성격)<br>
+        → 비용(손금)이 아니라 <span class="hl">이익을 분배하는 것</span>이므로 전액 손금불산입<br>
+        → 직원에게 줬다 해도, 임원에게 줬다 해도, 금액에 관계없이 <span class="bad">전액 불산입</span><br><br>
+        <strong>임원 상여 2가지 규정 구분:</strong><br>
+        · 시행령 §43① → <span class="bad">이익처분 상여: 전액 불산입</span> (임직원 공통)<br>
+        · 시행령 §43② → <span class="bad">기준 초과 상여: 초과분 불산입</span> (임원만 해당)
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 4. 지배주주 임직원 과다보수
+══════════════════════════════ -->
+<section class="section" id="g4">
+  <div class="sec-hd">
+    <span class="sec-badge badge-or">보완 ④</span>
+    <h2>지배주주 임직원 과다보수 손금불산입 — 누락</h2>
+    <span class="ref">시행령 §43③⑦</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-or">
+      <span class="gap-num">④</span>
+      <span class="gap-title">지배주주 임직원에게 동일직위자보다 과다 지급 시 → 초과분 손금불산입</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>❌ 내가 쓴 내용 (누락)</h4>
+          <ul>
+            <li>이 규정 자체를 언급하지 않음</li>
+            <li>직원 급여는 금액 제한 없이 전액 손금으로만 기억</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용 (시행령 §43③)</h4>
+          <ul>
+            <li>지배주주등인 임원·직원에게</li>
+            <li>정당한 사유 없이</li>
+            <li>동일직위 <strong>비지배주주 임직원 보수를 초과</strong>하여 지급 시</li>
+            <li>→ <strong>초과분 손금불산입</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 지배주주등의 범위 (시행령 §43⑦):</strong><br>
+        발행주식 <span class="hl">1% 이상</span> 보유 주주 + 특수관계인과 합산하여 <span class="hl">최다 보유</span>인 경우<br><br>
+        <strong>적용 예시:</strong><br>
+        A회사 지배주주 아들(직원) 월급 500만 원 vs 동일직위 일반직원 월급 250만 원<br>
+        → 정당한 사유 없으면 초과분 <span class="bad">250만 원 손금불산입</span><br><br>
+        <strong>이 규정의 취지:</strong> 지배주주가 법인을 통해 가족에게 과다 급여를 줘서 법인세를 줄이는 것을 방지
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 5. 비상근 임원 급여
+══════════════════════════════ -->
+<section class="section" id="g5">
+  <div class="sec-hd">
+    <span class="sec-badge badge-gn">보완 ⑤</span>
+    <h2>비상근 임원의 보수 처리 — 누락</h2>
+    <span class="ref">시행령 §43④</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-gn">
+      <span class="gap-num">⑤</span>
+      <span class="gap-title">비상근 임원 보수: 부당행위 해당하지 않으면 손금 인정</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>❌ 내가 쓴 내용 (누락)</h4>
+          <ul>
+            <li>비상근 임원 개념 자체를 언급하지 않음</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용 (시행령 §43④)</h4>
+          <ul>
+            <li>상근이 아닌 법인의 임원에게 지급하는 보수</li>
+            <li>법 §52(부당행위계산 부인)에 해당하지 않으면 <strong>손금산입</strong></li>
+            <li>즉, 비상근 임원도 정상 보수면 손금 인정</li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 비상근 임원 보수 처리 흐름:</strong><br>
+        비상근 임원 보수 → 부당행위계산 해당? → <span class="bad">YES: 손금불산입</span> / <span class="ok">NO: 손금산입</span><br><br>
+        단, 비상근 임원도 <strong>이익처분 상여</strong>로 받으면 → 전액 불산입 (③ 규정 동일 적용)
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 6. 직원→임원 근속연수 합산
+══════════════════════════════ -->
+<section class="section" id="g6">
+  <div class="sec-hd">
+    <span class="sec-badge badge-gn">보완 ⑥</span>
+    <h2>직원→임원 승진 시 근속연수 합산 특례 — 누락</h2>
+    <span class="ref">시행령 §44④2호 후단</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-gn">
+      <span class="gap-num">⑥</span>
+      <span class="gap-title">직원 시절 퇴직금 안 받은 경우, 그 기간을 임원 퇴직급여 한도에 합산 가능</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>❌ 내가 쓴 내용 (누락)</h4>
+          <ul>
+            <li>이 특례 규정을 언급하지 않음</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용 (§44④2호 후단)</h4>
+          <ul>
+            <li>직원에서 임원으로 된 때 퇴직금을 <strong>지급하지 않은 경우</strong></li>
+            <li>직원으로 근무한 기간을 <strong>근속연수에 합산</strong> 가능</li>
+            <li>→ 임원 퇴직급여 한도 계산 시 유리</li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 계산 예시:</strong><br>
+        직원 5년 근무(퇴직금 미지급) + 임원 10년 근무 후 퇴직, 최종 1년 급여 6,000만 원<br>
+        → 근속연수 = <span class="hl">5 + 10 = 15년</span><br>
+        → 한도 = 6,000만 × 1/10 × 15 = <span class="ok">9,000만 원</span><br><br>
+        만약 직원 때 퇴직금을 받았다면 → 합산 불가, 임원 기간 10년만 적용 → 한도 6,000만 원
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 7. 자사제품 할인 비과세 범위
+══════════════════════════════ -->
+<section class="section" id="g7">
+  <div class="sec-hd">
+    <span class="sec-badge badge-bl">보완 ⑦</span>
+    <h2>자사제품 할인 판매 — 비과세 범위 명확화</h2>
+    <span class="ref">시행령 §19 ③호 · 소득세법 §12</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-bl">
+      <span class="gap-num">⑦</span>
+      <span class="gap-title">할인받은 금액 전부가 근로소득은 아님 — 비과세 범위 있음</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>⚠️ 내가 쓴 내용 (불완전)</h4>
+          <ul>
+            <li>"일부는 비과세로 인정됨"이라고만 기술</li>
+            <li>구체적인 비과세 기준을 쓰지 않음</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용</h4>
+          <ul>
+            <li>자사제품 할인액 = 원칙적으로 <strong>근로소득(임금)</strong></li>
+            <li>시가 × <strong>일정 비율 이하</strong> 할인이면 비과세</li>
+            <li>회사가 공통 적용되는 <strong>지급기준에 따라</strong> 지급</li>
+            <li>법인세: 할인액이 급여 성격 → <strong>손금산입</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 핵심 구조:</strong><br>
+        직원에게 시가 10만 원 자사제품을 7만 원에 판매<br>
+        → 할인액 3만 원 = 근로소득(급여) 성격<br>
+        → <span class="ok">법인세 처리: 3만 원 손금산입</span> (직원 급여와 동일)<br>
+        → <span class="hl">소득세 처리: 일부 비과세</span> (소득세법 §12에서 정한 범위 이내)<br><br>
+        <strong>시행령 §19③의2호:</strong> 임원·직원의 출산·양육 지원금으로 공통 지급기준에 따라 지급하는 금액도 손금
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 8. 복리후생비 열거 항목
+══════════════════════════════ -->
+<section class="section" id="g8">
+  <div class="sec-hd">
+    <span class="sec-badge badge-bl">보완 ⑧</span>
+    <h2>복리후생비 — 열거된 항목 전체 암기</h2>
+    <span class="ref">시행령 §45</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-bl">
+      <span class="gap-num">⑧</span>
+      <span class="gap-title">복리후생비는 열거주의 — 법에 나열된 8가지만 손금, 나머지는 전액 불산입</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>⚠️ 내가 쓴 내용 (불완전)</h4>
+          <ul>
+            <li>"각종 복리후생비도 손금산입 대상"이라고만 기술</li>
+            <li>구체 항목을 열거하지 않음</li>
+            <li>경조사비가 열거 항목에 포함됨을 누락</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용 (시행령 §45①)</h4>
+          <ul>
+            <li>1호: <strong>직장체육비</strong></li>
+            <li>2호: <strong>직장문화비</strong></li>
+            <li>2의2호: <strong>직장회식비</strong></li>
+            <li>3호: <strong>우리사주조합 운영비</strong></li>
+            <li>5호: <strong>국민건강보험료·노인장기요양보험 사용자 부담분</strong></li>
+            <li>6호: <strong>직장어린이집 운영비</strong></li>
+            <li>7호: <strong>고용보험 사용자 부담 보험료</strong></li>
+            <li>8호: <strong>사회통념상 타당한 경조사비 등</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 열거주의 + 경조사비 특칙:</strong><br>
+        복리후생비 = <span class="hl">열거된 8가지만</span> 손금, 나머지 전액 불산입<br><br>
+        <strong>경조사비 (8호):</strong><br>
+        → 금액이 법으로 정해지지 않음<br>
+        → <span class="ok">"사회통념상 타당하다고 인정되는 범위"</span>에서 손금<br>
+        → 과도한 경조사비는 그 초과분 불산입<br><br>
+        <strong>암기법 "직직직우건어고사":</strong><br>
+        <span class="hl">직</span>장체육 / <span class="hl">직</span>장문화 / <span class="hl">직</span>장회식 / <span class="hl">우</span>리사주 / <span class="hl">건</span>강보험 / <span class="hl">어</span>린이집 / <span class="hl">고</span>용보험 / <span class="hl">사</span>회통념 경조사비
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════════════════════════
+     GAP 9. 현실적 퇴직 5가지
+══════════════════════════════ -->
+<section class="section" id="g9">
+  <div class="sec-hd">
+    <span class="sec-badge badge-pu">보완 ⑨</span>
+    <h2>현실적 퇴직의 범위 — 5가지 유형 누락</h2>
+    <span class="ref">시행령 §44①②</span>
+  </div>
+
+  <div class="gap-card">
+    <div class="gap-hd c-pu">
+      <span class="gap-num">⑨</span>
+      <span class="gap-title">퇴직급여 손금 요건: 반드시 "현실적인 퇴직"이어야 함 — 5가지 포함 유형</span>
+    </div>
+    <div class="gap-body">
+      <div class="split">
+        <div class="split-col wrong">
+          <h4>⚠️ 내가 쓴 내용 (누락)</h4>
+          <ul>
+            <li>"퇴직금" 한도만 언급</li>
+            <li>"현실적 퇴직" 요건 자체를 언급하지 않음</li>
+            <li>중간정산, 조직변경 시 퇴직 등 특수 상황 누락</li>
+          </ul>
+        </div>
+        <div class="split-col right">
+          <h4>✅ 정확한 내용 (시행령 §44②)</h4>
+          <ul>
+            <li>원칙: <strong>현실적으로 퇴직</strong>하는 경우에만 손금</li>
+            <li>1호: <strong>직원 → 임원 취임</strong> 시</li>
+            <li>2호: <strong>조직변경·합병·분할·사업양도</strong>로 퇴직</li>
+            <li>3호: 근퇴법에 따른 <strong>중간정산</strong> (직원)</li>
+            <li>5호: 정관·규정에 따른 <strong>장기요양 등 임원 중간정산</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="point">
+        <strong>🔑 현실적 퇴직이 중요한 이유:</strong><br>
+        현실적 퇴직이 <span class="bad">아닌 경우</span> 지급된 퇴직금 → <span class="bad">전액 손금불산입</span> (가지급금 처리)<br><br>
+        <strong>중요 포인트:</strong><br>
+        직원이 임원으로 승진할 때 퇴직금을 지급하면 → <span class="ok">현실적 퇴직</span> → 손금<br>
+        단순히 명칭만 바꾸고 실제 퇴직 아님 → <span class="bad">현실적 퇴직 아님</span> → 불산입<br><br>
+        <strong>중간정산 조건:</strong><br>
+        직원 중간정산: 근로자퇴직급여보장법 §8② 사유 있어야 함<br>
+        임원 중간정산: 정관·규정에 장기요양 등 사유 명시돼 있어야 함
+      </div>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">상황</th><th class="p">현실적 퇴직 여부</th><th class="p">세무처리</th></tr></thead>
+      <tbody>
+        <tr><td>정년 퇴직</td><td class="tok">현실적 퇴직 ✅</td><td class="tok">한도 이내 손금</td></tr>
+        <tr><td>직원 → 임원 취임 + 퇴직금 지급</td><td class="tok">현실적 퇴직 ✅</td><td class="tok">손금 (직원 퇴직금 기준)</td></tr>
+        <tr><td>합병으로 인한 퇴직</td><td class="tok">현실적 퇴직 ✅</td><td class="tok">손금</td></tr>
+        <tr><td>근퇴법에 따른 중간정산</td><td class="tok">현실적 퇴직 ✅</td><td class="tok">손금</td></tr>
+        <tr><td>임의로 퇴직금 명목 지급 (계속 근무)</td><td class="tba">현실적 퇴직 ❌</td><td class="tba">전액 손금불산입 (가지급금)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     종합 비교표 — 인건비 손금 총정리
+══════════════════════════════ -->
+<section class="section" id="sum-compare">
+  <div class="sec-hd">
+    <span class="sec-badge badge-gn">종합</span>
+    <h2>인건비 손금 처리 — 내가 쓴 것 vs 정확한 내용 대조표</h2>
+    <span class="ref">시행령 §43·§44·§45</span>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th class="rd">내가 쓴 내용</th>
+          <th class="gn">정확한 내용</th>
+          <th>차이</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>손금 정의</strong></td>
+          <td>"순자산을 감소시키는 것"</td>
+          <td class="tok">✅ 정확 — 단, "사업관련·통상성·수익관련" 3요건도 필요</td>
+          <td>보완: 3요건 추가</td>
+        </tr>
+        <tr>
+          <td><strong>직원 급여</strong></td>
+          <td>"무조건 손금산입"</td>
+          <td class="tok">✅ 거의 정확 — 단, 지배주주 직원은 과다지급분 불산입</td>
+          <td>보완: 지배주주 예외</td>
+        </tr>
+        <tr>
+          <td><strong>임원 상여 기준</strong></td>
+          <td>"정관 또는 이사회"</td>
+          <td class="thl">⚠️ 부분 정확 — 주주총회·사원총회도 포함 (4가지)</td>
+          <td>수정: 4가지 주체</td>
+        </tr>
+        <tr>
+          <td><strong>이익처분 상여</strong></td>
+          <td>"전액 불산입" (○)</td>
+          <td class="tok">✅ 정확 — 단, 임직원 모두 해당·한도 무관</td>
+          <td>보완: 독립 규정임</td>
+        </tr>
+        <tr>
+          <td><strong>지배주주 과다보수</strong></td>
+          <td>누락</td>
+          <td class="tba">❌ 누락 — 동일직위자 초과분 손금불산입</td>
+          <td>신규 추가</td>
+        </tr>
+        <tr>
+          <td><strong>비상근 임원</strong></td>
+          <td>누락</td>
+          <td class="tba">❌ 누락 — 부당행위 아니면 손금</td>
+          <td>신규 추가</td>
+        </tr>
+        <tr>
+          <td><strong>임원 퇴직금 공식</strong></td>
+          <td>"1년급여 × 근무월 × 10%"</td>
+          <td class="tba">❌ 오류 — "1년 총급여 × 1/10 × 근속연수(년)"</td>
+          <td>공식 수정</td>
+        </tr>
+        <tr>
+          <td><strong>직원→임원 근속 합산</strong></td>
+          <td>누락</td>
+          <td class="tba">❌ 누락 — 직원 퇴직금 미지급 시 합산 가능</td>
+          <td>신규 추가</td>
+        </tr>
+        <tr>
+          <td><strong>현실적 퇴직 요건</strong></td>
+          <td>누락</td>
+          <td class="tba">❌ 누락 — 5가지 유형 필수</td>
+          <td>신규 추가</td>
+        </tr>
+        <tr>
+          <td><strong>복리후생비</strong></td>
+          <td>"각종 복리후생비 손금"</td>
+          <td class="thl">⚠️ 부분 정확 — 열거된 8가지만 손금 (열거주의)</td>
+          <td>수정: 열거주의</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="summary" id="sum">
+  <h3>🎯 오늘 반드시 추가로 암기할 9가지</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">① 퇴직금 공식 수정</div>
+      <p><strong>1년 총급여 × 1/10 × 근속연수(년)</strong><br>
+      근무월 아닌 근속연수! 1/10은 10%</p>
+    </div>
+    <div class="sc">
+      <div class="st">② 상여 기준 4가지</div>
+      <p><strong>정관·주주총회·사원총회·이사회</strong><br>
+      "정·주·사·이" — 이 중 하나라도 있으면 그 기준 이내만 손금</p>
+    </div>
+    <div class="sc">
+      <div class="st">③ 이익처분 상여</div>
+      <p><strong>임직원 모두, 금액 무관, 전액 불산입</strong><br>
+      한도 초과 아닌 별개의 독립 규정</p>
+    </div>
+    <div class="sc">
+      <div class="st">④ 지배주주 과다보수</div>
+      <p>지배주주 임직원에게 동일직위자보다<br>
+      <strong>정당 사유 없이 초과 지급 → 초과분 불산입</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">⑤ 비상근 임원</div>
+      <p>부당행위계산에 해당 않으면 <strong>손금 인정</strong><br>
+      단, 이익처분 상여는 불산입</p>
+    </div>
+    <div class="sc">
+      <div class="st">⑥ 근속연수 합산</div>
+      <p>직원→임원 승진 시 퇴직금 미지급 경우<br>
+      <strong>직원 근무기간 근속연수에 합산 가능</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">⑦ 자사제품 할인</div>
+      <p>할인액 = 급여(손금) / 일부 비과세<br>
+      법인세: 손금 / 소득세: 비과세 범위 있음</p>
+    </div>
+    <div class="sc">
+      <div class="st">⑧ 복리후생비 8가지</div>
+      <p><strong>"직직직우건어고사"</strong><br>
+      직장체육·문화·회식/우리사주/건강보험/어린이집/고용보험/경조사비</p>
+    </div>
+    <div class="sc">
+      <div class="st">⑨ 현실적 퇴직 5가지</div>
+      <p>정년·직원→임원·조직변경합병·중간정산·임원중간정산<br>
+      현실적 퇴직 아니면 <strong>전액 불산입</strong></p>
+    </div>
+  </div>
+  <p class="note">법인세법 시행령 §43·§44·§45 | 시행 2026.02.27 | 백지복습 보완 자료</p>
+</section>
+
+</div>
+<footer>법인세법 시행령 §43·§44·§45 | 시행 2026.02.27 | 백지복습 보완 노트</footer>
+</body>
+</html>
