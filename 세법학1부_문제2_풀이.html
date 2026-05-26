@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세법학 1부 | 문제 2 풀이 | 제62회 세무사 2차</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface-2: #F4F6F9;
+    --border: #E2E6ED;
+    --text-primary: #1A202C;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+    --accent: #1A4A8A;
+    --accent-light: #EBF2FF;
+    --accent-mid: #3B6FBB;
+    --danger: #C0392B;
+    --danger-light: #FDF2F1;
+    --success: #1A6A3A;
+    --success-light: #EBF7F0;
+    --gold: #7B5C00;
+    --gold-light: #FFF8E8;
+    --purple: #4A2080;
+    --purple-light: #F2EEFF;
+    --teal: #1A6A6A;
+    --teal-light: #EBF7F7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.85;
+    font-size: 15px;
+  }
+
+  /* ── 표지 헤더 ── */
+  .cover {
+    background: linear-gradient(135deg, #1A3A00 0%, #2E6010 55%, #3A7A18 100%);
+    color: #fff;
+    padding: 52px 40px 42px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .cover-meta {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .cover h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .cover-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .pill {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 메인 레이아웃 ── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px 60px;
+  }
+
+  /* ── 사례 요약 박스 ── */
+  .case-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 30px;
+  }
+  .case-box.green { border-left-color: #2E6010; }
+  .case-box h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .case-box.green h3 { color: #2E6010; }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tl-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 14px;
+  }
+  .tl-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 52px;
+    top: 26px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-date {
+    min-width: 80px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-mid);
+    padding-top: 3px;
+    text-align: right;
+  }
+  .tl-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .tl-text {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .tl-text strong { color: var(--text-primary); }
+
+  /* ── 문제 섹션 ── */
+  .question-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .q-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .q-badge {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .q-badge.green { background: #2E6010; }
+  .q-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  .q-score {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    background: var(--gold-light);
+    border: 1px solid #E8D5A0;
+    border-radius: 5px;
+    padding: 3px 12px;
+    white-space: nowrap;
+  }
+  .q-body { padding: 28px 30px; }
+
+  /* ── 답안 구성요소 ── */
+  .answer-section { margin-bottom: 28px; }
+  .answer-section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-light);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title.green { color: #2E6010; border-bottom-color: #D4EDCA; }
+  .section-title .num {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 9px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .section-title.green .num { background: #2E6010; }
+
+  .sub-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 18px 0 8px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent-mid);
+  }
+  .sub-title.green { border-left-color: #3A7A18; }
+
+  p.body-text {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+  p.body-text strong { color: var(--text-primary); }
+
+  /* ── 법령 인용 박스 ── */
+  .law-cite {
+    background: var(--accent-light);
+    border: 1px solid #C3D8F5;
+    border-left: 4px solid var(--accent-mid);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    line-height: 1.75;
+  }
+  .law-cite.green {
+    background: #EBF7E0;
+    border-color: #AADDA0;
+    border-left-color: #3A7A18;
+    color: #1A4A00;
+  }
+  .law-cite .law-label {
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+  .law-cite.green .law-label { color: #3A7A18; }
+
+  /* ── 핵심 포인트 ── */
+  .key-point {
+    background: var(--gold-light);
+    border: 1px solid #E8D5A0;
+    border-left: 4px solid var(--gold);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    color: #5A3F00;
+    line-height: 1.8;
+  }
+  .key-point .kp-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+  }
+
+  /* ── 결론 박스 ── */
+  .conclusion {
+    background: linear-gradient(135deg, #1A3A00 0%, #2E6010 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .conclusion.blue {
+    background: linear-gradient(135deg, #0F2D5E 0%, #1A4A8A 100%);
+  }
+  .conclusion .con-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .conclusion strong { color: #FFE080; }
+
+  /* ── 비유 박스 ── */
+  .analogy {
+    background: var(--purple-light);
+    border: 1px solid #D0C0F5;
+    border-left: 4px solid var(--purple);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    color: #2E1060;
+    line-height: 1.8;
+  }
+  .analogy .ana-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 6px;
+  }
+
+  /* ── 표 ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 14px 0;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12.5px;
+  }
+  th.green-th { background: #2E6010; }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    vertical-align: top;
+    line-height: 1.75;
+  }
+  tr:nth-child(even) td { background: var(--surface-2); }
+  tr:last-child td { border-bottom: none; }
+  td strong { color: var(--text-primary); }
+
+  /* ── 경고 박스 ── */
+  .warn-box {
+    background: var(--danger-light);
+    border: 1px solid #EFC6C2;
+    border-left: 4px solid var(--danger);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13px;
+    color: #6B1A14;
+    line-height: 1.8;
+  }
+
+  /* ── 체크리스트 ── */
+  .checklist { list-style: none; padding: 0; margin: 10px 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: var(--surface-2);
+    border-radius: 6px;
+  }
+  .checklist li::before {
+    content: '✓';
+    color: var(--success);
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── 번호 목록 ── */
+  ol.styled { padding-left: 0; list-style: none; counter-reset: item; }
+  ol.styled li {
+    counter-increment: item;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+  ol.styled li::before {
+    content: counter(item);
+    background: var(--accent-mid);
+    color: #fff;
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* ── 구분선 ── */
+  .divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 22px 0;
+  }
+
+  /* ── 쟁점 매핑 카드 ── */
+  .issue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  .issue-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .issue-card .ic-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .issue-card p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  /* ── 푸터 ── */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 24px 30px 40px;
+    border-top: 1px solid var(--border);
+    line-height: 1.9;
+  }
+  .footer .hashtags {
+    color: var(--accent-mid);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    body { font-size: 13px; }
+    .cover { padding: 32px 28px; }
+    .container { padding: 28px 20px; }
+    .issue-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 표지 -->
+<div class="cover">
+  <div class="cover-meta">2025년도 · 제62회 세무사 2차 시험 · 3교시</div>
+  <h1>세법학 1부 — 문제 2<br>완전 풀이 해설</h1>
+  <div class="cover-sub">위법소득 과세 · 토지거래허가 무효 · 임의경매 양도 · 양도소득세</div>
+  <div class="cover-pills">
+    <span class="pill">소득세법 §88</span>
+    <span class="pill">소득세법 §94</span>
+    <span class="pill">소득세법 §98</span>
+    <span class="pill">소득세법 시행령 §162</span>
+    <span class="pill">배점 30점</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ════════════════════ 사례 1 타임라인 ════════════════════ -->
+  <div class="case-box">
+    <h3>📋 사례 1 — 핵심 타임라인</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2020.04.18</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text"><strong>甲 ↔ 乙</strong>: 토지거래허가구역 내 토지 매매계약 체결 (20억 원)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2020.04 직후</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text"><strong>甲 → 최종매수인들(丙 외 4인)</strong>: 전매계약 체결 (합계 30억 원)<br>乙 → 최종매수인들 명의로 토지거래허가 취득 후 소유권이전등기 완료</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">신고無</div>
+        <div class="tl-dot" style="background:#C0392B;"></div>
+        <div class="tl-text">甲은 이 거래에 관해 <strong>어떠한 세금도 신고·납부하지 않음</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2024.01.10</div>
+        <div class="tl-dot" style="background:#C0392B;"></div>
+        <div class="tl-text">관할 세무서장: <strong>이 사건 A처분</strong>(2020 귀속 양도소득세 8.5억, 가산세 포함) 부과</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════ 물음 1-(1) ════════════════════ -->
+  <div class="question-block">
+    <div class="q-header">
+      <span class="q-badge">물음 1-(1)</span>
+      <div class="q-title">소득세법령상 위법소득의 과세 여부</div>
+      <span class="q-score">배점 일부</span>
+    </div>
+    <div class="q-body">
+
+      <div class="answer-section">
+        <div class="section-title"><span class="num">1</span> 위법소득 과세의 원칙적 입장</div>
+
+        <div class="analogy">
+          <div class="ana-label">🎯 초등학생도 이해하는 비유</div>
+          친구에게서 몰래 500원을 훔쳤다가 나중에 들켰어도, 그 500원을 쓴 건 사실이죠? 세금은 '돈을 어떻게 벌었느냐(적법·위법)'가 아니라 '<strong>실제로 이익을 얻었느냐</strong>'를 봅니다. 불법으로 번 돈에도 세금을 매기는 것, 이것이 위법소득 과세의 핵심 원리입니다!
+        </div>
+
+        <p class="body-text">
+          소득세법은 소득의 <strong>적법성 여부와 무관하게</strong> 경제적 이익이 귀속된 경우 과세합니다. 이는 국세기본법 제14조의 <strong>실질과세 원칙</strong>에 따른 것으로, 과세요건 충족 여부는 거래의 사법적 효력이 아니라 경제적 실질에 의해 판단됩니다.
+        </p>
+
+        <div class="law-cite">
+          <div class="law-label">📌 핵심 근거 법령</div>
+          소득세법 §88 제1호: <strong>"양도"란 자산에 대한 등기 또는 등록과 관계없이</strong> 매도, 교환, 법인에 대한 현물출자 등을 통하여 그 자산을 <strong>유상으로 사실상 이전하는 것</strong>을 말한다.
+        </div>
+
+        <div class="sub-title">1-1. 위법소득 과세의 이론적 근거</div>
+
+        <ol class="styled">
+          <li>
+            <strong>소득세법의 과세 요건: '경제적 이익의 실현'</strong><br>
+            <span style="color:var(--text-secondary);">소득세법 §4(소득의 구분), §88(양도의 정의)은 과세 요건으로서 소득의 '사법상 유효성'을 요구하지 않습니다. 법률적 원인이 무효·취소되더라도 납세자에게 경제적 이익이 <strong>현실적으로 귀속</strong>되었다면 과세 대상이 됩니다.</span>
+          </li>
+          <li>
+            <strong>실질과세 원칙(국기법 §14 ①)</strong><br>
+            <span style="color:var(--text-secondary);">소득·수익·재산·행위·거래의 귀속은 형식이 아니라 실질에 따라 판단합니다. 위법 행위를 통해서도 경제적 지배가 이루어졌다면 그 귀속자를 납세의무자로 봅니다.</span>
+          </li>
+          <li>
+            <strong>조세부담의 형평성</strong><br>
+            <span style="color:var(--text-secondary);">위법소득에 과세하지 않으면, 합법적 경제활동에만 세금이 부과되어 <strong>조세 형평이 훼손</strong>됩니다. 위법행위자가 세금 면제의 이익까지 누리는 결과는 법치주의에 반합니다.</span>
+          </li>
+          <li>
+            <strong>양도세 특유의 논거: '사실상 이전'의 의미</strong><br>
+            <span style="color:var(--text-secondary);">소득세법 §88은 양도를 "<strong>등기 또는 등록과 관계없이</strong>" "유상으로 사실상 이전"이라고 정의합니다. 이는 법적 유효성이 아니라 <strong>경제적 소유권 이전의 사실(fact)</strong>을 기준으로 삼겠다는 입법 의도입니다.</span>
+          </li>
+        </ol>
+
+        <div class="sub-title">1-2. 위법소득 반환 시 처리</div>
+
+        <p class="body-text">
+          위법소득이 과세된 후 그 원인 행위가 <strong>무효·취소·해제</strong>되어 이익을 반환한 경우, 반환 시점에서의 후발적 경정청구(국기법 §45의2 ②) 또는 당해 연도 소득 감액을 통해 납세자를 보호합니다. 다만 반환 이전에 이미 실현된 소득의 과세는 적법합니다.
+        </p>
+
+        <div class="conclusion blue">
+          <div class="con-label">📝 소결</div>
+          소득세법상 위법소득도 경제적 이익이 현실적으로 귀속된 이상 <strong>원칙적으로 과세 대상</strong>이 됩니다. 소득세법 §88은 양도를 '등기와 무관한 사실상 이전'으로 정의함으로써 위법 거래에도 양도소득세를 과세할 수 있는 근거를 명확히 하고 있습니다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════ 물음 1-(2) ════════════════════ -->
+  <div class="question-block">
+    <div class="q-header">
+      <span class="q-badge">물음 1-(2)</span>
+      <div class="q-title">이 사건 A처분의 적법 여부 — 토지거래허가 없는 전매에 대한 양도소득세</div>
+      <span class="q-score">배점 일부</span>
+    </div>
+    <div class="q-body">
+
+      <div class="answer-section">
+        <div class="section-title"><span class="num">1</span> 쟁점 정리</div>
+
+        <div class="issue-grid">
+          <div class="issue-card">
+            <div class="ic-label">甲의 주장</div>
+            <p>토지거래허가구역 내 허가 없는 전매행위는 <strong>사법상 무효</strong>이므로 양도소득세 부과처분은 위법하다.</p>
+          </div>
+          <div class="issue-card">
+            <div class="ic-label">과세관청의 입장</div>
+            <p>甲이 이 사건 토지를 최종매수인들에게 전매한 것은 자산의 <strong>사실상 유상이전</strong>으로서 양도소득세 과세대상이다.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="answer-section">
+        <div class="section-title"><span class="num">2</span> '양도'의 법적 의미와 사실상 이전</div>
+
+        <div class="law-cite">
+          <div class="law-label">📌 소득세법 §88 제1호</div>
+          "양도"란 자산에 대한 <strong>등기 또는 등록과 관계없이</strong> 매도, 교환, 법인에 대한 현물출자 등을 통하여 그 자산을 <strong>유상으로 사실상 이전하는 것</strong>을 말한다.
+        </div>
+
+        <p class="body-text">
+          소득세법상 '양도'는 <strong>사법(私法)상의 권리 이전이 아닌 '사실상의 이전'</strong>을 기준으로 합니다. 이는 ①등기 없이도 양도가 성립할 수 있고, ②법률행위가 무효라도 경제적으로 자산의 지배·사용권이 이전되었다면 양도로 봄을 의미합니다.
+        </p>
+
+        <div class="sub-title">2-1. 이 사건에서 '사실상 이전'의 성립 여부</div>
+
+        <p class="body-text">
+          본 사례에서 甲은 乙로부터 토지를 매수하는 계약을 체결하고 곧바로 최종매수인들과 <strong>전매계약을 체결(30억 원)</strong>하였습니다. 이후 乙과 최종매수인들 간의 토지거래허가를 취득하여 최종매수인들 명의로 소유권이전등기까지 완료하였습니다.
+        </p>
+
+        <p class="body-text">
+          甲이 직접 등기명의를 취득한 적은 없으나, <strong>전매차익(30억-20억=10억 원)을 현실적으로 수령</strong>하고 최종매수인들에게 토지 지배권을 이전한 사실 자체가 경제적으로는 甲이 토지를 '사실상' 취득하였다가 최종매수인들에게 이전한 것과 동일한 경제적 실질을 가집니다.
+        </p>
+
+        <div class="key-point">
+          <div class="kp-label">💡 '중간 생략 등기'와 '사실상 이전'</div>
+          甲은 등기를 거치지 않고 乙 → 최종매수인들 명의로 직접 이전등기가 이루어지는 이른바 <strong>중간 생략 등기</strong> 구조를 활용하였습니다. 판례(대법원 일관된 입장)는 이러한 경우에도 甲의 전매차익 수수가 인정되면 <strong>甲에게 양도소득이 귀속</strong>된 것으로 보아 과세합니다(소득세법 §88의 '등기와 무관'하다는 문언에 정확히 부합).
+        </div>
+
+        <div class="sub-title">2-2. 토지거래허가 없는 전매의 '무효' 주장에 대한 판단</div>
+
+        <div class="analogy">
+          <div class="ana-label">🎯 이해를 돕는 비유</div>
+          불법으로 영업하는 포장마차가 단속에 걸려도, 그동안 판 떡볶이 수익에 대한 세금은 내야 합니다. 영업허가가 없었다고 해서 이미 손에 들어온 돈이 사라지지는 않으니까요. 세금은 영업의 '합법성'이 아니라 '이익의 실현'을 봅니다.
+        </div>
+
+        <p class="body-text">
+          甲은 관련 행정법령(부동산 거래신고 등에 관한 법률)상 토지거래허가구역에서의 허가 없는 전매행위가 <strong>민사법상 무효</strong>라는 점을 A처분 취소의 논거로 제시합니다. 그러나 다음의 이유로 이 주장은 받아들이기 어렵습니다.
+        </p>
+
+        <ol class="styled">
+          <li>
+            <strong>소득세법 §88은 법적 효력과 무관하게 '사실상 이전'을 과세 요건으로 규정</strong><br>
+            <span style="color:var(--text-secondary);">甲이 전매대금(30억)을 실제로 수령하였고, 최종매수인들이 토지에 대한 사실상 지배를 취득한 이상, 사법상 계약의 무효 여부와 관계없이 '사실상 유상이전'이 이루어졌습니다.</span>
+          </li>
+          <li>
+            <strong>甲이 어떠한 조치도 취하지 않은 사실(매대금 미반환, 등기 미회복)</strong><br>
+            <span style="color:var(--text-secondary);">甲은 A처분에 불복한 이후에도 매매대금을 반환하거나 소유권이전등기를 말소하는 등 원상회복 조치를 일절 취하지 않았습니다. 거래의 경제적 결과가 그대로 지속되고 있으므로, 민사상 무효를 들어 이미 실현된 소득을 부인할 수 없습니다.</span>
+          </li>
+          <li>
+            <strong>실질과세 원칙(국기법 §14 ①)</strong><br>
+            <span style="color:var(--text-secondary);">甲은 전매차익 10억 원(= 30억 – 20억)을 현실적으로 지배하고 있습니다. 이를 과세하지 않으면 위법 행위자만 조세 혜택을 누리는 불합리가 발생합니다.</span>
+          </li>
+        </ol>
+
+        <div class="law-cite">
+          <div class="law-label">📌 국기법 §14 ① 실질과세 원칙</div>
+          "과세의 대상이 되는 소득·수익·재산·행위 또는 거래의 귀속이 명의일 뿐이고 사실상 귀속되는 자가 따로 있을 때에는 <strong>사실상 귀속되는 자</strong>를 납세의무자로 하여 세법을 적용한다."
+        </div>
+
+        <div class="sub-title">2-3. 양도시기 및 양도가액</div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>내용</th>
+              <th>근거</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>양도시기</strong></td>
+              <td>최종매수인들이 잔금을 지급한 날(2020년 4월 하순 무렵) — 대금 청산일 원칙</td>
+              <td>소득세법 §98</td>
+            </tr>
+            <tr>
+              <td><strong>양도가액</strong></td>
+              <td>甲이 최종매수인들로부터 수령한 <strong>전매대금 합계 30억 원</strong></td>
+              <td>소득세법 §96 ①</td>
+            </tr>
+            <tr>
+              <td><strong>취득가액</strong></td>
+              <td>乙과의 매매계약가액 <strong>20억 원</strong></td>
+              <td>소득세법 §97 ①</td>
+            </tr>
+            <tr>
+              <td><strong>양도차익</strong></td>
+              <td>30억 – 20억 = <strong>10억 원</strong></td>
+              <td>소득세법 §100</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warn-box">
+          ⚠️ <strong>주의: 가산세 포함 여부</strong><br>
+          甲은 신고·납부를 전혀 하지 않았으므로 <strong>무신고가산세(20%)</strong> 및 <strong>납부지연가산세</strong>가 부과됩니다. 문제에서 "가산세 포함"이라고 명시하였으므로 산정상 오류가 없는 것으로 가정합니다.
+        </div>
+
+        <div class="conclusion blue">
+          <div class="con-label">🏁 최종 결론 — 이 사건 A처분의 적법 여부</div>
+          이 사건 A처분은 <strong>적법합니다.</strong><br>
+          甲이 토지거래허가 없이 한 전매행위가 사법상 무효라 하더라도, 소득세법 §88은 <strong>'등기와 무관한 사실상 유상이전'</strong>을 양도로 정의하고 있고, 甲이 전매차익(10억)을 현실적으로 수령하여 경제적 지배가 이전된 이상 양도소득세 과세 요건이 충족됩니다. 甲이 매대금 반환이나 등기 말소 등 원상회복 조치를 취하지 않은 점도 과세의 적법성을 뒷받침합니다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════ 사례 2 타임라인 ════════════════════ -->
+  <div class="case-box green">
+    <h3 style="color:#2E6010;">📋 사례 2 — 핵심 타임라인</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2010년경</div>
+        <div class="tl-dot" style="background:#3A7A18;"></div>
+        <div class="tl-text"><strong>甲</strong>이 이 사건 토지를 <strong>상속으로 취득</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2020.08.12</div>
+        <div class="tl-dot" style="background:#3A7A18;"></div>
+        <div class="tl-text">甲이 <strong>乙은행</strong>을 근저당권자, <strong>丙회사</strong>를 채무자로 하여 이 사건 토지에 <strong>근저당권 설정</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">이후</div>
+        <div class="tl-dot" style="background:#3A7A18;"></div>
+        <div class="tl-text">丙회사가 채무 미변제 → 乙은행이 <strong>임의경매 신청</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2024.05.12</div>
+        <div class="tl-dot" style="background:#C0392B;"></div>
+        <div class="tl-text"><strong>丁회사</strong>에 낙찰 → 소유권이전등기 완료. 경락대금 전액 <strong>乙은행에 배당</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">이후</div>
+        <div class="tl-dot" style="background:#C0392B;"></div>
+        <div class="tl-text">甲이 丙회사에 <strong>구상권 행사 불가</strong> (丙회사 폐업·무자력)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2025.06.25</div>
+        <div class="tl-dot" style="background:#C0392B;"></div>
+        <div class="tl-text">관할 세무서장: 甲에게 <strong>이 사건 B처분</strong>(2024 귀속 양도소득세 부과)</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════ 물음 2 ════════════════════ -->
+  <div class="question-block">
+    <div class="q-header">
+      <span class="q-badge green">물음 2</span>
+      <div class="q-title">이 사건 B처분의 적법 여부 — 임의경매에 의한 양도와 구상권 불가 시 소득 인정</div>
+      <span class="q-score">10점</span>
+    </div>
+    <div class="q-body">
+
+      <div class="answer-section">
+        <div class="section-title green"><span class="num" style="background:#2E6010;">1</span> 쟁점 정리</div>
+
+        <div class="issue-grid">
+          <div class="issue-card">
+            <div class="ic-label">甲의 주장</div>
+            <p>丙회사에 대한 <strong>구상권을 행사할 수 없어</strong> 이 사건 토지 양도로 인한 <strong>소득이 없다</strong>. 따라서 B처분은 위법하다.</p>
+          </div>
+          <div class="issue-card">
+            <div class="ic-label">핵심 법적 쟁점</div>
+            <p>임의경매에 의한 토지 소유권 이전이 소득세법상 <strong>'양도'에 해당하는지</strong>, 구상권 불행사가 <strong>양도소득 자체를 부정</strong>할 수 있는지.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="answer-section">
+        <div class="section-title green"><span class="num" style="background:#2E6010;">2</span> 임의경매에 의한 소유권 이전이 '양도'에 해당하는지</div>
+
+        <div class="law-cite green">
+          <div class="law-label">📌 소득세법 §88 제1호 — 양도의 정의</div>
+          "양도"란 자산에 대한 <strong>등기 또는 등록과 관계없이</strong> 매도, 교환, 법인에 대한 현물출자 등을 통하여 그 자산을 <strong>유상으로 사실상 이전하는 것</strong>을 말한다.
+        </div>
+
+        <p class="body-text">
+          소득세법 §88이 규정하는 '양도'는 매도에만 한정되지 않습니다. <strong>경매</strong>도 자산이 유상으로 사실상 이전되는 행위로서 양도에 포함됩니다. 甲은 근저당권 설정자(물상보증인)로서, 丙회사의 채무불이행으로 인해 임의경매가 진행되어 이 사건 토지가 丁회사에게 낙찰되었습니다.
+        </p>
+
+        <div class="key-point">
+          <div class="kp-label">💡 물상보증인의 법적 지위</div>
+          甲은 채무자(丙회사)가 아니라 <strong>물상보증인</strong>입니다. 즉 甲은 자신의 토지를 타인의 채무의 담보로 제공한 것입니다. 경매가 진행되어 낙찰되면 甲은 토지 소유권을 상실하고, 그 대가로 <strong>경락대금 상당의 채무 면제(물상보증 채무 소멸)라는 경제적 이익</strong>을 얻습니다.
+        </div>
+
+        <div class="law-cite green">
+          <div class="law-label">📌 소득세법 시행령 §162 ① 제7호 — 경매의 양도시기</div>
+          "공익사업을 위한 토지 등의 취득 및 보상에 관한 법률이나 그 밖의 법률에 따라 공익사업을 위하여 수용되는 경우에는 대금을 청산한 날, 수용의 개시일 또는 소유권이전등기접수일 중 빠른 날"
+          <br>→ 임의경매의 경우, <strong>낙찰대금 납부일(배당 실시일, 2024.05.12)</strong>을 양도시기로 봅니다.
+        </div>
+
+        <div class="sub-title">2-1. 양도가액 산정</div>
+
+        <p class="body-text">
+          임의경매에 의한 양도의 경우 양도가액은 <strong>경락대금</strong>이 됩니다. 본 사례에서 경락대금 전액이 乙은행에 배당되었더라도, 이는 甲이 제공한 담보가 환가된 것이므로 그 경락대금이 甲의 <strong>양도가액(=양도시 실지거래가액)</strong>이 됩니다(소득세법 §96 ①).
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="green-th">구분</th>
+              <th class="green-th">내용</th>
+              <th class="green-th">근거</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>양도자</strong></td>
+              <td>甲 (토지 소유자·물상보증인)</td>
+              <td>소득세법 §88</td>
+            </tr>
+            <tr>
+              <td><strong>양수자</strong></td>
+              <td>丁회사 (경락인)</td>
+              <td>민사집행법</td>
+            </tr>
+            <tr>
+              <td><strong>양도 시기</strong></td>
+              <td>2024.05.12 (낙찰·소유권이전등기일)</td>
+              <td>소득세법 §98, 시행령 §162</td>
+            </tr>
+            <tr>
+              <td><strong>양도가액</strong></td>
+              <td>경락대금 전액 (乙은행에 배당된 금액)</td>
+              <td>소득세법 §96 ①</td>
+            </tr>
+            <tr>
+              <td><strong>취득가액</strong></td>
+              <td>상속 당시 평가액 (2010년 기준)</td>
+              <td>소득세법 §97 ①</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr class="divider">
+
+      <div class="answer-section">
+        <div class="section-title green"><span class="num" style="background:#2E6010;">3</span> 甲의 주장 — '구상권 불행사 = 소득 없음'에 대한 검토</div>
+
+        <div class="analogy">
+          <div class="ana-label">🎯 이해를 돕는 비유</div>
+          친구의 빚 보증을 서줬다가 친구 대신 내 집이 경매로 팔렸어요. 친구에게 돈을 돌려받으러 갔더니 친구 회사가 문을 닫았습니다. 억울하지만, 내 집이 팔려서 담보 채무(근저당)가 소멸된 것은 경제적 이익입니다. 세금은 '돌려받을 권리(구상권)'가 아니라 '자산이 팔린 사실(양도)'에 매깁니다.
+        </div>
+
+        <p class="body-text">
+          甲은 구상권을 행사하지 못해 경제적으로 손실을 입었다고 주장합니다. 그러나 <strong>양도소득세의 과세 요건은 '양도'의 성립</strong>이며, 이는 甲이 구상권을 통해 경제적 손실을 보전할 수 있는지와 <strong>무관</strong>합니다. 다음의 논거로 甲의 주장을 배척할 수 있습니다.
+        </p>
+
+        <ol class="styled">
+          <li>
+            <strong>양도소득의 과세 원인: '자산의 사실상 이전'이 완성된 시점</strong><br>
+            <span style="color:var(--text-secondary);">2024.05.12에 이 사건 토지 소유권이 丁회사에 이전되고 경락대금이 납부된 시점에 양도는 이미 완성되었습니다. 이후 甲의 구상권 행사 가능성은 양도 성립에 영향을 미치지 않습니다.</span>
+          </li>
+          <li>
+            <strong>경락대금이 乙은행에 배당된 것은 甲의 담보 제공 결과</strong><br>
+            <span style="color:var(--text-secondary);">경락대금 전액이 乙은행에 배당된 것은 甲이 근저당권을 설정하여 담보를 제공했기 때문입니다. 甲은 이로써 丙회사 채무에 관한 <strong>물상보증 책임을 이행</strong>한 것이고, 그 대가로 丙회사에 대한 구상권을 취득합니다. 구상권의 실현 가능성(丙회사 무자력)은 <strong>별개의 경제적 문제</strong>로서 양도소득세 과세 여부에 영향을 주지 않습니다.</span>
+          </li>
+          <li>
+            <strong>필요경비 공제를 통한 조세 형평</strong><br>
+            <span style="color:var(--text-secondary);">甲의 실질적 손실(구상권 회수 불가)은 <strong>필요경비나 손실공제 등 다른 세법적 수단</strong>을 통해 고려될 수 있으나, 이는 양도소득세 과세 자체를 부정하는 근거가 되지 않습니다. 양도소득세는 경락대금에서 취득가액 등을 공제한 양도차익에 대해 과세하는 것이므로, 만일 양도차익이 없다면 세금도 없습니다.</span>
+          </li>
+        </ol>
+
+        <div class="warn-box">
+          ⚠️ <strong>甲 측에 유리한 논거(소수 견해): 실질적 소득 부재</strong><br>
+          甲이 경락대금을 한 푼도 받지 못하고 오히려 구상권도 행사하지 못했다면, 실질적으로 소득이 없다는 주장도 가능합니다. 그러나 판례와 다수설은 <strong>양도 사실 자체와 구상권 실현 가능성은 별개</strong>라는 입장을 취하고 있으며, 甲의 손실은 별도 세법적 구제 수단(대손, 손실 처리 등)을 통해 고려해야 한다고 봅니다. 이는 개인 소득세의 구조상 한계이기도 합니다.
+        </div>
+
+        <div class="conclusion">
+          <div class="con-label">🏁 최종 결론 — 이 사건 B처분의 적법 여부</div>
+          이 사건 B처분은 <strong>적법합니다.</strong><br>
+          임의경매에 의한 이 사건 토지의 丁회사에 대한 소유권 이전은 소득세법 §88의 <strong>'유상으로 사실상 이전'</strong>에 해당하여 양도소득세 과세대상인 '양도'에 해당합니다. 甲이 丙회사에 대해 <strong>구상권을 행사할 수 없다는 사실</strong>은 이미 성립한 양도소득세 과세 요건에 영향을 미치지 아니하므로, B처분은 소득세법 §88, §94, §98 및 시행령 §162에 따라 <strong>적법하게 이루어진 것</strong>입니다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- 핵심 법령 총정리 -->
+  <div class="question-block">
+    <div class="q-header">
+      <span class="q-badge" style="background:#5A3F00; font-size:11px;">법령 정리</span>
+      <div class="q-title">문제 2 핵심 법령 총정리</div>
+    </div>
+    <div class="q-body">
+      <ul class="checklist">
+        <li><strong>소득세법 §88 제1호</strong> — 양도의 정의: 등기·등록과 무관한 유상의 사실상 이전</li>
+        <li><strong>소득세법 §94 ① 제1호</strong> — 토지·건물 양도로 발생하는 소득 = 양도소득의 범위</li>
+        <li><strong>소득세법 §96 ①</strong> — 양도가액: 양도 당시 양도자와 양수자 간 실지거래가액</li>
+        <li><strong>소득세법 §97 ①</strong> — 양도소득의 필요경비: 취득가액 등</li>
+        <li><strong>소득세법 §98</strong> — 양도 또는 취득의 시기: 원칙적으로 대금을 청산한 날</li>
+        <li><strong>소득세법 시행령 §162 ① 제7호</strong> — 경매의 경우 양도시기: 대금 청산일, 수용개시일, 소유권이전등기접수일 중 빠른 날</li>
+        <li><strong>국기법 §14 ①</strong> — 실질과세 원칙: 사실상 귀속자를 납세의무자로</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- 푸터 -->
+<div class="footer">
+  <div>본 풀이는 <strong>현행 법령(소득세법 시행일: 2026.04.21 기준)</strong>에 따라 작성되었습니다.</div>
+  <div>법령 조회: 법제처 Open API (thkim9322) · MCP 실시간 확인</div>
+  <br>
+  <div><strong>2025-05-27 17:10</strong> &nbsp;|&nbsp; <span class="hashtags">#위법소득과세 #토지거래허가무효 #사실상이전 #임의경매양도 #물상보증인 #구상권 #양도소득세 #세무사2차 #세법학1부 #제62회</span></div>
+</div>
+
+</body>
+</html>

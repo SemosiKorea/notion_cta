@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세법학 1부 | 문제 1 풀이 | 제62회 세무사 2차</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface-2: #F4F6F9;
+    --border: #E2E6ED;
+    --text-primary: #1A202C;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+    --accent: #1A4A8A;
+    --accent-light: #EBF2FF;
+    --accent-mid: #3B6FBB;
+    --danger: #C0392B;
+    --danger-light: #FDF2F1;
+    --success: #1A6A3A;
+    --success-light: #EBF7F0;
+    --gold: #7B5C00;
+    --gold-light: #FFF8E8;
+    --purple: #4A2080;
+    --purple-light: #F2EEFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.85;
+    font-size: 15px;
+  }
+
+  /* ── 표지 헤더 ── */
+  .cover {
+    background: linear-gradient(135deg, #0F2D5E 0%, #1A4A8A 55%, #2560A8 100%);
+    color: #fff;
+    padding: 52px 40px 42px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .cover-meta {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .cover h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .cover-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .pill {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 메인 레이아웃 ── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px 60px;
+  }
+
+  /* ── 사례 요약 박스 ── */
+  .case-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--accent);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 36px;
+  }
+  .case-box h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tl-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 14px;
+  }
+  .tl-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 52px;
+    top: 26px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .tl-date {
+    min-width: 80px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-mid);
+    padding-top: 3px;
+    text-align: right;
+  }
+  .tl-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .tl-text {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .tl-text strong { color: var(--text-primary); }
+
+  /* ── 문제 섹션 ── */
+  .question-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .q-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .q-badge {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .q-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  .q-score {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    background: var(--gold-light);
+    border: 1px solid #E8D5A0;
+    border-radius: 5px;
+    padding: 3px 12px;
+    white-space: nowrap;
+  }
+  .q-body {
+    padding: 28px 30px;
+  }
+
+  /* ── 답안 내부 구성요소 ── */
+  .answer-section {
+    margin-bottom: 28px;
+  }
+  .answer-section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent-light);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .num {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 9px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .sub-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 18px 0 8px;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent-mid);
+  }
+
+  p.body-text {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 12px;
+  }
+  p.body-text strong { color: var(--text-primary); }
+
+  /* ── 법령 인용 박스 ── */
+  .law-cite {
+    background: var(--accent-light);
+    border: 1px solid #C3D8F5;
+    border-left: 4px solid var(--accent-mid);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    line-height: 1.75;
+  }
+  .law-cite .law-label {
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+
+  /* ── 핵심 포인트 ── */
+  .key-point {
+    background: var(--gold-light);
+    border: 1px solid #E8D5A0;
+    border-left: 4px solid var(--gold);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    color: #5A3F00;
+    line-height: 1.8;
+  }
+  .key-point .kp-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+  }
+
+  /* ── 결론 박스 ── */
+  .conclusion {
+    background: linear-gradient(135deg, #0F2D5E 0%, #1A4A8A 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .conclusion .con-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .conclusion strong { color: #FFE080; }
+
+  /* ── 비유 박스 ── */
+  .analogy {
+    background: var(--purple-light);
+    border: 1px solid #D0C0F5;
+    border-left: 4px solid var(--purple);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    color: #2E1060;
+    line-height: 1.8;
+  }
+  .analogy .ana-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 6px;
+  }
+
+  /* ── 표 ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 14px 0;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12.5px;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    vertical-align: top;
+    line-height: 1.75;
+  }
+  tr:nth-child(even) td { background: var(--surface-2); }
+  tr:last-child td { border-bottom: none; }
+  td strong { color: var(--text-primary); }
+
+  /* ── 경고 박스 ── */
+  .warn-box {
+    background: var(--danger-light);
+    border: 1px solid #EFC6C2;
+    border-left: 4px solid var(--danger);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13px;
+    color: #6B1A14;
+    line-height: 1.8;
+  }
+
+  /* ── 체크리스트 ── */
+  .checklist { list-style: none; padding: 0; margin: 10px 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: var(--surface-2);
+    border-radius: 6px;
+  }
+  .checklist li::before {
+    content: '✓';
+    color: var(--success);
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .checklist li strong { color: var(--text-primary); }
+
+  /* ── 구분선 ── */
+  .divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 22px 0;
+  }
+
+  /* ── 푸터 ── */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 24px 30px 40px;
+    border-top: 1px solid var(--border);
+    line-height: 1.9;
+  }
+  .footer .hashtags {
+    color: var(--accent-mid);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── 번호 목록 ── */
+  ol.styled { padding-left: 0; list-style: none; counter-reset: item; }
+  ol.styled li {
+    counter-increment: item;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+  ol.styled li::before {
+    content: counter(item);
+    background: var(--accent-mid);
+    color: #fff;
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  @media print {
+    body { font-size: 13px; }
+    .cover { padding: 32px 28px; }
+    .container { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 표지 -->
+<div class="cover">
+  <div class="cover-meta">2025년도 · 제62회 세무사 2차 시험 · 3교시</div>
+  <h1>세법학 1부 — 문제 1<br>완전 풀이 해설</h1>
+  <div class="cover-sub">국세기본법 · 부과제척기간 · 후발적 경정청구</div>
+  <div class="cover-pills">
+    <span class="pill">국기법 §26의2</span>
+    <span class="pill">국기법 §45의2②</span>
+    <span class="pill">국기령 §25의2</span>
+    <span class="pill">배점 20점</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 사례 타임라인 -->
+  <div class="case-box">
+    <h3>📋 사례 핵심 타임라인</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2018–2019</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text"><strong>甲</strong>이 A회사로부터 <strong>상표권 사용료 명목으로 횡령</strong> → 사업소득으로 종합소득세 신고·납부</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2022.10</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">관할 지방국세청장이 A회사 세무조사 후 <strong>소득처분(기타소득)</strong>, 甲에게 소득금액변동통지</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2023.05</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">항소심 진행 중 甲이 <strong>사용료 전액을 A회사에 반환</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2024.09.24</div>
+        <div class="tl-dot"></div>
+        <div class="tl-text">대법원에서 <strong>횡령죄 유죄 확정판결</strong></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2025.05.01</div>
+        <div class="tl-dot" style="background:#C0392B;"></div>
+        <div class="tl-text">관할 세무서장이 甲에게 <strong>2018·2019 귀속 종합소득세 부과처분</strong> (사업소득 → 기타소득 재산정)</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════ 물음 1 ════════════════════ -->
+  <div class="question-block">
+    <div class="q-header">
+      <span class="q-badge">물음 1</span>
+      <div class="q-title">국세기본법령상 부과제척기간 — (1) 취지와 유형 / (2) 사례 도과 여부</div>
+      <span class="q-score">8점</span>
+    </div>
+    <div class="q-body">
+
+      <!-- (1) 취지와 유형 -->
+      <div class="answer-section">
+        <div class="section-title"><span class="num">(1)</span> 부과제척기간의 취지와 기간별 유형</div>
+
+        <div class="sub-title">1. 제도의 취지</div>
+
+        <div class="analogy">
+          <div class="ana-label">🎯 초등학생도 이해하는 비유</div>
+          국세가 마치 '유통기한 있는 우유'라고 생각해 보세요. 세금을 부과할 수 있는 권리도 너무 오래 놔두면 '유통기한'이 지나 무효가 됩니다. 납세자 입장에서는 언제까지나 세금 폭탄 걱정을 해야 한다면 경제활동을 마음껏 할 수 없겠죠? 그래서 법이 '이 기간 안에만 세금을 매길 수 있어요!'라고 정해 둔 것이 바로 <strong>부과제척기간</strong>입니다.
+        </div>
+
+        <p class="body-text">
+          부과제척기간이란 국가가 국세를 부과할 수 있는 권리의 존속기간을 의미합니다. 이는 <strong>① 납세자의 법적 안정성 보호</strong>, <strong>② 조세법률관계의 신속한 확정</strong>, <strong>③ 납세자의 예측가능성 보장</strong>을 목적으로 합니다. 제척기간이 경과하면 국가는 해당 국세를 부과할 권한을 상실하고, 납세자는 조세채무를 면합니다. 소멸시효와 달리 중단·정지가 없으며(제한적 예외 제외), 직권으로 고려되어야 합니다.
+        </p>
+
+        <div class="law-cite">
+          <div class="law-label">📌 근거 법령</div>
+          국세기본법 제26조의2 제1항 본문: "국세를 부과할 수 있는 기간(이하 '부과제척기간'이라 한다)은 국세를 부과할 수 있는 날부터 <strong>5년</strong>으로 한다."
+        </div>
+
+        <div class="sub-title">2. 기간별 유형 (역외거래·상속세·증여세 제외)</div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>유 형</th>
+              <th>부과제척기간</th>
+              <th>적용 요건</th>
+              <th>근거 조문</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 일반(원칙)</strong></td>
+              <td><strong>5년</strong></td>
+              <td>법정신고기한 내 신고한 경우(역외·상속·증여 제외)</td>
+              <td>§26의2①</td>
+            </tr>
+            <tr>
+              <td><strong>② 무신고</strong></td>
+              <td><strong>7년</strong></td>
+              <td>납세자가 법정신고기한까지 과세표준신고서를 <strong>제출하지 아니한</strong> 경우</td>
+              <td>§26의2②제1호</td>
+            </tr>
+            <tr>
+              <td><strong>③ 부정행위(포탈)</strong></td>
+              <td><strong>10년</strong></td>
+              <td>납세자가 <strong>사기나 그 밖의 부정한 행위</strong>로 국세를 포탈하거나 환급·공제를 받은 경우. 부정행위로 포탈한 국세가 법인세이면, 법인세법 §67에 따라 처분된 금액에 대한 <strong>소득세에 대해서도 동일</strong></td>
+              <td>§26의2②제2호</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="key-point">
+          <div class="kp-label">💡 핵심 포인트 — '부정행위'의 의미</div>
+          국세기본법 시행령 제12조의2 제1항: "법 제26조의2 제2항 제2호 전단에서 '대통령령으로 정하는 사기나 그 밖의 부정한 행위'란 <strong>「조세범 처벌법」 제3조 제6항에 해당하는 행위</strong>를 말한다." → 장부 허위기재, 이중장부 작성, 증빙 위조·파기 등 적극적 기망행위가 이에 해당합니다.
+        </div>
+
+        <div class="key-point">
+          <div class="kp-label">💡 핵심 포인트 — 포탈세 연동 규정</div>
+          <strong>§26의2 ② 제2호 후단</strong>: "부정행위로 포탈하거나 환급·공제받은 국세가 <strong>법인세</strong>이면 이와 관련하여 법인세법 §67에 따라 처분된 금액에 대한 <strong>소득세 또는 법인세에 대해서도 또한 같다(10년).</strong>" — 이것이 본 사례의 핵심 조문입니다!
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <!-- (2) 도과 여부 -->
+      <div class="answer-section">
+        <div class="section-title"><span class="num">(2)</span> 이 사건 처분의 부과제척기간 도과 여부</div>
+
+        <div class="sub-title">1. 쟁점 정리</div>
+        <p class="body-text">
+          이 사건 처분은 <strong>2025년 5월 1일</strong>에 이루어졌고, 과세 대상 연도는 <strong>2018년·2019년</strong> 귀속 종합소득세입니다. 甲은 법정신고기한 내에 사업소득으로 신고·납부한 바 있으므로, 적용될 제척기간이 <strong>5년인지 10년인지</strong>가 핵심 쟁점입니다.
+        </p>
+
+        <div class="sub-title">2. 부과제척기간 기산일</div>
+
+        <p class="body-text">
+          종합소득세의 부과제척기간 기산일은 원칙적으로 <strong>법정신고기한의 다음 날</strong>입니다(국세기본법 시행령 §12의3 참조). 2018년·2019년 귀속 종합소득세의 법정신고기한은 각각 2019년 5월 31일, 2020년 5월 31일이므로, 부과제척기간 기산일은 각각 <strong>2019년 6월 1일, 2020년 6월 1일</strong>입니다.
+        </p>
+
+        <div class="sub-title">3. 甲에게 적용될 제척기간 — 10년</div>
+
+        <div class="analogy">
+          <div class="ana-label">🎯 이해를 돕는 비유</div>
+          학교에서 시험을 봤는데, 다른 친구의 답을 몰래 보고 그대로 썼다면(부정행위), 선생님이 나중에 알아도 더 오랫동안 점수를 바꿀 수 있는 것과 같습니다. 단순 실수는 유통기한이 짧지만, 속임수(부정행위)에는 더 긴 유통기한이 적용됩니다!
+        </div>
+
+        <p class="body-text">
+          본 사례에서 <strong>A회사(법인)</strong>는 乙과 甲의 공모로 <strong>회계장부를 조작</strong>하여 존재하지 않는 상표권 사용료를 손금으로 처리하였습니다. 이는 장부의 허위기재에 해당하는 <strong>적극적 부정행위</strong>로서 「조세범 처벌법」 제3조 제6항의 부정행위에 해당합니다.
+        </p>
+
+        <div class="law-cite">
+          <div class="law-label">📌 핵심 적용 조문</div>
+          국세기본법 §26의2 ② 제2호 <strong>후단</strong>: "부정행위로 포탈하거나 환급·공제받은 국세가 <strong>법인세</strong>이면 이와 관련하여 「법인세법」 제67조에 따라 처분된 금액에 대한 <strong>소득세</strong> 또는 법인세에 대해서도 또한 같다(= 10년)."
+        </div>
+
+        <p class="body-text">
+          즉, A회사가 <strong>부정행위로 법인세를 포탈</strong>하고, 그 법인세법 §67에 따른 소득처분(기타소득)으로 甲에게 귀속된 종합소득세에 대해서도 <strong>10년의 부과제척기간이 적용</strong>됩니다. 이 규정은 甲 자신이 직접 법인세를 포탈하지 않더라도 적용됩니다.
+        </p>
+
+        <div class="sub-title">4. 제척기간 계산 및 결론</div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>귀속연도</th>
+              <th>기산일</th>
+              <th>제척기간</th>
+              <th>만료일</th>
+              <th>처분일(2025.5.1)</th>
+              <th>결론</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>2018년</strong></td>
+              <td>2019.06.01</td>
+              <td>10년</td>
+              <td><strong>2029.05.31</strong></td>
+              <td>2025.05.01</td>
+              <td style="color:#1A6A3A; font-weight:700;">미도과 ✓</td>
+            </tr>
+            <tr>
+              <td><strong>2019년</strong></td>
+              <td>2020.06.01</td>
+              <td>10년</td>
+              <td><strong>2030.05.31</strong></td>
+              <td>2025.05.01</td>
+              <td style="color:#1A6A3A; font-weight:700;">미도과 ✓</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="warn-box">
+          ⚠️ <strong>만약 5년 제척기간이 적용된다면?</strong> 2018년분은 2024.05.31, 2019년분은 2025.05.31까지인데, 2018년분은 이미 도과하였을 것입니다. 따라서 10년/5년 어느 쪽이 적용되느냐는 처분의 적법 여부를 가르는 핵심 쟁점입니다.
+        </div>
+
+        <div class="conclusion">
+          <div class="con-label">🏁 최종 결론</div>
+          이 사건 처분(2025.5.1)은 <strong>국세기본법 §26의2 ② 제2호 후단</strong>에 따라 <strong>10년의 부과제척기간이 적용</strong>되므로, 2018년·2019년 귀속분 모두 제척기간이 <strong>도과하지 아니하였습니다.</strong> 따라서 이 사건 처분은 <strong>부과제척기간 측면에서 적법</strong>합니다.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════ 물음 2 ════════════════════ -->
+  <div class="question-block">
+    <div class="q-header">
+      <span class="q-badge">물음 2</span>
+      <div class="q-title">후발적 사유에 의한 경정청구 — (1) 취지와 청구사유 / (2) 반환의 해당 여부</div>
+      <span class="q-score">12점</span>
+    </div>
+    <div class="q-body">
+
+      <!-- (1) 취지와 청구사유 -->
+      <div class="answer-section">
+        <div class="section-title"><span class="num">(1)</span> 후발적 경정청구제도의 취지와 청구사유</div>
+
+        <div class="sub-title">1. 제도의 취지</div>
+
+        <div class="analogy">
+          <div class="ana-label">🎯 초등학생도 이해하는 비유</div>
+          세금은 처음 계산할 때는 맞았는데, 나중에 사정이 완전히 바뀌어 억울한 경우가 있습니다. 예를 들어 물건을 팔아서 세금을 냈는데, 나중에 그 거래가 법원에서 무효로 판결났다면? 이미 낸 세금을 돌려받을 수 있도록 '다시 계산해 주세요!'라고 할 수 있는 제도가 바로 <strong>후발적 경정청구</strong>입니다.
+        </div>
+
+        <p class="body-text">
+          일반 경정청구(§45의2 ①)는 처음 신고 시의 계산 오류를 바로잡는 것으로 법정신고기한 후 <strong>5년 이내</strong>에만 허용됩니다. 그러나 신고 당시에는 적법하였으나 <strong>그 이후에 외부적 사정 변경</strong>이 발생하여 세금을 환급받아야 할 필요가 생기는 경우, 5년 기간이 지나도 활용 가능한 구제수단이 필요합니다. 이것이 <strong>후발적 사유에 의한 경정청구</strong>로, 사후적 사정변경에 따른 납세자의 권리 구제와 조세법률주의 실현을 목적으로 합니다.
+        </p>
+
+        <div class="law-cite">
+          <div class="law-label">📌 근거 법령</div>
+          국세기본법 §45의2 ②: "과세표준신고서를 법정신고기한까지 제출한 자 또는 국세의 과세표준 및 세액의 결정을 받은 자는 다음 각 호의 어느 하나에 해당하는 사유가 발생하였을 때에는 제1항에서 규정하는 기간에도 불구하고 <strong>그 사유가 발생한 것을 안 날부터 3개월 이내</strong>에 결정 또는 경정을 청구할 수 있다."
+        </div>
+
+        <div class="sub-title">2. 청구사유 (법정 후발적 사유)</div>
+
+        <ol class="styled">
+          <li>
+            <strong>판결 확정에 의한 거래·행위 변경 [§45의2 ② 제1호]</strong><br>
+            <span style="font-size:13.5px; color:var(--text-secondary);">최초 신고의 계산 근거가 된 거래·행위가 심사·심판·소송의 <strong>판결(화해 포함)</strong>에 의하여 다른 것으로 확정된 경우</span>
+          </li>
+          <li>
+            <strong>귀속 변경 결정·경정 [§45의2 ② 제2호]</strong><br>
+            <span style="font-size:13.5px; color:var(--text-secondary);">소득이나 과세물건의 귀속을 <strong>제3자에게로 변경</strong>시키는 결정·경정이 있을 때</span>
+          </li>
+          <li>
+            <strong>상호합의 [§45의2 ② 제3호]</strong><br>
+            <span style="font-size:13.5px; color:var(--text-secondary);">조세조약에 따른 상호합의가 최초 신고·결정·경정의 내용과 <strong>다르게 이루어진</strong> 경우</span>
+          </li>
+          <li>
+            <strong>연동 세목·기간 과세표준 초과 [§45의2 ② 제4호]</strong><br>
+            <span style="font-size:13.5px; color:var(--text-secondary);">결정·경정으로 연동된 다른 세목·과세기간의 과세표준 또는 세액이 신고액을 <strong>초과</strong>할 때</span>
+          </li>
+          <li>
+            <strong>대통령령이 정하는 유사 사유 [§45의2 ② 제5호 → 시행령 §25의2]</strong><br>
+            <span style="font-size:13.5px; color:var(--text-secondary);">
+              ① 계산 근거가 된 거래·행위와 관계되는 <strong>관청의 허가 등 처분이 취소</strong>된 경우<br>
+              ② 계약이 <strong>해제권 행사</strong>로 해제되거나 부득이한 사유로 해제·취소된 경우<br>
+              ③ 장부·증거 압수 등 부득이한 사유로 계산 불가능하였다가 <strong>그 사유가 소멸</strong>된 경우<br>
+              ④ 위 ①~③과 <strong>유사한 사유</strong>에 해당하는 경우
+            </span>
+          </li>
+        </ol>
+      </div>
+
+      <hr class="divider">
+
+      <!-- (2) 반환이 후발적 경정청구 사유인지 -->
+      <div class="answer-section">
+        <div class="section-title"><span class="num">(2)</span> 甲의 2023년 5월 반환이 후발적 경정청구 사유에 해당하는지 여부</div>
+
+        <div class="sub-title">1. 쟁점</div>
+
+        <p class="body-text">
+          甲이 2023년 5월 이 사건 사용료 전부를 A회사에 반환한 것이 국세기본법 §45의2 ② 각 호 또는 시행령 §25의2 소정의 <strong>후발적 경정청구 사유에 해당하는지</strong>가 문제입니다.
+          (문제에서 법인세법 시행령 §106 ④ 적용은 고려하지 않는다고 하였으므로 제외합니다.)
+        </p>
+
+        <div class="sub-title">2. 각 사유별 검토</div>
+
+        <p class="body-text">
+          <strong>(가) §45의2 ② 제1호 — 판결에 의한 거래 변경?</strong><br>
+          甲의 반환은 항소심 진행 중인 <strong>2023년 5월</strong>에 이루어졌습니다. 대법원 유죄 확정판결은 <strong>2024년 9월 24일</strong>입니다. 판결에 의해 과세 근거가 된 거래가 '다른 것으로 확정'된 것이 아니라, 오히려 유죄판결로 <strong>횡령 사실이 확정</strong>되었을 뿐이므로 제1호에 해당하지 않습니다.
+        </p>
+
+        <p class="body-text">
+          <strong>(나) §45의2 ② 제2호 — 귀속 변경?</strong><br>
+          이 사건에서는 甲에 대해 기타소득으로 소득처분이 이루어졌으나, 이는 甲의 종합소득세 부과의 근거가 된 것이지 제2호의 '귀속을 제3자에게로 변경시키는' 결정·경정은 아닙니다.
+        </p>
+
+        <p class="body-text">
+          <strong>(다) 시행령 §25의2 제2호 — 계약 해제?</strong><br>
+          시행령 §25의2 제2호는 "계약이 해제권의 행사로 해제되거나, 성립 후 발생한 <strong>부득이한 사유</strong>로 해제되거나 취소된 경우"를 규정합니다. 그러나 甲의 반환은 계약 관계에 기한 정상적 거래의 해제가 아니라 <strong>횡령으로 탈취한 금전을 형사재판을 앞두고 임의로 반환</strong>한 것입니다. 이는 계약의 해제 또는 취소와는 성격이 전혀 다릅니다.
+        </p>
+
+        <div class="key-point">
+          <div class="kp-label">💡 판례의 입장 (주류적 견해)</div>
+          대법원은 후발적 경정청구 사유를 <strong>제한적으로 해석</strong>합니다. 횡령금 반환은 과세 기초가 된 소득 자체를 소급 소멸시키는 것이 아니라, 횡령 시점에 이미 <strong>실현된 소득</strong>에 대한 사후 변제이므로 후발적 경정청구 사유에 해당하지 않는다는 것이 일관된 입장입니다(서울행정법원 2017구합80080, 서울고법 2018누62616, 대법원 2019두37103 참조).
+        </div>
+
+        <div class="sub-title">3. 핵심 논거 — 소득의 실현 시점</div>
+
+        <p class="body-text">
+          소득세법상 <strong>횡령소득은 横領 행위 시점에 이미 실현</strong>됩니다(소득세법 §21 ① 등 참조). 甲이 2018~2019년에 사용료를 수령·횡령한 시점에 기타소득이 발생하였고, 그 이후의 반환은 이미 실현된 소득의 존부에 영향을 미치지 않습니다. 이는 차용증 없이 돈을 빌렸다가 갚아도 이자소득 과세를 피할 수 없는 것과 같은 이치입니다.
+        </p>
+
+        <p class="body-text">
+          또한, 후발적 경정청구 사유인 시행령 §25의2는 "<strong>계산 근거가 된 거래·행위의 효력</strong>"에 관한 사후 변동을 규정하는 것입니다. 甲의 반환은 과세의 계산 근거가 된 '횡령'이라는 행위의 <strong>효력에 영향을 미치는 사정</strong>이 아니라, 그 결과에 대한 사후 이행에 불과합니다.
+        </p>
+
+        <div class="warn-box">
+          ⚠️ <strong>납세자 측 주장 (소수 견해)</strong><br>
+          일각에서는 반환으로 인해 甲이 실질적으로 소득을 향유하지 못하게 되었으므로, 시행령 §25의2 제4호("유사한 사유")에 해당하거나 실질과세 원칙상 세금을 환급받아야 한다는 주장도 있습니다. 그러나 판례는 이러한 주장을 받아들이지 않고 있습니다.
+        </div>
+
+        <div class="conclusion">
+          <div class="con-label">🏁 최종 결론</div>
+          甲이 2023년 5월 이 사건 사용료 전부를 A회사에 반환한 것은 <strong>국세기본법 §45의2 ② 각 호 및 시행령 §25의2 소정의 후발적 경정청구 사유에 해당하지 않습니다.</strong> 횡령소득은 횡령 시점에 이미 실현되었고, 그 이후의 반환은 이미 성립한 과세 근거에 영향을 미치지 않기 때문입니다. 따라서 甲의 후발적 경정청구는 <strong>이유 없습니다.</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 핵심 법령 정리 -->
+  <div class="question-block">
+    <div class="q-header">
+      <span class="q-badge" style="background:#5A3F00; font-size:11px;">법령 정리</span>
+      <div class="q-title">문제 1 핵심 법령 총정리</div>
+    </div>
+    <div class="q-body">
+      <ul class="checklist">
+        <li><strong>국세기본법 §26의2 ①</strong> — 부과제척기간 원칙 5년</li>
+        <li><strong>국세기본법 §26의2 ② 제1호</strong> — 무신고의 경우 7년</li>
+        <li><strong>국세기본법 §26의2 ② 제2호 전단·후단</strong> — 부정행위 포탈 10년 / 법인세 포탈 관련 소득세 10년 연동</li>
+        <li><strong>국세기본법 시행령 §12의2 ①</strong> — 부정행위의 의미: 조세범처벌법 §3 ⑥</li>
+        <li><strong>국세기본법 §45의2 ②</strong> — 후발적 경정청구: 사유 발생을 안 날로부터 3개월 이내</li>
+        <li><strong>국세기본법 시행령 §25의2 제1호~제4호</strong> — 대통령령이 정하는 후발적 사유(허가 취소, 계약 해제, 장부 압수 소멸, 유사 사유)</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- 푸터 -->
+<div class="footer">
+  <div>본 풀이는 <strong>현행 법령(국세기본법 시행일: 2026.01.02 기준)</strong>에 따라 작성되었습니다.</div>
+  <div>법령 조회: 법제처 Open API (thkim9322) · MCP 실시간 확인</div>
+  <br>
+  <div><strong>2025-05-27 16:40</strong> &nbsp;|&nbsp; <span class="hashtags">#부과제척기간 #후발적경정청구 #횡령소득 #소득처분 #국세기본법 #세무사2차 #세법학1부 #제62회</span></div>
+</div>
+
+</body>
+</html>
