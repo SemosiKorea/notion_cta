@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 지급이자의 손금불산입 완전정복</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f3ee;--bg2:#eae7df;--w:#fff;
+  --t1:#0c0a07;--t2:#1d1b12;--t3:#3a3726;--t4:#5a5748;
+  --nv:#061830;
+  --bl:#0a3868;--bl2:#1458a8;--bl-lt:#d4e6f8;
+  --rd:#5a0c18;--rd2:#9e1828;--rd-lt:#f8d4da;
+  --gn:#083a1c;--gn2:#156638;--gn-lt:#cceedd;
+  --or:#4c2000;--or2:#9e4200;--or-lt:#fce0c0;
+  --pu:#2c0c54;--pu2:#6020b0;--pu-lt:#e8d4f8;
+  --tl:#043030;--tl2:#0a6868;--tl-lt:#c4eaea;
+  --gd:#6c4a00;--gd2:#ae7600;--gd-lt:#fef0b4;
+  --bdr:#b0a890;--bdr2:#d8d4c8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.85;}
+
+.hero{background:linear-gradient(135deg,#030e1a 0%,#061830 45%,#0a1820 100%);color:#fff;padding:56px 24px 48px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(255,255,255,.015) 50px,rgba(255,255,255,.015) 51px);}
+.hero-inner{position:relative;z-index:1;}
+.hero-kicker{display:inline-block;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;letter-spacing:3px;padding:4px 18px;margin-bottom:18px;text-transform:uppercase;}
+.hero h1{font-family:'Noto Serif KR',serif;font-size:clamp(1.7rem,4vw,2.8rem);font-weight:900;line-height:1.3;color:#fff;}
+.hero h1 em{color:#80d8ff;font-style:normal;}
+.hero-sub{margin-top:12px;font-size:13px;color:rgba(255,255,255,.65);}
+.hero-chips{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:7px;}
+.hero-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;padding:4px 13px;}
+
+.toc{background:#fff;border-bottom:3px solid var(--nv);padding:11px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.toc-in{max-width:1040px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:4px 7px;align-items:center;}
+.toc-lbl{font-size:11px;font-weight:900;color:var(--t4);letter-spacing:1px;margin-right:4px;}
+.toc a{font-size:11px;font-weight:700;color:var(--nv);text-decoration:none;padding:2px 8px;border:1px solid var(--nv);}
+.toc a:hover{background:var(--nv);color:#fff;}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px;}
+
+.chapter{margin-top:52px;}
+.ch-hd{display:flex;align-items:center;gap:0;border-bottom:3px solid var(--t1);padding-bottom:11px;margin-bottom:24px;}
+.ch-badge{font-family:'Noto Serif KR',serif;font-size:11px;font-weight:900;padding:5px 14px;margin-right:14px;color:#fff;white-space:nowrap;}
+.b1{background:var(--nv);}.b2{background:var(--bl);}.b3{background:var(--gn);}
+.b4{background:var(--or);}.b5{background:var(--rd);}.b6{background:var(--pu);}
+.b7{background:var(--tl);}.b8{background:var(--gd);}
+.ch-hd h2{font-family:'Noto Serif KR',serif;font-size:clamp(1.05rem,2.5vw,1.4rem);font-weight:900;color:var(--t1);}
+.ch-hd .ref{margin-left:auto;font-size:11px;color:var(--t4);letter-spacing:1px;white-space:nowrap;}
+
+.intro{padding:18px 24px;margin-bottom:16px;border-left:6px solid;color:#fff;}
+.i1{background:var(--nv);border-color:#60a0f0;}
+.i2{background:var(--bl);border-color:#80c8ff;}
+.i3{background:var(--gn);border-color:#60e090;}
+.i4{background:var(--or);border-color:#f0a050;}
+.i5{background:var(--rd);border-color:#f08090;}
+.i6{background:var(--pu);border-color:#c090f8;}
+.i7{background:var(--tl);border-color:#60d0d0;}
+.intro .icon{font-size:1.7rem;display:block;margin-bottom:7px;}
+.intro p{font-size:14px;line-height:2;color:#fff;}
+.intro strong{color:#ffe080;}
+.intro.i3 strong{color:#90ffcc;}
+
+.lc{border:2px solid var(--bdr);background:#fff;margin-bottom:14px;}
+.lc-hd{padding:10px 18px;display:flex;align-items:center;gap:10px;}
+.lc-hd.h1{background:var(--nv);}.lc-hd.h2{background:var(--bl);}
+.lc-hd.h3{background:var(--gn);}.lc-hd.h4{background:var(--or);}
+.lc-hd.h5{background:var(--rd);}.lc-hd.h6{background:var(--pu);}
+.lc-hd.h7{background:var(--tl);}.lc-hd.h8{background:var(--gd);}
+.lc-no{background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:2px 9px;letter-spacing:.5px;white-space:nowrap;}
+.lc-ti{font-family:'Noto Serif KR',serif;font-size:13.5px;font-weight:700;color:#fff;}
+.lc-body{padding:18px 22px;}
+.cl{background:var(--bg2);border-left:4px solid;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.95;color:var(--t2);}
+.cl:last-child{margin-bottom:0;}
+.cl.n{border-color:var(--nv);}.cl.b{border-color:var(--bl);}
+.cl.g{border-color:var(--gn);}.cl.o{border-color:var(--or);}
+.cl.r{border-color:var(--rd);}.cl.p{border-color:var(--pu);}
+.cl.t{border-color:var(--tl);}.cl.gd{border-color:var(--gd2);}
+.cn{font-weight:900;margin-right:5px;}
+.cn.n{color:var(--nv);}.cn.b{color:var(--bl);}.cn.g{color:var(--gn);}
+.cn.o{color:var(--or);}.cn.r{color:var(--rd);}.cn.p{color:var(--pu);}
+.cn.t{color:var(--tl);}.cn.gd{color:var(--gd);}
+
+.easy{position:relative;background:var(--gd-lt);border:2px solid var(--gd2);padding:28px 24px 20px;margin:6px 0 18px;}
+.easy::before{content:attr(data-label);position:absolute;top:-13px;left:14px;background:var(--gd2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.easy p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.easy .ok{color:var(--gn);font-weight:700;}.easy .bad{color:var(--rd);font-weight:700;}
+.easy .hl{color:var(--or);font-weight:700;}.easy .bl{color:var(--nv);font-weight:700;}
+
+.memo{position:relative;background:linear-gradient(135deg,#fff9ee,#fdf0c0);border:2px solid var(--gd2);border-top:4px solid var(--or2);padding:26px 22px 18px;margin:8px 0 18px;}
+.memo::before{content:attr(data-label);position:absolute;top:-14px;left:14px;background:var(--or2);color:#fff;font-size:11px;font-weight:900;padding:3px 12px;letter-spacing:1px;}
+.memo p{font-size:13.5px;line-height:2.05;color:var(--t1);margin-top:4px;}
+.memo .ok{color:var(--gn);font-weight:700;}.memo .bad{color:var(--rd);font-weight:700;}
+.memo .hl{color:var(--or);font-weight:700;}.memo .bl{color:var(--nv);font-weight:700;}
+
+.fbox{padding:16px 22px;margin:8px 0;color:#fff;text-align:center;line-height:2.3;}
+.fbox.n{background:var(--nv);}.fbox.b{background:var(--bl);}
+.fbox.g{background:var(--gn);}.fbox.o{background:var(--or);}
+.fbox.r{background:var(--rd);}.fbox.p{background:var(--pu);}
+.fbox.t{background:var(--tl);}.fbox.gd{background:var(--gd);}
+.fbox .fm{font-size:1rem;font-weight:700;}
+.fbox.n .fm,.fbox.b .fm,.fbox.t .fm{color:#80e8ff;}
+.fbox.g .fm{color:#80ffc0;}.fbox.o .fm{color:#ffe0a0;}
+.fbox.r .fm{color:#ffb0b8;}.fbox.p .fm{color:#e0c0ff;}
+.fbox .fn{font-size:11.5px;color:rgba(255,255,255,.72);}
+
+.panel{padding:12px 16px;margin:6px 0;font-size:13.5px;line-height:1.95;color:var(--t1);font-weight:500;border-left:5px solid;}
+.panel.pb{background:var(--bl-lt);border-color:var(--bl);}
+.panel.pr{background:var(--rd-lt);border-color:var(--rd);}
+.panel.pg{background:var(--gn-lt);border-color:var(--gn);}
+.panel.po{background:var(--or-lt);border-color:var(--or);}
+.panel.pp{background:var(--pu-lt);border-color:var(--pu);}
+.panel.pt{background:var(--tl-lt);border-color:var(--tl);}
+.panel.pgd{background:var(--gd-lt);border-color:var(--gd2);}
+
+.tw{overflow-x:auto;margin:6px 0 16px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:var(--nv);color:#fff;padding:10px 13px;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+thead th.b{background:var(--bl);}thead th.g{background:var(--gn);}
+thead th.o{background:var(--or);}thead th.r{background:var(--rd);}
+thead th.p{background:var(--pu);}thead th.t{background:var(--tl);}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--bdr2);color:var(--t2);vertical-align:top;}
+tbody tr:nth-child(even) td{background:var(--bg2);}
+.tok{color:var(--gn);font-weight:700;}.tba{color:var(--rd);font-weight:700;}
+.thl{color:var(--or);font-weight:700;}.tbl{color:var(--nv);font-weight:700;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 16px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 16px;}
+@media(max-width:640px){.g2,.g3{grid-template-columns:1fr;}}
+.gc{border:2px solid var(--bdr);background:var(--w);padding:16px;}
+.gc .gct{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding-bottom:7px;border-bottom:2px solid;margin-bottom:10px;}
+.gc.nv .gct{color:var(--nv);border-color:var(--nv);}
+.gc.gn .gct{color:var(--gn);border-color:var(--gn);}
+.gc.rd .gct{color:var(--rd);border-color:var(--rd);}
+.gc.or .gct{color:var(--or);border-color:var(--or);}
+.gc.bl .gct{color:var(--bl);border-color:var(--bl);}
+.gc ul{list-style:none;font-size:12.5px;line-height:2;color:var(--t2);}
+.gc.gn ul li::before{content:'✅ ';}
+.gc.rd ul li::before{content:'❌ ';}
+.gc.nv ul li::before{content:'▶ ';}
+.gc.or ul li::before{content:'🔶 ';}
+.gc.bl ul li::before{content:'■ ';}
+.gc p{font-size:12.5px;color:var(--t2);line-height:1.85;}
+.gc strong{color:var(--t1);}
+
+.sh3{font-family:'Noto Serif KR',serif;font-size:.97rem;font-weight:900;color:var(--t1);margin:22px 0 10px;padding-left:10px;border-left:4px solid var(--nv);}
+.sh3.b{border-color:var(--bl);}.sh3.g{border-color:var(--gn);}
+.sh3.r{border-color:var(--rd);}.sh3.o{border-color:var(--or);}
+.sh3.p{border-color:var(--pu);}.sh3.t{border-color:var(--tl);}
+
+/* 4유형 카드 */
+.type-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 18px;}
+@media(max-width:600px){.type-grid{grid-template-columns:1fr;}}
+.tc{border:0;overflow:hidden;}
+.tc-hd{padding:12px 18px;color:#fff;display:flex;align-items:center;gap:10px;}
+.tc-hd .tn{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:900;background:rgba(0,0,0,.2);padding:3px 10px;white-space:nowrap;}
+.tc-hd .tt{font-size:14px;font-weight:900;}
+.tc-body{background:#fff;border:2px solid var(--bdr);border-top:0;padding:16px 18px;}
+.tc-body .row{display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.8;}
+.tc-body .row:last-child{margin-bottom:0;}
+.tc-body .row .lbl{font-size:11px;font-weight:900;padding:2px 8px;color:#fff;white-space:nowrap;align-self:start;margin-top:2px;}
+.tc-body .row p{color:var(--t2);flex:1;}
+
+/* 비교 테이블 */
+.vs-wrap{background:#fff;border:2px solid var(--bdr);overflow:hidden;margin:10px 0 18px;}
+.vs-head{display:grid;grid-template-columns:200px 1fr 1fr;background:var(--nv);color:#fff;}
+.vs-head div{padding:10px 14px;font-size:12px;font-weight:700;letter-spacing:.5px;border-right:1px solid rgba(255,255,255,.2);}
+.vs-row{display:grid;grid-template-columns:200px 1fr 1fr;border-bottom:1px solid var(--bdr2);}
+.vs-row:last-child{border-bottom:none;}
+.vs-row:nth-child(even){background:var(--bg2);}
+.vs-cell{padding:10px 14px;font-size:13px;color:var(--t2);border-right:1px solid var(--bdr2);vertical-align:top;}
+.vs-cell:last-child{border-right:none;}
+.vs-cell strong{color:var(--t1);}
+
+.summary{background:#0c0a08;color:#f4f0e4;padding:44px 36px;margin-top:56px;text-align:center;border-top:4px solid var(--gd2);}
+.summary h3{font-family:'Noto Serif KR',serif;font-size:1.4rem;color:#ffd060;margin-bottom:24px;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:11px;max-width:980px;margin:0 auto 18px;text-align:left;}
+.sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,208,96,.3);padding:14px 16px;}
+.sc .st{color:#ffd060;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:7px;}
+.sc p{font-size:12px;color:#e8e0c8;line-height:1.85;}
+.sc strong{color:#fff5a0;}
+.note{font-size:11px;color:rgba(244,240,228,.3);margin-top:14px;}
+
+footer{background:#070504;color:rgba(244,240,228,.28);text-align:center;padding:18px;font-size:11px;letter-spacing:1px;}
+hr.dv{border:none;border-top:1px solid var(--bdr2);margin:36px 0 0;}
+@keyframes fu{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.chapter{animation:fu .4s ease both;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">세법 강의 노트 Vol.11</div>
+    <h1>법인세법 완전정복<br><em>지급이자의 손금불산입</em></h1>
+    <p class="hero-sub">법 §28 · 시행령 §51~§55 · 시행규칙 §28·§44 | 시행 2026.01.02</p>
+    <div class="hero-chips">
+      <span class="hero-chip">📋 4가지 유형</span>
+      <span class="hero-chip">🔒 채권자 불분명 사채</span>
+      <span class="hero-chip">🏗️ 건설자금 이자</span>
+      <span class="hero-chip">🏚️ 업무무관 자산</span>
+      <span class="hero-chip">💰 업무무관 가지급금</span>
+      <span class="hero-chip">📐 계산 방식</span>
+      <span class="hero-chip">🔢 적용 순위</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-in">
+    <span class="toc-lbl">목차</span>
+    <a href="#ch1">① 개요·4유형</a>
+    <a href="#ch2">② 채권자 불분명</a>
+    <a href="#ch3">③ 건설자금 이자</a>
+    <a href="#ch4">④ 업무무관 자산·가지급금</a>
+    <a href="#ch5">⑤ 가지급금 포함·제외</a>
+    <a href="#ch6">⑥ 계산식·적용순위</a>
+    <a href="#ch7">⑦ 손금 vs 불산입 비교</a>
+    <a href="#sum">요약</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ══════════ CH1. 개요 ══════════ -->
+<section class="chapter" id="ch1">
+  <div class="ch-hd">
+    <span class="ch-badge b1">Chapter 01</span>
+    <h2>지급이자 손금불산입 — 개요 및 4가지 유형</h2>
+    <span class="ref">법 §28①</span>
+  </div>
+
+  <div class="intro i1">
+    <span class="icon">💡</span>
+    <p>
+      차입금 이자는 원칙적으로 <strong>손금</strong>입니다. 다만 법 §28은<br>
+      ① 조세회피 목적의 불분명 이자, ② 자산 취득 원가로 볼 이자,<br>
+      ③ 수익 창출과 무관한 자산·가지급금 관련 이자 — 4가지를 <strong>손금불산입</strong>합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h1"><span class="lc-no">법 §28①</span><span class="lc-ti">지급이자 손금불산입 4가지 유형</span></div>
+    <div class="lc-body">
+      <div class="cl n"><span class="cn n">1호</span><strong>채권자가 불분명한 사채</strong>의 이자 (시행령 §51)</div>
+      <div class="cl n"><span class="cn n">2호</span>채권·증권의 이자·할인액·차익 중 <strong>지급받은 자가 불분명한 것</strong> (시행령 §51②)</div>
+      <div class="cl n"><span class="cn n">3호</span><strong>건설자금에 충당한 차입금</strong>의 이자 (시행령 §52① — 자본적 지출)</div>
+      <div class="cl n"><span class="cn n">4호가</span><strong>업무무관 자산</strong>(법 §27①)을 취득·보유한 경우의 차입금 이자 (시행령 §53)</div>
+      <div class="cl n"><span class="cn n">4호나</span>특수관계인에게 <strong>업무무관 가지급금</strong>을 지급한 경우의 차입금 이자 (시행령 §53)</div>
+    </div>
+  </div>
+
+  <div class="sh3">4유형 한눈에 비교</div>
+  <div class="type-grid">
+    <div class="tc">
+      <div class="tc-hd" style="background:var(--rd);">
+        <span class="tn">1호</span><span class="tt">채권자 불분명 사채이자</span>
+      </div>
+      <div class="tc-body">
+        <div class="row"><span class="lbl" style="background:var(--rd);">성격</span><p>탈세·조세회피 방지</p></div>
+        <div class="row"><span class="lbl" style="background:var(--rd);">처리</span><p>전액 손금불산입<br><strong>→ 대표자 상여</strong></p></div>
+        <div class="row"><span class="lbl" style="background:var(--rd);">특징</span><p>소득처분 결과 원천세 부담<br>가장 강력한 제재</p></div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="tc-hd" style="background:var(--or);">
+        <span class="tn">2호</span><span class="tt">수령자 불분명 채권이자</span>
+      </div>
+      <div class="tc-body">
+        <div class="row"><span class="lbl" style="background:var(--or);">성격</span><p>비실명 채권이자 탈세 방지</p></div>
+        <div class="row"><span class="lbl" style="background:var(--or);">처리</span><p>전액 손금불산입<br><strong>→ 기타사외유출</strong></p></div>
+        <div class="row"><span class="lbl" style="background:var(--or);">특징</span><p>발행법인이 직접 지급 시<br>지급사실 불분명한 경우</p></div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="tc-hd" style="background:var(--gn);">
+        <span class="tn">3호</span><span class="tt">건설자금 이자</span>
+      </div>
+      <div class="tc-body">
+        <div class="row"><span class="lbl" style="background:var(--gn);">성격</span><p>자산 취득원가의 일부</p></div>
+        <div class="row"><span class="lbl" style="background:var(--gn);">처리</span><p>손금불산입 → <strong>자본적 지출</strong><br>(자산 원가 가산)</p></div>
+        <div class="row"><span class="lbl" style="background:var(--gn);">특징</span><p>준공 후 → 손금<br>임의 자본화 선택 가능</p></div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="tc-hd" style="background:var(--bl);">
+        <span class="tn">4호</span><span class="tt">업무무관 자산·가지급금</span>
+      </div>
+      <div class="tc-body">
+        <div class="row"><span class="lbl" style="background:var(--bl);">성격</span><p>비업무용 자산 보유 제재</p></div>
+        <div class="row"><span class="lbl" style="background:var(--bl);">처리</span><p>비율계산 후 손금불산입<br><strong>→ 기타사외유출</strong></p></div>
+        <div class="row"><span class="lbl" style="background:var(--bl);">특징</span><p>자산가액 적수 비율 계산<br>차입금 한도 있음</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 지급이자 손금불산입 원칙">
+    <p>
+      💰 회사가 은행에서 돈을 빌리면 이자를 냅니다 → 원칙: <span class="ok">손금(비용)!</span><br><br>
+      그런데 이런 경우는 달라요:<br>
+      🕵️ 누구한테 빌렸는지 모르는 이자 → <span class="bad">손금 불가!</span> (탈세 의심)<br>
+      🏗️ 건물 짓는 데 쓴 차입금 이자 → <span class="hl">건물 취득원가로 흡수!</span> (손금 아닌 자산)<br>
+      🏖️ 놀고 있는 자산(업무무관 부동산) 때문에 낸 이자 → <span class="bad">비율만큼 손금 불가!</span><br>
+      💼 사장한테 아무 이유 없이 빌려준 돈(가지급금) 관련 이자 → <span class="bad">비율만큼 손금 불가!</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════ CH2. 채권자 불분명 ══════════ -->
+<section class="chapter" id="ch2">
+  <div class="ch-hd">
+    <span class="ch-badge b5">Chapter 02</span>
+    <h2>채권자 불분명 사채이자 (1호) · 수령자 불분명 채권이자 (2호)</h2>
+    <span class="ref">법 §28①1·2호 · 시행령 §51</span>
+  </div>
+
+  <div class="intro i5">
+    <span class="icon">🔒</span>
+    <p>
+      조세를 회피하거나 탈루하기 위한 가공 차입금 이자에 대한 제재입니다.<br>
+      <strong>1호: 채권자 신원 불명</strong> → 가공 차입 의심 → 전액 손금불산입 + 대표자 상여<br>
+      <strong>2호: 비실명 채권이자</strong> → 지급사실 불분명 → 전액 손금불산입 + 기타사외유출
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h5"><span class="lc-no">시행령 §51①</span><span class="lc-ti">채권자 불분명 사채이자 — 3가지 해당 유형</span></div>
+    <div class="lc-body">
+      <div class="cl r"><span class="cn r">1호</span>채권자의 <strong>주소 및 성명을 확인할 수 없는</strong> 차입금의 이자</div>
+      <div class="cl r"><span class="cn r">2호</span>채권자의 <strong>능력 및 자산상태로 보아 금전을 대여한 것으로 인정할 수 없는</strong> 차입금의 이자</div>
+      <div class="cl r"><span class="cn r">3호</span>채권자와의 <strong>금전거래 사실 및 거래내용이 불분명한</strong> 차입금의 이자</div>
+      <div class="cl r"><span class="cn r">단서 (제외)</span>거래일 현재 <strong>주민등록표로 거주사실이 확인된 채권자</strong>가 차입금 변제 후 소재불명이 된 경우는 제외</div>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="r">구분</th><th class="r">1호 (채권자 불분명 사채)</th><th class="r">2호 (수령자 불분명 채권이자)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>대상</strong></td><td>사채 차입금 이자</td><td>채권·증권 이자·할인액·차익</td></tr>
+        <tr><td><strong>불분명 기준</strong></td><td>채권자 주소·성명·능력·거래사실</td><td>발행법인 직접 지급 시 지급사실</td></tr>
+        <tr><td><strong>처리</strong></td><td class="tba">전액 손금불산입</td><td class="tba">전액 손금불산입</td></tr>
+        <tr><td><strong>소득처분</strong></td><td class="tba"><strong>대표자 상여</strong></td><td class="tba"><strong>기타사외유출</strong></td></tr>
+        <tr><td><strong>원천세</strong></td><td class="tba">대표자 소득세 부담</td><td>없음</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pr">
+    ⚠️ <strong>1호 소득처분이 "대표자 상여"인 이유:</strong><br>
+    채권자가 불분명하다는 것은 실제로 그 이자가 <strong>법인의 대표자 등에게 귀속</strong>됐을 가능성이 높다고 보기 때문입니다.<br>
+    → 가공 차입금을 통한 이익 빼내기를 막는 제재 조항입니다.
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════ CH3. 건설자금 이자 ══════════ -->
+<section class="chapter" id="ch3">
+  <div class="ch-hd">
+    <span class="ch-badge b3">Chapter 03</span>
+    <h2>건설자금에 충당한 차입금의 이자 (3호) — 자본적 지출</h2>
+    <span class="ref">법 §28①③ · 시행령 §52</span>
+  </div>
+
+  <div class="intro i3">
+    <span class="icon">🏗️</span>
+    <p>
+      자산 건설에 직접 사용된 차입금 이자는 <strong>자산의 취득원가(자본적 지출)</strong>에 포함됩니다.<br>
+      이는 손금이 아니라 <strong>자산의 가액으로 처리</strong>되어 감가상각을 통해 장기간 비용화됩니다.<br>
+      준공 후 남은 차입금 이자와 일부 사용 분은 <strong>손금으로 인정</strong>됩니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h3"><span class="lc-no">시행령 §52</span><span class="lc-ti">건설자금 이자의 자본화 원칙</span></div>
+    <div class="lc-body">
+      <div class="cl g"><span class="cn g">① 정의</span>사업용 유형·무형자산의 <strong>매입·제작·건설</strong>에 소요되는 차입금(특정차입금)의 지급이자<br>자산 건설에 소요됐는지 여부가 불분명한 차입금은 제외</div>
+      <div class="cl g"><span class="cn g">② 원칙</span>특정차입금 지급이자 → <strong>준공일까지 자본적 지출로 원본에 가산</strong><br>단, 특정차입금 일시예금 수입이자 → 자본화 금액에서 차감</div>
+      <div class="cl g"><span class="cn g">③ 운영자금 전용</span>특정차입금 일부를 <strong>운영자금에 전용</strong>한 경우 → 그 부분 이자 <strong>손금</strong></div>
+      <div class="cl g"><span class="cn g">④ 연체이자</span>특정차입금 연체이자를 원본에 가산한 경우 → 가산액은 당기 자본적 지출<br>가산 후 그 금액에 대한 이자 → <strong>손금</strong></div>
+      <div class="cl g"><span class="cn g">⑤ 준공 후 잔액</span>건설 준공 후 남은 차입금 이자 → <strong>손금</strong></div>
+    </div>
+  </div>
+
+  <div class="sh3 g">자본적 지출 포함 vs 손금 — 결정 구조</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">상황</th><th class="g">처리</th><th class="g">근거</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>건설기간 중 특정차입금 이자</td>
+          <td class="thl"><strong>자본적 지출</strong> (자산 원가 가산)</td>
+          <td>시령 §52②</td>
+        </tr>
+        <tr>
+          <td>특정차입금 일시예금 수입이자</td>
+          <td class="tok">자본화 금액에서 <strong>차감</strong></td>
+          <td>시령 §52② 단서</td>
+        </tr>
+        <tr>
+          <td>특정차입금 → 운영자금 전용분 이자</td>
+          <td class="tok"><strong>손금</strong></td>
+          <td>시령 §52③</td>
+        </tr>
+        <tr>
+          <td>특정차입금 연체이자 (원본 가산 후)</td>
+          <td class="tok">원본 가산 후 이자 → <strong>손금</strong></td>
+          <td>시령 §52④</td>
+        </tr>
+        <tr>
+          <td>준공 후 잔여 특정차입금 이자</td>
+          <td class="tok"><strong>손금</strong></td>
+          <td>시령 §52⑤</td>
+        </tr>
+        <tr>
+          <td>일반차입금 (건설 관련 일부)<br>→ 임의 자본화 선택</td>
+          <td class="thl">법 §28② — <strong>임의로 자본화 가능</strong><br>(단, 필수 아님)</td>
+          <td>법 §28②, 시령 §52⑦</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sh3 g">특정차입금 vs 일반차입금 자본화 비교</div>
+  <div class="g2">
+    <div class="gc rd">
+      <div class="gct">🔴 특정차입금 (강제 자본화)</div>
+      <p><strong>의미:</strong> 해당 자산 건설에 직접 충당된 것이 확인되는 차입금<br><br>
+      <strong>처리:</strong> 준공일까지 지급이자 → <strong>반드시 자본화</strong> (손금불산입)<br><br>
+      <strong>예시:</strong> 공장 건설 위해 특별히 빌린 차입금</p>
+    </div>
+    <div class="gc or">
+      <div class="gct">🟠 일반차입금 (임의 자본화)</div>
+      <p><strong>의미:</strong> 특정 자산 건설과 직접 연결되지 않는 일반 차입금<br><br>
+      <strong>처리:</strong> 법 §28② — 법인이 <strong>선택적으로 자본화 가능</strong><br>시령 §52⑦ 산식으로 계산한 금액 한도<br><br>
+      <strong>예시:</strong> 운영자금 차입금 중 건설에 일부 사용</p>
+    </div>
+  </div>
+
+  <div class="sh3 g">준공일 판단 기준 (시행령 §52⑥)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="g">자산 종류</th><th class="g">준공일 기준</th></tr></thead>
+      <tbody>
+        <tr><td><strong>토지</strong></td><td>대금 청산일 (단, 청산 전 사업 사용 시 → 사용 개시일)</td></tr>
+        <tr><td><strong>건축물</strong></td><td>소득세법상 취득일 또는 실제 사용 개시일 중 <strong>빠른 날</strong></td></tr>
+        <tr><td><strong>기타 사업용 유형·무형자산</strong></td><td>사용 개시일</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="easy" data-label="👦 쉬운 설명 — 건설자금 이자">
+    <p>
+      🏭 공장을 짓기 위해 은행에서 100억을 빌렸어요.<br>
+      공사 기간 2년 동안 이자로 5억을 냈다면?<br><br>
+      → <span class="hl">5억은 이자비용(손금)이 아니라 공장 취득원가에 더해집니다!</span><br>
+      공장 가격 = 건설비 95억 + 이자 5억 = 100억으로 자산 등록<br>
+      → 이후 20년에 걸쳐 감가상각비로 비용화됩니다.<br><br>
+      공장 완공 후에도 이 100억 차입이 남아있다면?<br>
+      → <span class="ok">준공 후 남은 이자는 정상 손금!</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════ CH4. 업무무관 자산·가지급금 ══════════ -->
+<section class="chapter" id="ch4">
+  <div class="ch-hd">
+    <span class="ch-badge b4">Chapter 04</span>
+    <h2>업무무관 자산 및 가지급금 관련 이자 (4호) — 계산 방식</h2>
+    <span class="ref">법 §28①4호 · 시행령 §53</span>
+  </div>
+
+  <div class="intro i4">
+    <span class="icon">🏚️</span>
+    <p>
+      수익 창출과 무관한 자산을 보유하거나 특수관계인에게 업무 무관 자금을 빌려주면서<br>
+      차입금 이자를 손금에 산입하는 것은 불합리합니다.<br>
+      이 경우 <strong>자산가액 적수 / 총차입금 적수 비율</strong>로 계산한 이자를 손금불산입합니다.
+    </p>
+  </div>
+
+  <div class="sh3 o">손금불산입 대상 자산 2가지</div>
+  <div class="g2">
+    <div class="gc rd">
+      <div class="gct">4호가 — 업무무관 자산</div>
+      <ul>
+        <li>법인 업무에 직접 사용하지 않는 부동산 (유예기간 경과 후)</li>
+        <li>업무무관 서화·골동품 (공개 전시 제외)</li>
+        <li>업무무관 자동차·선박·항공기</li>
+        <li>기타 업무에 직접 사용하지 않는 동산</li>
+      </ul>
+    </div>
+    <div class="gc or">
+      <div class="gct">4호나 — 업무무관 가지급금</div>
+      <ul>
+        <li>특수관계인에게 지급한 업무무관 가지급금</li>
+        <li>명칭 불문 업무 관련 없는 자금 대여액</li>
+        <li>금융회사: 주된 수익사업으로 볼 수 없는 대여액</li>
+        <li>단, 시행규칙 §28 ·§44에서 정한 금액은 제외</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sh3 o">손금불산입 계산 공식 (시행령 §53②)</div>
+  <div class="fbox o">
+    <div class="fm">
+      손금불산입 이자 = 지급이자 × (업무무관 자산가액 적수 + 가지급금 적수) / 총차입금 적수
+    </div>
+    <div class="fn">단, 차입금 중 해당 자산가액에 상당하는 금액의 이자를 한도로 함 (법 §28①4호 괄호)</div>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h4"><span class="lc-no">시행령 §53②③</span><span class="lc-ti">계산 방식 상세</span></div>
+    <div class="lc-body">
+      <div class="cl o"><span class="cn o">②</span>산식: <strong>지급이자 × (업무무관 자산가액 적수 + 가지급금 적수) ÷ 총차입금 적수</strong></div>
+      <div class="cl o"><span class="cn o">③ 적수 계산</span>총차입금 및 자산가액 합계액은 <strong>적수(積數, 잔액 × 일수)</strong>로 계산<br>
+        동일인에 대한 가지급금과 가수금 함께 있으면 → <strong>상계</strong> (단, 각각 약정이 있어 상계 불가하면 제외, 시규 §28②)<br>
+        업무무관 자산 가액 = <strong>취득가액</strong> (시가초과액 포함)</div>
+      <div class="cl o"><span class="cn o">④ 차입금 제외</span>금융회사의 한국은행·국가·지자체·기금으로부터의 차입금 제외<br>
+        외화차입금, 예금계좌 자금, 기업구매자금대출 제외</div>
+    </div>
+  </div>
+
+  <div class="sh3 o">계산 사례</div>
+  <div class="easy" data-label="📖 계산 사례 — 업무무관 자산·가지급금 이자 불산입">
+    <p>
+      A법인 (당해 사업연도 365일)<br>
+      연간 지급이자: 1,200만 원<br>
+      총차입금 적수: 100억 × 365일 = 3,650억<br>
+      업무무관 부동산 적수: 20억 × 365일 = 730억<br>
+      업무무관 가지급금 적수: 10억 × 365일 = 365억<br><br>
+      <span class="bl">손금불산입 이자 계산:</span><br>
+      = 1,200만 × (730억 + 365억) / 3,650억<br>
+      = 1,200만 × 1,095 / 3,650<br>
+      = 1,200만 × <span class="hl">30%</span><br>
+      = <span class="bad">360만 원 손금불산입</span> → 기타사외유출<br><br>
+      한도 확인: 차입금 중 (20억 + 10억 = 30억) 해당 이자 = 1,200만 × 30억/100억 = 360만 원 → 한도 이내
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════ CH5. 업무무관 가지급금 포함·제외 ══════════ -->
+<section class="chapter" id="ch5">
+  <div class="ch-hd">
+    <span class="ch-badge b6">Chapter 05</span>
+    <h2>업무무관 가지급금 — 포함되는 것과 제외되는 것</h2>
+    <span class="ref">시행령 §53① · 시행규칙 §28·§44</span>
+  </div>
+
+  <div class="intro i6">
+    <span class="icon">💰</span>
+    <p>
+      업무무관 가지급금은 <strong>"명칭을 불문하고 업무와 관련 없는 특수관계인에 대한 자금 대여액"</strong>입니다.<br>
+      그러나 아래 8가지 항목은 <strong>업무무관 가지급금에서 제외</strong>되어 손금불산입 대상이 아닙니다.<br>
+      (시행규칙 §28① → §44 각호 준용)
+    </p>
+  </div>
+
+  <div class="sh3 p">업무무관 가지급금에 포함되는 것</div>
+  <div class="lc">
+    <div class="lc-hd h6"><span class="lc-no">시행령 §53①</span><span class="lc-ti">업무무관 가지급금 — 포함 범위</span></div>
+    <div class="lc-body">
+      <div class="cl p"><span class="cn p">원칙</span>명칭 여하에 불구하고 <strong>해당 법인의 업무와 관련이 없는 자금 대여액</strong><br>
+        특수관계인에 대한 것이어야 함 (법 §28①4호나)</div>
+      <div class="cl p"><span class="cn p">포함 예시</span>
+        • 특수관계인(주주·임원·친족 등) 개인 용도 대여금<br>
+        • 특수관계 법인에 무상 또는 저리 대여<br>
+        • 업무와 무관한 부동산 취득 목적 대여<br>
+        • 기타 사업 목적 없는 자금 대여 전반
+      </div>
+      <div class="cl p"><span class="cn p">금융회사 특칙</span>금융회사 등: 주된 수익사업으로 볼 수 없는 자금 대여액도 포함</div>
+    </div>
+  </div>
+
+  <div class="sh3 p">업무무관 가지급금에서 제외되는 것 (시행규칙 §44 8가지)</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="p">호</th><th class="p">제외 항목</th><th class="p">제외 기간</th><th class="p">이유</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>1호</strong></td>
+          <td>미지급소득(의제 배당·상여)에 대한 소득세를 법인이 납부하고 가지급금으로 계상한 금액</td>
+          <td>해당 소득 실제 지급 시까지</td>
+          <td>세금 납부 목적 — 업무 관련</td>
+        </tr>
+        <tr>
+          <td><strong>2호</strong></td>
+          <td>국외투자법인 파견자의 여비·급료 등을 대신 부담하고 가지급금으로 계상한 금액</td>
+          <td>실제 환부받을 때까지</td>
+          <td>해외 사업 목적 비용 — 업무 관련</td>
+        </tr>
+        <tr>
+          <td><strong>3호</strong></td>
+          <td>우리사주조합 또는 조합원에게 주식취득에 소요되는 자금 대여</td>
+          <td>상환 시까지</td>
+          <td>근로복지기본법상 제도 지원</td>
+        </tr>
+        <tr>
+          <td><strong>4호</strong></td>
+          <td>국민연금법에 따른 퇴직금전환금</td>
+          <td>퇴직 시까지</td>
+          <td>법령상 의무 납부</td>
+        </tr>
+        <tr>
+          <td><strong>5호</strong></td>
+          <td>대표자 상여처분 소득세를 법인이 납부하고 가지급금 계상한 금액</td>
+          <td>특수관계 소멸 시까지</td>
+          <td>세금 대납 — 추후 회수 전제</td>
+        </tr>
+        <tr>
+          <td><strong>6호</strong></td>
+          <td>직원에 대한 월정급여 범위 내 <strong>일시적 급료 가불금</strong></td>
+          <td>해당 기간</td>
+          <td>통상적 인사 관리</td>
+        </tr>
+        <tr>
+          <td><strong>7호</strong></td>
+          <td>직원에 대한 <strong>경조사비 또는 학자금(자녀 포함) 대여액</strong></td>
+          <td>해당 기간</td>
+          <td>복리후생 목적</td>
+        </tr>
+        <tr>
+          <td><strong>7의2호</strong></td>
+          <td>중소기업 근무 직원(지배주주등 직원 제외)에 대한 <strong>주택구입·전세자금 대여</strong></td>
+          <td>해당 기간</td>
+          <td>중소기업 근로자 주거 지원</td>
+        </tr>
+        <tr>
+          <td><strong>8호</strong></td>
+          <td>한국자산관리공사 전액 출자 설립 법인에 대여한 금액</td>
+          <td>해당 기간</td>
+          <td>정책 목적</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sh3 p">포함 vs 제외 핵심 비교</div>
+  <div class="g2">
+    <div class="gc rd">
+      <div class="gct">❌ 업무무관 가지급금 (포함)</div>
+      <ul>
+        <li>특수관계 주주에게 사업 무관 대여금</li>
+        <li>임원 개인 부동산 구입 자금 대여</li>
+        <li>지배주주 친족에게 사업과 무관한 자금 대여</li>
+        <li>특수관계 법인 운영자금 지원 (무상·저리)</li>
+        <li>중소기업 직원이 아닌 대기업 직원 주택자금</li>
+        <li><strong>지배주주등인 직원</strong>의 주택구입 자금</li>
+      </ul>
+    </div>
+    <div class="gc gn">
+      <div class="gct">✅ 업무무관 가지급금 제외 (손금불산입 대상 아님)</div>
+      <ul>
+        <li>미지급 소득세 대납 가지급금</li>
+        <li>해외 파견 직원 비용 대납</li>
+        <li>우리사주조합 주식취득 자금</li>
+        <li>직원 급료 가불금 (월정 범위 내)</li>
+        <li>직원 경조사비·학자금 대여</li>
+        <li>중소기업 <strong>일반 직원</strong> 주택구입·전세자금</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="memo" data-label="🧠 핵심 암기 — 가지급금 제외 8가지">
+    <p>
+      <strong>"미 해 우 퇴 대 가 경 주"</strong><br>
+      <span class="hl">미</span>지급소득 세금 / <span class="hl">해</span>외파견 비용 / <span class="hl">우</span>리사주 자금 / <span class="hl">퇴</span>직금전환금 / <span class="hl">대</span>표자 상여 세금 / <span class="hl">가</span>불금(월정) / <span class="hl">경</span>조사·학자금 / 중소 <span class="hl">주</span>택자금<br><br>
+      <strong>단, 주의:</strong><br>
+      주택자금은 <span class="ok">중소기업 + 지배주주등 아닌 직원</span>만 제외<br>
+      <span class="bad">대기업 직원, 지배주주등인 직원 → 제외 안 됨!</span>
+    </p>
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════ CH6. 계산식 & 적용순위 ══════════ -->
+<section class="chapter" id="ch6">
+  <div class="ch-hd">
+    <span class="ch-badge b7">Chapter 06</span>
+    <h2>계산식 상세 및 중복 적용 순위</h2>
+    <span class="ref">법 §28③ · 시행령 §55</span>
+  </div>
+
+  <div class="intro i7">
+    <span class="icon">📐</span>
+    <p>
+      여러 호의 손금불산입 규정이 동시에 적용될 때는 <strong>정해진 적용 순위</strong>에 따릅니다.<br>
+      1호 → 2호 → 3호(건설자금) → 4호(업무무관) 순으로 먼저 적용하고,<br>
+      이미 불산입된 이자는 다음 호 계산에서 제외합니다.
+    </p>
+  </div>
+
+  <div class="lc">
+    <div class="lc-hd h7"><span class="lc-no">시행령 §55</span><span class="lc-ti">지급이자 손금불산입 적용순위</span></div>
+    <div class="lc-body">
+      <div class="cl t"><span class="cn t">1순위</span>법 §28①<strong>1호</strong>: 채권자 불분명 사채이자</div>
+      <div class="cl t"><span class="cn t">2순위</span>법 §28①<strong>2호</strong>: 수령자 불분명 채권·증권 이자</div>
+      <div class="cl t"><span class="cn t">3순위</span>법 §28①<strong>3호</strong>: 건설자금에 충당한 차입금 이자</div>
+      <div class="cl t"><span class="cn t">4순위</span>시행령 §53②: 업무무관 자산·가지급금 관련 이자 (4호 가·나)</div>
+    </div>
+  </div>
+
+  <div class="sh3 t">중복 적용 시 계산 방법</div>
+  <div class="fbox t">
+    <div class="fm">4호 적용 시 지급이자 = 총 지급이자 − (1호 + 2호 + 3호 불산입액)</div>
+    <div class="fn">먼저 적용된 금액을 차감한 잔여 지급이자에 대해 비율 계산 적용</div>
+  </div>
+
+  <div class="sh3 t">4유형 손금불산입 세무조정 및 소득처분</div>
+  <div class="tw">
+    <table>
+      <thead><tr><th class="t">유형</th><th class="t">세무조정</th><th class="t">소득처분</th><th class="t">특이사항</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1호 (채권자 불분명)</strong></td><td class="tba">손금불산입</td><td class="tba"><strong>대표자 상여</strong></td><td>원천세 부담 발생</td></tr>
+        <tr><td><strong>2호 (수령자 불분명)</strong></td><td class="tba">손금불산입</td><td class="tba"><strong>기타사외유출</strong></td><td>—</td></tr>
+        <tr><td><strong>3호 (건설자금)</strong></td><td class="thl">손금불산입 → 자본 가산</td><td class="thl"><strong>유보</strong></td><td>자산 취득원가 증가<br>감가상각으로 비용화</td></tr>
+        <tr><td><strong>4호 (업무무관)</strong></td><td class="tba">손금불산입</td><td class="tba"><strong>기타사외유출</strong></td><td>비율 계산 필요</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel pt">
+    🔑 <strong>3호(건설자금)의 소득처분이 "유보"인 이유:</strong><br>
+    이자가 자산의 취득원가에 가산되므로 법인 내부 자산이 증가한 것입니다.<br>
+    → 사외 유출이 아니라 자산 조정 → <strong>유보(△유보)</strong> 처리<br>
+    → 나중에 감가상각비 인정 시 유보 추인
+  </div>
+</section>
+
+<hr class="dv">
+
+<!-- ══════════ CH7. 손금 vs 불산입 종합 비교 ══════════ -->
+<section class="chapter" id="ch7">
+  <div class="ch-hd">
+    <span class="ch-badge b8">Chapter 07</span>
+    <h2>지급이자 손금 vs 손금불산입 — 종합 비교</h2>
+    <span class="ref">법 §28 종합</span>
+  </div>
+
+  <div class="sh3">지급이자 유형별 손금 여부 완전 정리표</div>
+  <div class="vs-wrap">
+    <div class="vs-head">
+      <div>지급이자 유형</div>
+      <div style="background:#156638;">✅ 손금 인정</div>
+      <div style="background:#9e1828;">❌ 손금불산입</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>일반 업무용 차입금 이자</strong></div>
+      <div class="vs-cell tok">전액 손금 (원칙)</div>
+      <div class="vs-cell">—</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>채권자 불분명 사채이자</strong></div>
+      <div class="vs-cell">—</div>
+      <div class="vs-cell tba">전액 손금불산입<br>→ 대표자 상여</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>수령자 불분명 채권이자</strong></div>
+      <div class="vs-cell">—</div>
+      <div class="vs-cell tba">전액 손금불산입<br>→ 기타사외유출</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>건설자금 이자 (준공 전)</strong></div>
+      <div class="vs-cell">—</div>
+      <div class="vs-cell thl">손금불산입 → <strong>자본화</strong> (유보)<br>감가상각으로 비용화</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>건설자금 이자 (준공 후)</strong></div>
+      <div class="vs-cell tok">손금</div>
+      <div class="vs-cell">—</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>특정차입금 → 운영자금 전용분</strong></div>
+      <div class="vs-cell tok">손금</div>
+      <div class="vs-cell">—</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>일반차입금 건설 관련분 (임의 자본화)</strong></div>
+      <div class="vs-cell">선택적 손금 또는 자본화 가능</div>
+      <div class="vs-cell thl">자본화 선택 시 손금불산입</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>업무무관 자산 보유 관련 이자</strong></div>
+      <div class="vs-cell tok">비율 계산 후 나머지 → 손금</div>
+      <div class="vs-cell tba">비율 계산 금액 → 손금불산입<br>→ 기타사외유출</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>업무무관 가지급금 관련 이자</strong></div>
+      <div class="vs-cell tok">비율 계산 후 나머지 → 손금</div>
+      <div class="vs-cell tba">비율 계산 금액 → 손금불산입<br>→ 기타사외유출</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-cell"><strong>시규§44 제외 가지급금 관련</strong></td>
+      <div class="vs-cell tok">가지급금 제외 → 손금</div>
+      <div class="vs-cell">—</div>
+    </div>
+  </div>
+
+  <div class="sh3">자본적 지출 포함 이자 vs 손금 이자 — 핵심 구분</div>
+  <div class="g2">
+    <div class="gc rd">
+      <div class="gct">🔴 손금불산입 (사외유출·유보)</div>
+      <p>
+        <strong>1·2호:</strong> 채권자·수령자 불분명 → 즉시 손금불산입 → 대표자 상여/기타사외유출<br><br>
+        <strong>3호:</strong> 건설자금 이자 (준공 전) → 손금불산입 → <strong>유보</strong> (자산 원가 증가)<br><br>
+        <strong>4호:</strong> 업무무관 비율 계산분 → 손금불산입 → 기타사외유출
+      </p>
+    </div>
+    <div class="gc gn">
+      <div class="gct">✅ 손금 인정</div>
+      <p>
+        <strong>일반 차입금 이자</strong> → 전액 손금 (원칙)<br><br>
+        <strong>3호 특정차입금이지만:</strong><br>
+        • 준공 후 잔여 차입금 이자 → 손금<br>
+        • 운영자금 전용분 이자 → 손금<br>
+        • 연체이자 원본 가산 후 이자 → 손금<br><br>
+        <strong>4호 제외 가지급금</strong> (시규§44 8가지) → 손금
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="summary" id="sum">
+  <h3>🏆 지급이자 손금불산입 핵심 총정리</h3>
+  <div class="sg">
+    <div class="sc">
+      <div class="st">🔒 1호 채권자 불분명</div>
+      <p>주소·성명 불확인 / 능력 불충분 / 거래사실 불분명<br>
+      전액 손금불산입 → <strong>대표자 상여</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🔒 2호 수령자 불분명</div>
+      <p>채권·증권 이자·할인액 중<br>발행법인 직접 지급 시 사실 불분명<br>
+      전액 손금불산입 → <strong>기타사외유출</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🏗️ 3호 건설자금</div>
+      <p>준공 전: <strong>자본화</strong> → 유보<br>
+      준공 후 / 운영전용 / 연체 후 이자: <strong>손금</strong><br>
+      일반차입금: 임의 자본화 가능</p>
+    </div>
+    <div class="sc">
+      <div class="st">🏚️ 4호 업무무관 계산</div>
+      <p><strong>지급이자 × (무관자산 + 가지급금) 적수 / 총차입금 적수</strong><br>
+      → 기타사외유출<br>
+      자산가액 이자 상당액이 한도</p>
+    </div>
+    <div class="sc">
+      <div class="st">💰 가지급금 제외 8가지</div>
+      <p>"미해우퇴대가경주"<br>
+      미지급세금·해외파견·우리사주·퇴직전환금·대표자세금·가불금·경조학자금·중소주택<br>
+      <strong>지배주주등 직원 주택자금은 포함!</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">🔢 적용순위</div>
+      <p>1호 → 2호 → 3호 → 4호<br>
+      앞 순위 불산입액 제외 후<br>다음 순위 계산</p>
+    </div>
+    <div class="sc">
+      <div class="st">📊 소득처분 구분</div>
+      <p>1호: <strong>대표자 상여</strong><br>
+      2호: <strong>기타사외유출</strong><br>
+      3호: <strong>유보</strong> (자산 원가)<br>
+      4호: <strong>기타사외유출</strong></p>
+    </div>
+    <div class="sc">
+      <div class="st">⚠️ 핵심 차이</div>
+      <p>3호만 → 자본화 → <strong>유보</strong><br>
+      1·2·4호 → 비용 → <strong>사외유출</strong><br>
+      건설자금 이자 ≠ 즉시 비용 (자산 원가)</p>
+    </div>
+  </div>
+  <p class="note">법인세법 §28 · 시행령 §51~§55 · 시행규칙 §28·§44 | 시행 2026.01.02<br>본 자료는 학습 목적 해설이며 실제 세무 판단은 전문가에게 문의하세요.</p>
+</section>
+
+</div>
+<footer>법 §28 · 시령 §51~§55 · 시규 §28·§44 | 시행 2026.01.02</footer>
+</body>
+</html>
