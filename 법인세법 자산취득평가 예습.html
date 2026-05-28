@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 자산의 취득과 평가</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface-2: #F4F6F8;
+    --border: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --text-primary: #1A202C;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+    --accent-blue: #2B6CB0;
+    --accent-blue-light: #EBF4FF;
+    --accent-blue-mid: #BEE3F8;
+    --accent-teal: #2C7A7B;
+    --accent-teal-light: #E6FFFA;
+    --accent-teal-mid: #B2F5EA;
+    --accent-orange: #C05621;
+    --accent-orange-light: #FFFAF0;
+    --accent-orange-mid: #FBD38D;
+    --accent-red: #C53030;
+    --accent-red-light: #FFF5F5;
+    --accent-red-mid: #FEB2B2;
+    --accent-green: #276749;
+    --accent-green-light: #F0FFF4;
+    --accent-green-mid: #9AE6B4;
+    --accent-purple: #553C9A;
+    --accent-purple-light: #FAF5FF;
+    --accent-purple-mid: #D6BCFA;
+    --tag-1차: #2B6CB0;
+    --tag-2차: #553C9A;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.8;
+    padding: 40px 20px 80px;
+  }
+
+  /* ── WRAPPER ── */
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .doc-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent-blue);
+    border-radius: 12px;
+    padding: 40px 48px 36px;
+    margin-bottom: 36px;
+  }
+  .doc-header .subject-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    background: var(--accent-blue-light);
+    border: 1px solid var(--accent-blue-mid);
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+  .doc-header h1 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .doc-header .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .doc-header .subtitle span::before {
+    content: '▸ ';
+    color: var(--accent-blue);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 32px;
+    margin-bottom: 36px;
+  }
+  .toc-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+    padding-left: 20px;
+  }
+  .toc li {
+    font-size: 13.5px;
+    color: var(--accent-blue);
+    cursor: default;
+    padding: 2px 0;
+  }
+  .toc li:hover { text-decoration: underline; }
+  @media (max-width: 600px) { .toc ol { grid-template-columns: 1fr; } }
+
+  /* ── SECTION ── */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 20px 32px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent-blue);
+    border-radius: 4px;
+    padding: 2px 8px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .section-body {
+    padding: 28px 32px;
+  }
+
+  /* ── SUBSECTION ── */
+  .subsec {
+    margin-bottom: 32px;
+  }
+  .subsec:last-child { margin-bottom: 0; }
+  .subsec-title {
+    font-family: var(--serif);
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent-blue-mid);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ── LAW BOX ── */
+  .law-box {
+    background: var(--accent-blue-light);
+    border: 1px solid var(--accent-blue-mid);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .law-box .law-ref {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── TABLE ── */
+  .t-wrap {
+    overflow-x: auto;
+    margin: 14px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  thead th {
+    background: var(--surface-2);
+    font-weight: 700;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--border-strong);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) td { background: var(--surface-2); }
+  .td-key {
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+  .td-code {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent-blue);
+    white-space: nowrap;
+  }
+
+  /* ── EXAM POINT BOX ── */
+  .exam-box {
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    line-height: 1.8;
+  }
+  .exam-box.red {
+    background: var(--accent-red-light);
+    border: 1px solid var(--accent-red-mid);
+    border-left: 4px solid var(--accent-red);
+  }
+  .exam-box.orange {
+    background: var(--accent-orange-light);
+    border: 1px solid var(--accent-orange-mid);
+    border-left: 4px solid var(--accent-orange);
+  }
+  .exam-box.green {
+    background: var(--accent-green-light);
+    border: 1px solid var(--accent-green-mid);
+    border-left: 4px solid var(--accent-green);
+  }
+  .exam-box.purple {
+    background: var(--accent-purple-light);
+    border: 1px solid var(--accent-purple-mid);
+    border-left: 4px solid var(--accent-purple);
+  }
+  .exam-box.teal {
+    background: var(--accent-teal-light);
+    border: 1px solid var(--accent-teal-mid);
+    border-left: 4px solid var(--accent-teal);
+  }
+  .exam-box-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .exam-box.red .exam-box-title { color: var(--accent-red); }
+  .exam-box.orange .exam-box-title { color: var(--accent-orange); }
+  .exam-box.green .exam-box-title { color: var(--accent-green); }
+  .exam-box.purple .exam-box-title { color: var(--accent-purple); }
+  .exam-box.teal .exam-box-title { color: var(--accent-teal); }
+
+  /* ── ANALOGY ── */
+  .analogy {
+    background: #FFFBEB;
+    border: 1px solid #F6E05E;
+    border-left: 4px solid #D69E2E;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    line-height: 1.75;
+  }
+  .analogy-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #B7791F;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  /* ── FORMULA ── */
+  .formula {
+    background: #1A202C;
+    color: #E2E8F0;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.8;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    overflow-x: auto;
+  }
+  .formula .comment { color: #718096; }
+  .formula .key { color: #68D391; }
+  .formula .val { color: #FBD38D; }
+  .formula .op { color: #FC8181; }
+
+  /* ── TAGS ── */
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+    letter-spacing: 0.05em;
+  }
+  .tag-1차 { background: var(--accent-blue-light); color: var(--tag-1차); border: 1px solid var(--accent-blue-mid); }
+  .tag-주의 { background: var(--accent-red-light); color: var(--accent-red); border: 1px solid var(--accent-red-mid); }
+  .tag-계산 { background: var(--accent-green-light); color: var(--accent-green); border: 1px solid var(--accent-green-mid); }
+  .tag-신고 { background: var(--accent-orange-light); color: var(--accent-orange); border: 1px solid var(--accent-orange-mid); }
+
+  /* ── BULLET LIST ── */
+  ul.dot {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+  ul.dot li::before {
+    content: '·';
+    font-size: 18px;
+    color: var(--accent-blue);
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  ul.check {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+  ul.check li::before {
+    content: '✓';
+    color: var(--accent-green);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  ul.x-list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+  ul.x-list li::before {
+    content: '✕';
+    color: var(--accent-red);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  /* ── DIVIDER ── */
+  hr.sec { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+  /* ── GRID ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 14px 0;
+  }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    line-height: 1.75;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    margin-top: 40px;
+    padding: 20px 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── MISC ── */
+  strong { color: var(--text-primary); font-weight: 700; }
+  em { color: var(--accent-orange); font-style: normal; font-weight: 600; }
+  .red-text { color: var(--accent-red); font-weight: 700; }
+  .blue-text { color: var(--accent-blue); font-weight: 700; }
+  .muted { color: var(--text-muted); font-size: 13px; }
+  p { margin-bottom: 10px; }
+  p:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ── HEADER ── -->
+<div class="doc-header">
+  <div class="subject-tag">세법학 · 법인세법</div>
+  <h1>자산의 취득과 평가</h1>
+  <div class="subtitle">
+    <span>세무사 1차 객관식 대비</span>
+    <span>법인세법 제41·42조 / 시행령 제72·73·74·75·76조</span>
+    <span>시행일: 2026-01-02</span>
+  </div>
+</div>
+
+<!-- ── TOC ── -->
+<div class="toc">
+  <div class="toc-title">📋 목차</div>
+  <ol>
+    <li>자산 취득가액 — 원칙 (법 §41)</li>
+    <li>자산 취득가액 — 각 취득유형별 세부 (령 §72)</li>
+    <li>취득가액 가산·불산입 특례</li>
+    <li>자산·부채 평가 원칙 (법 §42)</li>
+    <li>평가 대상 자산의 범위 (령 §73)</li>
+    <li>재고자산 평가 (령 §74)</li>
+    <li>유가증권 평가 (령 §75)</li>
+    <li>외화자산·부채 평가 (령 §76)</li>
+    <li>핵심 비교 총정리표</li>
+    <li>출제 포인트 & 오답 함정</li>
+  </ol>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 1 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>자산 취득가액의 원칙</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="analogy">
+      <div class="analogy-title">🍭 초등학생 비유</div>
+      우리 집에 새 장난감이 생겼을 때 '이 장난감은 얼마짜리야?' 하고 기록하는 것이 <strong>취득가액</strong>입니다.<br>
+      직접 돈 주고 산 것, 내가 만든 것, 선물 받은 것 — 방법마다 금액을 기록하는 기준이 달라요!
+    </div>
+
+    <div class="law-box">
+      <span class="law-ref">법인세법 제41조 제1항 (2026.01.02 시행)</span>
+      내국법인이 매입·제작·교환 및 증여 등에 의하여 취득한 자산의 취득가액은 다음 각 호의 구분에 따른 금액으로 한다.
+    </div>
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>취득 유형</th>
+            <th>취득가액 원칙</th>
+            <th>근거</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-key">① 타인으로부터 매입</td>
+            <td><strong>매입가액 + 부대비용</strong><br><span class="muted">(단기매매금융자산 제외)</span></td>
+            <td class="td-code">법 §41①1</td>
+          </tr>
+          <tr>
+            <td class="td-key">② 자기가 제조·생산·건설</td>
+            <td><strong>제작원가 + 부대비용</strong></td>
+            <td class="td-code">법 §41①2</td>
+          </tr>
+          <tr>
+            <td class="td-key">③ 그 밖의 취득<br><span class="muted">(교환·증여·합병 등)</span></td>
+            <td><strong>취득 당시 대통령령으로 정하는 금액</strong></td>
+            <td class="td-code">법 §41①3</td>
+          </tr>
+          <tr>
+            <td class="td-key">④ 외국자회사 인수 주식등</td>
+            <td><strong>매입가액 − 익금불산입된 수입배당금액</strong></td>
+            <td class="td-code">법 §41①1의2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-box red">
+      <div class="exam-box-title">🚨 출제 포인트</div>
+      <strong>"매입가액"과 "부대비용"</strong>의 구분이 자주 출제됩니다.<br>
+      부대비용 예시(령 §72②1): 취득세(농어촌특별세·지방교육세 포함), 등록면허세, 그 밖의 부대비용<br>
+      ⚠ <em>단기매매금융자산(기업회계기준상 단기매매항목으로 분류된 것)은 매입가액만 취득가액으로 함</em> — 부대비용 가산 규정 적용 배제!
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 2 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>취득유형별 세부 취득가액 (시행령 §72)</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:25%">취득 방법</th>
+            <th>취득가액</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-key">타인으로부터 매입</td>
+            <td>매입가액 + 취득세(농특세·지방교육세 포함) + 등록면허세 + 부대비용<br>
+              <span class="muted">토지·건물 일괄 취득 시 → 시가 비례 안분</span></td>
+            <td class="td-code">령 §72②1</td>
+          </tr>
+          <tr>
+            <td class="td-key">자가 제조·생산·건설</td>
+            <td>원재료비 + 노무비 + 운임 + 하역비 + 보험료 + 수수료 + 공과금(취득세·등록세 포함) + 설치비 + 기타 부대비용</td>
+            <td class="td-code">령 §72②2</td>
+          </tr>
+          <tr>
+            <td class="td-key">적격합병·적격분할로 취득</td>
+            <td><strong>장부가액</strong></td>
+            <td class="td-code">령 §72②3가</td>
+          </tr>
+          <tr>
+            <td class="td-key">비적격합병·비적격분할로 취득</td>
+            <td><strong>시가</strong></td>
+            <td class="td-code">령 §72②3나</td>
+          </tr>
+          <tr>
+            <td class="td-key">물적분할 → 분할법인이 취득하는 주식</td>
+            <td><strong>물적분할한 순자산의 시가</strong></td>
+            <td class="td-code">령 §72②3의2</td>
+          </tr>
+          <tr>
+            <td class="td-key">채무의 출자전환으로 취득한 주식</td>
+            <td>취득 당시 <strong>시가</strong><br>
+              <span class="muted">단, 적격 요건 충족 시 출자전환 채권의 장부가액</span></td>
+            <td class="td-code">령 §72②4의2</td>
+          </tr>
+          <tr>
+            <td class="td-key">단기매매금융자산 (단기금융자산등)</td>
+            <td><strong>매입가액만</strong> (부대비용 가산 없음)</td>
+            <td class="td-code">령 §72②5의2</td>
+          </tr>
+          <tr>
+            <td class="td-key">정부로부터 무상 할당 배출권</td>
+            <td><strong>영(0)원</strong></td>
+            <td class="td-code">령 §72②6·7</td>
+          </tr>
+          <tr>
+            <td class="td-key">그 밖의 방법으로 취득</td>
+            <td><strong>취득 당시 시가</strong></td>
+            <td class="td-code">령 §72②8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-box orange">
+      <div class="exam-box-title">⚡ 적격 vs 비적격 핵심 비교</div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="color:var(--accent-green)">✓ 적격합병·적격분할</div>
+          취득가액 = <strong>장부가액</strong><br>
+          <span class="muted">과세이연 → 미래에 과세</span>
+        </div>
+        <div class="card">
+          <div class="card-title" style="color:var(--accent-red)">✕ 비적격합병·비적격분할</div>
+          취득가액 = <strong>시가</strong><br>
+          <span class="muted">당장 과세 → 현재 시가로 정산</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 3 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>취득가액 가산·불산입 특례 (시행령 §72③④⑤)</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="grid-2">
+      <div>
+        <div class="subsec-title">가산하는 금액 (§72③)</div>
+        <ul class="check">
+          <li>익금산입된 금액 (수입배당금 등)</li>
+          <li>손금불산입된 지급이자 (§28①3·§28②)</li>
+          <li>유형자산 취득 시 국·공채 매입가액 - 현재가치 차액 (기업회계기준 따른 계상분)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="subsec-title">포함하지 않는 금액 (§72④)</div>
+        <ul class="x-list">
+          <li>장기할부 취득 시 현재가치할인차금</li>
+          <li>연지급수입에서 지급이자로 구분 계상한 금액</li>
+          <li>부당행위계산부인상 시가초과액 (§88①1·8나)</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="sec">
+
+    <div class="subsec-title">취득 후 사후 변동 (§72⑤)</div>
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>사유</th><th>취득가액 조정</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>의제배당(법 §18⑧) 수령</td>
+            <td>해당 금액만큼 <strong>차감</strong> (장부가액 한도)</td>
+          </tr>
+          <tr>
+            <td>법 §42에 의한 평가</td>
+            <td><strong>평가액</strong>으로 수정</td>
+          </tr>
+          <tr>
+            <td>자본적 지출</td>
+            <td>해당 금액 <strong>가산</strong></td>
+          </tr>
+          <tr>
+            <td>합병·분할합병으로 받은 합병이익</td>
+            <td>해당 이익 <strong>가산</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-box teal">
+      <div class="exam-box-title">📐 계산 예제 — 토지·건물 일괄 취득 시 안분</div>
+      <div class="formula">
+<span class="comment">// 토지 시가 6억, 건물 시가 4억, 일괄 취득가액 8억</span>
+<span class="key">토지 취득가액</span> <span class="op">=</span> 8억 × 6/10 <span class="op">=</span> <span class="val">4억 8천만 원</span>
+<span class="key">건물 취득가액</span> <span class="op">=</span> 8억 × 4/10 <span class="op">=</span> <span class="val">3억 2천만 원</span>
+<span class="comment">// 시가 비례 안분 → 령 §72②1</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 4 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2>자산·부채 평가 원칙 (법 §42)</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="analogy">
+      <div class="analogy-title">🍭 초등학생 비유</div>
+      회사가 갖고 있는 물건 가격을 장부에서 올리거나 내리면, 세금이 달라질 수 있어요.<br>
+      그래서 세법은 원칙적으로 <strong>"평가손익을 없던 일로!"</strong>라고 합니다 — 평가 전 가액으로 되돌리는 거예요.<br>
+      단, 예외적으로 인정되는 평가가 있으니, 그 예외가 바로 시험의 핵심입니다!
+    </div>
+
+    <div class="law-box">
+      <span class="law-ref">법인세법 제42조 제1항 (원칙)</span>
+      내국법인이 보유하는 자산과 부채의 장부가액을 증액 또는 감액한 경우, <strong>평가 전의 가액</strong>으로 한다.<br>
+      (감가상각은 이 조항 적용 배제)
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="subsec-title" style="color:var(--accent-green)">✓ 예외① — 인정되는 평가 (법 §42①)</div>
+        <ul class="check">
+          <li><strong>보험업법 등 법률에 따른</strong> 유형·무형자산 <strong>증액 평가</strong></li>
+          <li><strong>대통령령으로 정하는 자산·부채</strong>(재고자산·유가증권·외화자산 등)의 평가</li>
+        </ul>
+      </div>
+      <div>
+        <div class="subsec-title" style="color:var(--accent-teal)">✓ 예외② — 임의 감액 가능 (법 §42③)</div>
+        <ul class="check">
+          <li>재고자산: <strong>파손·부패</strong>로 정상가격 판매 불가</li>
+          <li>유형자산: <strong>천재지변·화재</strong> 등으로 파손·멸실</li>
+          <li>주식등: 발행법인이 <strong>부도·회생인가·부실징후·파산</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exam-box red">
+      <div class="exam-box-title">🚨 자주 나오는 오답 함정</div>
+      <ul class="dot">
+        <li>유형자산을 <strong>증액 평가</strong>한 경우 → 보험업법 등에 근거가 있어야 인정. 임의 증액 불가!</li>
+        <li>유형자산 <strong>감액</strong>은 천재지변·화재 등 <em>법정 사유</em>만 가능. 시장가격 하락만으로는 불가!</li>
+        <li>주식 감액 가능 사유: 부도·회생인가·부실징후·파산 — <em>"주가 하락"만으로는 불가</em></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 5 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2>평가 대상 자산·부채의 범위 (시행령 §73)</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>세부 항목</th><th>근거</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-key">재고자산</td>
+            <td>제품·상품(부동산매매업자 소유 부동산 포함, 유가증권 제외), 반제품·재공품, 원재료, 저장품</td>
+            <td class="td-code">령 §73 제1호</td>
+          </tr>
+          <tr>
+            <td class="td-key">유가증권 등</td>
+            <td>가. 주식등 / 나. 채권 / 다. 집합투자재산 / 라. 보험 특별계정 자산</td>
+            <td class="td-code">령 §73 제2호</td>
+          </tr>
+          <tr>
+            <td class="td-key">외화자산·부채</td>
+            <td>기업회계기준상 <strong>화폐성 외화자산·부채</strong></td>
+            <td class="td-code">령 §73 제3호</td>
+          </tr>
+          <tr>
+            <td class="td-key">통화선도등 (금융회사)</td>
+            <td>제61조②1~7 금융회사가 보유하는 통화선도·통화스왑·환변동보험</td>
+            <td class="td-code">령 §73 제4호</td>
+          </tr>
+          <tr>
+            <td class="td-key">환위험회피용 통화선도등 (비금융회사)</td>
+            <td>화폐성외화자산·부채의 환위험 회피 목적</td>
+            <td class="td-code">령 §73 제5호</td>
+          </tr>
+          <tr>
+            <td class="td-key">가상자산</td>
+            <td>특정금융거래정보법 §2③에 따른 가상자산</td>
+            <td class="td-code">령 §73 제6호</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-box orange">
+      <div class="exam-box-title">⚡ 암기 포인트</div>
+      유가증권 평가 대상 <strong>4가지</strong>: <em>주식등, 채권, 집합투자재산, 보험 특별계정 자산</em><br>
+      <strong>유형자산·무형자산·토지</strong>는 원칙적으로 평가 대상 <span class="red-text">아님</span> (보험업법 등 예외 적용 시만 가능)
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 6 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2>재고자산의 평가 (시행령 §74)</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="analogy">
+      <div class="analogy-title">🍭 초등학생 비유</div>
+      창고에 남은 과자가 "얼마어치야?"를 계산하는 방식이에요.<br>
+      먼저 산 것부터 팔았다고 볼 건지(선입선출), 나중에 산 것부터 팔았다고 볼 건지(후입선출), 평균으로 볼 건지 — 방법에 따라 금액이 달라지죠!
+    </div>
+
+    <div class="subsec-title">평가 방법의 종류</div>
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>방법명</th><th>설명</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="6" class="td-key" style="vertical-align:middle">원가법</td>
+            <td>개별법</td>
+            <td>개별 취득가액 그대로</td>
+          </tr>
+          <tr>
+            <td>선입선출법</td>
+            <td>먼저 입고된 것부터 출고 — 재고는 가장 최근 취득분</td>
+          </tr>
+          <tr>
+            <td>후입선출법</td>
+            <td>가장 늦게 입고된 것부터 출고 — 재고는 가장 오래된 취득분</td>
+          </tr>
+          <tr>
+            <td>총평균법</td>
+            <td>기초재고 + 당기취득 총액 ÷ 총수량 = 평균단가</td>
+          </tr>
+          <tr>
+            <td>이동평균법</td>
+            <td>취득 시마다 장부잔액 ÷ 잔여수량 = 평균단가</td>
+          </tr>
+          <tr>
+            <td>매출가격환원법</td>
+            <td>판매예정가격 − 판매예정차익금</td>
+          </tr>
+          <tr>
+            <td class="td-key">저가법</td>
+            <td colspan="2">위 원가법 중 선택한 방법과 <strong>기업회계기준상 시가</strong> 중 <em>낮은 가액</em><br>
+              ⚠ 저가법 신고 시 비교되는 원가법도 함께 신고해야 함!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="sec">
+    <div class="subsec-title">신고 방법 및 무신고 시 처리</div>
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>신고기한</th><th>무신고 시</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>신설법인·신규 수익사업 비영리법인</td>
+            <td>설립일(수익사업개시일) 속하는 사업연도 <strong>법인세 신고기한</strong></td>
+            <td rowspan="2"><strong>선입선출법</strong> 적용<br>
+              <span class="muted">(부동산매매업은 <strong>개별법</strong>)</span></td>
+          </tr>
+          <tr>
+            <td>방법 변경하려는 법인</td>
+            <td>변경 적용 사업연도 <strong>종료일 전 3월</strong>이 되는 날</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-box red">
+      <div class="exam-box-title">🚨 오답 함정</div>
+      <ul class="dot">
+        <li>무신고 시 = <em>선입선출법</em>. 단, 신고방법이 선입선출법보다 <strong>큰 경우</strong>에는 신고방법 적용 (§74④ 단서)</li>
+        <li>부동산매매업자의 매매용 부동산 → 무신고 시 <strong>선입선출법이 아닌 개별법!</strong></li>
+        <li>변경 신고기한: <strong>"종료일 이전 3월이 되는 날"</strong> — "3개월 전"과 표현만 다름에 주의</li>
+        <li>재고자산은 <strong>종류별·영업장별</strong>로 다른 방법 적용 가능</li>
+      </ul>
+    </div>
+
+    <div class="exam-box teal">
+      <div class="exam-box-title">📐 계산 예제 — 선입선출법 vs 총평균법</div>
+      <div class="formula">
+<span class="comment">// 기초재고 100개 @1,000원, 당기매입 200개 @1,500원, 기말재고 80개</span>
+
+<span class="comment">── 선입선출법 ──</span>
+<span class="key">기말재고</span> <span class="op">=</span> 80개 × 1,500원 <span class="op">=</span> <span class="val">120,000원</span>
+<span class="comment">(가장 최근 매입분 = 당기매입분이 재고)</span>
+
+<span class="comment">── 총평균법 ──</span>
+<span class="key">평균단가</span> <span class="op">=</span> (100×1,000 + 200×1,500) / 300 <span class="op">=</span> <span class="val">1,333원</span>
+<span class="key">기말재고</span> <span class="op">=</span> 80 × 1,333 <span class="op">=</span> <span class="val">106,640원</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 7 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2>유가증권의 평가 (시행령 §75)</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>대상</th><th>허용 평가 방법</th><th>무신고 시</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-key">주식등·채권 (§73 제2호가·나)</td>
+            <td>① 개별법 (채권에 한함)<br>② 총평균법<br>③ 이동평균법</td>
+            <td><strong>총평균법</strong></td>
+          </tr>
+          <tr>
+            <td class="td-key">집합투자재산 (투자회사 등 보유)</td>
+            <td><strong>시가법</strong> (의무)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="td-key">보험 특별계정 자산 (보험회사)</td>
+            <td>원가법(개별·총평균·이동평균) 또는 시가법 중 신고 방법</td>
+            <td>신고한 방법 계속 적용</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-box red">
+      <div class="exam-box-title">🚨 재고자산 vs 유가증권 무신고 시 비교</div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">재고자산</div>
+          무신고 → <strong>선입선출법</strong><br>
+          <span class="muted">(부동산매매업: 개별법)</span>
+        </div>
+        <div class="card">
+          <div class="card-title">유가증권(주식·채권)</div>
+          무신고 → <strong>총평균법</strong><br>
+          <span class="muted">(재고자산과 다름!)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exam-box orange">
+      <div class="exam-box-title">⚡ 핵심 암기</div>
+      <ul class="dot">
+        <li>주식의 개별법 → <strong>불가</strong> (채권만 가능)</li>
+        <li>유가증권에 <strong>후입선출법·매출가격환원법</strong> → 불가 (재고자산에만 존재)</li>
+        <li>집합투자재산 → <strong>시가법 강제</strong> (선택 없음)</li>
+        <li>보험 특별계정 자산 → 합병 시 <strong>3년 이내 1회</strong>만 방법 변경 가능</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 8 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s8">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <h2>외화자산·부채의 평가 (시행령 §76)</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="analogy">
+      <div class="analogy-title">🍭 초등학생 비유</div>
+      미국 달러로 갖고 있는 돈을 원화로 환산할 때,<br>
+      "빌려준 날 환율로 계속 기록할까?" vs "연말마다 그 날 환율로 바꿔 기록할까?"를 고르는 거예요.<br>
+      금융회사는 반드시 연말 환율로, 일반 회사는 둘 중 선택!
+    </div>
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>구분</th><th>화폐성외화자산·부채</th><th>통화선도등</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-key">금융회사 (§61②1~7)</td>
+            <td><strong>사업연도 종료일 매매기준율</strong> (의무)</td>
+            <td>① 계약체결일 매매기준율 (원칙)<br>② 종료일 매매기준율 (신고 시)</td>
+          </tr>
+          <tr>
+            <td class="td-key">비금융회사</td>
+            <td colspan="2">① <strong>취득일·발생일 매매기준율</strong> (원칙 — 무신고 시 적용)<br>② <strong>사업연도 종료일 매매기준율</strong> (신고 시)<br><span class="muted">→ 신고 후 5개 사업연도 이후 변경 가능</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-box red">
+      <div class="exam-box-title">🚨 출제 포인트</div>
+      <ul class="dot">
+        <li><em>화폐성</em> 외화자산·부채만 평가 대상 — <strong>비화폐성(선급금·재고자산 등)은 제외!</strong></li>
+        <li>금융회사 → <strong>종료일 매매기준율 의무</strong> / 비금융회사 → <strong>선택</strong></li>
+        <li>비금융회사가 ②(종료일법)를 신고하면 <strong>5개 사업연도 경과 후</strong>에야 방법 변경 가능</li>
+        <li>평가손익 → <strong>해당 사업연도 익금 또는 손금</strong>에 산입</li>
+        <li>외화채권·채무 <em>상환</em> 시 환율 차익·차손도 익금·손금 산입 (§76⑤)</li>
+      </ul>
+    </div>
+
+    <div class="exam-box teal">
+      <div class="exam-box-title">📐 계산 예제 — 외화부채 평가</div>
+      <div class="formula">
+<span class="comment">// 비금융회사, 종료일 환율 신고법 채택</span>
+<span class="comment">// 달러 차입금 $100,000, 차입 시 환율 1,200원/$ , 종료일 환율 1,350원/$</span>
+
+<span class="key">원화기장액</span>  <span class="op">=</span> $100,000 × 1,200 <span class="op">=</span> <span class="val">120,000,000원</span>
+<span class="key">종료일 평가액</span> <span class="op">=</span> $100,000 × 1,350 <span class="op">=</span> <span class="val">135,000,000원</span>
+<span class="key">외화평가손실</span>  <span class="op">=</span> 135,000,000 − 120,000,000 <span class="op">=</span> <span class="val">15,000,000원 → 손금 산입</span>
+<span class="comment">(부채가 늘었으니 손실)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 9 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s9">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <h2>핵심 비교 총정리표</h2>
+  </div>
+  <div class="section-body">
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>재고자산</th>
+            <th>유가증권 (주식·채권)</th>
+            <th>외화자산(비금융)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-key">허용 방법</td>
+            <td>개별·선입선출·후입선출·총평균·이동평균·매출가격환원·저가법</td>
+            <td>개별(채권만)·총평균·이동평균</td>
+            <td>취득일 환율 / 종료일 환율 (선택)</td>
+          </tr>
+          <tr>
+            <td class="td-key">무신고 시</td>
+            <td><strong>선입선출법</strong><br><span class="muted">(부동산매매업: 개별법)</span></td>
+            <td><strong>총평균법</strong></td>
+            <td><strong>취득일 환율</strong></td>
+          </tr>
+          <tr>
+            <td class="td-key">신고기한(신설)</td>
+            <td>설립연도 법인세 신고기한</td>
+            <td>← 동일 (§74③ 준용)</td>
+            <td>종료일 환율법 최초 적용연도 법인세 신고 시</td>
+          </tr>
+          <tr>
+            <td class="td-key">방법 변경</td>
+            <td>변경 적용 연도 <strong>종료일 전 3월</strong></td>
+            <td>← 동일</td>
+            <td>5개 사업연도 경과 후</td>
+          </tr>
+          <tr>
+            <td class="td-key">평가손익 처리</td>
+            <td>기말 재고가액 반영</td>
+            <td>기말 재고가액 반영</td>
+            <td><strong>익금 / 손금 산입</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────── -->
+<!-- SECTION 10 -->
+<!-- ────────────────────────────────────── -->
+<div class="section" id="s10">
+  <div class="section-header">
+    <span class="section-num">10</span>
+    <h2>출제 포인트 & 오답 함정 종합</h2>
+  </div>
+  <div class="section-body">
+
+    <div class="exam-box red">
+      <div class="exam-box-title">🎯 1차 시험 최빈출 포인트</div>
+      <ul class="dot">
+        <li><strong>단기매매금융자산 취득가액</strong> = 매입가액만 (부대비용 ✕)</li>
+        <li><strong>적격합병 취득가액</strong> = 장부가액 / <strong>비적격</strong> = 시가</li>
+        <li><strong>무상할당 배출권</strong> 취득가액 = 0원</li>
+        <li><strong>토지+건물 일괄취득</strong> 시 안분기준 = <em>시가</em> 비례 (공시가격 아님!)</li>
+        <li>재고자산 무신고 → <strong>선입선출</strong> / 유가증권 무신고 → <strong>총평균</strong></li>
+        <li>재고자산 평가방법 변경: 변경 사업연도 <strong>종료일 전 3개월</strong></li>
+        <li>집합투자재산 → <strong>시가법 강제</strong> (선택 없음)</li>
+        <li>금융회사 화폐성외화자산 → 종료일 매매기준율 <strong>강제</strong></li>
+        <li>비금융회사 외화평가 방법 변경: <strong>5개 사업연도 경과 후</strong></li>
+        <li>재고자산 임의 감액 사유: <strong>파손·부패</strong> (시장가격 하락 ✕)</li>
+        <li>유형자산 임의 감액 사유: <strong>천재지변·화재</strong> (단순 가치 하락 ✕)</li>
+        <li>주식 임의 감액 사유: <strong>부도·회생인가·부실징후·파산</strong> (주가 하락만으론 ✕)</li>
+      </ul>
+    </div>
+
+    <div class="exam-box purple">
+      <div class="exam-box-title">⚠ 헷갈리는 표현 비교</div>
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th>혼동 포인트</th><th>정확한 내용</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>재고자산 평가 = <em>"할 수 있다"</em></td>
+              <td>법 §42①2호 — 할 수 있다(선택). 단, 방법 신고 의무 있음</td>
+            </tr>
+            <tr>
+              <td>금융회사 외화자산 평가 = <em>"신고한 방법"</em></td>
+              <td>화폐성외화자산·부채는 <strong>종료일 매매기준율 의무</strong> — 신고 불요!</td>
+            </tr>
+            <tr>
+              <td>저가법 신고 시</td>
+              <td>원가법도 <strong>함께</strong> 신고해야 함 — 저가법만 단독 신고 불가</td>
+            </tr>
+            <tr>
+              <td>유가증권 개별법</td>
+              <td><strong>채권에만 허용</strong> — 주식에 개별법 적용 불가</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<div class="doc-footer">
+  <span>📌 법령 기준: 법인세법(2026.01.02 시행) / 법인세법 시행령(2026.02.27 시행)</span>
+  <span>2026-05-28 &nbsp;|&nbsp; #법인세법 #자산취득가액 #자산평가 #재고자산 #유가증권 #외화평가 #세무사1차</span>
+</div>
+
+</div><!-- .page -->
+</body>
+</html>
