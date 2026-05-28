@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 대손금 &amp; 대손충당금</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:            #F7F8FA;
+    --surface:       #FFFFFF;
+    --surface-2:     #F0F2F5;
+    --border:        #DDE1E7;
+    --border-strong: #A8B2BF;
+    --text-primary:  #1A2733;
+    --text-secondary:#364B5F;
+    --text-muted:    #677A8E;
+
+    --blue:   #1A56A0; --blue-l: #EBF4FF; --blue-m: #BFDBFE;
+    --teal:   #0D7377; --teal-l: #EAFAF8; --teal-m: #99E6E0;
+    --orange: #B45309; --orange-l:#FFFBEB; --orange-m:#FDE68A;
+    --red:    #B91C1C; --red-l:  #FEF2F2; --red-m:  #FECACA;
+    --green:  #166534; --green-l:#F0FDF4; --green-m:#BBF7D0;
+    --purple: #5B21B6; --purple-l:#F5F3FF;--purple-m:#DDD6FE;
+    --slate:  #334155; --slate-l: #F8FAFC; --slate-m: #CBD5E1;
+
+    --serif: 'Noto Serif KR', serif;
+    --sans:  'Noto Sans KR', sans-serif;
+    --mono:  'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 14.5px;
+    line-height: 1.85;
+    padding: 36px 18px 80px;
+  }
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--blue);
+    border-radius: 14px;
+    padding: 38px 48px 32px;
+    margin-bottom: 28px;
+  }
+  .pill {
+    display:inline-block; font-size:10.5px; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase;
+    color:var(--blue); background:var(--blue-l);
+    border:1px solid var(--blue-m); border-radius:5px;
+    padding:3px 10px; margin-bottom:13px;
+  }
+  .doc-header h1 {
+    font-family:var(--serif); font-size:27px; font-weight:700;
+    line-height:1.35; margin-bottom:10px;
+  }
+  .meta { display:flex; flex-wrap:wrap; gap:18px; font-size:13px; color:var(--text-muted); }
+  .meta span::before { content:'▸ '; color:var(--blue); }
+
+  /* ── STRUCTURE OVERVIEW ── */
+  .structure-row {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:14px; margin-bottom:28px;
+  }
+  @media(max-width:640px){ .structure-row{grid-template-columns:1fr;} }
+  .st-card {
+    background:var(--surface); border:1px solid var(--border);
+    border-top:3px solid var(--blue); border-radius:10px; padding:16px 18px;
+  }
+  .st-card.teal  { border-top-color:var(--teal); }
+  .st-card.green { border-top-color:var(--green); }
+  .st-label { font-size:10.5px; font-weight:700; letter-spacing:.1em; color:var(--text-muted); margin-bottom:5px; }
+  .st-val { font-family:var(--serif); font-size:15.5px; font-weight:700; line-height:1.4; }
+  .st-sub { font-size:12px; color:var(--text-muted); margin-top:4px; }
+
+  /* ── TOC ── */
+  .toc { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:22px 30px; margin-bottom:28px; }
+  .toc-label { font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--text-muted); margin-bottom:10px; }
+  .toc ol { display:grid; grid-template-columns:1fr 1fr; gap:3px 24px; padding-left:20px; }
+  @media(max-width:600px){ .toc ol{grid-template-columns:1fr;} }
+  .toc li { font-size:13px; color:var(--blue); padding:2px 0; }
+
+  /* ── SECTION ── */
+  .section { background:var(--surface); border:1px solid var(--border); border-radius:13px; margin-bottom:24px; overflow:hidden; }
+  .sec-hdr { padding:17px 30px 15px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:11px; }
+  .sec-num { font-family:var(--mono); font-size:10.5px; font-weight:600; color:#fff; background:var(--blue); border-radius:4px; padding:2px 8px; flex-shrink:0; }
+  .sec-hdr h2 { font-family:var(--serif); font-size:17px; font-weight:700; }
+  .sec-body { padding:26px 30px; }
+
+  /* ── SUB ── */
+  .sub { margin-bottom:28px; }
+  .sub:last-child { margin-bottom:0; }
+  .sub-title {
+    font-family:var(--serif); font-size:15px; font-weight:700; color:var(--blue);
+    border-bottom:2px solid var(--blue-m); padding-bottom:5px; margin-bottom:13px;
+    display:flex; align-items:center; gap:7px;
+  }
+
+  /* ── LAW BOX ── */
+  .law {
+    background:var(--blue-l); border:1px solid var(--blue-m);
+    border-left:4px solid var(--blue); border-radius:0 8px 8px 0;
+    padding:13px 18px; margin:12px 0; font-size:13px; color:var(--text-secondary); line-height:1.8;
+  }
+  .law-ref { font-family:var(--mono); font-size:10.5px; font-weight:600; color:var(--blue); display:block; margin-bottom:4px; }
+
+  /* ── TABLE ── */
+  .t-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; margin:12px 0; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  thead th { background:var(--surface-2); font-weight:700; padding:10px 13px; text-align:left; border-bottom:2px solid var(--border-strong); white-space:nowrap; }
+  tbody td { padding:9px 13px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.75; }
+  tbody tr:last-child td { border-bottom:none; }
+  tbody tr:nth-child(even) td { background:var(--surface-2); }
+  .td-k { font-weight:700; white-space:nowrap; }
+  .td-c { font-family:var(--mono); font-size:11px; color:var(--blue); white-space:nowrap; }
+  .c-center { text-align:center; }
+
+  /* ── INFO BOXES ── */
+  .box { border-radius:9px; padding:15px 20px; margin:13px 0; font-size:13px; line-height:1.85; }
+  .box.red    { background:var(--red-l);    border:1px solid var(--red-m);    border-left:4px solid var(--red);    }
+  .box.orange { background:var(--orange-l); border:1px solid var(--orange-m); border-left:4px solid var(--orange); }
+  .box.green  { background:var(--green-l);  border:1px solid var(--green-m);  border-left:4px solid var(--green);  }
+  .box.teal   { background:var(--teal-l);   border:1px solid var(--teal-m);   border-left:4px solid var(--teal);   }
+  .box.purple { background:var(--purple-l); border:1px solid var(--purple-m); border-left:4px solid var(--purple); }
+  .box.blue   { background:var(--blue-l);   border:1px solid var(--blue-m);   border-left:4px solid var(--blue);   }
+  .box.slate  { background:var(--slate-l);  border:1px solid var(--slate-m);  border-left:4px solid var(--slate);  }
+  .box-title { font-size:10.5px; font-weight:700; letter-spacing:.1em; margin-bottom:8px; display:flex; align-items:center; gap:5px; }
+  .box.red    .box-title { color:var(--red);    }
+  .box.orange .box-title { color:var(--orange); }
+  .box.green  .box-title { color:var(--green);  }
+  .box.teal   .box-title { color:var(--teal);   }
+  .box.purple .box-title { color:var(--purple); }
+  .box.blue   .box-title { color:var(--blue);   }
+  .box.slate  .box-title { color:var(--slate);  }
+
+  /* ── ANALOGY ── */
+  .analogy { background:#FFFBEB; border:1px solid #F6E05E; border-left:4px solid #D69E2E; border-radius:0 8px 8px 0; padding:13px 18px; margin:13px 0; font-size:13px; line-height:1.8; }
+  .analogy-t { font-size:10.5px; font-weight:700; color:#B7791F; letter-spacing:.08em; margin-bottom:5px; }
+
+  /* ── FORMULA ── */
+  .formula { background:#1A2733; color:#CBD5E1; font-family:var(--mono); font-size:13px; line-height:1.9; border-radius:9px; padding:16px 20px; margin:13px 0; overflow-x:auto; }
+  .formula .cmt  { color:#4E6880; }
+  .formula .k    { color:#6EE7B7; }
+  .formula .v    { color:#FDE68A; }
+  .formula .op   { color:#F87171; }
+  .formula .note { color:#93C5FD; }
+  .formula .hi   { color:#F9A8D4; }
+
+  /* ── LISTS ── */
+  ul.dot, ul.ck, ul.xk { padding-left:0; list-style:none; display:flex; flex-direction:column; gap:5px; font-size:13px; color:var(--text-secondary); }
+  ul.dot li::before { content:'·'; font-size:18px; color:var(--blue);  margin-right:8px; vertical-align:middle; }
+  ul.ck  li::before { content:'✓'; font-weight:700; color:var(--green); margin-right:8px; }
+  ul.xk  li::before { content:'✕'; font-weight:700; color:var(--red);   margin-right:8px; }
+
+  /* ── GRID ── */
+  .g2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:13px 0; }
+  @media(max-width:600px){ .g2{grid-template-columns:1fr;} }
+  .card { border:1px solid var(--border); border-radius:8px; padding:14px 17px; font-size:13px; line-height:1.8; }
+  .card-t { font-weight:700; font-size:12.5px; margin-bottom:6px; }
+
+  /* ── MISC ── */
+  hr.hr { border:none; border-top:1px solid var(--border); margin:22px 0; }
+  strong { font-weight:700; color:var(--text-primary); }
+  em     { font-style:normal; font-weight:700; color:var(--orange); }
+  .muted { color:var(--text-muted); font-size:12px; }
+  .red-t { color:var(--red);   font-weight:700; }
+  .blu-t { color:var(--blue);  font-weight:700; }
+  .grn-t { color:var(--green); font-weight:700; }
+  .org-t { color:var(--orange);font-weight:700; }
+  p { margin-bottom:9px; }
+  p:last-child { margin-bottom:0; }
+  .badge { display:inline-block; font-size:10.5px; font-weight:700; padding:2px 7px; border-radius:4px; margin:0 2px; }
+  .badge-b { background:var(--blue-l);   color:var(--blue);   border:1px solid var(--blue-m);   }
+  .badge-r { background:var(--red-l);    color:var(--red);    border:1px solid var(--red-m);    }
+  .badge-g { background:var(--green-l);  color:var(--green);  border:1px solid var(--green-m);  }
+  .badge-o { background:var(--orange-l); color:var(--orange); border:1px solid var(--orange-m); }
+
+  /* ── FOOTER ── */
+  .doc-footer { margin-top:32px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:17px 26px; font-size:12px; color:var(--text-muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ════════════ HEADER ════════════ -->
+<div class="doc-header">
+  <div class="pill">세법학 · 법인세법</div>
+  <h1>대손금 &amp; 대손충당금</h1>
+  <div class="meta">
+    <span>세무사 1차 객관식 대비</span>
+    <span>법인세법 §19의2·§34·§35 / 시행령 §19의2·§61·§63</span>
+    <span>시행일: 2026-01-02 (법) · 2026-02-27 (령)</span>
+  </div>
+</div>
+
+<!-- ════════════ OVERVIEW ════════════ -->
+<div class="structure-row">
+  <div class="st-card">
+    <div class="st-label">대손금</div>
+    <div class="st-val">신고조정 (원칙)</div>
+    <div class="st-sub">사유 발생 시 손금 강제 인식<br>단, 임의계상 사유는 결산조정</div>
+  </div>
+  <div class="st-card teal">
+    <div class="st-label">대손충당금</div>
+    <div class="st-val">결산조정</div>
+    <div class="st-sub">채권잔액 × MAX(1%, 대손실적률)<br>잔액은 다음연도 전액 익금환입</div>
+  </div>
+  <div class="st-card green">
+    <div class="st-label">구상채권상각충당금</div>
+    <div class="st-val">결산조정</div>
+    <div class="st-sub">신용보증잔액 × MIN(1%, 구상채권발생률)</div>
+  </div>
+</div>
+
+<!-- ════════════ TOC ════════════ -->
+<div class="toc">
+  <div class="toc-label">📋 목차</div>
+  <ol>
+    <li>개념 구조 및 대손금 vs 대손충당금 비교</li>
+    <li>대손 대상 채권의 범위</li>
+    <li>대손금의 손금 산입 사유 (13가지)</li>
+    <li>대손금 관련 세무조정</li>
+    <li>대손충당금 한도 계산 방법</li>
+    <li>대손충당금 설정·사용 시 세무조정</li>
+    <li>합병·분할 시 대손충당금 승계</li>
+    <li>구상채권상각충당금</li>
+    <li>계산 예제</li>
+    <li>출제 포인트 &amp; 오답 함정 총정리</li>
+  </ol>
+</div>
+
+
+<!-- ════════════ S1: 개념 구조 ════════════ -->
+<div class="section" id="s1">
+  <div class="sec-hdr"><span class="sec-num">01</span><h2>개념 구조 및 대손금 vs 대손충당금 비교</h2></div>
+  <div class="sec-body">
+
+    <div class="analogy">
+      <div class="analogy-t">🍭 초등학생 비유</div>
+      친구에게 빌려준 돈을 못 받게 된 것이 <strong>대손금</strong>이에요.<br>
+      "앞으로 못 받을 것 같아서 미리 적어두는 금액"이 <strong>대손충당금</strong>이고요.<br>
+      세법은 "정말로 못 받게 된 경우(대손금)"와 "미리 쌓아두는 것(충당금)"을 따로 규정하고 있어요!
+    </div>
+
+    <div class="t-wrap">
+      <table>
+        <thead><tr><th>구분</th><th>대손금 (법 §19의2)</th><th>대손충당금 (법 §34)</th></tr></thead>
+        <tbody>
+          <tr><td class="td-k">의미</td><td>이미 회수불능이 <strong>확정</strong>된 채권 금액</td><td>장래 대손 예상액을 <strong>미리 적립</strong>하는 충당금</td></tr>
+          <tr><td class="td-k">조정 유형</td><td><strong>신고조정</strong> (원칙)<br><span class="muted">단, 임의계상 사유 → 결산조정</span></td><td><strong>결산조정</strong> (장부 계상 필수)</td></tr>
+          <tr><td class="td-k">손금 귀속시기</td><td>대손사유 발생일 속하는 사업연도<br><span class="muted">(임의계상 사유는 손비계상일)</span></td><td>설정 사업연도</td></tr>
+          <tr><td class="td-k">한도</td><td>해당 사유별로 전액</td><td>채권잔액 × MAX(1%, 대손실적률)</td></tr>
+          <tr><td class="td-k">잔액 처리</td><td>회수 시 익금산입</td><td>다음연도 <strong>전액 익금환입</strong></td></tr>
+          <tr><td class="td-k">근거</td><td>법 §19의2 / 령 §19의2</td><td>법 §34 / 령 §61</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box red">
+      <div class="box-title">🚨 핵심 — 신고조정 vs 결산조정 구분</div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-t" style="color:var(--blue)">대손금 → 신고조정 (원칙)</div>
+          소멸시효 완성, 회생계획인가, 파산 등<br>
+          <span class="muted">장부에 계상하지 않아도 손금산입 가능</span>
+        </div>
+        <div class="card">
+          <div class="card-t" style="color:var(--orange)">대손금 → 결산조정 (예외)</div>
+          부도 6개월 경과, 중소기업 2년 이상 미회수,<br>소액채권 등 임의계상 사유<br>
+          <span class="muted">"손비로 계상한 날" 속하는 사업연도</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S2: 대손 대상 채권 ════════════ -->
+<div class="section" id="s2">
+  <div class="sec-hdr"><span class="sec-num">02</span><h2>대손 대상 채권의 범위</h2></div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">① 대손충당금 설정 가능 채권 (령 §61①)</div>
+      <div class="t-wrap">
+        <table>
+          <thead><tr><th>채권 종류</th><th>내용</th><th>근거</th></tr></thead>
+          <tbody>
+            <tr><td class="td-k">외상매출금</td><td>상품·제품 판매 미수액, 가공료·용역 제공 사업수입금액 미수액</td><td class="td-c">령 §61①1</td></tr>
+            <tr><td class="td-k">대여금</td><td>금전소비대차계약 등에 의하여 타인에게 대여한 금액</td><td class="td-c">령 §61①2</td></tr>
+            <tr><td class="td-k">그 밖에 준하는 채권</td><td>어음상 채권, 미수금, 기업회계기준상 대손충당금 설정 대상 채권<br><span class="muted">(단, 시가초과액 해당 채권 제외)</span></td><td class="td-c">령 §61①3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">② 대손처리 자체가 불가한 채권 — 손금불산입 대상 (법 §19의2②)</div>
+      <div class="box red">
+        <div class="box-title">🚨 대손금·대손충당금 모두 적용 불가</div>
+        <div class="g2">
+          <div class="card">
+            <div class="card-t" style="color:var(--red)">① 채무보증 구상채권</div>
+            법 §19의2②1 — 채무보증으로 인하여 발생한 구상채권<br>
+            <span class="muted">단, 아래 예외 있음 (법적으로 허용된 채무보증)</span>
+          </div>
+          <div class="card">
+            <div class="card-t" style="color:var(--red)">② 특수관계인 가지급금</div>
+            법 §19의2②2 — §28①4나목 가지급금 등<br>
+            <span class="muted">대여 시점 기준으로 특수관계 판단</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="box orange">
+        <div class="box-title">⚡ 채무보증 구상채권 손금 인정 예외 (령 §19의2⑥)</div>
+        <ul class="ck">
+          <li>공정거래법 §24 허용 채무보증 (지주회사 요건 등)</li>
+          <li>금융회사 등이 행한 채무보증</li>
+          <li>법률에 따라 <strong>신용보증사업을 영위하는 법인</strong>의 채무보증</li>
+          <li>위탁기업의 수탁기업협의회 구성원에 대한 채무보증</li>
+          <li>건설업·전기통신업의 건설사업 관련 비특수관계인 채무보증</li>
+          <li>해외자원개발사업자의 해외법인 채무보증 등</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S3: 대손사유 ════════════ -->
+<div class="section" id="s3">
+  <div class="sec-hdr"><span class="sec-num">03</span><h2>대손금의 손금 산입 사유 (령 §19의2①)</h2></div>
+  <div class="sec-body">
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>대손사유</th><th>귀속시기</th><th>조정유형</th><th>비고</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="c-center td-k">1</td>
+            <td>상법상 소멸시효 완성 <strong>외상매출금·미수금</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>상법상 시효: 상사채권 5년</td>
+          </tr>
+          <tr>
+            <td class="c-center td-k">2</td>
+            <td>어음법상 소멸시효 완성 <strong>어음</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>어음: 3년, 상환청구권: 1년·6개월</td>
+          </tr>
+          <tr>
+            <td class="c-center td-k">3</td>
+            <td>수표법상 소멸시효 완성 <strong>수표</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>수표: 6개월</td>
+          </tr>
+          <tr>
+            <td class="c-center td-k">4</td>
+            <td>민법상 소멸시효 완성 <strong>대여금·선급금</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>민사채권 10년</td>
+          </tr>
+          <tr>
+            <td class="c-center td-k">5</td>
+            <td>회생계획인가 결정 또는 법원 면책결정으로 <strong>회수불능 확정</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>채무자회생법 적용</td>
+          </tr>
+          <tr>
+            <td class="c-center td-k">5의2</td>
+            <td>서민금융생활법에 따른 <strong>채무조정 면책 확정</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>신용회복지원협약</td>
+          </tr>
+          <tr>
+            <td class="c-center td-k">6</td>
+            <td>민사집행법 §102에 따라 <strong>경매 취소된 압류채권</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>무잉여 취소</td>
+          </tr>
+          <tr>
+            <td class="c-center td-k">7</td>
+            <td>수출·해외용역 채권으로 <strong>무역보험법상 회수불능 확인</strong></td>
+            <td>사유 발생일</td>
+            <td><span class="badge badge-b">신고조정</span></td>
+            <td>한국무역보험공사 확인</td>
+          </tr>
+          <tr style="background:var(--orange-l)">
+            <td class="c-center td-k">8</td>
+            <td>채무자의 <strong>파산·강제집행·형의 집행·사업폐지·사망·실종·행방불명</strong>으로 회수불능</td>
+            <td><em>손비 계상일</em></td>
+            <td><span class="badge badge-o">결산조정</span></td>
+            <td>임의계상 사유</td>
+          </tr>
+          <tr style="background:var(--orange-l)">
+            <td class="c-center td-k">9</td>
+            <td><strong>부도발생일로부터 6개월 이상</strong> 경과한 수표·어음·외상매출금<br><span class="muted">(중소기업 외상매출금: 부도 전 것만 해당)</span></td>
+            <td><em>손비 계상일</em></td>
+            <td><span class="badge badge-o">결산조정</span></td>
+            <td>저당권 설정 시 제외<br>손금한도: 채권액 − 1,000원</td>
+          </tr>
+          <tr style="background:var(--orange-l)">
+            <td class="c-center td-k">9의2</td>
+            <td><strong>중소기업</strong> 외상매출금·미수금으로 회수기일이 <strong>2년 이상 경과</strong></td>
+            <td><em>손비 계상일</em></td>
+            <td><span class="badge badge-o">결산조정</span></td>
+            <td>특수관계인 거래 제외</td>
+          </tr>
+          <tr style="background:var(--orange-l)">
+            <td class="c-center td-k">10</td>
+            <td>재판상 화해 등 확정판결과 <strong>동일 효력</strong>으로 회수불능 확정</td>
+            <td><em>손비 계상일</em></td>
+            <td><span class="badge badge-o">결산조정</span></td>
+            <td></td>
+          </tr>
+          <tr style="background:var(--orange-l)">
+            <td class="c-center td-k">11</td>
+            <td>회수기일 6개월 이상 경과, 채권가액 <strong>30만원 이하</strong> 소액채권</td>
+            <td><em>손비 계상일</em></td>
+            <td><span class="badge badge-o">결산조정</span></td>
+            <td>채무자별 합계 기준</td>
+          </tr>
+          <tr style="background:var(--orange-l)">
+            <td class="c-center td-k">12·13</td>
+            <td>금융감독원 승인·요구 대손처리, 벤처투자회사 창업자 채권</td>
+            <td><em>손비 계상일</em></td>
+            <td><span class="badge badge-o">결산조정</span></td>
+            <td>금융회사·벤처투자회사 한정</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box orange">
+      <div class="box-title">⚡ 귀속시기 구분 — 핵심 암기</div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-t" style="color:var(--blue)">사유발생일 귀속 (1~7호)</div>
+          소멸시효 완성, 회생계획인가, 면책결정,<br>경매취소, 무역보험 확인<br>
+          <span class="muted">→ 신고조정, 장부계상 불요</span>
+        </div>
+        <div class="card">
+          <div class="card-t" style="color:var(--orange)">손비계상일 귀속 (8~13호)</div>
+          파산·부도 6개월·소액채권 등<br>
+          <span class="muted">→ 결산조정, 반드시 장부에 계상해야 손금 인정</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box red">
+      <div class="box-title">🚨 부도 6개월 특이사항 (9호) — 필독</div>
+      <ul class="dot">
+        <li>부도발생일 = 지급기일 (지급기일 전 부도확인 시 그 확인일)</li>
+        <li>손금 산입 한도 = 채권가액 − <strong>1,000원</strong> (1원이 아님!)</li>
+        <li><em>저당권을 설정하고 있는 경우 제외</em> → 저당권 있으면 대손처리 불가</li>
+        <li>일반법인 어음·수표 → 가능 / <strong>중소기업 외상매출금 → 부도 전 것만 가능</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S4: 대손금 세무조정 ════════════ -->
+<div class="section" id="s4">
+  <div class="sec-hdr"><span class="sec-num">04</span><h2>대손금 관련 세무조정</h2></div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">① 대손금 발생 시 세무조정 패턴</div>
+      <div class="t-wrap">
+        <table>
+          <thead><tr><th>상황</th><th>장부처리</th><th>세무조정</th><th>소득처분</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="td-k">대손금 ≤ 충당금 잔액</td>
+              <td>충당금과 상계 (충당금↓)</td>
+              <td><span class="grn-t">유보 감소</span><br>(충당금 손금불산입 유보 해소)</td>
+              <td>유보</td>
+            </tr>
+            <tr>
+              <td class="td-k">대손금 &gt; 충당금 잔액</td>
+              <td>충당금 전액 상계 후<br>초과분 대손금(비용)계상</td>
+              <td>충당금 부분: 유보 해소<br>초과분: <span class="grn-t">손금 인정 (조정 없음)</span></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td class="td-k">충당금 없이 직접 대손처리</td>
+              <td>대손금(비용)으로 계상</td>
+              <td><span class="grn-t">조정 없음 (그대로 손금)</span></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td class="td-k">대손 불인정 사유인데 계상</td>
+              <td>대손금(비용) 계상</td>
+              <td><span class="red-t">손금불산입 (유보)</span></td>
+              <td>△유보</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="law">
+        <span class="law-ref">법인세법 제34조 제3항</span>
+        대손금이 발생한 경우 그 대손금을 <strong>대손충당금과 먼저 상계</strong>하여야 하고, 상계하고 남은 대손충당금은 <strong>다음 사업연도의 익금에 산입</strong>한다.
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">② 대손금 회수 시</div>
+      <div class="law">
+        <span class="law-ref">법인세법 제19조의2 제3항</span>
+        손금에 산입한 대손금 중 회수한 금액 → <strong>회수한 날이 속하는 사업연도의 익금에 산입</strong>
+      </div>
+      <ul class="dot">
+        <li>이미 손금산입된 대손금을 나중에 받으면 → 무조건 익금산입</li>
+        <li>충당금과 상계 후 남은 충당금 잔액을 회수한 것도 익금 처리</li>
+      </ul>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">③ 채권 재조정에 따른 현재가치 할인 (령 §19의2⑤)</div>
+      <div class="law">
+        <span class="law-ref">시행령 제19조의2 제5항</span>
+        기업회계기준에 따른 채권 재조정으로 <strong>장부가액과 현재가치의 차액을 대손금으로 계상</strong>한 경우 → 손금산입, 이후 기업회계기준의 환입방법에 따라 익금산입
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S5: 충당금 한도 계산 ════════════ -->
+<div class="section" id="s5">
+  <div class="sec-hdr"><span class="sec-num">05</span><h2>대손충당금 한도 계산 방법</h2></div>
+  <div class="sec-body">
+
+    <div class="law">
+      <span class="law-ref">법인세법 시행령 제61조 제2항</span>
+      한도 = 채권잔액 × <strong>MAX(1%, 대손실적률)</strong><br>
+      (금융회사의 경우: 금융위원회 적립기준, 1%, 대손실적률 중 큰 금액)
+    </div>
+
+    <div class="formula">
+<span class="cmt">// ① 채권잔액</span>
+<span class="k">채권잔액</span> <span class="op">=</span> 사업연도종료일 현재
+         외상매출금 + 대여금 + 그 밖에 준하는 채권의 장부가액 합계
+
+<span class="cmt">// ② 대손실적률 (령 §61③)</span>
+<span class="k">대손실적률</span> <span class="op">=</span> 직전 사업연도의 대손금 / 직전 사업연도 종료일의 채권잔액
+<span class="note">            (즉, 직전 연도 대손 발생 비율)</span>
+
+<span class="cmt">// ③ 한도액</span>
+<span class="k">한도액</span> <span class="op">=</span> 채권잔액 × MAX(<span class="v">1%</span>, 대손실적률)
+
+<span class="cmt">// ④ 세무조정</span>
+<span class="k">계상액 ≤ 한도</span> → <span class="hi">조정 없음 (전액 손금)</span>
+<span class="k">계상액 ＞ 한도</span> → <span class="op">손금불산입 (유보)</span> 초과분
+    </div>
+
+    <div class="box orange">
+      <div class="box-title">⚡ 채권잔액 계산 시 주의사항</div>
+      <ul class="dot">
+        <li>채권잔액 = <em>장부가액</em> (이미 대손충당금이 차감된 순액이 아닌 총액 기준)</li>
+        <li><span class="red-t">제외 채권</span>: ① 구상채권 관련 대손충당금은 별도 (§61④)<br>
+            ② 손금불산입 채권(특수관계자 가지급금, 채무보증 구상채권)</li>
+        <li>대손실적률 = 직전 연도 기준 → <em>당기 기준이 아님!</em></li>
+      </ul>
+    </div>
+
+    <div class="box teal">
+      <div class="box-title">📊 일반법인 vs 금융회사 한도 비교</div>
+      <div class="t-wrap">
+        <table>
+          <thead><tr><th>구분</th><th>한도 기준</th></tr></thead>
+          <tbody>
+            <tr><td class="td-k">일반법인</td><td>채권잔액 × MAX(1%, 대손실적률) 중 큰 금액</td></tr>
+            <tr><td class="td-k">금융회사 (은행·보험·증권 등)</td><td>금융위원회 적립기준 금액, 채권잔액×1%, 채권잔액×대손실적률 중 <strong>가장 큰 금액</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S6: 충당금 설정·환입 세무조정 ════════════ -->
+<div class="section" id="s6">
+  <div class="sec-hdr"><span class="sec-num">06</span><h2>대손충당금 설정·사용·환입 세무조정</h2></div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">① 연도별 세무조정 흐름 (전체 사이클)</div>
+
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th>시점</th><th>장부 처리</th><th>세무조정</th><th>소득처분</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-k">당기 충당금 설정<br>(한도 이내)</td>
+              <td>대손충당금 전입 (비용↑)</td>
+              <td><span class="grn-t">없음</span></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td class="td-k">당기 충당금 설정<br>(한도 초과)</td>
+              <td>대손충당금 전입 (비용↑)</td>
+              <td><span class="red-t">손금불산입 (유보)</span><br>초과액</td>
+              <td>△유보</td>
+            </tr>
+            <tr>
+              <td class="td-k">대손금과 충당금 상계<br>(대손 발생)</td>
+              <td>충당금↓ / 채권↓</td>
+              <td><span class="grn-t">유보 해소 (익금불산입)</span></td>
+              <td>유보</td>
+            </tr>
+            <tr>
+              <td class="td-k">기말 충당금 잔액<br>(다음연도 익금환입)</td>
+              <td>충당금 환입 (수익↑)</td>
+              <td><span class="grn-t">익금불산입</span><br>(이미 손금불산입된 금액 범위)</td>
+              <td>유보</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box red">
+        <div class="box-title">🚨 익금환입 처리 — 핵심!</div>
+        대손충당금 잔액은 <em>무조건 다음 사업연도에 전액 익금산입</em> (법 §34③)<br>
+        단, 세무조정은: 장부상 환입액(익금) → 세무상 이미 손금불산입한 금액은 <strong>익금불산입(유보 감소)</strong><br>
+        → 결과적으로 <em>장부와 세무의 차이(유보)를 소멸시키는 과정</em>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">② 실무 세무조정 요약 (T계정 개념)</div>
+
+      <div class="formula">
+<span class="cmt">// 기초 대손충당금 세무조정 처리 흐름</span>
+
+<span class="k">Step 1.</span> 기초 장부 충당금 잔액 → 전액 익금산입 (장부 환입 분개 반영)
+        세무조정: 장부 수익 ≤ 유보 → <span class="hi">익금불산입</span> (유보 해소)
+        장부 수익 &gt; 유보 → 초과분 <span class="op">익금산입</span>
+
+<span class="k">Step 2.</span> 당기 대손금이 충당금에서 상계 → 유보 추가 해소
+
+<span class="k">Step 3.</span> 당기 충당금 신규 설정 →
+        계상액 ≤ 한도: <span class="hi">조정 없음</span>
+        계상액 &gt; 한도: <span class="op">손금불산입 (△유보)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S7: 합병·분할 승계 ════════════ -->
+<div class="section" id="s7">
+  <div class="sec-hdr"><span class="sec-num">07</span><h2>합병·분할 시 대손충당금 승계</h2></div>
+  <div class="sec-body">
+
+    <div class="law">
+      <span class="law-ref">법인세법 제34조 제4항</span>
+      합병·분할 시 대손충당금 중 합병법인등이 승계받은 금액<br>
+      → <strong>해당 대손충당금에 대응하는 채권이 함께 승계되는 경우만 해당</strong><br>
+      → 합병법인등이 합병(분할)등기일에 보유하는 대손충당금으로 간주
+    </div>
+
+    <div class="box red">
+      <div class="box-title">🚨 대손충당금 승계 요건 — 퇴직급여충당금과 비교</div>
+      <div class="t-wrap">
+        <table>
+          <thead><tr><th>구분</th><th>대손충당금 (법 §34④)</th><th>퇴직급여충당금 (법 §33③)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="td-k">승계 요건</td>
+              <td><strong class="red-t">해당 채권도 함께 승계</strong>되어야 함</td>
+              <td>승계받은 금액 그대로 인정<br>(채권 동반 요건 없음)</td>
+            </tr>
+            <tr>
+              <td class="td-k">포괄양도 준용</td>
+              <td>규정 없음</td>
+              <td>준용 (§33④)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="box orange">
+      <div class="box-title">⚡ 합병 시 대손금 처리 (령 §19의2④)</div>
+      임의계상 사유(8~13호)에 해당하는 대손금을 합병(분할)등기일이 속하는 사업연도까지<br>
+      <strong>손비로 계상하지 않은 경우 → 합병(분할)등기일이 속하는 사업연도의 손비</strong>로 처리
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S8: 구상채권상각충당금 ════════════ -->
+<div class="section" id="s8">
+  <div class="sec-hdr"><span class="sec-num">08</span><h2>구상채권상각충당금 (법 §35 / 령 §63)</h2></div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">① 개요</div>
+      <div class="law">
+        <span class="law-ref">법인세법 제35조 제1항</span>
+        <strong>법률에 따라 신용보증사업을 하는 내국법인</strong> 중 대통령령으로 정하는 법인이 구상채권상각충당금을 손비로 계상한 경우 → 한도 내 손금산입
+      </div>
+      <ul class="ck">
+        <li>신용보증기금, 기술보증기금, 농림수산업자신용보증기금</li>
+        <li>한국무역보험공사, 지역신용보증재단, 신용보증재단중앙회</li>
+        <li>한국주택금융공사, 서민금융진흥원</li>
+        <li>엔지니어링·소프트웨어·건설·전기공사 등 각종 공제조합 등</li>
+      </ul>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">② 한도 계산 (령 §63③) — 대손충당금과 비교</div>
+
+      <div class="formula">
+<span class="cmt">// 대손충당금 한도 (일반법인)</span>
+<span class="k">대손충당금 한도</span> <span class="op">=</span> 채권잔액 × <span class="v">MAX(1%, 대손실적률)</span>
+<span class="note">                 → 1%와 실적률 중 "큰" 값</span>
+
+<span class="cmt">// 구상채권상각충당금 한도</span>
+<span class="k">구상채권충당금 한도</span> <span class="op">=</span> 신용보증잔액 × <span class="v">MIN(1%, 구상채권발생률)</span>
+<span class="note">                    → 1%와 발생률 중 "작은" 값</span>
+      </div>
+
+      <div class="box red">
+        <div class="box-title">🚨 MAX vs MIN 함정 — 반드시 암기!</div>
+        <div class="g2">
+          <div class="card">
+            <div class="card-t" style="color:var(--blue)">대손충당금</div>
+            채권잔액 × <strong>MAX</strong>(1%, 대손실적률)<br>
+            <span class="muted">→ 더 큰 값으로 한도 설정</span>
+          </div>
+          <div class="card">
+            <div class="card-t" style="color:var(--green)">구상채권상각충당금</div>
+            신용보증잔액 × <strong>MIN</strong>(1%, 구상채권발생률)<br>
+            <span class="muted">→ 더 작은 값으로 한도 설정</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">③ 사용·환입 처리 (법 §35③)</div>
+      <ul class="dot">
+        <li>구상채권 대손 발생 시 → <strong>충당금과 먼저 상계</strong></li>
+        <li>상계 후 남은 충당금 잔액 → <strong>다음 사업연도 익금산입</strong></li>
+        <li>처리 구조는 대손충당금과 동일</li>
+      </ul>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">④ IFRS 적용 법인 특례 (법 §35②)</div>
+      <div class="law">
+        <span class="law-ref">법인세법 제35조 제2항</span>
+        한국채택국제회계기준(K-IFRS) 적용 법인 중 대통령령으로 정하는 법인이 구상채권상각충당금을 <strong>세무조정계산서에 계상</strong>하고, 이익처분 시 <strong>구상채권상각충당금으로 적립</strong>한 경우 → 결산 시 손비로 계상한 것으로 간주
+      </div>
+      <p class="muted">※ IFRS는 충당금 설정 방식이 달라 세무조정계산서+이익처분 적립으로 결산조정 요건을 갈음함</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S9: 계산 예제 ════════════ -->
+<div class="section" id="s9">
+  <div class="sec-hdr"><span class="sec-num">09</span><h2>계산 예제</h2></div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">예제 1 — 대손충당금 한도 계산 및 세무조정</div>
+      <div class="box blue">
+        <div class="box-title">📋 문제</div>
+        (주)세무의 당기말 채권잔액: 500,000,000원<br>
+        전기 채권잔액: 400,000,000원 / 전기 대손금 발생액: 3,200,000원<br>
+        당기 대손충당금 계상액: 8,000,000원
+      </div>
+      <div class="formula">
+<span class="cmt">// Step 1. 대손실적률 계산</span>
+<span class="k">대손실적률</span> <span class="op">=</span> 3,200,000 ÷ 400,000,000 <span class="op">=</span> <span class="v">0.8%</span>
+
+<span class="cmt">// Step 2. 한도액</span>
+<span class="k">MAX</span>(1%, 0.8%) <span class="op">=</span> <span class="v">1%</span>
+<span class="k">한도액</span> <span class="op">=</span> 500,000,000 × 1% <span class="op">=</span> <span class="v">5,000,000원</span>
+
+<span class="cmt">// Step 3. 세무조정</span>
+<span class="k">계상액</span>    <span class="op">=</span> 8,000,000원
+<span class="k">한도초과</span>  <span class="op">=</span> 8,000,000 <span class="op">-</span> 5,000,000 <span class="op">=</span> <span class="v">3,000,000원</span>
+<span class="note">→ 손금불산입 (△유보) 3,000,000원</span>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">예제 2 — 대손충당금 전체 사이클 세무조정</div>
+      <div class="box blue">
+        <div class="box-title">📋 문제</div>
+        전기말 대손충당금 장부잔액: 6,000,000원 (세무상 유보: 2,000,000원)<br>
+        당기 대손금 발생 및 충당금 상계: 4,000,000원<br>
+        당기말 충당금 설정 한도: 5,000,000원 / 계상액: 7,000,000원
+      </div>
+      <div class="formula">
+<span class="cmt">// Step 1. 기초 충당금 익금환입 처리</span>
+<span class="k">장부상 환입</span>  <span class="op">=</span> 6,000,000원 (전액 익금환입, 법 §34③)
+<span class="k">익금불산입</span>   <span class="op">=</span> 2,000,000원 (세무상 유보 잔액 한도)
+<span class="k">익금산입</span>     <span class="op">=</span> 6,000,000 <span class="op">-</span> 2,000,000 <span class="op">=</span> <span class="v">4,000,000원</span> <span class="note">(기타)</span>
+
+<span class="cmt">// Step 2. 대손금 충당금 상계</span>
+<span class="k">대손금</span> 4,000,000원 → 충당금 상계 (별도 조정 없음, 유보 이미 소멸)
+
+<span class="cmt">// Step 3. 당기 충당금 신규 설정</span>
+<span class="k">한도초과</span> <span class="op">=</span> 7,000,000 <span class="op">-</span> 5,000,000 <span class="op">=</span> <span class="v">2,000,000원</span>
+<span class="note">→ 손금불산입 (△유보) 2,000,000원</span>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">예제 3 — 구상채권상각충당금 한도 계산</div>
+      <div class="box blue">
+        <div class="box-title">📋 문제</div>
+        신용보증잔액: 100억원<br>
+        전기 신용보증잔액: 80억원 / 당기 발생 구상채권: 6,400만원
+      </div>
+      <div class="formula">
+<span class="cmt">// 구상채권발생률</span>
+<span class="k">구상채권발생률</span> <span class="op">=</span> 64,000,000 ÷ 8,000,000,000 <span class="op">=</span> <span class="v">0.8%</span>
+
+<span class="cmt">// 한도액 = MIN(1%, 0.8%)</span>
+<span class="k">MIN</span>(1%, 0.8%) <span class="op">=</span> <span class="v">0.8%</span>
+<span class="k">한도액</span> <span class="op">=</span> 10,000,000,000 × 0.8% <span class="op">=</span> <span class="v">80,000,000원</span>
+
+<span class="note">※ 대손충당금이었다면 MAX → 1% → 1억원이었을 것!</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ S10: 출제 포인트 ════════════ -->
+<div class="section" id="s10">
+  <div class="sec-hdr"><span class="sec-num">10</span><h2>출제 포인트 &amp; 오답 함정 총정리</h2></div>
+  <div class="sec-body">
+
+    <div class="box red">
+      <div class="box-title">🎯 1차 최빈출 포인트 15선</div>
+      <ul class="dot">
+        <li>대손충당금은 <strong>결산조정</strong> / 대손금은 <strong>신고조정</strong>(원칙) — 항상 구분</li>
+        <li>대손충당금 한도 = 채권잔액 × <strong>MAX(1%, 대손실적률)</strong></li>
+        <li>구상채권상각충당금 한도 = 신용보증잔액 × <strong>MIN(1%, 구상채권발생률)</strong></li>
+        <li>대손실적률 기준: <em>직전 사업연도</em> 채권잔액과 대손금</li>
+        <li>충당금 잔액은 <strong>무조건 다음연도 전액 익금산입</strong> (법 §34③)</li>
+        <li>대손금 발생 시 <strong>충당금에서 먼저 상계</strong> (법 §34③)</li>
+        <li>부도 6개월 손금한도 = 채권액 − <strong>1,000원</strong></li>
+        <li>부도 6개월 시 <strong>저당권 설정</strong>이 있으면 대손 불가</li>
+        <li>중소기업 2년 이상 미회수 → <strong>특수관계인 제외</strong></li>
+        <li>소액채권 기준: 채권가액 <strong>30만원 이하</strong> (채무자별 합계)</li>
+        <li>채무보증 구상채권 → 대손처리 <strong>원칙 불가</strong> (예외 6가지)</li>
+        <li>특수관계인 가지급금 → 대손처리 <strong>절대 불가</strong></li>
+        <li>대손충당금 합병 승계 → <strong>채권도 함께 승계</strong>되어야만 인정</li>
+        <li>퇴직급여충당금 합병 승계 → 채권 동반 요건 <strong>없음</strong></li>
+        <li>대손금 회수 시 → <strong>회수일이 속하는 사업연도 익금산입</strong></li>
+      </ul>
+    </div>
+
+    <div class="box purple">
+      <div class="box-title">⚠ 자주 나오는 오답 함정 비교</div>
+      <div class="t-wrap">
+        <table>
+          <thead><tr><th>오답 선지</th><th>정답</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>"대손충당금은 신고조정으로도 손금산입 가능"</td>
+              <td><span class="red-t">오답</span> — 반드시 <strong>결산조정</strong></td>
+            </tr>
+            <tr>
+              <td>"대손실적률은 당기 발생 대손금으로 계산"</td>
+              <td><span class="red-t">오답</span> — <strong>직전 사업연도</strong> 기준</td>
+            </tr>
+            <tr>
+              <td>"구상채권상각충당금 한도는 MAX(1%, 발생률)"</td>
+              <td><span class="red-t">오답</span> — <strong>MIN</strong>(1%, 구상채권발생률)</td>
+            </tr>
+            <tr>
+              <td>"부도어음 대손금은 채권 전액 손금산입 가능"</td>
+              <td><span class="red-t">오답</span> — <strong>채권액 − 1,000원</strong></td>
+            </tr>
+            <tr>
+              <td>"채무보증 구상채권은 모두 대손처리 불가"</td>
+              <td><span class="red-t">오답</span> — 법정 허용 채무보증(공정거래법, 금융회사, 신용보증법인 등) 제외</td>
+            </tr>
+            <tr>
+              <td>"합병 시 대손충당금은 채권 없이도 승계 가능"</td>
+              <td><span class="red-t">오답</span> — <strong>채권도 함께 승계</strong>되어야 인정</td>
+            </tr>
+            <tr>
+              <td>"일반법인의 중소기업 외상매출금 부도 후 대손 가능"</td>
+              <td><span class="red-t">오답</span> — 부도 6개월 외상매출금은 <strong>중소기업만 가능</strong></td>
+            </tr>
+            <tr>
+              <td>"소액채권 기준은 채권별 30만원"</td>
+              <td><span class="red-t">오답</span> — <strong>채무자별 합계</strong> 30만원 이하</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="box teal">
+      <div class="box-title">📊 최종 비교 암기표</div>
+      <div class="t-wrap">
+        <table>
+          <thead><tr><th></th><th>대손금</th><th>대손충당금</th><th>구상채권상각충당금</th></tr></thead>
+          <tbody>
+            <tr><td class="td-k">조정유형</td><td>신고조정 (원칙)<br>결산조정 (임의계상)</td><td>결산조정</td><td>결산조정</td></tr>
+            <tr><td class="td-k">한도</td><td>사유별 전액</td><td>채권잔액 × MAX(1%, 실적률)</td><td>보증잔액 × MIN(1%, 발생률)</td></tr>
+            <tr><td class="td-k">잔액 처리</td><td>회수 시 익금산입</td><td>다음연도 전액 익금환입</td><td>다음연도 전액 익금환입</td></tr>
+            <tr><td class="td-k">합병 승계</td><td>미계상 시 등기일 속하는 연도에 손비</td><td>채권 함께 승계 시만 인정</td><td>별도 규정 없음</td></tr>
+            <tr><td class="td-k">근거</td><td>법 §19의2 / 령 §19의2</td><td>법 §34 / 령 §61</td><td>법 §35 / 령 §63</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════ FOOTER ════════════ -->
+<div class="doc-footer">
+  <span>📌 법령 기준: 법인세법 (2026.01.02 시행) / 법인세법 시행령 (2026.02.27 시행) §19의2, §34, §35, §61, §63</span>
+  <span>2026-05-28 &nbsp;|&nbsp; #대손금 #대손충당금 #구상채권상각충당금 #신고조정 #결산조정 #세무사1차</span>
+</div>
+
+</div><!-- .page -->
+</body>
+</html>

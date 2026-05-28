@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 퇴직급여충당금 &amp; 퇴직연금충당금</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:            #F8F9FA;
+    --surface:       #FFFFFF;
+    --surface-2:     #F1F3F5;
+    --border:        #DEE2E6;
+    --border-strong: #ADB5BD;
+    --text-primary:  #1C2B3A;
+    --text-secondary:#3D5166;
+    --text-muted:    #6B7C8D;
+
+    --blue:          #1A56A0;
+    --blue-light:    #EBF4FF;
+    --blue-mid:      #BFDBFE;
+
+    --teal:          #0F766E;
+    --teal-light:    #ECFDF5;
+    --teal-mid:      #A7F3D0;
+
+    --orange:        #B45309;
+    --orange-light:  #FFFBEB;
+    --orange-mid:    #FDE68A;
+
+    --red:           #B91C1C;
+    --red-light:     #FEF2F2;
+    --red-mid:       #FECACA;
+
+    --green:         #166534;
+    --green-light:   #F0FDF4;
+    --green-mid:     #BBF7D0;
+
+    --purple:        #5B21B6;
+    --purple-light:  #F5F3FF;
+    --purple-mid:    #DDD6FE;
+
+    --serif: 'Noto Serif KR', serif;
+    --sans:  'Noto Sans KR', sans-serif;
+    --mono:  'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--sans);
+    font-size: 14.5px;
+    line-height: 1.85;
+    padding: 36px 18px 80px;
+  }
+
+  .page { max-width: 980px; margin: 0 auto; }
+
+  /* ─── HEADER ─── */
+  .doc-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--blue);
+    border-radius: 14px;
+    padding: 38px 48px 32px;
+    margin-bottom: 32px;
+  }
+  .label-pill {
+    display: inline-block;
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--blue);
+    background: var(--blue-light);
+    border: 1px solid var(--blue-mid);
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin-bottom: 14px;
+  }
+  .doc-header h1 {
+    font-family: var(--serif);
+    font-size: 27px; font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .meta span::before { content: '▸ '; color: var(--blue); }
+
+  /* ─── OVERVIEW CARDS ─── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  @media(max-width:640px){ .overview-grid{grid-template-columns:1fr;} }
+  .ov-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .ov-card.teal  { border-top-color: var(--teal); }
+  .ov-card.orange{ border-top-color: var(--orange); }
+  .ov-card-label {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .ov-card-value {
+    font-family: var(--serif);
+    font-size: 16px; font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+  .ov-card-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ─── TOC ─── */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 30px;
+    margin-bottom: 32px;
+  }
+  .toc-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: .1em; color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .toc ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 24px;
+    padding-left: 20px;
+  }
+  @media(max-width:600px){ .toc ol{grid-template-columns:1fr;} }
+  .toc li { font-size: 13px; color: var(--blue); padding: 2px 0; }
+
+  /* ─── SECTION ─── */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    margin-bottom: 26px;
+    overflow: hidden;
+  }
+  .sec-header {
+    padding: 18px 30px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .sec-num {
+    font-family: var(--mono);
+    font-size: 10.5px; font-weight: 600;
+    color: #fff;
+    background: var(--blue);
+    border-radius: 4px;
+    padding: 2px 8px;
+    flex-shrink: 0;
+  }
+  .sec-header h2 {
+    font-family: var(--serif);
+    font-size: 17px; font-weight: 700;
+    color: var(--text-primary);
+  }
+  .sec-body { padding: 26px 30px; }
+
+  /* ─── SUBSECTION ─── */
+  .sub { margin-bottom: 28px; }
+  .sub:last-child { margin-bottom: 0; }
+  .sub-title {
+    font-family: var(--serif);
+    font-size: 15px; font-weight: 700;
+    color: var(--blue);
+    border-bottom: 2px solid var(--blue-mid);
+    padding-bottom: 5px;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 7px;
+  }
+
+  /* ─── LAW BOX ─── */
+  .law-box {
+    background: var(--blue-light);
+    border: 1px solid var(--blue-mid);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 13px 18px;
+    margin: 13px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+  .law-ref {
+    font-family: var(--mono);
+    font-size: 10.5px; font-weight: 600;
+    color: var(--blue);
+    display: block; margin-bottom: 4px;
+  }
+
+  /* ─── TABLE ─── */
+  .t-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 13px 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    background: var(--surface-2);
+    font-weight: 700; padding: 10px 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--border-strong);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top; line-height: 1.75;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) td { background: var(--surface-2); }
+  .td-k { font-weight: 700; color: var(--text-primary); white-space: nowrap; }
+  .td-c { font-family: var(--mono); font-size: 11.5px; color: var(--blue); white-space: nowrap; }
+  .center { text-align: center; }
+
+  /* ─── INFO BOXES ─── */
+  .box {
+    border-radius: 9px;
+    padding: 15px 20px;
+    margin: 14px 0;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .box.red    { background:var(--red-light);    border:1px solid var(--red-mid);    border-left:4px solid var(--red);    }
+  .box.orange { background:var(--orange-light); border:1px solid var(--orange-mid); border-left:4px solid var(--orange); }
+  .box.green  { background:var(--green-light);  border:1px solid var(--green-mid);  border-left:4px solid var(--green);  }
+  .box.teal   { background:var(--teal-light);   border:1px solid var(--teal-mid);   border-left:4px solid var(--teal);   }
+  .box.purple { background:var(--purple-light); border:1px solid var(--purple-mid); border-left:4px solid var(--purple); }
+  .box.blue   { background:var(--blue-light);   border:1px solid var(--blue-mid);   border-left:4px solid var(--blue);   }
+  .box-title {
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: .1em;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .box.red    .box-title { color: var(--red);    }
+  .box.orange .box-title { color: var(--orange); }
+  .box.green  .box-title { color: var(--green);  }
+  .box.teal   .box-title { color: var(--teal);   }
+  .box.purple .box-title { color: var(--purple); }
+  .box.blue   .box-title { color: var(--blue);   }
+
+  /* ─── ANALOGY ─── */
+  .analogy {
+    background: #FFFBEB;
+    border: 1px solid #F6E05E;
+    border-left: 4px solid #D69E2E;
+    border-radius: 0 8px 8px 0;
+    padding: 13px 18px;
+    margin: 13px 0;
+    font-size: 13px; line-height: 1.8;
+  }
+  .analogy-title { font-size: 10.5px; font-weight: 700; color: #B7791F; letter-spacing: .08em; margin-bottom: 5px; }
+
+  /* ─── FORMULA ─── */
+  .formula {
+    background: #1C2B3A;
+    color: #CBD5E1;
+    font-family: var(--mono);
+    font-size: 13px; line-height: 1.9;
+    border-radius: 9px;
+    padding: 16px 20px;
+    margin: 13px 0;
+    overflow-x: auto;
+  }
+  .formula .cmt { color: #5E7A92; }
+  .formula .k   { color: #6EE7B7; }
+  .formula .v   { color: #FDE68A; }
+  .formula .op  { color: #F87171; }
+  .formula .note{ color: #93C5FD; }
+
+  /* ─── LISTS ─── */
+  ul.dot, ul.ck, ul.xk {
+    padding-left: 0; list-style: none;
+    display: flex; flex-direction: column; gap: 5px;
+    font-size: 13px; color: var(--text-secondary);
+  }
+  ul.dot li::before { content: '·'; font-size: 18px; color: var(--blue);  margin-right: 8px; vertical-align: middle; }
+  ul.ck  li::before { content: '✓'; font-weight: 700; color: var(--green); margin-right: 8px; }
+  ul.xk  li::before { content: '✕'; font-weight: 700; color: var(--red);   margin-right: 8px; }
+
+  /* ─── GRID ─── */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 13px 0; }
+  @media(max-width:600px){ .g2{grid-template-columns:1fr;} }
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 8px; padding: 15px 18px;
+    font-size: 13px; line-height: 1.8;
+  }
+  .card-title { font-weight: 700; font-size: 12.5px; margin-bottom: 7px; color: var(--text-primary); }
+
+  /* ─── MISC ─── */
+  hr.hr { border: none; border-top: 1px solid var(--border); margin: 22px 0; }
+  strong { font-weight: 700; color: var(--text-primary); }
+  em     { font-style: normal; font-weight: 700; color: var(--orange); }
+  .muted { color: var(--text-muted); font-size: 12.5px; }
+  .red-t { color: var(--red);   font-weight: 700; }
+  .blu-t { color: var(--blue);  font-weight: 700; }
+  .grn-t { color: var(--green); font-weight: 700; }
+  p { margin-bottom: 9px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ─── FLOW DIAGRAM ─── */
+  .flow {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+    margin: 14px 0; font-size: 12.5px;
+  }
+  .flow-box {
+    background: var(--blue-light);
+    border: 1px solid var(--blue-mid);
+    border-radius: 6px;
+    padding: 7px 14px;
+    font-weight: 600; color: var(--blue);
+    text-align: center;
+  }
+  .flow-box.gray { background: var(--surface-2); border-color: var(--border); color: var(--text-secondary); }
+  .flow-box.red  { background: var(--red-light);  border-color: var(--red-mid);  color: var(--red); }
+  .flow-box.grn  { background: var(--green-light); border-color: var(--green-mid); color: var(--green); }
+  .flow-arr { color: var(--text-muted); font-size: 16px; font-weight: 700; }
+
+  /* ─── FOOTER ─── */
+  .doc-footer {
+    margin-top: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 28px;
+    font-size: 12px; color: var(--text-muted);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<div class="doc-header">
+  <div class="label-pill">세법학 · 법인세법</div>
+  <h1>퇴직급여충당금 &amp; 퇴직연금충당금</h1>
+  <div class="meta">
+    <span>세무사 1차 객관식 대비</span>
+    <span>법인세법 §33 / 시행령 §44·44의2·60</span>
+    <span>시행일: 2026-01-02 (법) · 2026-02-27 (령)</span>
+  </div>
+</div>
+
+<!-- ══════════════════ OVERVIEW CARDS ══════════════════ -->
+<div class="overview-grid">
+  <div class="ov-card">
+    <div class="ov-card-label">핵심 개념</div>
+    <div class="ov-card-value">결산조정 항목</div>
+    <div class="ov-card-sub">반드시 결산 시 비용 계상 → 신고조정 불가</div>
+  </div>
+  <div class="ov-card teal">
+    <div class="ov-card-label">충당금 설정 한도</div>
+    <div class="ov-card-value">당기 총급여액 × 5%</div>
+    <div class="ov-card-sub">AND 누적한도(퇴직금 추계액 × 0%) 동시 적용</div>
+  </div>
+  <div class="ov-card orange">
+    <div class="ov-card-label">2016년 이후 실질</div>
+    <div class="ov-card-value">누적한도 = 0%</div>
+    <div class="ov-card-sub">사실상 신규 충당금 설정 불가 (경과조치)</div>
+  </div>
+</div>
+
+<!-- ══════════════════ TOC ══════════════════ -->
+<div class="toc">
+  <div class="toc-label">📋 목차</div>
+  <ol>
+    <li>제도 개요 및 구조 파악</li>
+    <li>퇴직급여충당금 — 설정 시 세무조정</li>
+    <li>퇴직급여충당금 — 지급(사용) 시 세무조정</li>
+    <li>퇴직급여충당금 — 합병·사업양도 시 승계</li>
+    <li>퇴직연금충당금(확정급여형) — 설정 시 세무조정</li>
+    <li>확정기여형 퇴직연금 — 처리 방법</li>
+    <li>임원 퇴직급여 한도 (령 §44④)</li>
+    <li>세무조정 종합 흐름도</li>
+    <li>계산 예제</li>
+    <li>출제 포인트 &amp; 오답 함정 총정리</li>
+  </ol>
+</div>
+
+
+<!-- ══════════════════ SECTION 1 ══════════════════ -->
+<div class="section" id="s1">
+  <div class="sec-header">
+    <span class="sec-num">01</span>
+    <h2>제도 개요 및 구조 파악</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="analogy">
+      <div class="analogy-title">🍭 초등학생 비유</div>
+      회사가 나중에 직원들에게 줄 퇴직금을 미리 저금통에 넣어두는 것이 <strong>퇴직급여충당금</strong>이에요.<br>
+      그런데 세금 계산을 할 때는 "저금통에 얼마까지 넣을 수 있나?" 하는 한도가 있어요.<br>
+      그 한도를 넘으면 세금 계산에서 뺄 수 없고, 나중에 실제로 퇴직금을 줄 때 저금통에서 먼저 쓰는 거예요!
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">전체 구조 한눈에 보기</div>
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th>구분</th><th>퇴직급여충당금</th><th>확정급여형(DB) 퇴직연금</th><th>확정기여형(DC) 퇴직연금</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-k">근거</td>
+              <td>법 §33 / 령 §60</td>
+              <td>령 §44의2②④</td>
+              <td>령 §44의2③</td>
+            </tr>
+            <tr>
+              <td class="td-k">성격</td>
+              <td>회사 내부 충당금</td>
+              <td>외부 금융기관 적립</td>
+              <td>외부 금융기관 적립</td>
+            </tr>
+            <tr>
+              <td class="td-k">조정 유형</td>
+              <td><strong>결산조정</strong></td>
+              <td><strong>결산조정</strong></td>
+              <td><strong>전액 즉시 손금</strong></td>
+            </tr>
+            <tr>
+              <td class="td-k">한도</td>
+              <td>총급여 5% AND 누적한도</td>
+              <td>한도 계산 필요 (추계액 기준)</td>
+              <td>한도 없음 (임원 제외)</td>
+            </tr>
+            <tr>
+              <td class="td-k">설정 대상자</td>
+              <td>DC형 설정자 <span class="red-t">제외</span></td>
+              <td>DC형 설정자 <span class="red-t">제외</span></td>
+              <td>DC형 설정자만</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="law-box">
+      <span class="law-ref">법인세법 제33조 제1항 (2026.01.02 시행) — 결산조정 요건</span>
+      내국법인이 각 사업연도의 <strong>결산을 확정할 때</strong> 임원이나 직원의 퇴직급여에 충당하기 위하여 퇴직급여충당금을 <strong>손비로 계상한 경우</strong>에 한하여 손금에 산입한다.
+    </div>
+
+    <div class="box red">
+      <div class="box-title">🚨 핵심 — 결산조정 vs 신고조정</div>
+      퇴직급여충당금은 <strong>결산조정</strong> 항목 → 결산 확정 시 장부에 비용으로 계상<strong>해야만</strong> 손금산입 가능.<br>
+      세무조정계산서에만 기재하는 신고조정(임의 조정)으로는 <span class="red-t">절대 처리 불가</span>.<br>
+      ⚠ 시험 선지: <em>"신고조정으로 손금 산입할 수 있다"</em> → <span class="red-t">오답</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 2 ══════════════════ -->
+<div class="section" id="s2">
+  <div class="sec-header">
+    <span class="sec-num">02</span>
+    <h2>퇴직급여충당금 — 설정 시 세무조정</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">① 한도 계산 구조</div>
+
+      <div class="law-box">
+        <span class="law-ref">법인세법 시행령 제60조 제1항·제2항</span>
+        <strong>①항 한도 (당기 한도):</strong> 퇴직급여 지급대상 임원·직원에게 해당 사업연도에 지급한 <strong>총급여액 × 5%</strong><br>
+        <strong>②항 한도 (누적 한도):</strong> 전원 퇴직 시 퇴직금 추계액 × <strong>해당 연도 비율</strong>에서 기설정 누적액을 공제한 금액<br>
+        → <em>두 한도 중 작은 금액</em>이 당기 손금산입 한도
+      </div>
+
+      <div class="formula">
+<span class="cmt">// ① 당기 한도</span>
+<span class="k">당기 한도</span> <span class="op">=</span> 당기 총급여액(DC형 제외) × <span class="v">5%</span>
+
+<span class="cmt">// ② 누적 한도 (2016년 이후)</span>
+<span class="k">누적 한도</span> <span class="op">=</span> 퇴직금 추계액 × <span class="v">0%</span> <span class="op">-</span> 기설정 누적액 <span class="op">=</span> <span class="v">음수 또는 0</span>
+
+<span class="cmt">// → 손금산입 가능 한도</span>
+<span class="k">세법상 한도</span> <span class="op">=</span> MIN(당기 한도, 누적 한도) <span class="op">=</span> <span class="v">0원</span> <span class="note">(2016년 이후 사실상 0)</span>
+      </div>
+
+      <div class="box orange">
+        <div class="box-title">⚡ 누적 비율 단계적 축소 (수험 암기)</div>
+        <div class="t-wrap">
+          <table>
+            <thead><tr><th>사업연도 개시 시기</th><th>누적 한도 비율</th></tr></thead>
+            <tbody>
+              <tr><td>2010년</td><td class="center">30%</td></tr>
+              <tr><td>2011년</td><td class="center">25%</td></tr>
+              <tr><td>2012년</td><td class="center">20%</td></tr>
+              <tr><td>2013년</td><td class="center">15%</td></tr>
+              <tr><td>2014년</td><td class="center">10%</td></tr>
+              <tr><td>2015년</td><td class="center">5%</td></tr>
+              <tr><td><strong>2016년 이후</strong></td><td class="center"><strong class="red-t">0%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        2016년 이후 개시 사업연도부터 누적 한도 = 0 → <strong>신규 충당금 설정 사실상 불가</strong>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">② 세무조정 처리</div>
+
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th>상황</th><th>세무조정</th><th>비고</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-k">계상액 ≤ 한도액</td>
+              <td><span class="grn-t">조정 없음</span> (전액 손금 인정)</td>
+              <td>한도 내 손금산입</td>
+            </tr>
+            <tr>
+              <td class="td-k">계상액 &gt; 한도액</td>
+              <td><span class="red-t">손금불산입 (유보)</span><br>초과액 = 계상액 − 한도액</td>
+              <td>△유보로 처분</td>
+            </tr>
+            <tr>
+              <td class="td-k">한도 = 0 (2016년 이후)</td>
+              <td>계상액 <strong>전액 손금불산입 (유보)</strong></td>
+              <td>실무상 대부분 해당</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box blue">
+        <div class="box-title">📌 세무조정 분개 흐름 (2016년 이후 신규 설정 시)</div>
+        <div class="flow">
+          <div class="flow-box gray">장부: 퇴직급여충당금 설정 (비용↑)</div>
+          <div class="flow-arr">→</div>
+          <div class="flow-box red">세무조정: 손금불산입 (유보) 전액</div>
+          <div class="flow-arr">→</div>
+          <div class="flow-box gray">세무상 자산 = 없음</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">③ 총급여액의 범위</div>
+      <div class="law-box">
+        <span class="law-ref">시행령 제60조 제1항 / 제44조 제4항 제2호</span>
+        총급여액 = 소득세법 §20①1·2의 금액(비과세소득 제외) 중 <strong>DC형 퇴직연금 설정자 제외</strong>한 임원·직원에게 지급한 금액
+      </div>
+      <ul class="dot">
+        <li><strong>DC형(확정기여형) 설정자</strong>는 총급여액에서 제외 → 5% 한도 계산 시 분모에서 빠짐</li>
+        <li>비과세소득(식대, 자가운전보조금 등)은 총급여액에서 <strong>제외</strong></li>
+        <li>손금불산입된 임원 인건비도 <strong>제외</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 3 ══════════════════ -->
+<div class="section" id="s3">
+  <div class="sec-header">
+    <span class="sec-num">03</span>
+    <h2>퇴직급여충당금 — 지급(사용) 시 세무조정</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="analogy">
+      <div class="analogy-title">🍭 초등학생 비유</div>
+      저금통(충당금)에서 퇴직금을 꺼내 줄 때, 저금통에 있는 돈부터 먼저 쓰는 거예요.<br>
+      만약 저금통이 비었는데 퇴직금을 더 줘야 하면, 그때는 새 돈(비용)으로 처리해요!
+    </div>
+
+    <div class="sub">
+      <div class="sub-title">① 현실적 퇴직의 요건 (손금 인정 전제)</div>
+      <div class="law-box">
+        <span class="law-ref">시행령 제44조 제1항·제2항</span>
+        퇴직급여는 <strong>현실적으로 퇴직</strong>하는 경우에 지급하는 것에 한하여 손금산입
+      </div>
+      <ul class="ck">
+        <li>직원 → 임원으로 취임 시 (실제 지급한 경우)</li>
+        <li>조직변경·합병·분할·사업양도로 퇴직한 경우</li>
+        <li>근로자퇴직급여보장법 §8②에 따른 <strong>중간정산</strong> 시</li>
+        <li>정관 또는 퇴직급여지급규정에 따른 임원 중간정산 (장기요양 등)</li>
+      </ul>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">② 지급 시 세무조정 3가지 패턴</div>
+
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th>패턴</th><th>장부 처리</th><th>세무조정</th><th>처분</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-k">A. 충당금에서 지급<br><span class="muted">(충당금 잔액 ≥ 지급액)</span></td>
+              <td>충당금 감소 (충당금↓ / 현금↓)</td>
+              <td><strong class="grn-t">유보 감소 (익금불산입)</strong><br>세무상 충당금 차감</td>
+              <td>△유보 → 유보 상계</td>
+            </tr>
+            <tr>
+              <td class="td-k">B. 충당금 초과 지급<br><span class="muted">(충당금 잔액 &lt; 지급액)</span></td>
+              <td>충당금 한도까지 감소 +<br>초과분 퇴직급여(비용)로 계상</td>
+              <td>충당금 부분: A와 동일<br>초과분: <strong>비용 인식 (별도 조정 없음)</strong></td>
+              <td>초과분은 바로 손금</td>
+            </tr>
+            <tr>
+              <td class="td-k">C. 세무상 충당금 없이 지급<br><span class="muted">(유보 잔액 = 0)</span></td>
+              <td>비용(퇴직급여)으로 계상</td>
+              <td><strong class="grn-t">조정 없음 — 전액 손금</strong></td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box red">
+        <div class="box-title">🚨 핵심 원칙 — 법 §33 제2항</div>
+        퇴직금을 지급하는 경우에는 <strong>퇴직급여충당금에서 먼저 지급한 것으로 본다.</strong><br>
+        → 충당금 잔액이 있으면 무조건 충당금부터 차감 (선충당금 지급 의제)
+      </div>
+
+      <div class="box teal">
+        <div class="box-title">📐 세무조정 처리 흐름 정리</div>
+        <div class="flow">
+          <div class="flow-box">퇴직 발생</div>
+          <div class="flow-arr">→</div>
+          <div class="flow-box">세무상 충당금 잔액?</div>
+          <div class="flow-arr">→</div>
+          <div class="flow-box grn">있음: 충당금 차감<br>유보 감소(익금불산입)</div>
+        </div>
+        <div class="flow" style="margin-top:6px">
+          <div class="flow-box gray" style="visibility:hidden">퇴직 발생</div>
+          <div class="flow-arr" style="visibility:hidden">→</div>
+          <div class="flow-box gray" style="visibility:hidden">세무상</div>
+          <div class="flow-arr">→</div>
+          <div class="flow-box red">없음(0): 비용계상 그대로<br>손금산입 (별도조정 없음)</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">③ 충당금 잔액의 익금환입 — 해당 없음!</div>
+      <div class="law-box">
+        <span class="law-ref">시행령 제60조 제3항</span>
+        손금산입 누적액에서 지급한 퇴직금을 뺀 금액이 추계액 × 비율을 초과하더라도 그 초과액은 <strong>익금으로 환입하지 아니한다.</strong>
+      </div>
+      <ul class="dot">
+        <li>퇴직금 지급 후 세무상 충당금 잔액이 있더라도 <em>자동 익금환입 없음</em></li>
+        <li>다음 사업연도 한도 계산 시 기설정 누적액에 포함되어 <em>자연스럽게 조정</em></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 4 ══════════════════ -->
+<div class="section" id="s4">
+  <div class="sec-header">
+    <span class="sec-num">04</span>
+    <h2>합병·사업양도 시 충당금 승계 (법 §33③④)</h2>
+  </div>
+  <div class="sec-body">
+    <div class="law-box">
+      <span class="law-ref">법인세법 제33조 제3항·제4항</span>
+      합병·분할 등기일 현재 퇴직급여충당금 중 합병법인등이 승계받은 금액 → <strong>합병법인등의 퇴직급여충당금으로 간주</strong>
+    </div>
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr><th>사유</th><th>처리</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-k">합병·분할</td>
+            <td>합병(분할)등기일 현재 충당금 → 합병법인등에 <strong>승계</strong><br>승계받은 법인의 충당금으로 취급</td>
+          </tr>
+          <tr>
+            <td class="td-k">사업의 포괄적 양도</td>
+            <td>합병·분할과 동일하게 <strong>준용</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box orange">
+      <div class="box-title">⚡ 출제 포인트</div>
+      <ul class="dot">
+        <li>승계받은 금액은 합병법인등이 <strong>별도로 손금산입하지 않아도</strong> 충당금으로 인정</li>
+        <li><em>"포괄적 양도" 시에도 적용</em> — 개별 자산양도 시에는 적용 없음</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 5 ══════════════════ -->
+<div class="section" id="s5">
+  <div class="sec-header">
+    <span class="sec-num">05</span>
+    <h2>퇴직연금충당금(확정급여형 DB) — 설정 시 세무조정</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">① 손금산입 한도 계산</div>
+
+      <div class="law-box">
+        <span class="law-ref">시행령 제44조의2 제4항</span>
+        확정급여형(DB) 부담금 손금산입 한도 = <strong>MAX(①, ①의2)</strong> − 직전 연도까지 지급한 부담금 누계
+      </div>
+
+      <div class="formula">
+<span class="cmt">// ①항: 추계액 기준</span>
+<span class="k">①</span> <span class="op">=</span> 퇴직금 추계액(DC형·임원한도초과 제외) <span class="op">-</span> 사업연도종료일 현재 퇴직급여충당금
+
+<span class="cmt">// ①의2항: 근퇴법 기준 (IAS19)</span>
+<span class="k">①의2</span> <span class="op">=</span> 근퇴법 §16①1 금액 + 가입 안 한 자 추계액 + 일부 미가입 기간 추계액
+        <span class="op">-</span> 사업연도종료일 현재 퇴직급여충당금
+
+<span class="cmt">// 최종 손금산입 한도</span>
+<span class="k">한도</span> <span class="op">=</span> MAX(①, ①의2) <span class="op">-</span> 직전연도말까지 손금산입 부담금 누계액
+<span class="note">→ 한도 초과분: 손금불산입(유보)</span>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">② 세무조정 패턴</div>
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th>상황</th><th>세무조정</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-k">납입액 ≤ 한도</td>
+              <td><span class="grn-t">전액 손금산입</span> (조정 없음)</td>
+            </tr>
+            <tr>
+              <td class="td-k">납입액 &gt; 한도</td>
+              <td>초과분 <span class="red-t">손금불산입 (유보)</span></td>
+            </tr>
+            <tr>
+              <td class="td-k">퇴직 시 수급</td>
+              <td>연금 지급 → <strong>퇴직급여충당금에서 먼저 차감</strong> (법 §33② 준용)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box green">
+        <div class="box-title">✅ 확정급여형 vs 퇴직급여충당금 관계</div>
+        <ul class="dot">
+          <li>DB형 한도 계산 시 분모에서 <strong>이미 설정된 퇴직급여충당금을 차감</strong>
+          → 충당금이 많을수록 DB형 손금한도 줄어듦</li>
+          <li>두 방식은 <em>중복 공제 방지 구조</em>로 설계됨</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 6 ══════════════════ -->
+<div class="section" id="s6">
+  <div class="sec-header">
+    <span class="sec-num">06</span>
+    <h2>확정기여형(DC) 퇴직연금 — 처리 방법</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="law-box">
+      <span class="law-ref">시행령 제44조의2 제3항</span>
+      확정기여형(DC) 부담금은 <strong>전액 즉시 손금산입</strong> (한도 없음)
+    </div>
+
+    <div class="g2">
+      <div class="card">
+        <div class="card-title" style="color:var(--green)">✓ 직원</div>
+        DC형 부담금 → <strong>전액 손금</strong><br>
+        별도 한도 계산 없음<br>
+        <span class="muted">세무조정 불필요</span>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color:var(--red)">⚠ 임원</div>
+        부담금 합계를 퇴직급여로 보아 <strong>임원 퇴직급여 한도</strong>(령 §44④) 적용<br>
+        한도 초과 시 → 퇴직일 속하는 사업연도 부담금에서 <span class="red-t">손금불산입</span><br>
+        초과액이 당기 부담금 초과 시 → <span class="red-t">익금산입</span>
+      </div>
+    </div>
+
+    <div class="box red">
+      <div class="box-title">🚨 오답 함정</div>
+      <em>"DC형은 임원에게도 전액 손금"</em> → <span class="red-t">오답</span><br>
+      직원은 전액 손금이지만, <strong>임원에 대한 DC형 부담금은 퇴직급여 한도 적용</strong>!
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 7 ══════════════════ -->
+<div class="section" id="s7">
+  <div class="sec-header">
+    <span class="sec-num">07</span>
+    <h2>임원 퇴직급여 손금 한도 (시행령 §44④)</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">정관에 금액이 정해진 경우 (§44④1호)</div>
+        한도 = <strong>정관에 정해진 금액</strong><br>
+        <span class="muted">정관에서 위임된 퇴직급여지급규정이 있으면 그 금액</span>
+      </div>
+      <div class="card">
+        <div class="card-title">정관에 없는 경우 (§44④2호)</div>
+        한도 = <strong>1년치 총급여액 × (1/10) × 근속연수</strong><br>
+        <span class="muted">퇴직일 기준 소급 1년간 총급여 × 1/10 × 근속연수</span>
+      </div>
+    </div>
+
+    <div class="formula">
+<span class="cmt">// 정관 규정 없을 때 임원 퇴직급여 한도</span>
+<span class="k">한도액</span> <span class="op">=</span> (퇴직 전 1년간 총급여액 <span class="op">×</span> <span class="v">1/10</span>) <span class="op">×</span> 근속연수
+
+<span class="cmt">// 직원 기간 합산 가능 여부</span>
+<span class="note">직원 → 임원 취임 시 퇴직금 미지급한 경우: 직원 근속기간 합산 가능</span>
+    </div>
+
+    <div class="box orange">
+      <div class="box-title">⚡ 출제 포인트</div>
+      <ul class="dot">
+        <li>한도 계산 시 총급여액 = <em>비과세 제외, 손금불산입 인건비 제외</em></li>
+        <li>지배주주등과 특수관계인 임원 → §44④ 적용 <span class="red-t">BUT</span> §44③ 안분 규정은 지배주주등 <span class="red-t">제외</span></li>
+        <li>임원 퇴직급여 한도 초과분 → <strong>손금불산입 (기타사외유출)</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 8 ══════════════════ -->
+<div class="section" id="s8">
+  <div class="sec-header">
+    <span class="sec-num">08</span>
+    <h2>세무조정 종합 흐름도</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="t-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>시점</th>
+            <th>장부상 처리</th>
+            <th>세무조정</th>
+            <th>소득처분</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-k">충당금 설정<br>(한도 이내)</td>
+            <td>퇴직급여충당금 계상 (비용↑)</td>
+            <td><span class="grn-t">없음</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="td-k">충당금 설정<br>(한도 초과)</td>
+            <td>퇴직급여충당금 계상 (비용↑)</td>
+            <td><span class="red-t">손금불산입 (유보)</span><br>초과액</td>
+            <td>△유보</td>
+          </tr>
+          <tr>
+            <td class="td-k">퇴직금 지급<br>(충당금에서)</td>
+            <td>충당금↓ / 현금↓<br>(비용 계상 없음)</td>
+            <td><span class="grn-t">익금불산입 (△유보 감소)</span></td>
+            <td>유보</td>
+          </tr>
+          <tr>
+            <td class="td-k">퇴직금 지급<br>(충당금 없을 때)</td>
+            <td>퇴직급여(비용)↑ / 현금↓</td>
+            <td><span class="grn-t">없음 (그대로 손금)</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="td-k">임원 퇴직급여<br>한도 초과</td>
+            <td>퇴직급여(비용) 계상</td>
+            <td><span class="red-t">손금불산입</span><br>초과액</td>
+            <td>기타사외유출</td>
+          </tr>
+          <tr>
+            <td class="td-k">DC형 부담금<br>(직원)</td>
+            <td>비용 계상</td>
+            <td><span class="grn-t">없음 (전액 손금)</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="td-k">DC형 부담금<br>(임원, 한도 초과)</td>
+            <td>비용 계상</td>
+            <td><span class="red-t">손금불산입</span></td>
+            <td>기타사외유출</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 9 ══════════════════ -->
+<div class="section" id="s9">
+  <div class="sec-header">
+    <span class="sec-num">09</span>
+    <h2>계산 예제</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="sub">
+      <div class="sub-title">예제 1 — 충당금 설정 세무조정</div>
+      <div class="box blue">
+        <div class="box-title">📋 문제</div>
+        (주)세무는 2026년 사업연도에 퇴직급여충당금 500만원을 비용으로 계상하였다.<br>
+        DC형 제외 임직원 총급여액: 8,000만원 / 기설정 충당금 누적액: 200만원 / 전원 퇴직 시 추계액: 5,000만원
+      </div>
+      <div class="formula">
+<span class="cmt">// ① 당기 한도</span>
+<span class="k">당기 한도</span>  <span class="op">=</span> 8,000만원 × <span class="v">5%</span>          <span class="op">=</span> <span class="v">400만원</span>
+
+<span class="cmt">// ② 누적 한도 (2026년 → 비율 0%)</span>
+<span class="k">누적 한도</span>  <span class="op">=</span> 5,000만원 × <span class="v">0%</span> − 200만원 <span class="op">=</span> <span class="v">−200만원 → 0원</span>
+
+<span class="cmt">// 손금산입 한도</span>
+<span class="k">세법 한도</span>  <span class="op">=</span> MIN(400만, 0원)              <span class="op">=</span> <span class="v">0원</span>
+
+<span class="cmt">// 세무조정</span>
+<span class="k">손금불산입</span> <span class="op">=</span> 500만원 − 0원              <span class="op">=</span> <span class="v">500만원 손금불산입(유보)</span>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">예제 2 — 퇴직금 지급 시 세무조정</div>
+      <div class="box blue">
+        <div class="box-title">📋 문제</div>
+        당기에 직원 A 퇴직. 퇴직금 1,200만원 지급.<br>
+        기초 세무상 퇴직급여충당금(유보) 잔액: 800만원
+      </div>
+      <div class="formula">
+<span class="cmt">// 충당금에서 먼저 지급 (법 §33②)</span>
+<span class="k">충당금에서 지급</span>  <span class="op">=</span> 800만원 <span class="note">→ 유보 800만원 감소(익금불산입)</span>
+
+<span class="cmt">// 나머지 400만원: 비용(퇴직급여)으로 계상</span>
+<span class="k">초과 지급분</span>      <span class="op">=</span> 1,200만원 − 800만원 <span class="op">=</span> <span class="v">400만원</span>
+<span class="note">→ 비용으로 손금산입 (별도 조정 없음)</span>
+
+<span class="cmt">// 세무조정 요약</span>
+<span class="k">익금불산입</span> 800만원 (△유보)
+<span class="k">추가 손금</span>  400만원 (조정 없음 — 그대로 손금)
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="sub-title">예제 3 — 임원 퇴직급여 한도 계산</div>
+      <div class="box blue">
+        <div class="box-title">📋 문제</div>
+        임원 B: 퇴직 전 1년 총급여액 6,000만원 / 근속연수 10년 / 정관 규정 없음 / 실제 퇴직금 지급액 8,000만원
+      </div>
+      <div class="formula">
+<span class="cmt">// 한도 계산 (령 §44④2호)</span>
+<span class="k">한도</span> <span class="op">=</span> 6,000만원 × (1/10) × 10년 <span class="op">=</span> <span class="v">6,000만원</span>
+
+<span class="cmt">// 세무조정</span>
+<span class="k">실제 지급액</span>  <span class="op">=</span> 8,000만원
+<span class="k">손금불산입</span>  <span class="op">=</span> 8,000만원 − 6,000만원 <span class="op">=</span> <span class="v">2,000만원 (기타사외유출)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ SECTION 10 ══════════════════ -->
+<div class="section" id="s10">
+  <div class="sec-header">
+    <span class="sec-num">10</span>
+    <h2>출제 포인트 &amp; 오답 함정 총정리</h2>
+  </div>
+  <div class="sec-body">
+
+    <div class="box red">
+      <div class="box-title">🎯 1차 최빈출 포인트 12선</div>
+      <ul class="dot">
+        <li>퇴직급여충당금은 <strong>결산조정</strong> 항목 — 신고조정 불가</li>
+        <li>당기 한도 = 총급여액 × <strong>5%</strong> (DC형 제외 임직원)</li>
+        <li>2016년 이후 누적 한도 비율 = <strong>0%</strong> → 신규 설정 사실상 불가</li>
+        <li>DC형 설정자는 5% 한도 계산 총급여에서 <strong>제외</strong></li>
+        <li>퇴직금 지급 시 → <strong>충당금에서 먼저</strong> 차감 (법 §33②)</li>
+        <li>충당금 초과 지급분 → 그대로 비용 (별도 조정 없음)</li>
+        <li>충당금 잔액은 <strong>자동 익금환입 없음</strong> (§60③)</li>
+        <li>DC형 부담금: 직원 → <strong>전액 손금</strong> / 임원 → <strong>한도 적용</strong></li>
+        <li>임원 퇴직급여 한도(정관 없음) = 1년 총급여 × 1/10 × <strong>근속연수</strong></li>
+        <li>임원 한도 초과 → 손금불산입, 처분 = <strong>기타사외유출</strong></li>
+        <li>합병·분할 시 충당금 <strong>승계 가능</strong> (포괄양도도 준용)</li>
+        <li>현실적 퇴직이 아닌 경우 지급한 퇴직금 → <strong>손금불산입</strong></li>
+      </ul>
+    </div>
+
+    <div class="box purple">
+      <div class="box-title">⚠ 혼동하기 쉬운 표현 비교</div>
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th>헷갈리는 선지</th><th>정답</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"2016년 이후에도 당기 총급여액의 5% 한도에서 충당금 설정 손금산입 가능"</td>
+              <td><span class="red-t">오답</span> — 당기한도(5%)와 누적한도(0%) 중 작은 값이 한도 → 0원</td>
+            </tr>
+            <tr>
+              <td>"충당금 잔액이 초과하면 초과분을 익금환입해야 한다"</td>
+              <td><span class="red-t">오답</span> — 익금환입 의무 없음 (§60③)</td>
+            </tr>
+            <tr>
+              <td>"DC형 임원 부담금은 직원과 마찬가지로 전액 손금"</td>
+              <td><span class="red-t">오답</span> — 임원은 한도 적용</td>
+            </tr>
+            <tr>
+              <td>"퇴직급여충당금을 세무조정계산서에만 기재해도 손금산입 가능"</td>
+              <td><span class="red-t">오답</span> — 결산서에 손비로 계상 필수</td>
+            </tr>
+            <tr>
+              <td>"비과세 급여도 5% 한도 계산 총급여에 포함"</td>
+              <td><span class="red-t">오답</span> — 비과세 제외한 총급여액 기준</td>
+            </tr>
+            <tr>
+              <td>"DB형 부담금 한도 계산 시 퇴직급여충당금과 무관"</td>
+              <td><span class="red-t">오답</span> — 충당금이 클수록 DB형 한도 줄어듦</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="box teal">
+      <div class="box-title">📊 세 가지 제도 최종 비교 암기표</div>
+      <div class="t-wrap">
+        <table>
+          <thead>
+            <tr><th></th><th>퇴직급여충당금</th><th>DB형 연금</th><th>DC형 연금</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="td-k">손금 방식</td><td>결산조정</td><td>결산조정</td><td>즉시 손금</td></tr>
+            <tr><td class="td-k">한도 (직원)</td><td>총급여 5% AND 누적</td><td>추계액 기준</td><td><strong>없음</strong></td></tr>
+            <tr><td class="td-k">한도 (임원)</td><td>← 동일</td><td>← 동일</td><td>퇴직급여 한도 적용</td></tr>
+            <tr><td class="td-k">2016년 이후 실질</td><td class="red-t">0원</td><td>여전히 적용</td><td>전액 손금</td></tr>
+            <tr><td class="td-k">중복 설정</td><td>DC형 제외</td><td>DC형 제외</td><td>DC형 전용</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<div class="doc-footer">
+  <span>📌 법령 기준: 법인세법(2026.01.02 시행) / 법인세법 시행령(2026.02.27 시행) §33, §44, §44의2, §60</span>
+  <span>2026-05-28 &nbsp;|&nbsp; #퇴직급여충당금 #퇴직연금충당금 #결산조정 #DC형DB형 #임원퇴직급여 #세무사1차</span>
+</div>
+
+</div><!-- .page -->
+</body>
+</html>
