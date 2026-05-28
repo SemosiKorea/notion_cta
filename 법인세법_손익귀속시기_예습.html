@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 | 손익의 귀속시기</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#F7F9FC; --sf:#FFFFFF; --sf2:#EFF2F7;
+    --bd:#DDE3ED; --bds:#A8B5C8;
+    --tx:#18293E; --tx2:#3A5068; --txm:#677A94;
+
+    --B:#1450A0; --Bl:#EBF4FF; --Bm:#BFDBFE;
+    --T:#0C7470; --Tl:#EAFAF8; --Tm:#99E4DC;
+    --G:#145C35; --Gl:#F0FDF5; --Gm:#BBF7D0;
+    --O:#B24808; --Ol:#FFFBEB; --Om:#FDE68A;
+    --R:#B71818; --Rl:#FEF2F2; --Rm:#FECACA;
+    --P:#5A1EA8; --Pl:#F5F3FF; --Pm:#DDD6FE;
+    --Y:#8A6A08; --Yl:#FEFCE8; --Ym:#FEF08A;
+    --I:#1E3A8A; --Il:#EFF6FF; --Im:#BFDBFE;
+
+    --serif:'Noto Serif KR',serif;
+    --sans:'Noto Sans KR',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--tx);font-family:var(--sans);font-size:14.5px;line-height:1.85;padding:36px 18px 80px}
+  .page{max-width:980px;margin:0 auto}
+
+  /* ── HEADER ── */
+  .hdr{background:var(--sf);border:1px solid var(--bd);border-top:5px solid var(--B);border-radius:14px;padding:36px 48px 30px;margin-bottom:26px}
+  .pill{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--B);background:var(--Bl);border:1px solid var(--Bm);border-radius:5px;padding:3px 10px;margin-bottom:12px}
+  .hdr h1{font-family:var(--serif);font-size:27px;font-weight:700;line-height:1.35;margin-bottom:9px}
+  .meta{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--txm)}
+  .meta span::before{content:'▸ ';color:var(--B)}
+
+  /* ── BIG PRINCIPLE BOX ── */
+  .principle{background:linear-gradient(135deg,#EBF4FF 0%,#F5F3FF 100%);border:2px solid var(--Bm);border-radius:14px;padding:28px 36px;margin-bottom:26px;text-align:center}
+  .principle-label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--B);text-transform:uppercase;margin-bottom:10px}
+  .principle-text{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--tx);line-height:1.5}
+  .principle-sub{font-size:13px;color:var(--tx2);margin-top:8px}
+
+  /* ── TOC ── */
+  .toc{background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:20px 28px;margin-bottom:26px}
+  .toc-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--txm);margin-bottom:10px}
+  .toc ol{display:grid;grid-template-columns:1fr 1fr;gap:3px 24px;padding-left:20px}
+  @media(max-width:600px){.toc ol{grid-template-columns:1fr}}
+  .toc li{font-size:13px;color:var(--B);padding:2px 0}
+
+  /* ── SECTION ── */
+  .sec{background:var(--sf);border:1px solid var(--bd);border-radius:13px;margin-bottom:22px;overflow:hidden}
+  .sh{padding:16px 30px 14px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:11px}
+  .sn{font-family:var(--mono);font-size:10.5px;font-weight:600;color:#fff;background:var(--B);border-radius:4px;padding:2px 8px;flex-shrink:0}
+  .sh h2{font-family:var(--serif);font-size:17px;font-weight:700}
+  .sb{padding:26px 30px}
+  .sub{margin-bottom:26px}
+  .sub:last-child{margin-bottom:0}
+  .st{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--B);border-bottom:2px solid var(--Bm);padding-bottom:5px;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+
+  /* ── LAW ── */
+  .law{background:var(--Bl);border:1px solid var(--Bm);border-left:4px solid var(--B);border-radius:0 8px 8px 0;padding:12px 17px;margin:11px 0;font-size:13px;color:var(--tx2);line-height:1.8}
+  .lr{font-family:var(--mono);font-size:10.5px;font-weight:600;color:var(--B);display:block;margin-bottom:4px}
+
+  /* ── TABLE ── */
+  .tw{overflow-x:auto;border:1px solid var(--bd);border-radius:8px;margin:11px 0}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{background:var(--sf2);font-weight:700;padding:10px 13px;text-align:left;border-bottom:2px solid var(--bds);white-space:nowrap}
+  tbody td{padding:9px 13px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.75}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even) td{background:var(--sf2)}
+  .tk{font-weight:700;white-space:nowrap}
+  .tc{font-family:var(--mono);font-size:11px;color:var(--B);white-space:nowrap}
+  .ctr{text-align:center}
+  .hl{background:#FEFCE8!important;font-weight:700}
+
+  /* ── BOXES ── */
+  .box{border-radius:9px;padding:14px 20px;margin:11px 0;font-size:13px;line-height:1.85}
+  .box.R{background:var(--Rl);border:1px solid var(--Rm);border-left:4px solid var(--R)}
+  .box.O{background:var(--Ol);border:1px solid var(--Om);border-left:4px solid var(--O)}
+  .box.G{background:var(--Gl);border:1px solid var(--Gm);border-left:4px solid var(--G)}
+  .box.T{background:var(--Tl);border:1px solid var(--Tm);border-left:4px solid var(--T)}
+  .box.P{background:var(--Pl);border:1px solid var(--Pm);border-left:4px solid var(--P)}
+  .box.B{background:var(--Bl);border:1px solid var(--Bm);border-left:4px solid var(--B)}
+  .box.Y{background:var(--Yl);border:1px solid var(--Ym);border-left:4px solid var(--Y)}
+  .bt{font-size:10.5px;font-weight:700;letter-spacing:.1em;margin-bottom:8px;display:flex;align-items:center;gap:5px}
+  .box.R .bt{color:var(--R)}.box.O .bt{color:var(--O)}.box.G .bt{color:var(--G)}
+  .box.T .bt{color:var(--T)}.box.P .bt{color:var(--P)}.box.B .bt{color:var(--B)}
+  .box.Y .bt{color:var(--Y)}
+
+  /* ── ANALOGY ── */
+  .an{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 8px 8px 0;padding:12px 17px;margin:11px 0;font-size:13px;line-height:1.8}
+  .at{font-size:10.5px;font-weight:700;color:#B7791F;letter-spacing:.08em;margin-bottom:5px}
+
+  /* ── FORMULA ── */
+  .fm{background:#18293E;color:#CBD5E1;font-family:var(--mono);font-size:12.5px;line-height:1.9;border-radius:9px;padding:15px 20px;margin:11px 0;overflow-x:auto}
+  .fm .c{color:#4A6178}.fm .k{color:#6EE7B7}.fm .v{color:#FDE68A}.fm .op{color:#F87171}.fm .n{color:#93C5FD}.fm .h{color:#F9A8D4}
+
+  /* ── LISTS ── */
+  ul.dt,ul.ck,ul.xk{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--tx2)}
+  ul.dt li::before{content:'·';font-size:18px;color:var(--B);margin-right:8px;vertical-align:middle}
+  ul.ck li::before{content:'✓';font-weight:700;color:var(--G);margin-right:8px}
+  ul.xk li::before{content:'✕';font-weight:700;color:var(--R);margin-right:8px}
+
+  /* ── GRID ── */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:11px 0}
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:11px 0}
+  @media(max-width:640px){.g2,.g3{grid-template-columns:1fr}}
+  .cd{border:1px solid var(--bd);border-radius:8px;padding:14px 17px;font-size:13px;line-height:1.8}
+  .ct{font-weight:700;font-size:12.5px;margin-bottom:6px}
+
+  /* ── DECISION TREE ── */
+  .dtree{background:var(--sf2);border:1px solid var(--bd);border-radius:10px;padding:18px 22px;margin:12px 0;font-size:12.5px}
+  .drow{display:flex;align-items:flex-start;gap:8px;margin:5px 0}
+  .darr{color:var(--txm);font-weight:700;margin-top:1px;flex-shrink:0}
+  .dq{color:var(--B);font-weight:700}
+  .da{color:var(--G);font-weight:600}
+  .da.r{color:var(--R)}
+  .dind{margin-left:22px}
+
+  /* ── MISC ── */
+  hr.hr{border:none;border-top:1px solid var(--bd);margin:20px 0}
+  strong{font-weight:700;color:var(--tx)}
+  em{font-style:normal;font-weight:700;color:var(--O)}
+  .muted{color:var(--txm);font-size:12px}
+  .rt{color:var(--R);font-weight:700}
+  .bt2{color:var(--B);font-weight:700}
+  .gt{color:var(--G);font-weight:700}
+  .ot{color:var(--O);font-weight:700}
+  p{margin-bottom:9px}
+  p:last-child{margin-bottom:0}
+  .bdg{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:4px;margin:0 2px}
+  .bdg-b{background:var(--Bl);color:var(--B);border:1px solid var(--Bm)}
+  .bdg-r{background:var(--Rl);color:var(--R);border:1px solid var(--Rm)}
+  .bdg-g{background:var(--Gl);color:var(--G);border:1px solid var(--Gm)}
+  .bdg-o{background:var(--Ol);color:var(--O);border:1px solid var(--Om)}
+
+  /* ── FOOTER ── */
+  .ft{margin-top:30px;background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:15px 24px;font-size:12px;color:var(--txm);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══ HEADER ══ -->
+<div class="hdr">
+  <div class="pill">세법학 · 법인세법</div>
+  <h1>손익의 귀속시기</h1>
+  <div class="meta">
+    <span>세무사 1차 객관식 대비</span>
+    <span>법인세법 §40 / 시행령 §68·§69·§70·§71</span>
+    <span>시행일: 2026-01-02 (법) · 2026-02-27 (령)</span>
+  </div>
+</div>
+
+<!-- ══ PRINCIPLE ══ -->
+<div class="principle">
+  <div class="principle-label">📌 대원칙 — 법인세법 제40조 제1항</div>
+  <div class="principle-text">익금과 손금의 귀속사업연도 = <span style="color:var(--B)">그 익금·손금이 <u>확정된 날</u>이 속하는 사업연도</span></div>
+  <div class="principle-sub">→ 권리의무확정주의 (≠ 현금주의, ≠ 발생주의 단순 적용)</div>
+</div>
+
+<!-- ══ TOC ══ -->
+<div class="toc">
+  <div class="toc-lbl">📋 목차</div>
+  <ol>
+    <li>일반 원칙 — 권리의무확정주의</li>
+    <li>자산 판매·양도 손익의 귀속시기 (령 §68)</li>
+    <li>장기할부 판매의 귀속시기 특례 (령 §68②~④)</li>
+    <li>용역 제공 손익의 귀속시기 (령 §69)</li>
+    <li>이자·배당 손익의 귀속시기 (령 §70)</li>
+    <li>임대료 등 기타 손익의 귀속시기 (령 §71)</li>
+    <li>계산 예제</li>
+    <li>출제 포인트 &amp; 오답 함정 총정리</li>
+  </ol>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S1: 일반 원칙                  -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s1">
+  <div class="sh"><span class="sn">01</span><h2>일반 원칙 — 권리의무확정주의</h2></div>
+  <div class="sb">
+
+    <div class="an">
+      <div class="at">🍭 초등학생 비유</div>
+      회사가 물건을 팔았을 때 "세금은 언제 내야 하나?"를 결정하는 게 귀속시기예요.<br>
+      세법은 "돈을 받은 날"도, "약속한 날"도 아니라 <strong>"이제 확실히 내 수입이 됐다고 인정받는 날"</strong>을 기준으로 해요 — 이게 바로 <strong>권리의무확정주의</strong>입니다!
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>원칙</th><th>내용</th><th>비교</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="tk">현금주의</td>
+            <td>실제로 현금이 들어온·나간 날</td>
+            <td class="rt">법인세법 원칙 ✕</td>
+          </tr>
+          <tr>
+            <td class="tk">발생주의 (기업회계)</td>
+            <td>거래가 경제적으로 발생한 날</td>
+            <td>기업회계 기준</td>
+          </tr>
+          <tr class="hl">
+            <td class="tk">권리의무확정주의 (법인세)</td>
+            <td><strong>익금·손금이 법적으로 확정된 날</strong></td>
+            <td class="gt">법인세법 원칙 ✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box B">
+      <div class="bt">📌 권리의무확정주의의 의미</div>
+      <ul class="dt">
+        <li><strong>익금</strong>: 수익을 실현할 권리가 확정된 시점</li>
+        <li><strong>손금</strong>: 비용·손실을 부담할 의무가 확정된 시점</li>
+        <li>원칙적으로 기업회계의 발생주의와 유사하지만, 구체적인 귀속 시점은 세법령이 별도 규정</li>
+        <li>기업회계와 세법의 귀속시기가 다를 경우 → <strong>세법 우선 적용</strong></li>
+      </ul>
+    </div>
+
+    <div class="box O">
+      <div class="bt">⚡ 결산조정 vs 신고조정과의 관계</div>
+      귀속시기 규정은 익금·손금의 <em>귀속 사업연도</em>를 결정함<br>
+      → 결산서에 수익·비용을 어느 연도에 계상했느냐와 달리, 세법은 <strong>확정된 날</strong> 기준으로 독립적으로 판단<br>
+      단, 일부 항목은 결산 계상을 요건으로 하는 예외 존재 (이하 각 항목 참조)
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S2: 자산 판매·양도 손익       -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s2">
+  <div class="sh"><span class="sn">02</span><h2>자산 판매·양도 손익의 귀속시기 (시행령 §68①)</h2></div>
+  <div class="sb">
+
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:22%">거래 유형</th>
+            <th style="width:35%">귀속시기 (원칙)</th>
+            <th>예외·특이사항</th>
+            <th class="tc">근거</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tk">상품·제품 등<br>일반 판매</td>
+            <td><strong>인도한 날</strong></td>
+            <td>반환조건부·동의조건부·기한부 판매 → <strong>조건 성취일 또는 기한 경과일</strong></td>
+            <td class="tc">령 §68①1</td>
+          </tr>
+          <tr>
+            <td class="tk">시용(試用) 판매</td>
+            <td><strong>상대방이 구입 의사를 표시한 날</strong></td>
+            <td>일정 기간 내 반송·거절 없으면 판매 확정 → <strong>그 기간의 만료일</strong></td>
+            <td class="tc">령 §68①2</td>
+          </tr>
+          <tr class="hl">
+            <td class="tk">상품 외 자산 양도<br>(부동산·유가증권 등)</td>
+            <td><strong>대금 청산일</strong></td>
+            <td>대금 청산 전에 ① 소유권이전등기·등록, ② 인도, ③ 사용수익 중 <strong>빠른 날</strong></td>
+            <td class="tc">령 §68①3</td>
+          </tr>
+          <tr>
+            <td class="tk">위탁매매</td>
+            <td><strong>수탁자가 위탁자산을 매매한 날</strong></td>
+            <td>위탁자 기준으로 수탁자 매매일이 귀속시기</td>
+            <td class="tc">령 §68①4</td>
+          </tr>
+          <tr class="hl">
+            <td class="tk">증권시장 유가증권<br>보통거래</td>
+            <td><strong>매매계약 체결일</strong></td>
+            <td>결제일(T+2) 아님! 계약 체결일 기준</td>
+            <td class="tc">령 §68①5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sub">
+      <div class="st">① 상품 외 자산(부동산) 양도 — 귀속시기 판단 흐름</div>
+
+      <div class="dtree">
+        <div class="drow"><div class="dq">부동산 양도 귀속시기는?</div></div>
+        <div class="dind">
+          <div class="drow"><div class="darr">→</div><div>원칙: <span class="gt">대금 청산일</span></div></div>
+          <div class="drow"><div class="darr">→</div><div>BUT 대금 청산 전에 아래 중 하나라도 먼저 발생하면:</div></div>
+          <div class="dind">
+            <div class="drow"><div class="darr">①</div><div>소유권이전등기일(등록일)</div></div>
+            <div class="drow"><div class="darr">②</div><div>인도일</div></div>
+            <div class="drow"><div class="darr">③</div><div>사용수익일</div></div>
+            <div class="drow"><div class="darr">→</div><div class="da"><strong>① ② ③ 중 가장 빠른 날</strong>이 귀속시기</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box R">
+        <div class="bt">🚨 부동산 귀속시기 — 최빈출 오답 함정</div>
+        <ul class="dt">
+          <li><em>"부동산 양도는 항상 등기일이 귀속시기"</em> → <span class="rt">오답</span><br>
+              대금 청산일이 원칙! 등기일은 대금 청산 전 등기 시에만 적용</li>
+          <li><em>"인도일이 등기일보다 빠르면 인도일"</em> → <span class="gt">정답</span><br>
+              인도일·등기일·사용수익일 중 <strong>가장 빠른 날</strong></li>
+          <li>대금을 먼저 전부 받고 나중에 등기하는 경우 → <strong>대금 청산일</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">② 조건부 판매·시용판매 비교</div>
+      <div class="g2">
+        <div class="cd">
+          <div class="ct" style="color:var(--B)">반환·동의·기한부 조건부 판매</div>
+          인도일 <span class="rt">아님!</span><br>
+          → <strong>조건이 성취되거나 기한이 지나 판매가 확정된 날</strong><br>
+          <span class="muted">예: 조건 불성취 시 반환 가능 → 아직 수익 미확정</span>
+        </div>
+        <div class="cd">
+          <div class="ct" style="color:var(--T)">시용(試用) 판매</div>
+          원칙: 구입 의사 표시일<br>
+          특약: <strong>거절 기간의 만료일</strong><br>
+          <span class="muted">예: "2주 내 반송 없으면 구매 확정" → 2주 만료일</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">③ 매출할인 귀속시기 (령 §68⑤)</div>
+      <div class="law">
+        <span class="lr">시행령 제68조 제5항</span>
+        매출할인 금액은 <strong>약정에 의한 지급기일</strong>이 속하는 사업연도 매출액에서 차감<br>
+        지급기일 미정 시 → <strong>지급한 날</strong>이 속하는 사업연도
+      </div>
+      <div class="box O">
+        <div class="bt">⚡ 매출할인 처리 요점</div>
+        매출할인 = 매출 차감항목 (손금 아님)<br>
+        귀속시기 = 지급기일 (지급일 아님!)
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S3: 장기할부 판매 특례         -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s3">
+  <div class="sh"><span class="sn">03</span><h2>장기할부 판매의 귀속시기 특례 (시행령 §68②~④)</h2></div>
+  <div class="sb">
+
+    <div class="sub">
+      <div class="st">① 장기할부조건의 정의 (령 §68④)</div>
+      <div class="law">
+        <span class="lr">시행령 제68조 제4항</span>
+        판매금액·수입금액을 <strong>2회 이상 분할 수입</strong>하는 것 중<br>
+        목적물 인도일의 다음날부터 최종 할부금 지급기일까지의 기간이 <strong>1년 이상</strong>인 것
+      </div>
+      <div class="box R">
+        <div class="bt">🚨 장기할부조건 요건 — 2가지 모두 충족!</div>
+        <div class="g2">
+          <div class="cd">
+            <div class="ct">요건 ①</div>
+            <strong>2회 이상</strong> 분할 수입<br>
+            <span class="muted">1회 지급이면 해당 없음</span>
+          </div>
+          <div class="cd">
+            <div class="ct">요건 ②</div>
+            인도일 다음날 ~ 최종 할부금 지급기일 <strong>1년 이상</strong><br>
+            <span class="muted">1년 미만이면 해당 없음</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">② 장기할부 특례 — 일반법인 vs 중소기업</div>
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>구분</th><th>원칙 귀속시기</th><th>장기할부 특례</th><th>특례 적용 조건</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tk">일반 내국법인</td>
+              <td>인도일 (상품) 또는<br>대금청산일 등 (기타자산)</td>
+              <td>회수하였거나 회수할 금액 기준<br>각 연도 익금 산입</td>
+              <td class="hl"><strong>결산 계상 必</strong><br>(인도일 속 사업연도 결산 시 해당연도 회수액 수익계상)</td>
+            </tr>
+            <tr>
+              <td class="tk">중소기업</td>
+              <td>← 동일</td>
+              <td>← 동일</td>
+              <td class="hl"><strong>임의 적용</strong> (할 수 있다)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box R">
+        <div class="bt">🚨 일반법인과 중소기업 차이 — 시험 핵심!</div>
+        <div class="g2">
+          <div class="cd">
+            <div class="ct" style="color:var(--R)">일반 내국법인</div>
+            결산 계상 → <strong>의무 적용</strong><br>
+            <span class="muted">"계상한 경우에는 … 산입한다"</span><br>
+            결산 계상 안 하면 원칙 귀속시기 적용
+          </div>
+          <div class="cd">
+            <div class="ct" style="color:var(--G)">중소기업</div>
+            <strong>선택 적용 가능</strong><br>
+            <span class="muted">"… 산입할 수 있다"</span><br>
+            결산 계상 안 해도 선택 가능
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">③ 인도일 이전 회수액 및 폐업 시 처리 (령 §68③)</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>상황</th><th>처리</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="tk">인도일 이전 회수액</td>
+              <td>인도일에 회수한 것으로 간주 → <strong>인도일 속 사업연도 익금</strong></td>
+            </tr>
+            <tr>
+              <td class="tk">장기할부 중 폐업</td>
+              <td>폐업일 현재 미산입 금액과 대응 비용 → <strong>폐업일 속 사업연도 전액 익금·손금</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">④ 현재가치할인차금 환입 (령 §68⑥)</div>
+      <div class="law">
+        <span class="lr">시행령 제68조 제6항</span>
+        장기할부 채권에 현재가치할인차금 계상 시<br>
+        → 기업회계기준에 따라 <strong>채권 회수기간 동안 환입하였거나 환입할 금액을 각 사업연도 익금에 산입</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S4: 용역 제공 손익             -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s4">
+  <div class="sh"><span class="sn">04</span><h2>용역 제공 손익의 귀속시기 (시행령 §69)</h2></div>
+  <div class="sb">
+
+    <div class="an">
+      <div class="at">🍭 초등학생 비유</div>
+      집을 지어주는 공사처럼 <strong>오랜 기간이 걸리는 작업</strong>은 완성된 날에 한꺼번에 수익을 잡는 게 아니라, <strong>"공사를 얼마나 진행했는지(진행률)"</strong>에 따라 매년 조금씩 나눠서 수익을 인식해요 — 이게 <strong>작업진행률 기준</strong>입니다!
+    </div>
+
+    <div class="sub">
+      <div class="st">① 원칙: 작업진행률 기준 (령 §69①)</div>
+      <div class="law">
+        <span class="lr">시행령 제69조 제1항</span>
+        건설·제조·기타 용역(도급공사·예약매출 포함)의 제공 손익<br>
+        → <strong>착수일 속 사업연도 ~ 인도일(용역완료일) 속 사업연도까지</strong><br>
+        → <strong>작업진행률</strong> 기준으로 수익·비용 각 사업연도 익금·손금 산입
+      </div>
+
+      <div class="fm">
+<span class="c">// 작업진행률 기준 수익 인식</span>
+<span class="k">당기 인식 수익</span> = 도급금액 × 작업진행률 - 직전연도까지 인식한 수익
+<span class="k">작업진행률</span>    = 발생원가 누계 / 추정 총원가
+<span class="n">// 예: 도급금액 10억, 총원가 추정 8억, 당기 발생원가 2억</span>
+<span class="n">//     진행률 = 2억/8억 = 25%, 당기 수익 = 10억 × 25% = 2.5억</span>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">② 인도기준(완성기준) 선택 가능한 예외 (령 §69①단서)</div>
+      <div class="g2">
+        <div class="cd">
+          <div class="ct" style="color:var(--G)">예외 ① — 중소기업 + 1년 미만 계약</div>
+          중소기업이 수행하는 <strong>계약기간 1년 미만</strong> 건설 등<br>
+          → 인도일 속 사업연도 익금·손금 산입 <strong>선택 가능</strong>
+        </div>
+        <div class="cd">
+          <div class="ct" style="color:var(--B)">예외 ② — 기업회계기준상 인도기준 계상</div>
+          기업회계기준에 따라 인도일 속 사업연도 수익·비용으로 <strong>결산 계상한 경우</strong><br>
+          → 인도기준 허용
+        </div>
+      </div>
+
+      <div class="box R">
+        <div class="bt">🚨 예외 ① 정확한 요건 — 두 가지 모두 충족!</div>
+        <ul class="dt">
+          <li>① <strong>중소기업</strong>이어야 함 (일반법인은 인도기준 불가)</li>
+          <li>② 계약기간이 <strong>1년 미만</strong>이어야 함</li>
+          <li>→ 중소기업이어도 1년 이상 계약이면 <span class="rt">진행기준 의무</span></li>
+          <li>→ 1년 미만이어도 일반법인이면 <span class="rt">진행기준 의무</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">③ 진행률 계산 불능 시 (령 §69②)</div>
+      <div class="law">
+        <span class="lr">시행령 제69조 제2항</span>
+        작업진행률을 계산할 수 없다고 인정되는 경우 → <strong>인도일 속 사업연도</strong>에 익금·손금 산입
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">④ 공사 계약 해약 시 (령 §69③)</div>
+      <div class="law">
+        <span class="lr">시행령 제69조 제3항</span>
+        진행기준으로 인식한 익금·손금과 해약으로 확정된 금액에 차액 발생<br>
+        → 그 차액을 <strong>해약일 속 사업연도</strong>의 익금·손금에 산입
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">⑤ 용역 제공 귀속시기 판단 흐름도</div>
+      <div class="dtree">
+        <div class="drow"><div class="dq">건설·도급·예약매출 등 용역인가?</div></div>
+        <div class="dind">
+          <div class="drow"><div class="darr">→</div><div class="da">원칙: <strong>작업진행률 기준</strong></div></div>
+          <div class="drow"><div class="darr">→</div><div>예외 가능한가?</div></div>
+          <div class="dind">
+            <div class="drow"><div class="darr">①</div><div>중소기업 + 1년 미만 계약 → <span class="da">인도기준 선택 가능</span></div></div>
+            <div class="drow"><div class="darr">②</div><div>기업회계기준상 인도기준으로 결산 계상 → <span class="da">인도기준 허용</span></div></div>
+            <div class="drow"><div class="darr">③</div><div>진행률 계산 불능 → <span class="da">인도기준 적용</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S5: 금융 손익 귀속시기         -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s5">
+  <div class="sh"><span class="sn">05</span><h2>이자·배당 등 금융 손익의 귀속시기 (시행령 §70)</h2></div>
+  <div class="sb">
+
+    <div class="sub">
+      <div class="st">① 이자소득·이자비용 귀속시기 (령 §70①)</div>
+      <div class="tw">
+        <table>
+          <thead>
+            <tr><th>구분</th><th>원칙 귀속시기</th><th>예외 (결산 계상 시)</th><th>비고</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tk">이자 수입<br>(일반법인)</td>
+              <td>소득세법 시행령 §45에 따른 <strong>수입시기</strong></td>
+              <td>결산 확정 시 <strong>경과 이자 계상</strong>→ 계상 사업연도 익금<br><span class="muted">(단, 원천징수 이자는 제외)</span></td>
+              <td class="tc">령 §70①1</td>
+            </tr>
+            <tr>
+              <td class="tk">이자 수입<br>(금융·보험업)</td>
+              <td><strong>실제로 수입된 날</strong><br><span class="muted">(선수입이자 제외)</span></td>
+              <td>경과 이자 계상 시 → 계상 사업연도 익금</td>
+              <td class="tc">령 §70①1</td>
+            </tr>
+            <tr class="hl">
+              <td class="tk">이자 지급<br>(손금)</td>
+              <td>소득세법 시행령 §45에 따른 <strong>수입시기</strong></td>
+              <td>결산 확정 시 <strong>경과 이자 계상</strong>→ 계상 사업연도 손금<br><span class="muted">단, 특수관계인 + 차입일~지급일 1년 초과 시 제외!</span></td>
+              <td class="tc">령 §70①2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box R">
+        <div class="bt">🚨 이자 지급 손금 예외 — 특수관계인 1년 초과 제한</div>
+        <strong>차입일부터 이자지급일까지 1년을 초과하는 특수관계인과의 거래</strong>에 따른 이자·할인액은<br>
+        경과 이자 계상하더라도 <em>결산 계상 = 손금 인정 특례 적용 불가</em><br>
+        → <strong>소득세법 시행령 §45에 따른 수입시기 기준 적용 강제</strong>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">② 배당소득 귀속시기 (령 §70②)</div>
+      <div class="law">
+        <span class="lr">시행령 제70조 제2항</span>
+        배당금 수입 → <strong>소득세법 시행령 §46에 따른 수입시기</strong>가 속하는 사업연도 익금<br>
+        예외: 금융회사 등이 신용회복지원 유동화전문회사로부터 받는 배당 → <strong>실제 지급받은 날</strong>
+      </div>
+      <div class="box O">
+        <div class="bt">⚡ 소득세법 시행령 §46 배당 수입시기 핵심</div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>배당 종류</th><th>수입시기</th></tr></thead>
+            <tbody>
+              <tr><td class="tk">잉여금 처분에 의한 배당</td><td>해당 법인의 <strong>잉여금 처분 결의일</strong></td></tr>
+              <tr><td class="tk">건설이자 배당</td><td><strong>지급일</strong></td></tr>
+              <tr><td class="tk">무기명 주식 배당</td><td><strong>지급일</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">③ 보험료 등 금융업 수입 (령 §70③)</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>항목</th><th>귀속시기</th><th>비고</th></tr></thead>
+          <tbody>
+            <tr><td class="tk">보험료·부금·보증료·수수료 (금융·보험업)</td><td><strong>실제로 수입된 날</strong></td><td>선수입분 제외</td></tr>
+            <tr><td class="tk">경과 보험료 등 결산 계상</td><td><strong>계상 사업연도</strong></td><td>경과 기간 대응 금액</td></tr>
+            <tr class="hl"><td class="tk">증권 매매 수수료<br>(투자매매·중개업자, 정형화 거래)</td><td><strong>매매계약 체결일</strong></td><td>결제일 아님!</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">④ 이자소득 귀속시기 핵심 비교</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>법인 유형</th><th>이자 수입 귀속 원칙</th><th>경과이자 계상 특례</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="tk">일반 법인</td>
+              <td>소득세법령 §45 수입시기</td>
+              <td>결산 계상 → 계상 사업연도 익금<br><span class="muted">(원천징수 이자 제외)</span></td>
+            </tr>
+            <tr class="hl">
+              <td class="tk">금융·보험업 법인</td>
+              <td><strong>실제로 수입된 날</strong></td>
+              <td>결산 계상 → 계상 사업연도 익금</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S6: 기타 손익 귀속시기         -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s6">
+  <div class="sh"><span class="sn">06</span><h2>임대료 등 기타 손익의 귀속시기 (시행령 §71)</h2></div>
+  <div class="sb">
+
+    <div class="sub">
+      <div class="st">① 임대료 귀속시기 (령 §71①)</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>상황</th><th>귀속시기</th><th>예외</th></tr></thead>
+          <tbody>
+            <tr><td class="tk">임대료 지급일이 정해진 경우</td><td><strong>계약에 따른 지급일</strong></td><td rowspan="2">결산 시 <strong>경과 임대료 계상</strong> → 계상 사업연도 익금·손금<br>또는 지급기간 <strong>1년 초과</strong> 시 경과분 각 사업연도 귀속</td></tr>
+            <tr><td class="tk">임대료 지급일이 정해지지 않은 경우</td><td><strong>지급을 받은 날</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box O">
+        <div class="bt">⚡ 임대료 1년 초과 기간 특례</div>
+        임대료 지급기간이 1년을 초과하는 경우 → 이미 경과한 기간에 대응하는 임대료 상당액은 <strong>해당 사업연도 익금</strong><br>
+        → 이자소득의 경과이자 계상 특례와 유사한 구조
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">② 사채할인발행차금 손금 귀속 (령 §71③)</div>
+      <div class="law">
+        <span class="lr">시행령 제71조 제3항</span>
+        사채할인발행차금 = 상환액 합계 − 사채발행가액(발행수수료·직접비용 차감 후)<br>
+        → <strong>기업회계기준에 의한 상각방법</strong>에 따라 손금산입
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">③ 파생상품 손익 귀속시기 (령 §71⑥)</div>
+      <div class="law">
+        <span class="lr">시행령 제71조 제6항</span>
+        목적물 인도 없이 <strong>차액 금전 정산</strong>하는 파생상품 거래 손익<br>
+        → <strong>그 거래에서 정하는 대금결제일</strong>이 속하는 사업연도
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">④ 자산유동화·매출채권 배서양도 (령 §71④)</div>
+      <div class="law">
+        <span class="lr">시행령 제71조 제4항</span>
+        자산유동화법에 따른 보유자산 양도, 매출채권·받을어음 배서양도<br>
+        → <strong>기업회계기준에 의한 손익인식방법</strong>에 따라 귀속사업연도 결정
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">⑤ 기타 손익 귀속시기 종합표</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>손익 유형</th><th>귀속시기</th><th>근거</th></tr></thead>
+          <tbody>
+            <tr><td class="tk">임대료 (지급일 정함)</td><td>계약상 지급일</td><td class="tc">령 §71①1</td></tr>
+            <tr><td class="tk">임대료 (지급일 미정)</td><td>실제 지급받은 날</td><td class="tc">령 §71①2</td></tr>
+            <tr><td class="tk">사채할인발행차금</td><td>기업회계기준 상각방법</td><td class="tc">령 §71③</td></tr>
+            <tr><td class="tk">자산유동화·배서양도</td><td>기업회계기준 손익인식방법</td><td class="tc">령 §71④</td></tr>
+            <tr class="hl"><td class="tk">파생상품 (차액결제)</td><td>대금결제일</td><td class="tc">령 §71⑥</td></tr>
+            <tr><td class="tk">금전등록기 사용 수입</td><td>실제 수입된 날 (선택 가능)</td><td class="tc">령 §71②</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S7: 계산 예제                  -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s7">
+  <div class="sh"><span class="sn">07</span><h2>계산 예제</h2></div>
+  <div class="sb">
+
+    <div class="sub">
+      <div class="st">예제 1 — 부동산 양도 귀속시기 판단</div>
+      <div class="box B">
+        <div class="bt">📋 문제</div>
+        (주)세무는 2026년 9월 1일 토지를 3억원에 양도 계약하였다.<br>
+        계약금: 2025.12.01 수령 / 중도금: 2026.06.01 수령 / 잔금: 2026.10.01 수령<br>
+        소유권이전등기: 2026.08.01 / 인도: 2026.09.01<br>
+        → 귀속 사업연도는?
+      </div>
+      <div class="fm">
+<span class="c">// 부동산(상품 외 자산) 양도 귀속시기 판단 (령 §68①3)</span>
+<span class="k">원칙</span>: 대금 청산일 = 잔금일 2026.10.01 → 2026년
+
+<span class="c">// 대금 청산 전 선행 사건 확인</span>
+<span class="k">소유권이전등기</span>: 2026.08.01 → <span class="v">대금 청산(10.01) 이전!</span>
+<span class="k">인도</span>:       2026.09.01 → 대금 청산 이전
+
+<span class="c">// 등기일, 인도일, 사용수익일 중 가장 빠른 날</span>
+<span class="k">등기일</span> 2026.08.01 < 인도일 2026.09.01
+<span class="h">→ 귀속 사업연도: 2026년 (등기일 2026.08.01이 기준)</span>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">예제 2 — 장기할부 판매 귀속시기 (일반법인)</div>
+      <div class="box B">
+        <div class="bt">📋 문제</div>
+        일반 내국법인이 2026.01.01 기계장치를 장기할부로 판매(총 대금 12억, 인도일 2026.01.01)<br>
+        할부 조건: 매년 말 3억씩 4회 수령 (2026~2029년)<br>
+        회사는 인도일 속 사업연도 결산 시 2026년에 3억만 수익 계상함
+      </div>
+      <div class="fm">
+<span class="c">// 장기할부 조건 확인</span>
+<span class="k">분할횟수</span>: 4회 ≥ 2회 ✓
+<span class="k">기간</span>: 2026.01.01 ~ 2029.12.31 = 약 4년 ≥ 1년 ✓
+→ <span class="v">장기할부 해당</span>
+
+<span class="c">// 일반법인 — 결산 계상 시 특례 적용</span>
+2026년 결산에 3억 수익 계상 → <span class="v">2026년 3억 익금</span>
+2027년 결산에 3억 수익 계상 → <span class="v">2027년 3억 익금</span>
+<span class="n">// (결산 계상 필수 — 안 하면 인도일 기준 전액 귀속)</span>
+      </div>
+    </div>
+
+    <hr class="hr">
+
+    <div class="sub">
+      <div class="st">예제 3 — 용역(진행률 기준) 손익 귀속</div>
+      <div class="box B">
+        <div class="bt">📋 문제</div>
+        도급공사 계약: 도급금액 20억, 추정 총원가 16억<br>
+        2026년 발생원가 4억 (누계), 2027년 발생원가 8억 (누계), 2028년 공사 완료 (원가 4억 추가)
+      </div>
+      <div class="fm">
+<span class="c">// 2026년</span>
+<span class="k">진행률</span> = 4억/16억 = <span class="v">25%</span>
+<span class="k">인식 수익</span> = 20억 × 25% = <span class="v">5억원</span>
+
+<span class="c">// 2027년</span>
+<span class="k">진행률</span> = 8억/16억 = <span class="v">50%</span>
+<span class="k">인식 수익</span> = 20억 × 50% - 5억(기인식) = <span class="v">5억원</span>
+
+<span class="c">// 2028년 (완료)</span>
+<span class="k">총 인식</span> = 20억 - 5억 - 5억 = <span class="v">10억원</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════ -->
+<!-- S8: 출제 포인트               -->
+<!-- ══════════════════════════════ -->
+<div class="sec" id="s8">
+  <div class="sh"><span class="sn">08</span><h2>출제 포인트 &amp; 오답 함정 총정리</h2></div>
+  <div class="sb">
+
+    <div class="box R">
+      <div class="bt">🎯 1차 최빈출 포인트 18선</div>
+      <ul class="dt">
+        <li>법인세법 귀속시기 원칙 = <strong>권리의무확정주의</strong> (현금주의 아님)</li>
+        <li>상품·제품 판매 원칙 = <strong>인도한 날</strong></li>
+        <li>반환·동의·기한부 조건부 판매 = <strong>조건 성취일 또는 기한 경과일</strong></li>
+        <li>시용판매 = <strong>구입 의사 표시일</strong> / 특약 있으면 <strong>거절 기간 만료일</strong></li>
+        <li>부동산 등 기타 자산 양도 원칙 = <strong>대금 청산일</strong></li>
+        <li>부동산 대금 청산 전 등기·인도·사용수익 → <strong>그 중 가장 빠른 날</strong></li>
+        <li>위탁매매 = <strong>수탁자가 매매한 날</strong></li>
+        <li>증권시장 보통거래 = <strong>매매계약 체결일</strong> (결제일 아님)</li>
+        <li>장기할부 요건: <strong>2회 이상 분할 + 1년 이상</strong></li>
+        <li>일반법인 장기할부 특례 = 결산 계상 시 <strong>의무 적용</strong></li>
+        <li>중소기업 장기할부 특례 = <strong>임의 적용</strong> (선택)</li>
+        <li>건설·도급·예약매출 원칙 = <strong>작업진행률 기준</strong></li>
+        <li>중소기업 + 1년 미만 계약 → 인도기준 <strong>선택 가능</strong></li>
+        <li>일반법인 장기 건설공사 → 진행기준 <strong>의무</strong></li>
+        <li>이자 수입(일반법인) = 소득세법령 §45 수입시기 / 경과이자 계상 시 계상연도 익금</li>
+        <li>이자 수입(금융·보험업) = <strong>실제 수입된 날</strong></li>
+        <li>특수관계인 이자 지급 (차입~지급 1년 초과) → 경과이자 계상 특례 <strong>배제</strong></li>
+        <li>임대료 = 계약상 <strong>지급일</strong> / 지급일 미정 시 <strong>실제 지급받은 날</strong></li>
+      </ul>
+    </div>
+
+    <div class="box P">
+      <div class="bt">⚠ 자주 나오는 오답 함정 비교표</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>오답 선지</th><th>정답</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>"법인세법 귀속시기는 발생주의 원칙"</td>
+              <td><span class="rt">오답</span> — <strong>권리의무확정주의</strong></td>
+            </tr>
+            <tr>
+              <td>"부동산 양도는 등기일이 항상 귀속시기"</td>
+              <td><span class="rt">오답</span> — 원칙은 대금 청산일, 그 전에 등기 등이 있으면 빠른 날</td>
+            </tr>
+            <tr>
+              <td>"증권 보통거래는 결제일(T+2)이 귀속시기"</td>
+              <td><span class="rt">오답</span> — <strong>매매계약 체결일</strong></td>
+            </tr>
+            <tr>
+              <td>"장기할부 특례는 중소기업만 선택 가능"</td>
+              <td><span class="rt">오답</span> — 일반법인도 결산 계상 시 특례 적용(단, 의무 적용), 중소기업만 선택</td>
+            </tr>
+            <tr>
+              <td>"1년 미만 건설공사라면 모든 법인이 인도기준 가능"</td>
+              <td><span class="rt">오답</span> — <strong>중소기업만</strong> 인도기준 선택 가능</td>
+            </tr>
+            <tr>
+              <td>"이자 지급 손금은 항상 경과이자 결산계상이 가능"</td>
+              <td><span class="rt">오답</span> — <strong>특수관계인 + 1년 초과</strong> 거래는 경과이자 계상 특례 배제</td>
+            </tr>
+            <tr>
+              <td>"시용판매는 인도한 날이 귀속시기"</td>
+              <td><span class="rt">오답</span> — 구입 의사 표시일 (특약 있으면 거절기간 만료일)</td>
+            </tr>
+            <tr>
+              <td>"파생상품(차액결제) 손익은 계약 체결일"</td>
+              <td><span class="rt">오답</span> — <strong>대금결제일</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="box T">
+      <div class="bt">📊 거래 유형별 귀속시기 최종 암기표</div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>거래 유형</th><th>귀속시기</th><th>근거</th></tr></thead>
+          <tbody>
+            <tr><td class="tk">상품·제품 일반 판매</td><td>인도한 날</td><td class="tc">령 §68①1</td></tr>
+            <tr><td class="tk">조건부·기한부 판매</td><td>조건 성취·기한 경과일</td><td class="tc">령 §68①1단서</td></tr>
+            <tr><td class="tk">시용판매</td><td>구입 의사 표시일 (특약 있으면 기간 만료일)</td><td class="tc">령 §68①2</td></tr>
+            <tr class="hl"><td class="tk">부동산 등 자산 양도</td><td>대금 청산일 (대금 전 등기·인도·사용수익 있으면 그 중 빠른 날)</td><td class="tc">령 §68①3</td></tr>
+            <tr><td class="tk">위탁매매</td><td>수탁자 매매일</td><td class="tc">령 §68①4</td></tr>
+            <tr class="hl"><td class="tk">증권시장 보통거래</td><td>매매계약 체결일</td><td class="tc">령 §68①5</td></tr>
+            <tr><td class="tk">건설·도급·예약매출</td><td>작업진행률 기준 (인도기준 예외 있음)</td><td class="tc">령 §69①</td></tr>
+            <tr><td class="tk">이자 수입 (일반)</td><td>소득세법령 §45 수입시기 (경과이자 계상 시 계상연도)</td><td class="tc">령 §70①1</td></tr>
+            <tr class="hl"><td class="tk">이자 수입 (금융·보험업)</td><td>실제 수입된 날</td><td class="tc">령 §70①1</td></tr>
+            <tr><td class="tk">배당 수입</td><td>소득세법령 §46 수입시기</td><td class="tc">령 §70②</td></tr>
+            <tr><td class="tk">임대료 (지급일 정함)</td><td>계약상 지급일</td><td class="tc">령 §71①1</td></tr>
+            <tr><td class="tk">임대료 (지급일 미정)</td><td>실제 지급받은 날</td><td class="tc">령 §71①2</td></tr>
+            <tr class="hl"><td class="tk">파생상품 (차액결제)</td><td>대금결제일</td><td class="tc">령 §71⑥</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══ FOOTER ══ -->
+<div class="ft">
+  <span>📌 법령 기준: 법인세법 §40 (2026.01.02) / 법인세법 시행령 §68·§69·§70·§71 (2026.02.27)</span>
+  <span>2026-05-28 &nbsp;|&nbsp; #손익귀속시기 #권리의무확정주의 #작업진행률 #장기할부 #부동산양도 #이자소득 #세무사1차</span>
+</div>
+
+</div><!-- .page -->
+</body>
+</html>
