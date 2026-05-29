@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국세기본법 §43~54 | 세무사 시험 문제집</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F5;--sf:#FFF;--bd:#E5E0D8;--bds:#C3BBB0;
+  --t:#1A1714;--t2:#47423B;--tm:#797268;
+  --ac:#1C3D6E;--al:#EBF0F8;--am:#2D5499;
+  --re:#851919;--rl:#FDF1F1;
+  --gr:#184726;--gl:#F1F8F3;
+  --go:#785818;--gol:#FDF6E8;
+  --sh:0 1px 4px rgba(0,0,0,.07);--r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;padding-bottom:80px}
+.hd{background:var(--ac);color:#fff;padding:38px 40px 26px;border-bottom:4px solid #0C2244}
+.hd .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:3px 10px;border-radius:3px;margin-bottom:10px;font-family:'DM Mono',monospace}
+.hd h1{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:900;line-height:1.3;margin-bottom:7px}
+.hd p{font-size:13px;color:rgba(255,255,255,.75);font-weight:300}
+.hd-m{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap}
+.hd-m span{display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.8);font-family:'DM Mono',monospace}
+.dot{width:6px;height:6px;background:#6FC3FF;border-radius:50%;flex-shrink:0}
+.sb{background:#0C2244;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:9px 40px;font-size:13px;font-family:'DM Mono',monospace;flex-wrap:wrap;gap:8px}
+.si{display:flex;align-items:center;gap:8px}
+.sv{font-weight:700;font-size:15px}
+.sv.g{color:#6FE88A}.sv.r{color:#FF8A8A}.sv.y{color:#FFD97A}
+.rst{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 13px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'DM Mono',monospace;font-weight:700;transition:background .2s}
+.rst:hover{background:rgba(255,255,255,.25)}
+.nav{background:var(--sf);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;box-shadow:var(--sh)}
+.nav-i{max-width:880px;margin:0 auto;padding:0 24px;display:flex}
+.nb{padding:12px 20px;font-size:13px;font-weight:500;color:var(--tm);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap}
+.nb:hover{color:var(--ac)}.nb.active{color:var(--ac);border-bottom-color:var(--ac);font-weight:700}
+.w{max-width:880px;margin:0 auto;padding:0 24px}
+.sec{display:none;padding-top:26px}.sec.active{display:block}
+.sh2{margin-bottom:18px}
+.sh2 .ey{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);font-family:'DM Mono',monospace;margin-bottom:3px}
+.sh2 h2{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700}
+.sh2 p{margin-top:3px;font-size:13px;color:var(--tm)}
+.bgs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+.bg{display:flex;align-items:center;gap:5px;background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--t2)}
+.bg .n{font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.ib{background:var(--al);border:1px solid #C0D0E8;border-radius:var(--r);padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--am);line-height:1.7}
+.ib strong{color:var(--ac)}
+.qc{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh);transition:border-color .25s,border-width .1s}
+.qc.ac{border-color:#70C888;border-width:2px}.qc.aw{border-color:#E88080;border-width:2px}.qc.ao{border-color:#8AB0D8;border-width:2px}
+.qch{display:flex;align-items:flex-start;gap:10px;padding:12px 18px 10px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.qn{flex-shrink:0;width:24px;height:24px;background:var(--ac);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'DM Mono',monospace}
+.qt2{font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:3px;margin-top:2px;font-family:'DM Mono',monospace;flex-shrink:0}
+.bf{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.bx{background:var(--al);color:var(--ac);border:1px solid #B8CAE3}
+.qtl{font-size:12.5px;font-weight:600;color:var(--t2);flex:1;line-height:1.5}
+.qb{padding:13px 18px 15px}
+.qtxt{font-size:13.5px;color:var(--t);line-height:2.1;font-family:'Noto Serif KR',serif}
+.fg{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin:0 2px}
+.fl{font-size:11px;font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.fi{border:none;border-bottom:2.5px solid var(--ac);background:transparent;outline:none;font-size:13.5px;font-family:'Noto Sans KR',sans-serif;color:var(--t);font-weight:700;padding:2px 5px;min-width:80px;max-width:200px;transition:border-color .2s,background .2s;text-align:center}
+.fi::placeholder{color:#C0B8B0;font-weight:400;font-size:11px}
+.fi:focus{border-bottom-color:var(--am);background:var(--al);border-radius:4px 4px 0 0}
+.fi.ok{border-bottom-color:var(--gr);background:var(--gl);border-radius:4px 4px 0 0;color:var(--gr)}
+.fi.ng{border-bottom-color:var(--re);background:var(--rl);border-radius:4px 4px 0 0;color:var(--re)}
+.fb{display:none;font-size:11px;font-family:'DM Mono',monospace;margin-left:3px;font-weight:700;vertical-align:middle;white-space:nowrap}
+.fb.show{display:inline}.fb.ok{color:var(--gr)}.fb.ng{color:var(--re)}
+.rv{display:none;margin-top:9px;background:#F2F8F1;border:1px solid #AED4B5;border-radius:var(--r);padding:8px 12px;font-size:13px;color:var(--gr);line-height:1.8}
+.rv.show{display:block}
+.ref{display:inline-block;font-size:11px;font-family:'DM Mono',monospace;color:var(--tm);background:var(--bg);border:1px solid var(--bd);border-radius:3px;padding:2px 7px;margin-top:7px}
+.oxa{margin-top:11px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.oxb{padding:7px 28px;border-radius:22px;font-size:16px;font-weight:900;border:2px solid #BCB6B0;background:var(--bg);color:var(--tm);cursor:pointer;font-family:'DM Mono',monospace;transition:all .17s;user-select:none}
+.oxb:hover:not(:disabled){border-color:var(--ac);color:var(--ac);background:var(--al);transform:scale(1.07)}
+.oxb.ch{background:#CCEEDD;border-color:#358855;color:#184726;box-shadow:0 0 0 3px #96D8B0}
+.oxb.wp{background:#F5D3D3;border-color:#B02E2E;color:#851919}
+.oxb:disabled{cursor:default;transform:none}
+.oxr{display:none;font-size:13px;font-weight:700;padding:4px 11px;border-radius:11px;font-family:'DM Mono',monospace}
+.oxr.show{display:inline-block}
+.oxr.ok{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.oxr.ng{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.oxe{display:none;margin-top:9px;padding:10px 13px;border-radius:var(--r);font-size:13px;line-height:1.8;font-family:'Noto Sans KR',sans-serif}
+.oxe.show{display:block}
+.oxe.ok{background:var(--gl);border:1px solid #AEDAB8;color:#184726}
+.oxe.ng{background:var(--rl);border:1px solid #DFAEAE;color:#681212}
+.oxe .ca{font-weight:700;color:var(--t);font-size:13.5px}
+.div{height:1px;background:var(--bd);margin:26px 0}
+.ac2{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh)}
+.ach{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.an{flex-shrink:0;width:22px;height:22px;background:var(--t2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'DM Mono',monospace}
+.al2{font-size:13px;font-weight:600;color:var(--t2);flex:1}
+.vd{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'DM Mono',monospace}
+.vo{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.vx{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.va{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.ab{padding:12px 16px 14px}
+.ar{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.ak{font-size:12px;font-weight:700;color:var(--tm);font-family:'DM Mono',monospace;min-width:48px}
+.av{font-size:14px;font-weight:700;color:var(--ac);font-family:'Noto Serif KR',serif}
+.ad{font-size:13px;color:var(--t2);line-height:1.8;margin-top:8px;padding-top:8px;border-top:1px dashed var(--bd)}
+.ad strong{color:var(--t);font-weight:700}
+.lc{display:inline-block;background:var(--al);color:var(--am);font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;margin:2px;font-family:'DM Mono',monospace}
+.wp2{background:#FFF0F0;border-left:3px solid var(--re);padding:7px 11px;margin-top:7px;font-size:12.5px;color:var(--re);border-radius:0 4px 4px 0;line-height:1.7}
+.cp{background:var(--gl);border-left:3px solid var(--gr);padding:7px 11px;margin-top:5px;font-size:12.5px;color:var(--gr);border-radius:0 4px 4px 0;line-height:1.7}
+.sb2{background:#F7F5F1;border:1px solid var(--bds);border-radius:var(--r);padding:9px 13px;margin-top:7px;font-size:12px;color:var(--t2);line-height:1.9;font-family:'Noto Serif KR',serif}
+.sb2t{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--tm);font-family:'DM Mono',monospace;margin-bottom:4px;text-transform:uppercase}
+.foot{margin-top:40px;padding:16px;text-align:center;border-top:1px solid var(--bd);font-size:11px;color:var(--tm);line-height:1.8;font-family:'DM Mono',monospace}
+@media(max-width:600px){.hd{padding:22px 16px 18px}.hd h1{font-size:19px}.sb{padding:8px 16px}.w{padding:0 12px}}
+</style>
+</head>
+<body>
+<div class="hd"><div class="w">
+  <div class="tag">세무사(CTA) 시험 대비</div>
+  <h1>국세기본법 제43조 ~ 제54조<br>신고·가산세·환급 핵심 문제집</h1>
+  <p>법제처 공식 조문(시행 2026.01.02) 기반 · 빈칸 채우기 10문 + O/X 판단 10문</p>
+  <div class="hd-m">
+    <span><span class="dot"></span>출제 범위: §43~§54</span>
+    <span><span class="dot"></span>법률 제20640호 (시행 2026.01.02)</span>
+    <span><span class="dot"></span>총 20문항</span>
+  </div>
+</div></div>
+
+<div class="sb">
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <div class="si">빈칸 맞춤 <span class="sv g" id="fc">0</span>/<span id="ft">0</span>문</div>
+    <div class="si">O/X 맞춤 <span class="sv y" id="oc">0</span>/<span id="ot">0</span>문</div>
+    <div class="si">오답 <span class="sv r" id="wc">0</span></div>
+  </div>
+  <button class="rst" onclick="resetAll()">↺ 전체 초기화</button>
+</div>
+
+<div class="nav"><div class="nav-i">
+  <button class="nb active" onclick="showSec('q',this)">📝 문제 편</button>
+  <button class="nb" onclick="showSec('a',this)">✅ 정답 및 해설</button>
+</div></div>
+
+<!-- ════ 문제 편 ════ -->
+<div id="sec-q" class="sec active"><div class="w">
+  <div class="sh2" style="padding-top:26px">
+    <div class="ey">Question Bank</div>
+    <h2>문제 편</h2>
+    <p>빈칸 → 입력 후 <strong>Enter ↵</strong> &nbsp;|&nbsp; O/X → 버튼 클릭</p>
+  </div>
+  <div class="bgs">
+    <div class="bg"><span class="n">10</span>빈칸 채우기</div>
+    <div class="bg"><span class="n">10</span>O/X 판단</div>
+    <div class="bg">총 <span class="n">20</span>문항</div>
+  </div>
+  <div class="ib">⚠️ <strong>출제 원칙:</strong> §43~54 중 최빈출 주제(수정신고·경정청구·기한후신고·가산세율·가산세 감면·환급가산금)에 집중. 비율·기간·기준금액 등 숫자가 핵심!</div>
+
+  <div class="sh2"><div class="ey">Part 01</div><h2>빈칸 채우기 (10문제)</h2><p>빈칸에 답 입력 후 Enter</p></div>
+
+  <!-- F1 -->
+  <div class="qc" id="fc-1"><div class="qch"><div class="qn">1</div><span class="qt2 bf">빈칸</span><span class="qtl">§45 수정신고 · 제출 기한</span></div>
+  <div class="qb"><div class="qtxt">과세표준신고서를 법정신고기한까지 제출한 자는 관할 세무서장이 과세표준과 세액을 결정 또는 경정하여 <span class="fg"><span class="fl">①</span><input class="fi" id="f1-1" data-ans="통지" data-q="1" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb1-1"></span></span>하기 전으로서 부과제척기간이 끝나기 <span class="fg"><span class="fl">②</span><input class="fi" id="f1-2" data-ans="전" data-q="1" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb1-2"></span></span>까지 과세표준수정신고서를 제출할 수 있다.</div>
+  <div class="rv" id="rv-1"></div><div class="ref">§45①</div></div></div>
+
+  <!-- F2 -->
+  <div class="qc" id="fc-2"><div class="qch"><div class="qn">2</div><span class="qt2 bf">빈칸</span><span class="qtl">§45의2① 경정청구 · 원칙 기간</span></div>
+  <div class="qb"><div class="qtxt">경정 등의 청구는 법정신고기한이 지난 후 <span class="fg"><span class="fl">①</span><input class="fi" id="f2-1" data-ans="5년" data-q="2" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb2-1"></span></span> 이내에 관할 세무서장에게 할 수 있다. 다만, 결정·경정으로 인하여 증가된 과세표준 및 세액에 대하여는 해당 처분이 있음을 안 날부터 <span class="fg"><span class="fl">②</span><input class="fi" id="f2-2" data-ans="3개월" data-q="2" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:70px"><span class="fb" id="fb2-2"></span></span> 이내에 경정을 청구할 수 있다.</div>
+  <div class="rv" id="rv-2"></div><div class="ref">§45의2①</div></div></div>
+
+  <!-- F3 -->
+  <div class="qc" id="fc-3"><div class="qch"><div class="qn">3</div><span class="qt2 bf">빈칸</span><span class="qtl">§45의2③ 경정청구 처리기간 · 세무서장 통지 의무</span></div>
+  <div class="qb"><div class="qtxt">경정청구를 받은 세무서장은 그 청구를 받은 날부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f3-1" data-ans="2개월" data-q="3" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:70px"><span class="fb" id="fb3-1"></span></span> 이내에 과세표준 및 세액을 결정 또는 경정하거나 결정·경정하여야 할 이유가 없다는 뜻을 청구인에게 통지하여야 한다.</div>
+  <div class="rv" id="rv-3"></div><div class="ref">§45의2③</div></div></div>
+
+  <!-- F4 -->
+  <div class="qc" id="fc-4"><div class="qch"><div class="qn">4</div><span class="qt2 bf">빈칸</span><span class="qtl">§47의2 무신고가산세율</span></div>
+  <div class="qb"><div class="qtxt">일반 무신고가산세율은 무신고납부세액의 100분의 <span class="fg"><span class="fl">①</span><input class="fi" id="f4-1" data-ans="20" data-q="4" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb4-1"></span></span>이고, 부정행위로 무신고한 경우에는 100분의 <span class="fg"><span class="fl">②</span><input class="fi" id="f4-2" data-ans="40" data-q="4" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb4-2"></span></span>(역외거래 부정행위는 100분의 <span class="fg"><span class="fl">③</span><input class="fi" id="f4-3" data-ans="60" data-q="4" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb4-3"></span></span>)이다.</div>
+  <div class="rv" id="rv-4"></div><div class="ref">§47의2①</div></div></div>
+
+  <!-- F5 -->
+  <div class="qc" id="fc-5"><div class="qch"><div class="qn">5</div><span class="qt2 bf">빈칸</span><span class="qtl">§47의3 과소신고가산세율</span></div>
+  <div class="qb"><div class="qtxt">일반 과소신고가산세율은 과소신고납부세액등의 100분의 <span class="fg"><span class="fl">①</span><input class="fi" id="f5-1" data-ans="10" data-q="5" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb5-1"></span></span>이고, 부정행위로 과소신고한 경우에는 부정행위 부분에 대해 100분의 <span class="fg"><span class="fl">②</span><input class="fi" id="f5-2" data-ans="40" data-q="5" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb5-2"></span></span>(역외거래는 100분의 <span class="fg"><span class="fl">③</span><input class="fi" id="f5-3" data-ans="60" data-q="5" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb5-3"></span></span>)이다.</div>
+  <div class="rv" id="rv-5"></div><div class="ref">§47의3①</div></div></div>
+
+  <!-- F6 -->
+  <div class="qc" id="fc-6"><div class="qch"><div class="qn">6</div><span class="qt2 bf">빈칸</span><span class="qtl">§47의4① 납부지연가산세 · 납부고지서 미납 가산세율</span></div>
+  <div class="qb"><div class="qtxt">납부고지서에 따른 납부기한까지 납부하지 아니한 세액 또는 과소납부분 세액에 대하여 100분의 <span class="fg"><span class="fl">①</span><input class="fi" id="f6-1" data-ans="3" data-q="6" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:50px"><span class="fb" id="fb6-1"></span></span>에 상당하는 금액을 가산세로 한다(납부고지서에 따른 납부기한까지 완납하지 아니한 경우에 한정한다).</div>
+  <div class="rv" id="rv-6"></div><div class="ref">§47의4①3호</div></div></div>
+
+  <!-- F7 -->
+  <div class="qc" id="fc-7"><div class="qch"><div class="qn">7</div><span class="qt2 bf">빈칸</span><span class="qtl">§48② 수정신고 가산세 감면율 · 기간별 구분</span></div>
+  <div class="qb"><div class="qtxt">법정신고기한이 지난 후 <strong>1개월 이내</strong> 수정신고 시 가산세의 <span class="fg"><span class="fl">①</span><input class="fi" id="f7-1" data-ans="90" data-q="7" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb7-1"></span></span>%, <strong>1~3개월 이내</strong>는 <span class="fg"><span class="fl">②</span><input class="fi" id="f7-2" data-ans="75" data-q="7" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb7-2"></span></span>%, <strong>3~6개월 이내</strong>는 <span class="fg"><span class="fl">③</span><input class="fi" id="f7-3" data-ans="50" data-q="7" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb7-3"></span></span>%를 감면한다.</div>
+  <div class="rv" id="rv-7"></div><div class="ref">§48②1호 가~다목</div></div></div>
+
+  <!-- F8 -->
+  <div class="qc" id="fc-8"><div class="qch"><div class="qn">8</div><span class="qt2 bf">빈칸</span><span class="qtl">§48② 기한후신고 가산세 감면율 · 기간별 구분</span></div>
+  <div class="qb"><div class="qtxt">법정신고기한이 지난 후 <strong>1개월 이내</strong> 기한후신고 시 무신고가산세의 <span class="fg"><span class="fl">①</span><input class="fi" id="f8-1" data-ans="50" data-q="8" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb8-1"></span></span>%, <strong>1~3개월 이내</strong>는 <span class="fg"><span class="fl">②</span><input class="fi" id="f8-2" data-ans="30" data-q="8" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb8-2"></span></span>%, <strong>3~6개월 이내</strong>는 <span class="fg"><span class="fl">③</span><input class="fi" id="f8-3" data-ans="20" data-q="8" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb8-3"></span></span>%를 감면한다.</div>
+  <div class="rv" id="rv-8"></div><div class="ref">§48②2호 가~다목</div></div></div>
+
+  <!-- F9 -->
+  <div class="qc" id="fc-9"><div class="qch"><div class="qn">9</div><span class="qt2 bf">빈칸</span><span class="qtl">§49 가산세 한도</span></div>
+  <div class="qb"><div class="qtxt">가산세 한도는 중소기업의 경우 의무위반의 종류별로 각각 <span class="fg"><span class="fl">①</span><input class="fi" id="f9-1" data-ans="5천만원" data-q="9" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:80px"><span class="fb" id="fb9-1"></span></span>, 중소기업이 아닌 기업은 <span class="fg"><span class="fl">②</span><input class="fi" id="f9-2" data-ans="1억원" data-q="9" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:70px"><span class="fb" id="fb9-2"></span></span>을 한도로 한다. 다만, 해당 의무를 <span class="fg"><span class="fl">③</span><input class="fi" id="f9-3" data-ans="고의적으로" data-q="9" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:90px"><span class="fb" id="fb9-3"></span></span> 위반한 경우에는 한도를 적용하지 않는다.</div>
+  <div class="rv" id="rv-9"></div><div class="ref">§49①</div></div></div>
+
+  <!-- F10 -->
+  <div class="qc" id="fc-10"><div class="qch"><div class="qn">10</div><span class="qt2 bf">빈칸</span><span class="qtl">§51⑥ 국세환급금 지급 기한</span></div>
+  <div class="qb"><div class="qtxt">국세환급금 중 충당 후 남은 금액은 국세환급금의 결정을 한 날부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f10-1" data-ans="30일" data-q="10" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:65px"><span class="fb" id="fb10-1"></span></span> 내에 납세자에게 지급하여야 한다.</div>
+  <div class="rv" id="rv-10"></div><div class="ref">§51⑥</div></div></div>
+
+  <div class="div"></div>
+
+  <div class="sh2"><div class="ey">Part 02</div><h2>O/X 판단 문제 (10문제)</h2><p>옳으면 <strong>O</strong>, 틀리면 <strong>X</strong></p></div>
+
+  <!-- OX1 -->
+  <div class="qc" id="ox-1"><div class="qch"><div class="qn">1</div><span class="qt2 bx">O/X</span><span class="qtl">§45 수정신고 · 제출 가능 시점</span></div>
+  <div class="qb"><div class="qtxt">법정신고기한까지 과세표준신고서를 제출한 자는 관할 세무서장이 과세표준과 세액을 결정·경정하여 통지한 후에도 부과제척기간이 끝나기 전이라면 수정신고를 할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob1-o" onclick="po(1,'O',this)">O</button><button class="oxb" id="ob1-x" onclick="po(1,'X',this)">X</button><span class="oxr" id="or-1"></span></div>
+  <div class="oxe" id="oe-1"><span class="ca">✅ 정답: X</span><br>§45①은 <strong>"결정 또는 경정하여 통지하기 전"</strong>까지만 수정신고가 가능합니다. 세무서장의 결정·경정 통지 이후에는 수정신고를 할 수 없습니다.</div>
+  <div class="ref">§45①</div></div></div>
+
+  <!-- OX2 -->
+  <div class="qc" id="ox-2"><div class="qch"><div class="qn">2</div><span class="qt2 bx">O/X</span><span class="qtl">§45의2① 경정청구 · 후발적 사유</span></div>
+  <div class="qb"><div class="qtxt">최초 신고·결정의 근거가 된 거래가 판결로 다른 것으로 확정된 경우, 그 사유가 발생한 것을 안 날부터 3개월 이내에 경정청구를 할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob2-o" onclick="po(2,'O',this)">O</button><button class="oxb" id="ob2-x" onclick="po(2,'X',this)">X</button><span class="oxr" id="or-2"></span></div>
+  <div class="oxe" id="oe-2"><span class="ca">✅ 정답: O</span><br>§45의2②1호에 해당하는 후발적 사유입니다. 판결 확정으로 거래의 내용이 달리 확정된 경우 §45의2①의 원칙 기간(5년)에 불구하고 <strong>사유 발생을 안 날부터 3개월 이내</strong>에 경정청구가 가능합니다.</div>
+  <div class="ref">§45의2②1호</div></div></div>
+
+  <!-- OX3 -->
+  <div class="qc" id="ox-3"><div class="qch"><div class="qn">3</div><span class="qt2 bx">O/X</span><span class="qtl">§45의3① 기한후신고 · 제출 가능 시점</span></div>
+  <div class="qb"><div class="qtxt">법정신고기한까지 과세표준신고서를 제출하지 않은 자는 관할 세무서장이 과세표준과 세액을 결정하여 통지한 후에도 기한후과세표준신고서를 제출할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob3-o" onclick="po(3,'O',this)">O</button><button class="oxb" id="ob3-x" onclick="po(3,'X',this)">X</button><span class="oxr" id="or-3"></span></div>
+  <div class="oxe" id="oe-3"><span class="ca">✅ 정답: X</span><br>§45의3①에 따라 기한후신고는 <strong>관할 세무서장이 결정하여 통지하기 전까지</strong>만 가능합니다. 수정신고(통지 전)와 동일한 구조입니다.</div>
+  <div class="ref">§45의3①</div></div></div>
+
+  <!-- OX4 -->
+  <div class="qc" id="ox-4"><div class="qch"><div class="qn">4</div><span class="qt2 bx">O/X</span><span class="qtl">§47의2 부정행위 무신고가산세 · 역외거래 가산율</span></div>
+  <div class="qb"><div class="qtxt">역외거래에서 발생한 부정행위로 무신고한 경우 무신고가산세율은 무신고납부세액의 100분의 60이다.</div>
+  <div class="oxa"><button class="oxb" id="ob4-o" onclick="po(4,'O',this)">O</button><button class="oxb" id="ob4-x" onclick="po(4,'X',this)">X</button><span class="oxr" id="or-4"></span></div>
+  <div class="oxe" id="oe-4"><span class="ca">✅ 정답: O</span><br>§47의2①1호: 부정행위 무신고 = <strong>40%</strong>, 역외거래 부정행위 무신고 = <strong>60%</strong>. 조문 원문과 일치합니다.</div>
+  <div class="ref">§47의2①1호</div></div></div>
+
+  <!-- OX5 -->
+  <div class="qc" id="ox-5"><div class="qch"><div class="qn">5</div><span class="qt2 bx">O/X</span><span class="qtl">§48②1호 수정신고 감면 · 적용 가산세 종류</span></div>
+  <div class="qb"><div class="qtxt">수정신고 시 가산세 감면(§48②1호)은 무신고가산세(§47의2)와 과소신고가산세(§47의3) 모두에 적용된다.</div>
+  <div class="oxa"><button class="oxb" id="ob5-o" onclick="po(5,'O',this)">O</button><button class="oxb" id="ob5-x" onclick="po(5,'X',this)">X</button><span class="oxr" id="or-5"></span></div>
+  <div class="oxe" id="oe-5"><span class="ca">✅ 정답: X</span><br>§48②1호는 <strong>과소신고가산세(§47의3)에만</strong> 적용됩니다. 무신고가산세(§47의2)는 수정신고 감면 대상이 아닙니다. 기한후신고 감면(§48②2호)이 §47의2(무신고가산세)에 적용됩니다.</div>
+  <div class="ref">§48②1호·2호</div></div></div>
+
+  <!-- OX6 -->
+  <div class="qc" id="ox-6"><div class="qch"><div class="qn">6</div><span class="qt2 bx">O/X</span><span class="qtl">§48②1호 수정신고 감면 · 사전 인지 예외</span></div>
+  <div class="qb"><div class="qtxt">과세표준과 세액을 경정할 것을 미리 알고 과세표준수정신고서를 제출한 경우에도 수정신고 가산세 감면이 적용된다.</div>
+  <div class="oxa"><button class="oxb" id="ob6-o" onclick="po(6,'O',this)">O</button><button class="oxb" id="ob6-x" onclick="po(6,'X',this)">X</button><span class="oxr" id="or-6"></span></div>
+  <div class="oxe" id="oe-6"><span class="ca">✅ 정답: X</span><br>§48②1호 괄호 규정: <strong>"과세표준과 세액을 경정할 것을 미리 알고 과세표준수정신고서를 제출한 경우는 제외"</strong>합니다. 즉, 경정 예정을 알고 수정신고하면 가산세 감면 혜택이 없습니다.</div>
+  <div class="ref">§48②1호</div></div></div>
+
+  <!-- OX7 -->
+  <div class="qc" id="ox-7"><div class="qch"><div class="qn">7</div><span class="qt2 bx">O/X</span><span class="qtl">§48① 가산세 면제 · 정당한 사유</span></div>
+  <div class="qb"><div class="qtxt">납세자가 의무를 이행하지 아니한 데에 정당한 사유가 있는 경우에는 해당 가산세를 부과하지 아니한다.</div>
+  <div class="oxa"><button class="oxb" id="ob7-o" onclick="po(7,'O',this)">O</button><button class="oxb" id="ob7-x" onclick="po(7,'X',this)">X</button><span class="oxr" id="or-7"></span></div>
+  <div class="oxe" id="oe-7"><span class="ca">✅ 정답: O</span><br>§48①2호 조문 원문과 일치합니다. 천재지변 등 기한 연장 사유(§48①1호)와 함께 <strong>정당한 사유</strong>가 있으면 가산세를 아예 부과하지 않습니다. "감면"이 아니라 "면제"임에 주의.</div>
+  <div class="ref">§48①2호</div></div></div>
+
+  <!-- OX8 -->
+  <div class="qc" id="ox-8"><div class="qch"><div class="qn">8</div><span class="qt2 bx">O/X</span><span class="qtl">§49① 가산세 한도 · 고의 위반 예외</span></div>
+  <div class="qb"><div class="qtxt">납세자가 의무를 고의적으로 위반한 경우에도 가산세 한도(중소기업 5천만원, 비중소기업 1억원)가 적용된다.</div>
+  <div class="oxa"><button class="oxb" id="ob8-o" onclick="po(8,'O',this)">O</button><button class="oxb" id="ob8-x" onclick="po(8,'X',this)">X</button><span class="oxr" id="or-8"></span></div>
+  <div class="oxe" id="oe-8"><span class="ca">✅ 정답: X</span><br>§49① 단서: <strong>"해당 의무를 고의적으로 위반한 경우에는 그러하지 아니하다"</strong>. 즉 고의 위반 시 가산세 한도가 적용되지 않아 무제한으로 부과 가능합니다.</div>
+  <div class="ref">§49① 단서</div></div></div>
+
+  <!-- OX9 -->
+  <div class="qc" id="ox-9"><div class="qch"><div class="qn">9</div><span class="qt2 bx">O/X</span><span class="qtl">§51② 국세환급금 충당 · 자진납부 국세 동의 요건</span></div>
+  <div class="qb"><div class="qtxt">세법에 따라 자진납부하는 국세에 국세환급금을 충당하려면 납세자의 동의가 필요하다.</div>
+  <div class="oxa"><button class="oxb" id="ob9-o" onclick="po(9,'O',this)">O</button><button class="oxb" id="ob9-x" onclick="po(9,'X',this)">X</button><span class="oxr" id="or-9"></span></div>
+  <div class="oxe" id="oe-9"><span class="ca">✅ 정답: O</span><br>§51② 단서에 따라 납부고지에 의한 국세(§51②1호)와 자진납부 국세(§51②3호)에의 충당은 <strong>납세자의 동의가 있는 경우에만</strong> 가능합니다. 반면 체납 국세(§51②2호)는 동의 없이 충당할 수 있습니다.</div>
+  <div class="ref">§51② 단서</div></div></div>
+
+  <!-- OX10 -->
+  <div class="qc" id="ox-10"><div class="qch"><div class="qn">10</div><span class="qt2 bx">O/X</span><span class="qtl">§52① 국세환급가산금 · 고충민원 예외</span></div>
+  <div class="qb"><div class="qtxt">경정청구나 이의신청·심판청구 등 불복절차 없이 고충민원 처리에 의해 국세환급금을 지급하는 경우에도 국세환급가산금을 가산하여야 한다.</div>
+  <div class="oxa"><button class="oxb" id="ob10-o" onclick="po(10,'O',this)">O</button><button class="oxb" id="ob10-x" onclick="po(10,'X',this)">X</button><span class="oxr" id="or-10"></span></div>
+  <div class="oxe" id="oe-10"><span class="ca">✅ 정답: X</span><br>§52③: 경정청구(§45의2) 또는 불복(제7장)에 의한 사유 <strong>없이</strong> 고충민원 처리로 환급하는 경우에는 <strong>국세환급가산금을 가산하지 않습니다</strong>. 납세자 스스로의 권리행사 없이 처리된 경우 이자 혜택을 주지 않는 취지입니다.</div>
+  <div class="ref">§52③</div></div></div>
+
+</div></div>
+
+<!-- ════ 정답 및 해설 편 ════ -->
+<div id="sec-a" class="sec"><div class="w">
+  <div class="sh2" style="padding-top:26px"><div class="ey">Answer &amp; Commentary</div><h2>정답 및 해설 편</h2><p>조문 원문 출처와 핵심 포인트를 확인하세요.</p></div>
+  <div class="ib">📌 <strong>기준 법령:</strong> 국세기본법 (법률 제20640호, 공포 2025.12.23 / 시행 2026.01.02) — 법제처 MCP API 조문 원문 직접 인용</div>
+
+  <div class="sh2"><div class="ey">Part 01 · 정답</div><h2>빈칸 채우기 정답</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§45① 수정신고 제출 가능 시점</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">통지</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">전</span></div>
+    <div class="ad"><span class="lc">§45①</span> 수정신고는 ① 세무서장의 <strong>결정·경정 통지 전</strong> + ② <strong>부과제척기간 종료 전</strong>이라는 두 조건이 모두 충족되어야 합니다.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§45의2① 경정청구 기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">5년</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">3개월</span></div>
+    <div class="ad"><span class="lc">§45의2①</span> 원칙 경정청구: 법정신고기한 후 <strong>5년</strong> 이내. 결정·경정으로 인한 증가분: 처분을 안 날로부터 <strong>3개월</strong> 이내(단, 법정신고기한 후 5년 이내). "3년" "2년" 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§45의2③ 세무서장 처리 기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">2개월</span></div>
+    <div class="ad"><span class="lc">§45의2③</span> 경정청구 처리 기한 = <strong>2개월</strong>. 2개월 내 통지 없으면 그 다음 날부터 불복청구 가능. "3개월" 함정에 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§47의2① 무신고가산세율</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">20</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">40</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">60</span></div>
+    <div class="ad"><span class="lc">§47의2①</span>
+      <div class="sb2"><div class="sb2t">무신고가산세율 비교</div>
+        일반 무신고: <strong>20%</strong><br>
+        부정행위 무신고: <strong>40%</strong><br>
+        역외거래 부정행위 무신고: <strong>60%</strong>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§47의3① 과소신고가산세율</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">10</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">40</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">60</span></div>
+    <div class="ad"><span class="lc">§47의3①</span>
+      <div class="sb2"><div class="sb2t">과소신고가산세율 비교</div>
+        일반 과소신고: <strong>10%</strong><br>
+        부정행위 과소신고 부분: <strong>40%</strong> (역외 <strong>60%</strong>)<br>
+        부정행위 외 나머지 부분: <strong>10%</strong>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§47의4①3호 납부고지 미납 가산율</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">3</span></div>
+    <div class="ad"><span class="lc">§47의4①3호</span> 납부고지서 납부기한까지 완납하지 않은 세액에 <strong>3%</strong> 가산. 일수 계산 가산율(§47의4①1·2호)과 별개로 납부고지 후 미납 페널티 성격.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§48②1호 수정신고 가산세 감면율</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">90 %</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">75 %</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">50 %</span></div>
+    <div class="ad"><span class="lc">§48②1호</span>
+      <div class="sb2"><div class="sb2t">수정신고 감면율 전체 (과소신고가산세)</div>
+        1개월 이내: <strong>90%</strong><br>
+        1~3개월: <strong>75%</strong><br>
+        3~6개월: <strong>50%</strong><br>
+        6개월~1년: <strong>30%</strong><br>
+        1년~1년6개월: <strong>20%</strong><br>
+        1년6개월~2년: <strong>10%</strong>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§48②2호 기한후신고 가산세 감면율</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">50 %</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">30 %</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">20 %</span></div>
+    <div class="ad"><span class="lc">§48②2호</span> 기한후신고 감면(무신고가산세): <strong>50 → 30 → 20%</strong>. 수정신고(90→75→50%)보다 낮음. 두 표를 나란히 암기!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§49① 가산세 한도</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">5천만원</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">1억원</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">고의적으로</span></div>
+    <div class="ad"><span class="lc">§49①</span> 중소기업 <strong>5천만원</strong> / 비중소기업 <strong>1억원</strong> 한도. <strong>고의 위반</strong>은 한도 제외(무제한). "과실"이나 "부정행위"로 바꾸는 함정 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§51⑥ 국세환급금 지급 기한</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">30일</span></div>
+    <div class="ad"><span class="lc">§51⑥</span> 환급금 결정일로부터 <strong>30일</strong> 내 지급. "14일" "20일" 함정 주의. 환급금이 20만원 이하이고 1년 내 미환급 시 §51⑧에 따라 납부고지 국세에 충당 가능.</div>
+  </div></div>
+
+  <div class="div"></div>
+  <div class="sh2"><div class="ey">Part 02 · 정답</div><h2>O/X 판단 정답 및 해설</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§45① 수정신고 제출 한계</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "결정·경정 통지 후에도 부과제척기간 전이면 가능"</div><div class="cp">✅ §45①: 결정·경정 <strong>통지하기 전</strong>까지만 수정신고 가능.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§45의2②1호 후발적 사유 경정청구</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§45의2②1호</span> 조문 원문과 일치. 판결 확정 등 후발적 사유: 사유를 안 날로부터 <strong>3개월</strong> 이내.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§45의3① 기한후신고 제출 한계</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "결정·통지 후에도 가능"</div><div class="cp">✅ §45의3①: <strong>결정하여 통지하기 전까지</strong>만 가능. 수정신고와 동일 구조.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§47의2①1호 역외거래 무신고 60%</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§47의2①1호</span> 조문 원문과 일치. 역외거래 부정행위 무신고 = <strong>60%</strong>.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§48②1·2호 감면 적용 대상 가산세</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "무신고가산세에도 수정신고 감면 적용"</div><div class="cp">✅ 수정신고 감면(§48②1호) → <strong>§47의3 과소신고가산세만</strong> 해당. 기한후신고 감면(§48②2호) → <strong>§47의2 무신고가산세</strong> 해당.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§48②1호 사전 인지 시 감면 제외</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "미리 알고 제출해도 감면 적용"</div><div class="cp">✅ §48②1호 괄호: <strong>경정할 것을 미리 알고 수정신고한 경우 제외</strong>. 기한후신고도 동일 예외 적용.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§48①2호 정당한 사유 → 가산세 면제</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§48①2호</span> 정당한 사유 → <strong>가산세 부과하지 않음</strong>(완전 면제, not 감면). 감면(§48②)과 구별 필수.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§49① 단서 고의 위반 → 한도 배제</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "고의 위반에도 한도 적용"</div><div class="cp">✅ §49① 단서: <strong>고의적 위반 시 한도 불적용</strong>. 무제한 가산세 부과 가능.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§51② 단서 자진납부 국세 충당 → 동의 필요</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§51② 단서</span> 조문 원문과 일치. 체납 국세(§51②2호)만 동의 없이 충당 가능, 나머지는 동의 필요.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§52③ 고충민원 환급 → 가산금 제외</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "고충민원 처리에도 환급가산금 가산"</div><div class="cp">✅ §52③: 경정청구·불복 사유 없이 <strong>고충민원만으로 환급하면 국세환급가산금 미가산</strong>.</div></div></div>
+
+</div></div>
+
+<div class="foot">
+  2026-05-29 생성 · 국세기본법 §43~§54 기준<br>
+  법령 출처: 법제처 국세기본법 (법률 제20640호, 시행 2026.01.02) — MCP API 직접 조회<br>
+  #국세기본법 #세무사시험 #수정신고 #경정청구 #기한후신고 #가산세 #환급
+</div>
+
+<script>
+const FS={},OS={};
+const FA={
+  '1-1':['통지'],'1-2':['전'],
+  '2-1':['5년'],'2-2':['3개월'],
+  '3-1':['2개월'],
+  '4-1':['20'],'4-2':['40'],'4-3':['60'],
+  '5-1':['10'],'5-2':['40'],'5-3':['60'],
+  '6-1':['3'],
+  '7-1':['90'],'7-2':['75'],'7-3':['50'],
+  '8-1':['50'],'8-2':['30'],'8-3':['20'],
+  '9-1':['5천만원','5,000만원','5000만원'],'9-2':['1억원','1억','100,000,000원'],'9-3':['고의적으로'],
+  '10-1':['30일']
+};
+const FC={1:2,2:2,3:1,4:3,5:3,6:1,7:3,8:3,9:3,10:1};
+const OA={1:'X',2:'O',3:'X',4:'O',5:'X',6:'X',7:'O',8:'X',9:'O',10:'X'};
+
+function nm(s){return s.replace(/[\s「」,]/g,'').toLowerCase()}
+function cf(e,inp){
+  if(e.key!=='Enter')return;e.preventDefault();
+  const q=+inp.dataset.q,idx=+inp.dataset.idx,key=q+'-'+idx,val=inp.value.trim();
+  if(!val)return;
+  const ok=FA[key].some(a=>nm(val)===nm(a));
+  inp.classList.remove('ok','ng');inp.classList.add(ok?'ok':'ng');inp.disabled=true;
+  const fb=document.getElementById('fb'+q+'-'+idx);
+  fb.textContent=ok?'✓':'✗ '+FA[key][0];fb.className='fb show '+(ok?'ok':'ng');
+  if(!FS[q])FS[q]={total:FC[q],done:0,wrong:0};
+  if(!FS[q][idx]){FS[q][idx]=true;FS[q].done++;if(!ok)FS[q].wrong++;}
+  if(FS[q].done===FS[q].total){
+    document.getElementById('fc-'+q).classList.add(FS[q].wrong===0?'ac':'aw');
+    const rv=document.getElementById('rv-'+q);
+    const ks=Object.keys(FA).filter(k=>k.startsWith(q+'-'));
+    rv.innerHTML='✅ 정답: '+ks.map(k=>{const i=+k.split('-')[1];return '<strong>'+['①','②','③'][i-1]+' '+FA[k][0]+'</strong>';}).join(' | ');
+    rv.classList.add('show');
+  }upd();
+}
+function po(n,picked){
+  if(OS[n])return;
+  const correct=OA[n],ok=(picked===correct);OS[n]={ok};
+  const bo=document.getElementById('ob'+n+'-o'),bx=document.getElementById('ob'+n+'-x');
+  bo.disabled=true;bx.disabled=true;
+  if(picked==='O'){bo.classList.add(ok?'ch':'wp');if(!ok)bx.classList.add('ch');}
+  else{bx.classList.add(ok?'ch':'wp');if(!ok)bo.classList.add('ch');}
+  const r=document.getElementById('or-'+n);
+  r.textContent=ok?'🎉 정답!':'❌ 오답 (정답: '+correct+')';r.className='oxr show '+(ok?'ok':'ng');
+  document.getElementById('oe-'+n).className='oxe show '+(ok?'ok':'ng');
+  document.getElementById('ox-'+n).classList.add('ao');upd();
+}
+function upd(){
+  let fc=0,ft=0,oc=0,ot=0,wr=0;
+  for(const q in FS){ft++;if(FS[q].done===FS[q].total){if(FS[q].wrong===0)fc++;else wr++;}}
+  for(const n in OS){ot++;if(OS[n].ok)oc++;else wr++;}
+  document.getElementById('fc').textContent=fc;document.getElementById('ft').textContent=ft;
+  document.getElementById('oc').textContent=oc;document.getElementById('ot').textContent=ot;
+  document.getElementById('wc').textContent=wr;
+}
+function resetAll(){
+  document.querySelectorAll('.fi').forEach(i=>{i.value='';i.disabled=false;i.classList.remove('ok','ng');});
+  document.querySelectorAll('.fb').forEach(f=>{f.textContent='';f.className='fb';});
+  document.querySelectorAll('.rv').forEach(r=>r.classList.remove('show'));
+  document.querySelectorAll('.oxb').forEach(b=>{b.disabled=false;b.className='oxb';});
+  document.querySelectorAll('.oxr').forEach(r=>{r.textContent='';r.className='oxr';});
+  document.querySelectorAll('.oxe').forEach(e=>{e.className='oxe';});
+  document.querySelectorAll('.qc').forEach(c=>c.classList.remove('ac','aw','ao'));
+  for(const k in FS)delete FS[k];for(const k in OS)delete OS[k];upd();
+}
+function showSec(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국세기본법 §35~42 | 세무사 시험 문제집</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F5;--sf:#FFF;--bd:#E5E0D8;--bds:#C3BBB0;
+  --t:#1A1714;--t2:#47423B;--tm:#797268;
+  --ac:#1C3D6E;--al:#EBF0F8;--am:#2D5499;
+  --re:#851919;--rl:#FDF1F1;
+  --gr:#184726;--gl:#F1F8F3;
+  --go:#785818;--gol:#FDF6E8;
+  --sh:0 1px 4px rgba(0,0,0,.07);--r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;padding-bottom:80px}
+.hd{background:var(--ac);color:#fff;padding:40px 40px 28px;border-bottom:4px solid #0C2244}
+.hd .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:3px 10px;border-radius:3px;margin-bottom:11px;font-family:'DM Mono',monospace}
+.hd h1{font-family:'Noto Serif KR',serif;font-size:25px;font-weight:900;line-height:1.3;margin-bottom:7px}
+.hd p{font-size:13px;color:rgba(255,255,255,.75);font-weight:300}
+.hd-m{display:flex;gap:18px;margin-top:13px;flex-wrap:wrap}
+.hd-m span{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.8);font-family:'DM Mono',monospace}
+.dot{width:6px;height:6px;background:#6FC3FF;border-radius:50%;flex-shrink:0}
+.sb{background:#0C2244;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:9px 40px;font-size:13px;font-family:'DM Mono',monospace;flex-wrap:wrap;gap:8px}
+.si{display:flex;align-items:center;gap:8px}
+.sv{font-weight:700;font-size:15px}
+.sv.g{color:#6FE88A}.sv.r{color:#FF8A8A}.sv.y{color:#FFD97A}
+.rst{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 13px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'DM Mono',monospace;font-weight:700;transition:background .2s}
+.rst:hover{background:rgba(255,255,255,.25)}
+.nav{background:var(--sf);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;box-shadow:var(--sh)}
+.nav-i{max-width:880px;margin:0 auto;padding:0 24px;display:flex}
+.nb{padding:12px 20px;font-size:13px;font-weight:500;color:var(--tm);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap}
+.nb:hover{color:var(--ac)}.nb.active{color:var(--ac);border-bottom-color:var(--ac);font-weight:700}
+.w{max-width:880px;margin:0 auto;padding:0 24px}
+.sec{display:none;padding-top:28px}.sec.active{display:block}
+.sh2{margin-bottom:20px}
+.sh2 .ey{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);font-family:'DM Mono',monospace;margin-bottom:4px}
+.sh2 h2{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700}
+.sh2 p{margin-top:4px;font-size:13px;color:var(--tm)}
+.bgs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}
+.bg{display:flex;align-items:center;gap:5px;background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--t2)}
+.bg .n{font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.ib{background:var(--al);border:1px solid #C0D0E8;border-radius:var(--r);padding:10px 14px;margin-bottom:16px;font-size:13px;color:var(--am);line-height:1.7}
+.ib strong{color:var(--ac)}
+/* Q CARD */
+.qc{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:12px;overflow:hidden;box-shadow:var(--sh);transition:border-color .25s,border-width .1s}
+.qc.ac{border-color:#70C888;border-width:2px}.qc.aw{border-color:#E88080;border-width:2px}.qc.ao{border-color:#8AB0D8;border-width:2px}
+.qch{display:flex;align-items:flex-start;gap:10px;padding:13px 18px 10px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.qn{flex-shrink:0;width:24px;height:24px;background:var(--ac);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'DM Mono',monospace}
+.qt2{font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:3px;margin-top:2px;font-family:'DM Mono',monospace;flex-shrink:0}
+.bf{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.bx{background:var(--al);color:var(--ac);border:1px solid #B8CAE3}
+.qtl{font-size:12.5px;font-weight:600;color:var(--t2);flex:1;line-height:1.5}
+.qb{padding:14px 18px 16px}
+.qtxt{font-size:13.5px;color:var(--t);line-height:2.1;font-family:'Noto Serif KR',serif}
+/* FILL */
+.fg{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin:0 2px}
+.fl{font-size:11px;font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.fi{border:none;border-bottom:2.5px solid var(--ac);background:transparent;outline:none;font-size:13.5px;font-family:'Noto Sans KR',sans-serif;color:var(--t);font-weight:700;padding:2px 5px;min-width:85px;max-width:200px;transition:border-color .2s,background .2s;text-align:center}
+.fi::placeholder{color:#C0B8B0;font-weight:400;font-size:11px}
+.fi:focus{border-bottom-color:var(--am);background:var(--al);border-radius:4px 4px 0 0}
+.fi.ok{border-bottom-color:var(--gr);background:var(--gl);border-radius:4px 4px 0 0;color:var(--gr)}
+.fi.ng{border-bottom-color:var(--re);background:var(--rl);border-radius:4px 4px 0 0;color:var(--re)}
+.fb{display:none;font-size:11px;font-family:'DM Mono',monospace;margin-left:3px;font-weight:700;vertical-align:middle;white-space:nowrap}
+.fb.show{display:inline}.fb.ok{color:var(--gr)}.fb.ng{color:var(--re)}
+.rv{display:none;margin-top:10px;background:#F2F8F1;border:1px solid #AED4B5;border-radius:var(--r);padding:8px 12px;font-size:13px;color:var(--gr);line-height:1.8}
+.rv.show{display:block}
+.ref{display:inline-block;font-size:11px;font-family:'DM Mono',monospace;color:var(--tm);background:var(--bg);border:1px solid var(--bd);border-radius:3px;padding:2px 7px;margin-top:8px}
+/* OX */
+.oxa{margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.oxb{padding:7px 28px;border-radius:22px;font-size:16px;font-weight:900;border:2px solid #BCB6B0;background:var(--bg);color:var(--tm);cursor:pointer;font-family:'DM Mono',monospace;transition:all .17s;user-select:none}
+.oxb:hover:not(:disabled){border-color:var(--ac);color:var(--ac);background:var(--al);transform:scale(1.07)}
+.oxb.ch{background:#CCEEDD;border-color:#358855;color:#184726;box-shadow:0 0 0 3px #96D8B0}
+.oxb.wp{background:#F5D3D3;border-color:#B02E2E;color:#851919}
+.oxb:disabled{cursor:default;transform:none}
+.oxr{display:none;font-size:13px;font-weight:700;padding:4px 11px;border-radius:11px;font-family:'DM Mono',monospace}
+.oxr.show{display:inline-block}
+.oxr.ok{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.oxr.ng{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.oxe{display:none;margin-top:10px;padding:10px 13px;border-radius:var(--r);font-size:13px;line-height:1.8;font-family:'Noto Sans KR',sans-serif}
+.oxe.show{display:block}
+.oxe.ok{background:var(--gl);border:1px solid #AEDAB8;color:#184726}
+.oxe.ng{background:var(--rl);border:1px solid #DFAEAE;color:#681212}
+.oxe .ca{font-weight:700;color:var(--t);font-size:13.5px}
+.div{height:1px;background:var(--bd);margin:28px 0}
+/* ANSWER TAB */
+.ac2{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:12px;overflow:hidden;box-shadow:var(--sh)}
+.ach{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.an{flex-shrink:0;width:22px;height:22px;background:var(--t2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'DM Mono',monospace}
+.al2{font-size:13px;font-weight:600;color:var(--t2);flex:1}
+.vd{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'DM Mono',monospace}
+.vo{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.vx{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.va{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.ab{padding:12px 16px 14px}
+.ar{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.ak{font-size:12px;font-weight:700;color:var(--tm);font-family:'DM Mono',monospace;min-width:48px}
+.av{font-size:14px;font-weight:700;color:var(--ac);font-family:'Noto Serif KR',serif}
+.ad{font-size:13px;color:var(--t2);line-height:1.8;margin-top:8px;padding-top:8px;border-top:1px dashed var(--bd)}
+.ad strong{color:var(--t);font-weight:700}
+.lc{display:inline-block;background:var(--al);color:var(--am);font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;margin:2px;font-family:'DM Mono',monospace}
+.wp2{background:#FFF0F0;border-left:3px solid var(--re);padding:7px 11px;margin-top:7px;font-size:12.5px;color:var(--re);border-radius:0 4px 4px 0;line-height:1.7}
+.cp{background:var(--gl);border-left:3px solid var(--gr);padding:7px 11px;margin-top:5px;font-size:12.5px;color:var(--gr);border-radius:0 4px 4px 0;line-height:1.7}
+.sb2{background:#F7F5F1;border:1px solid var(--bds);border-radius:var(--r);padding:9px 13px;margin-top:8px;font-size:12px;color:var(--t2);line-height:1.9;font-family:'Noto Serif KR',serif}
+.sb2t{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--tm);font-family:'DM Mono',monospace;margin-bottom:4px;text-transform:uppercase}
+.foot{margin-top:42px;padding:18px;text-align:center;border-top:1px solid var(--bd);font-size:11px;color:var(--tm);line-height:1.8;font-family:'DM Mono',monospace}
+@media(max-width:600px){.hd{padding:24px 16px 18px}.hd h1{font-size:19px}.sb{padding:8px 16px}.w{padding:0 12px}}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <div class="w">
+    <div class="tag">세무사(CTA) 시험 대비</div>
+    <h1>국세기본법 제35조 ~ 제42조<br>국세 우선권 · 제2차 납세의무 문제집</h1>
+    <p>법제처 공식 조문(시행 2026.01.02) 기반 · 빈칸 채우기 10문 + O/X 판단 10문</p>
+    <div class="hd-m">
+      <span><span class="dot"></span>출제 범위: 국세기본법 §35~§42</span>
+      <span><span class="dot"></span>기준 법령: 법률 제20640호 (2026.01.02 시행)</span>
+      <span><span class="dot"></span>총 20문항</span>
+    </div>
+  </div>
+</div>
+
+<div class="sb">
+  <div style="display:flex;gap:18px;flex-wrap:wrap">
+    <div class="si">빈칸 맞춤 <span class="sv g" id="fc">0</span>/<span id="ft">0</span>문</div>
+    <div class="si">O/X 맞춤 <span class="sv y" id="oc">0</span>/<span id="ot">0</span>문</div>
+    <div class="si">오답 <span class="sv r" id="wc">0</span></div>
+  </div>
+  <button class="rst" onclick="resetAll()">↺ 전체 초기화</button>
+</div>
+
+<div class="nav">
+  <div class="nav-i">
+    <button class="nb active" onclick="showSec('q',this)">📝 문제 편</button>
+    <button class="nb" onclick="showSec('a',this)">✅ 정답 및 해설</button>
+  </div>
+</div>
+
+<!-- ════ 문제 편 ════ -->
+<div id="sec-q" class="sec active">
+<div class="w">
+  <div class="sh2" style="padding-top:28px">
+    <div class="ey">Question Bank</div>
+    <h2>문제 편</h2>
+    <p>빈칸 → 입력 후 <strong>Enter ↵</strong> 즉시 채점 &nbsp;|&nbsp; O/X → 버튼 클릭 즉시 채점</p>
+  </div>
+  <div class="bgs">
+    <div class="bg"><span class="n">10</span>빈칸 채우기</div>
+    <div class="bg"><span class="n">10</span>O/X 판단</div>
+    <div class="bg">총 <span class="n">20</span>문항</div>
+  </div>
+  <div class="ib">⚠️ <strong>출제 원칙:</strong> 법제처 국세기본법 §35~§42 현행 조문 원문 기준. 국세우선권·법정기일·제2차납세의무(청산인·출자자·사업양수인)·양도담보 등 최빈출 주제 집중.</div>
+
+  <div class="sh2"><div class="ey">Part 01</div><h2>주요 법조문 빈칸 채우기 (10문제)</h2><p>빈칸에 답을 입력하고 Enter를 누르세요.</p></div>
+
+  <!-- F1 -->
+  <div class="qc" id="fc-1">
+    <div class="qch"><div class="qn">1</div><span class="qt2 bf">빈칸</span><span class="qtl">§35① 국세의 우선 원칙</span></div>
+    <div class="qb">
+      <div class="qtxt">국세 및 강제징수비는 다른 <span class="fg"><span class="fl">①</span><input class="fi" id="f1-1" data-ans="공과금" data-q="1" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb1-1"></span></span>이나 그 밖의 채권에 <span class="fg"><span class="fl">②</span><input class="fi" id="f1-2" data-ans="우선" data-q="1" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb1-2"></span></span>하여 징수한다.</div>
+      <div class="rv" id="rv-1"></div><div class="ref">§35①</div>
+    </div>
+  </div>
+
+  <!-- F2 -->
+  <div class="qc" id="fc-2">
+    <div class="qch"><div class="qn">2</div><span class="qt2 bf">빈칸</span><span class="qtl">§35②1호 법정기일 · 신고납세</span></div>
+    <div class="qb">
+      <div class="qtxt">과세표준과 세액의 신고에 따라 납세의무가 확정되는 국세의 경우 신고한 해당 세액의 법정기일은 그 <span class="fg"><span class="fl">①</span><input class="fi" id="f2-1" data-ans="신고일" data-q="2" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb2-1"></span></span>이다.</div>
+      <div class="rv" id="rv-2"></div><div class="ref">§35②1호</div>
+    </div>
+  </div>
+
+  <!-- F3 -->
+  <div class="qc" id="fc-3">
+    <div class="qch"><div class="qn">3</div><span class="qt2 bf">빈칸</span><span class="qtl">§35②2호 법정기일 · 정부결정·경정</span></div>
+    <div class="qb">
+      <div class="qtxt">과세표준과 세액을 정부가 결정·경정 또는 수시부과 결정하는 경우 고지한 해당 세액의 법정기일은 그 납부고지서의 <span class="fg"><span class="fl">①</span><input class="fi" id="f3-1" data-ans="발송일" data-q="3" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb3-1"></span></span>이다.</div>
+      <div class="rv" id="rv-3"></div><div class="ref">§35②2호</div>
+    </div>
+  </div>
+
+  <!-- F4 -->
+  <div class="qc" id="fc-4">
+    <div class="qch"><div class="qn">4</div><span class="qt2 bf">빈칸</span><span class="qtl">§35①3호 법정기일 전 담보권 우선 · 해당 세목 예외</span></div>
+    <div class="qb">
+      <div class="qtxt">법정기일 전에 전세권·질권·저당권 등이 설정된 재산에서 국세를 징수하는 경우 그 권리에 의하여 담보된 채권이 국세에 우선한다. 그러나 해당 재산에 부과된 <span class="fg"><span class="fl">①</span><input class="fi" id="f4-1" data-ans="상속세" data-q="4" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb4-1"></span></span>, <span class="fg"><span class="fl">②</span><input class="fi" id="f4-2" data-ans="증여세" data-q="4" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb4-2"></span></span> 및 <span class="fg"><span class="fl">③</span><input class="fi" id="f4-3" data-ans="종합부동산세" data-q="4" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:110px"><span class="fb" id="fb4-3"></span></span>는 그 담보 채권보다 우선한다.</div>
+      <div class="rv" id="rv-4"></div><div class="ref">§35③</div>
+    </div>
+  </div>
+
+  <!-- F5 -->
+  <div class="qc" id="fc-5">
+    <div class="qch"><div class="qn">5</div><span class="qt2 bf">빈칸</span><span class="qtl">§35⑥ 허위 담보 취소 청구 · 추정 기간</span></div>
+    <div class="qb">
+      <div class="qtxt">납세자가 국세의 법정기일 전 <span class="fg"><span class="fl">①</span><input class="fi" id="f5-1" data-ans="1년" data-q="5" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb5-1"></span></span> 내에 특수관계인 중 대통령령으로 정하는 자와 전세권·질권·저당권 설정계약 등을 한 경우에는 짜고 한 <span class="fg"><span class="fl">②</span><input class="fi" id="f5-2" data-ans="거짓" data-q="5" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb5-2"></span></span> 계약으로 추정한다.</div>
+      <div class="rv" id="rv-5"></div><div class="ref">§35⑥</div>
+    </div>
+  </div>
+
+  <!-- F6 -->
+  <div class="qc" id="fc-6">
+    <div class="qch"><div class="qn">6</div><span class="qt2 bf">빈칸</span><span class="qtl">§38 청산인 등의 제2차 납세의무 · 한도</span></div>
+    <div class="qb">
+      <div class="qtxt">법인 해산 시 청산인의 제2차 납세의무 한도는 <span class="fg"><span class="fl">①</span><input class="fi" id="f6-1" data-ans="분배하거나 인도한 재산의 가액" data-q="6" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:170px"><span class="fb" id="fb6-1"></span></span>이고, 잔여재산을 분배받거나 인도받은 자의 한도는 <span class="fg"><span class="fl">②</span><input class="fi" id="f6-2" data-ans="각자가 받은 재산의 가액" data-q="6" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:150px"><span class="fb" id="fb6-2"></span></span>이다.</div>
+      <div class="rv" id="rv-6"></div><div class="ref">§38②</div>
+    </div>
+  </div>
+
+  <!-- F7 -->
+  <div class="qc" id="fc-7">
+    <div class="qch"><div class="qn">7</div><span class="qt2 bf">빈칸</span><span class="qtl">§39 과점주주의 제2차 납세의무 · 지분 기준</span></div>
+    <div class="qb">
+      <div class="qtxt">출자자의 제2차 납세의무에서 "과점주주"란 주주 또는 유한책임사원 1명과 그의 특수관계인으로서 그들의 소유주식 합계 또는 출자액 합계가 해당 법인의 발행주식 총수 또는 출자총액의 100분의 <span class="fg"><span class="fl">①</span><input class="fi" id="f7-1" data-ans="50" data-q="7" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-1"></span></span>을 <span class="fg"><span class="fl">②</span><input class="fi" id="f7-2" data-ans="초과" data-q="7" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-2"></span></span>하면서 그 법인의 경영에 대하여 지배적인 영향력을 행사하는 자들을 말한다.</div>
+      <div class="rv" id="rv-7"></div><div class="ref">§39 ②호</div>
+    </div>
+  </div>
+
+  <!-- F8 -->
+  <div class="qc" id="fc-8">
+    <div class="qch"><div class="qn">8</div><span class="qt2 bf">빈칸</span><span class="qtl">§39 출자자 제2차 납세의무 · 상장법인 적용 제외</span></div>
+    <div class="qb">
+      <div class="qtxt">출자자의 제2차 납세의무는 대통령령으로 정하는 증권시장에 주권이 <span class="fg"><span class="fl">①</span><input class="fi" id="f8-1" data-ans="상장된" data-q="8" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb8-1"></span></span> 법인은 제외한다.</div>
+      <div class="rv" id="rv-8"></div><div class="ref">§39 본문</div>
+    </div>
+  </div>
+
+  <!-- F9 -->
+  <div class="qc" id="fc-9">
+    <div class="qch"><div class="qn">9</div><span class="qt2 bf">빈칸</span><span class="qtl">§41 사업양수인의 제2차 납세의무 · 확정 시점 및 한도</span></div>
+    <div class="qb">
+      <div class="qtxt">사업이 양도·양수된 경우 양도일 <span class="fg"><span class="fl">①</span><input class="fi" id="f9-1" data-ans="이전" data-q="9" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb9-1"></span></span>에 양도인의 납세의무가 <span class="fg"><span class="fl">②</span><input class="fi" id="f9-2" data-ans="확정된" data-q="9" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb9-2"></span></span> 그 사업에 관한 국세 및 강제징수비를 양도인 재산으로 충당해도 부족할 때, 사업양수인은 부족한 금액에 대해 <span class="fg"><span class="fl">③</span><input class="fi" id="f9-3" data-ans="양수한 재산의 가액" data-q="9" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:130px"><span class="fb" id="fb9-3"></span></span>을 한도로 제2차 납세의무를 진다.</div>
+      <div class="rv" id="rv-9"></div><div class="ref">§41①</div>
+    </div>
+  </div>
+
+  <!-- F10 -->
+  <div class="qc" id="fc-10">
+    <div class="qch"><div class="qn">10</div><span class="qt2 bf">빈칸</span><span class="qtl">§42 양도담보권자의 물적납세의무 · 원칙과 예외</span></div>
+    <div class="qb">
+      <div class="qtxt">납세자가 국세를 체납한 경우 양도담보재산으로 국세를 징수하려면 납세자의 <span class="fg"><span class="fl">①</span><input class="fi" id="f10-1" data-ans="다른 재산" data-q="10" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb10-1"></span></span>에 대하여 강제징수를 하여도 징수할 금액에 미치지 못하는 경우에만 가능하다. 다만, 그 국세의 <span class="fg"><span class="fl">②</span><input class="fi" id="f10-2" data-ans="법정기일" data-q="10" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb10-2"></span></span> 전에 담보의 목적이 된 양도담보재산에 대해서는 그러하지 아니하다.</div>
+      <div class="rv" id="rv-10"></div><div class="ref">§42①</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sh2"><div class="ey">Part 02</div><h2>법령 O/X 판단 문제 (10문제)</h2><p>옳으면 <strong>O</strong>, 틀리면 <strong>X</strong> 버튼을 누르세요.</p></div>
+
+  <!-- OX1 -->
+  <div class="qc" id="ox-1">
+    <div class="qch"><div class="qn">1</div><span class="qt2 bx">O/X</span><span class="qtl">§35① 국세우선 원칙 · 강제집행 비용</span></div>
+    <div class="qb">
+      <div class="qtxt">강제집행·경매 또는 파산 절차에 따라 재산을 매각할 때 그 매각금액 중에서 국세를 징수하는 경우, 강제집행·경매 또는 파산 절차에 든 비용은 국세에 우선한다.</div>
+      <div class="oxa"><button class="oxb" id="ob1-o" onclick="po(1,'O',this)">O</button><button class="oxb" id="ob1-x" onclick="po(1,'X',this)">X</button><span class="oxr" id="or-1"></span></div>
+      <div class="oxe" id="oe-1"><span class="ca">✅ 정답: O</span><br>§35①2호에 따라 강제집행·경매·파산 절차 비용은 국세 우선 원칙의 예외로서 국세에 <strong>우선</strong>합니다. 법원의 환가절차 진행비용 보호 취지입니다.</div>
+      <div class="ref">§35①2호</div>
+    </div>
+  </div>
+
+  <!-- OX2 -->
+  <div class="qc" id="ox-2">
+    <div class="qch"><div class="qn">2</div><span class="qt2 bx">O/X</span><span class="qtl">§35②1호 법정기일 · 신고납세 vs 정부결정</span></div>
+    <div class="qb">
+      <div class="qtxt">납세의무자가 과세표준과 세액을 스스로 신고한 경우와 정부가 결정·경정한 경우의 법정기일은 동일하게 납부기한일이다.</div>
+      <div class="oxa"><button class="oxb" id="ob2-o" onclick="po(2,'O',this)">O</button><button class="oxb" id="ob2-x" onclick="po(2,'X',this)">X</button><span class="oxr" id="or-2"></span></div>
+      <div class="oxe" id="oe-2"><span class="ca">✅ 정답: X</span><br>신고납세의 법정기일은 <strong>신고일</strong>(§35②1호), 정부결정·경정의 법정기일은 <strong>납부고지서의 발송일</strong>(§35②2호)입니다. 서로 다르며 "납부기한일"은 오답입니다.</div>
+      <div class="ref">§35②1·2호</div>
+    </div>
+  </div>
+
+  <!-- OX3 -->
+  <div class="qc" id="ox-3">
+    <div class="qch"><div class="qn">3</div><span class="qt2 bx">O/X</span><span class="qtl">§35③ 상속·증여세·종부세 우선징수</span></div>
+    <div class="qb">
+      <div class="qtxt">해당 재산에 대하여 부과된 상속세, 증여세 및 종합부동산세는 법정기일 전에 설정된 전세권·질권·저당권에 의하여 담보된 채권보다 우선하여 징수한다.</div>
+      <div class="oxa"><button class="oxb" id="ob3-o" onclick="po(3,'O',this)">O</button><button class="oxb" id="ob3-x" onclick="po(3,'X',this)">X</button><span class="oxr" id="or-3"></span></div>
+      <div class="oxe" id="oe-3"><span class="ca">✅ 정답: O</span><br>§35③에 따라 해당 재산 자체에 부과된 상속세·증여세·종합부동산세는 §35①3호의 법정기일 전 담보 채권 우선 원칙의 예외로서 <strong>담보 채권보다 우선</strong>합니다. 물적 귀속세의 특수성을 반영한 조항입니다.</div>
+      <div class="ref">§35③</div>
+    </div>
+  </div>
+
+  <!-- OX4 -->
+  <div class="qc" id="ox-4">
+    <div class="qch"><div class="qn">4</div><span class="qt2 bx">O/X</span><span class="qtl">§36 압류에 의한 우선 · 교부청구</span></div>
+    <div class="qb">
+      <div class="qtxt">국세 강제징수에 따라 납세자의 재산을 압류한 경우, 교부청구된 다른 국세·강제징수비 또는 지방세는 압류와 관계되는 국세·강제징수비보다 우선하여 징수한다.</div>
+      <div class="oxa"><button class="oxb" id="ob4-o" onclick="po(4,'O',this)">O</button><button class="oxb" id="ob4-x" onclick="po(4,'X',this)">X</button><span class="oxr" id="or-4"></span></div>
+      <div class="oxe" id="oe-4"><span class="ca">✅ 정답: X</span><br>§36①에 따라 <strong>압류와 관계되는 국세·강제징수비</strong>가 교부청구된 다른 국세·강제징수비 또는 지방세보다 <strong>우선</strong>합니다. 문장의 선후 관계가 반대로 뒤집혀 있습니다.</div>
+      <div class="ref">§36①</div>
+    </div>
+  </div>
+
+  <!-- OX5 -->
+  <div class="qc" id="ox-5">
+    <div class="qch"><div class="qn">5</div><span class="qt2 bx">O/X</span><span class="qtl">§38 청산인 제2차 납세의무 · 발생 요건</span></div>
+    <div class="qb">
+      <div class="qtxt">법인이 해산하여 청산할 때 국세를 납부하지 않고 잔여재산을 분배한 경우, 청산인은 법인에 대한 강제징수 결과와 무관하게 즉시 제2차 납세의무를 진다.</div>
+      <div class="oxa"><button class="oxb" id="ob5-o" onclick="po(5,'O',this)">O</button><button class="oxb" id="ob5-x" onclick="po(5,'X',this)">X</button><span class="oxr" id="or-5"></span></div>
+      <div class="oxe" id="oe-5"><span class="ca">✅ 정답: X</span><br>§38①에 따라 청산인의 제2차 납세의무는 법인에 대하여 <strong>강제징수를 하여도 징수할 금액에 미치지 못하는 경우</strong>에만 발생합니다. 즉, 법인 재산에 대한 강제징수가 선행되어야 합니다(보충성 원칙).</div>
+      <div class="ref">§38①</div>
+    </div>
+  </div>
+
+  <!-- OX6 -->
+  <div class="qc" id="ox-6">
+    <div class="qch"><div class="qn">6</div><span class="qt2 bx">O/X</span><span class="qtl">§39 출자자 제2차 납세의무 · 과점주주 한도 계산</span></div>
+    <div class="qb">
+      <div class="qtxt">과점주주의 제2차 납세의무는 부족한 금액 전액을 한도로 하며, 보유 지분비율에 따른 안분 계산은 하지 않는다.</div>
+      <div class="oxa"><button class="oxb" id="ob6-o" onclick="po(6,'O',this)">O</button><button class="oxb" id="ob6-x" onclick="po(6,'X',this)">X</button><span class="oxr" id="or-6"></span></div>
+      <div class="oxe" id="oe-6"><span class="ca">✅ 정답: X</span><br>§39 단서에 따라 과점주주의 제2차 납세의무 한도는 <strong>부족금액 × (실질적으로 권리 행사하는 주식 수 ÷ 발행주식 총수)</strong>로 계산한 금액입니다. 지분비율에 따른 안분 계산이 필요합니다. (무한책임사원은 전액 한도)</div>
+      <div class="ref">§39 단서</div>
+    </div>
+  </div>
+
+  <!-- OX7 -->
+  <div class="qc" id="ox-7">
+    <div class="qch"><div class="qn">7</div><span class="qt2 bx">O/X</span><span class="qtl">§41 사업양수인 제2차 납세의무 · 확정 시점 기준</span></div>
+    <div class="qb">
+      <div class="qtxt">사업양수인의 제2차 납세의무는 양도일 이후에 양도인의 납세의무가 확정된 그 사업에 관한 국세에 대해서도 적용된다.</div>
+      <div class="oxa"><button class="oxb" id="ob7-o" onclick="po(7,'O',this)">O</button><button class="oxb" id="ob7-x" onclick="po(7,'X',this)">X</button><span class="oxr" id="or-7"></span></div>
+      <div class="oxe" id="oe-7"><span class="ca">✅ 정답: X</span><br>§41①은 <strong>"양도일 이전에 양도인의 납세의무가 확정된"</strong> 국세에만 적용됩니다. 양도일 이후 확정된 국세는 사업양수인의 제2차 납세의무 대상이 아닙니다.</div>
+      <div class="ref">§41①</div>
+    </div>
+  </div>
+
+  <!-- OX8 -->
+  <div class="qc" id="ox-8">
+    <div class="qch"><div class="qn">8</div><span class="qt2 bx">O/X</span><span class="qtl">§42① 양도담보 물적납세의무 · 보충성</span></div>
+    <div class="qb">
+      <div class="qtxt">납세자가 국세를 체납한 경우 세무서장은 납세자의 다른 재산에 대한 강제징수 결과에 관계없이 곧바로 양도담보재산에서 국세를 징수할 수 있다.</div>
+      <div class="oxa"><button class="oxb" id="ob8-o" onclick="po(8,'O',this)">O</button><button class="oxb" id="ob8-x" onclick="po(8,'X',this)">X</button><span class="oxr" id="or-8"></span></div>
+      <div class="oxe" id="oe-8"><span class="ca">✅ 정답: X</span><br>§42①에 따라 양도담보재산에서의 징수는 <strong>납세자의 다른 재산에 대하여 강제징수를 하여도 징수할 금액에 미치지 못하는 경우에만</strong> 가능합니다(보충성 원칙). 즉시 징수 불가.</div>
+      <div class="ref">§42①</div>
+    </div>
+  </div>
+
+  <!-- OX9 -->
+  <div class="qc" id="ox-9">
+    <div class="qch"><div class="qn">9</div><span class="qt2 bx">O/X</span><span class="qtl">§42① 양도담보 · 법정기일 前 담보재산 예외</span></div>
+    <div class="qb">
+      <div class="qtxt">국세의 법정기일 전에 담보의 목적이 된 양도담보재산에 대해서는 해당 국세를 양도담보재산으로 징수할 수 없다.</div>
+      <div class="oxa"><button class="oxb" id="ob9-o" onclick="po(9,'O',this)">O</button><button class="oxb" id="ob9-x" onclick="po(9,'X',this)">X</button><span class="oxr" id="or-9"></span></div>
+      <div class="oxe" id="oe-9"><span class="ca">✅ 정답: O</span><br>§42① 단서 조문 원문과 일치합니다. 국세의 법정기일 이전에 이미 담보 목적이 된 양도담보재산은 납세자 보호 차원에서 징수 대상에서 제외됩니다.</div>
+      <div class="ref">§42① 단서</div>
+    </div>
+  </div>
+
+  <!-- OX10 -->
+  <div class="qc" id="ox-10">
+    <div class="qch"><div class="qn">10</div><span class="qt2 bx">O/X</span><span class="qtl">§35⑥ 허위 담보 · 추정 규정</span></div>
+    <div class="qb">
+      <div class="qtxt">납세자가 국세의 법정기일 전 1년 내에 특수관계인과 저당권 설정계약을 체결한 경우, 세무서장이 그것이 허위임을 입증해야 취소를 청구할 수 있고, 자동으로 허위 계약으로 추정되지는 않는다.</div>
+      <div class="oxa"><button class="oxb" id="ob10-o" onclick="po(10,'O',this)">O</button><button class="oxb" id="ob10-x" onclick="po(10,'X',this)">X</button><span class="oxr" id="or-10"></span></div>
+      <div class="oxe" id="oe-10"><span class="ca">✅ 정답: X</span><br>§35⑥에 따라 납세자가 법정기일 전 <strong>1년 내</strong>에 특수관계인과 저당권 설정 등을 한 경우 <strong>짜고 한 거짓 계약으로 추정</strong>합니다. 세무서장이 별도로 허위임을 입증할 필요 없이 추정이 적용됩니다.</div>
+      <div class="ref">§35⑥</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ════ 정답 및 해설 편 ════ -->
+<div id="sec-a" class="sec">
+<div class="w">
+  <div class="sh2" style="padding-top:28px"><div class="ey">Answer &amp; Commentary</div><h2>정답 및 해설 편</h2><p>조문 원문 출처와 핵심 포인트를 확인하세요.</p></div>
+  <div class="ib">📌 <strong>기준 법령:</strong> 국세기본법 (법률 제20640호, 공포 2025.12.23 / 시행 2026.01.02) — 법제처 MCP API 조문 원문 직접 인용</div>
+
+  <div class="sh2"><div class="ey">Part 01 · 정답</div><h2>빈칸 채우기 정답</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§35① 국세우선 원칙</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">공과금</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">우선</span></div>
+    <div class="ad"><span class="lc">§35①</span> 국세는 <strong>공과금</strong>이나 그 밖의 채권에 <strong>우선</strong>하여 징수하는 것이 원칙. 단 §35①1~5호 예외에 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§35②1호 신고납세 법정기일</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">신고일</span></div>
+    <div class="ad"><span class="lc">§35②1호</span> 신고납세 → 법정기일 = <strong>신고일</strong>. ★ 정부결정·경정(납부고지서 발송일)과 반드시 구별!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§35②2호 정부결정·경정 법정기일</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">발송일</span></div>
+    <div class="ad"><span class="lc">§35②2호</span> 정부결정·경정·수시부과 → 법정기일 = <strong>납부고지서의 발송일</strong>. "도달일" "납부기한일"은 오답 함정.
+      <div class="sb2"><div class="sb2t">법정기일 비교표</div>
+        신고납세: <strong>신고일</strong><br>
+        정부결정·경정: <strong>납부고지서 발송일</strong><br>
+        인지세·원천징수: <strong>납세의무 확정일</strong><br>
+        제2차납세의무자·양도담보: <strong>납부고지서 발송일(징수법 §7)</strong><br>
+        압류 후 확정국세: <strong>압류등기일 또는 등록일</strong>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§35③ 상속·증여세·종부세 우선 징수</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">상속세</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">증여세</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">종합부동산세</span></div>
+    <div class="ad"><span class="lc">§35③</span> 해당 재산에 직접 부과되는 <strong>상속세·증여세·종합부동산세</strong> 3가지만 법정기일 전 담보 채권보다 우선. 이 3개 세목을 정확히 암기할 것.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§35⑥ 허위 담보 추정 기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">1년</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">거짓</span></div>
+    <div class="ad"><span class="lc">§35⑥</span> 법정기일 전 <strong>1년</strong> 내 특수관계인과의 담보 계약 → <strong>거짓(허위)</strong> 계약으로 추정. "2년"이나 "3년"으로 바꾸는 함정 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§38② 청산인 등 제2차 납세의무 한도</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">분배하거나 인도한 재산의 가액</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">각자가 받은 재산의 가액</span></div>
+    <div class="ad"><span class="lc">§38②</span> 청산인: <strong>분배·인도한 재산 가액</strong> 한도 / 수령자: <strong>각자가 받은 재산 가액</strong> 한도. 두 주체의 한도 기준이 다름을 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§39 과점주주 요건 · 지분 기준</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">50</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">초과</span></div>
+    <div class="ad"><span class="lc">§39②호</span> 과점주주 요건 = 소유 지분 합계 <strong>50% 초과</strong> + 경영 지배적 영향력 행사. "이상"이 아닌 <strong>"초과"</strong>임을 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§39 출자자 제2차 납세의무 · 상장법인 제외</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">상장된</span></div>
+    <div class="ad"><span class="lc">§39 본문</span> 증권시장에 주권이 <strong>상장된</strong> 법인은 출자자 제2차 납세의무 적용에서 제외. 소액주주 보호 및 주식 거래의 유동성 확보 취지.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§41① 사업양수인 제2차 납세의무</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">이전</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">확정된</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">양수한 재산의 가액</span></div>
+    <div class="ad"><span class="lc">§41①</span> 요건: ① 양도일 <strong>이전</strong>에 ② 납세의무 <strong>확정</strong>된 국세. 한도: <strong>양수한 재산의 가액</strong>. "성립된"이나 "양도일 이후"로 바꾸는 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§42① 양도담보 물적납세의무 보충성</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">다른 재산</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">법정기일</span></div>
+    <div class="ad"><span class="lc">§42①</span> 양도담보 징수의 2가지 요건: ① <strong>다른 재산</strong>에 강제징수 먼저(보충성) ② 국세의 <strong>법정기일</strong> 이후에 담보 설정된 재산에 한정.</div>
+  </div></div>
+
+  <div class="div"></div>
+  <div class="sh2"><div class="ey">Part 02 · 정답</div><h2>O/X 판단 정답 및 해설</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§35①2호 강제집행 비용 우선</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§35①2호</span> 강제집행·경매·파산 절차 비용은 국세 우선의 <strong>예외</strong>로서 국세에 우선합니다. 절차 비용 없이는 환가 자체가 불가능하기 때문입니다.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§35②1·2호 법정기일 신고 vs 결정</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "납부기한일로 동일"</div><div class="cp">✅ 신고납세 → <strong>신고일</strong> / 정부결정·경정 → <strong>납부고지서 발송일</strong>로 각각 다릅니다.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§35③ 상속·증여세·종부세 우선징수</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§35③</span> 해당 재산에 부과된 상속세·증여세·종합부동산세 3개 세목은 법정기일 전 담보 채권보다 우선합니다. 재산 자체와 직결된 물적 세목의 특수성 반영.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§36① 압류에 의한 우선</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "교부청구된 국세가 압류 국세보다 우선"</div><div class="cp">✅ §36①: <strong>압류와 관계되는 국세</strong>가 교부청구된 국세·지방세보다 우선. 선착순 원칙.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§38① 청산인 제2차 납세의무 보충성</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "강제징수 결과와 무관하게 즉시"</div><div class="cp">✅ §38①: 법인에 대한 강제징수에도 <strong>부족한 경우에만</strong> 발생(보충성 원칙).</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§39 과점주주 제2차 납세의무 한도</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "부족금액 전액 한도, 안분 불필요"</div><div class="cp">✅ §39 단서: <strong>부족금액 × 실질 지분 비율</strong>로 안분 계산. 무한책임사원만 전액 한도.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§41① 사업양수인 제2차 납세의무 · 확정 시점</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "양도일 이후 확정된 국세에도 적용"</div><div class="cp">✅ §41①: <strong>양도일 이전에 확정된</strong> 국세에만 적용. 양도일 이후 확정분은 해당 없음.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§42① 양도담보 보충성 원칙</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "강제징수 결과 무관하게 곧바로 징수 가능"</div><div class="cp">✅ §42①: 다른 재산에 강제징수해도 <strong>부족한 경우에만</strong> 양도담보재산 징수 가능(보충성).</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§42① 단서 법정기일 전 담보재산 제외</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§42① 단서</span> 조문 원문과 일치. 법정기일 전에 이미 담보된 양도담보재산은 징수 제외. 선의의 담보권자 보호.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§35⑥ 허위 담보 추정 규정</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "세무서장이 허위임을 입증해야"</div><div class="cp">✅ §35⑥: 법정기일 전 1년 내 특수관계인과의 담보계약 → <strong>거짓 계약으로 자동 추정</strong>. 세무서장의 별도 입증 불요.</div></div></div>
+
+</div></div>
+
+<div class="foot">
+  2026-05-29 생성 · 국세기본법 §35~§42 기준<br>
+  법령 출처: 법제처 국세기본법 (법률 제20640호, 시행 2026.01.02) — MCP API 직접 조회<br>
+  #국세기본법 #세무사시험 #국세우선권 #법정기일 #제2차납세의무 #양도담보
+</div>
+
+<script>
+const FS={},OS={};
+const FA={
+  '1-1':['공과금'],'1-2':['우선'],
+  '2-1':['신고일'],
+  '3-1':['발송일'],
+  '4-1':['상속세'],'4-2':['증여세'],'4-3':['종합부동산세'],
+  '5-1':['1년'],'5-2':['거짓'],
+  '6-1':['분배하거나 인도한 재산의 가액','분배한 재산의 가액'],'6-2':['각자가 받은 재산의 가액'],
+  '7-1':['50'],'7-2':['초과'],
+  '8-1':['상장된'],
+  '9-1':['이전'],'9-2':['확정된'],'9-3':['양수한 재산의 가액'],
+  '10-1':['다른 재산'],'10-2':['법정기일']
+};
+const FC={1:2,2:1,3:1,4:3,5:2,6:2,7:2,8:1,9:3,10:2};
+const OA={1:'O',2:'X',3:'O',4:'X',5:'X',6:'X',7:'X',8:'X',9:'O',10:'X'};
+
+function nm(s){return s.replace(/[\s「」]/g,'').toLowerCase()}
+function cf(e,inp){
+  if(e.key!=='Enter')return;e.preventDefault();
+  const q=+inp.dataset.q,idx=+inp.dataset.idx,key=q+'-'+idx,val=inp.value.trim();
+  if(!val)return;
+  const ok=FA[key].some(a=>nm(val)===nm(a));
+  inp.classList.remove('ok','ng');inp.classList.add(ok?'ok':'ng');inp.disabled=true;
+  const fb=document.getElementById('fb'+q+'-'+idx);
+  fb.textContent=ok?'✓':'✗ '+FA[key][0];fb.className='fb show '+(ok?'ok':'ng');
+  if(!FS[q])FS[q]={total:FC[q],done:0,wrong:0};
+  if(!FS[q][idx]){FS[q][idx]=true;FS[q].done++;if(!ok)FS[q].wrong++;}
+  if(FS[q].done===FS[q].total){
+    document.getElementById('fc-'+q).classList.add(FS[q].wrong===0?'ac':'aw');
+    const rv=document.getElementById('rv-'+q);
+    const ks=Object.keys(FA).filter(k=>k.startsWith(q+'-'));
+    rv.innerHTML='✅ 정답: '+ks.map(k=>{const i=+k.split('-')[1];return '<strong>'+['①','②','③'][i-1]+' '+FA[k][0]+'</strong>';}).join(' | ');
+    rv.classList.add('show');
+  }
+  upd();
+}
+function po(n,picked){
+  if(OS[n])return;
+  const correct=OA[n],ok=(picked===correct);OS[n]={ok};
+  const bo=document.getElementById('ob'+n+'-o'),bx=document.getElementById('ob'+n+'-x');
+  bo.disabled=true;bx.disabled=true;
+  if(picked==='O'){bo.classList.add(ok?'ch':'wp');if(!ok)bx.classList.add('ch');}
+  else{bx.classList.add(ok?'ch':'wp');if(!ok)bo.classList.add('ch');}
+  const r=document.getElementById('or-'+n);
+  r.textContent=ok?'🎉 정답!':'❌ 오답 (정답: '+correct+')';r.className='oxr show '+(ok?'ok':'ng');
+  document.getElementById('oe-'+n).className='oxe show '+(ok?'ok':'ng');
+  document.getElementById('ox-'+n).classList.add('ao');
+  upd();
+}
+function upd(){
+  let fc=0,ft=0,oc=0,ot=0,wr=0;
+  for(const q in FS){ft++;if(FS[q].done===FS[q].total){if(FS[q].wrong===0)fc++;else wr++;}}
+  for(const n in OS){ot++;if(OS[n].ok)oc++;else wr++;}
+  document.getElementById('fc').textContent=fc;document.getElementById('ft').textContent=ft;
+  document.getElementById('oc').textContent=oc;document.getElementById('ot').textContent=ot;
+  document.getElementById('wc').textContent=wr;
+}
+function resetAll(){
+  document.querySelectorAll('.fi').forEach(i=>{i.value='';i.disabled=false;i.classList.remove('ok','ng');});
+  document.querySelectorAll('.fb').forEach(f=>{f.textContent='';f.className='fb';});
+  document.querySelectorAll('.rv').forEach(r=>r.classList.remove('show'));
+  document.querySelectorAll('.oxb').forEach(b=>{b.disabled=false;b.className='oxb';});
+  document.querySelectorAll('.oxr').forEach(r=>{r.textContent='';r.className='oxr';});
+  document.querySelectorAll('.oxe').forEach(e=>{e.className='oxe';});
+  document.querySelectorAll('.qc').forEach(c=>c.classList.remove('ac','aw','ao'));
+  for(const k in FS)delete FS[k];for(const k in OS)delete OS[k];upd();
+}
+function showSec(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국세기본법 제14~28조 | 세무사 시험 문제집</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F5;--surface:#FFFFFF;--border:#E6E1D8;--border-strong:#C5BDB0;
+  --text:#1A1714;--text2:#48433C;--muted:#7A7268;
+  --accent:#1C3D6E;--al:#EBF0F8;--am:#2D5499;
+  --red:#861A1A;--rl:#FDF1F1;
+  --green:#194828;--gl:#F1F8F3;
+  --gold:#795918;--gol:#FDF6E8;
+  --sh:0 1px 4px rgba(0,0,0,.07);--r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;padding-bottom:80px}
+
+/* ─ HEADER ─ */
+.hd{background:var(--accent);color:#fff;padding:42px 40px 30px;border-bottom:4px solid #0C2244}
+.hd .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:3px 10px;border-radius:3px;margin-bottom:12px;font-family:'DM Mono',monospace}
+.hd h1{font-family:'Noto Serif KR',serif;font-size:26px;font-weight:900;line-height:1.3;margin-bottom:8px}
+.hd p{font-size:13px;color:rgba(255,255,255,.75);font-weight:300}
+.hd-meta{display:flex;gap:20px;margin-top:14px;flex-wrap:wrap}
+.hd-meta span{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.8);font-family:'DM Mono',monospace}
+.dot{width:6px;height:6px;background:#6FC3FF;border-radius:50%;flex-shrink:0}
+
+/* ─ SCORE BAR ─ */
+.sb{background:#0C2244;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:9px 40px;font-size:13px;font-family:'DM Mono',monospace;flex-wrap:wrap;gap:8px}
+.sb-item{display:flex;align-items:center;gap:8px}
+.sv{font-weight:700;font-size:15px}
+.sv.g{color:#6FE88A}.sv.r{color:#FF8A8A}.sv.y{color:#FFD97A}
+.rst{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 13px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'DM Mono',monospace;font-weight:700;transition:background .2s}
+.rst:hover{background:rgba(255,255,255,.25)}
+
+/* ─ NAV ─ */
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:var(--sh)}
+.nav-in{max-width:880px;margin:0 auto;padding:0 24px;display:flex}
+.nb{padding:12px 20px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap}
+.nb:hover{color:var(--accent)}
+.nb.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:700}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.sec{display:none;padding-top:30px}
+.sec.active{display:block}
+
+/* ─ SECTION HEADER ─ */
+.sh2{margin-bottom:22px}
+.sh2 .ey{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-family:'DM Mono',monospace;margin-bottom:4px}
+.sh2 h2{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700}
+.sh2 p{margin-top:4px;font-size:13px;color:var(--muted)}
+
+/* ─ BADGES ─ */
+.bgs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.bg{display:flex;align-items:center;gap:5px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--text2)}
+.bg .n{font-weight:700;color:var(--accent);font-family:'DM Mono',monospace}
+
+.ibox{background:var(--al);border:1px solid #C0D0E8;border-radius:var(--r);padding:11px 15px;margin-bottom:18px;font-size:13px;color:var(--am);line-height:1.7}
+.ibox strong{color:var(--accent)}
+
+/* ─ Q CARD ─ */
+.qc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);margin-bottom:13px;overflow:hidden;box-shadow:var(--sh);transition:border-color .25s,border-width .1s}
+.qc.ac{border-color:#72C990;border-width:2px}
+.qc.aw{border-color:#E88888;border-width:2px}
+.qc.ao{border-color:#90B0D8;border-width:2px}
+.qch{display:flex;align-items:flex-start;gap:11px;padding:14px 19px 11px;border-bottom:1px solid var(--border);background:#FDFCFB}
+.qn{flex-shrink:0;width:25px;height:25px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'DM Mono',monospace}
+.qt2{font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:3px;margin-top:2px;font-family:'DM Mono',monospace;flex-shrink:0}
+.bf{background:var(--gol);color:var(--gold);border:1px solid #E6D4A0}
+.box{background:var(--al);color:var(--accent);border:1px solid #B8CCE4}
+.qtl{font-size:12.5px;font-weight:600;color:var(--text2);flex:1;line-height:1.5}
+.qb{padding:15px 19px 17px}
+.qtxt{font-size:13.5px;color:var(--text);line-height:2.1;font-family:'Noto Serif KR',serif}
+
+/* ─ FILL INPUT ─ */
+.fg{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin:0 2px}
+.fl{font-size:11px;font-weight:700;color:var(--accent);font-family:'DM Mono',monospace}
+.fi{border:none;border-bottom:2.5px solid var(--accent);background:transparent;outline:none;font-size:13.5px;font-family:'Noto Sans KR',sans-serif;color:var(--text);font-weight:700;padding:2px 6px;min-width:90px;max-width:180px;transition:border-color .2s,background .2s;text-align:center}
+.fi::placeholder{color:#C0B8B0;font-weight:400;font-size:11px}
+.fi:focus{border-bottom-color:var(--am);background:var(--al);border-radius:4px 4px 0 0}
+.fi.ok{border-bottom-color:var(--green);background:var(--gl);border-radius:4px 4px 0 0;color:var(--green)}
+.fi.ng{border-bottom-color:var(--red);background:var(--rl);border-radius:4px 4px 0 0;color:var(--red)}
+.fb{display:none;font-size:11px;font-family:'DM Mono',monospace;margin-left:3px;font-weight:700;vertical-align:middle;white-space:nowrap}
+.fb.show{display:inline}
+.fb.ok{color:var(--green)}.fb.ng{color:var(--red)}
+
+.rev{display:none;margin-top:11px;background:#F3F8F2;border:1px solid #B0D5B8;border-radius:var(--r);padding:9px 13px;font-size:13px;color:var(--green);line-height:1.8}
+.rev.show{display:block}
+.ref{display:inline-block;font-size:11px;font-family:'DM Mono',monospace;color:var(--muted);background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:2px 7px;margin-top:9px}
+
+/* ─ OX ─ */
+.oxa{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.oxb{padding:7px 30px;border-radius:22px;font-size:16px;font-weight:900;border:2px solid #BEB8B0;background:var(--bg);color:var(--muted);cursor:pointer;font-family:'DM Mono',monospace;transition:all .17s;user-select:none}
+.oxb:hover:not(:disabled){border-color:var(--accent);color:var(--accent);background:var(--al);transform:scale(1.07)}
+.oxb.ch{background:#CCEEDD;border-color:#358855;color:#194828;box-shadow:0 0 0 3px #98D8B0}
+.oxb.wp{background:#F5D5D5;border-color:#B03030;color:#861A1A}
+.oxb:disabled{cursor:default;transform:none}
+.oxr{display:none;font-size:13px;font-weight:700;padding:4px 11px;border-radius:11px;font-family:'DM Mono',monospace}
+.oxr.show{display:inline-block}
+.oxr.ok{background:var(--gl);color:var(--green);border:1px solid #98D8B0}
+.oxr.ng{background:var(--rl);color:var(--red);border:1px solid #E0A8A8}
+.oxe{display:none;margin-top:11px;padding:10px 13px;border-radius:var(--r);font-size:13px;line-height:1.8;font-family:'Noto Sans KR',sans-serif}
+.oxe.show{display:block}
+.oxe.ok{background:var(--gl);border:1px solid #B0D8B8;color:#194828}
+.oxe.ng{background:var(--rl);border:1px solid #E0B0B0;color:#6A1414}
+.oxe .ca{font-weight:700;color:var(--text);font-size:14px}
+
+.div{height:1px;background:var(--border);margin:30px 0}
+
+/* ─ ANSWER TAB ─ */
+.ac2{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);margin-bottom:13px;overflow:hidden;box-shadow:var(--sh)}
+.ach{display:flex;align-items:center;gap:11px;padding:11px 17px;border-bottom:1px solid var(--border);background:#FDFCFB}
+.an{flex-shrink:0;width:23px;height:23px;background:var(--text2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'DM Mono',monospace}
+.al2{font-size:13px;font-weight:600;color:var(--text2);flex:1}
+.vd{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'DM Mono',monospace}
+.vo{background:var(--gl);color:var(--green);border:1px solid #98D8B0}
+.vx{background:var(--rl);color:var(--red);border:1px solid #E0A8A8}
+.va{background:var(--gol);color:var(--gold);border:1px solid #E6D4A0}
+.ab{padding:13px 17px 15px}
+.ar{display:flex;align-items:baseline;gap:10px;margin-bottom:5px;flex-wrap:wrap}
+.ak{font-size:12px;font-weight:700;color:var(--muted);font-family:'DM Mono',monospace;min-width:50px}
+.av{font-size:14px;font-weight:700;color:var(--accent);font-family:'Noto Serif KR',serif}
+.ad{font-size:13px;color:var(--text2);line-height:1.8;margin-top:9px;padding-top:9px;border-top:1px dashed var(--border)}
+.ad strong{color:var(--text);font-weight:700}
+.lc{display:inline-block;background:var(--al);color:var(--am);font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;margin:2px;font-family:'DM Mono',monospace}
+.wp2{background:#FFF0F0;border-left:3px solid var(--red);padding:7px 11px;margin-top:7px;font-size:12.5px;color:var(--red);border-radius:0 4px 4px 0;line-height:1.7}
+.cp{background:var(--gl);border-left:3px solid var(--green);padding:7px 11px;margin-top:6px;font-size:12.5px;color:var(--green);border-radius:0 4px 4px 0;line-height:1.7}
+.sb2{background:#F7F5F1;border:1px solid var(--border-strong);border-radius:var(--r);padding:9px 13px;margin-top:8px;font-size:12px;color:var(--text2);line-height:1.8;font-family:'Noto Serif KR',serif}
+.sb2t{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:4px;text-transform:uppercase}
+
+.foot{margin-top:44px;padding:18px;text-align:center;border-top:1px solid var(--border);font-size:11px;color:var(--muted);line-height:1.8;font-family:'DM Mono',monospace}
+@media(max-width:600px){.hd{padding:26px 16px 20px}.hd h1{font-size:20px}.sb{padding:8px 16px}.wrap{padding:0 12px}.qb,.ab{padding:11px}}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <div class="wrap">
+    <div class="tag">세무사(CTA) 시험 대비</div>
+    <h1>국세기본법 제14조 ~ 제28조<br>핵심 암기 문제집</h1>
+    <p>법제처 공식 조문(시행 2026.01.02) 기반 · 빈칸 채우기 10문 + O/X 판단 10문</p>
+    <div class="hd-meta">
+      <span><span class="dot"></span>출제 범위: 국세기본법 §14~§28</span>
+      <span><span class="dot"></span>기준 법령: 법률 제20640호 (2026.01.02 시행)</span>
+      <span><span class="dot"></span>총 20문항</span>
+    </div>
+  </div>
+</div>
+
+<div class="sb">
+  <div style="display:flex;gap:18px;flex-wrap:wrap;">
+    <div class="sb-item">빈칸 맞춤 <span class="sv g" id="fc">0</span>/<span id="ft">0</span>문</div>
+    <div class="sb-item">O/X 맞춤 <span class="sv y" id="oc">0</span>/<span id="ot">0</span>문</div>
+    <div class="sb-item">오답 <span class="sv r" id="wc">0</span></div>
+  </div>
+  <button class="rst" onclick="resetAll()">↺ 전체 초기화</button>
+</div>
+
+<div class="nav">
+  <div class="nav-in">
+    <button class="nb active" onclick="showSec('q',this)">📝 문제 편</button>
+    <button class="nb" onclick="showSec('a',this)">✅ 정답 및 해설</button>
+  </div>
+</div>
+
+<!-- ══════════ 문제 편 ══════════ -->
+<div id="sec-q" class="sec active">
+<div class="wrap">
+  <div class="sh2" style="padding-top:30px">
+    <div class="ey">Question Bank</div>
+    <h2>문제 편</h2>
+    <p>빈칸 → 입력 후 <strong>Enter ↵</strong> 즉시 채점 &nbsp;|&nbsp; O/X → 버튼 클릭 즉시 채점</p>
+  </div>
+  <div class="bgs">
+    <div class="bg"><span class="n">10</span>빈칸 채우기</div>
+    <div class="bg"><span class="n">10</span>O/X 판단</div>
+    <div class="bg">총 <span class="n">20</span>문항</div>
+  </div>
+  <div class="ibox">⚠️ <strong>출제 원칙:</strong> 법제처 국세기본법 §14~§28 현행 조문 원문 기준. 부과제척기간·소멸시효·실질과세·납세의무 성립·승계 등 최빈출 주제 집중 출제.</div>
+
+  <div class="sh2"><div class="ey">Part 01</div><h2>주요 법조문 빈칸 채우기 (10문제)</h2><p>빈칸에 답 입력 후 Enter를 누르세요.</p></div>
+
+  <!-- F1 -->
+  <div class="qc" id="fc-1">
+    <div class="qch"><div class="qn">1</div><span class="qt2 bf">빈칸</span><span class="qtl">§14 실질과세 · 귀속의 실질</span></div>
+    <div class="qb">
+      <div class="qtxt">과세의 대상이 되는 소득, 수익, 재산, 행위 또는 거래의 귀속이 <span class="fg"><span class="fl">①</span><input class="fi" id="f1-1" data-ans="명의" data-q="1" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb1-1"></span></span>(名義)일 뿐이고 사실상 귀속되는 자가 따로 있을 때에는 <span class="fg"><span class="fl">②</span><input class="fi" id="f1-2" data-ans="사실상 귀속되는 자" data-q="1" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:130px"><span class="fb" id="fb1-2"></span></span>를 납세의무자로 하여 세법을 적용한다.</div>
+      <div class="rev" id="rv-1"></div><div class="ref">§14①</div>
+    </div>
+  </div>
+
+  <!-- F2 -->
+  <div class="qc" id="fc-2">
+    <div class="qch"><div class="qn">2</div><span class="qt2 bf">빈칸</span><span class="qtl">§18 소급과세 금지 · 납세의무 성립 후 기준</span></div>
+    <div class="qb">
+      <div class="qtxt">국세를 납부할 의무가 <span class="fg"><span class="fl">①</span><input class="fi" id="f2-1" data-ans="성립" data-q="2" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb2-1"></span></span>한 소득, 수익, 재산, 행위 또는 거래에 대해서는 그 성립 후의 <span class="fg"><span class="fl">②</span><input class="fi" id="f2-2" data-ans="새로운 세법" data-q="2" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:110px"><span class="fb" id="fb2-2"></span></span>에 따라 소급하여 과세하지 아니한다.</div>
+      <div class="rev" id="rv-2"></div><div class="ref">§18②</div>
+    </div>
+  </div>
+
+  <!-- F3 -->
+  <div class="qc" id="fc-3">
+    <div class="qch"><div class="qn">3</div><span class="qt2 bf">빈칸</span><span class="qtl">§21 납세의무 성립시기 · 세목별 구분</span></div>
+    <div class="qb">
+      <div class="qtxt">소득세·법인세의 납세의무는 <span class="fg"><span class="fl">①</span><input class="fi" id="f3-1" data-ans="과세기간이 끝나는 때" data-q="3" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:140px"><span class="fb" id="fb3-1"></span></span>에 성립한다. 다만, 청산소득에 대한 법인세는 그 법인이 <span class="fg"><span class="fl">②</span><input class="fi" id="f3-2" data-ans="해산" data-q="3" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb3-2"></span></span>을 하는 때이다.</div>
+      <div class="rev" id="rv-3"></div><div class="ref">§21②1호</div>
+    </div>
+  </div>
+
+  <!-- F4 -->
+  <div class="qc" id="fc-4">
+    <div class="qch"><div class="qn">4</div><span class="qt2 bf">빈칸</span><span class="qtl">§21 납세의무 성립시기 · 상속세·증여세</span></div>
+    <div class="qb">
+      <div class="qtxt">상속세의 납세의무는 <span class="fg"><span class="fl">①</span><input class="fi" id="f4-1" data-ans="상속이 개시되는 때" data-q="4" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:130px"><span class="fb" id="fb4-1"></span></span>에, 증여세는 증여에 의하여 재산을 <span class="fg"><span class="fl">②</span><input class="fi" id="f4-2" data-ans="취득하는 때" data-q="4" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb4-2"></span></span>에 성립한다.</div>
+      <div class="rev" id="rv-4"></div><div class="ref">§21②2·3호</div>
+    </div>
+  </div>
+
+  <!-- F5 -->
+  <div class="qc" id="fc-5">
+    <div class="qch"><div class="qn">5</div><span class="qt2 bf">빈칸</span><span class="qtl">§22 납세의무 확정 · 자동확정 국세</span></div>
+    <div class="qb">
+      <div class="qtxt">인지세, 원천징수하는 소득세 또는 법인세, 납세조합이 징수하는 소득세, 중간예납하는 법인세(정부가 조사·결정하는 경우 제외)는 납세의무가 <span class="fg"><span class="fl">①</span><input class="fi" id="f5-1" data-ans="성립하는 때" data-q="5" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:110px"><span class="fb" id="fb5-1"></span></span>에 <span class="fg"><span class="fl">②</span><input class="fi" id="f5-2" data-ans="특별한 절차 없이" data-q="5" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:130px"><span class="fb" id="fb5-2"></span></span> 그 세액이 확정된다.</div>
+      <div class="rev" id="rv-5"></div><div class="ref">§22④</div>
+    </div>
+  </div>
+
+  <!-- F6 -->
+  <div class="qc" id="fc-6">
+    <div class="qch"><div class="qn">6</div><span class="qt2 bf">빈칸</span><span class="qtl">§24 상속으로 인한 납세의무 승계 · 한도</span></div>
+    <div class="qb">
+      <div class="qtxt">상속인 또는 상속재산관리인은 피상속인에게 부과되거나 그 피상속인이 납부할 국세 및 강제징수비를 <span class="fg"><span class="fl">①</span><input class="fi" id="f6-1" data-ans="상속으로 받은 재산의 한도" data-q="6" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:160px"><span class="fb" id="fb6-1"></span></span>에서 납부할 의무를 진다.</div>
+      <div class="rev" id="rv-6"></div><div class="ref">§24①</div>
+    </div>
+  </div>
+
+  <!-- F7 -->
+  <div class="qc" id="fc-7">
+    <div class="qch"><div class="qn">7</div><span class="qt2 bf">빈칸</span><span class="qtl">§26의2 부과제척기간 · 원칙 및 무신고·부정행위</span></div>
+    <div class="qb">
+      <div class="qtxt">부과제척기간은 원칙적으로 <span class="fg"><span class="fl">①</span><input class="fi" id="f7-1" data-ans="5년" data-q="7" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-1"></span></span>이다. 과세표준신고서를 법정신고기한까지 제출하지 않은 경우에는 <span class="fg"><span class="fl">②</span><input class="fi" id="f7-2" data-ans="7년" data-q="7" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-2"></span></span>, 부정행위로 국세를 포탈하거나 환급·공제를 받은 경우에는 <span class="fg"><span class="fl">③</span><input class="fi" id="f7-3" data-ans="10년" data-q="7" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-3"></span></span>이다.</div>
+      <div class="rev" id="rv-7"></div><div class="ref">§26의2①②</div>
+    </div>
+  </div>
+
+  <!-- F8 -->
+  <div class="qc" id="fc-8">
+    <div class="qch"><div class="qn">8</div><span class="qt2 bf">빈칸</span><span class="qtl">§26의2④ 상속·증여세 부과제척기간</span></div>
+    <div class="qb">
+      <div class="qtxt">상속세·증여세의 부과제척기간은 국세를 부과할 수 있는 날부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f8-1" data-ans="10년" data-q="8" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb8-1"></span></span>이고, 납세자가 부정행위로 포탈하거나 신고서를 제출하지 않은 경우 등에는 <span class="fg"><span class="fl">②</span><input class="fi" id="f8-2" data-ans="15년" data-q="8" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb8-2"></span></span>이다.</div>
+      <div class="rev" id="rv-8"></div><div class="ref">§26의2④</div>
+    </div>
+  </div>
+
+  <!-- F9 -->
+  <div class="qc" id="fc-9">
+    <div class="qch"><div class="qn">9</div><span class="qt2 bf">빈칸</span><span class="qtl">§27 국세징수권 소멸시효 · 금액별 구분</span></div>
+    <div class="qb">
+      <div class="qtxt">국세징수권은 이를 행사할 수 있는 때부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f9-1" data-ans="5억원 이상" data-q="9" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb9-1"></span></span>의 국세는 <span class="fg"><span class="fl">②</span><input class="fi" id="f9-2" data-ans="10년" data-q="9" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb9-2"></span></span>, 그 외의 국세는 <span class="fg"><span class="fl">③</span><input class="fi" id="f9-3" data-ans="5년" data-q="9" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb9-3"></span></span> 동안 행사하지 아니하면 소멸시효가 완성된다.</div>
+      <div class="rev" id="rv-9"></div><div class="ref">§27①</div>
+    </div>
+  </div>
+
+  <!-- F10 -->
+  <div class="qc" id="fc-10">
+    <div class="qch"><div class="qn">10</div><span class="qt2 bf">빈칸</span><span class="qtl">§26의2② 역외거래 부과제척기간</span></div>
+    <div class="qb">
+      <div class="qtxt">역외거래의 경우 원칙적인 부과제척기간은 <span class="fg"><span class="fl">①</span><input class="fi" id="f10-1" data-ans="7년" data-q="10" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb10-1"></span></span>, 무신고의 경우에는 <span class="fg"><span class="fl">②</span><input class="fi" id="f10-2" data-ans="10년" data-q="10" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb10-2"></span></span>, 역외거래에서의 부정행위로 포탈한 경우에는 <span class="fg"><span class="fl">③</span><input class="fi" id="f10-3" data-ans="15년" data-q="10" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb10-3"></span></span>이다.</div>
+      <div class="rev" id="rv-10"></div><div class="ref">§26의2①②</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="sh2"><div class="ey">Part 02</div><h2>법령 O/X 판단 문제 (10문제)</h2><p>옳으면 <strong>O</strong>, 틀리면 <strong>X</strong> 버튼을 누르세요.</p></div>
+
+  <!-- OX1 -->
+  <div class="qc" id="ox-1">
+    <div class="qch"><div class="qn">1</div><span class="qt2 box">O/X</span><span class="qtl">§14 실질과세 · 제3자 우회거래</span></div>
+    <div class="qb">
+      <div class="qtxt">제3자를 통한 간접적인 방법이나 둘 이상의 행위·거래를 거치는 방법으로 세법의 혜택을 부당하게 받기 위한 것으로 인정되는 경우에는 그 법적 형식에 따라 당사자가 직접 거래를 한 것으로 보아 세법을 적용한다.</div>
+      <div class="oxa"><button class="oxb" id="ob1-o" onclick="po(1,'O',this)">O</button><button class="oxb" id="ob1-x" onclick="po(1,'X',this)">X</button><span class="oxr" id="or-1"></span></div>
+      <div class="oxe" id="oe-1"><span class="ca">✅ 정답: X</span><br>법적 형식이 아니라 <strong>경제적 실질 내용</strong>에 따라 당사자가 직접 거래를 한 것으로 보거나 연속된 하나의 행위·거래를 한 것으로 봅니다(§14③). "법적 형식"이 오답입니다.</div>
+      <div class="ref">§14③</div>
+    </div>
+  </div>
+
+  <!-- OX2 -->
+  <div class="qc" id="ox-2">
+    <div class="qch"><div class="qn">2</div><span class="qt2 box">O/X</span><span class="qtl">§15 신의성실 · 세무공무원 적용 여부</span></div>
+    <div class="qb">
+      <div class="qtxt">신의성실 원칙은 납세자가 의무를 이행할 때에만 적용되고, 세무공무원의 직무 수행에는 적용되지 않는다.</div>
+      <div class="oxa"><button class="oxb" id="ob2-o" onclick="po(2,'O',this)">O</button><button class="oxb" id="ob2-x" onclick="po(2,'X',this)">X</button><span class="oxr" id="or-2"></span></div>
+      <div class="oxe" id="oe-2"><span class="ca">✅ 정답: X</span><br>§15는 납세자뿐 아니라 <strong>"세무공무원이 직무를 수행할 때에도 또한 같다"</strong>라고 명시합니다. 즉 양방향으로 신의성실 원칙이 적용됩니다.</div>
+      <div class="ref">§15</div>
+    </div>
+  </div>
+
+  <!-- OX3 -->
+  <div class="qc" id="ox-3">
+    <div class="qch"><div class="qn">3</div><span class="qt2 box">O/X</span><span class="qtl">§18③ 소급과세 금지 · 관행적 해석</span></div>
+    <div class="qb">
+      <div class="qtxt">세법의 해석이나 국세행정의 관행이 일반적으로 납세자에게 받아들여진 후에는 그 해석이나 관행에 의한 행위 또는 계산은 정당한 것으로 보며, 새로운 해석이나 관행에 의하여 소급하여 과세되지 아니한다.</div>
+      <div class="oxa"><button class="oxb" id="ob3-o" onclick="po(3,'O',this)">O</button><button class="oxb" id="ob3-x" onclick="po(3,'X',this)">X</button><span class="oxr" id="or-3"></span></div>
+      <div class="oxe" id="oe-3"><span class="ca">✅ 정답: O</span><br>§18③ 조문 원문과 정확히 일치합니다. 납세자에게 받아들여진 관행에 기반한 행위는 정당성이 보호되며 소급과세로부터 보호됩니다.</div>
+      <div class="ref">§18③</div>
+    </div>
+  </div>
+
+  <!-- OX4 -->
+  <div class="qc" id="ox-4">
+    <div class="qch"><div class="qn">4</div><span class="qt2 box">O/X</span><span class="qtl">§21 납세의무 성립 · 부가가치세 수입재화</span></div>
+    <div class="qb">
+      <div class="qtxt">부가가치세의 납세의무는 원칙적으로 과세기간이 끝나는 때 성립하나, 수입재화의 경우에는 통관절차가 완료되는 때에 성립한다.</div>
+      <div class="oxa"><button class="oxb" id="ob4-o" onclick="po(4,'O',this)">O</button><button class="oxb" id="ob4-x" onclick="po(4,'X',this)">X</button><span class="oxr" id="or-4"></span></div>
+      <div class="oxe" id="oe-4"><span class="ca">✅ 정답: X</span><br>수입재화의 경우 납세의무 성립 시기는 "통관절차 완료 시"가 아니라 <strong>"세관장에게 수입신고를 하는 때"</strong>입니다(§21②4호).</div>
+      <div class="ref">§21②4호</div>
+    </div>
+  </div>
+
+  <!-- OX5 -->
+  <div class="qc" id="ox-5">
+    <div class="qch"><div class="qn">5</div><span class="qt2 box">O/X</span><span class="qtl">§22 납세의무 확정 · 신고납세 vs 정부부과</span></div>
+    <div class="qb">
+      <div class="qtxt">소득세, 법인세, 부가가치세는 납세의무자가 과세표준과 세액을 정부에 신고했을 때에 납세의무가 확정되는 신고납세방식을 원칙으로 한다.</div>
+      <div class="oxa"><button class="oxb" id="ob5-o" onclick="po(5,'O',this)">O</button><button class="oxb" id="ob5-x" onclick="po(5,'X',this)">X</button><span class="oxr" id="or-5"></span></div>
+      <div class="oxe" id="oe-5"><span class="ca">✅ 정답: O</span><br>§22②는 소득세·법인세·부가가치세 등 열거된 세목은 납세의무자의 신고에 의해 확정된다고 규정합니다. 단, 신고를 하지 않거나 신고 내용이 맞지 않으면 정부 결정·경정으로 확정됩니다.</div>
+      <div class="ref">§22②</div>
+    </div>
+  </div>
+
+  <!-- OX6 -->
+  <div class="qc" id="ox-6">
+    <div class="qch"><div class="qn">6</div><span class="qt2 box">O/X</span><span class="qtl">§23 합병으로 인한 납세의무 승계</span></div>
+    <div class="qb">
+      <div class="qtxt">법인이 합병한 경우 합병 후 존속하는 법인 또는 합병으로 설립된 법인은 합병으로 소멸된 법인에 부과되거나 그 법인이 납부할 국세 및 강제징수비를 승계된 재산가액의 한도에서 납부할 의무를 진다.</div>
+      <div class="oxa"><button class="oxb" id="ob6-o" onclick="po(6,'O',this)">O</button><button class="oxb" id="ob6-x" onclick="po(6,'X',this)">X</button><span class="oxr" id="or-6"></span></div>
+      <div class="oxe" id="oe-6"><span class="ca">✅ 정답: X</span><br>합병의 경우 "승계된 재산가액의 한도"가 없습니다. §23은 합병 후 존속·설립 법인이 소멸 법인의 국세·강제징수비를 <strong>한도 없이 전부</strong> 납부할 의무를 진다고 규정합니다. (상속과 달리 합병은 무한책임)</div>
+      <div class="ref">§23</div>
+    </div>
+  </div>
+
+  <!-- OX7 -->
+  <div class="qc" id="ox-7">
+    <div class="qch"><div class="qn">7</div><span class="qt2 box">O/X</span><span class="qtl">§24 상속 납세의무 승계 · 상속인 2인 이상</span></div>
+    <div class="qb">
+      <div class="qtxt">상속인이 2명 이상인 경우 각 상속인은 피상속인의 국세를 민법상 상속분에 따라 나누어 계산한 금액을 상속으로 받은 재산의 한도에서 연대하여 납부할 의무를 진다.</div>
+      <div class="oxa"><button class="oxb" id="ob7-o" onclick="po(7,'O',this)">O</button><button class="oxb" id="ob7-x" onclick="po(7,'X',this)">X</button><span class="oxr" id="or-7"></span></div>
+      <div class="oxe" id="oe-7"><span class="ca">✅ 정답: O</span><br>§24③ 조문 원문과 일치합니다. 상속인이 복수이면 상속분에 따라 안분하되, 상속받은 재산의 한도에서 연대납세의무를 집니다.</div>
+      <div class="ref">§24③</div>
+    </div>
+  </div>
+
+  <!-- OX8 -->
+  <div class="qc" id="ox-8">
+    <div class="qch"><div class="qn">8</div><span class="qt2 box">O/X</span><span class="qtl">§26의2 부과제척기간 · 판결 확정 후 특례</span></div>
+    <div class="qb">
+      <div class="qtxt">이의신청·심사청구·심판청구·감사원심사청구·행정소송에 대한 결정이나 판결이 확정된 경우, 지방국세청장 또는 세무서장은 결정 또는 판결이 확정된 날부터 2년 이내에 경정이나 그 밖에 필요한 처분을 할 수 있다.</div>
+      <div class="oxa"><button class="oxb" id="ob8-o" onclick="po(8,'O',this)">O</button><button class="oxb" id="ob8-x" onclick="po(8,'X',this)">X</button><span class="oxr" id="or-8"></span></div>
+      <div class="oxe" id="oe-8"><span class="ca">✅ 정답: X</span><br>판결 확정 후 경정 가능 기간은 <strong>1년</strong>입니다(§26의2⑥1호). "2년"은 오답입니다. 단, 경정청구·조정권고가 있는 경우의 연장 기간은 경정청구일로부터 <strong>2개월</strong>(§26의2⑥3호)로 다름에 주의.</div>
+      <div class="ref">§26의2⑥1호</div>
+    </div>
+  </div>
+
+  <!-- OX9 -->
+  <div class="qc" id="ox-9">
+    <div class="qch"><div class="qn">9</div><span class="qt2 box">O/X</span><span class="qtl">§27 소멸시효 · 준거법</span></div>
+    <div class="qb">
+      <div class="qtxt">국세징수권의 소멸시효에 관하여는 이 법 또는 세법에 특별한 규정이 있는 것을 제외하고는 「민법」에 따른다.</div>
+      <div class="oxa"><button class="oxb" id="ob9-o" onclick="po(9,'O',this)">O</button><button class="oxb" id="ob9-x" onclick="po(9,'X',this)">X</button><span class="oxr" id="or-9"></span></div>
+      <div class="oxe" id="oe-9"><span class="ca">✅ 정답: O</span><br>§27② 조문 원문과 일치합니다. 소멸시효의 중단·정지 등 세부 사항에 대해 세법에 특별규정이 없으면 민법을 준용합니다.</div>
+      <div class="ref">§27②</div>
+    </div>
+  </div>
+
+  <!-- OX10 -->
+  <div class="qc" id="ox-10">
+    <div class="qch"><div class="qn">10</div><span class="qt2 box">O/X</span><span class="qtl">§26 납부의무 소멸 · 소멸 사유</span></div>
+    <div class="qb">
+      <div class="qtxt">국세 및 강제징수비를 납부할 의무는 납부·충당되거나 부과가 취소된 때, 부과제척기간이 끝난 때, 소멸시효가 완성된 때에 소멸한다.</div>
+      <div class="oxa"><button class="oxb" id="ob10-o" onclick="po(10,'O',this)">O</button><button class="oxb" id="ob10-x" onclick="po(10,'X',this)">X</button><span class="oxr" id="or-10"></span></div>
+      <div class="oxe" id="oe-10"><span class="ca">✅ 정답: O</span><br>§26 각호와 정확히 일치합니다. ① 납부·충당·부과취소 ② 부과제척기간 도과 ③ 소멸시효 완성 — 이 세 가지가 납부의무 소멸 사유입니다.</div>
+      <div class="ref">§26</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ══════════ 정답 및 해설 편 ══════════ -->
+<div id="sec-a" class="sec">
+<div class="wrap">
+  <div class="sh2" style="padding-top:30px"><div class="ey">Answer &amp; Commentary</div><h2>정답 및 해설 편</h2><p>각 조문의 원문 출처와 핵심 포인트를 확인하세요.</p></div>
+  <div class="ibox">📌 <strong>기준 법령:</strong> 국세기본법 (법률 제20640호, 공포 2025.12.23 / 시행 2026.01.02) — 법제처 MCP API 조문 원문 직접 인용</div>
+
+  <div class="sh2"><div class="ey">Part 01 · 정답</div><h2>빈칸 채우기 정답</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§14① · 실질과세 귀속</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">명의</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">사실상 귀속되는 자</span></div>
+    <div class="ad"><span class="lc">§14①</span> <strong>귀속의 실질과세</strong>: 명의 ≠ 실질 → 사실상 귀속자에게 과세. 이름뿐인 명의자가 아닌 실제 이익을 얻는 자가 납세의무자임.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§18② · 소급과세 금지</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">성립</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">새로운 세법</span></div>
+    <div class="ad"><span class="lc">§18②</span> 납세의무 <strong>성립</strong> 후 제정·개정된 <strong>새로운 세법</strong>으로 소급과세 불가. "확정"이나 "납부" 시점으로 바꾸는 오답 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§21②1호 · 소득세·법인세 성립시기</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">과세기간이 끝나는 때</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">해산</span></div>
+    <div class="ad"><span class="lc">§21②1호</span> 소득세·법인세 = 과세기간 종료 시. 청산소득 법인세만 <strong>해산</strong> 시. "청산"이나 "폐업" 시로 혼동하는 함정 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§21②2·3호 · 상속세·증여세 성립시기</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">상속이 개시되는 때</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">취득하는 때</span></div>
+    <div class="ad"><span class="lc">§21②2·3호</span> 상속세 = 상속 <strong>개시</strong> 시, 증여세 = 재산 <strong>취득</strong> 시. "등기" "신고" 시점으로 바꾸는 오답 주의.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§22④ · 자동확정 국세</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">성립하는 때</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">특별한 절차 없이</span></div>
+    <div class="ad"><span class="lc">§22④</span> 인지세·원천징수 소득세·법인세·납세조합 소득세·중간예납 법인세(정부조사 제외)는 <strong>성립과 동시에 자동 확정</strong>. 별도 신고·부과 불요.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§24① · 상속으로 인한 납세의무 승계 한도</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">상속으로 받은 재산의 한도</span></div>
+    <div class="ad"><span class="lc">§24①</span> 상속인은 <strong>"상속받은 재산의 한도"</strong>에서만 승계. 합병(무한책임)과 달리 <strong>유한책임</strong>. 시험 최빈출 비교 포인트!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§26의2①② · 일반 부과제척기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">5년</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">7년</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">10년</span></div>
+    <div class="ad"><span class="lc">§26의2①②</span>
+      <div class="sb2"><div class="sb2t">부과제척기간 도표 (일반)</div>
+        원칙: 5년 | 역외거래 원칙: 7년<br>
+        무신고: 7년 | 역외 무신고: 10년<br>
+        부정행위 포탈: 10년 | 역외 부정행위: 15년
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§26의2④ · 상속·증여세 부과제척기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">10년</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">15년</span></div>
+    <div class="ad"><span class="lc">§26의2④</span> 상속·증여세는 일반세목보다 긴 <strong>10년</strong> 원칙, 부정행위 포탈·무신고 등 특수 경우 <strong>15년</strong>. 일반세목 5년·10년보다 각 2배임을 기억.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§27① · 소멸시효 금액별 기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">5억원 이상</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">10년</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">5년</span></div>
+    <div class="ad"><span class="lc">§27①</span> 소멸시효: <strong>5억 이상 → 10년</strong>, <strong>5억 미만 → 5년</strong>. 부과제척기간(5·7·10년)과 혼동하기 쉬운 최빈출 함정!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§26의2①② · 역외거래 부과제척기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">7년</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">10년</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">15년</span></div>
+    <div class="ad"><span class="lc">§26의2①②</span> 역외거래는 일반보다 각 2년 가산. 7→10→15년 구조. 일반(5→7→10년)과 함께 도표로 암기하세요.</div>
+  </div></div>
+
+  <div class="div"></div>
+  <div class="sh2"><div class="ey">Part 02 · 정답</div><h2>O/X 판단 정답 및 해설</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§14③ 실질과세 · 우회거래</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "법적 형식에 따라"</div><div class="cp">✅ §14③: <strong>경제적 실질 내용</strong>에 따라 직접 거래 또는 연속된 하나의 행위로 봄.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§15 신의성실 · 쌍방 적용</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "납세자에게만 적용"</div><div class="cp">✅ §15: 납세자 의무 이행 + <strong>세무공무원 직무 수행에도</strong> 동일하게 적용.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§18③ 관행적 해석의 소급과세 금지</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§18③</span> 조문 원문과 일치. 납세자 보호 원칙의 핵심 조항.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§21②4호 부가세 수입재화 성립시기</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "통관절차가 완료되는 때"</div><div class="cp">✅ §21②4호: <strong>"세관장에게 수입신고를 하는 때"</strong>에 성립.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§22② 신고납세방식</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§22②</span> 소득세·법인세·부가가치세 등은 신고납세방식. 단, 미신고·오류신고 시 정부 결정·경정으로 확정됨.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§23 합병 납세의무 승계 · 무한책임</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "승계된 재산가액의 한도에서"</div><div class="cp">✅ §23: 합병은 한도 없이 <strong>전부 승계</strong>. 상속(상속받은 재산의 한도)과 다름. ★빈출 비교!</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§24③ 상속인 복수 · 연대납세의무</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§24③</span> 조문 원문과 일치. 상속분 안분 + 상속받은 재산 한도 + 연대납세의무. 세 요소 모두 중요.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§26의2⑥1호 판결 확정 후 경정 기간</span><span class="vd vx">정답: X</span></div><div class="ab"><div class="wp2">❌ "확정된 날부터 2년"</div><div class="cp">✅ §26의2⑥1호: <strong>1년</strong> 이내. 경정청구·조정권고의 경우 2개월(§26의2⑥3호)과 구별할 것.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§27② 소멸시효 준거법</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§27②</span> 조문 원문과 일치. 부과제척기간(§4 → 민법 준용)과 마찬가지로 소멸시효도 세법 특별규정 없으면 민법 적용.</div></div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§26 납부의무 소멸 사유</span><span class="vd vo">정답: O</span></div><div class="ab"><div class="ad"><span class="lc">§26</span> 3가지 소멸 사유 모두 정확. ① 납부·충당·부과취소 ② 부과제척기간 도과 ③ 소멸시효 완성.</div></div></div>
+
+</div></div>
+
+<div class="foot">
+  2026-05-29 생성 · 국세기본법 §14~§28 기준<br>
+  법령 출처: 법제처 국세기본법 (법률 제20640호, 시행 2026.01.02) — MCP API 직접 조회<br>
+  #국세기본법 #세무사시험 #실질과세 #부과제척기간 #소멸시효 #납세의무승계
+</div>
+
+<script>
+const FS={}, OS={};
+const FA={
+  '1-1':['명의'],'1-2':['사실상 귀속되는 자','사실상귀속되는자'],
+  '2-1':['성립'],'2-2':['새로운 세법','새로운세법'],
+  '3-1':['과세기간이 끝나는 때','과세기간이끝나는때'],'3-2':['해산'],
+  '4-1':['상속이 개시되는 때','상속이개시되는때'],'4-2':['취득하는 때','취득하는때'],
+  '5-1':['성립하는 때','성립하는때'],'5-2':['특별한 절차 없이','특별한절차없이'],
+  '6-1':['상속으로 받은 재산의 한도','상속으로받은재산의한도','상속받은 재산의 한도'],
+  '7-1':['5년'],'7-2':['7년'],'7-3':['10년'],
+  '8-1':['10년'],'8-2':['15년'],
+  '9-1':['5억원 이상','5억원이상','5억 이상'],'9-2':['10년'],'9-3':['5년'],
+  '10-1':['7년'],'10-2':['10년'],'10-3':['15년']
+};
+const FC={1:2,2:2,3:2,4:2,5:2,6:1,7:3,8:2,9:3,10:3};
+const OA={1:'X',2:'X',3:'O',4:'X',5:'O',6:'X',7:'O',8:'X',9:'O',10:'O'};
+
+function nm(s){return s.replace(/[\s「」]/g,'').toLowerCase()}
+
+function cf(e,inp){
+  if(e.key!=='Enter')return;
+  e.preventDefault();
+  const q=+inp.dataset.q,idx=+inp.dataset.idx,key=q+'-'+idx,val=inp.value.trim();
+  if(!val)return;
+  const ok=FA[key].some(a=>nm(val)===nm(a));
+  inp.classList.remove('ok','ng');inp.classList.add(ok?'ok':'ng');inp.disabled=true;
+  const fb=document.getElementById('fb'+q+'-'+idx);
+  fb.textContent=ok?'✓':'✗ '+FA[key][0];
+  fb.className='fb show '+(ok?'ok':'ng');
+  if(!FS[q])FS[q]={total:FC[q],done:0,wrong:0};
+  if(!FS[q][idx]){FS[q][idx]=true;FS[q].done++;if(!ok)FS[q].wrong++;}
+  if(FS[q].done===FS[q].total){
+    document.getElementById('fc-'+q).classList.add(FS[q].wrong===0?'ac':'aw');
+    const rv=document.getElementById('rv-'+q);
+    const keys=Object.keys(FA).filter(k=>k.startsWith(q+'-'));
+    rv.innerHTML='✅ 정답: '+keys.map(k=>{const i=+k.split('-')[1];return '<strong>'+['①','②','③'][i-1]+' '+FA[k][0]+'</strong>';}).join(' | ');
+    rv.classList.add('show');
+  }
+  upd();
+}
+
+function po(n,picked){
+  if(OS[n])return;
+  const correct=OA[n],ok=(picked===correct);
+  OS[n]={ok};
+  const bo=document.getElementById('ob'+n+'-o'),bx=document.getElementById('ob'+n+'-x');
+  bo.disabled=true;bx.disabled=true;
+  if(picked==='O'){bo.classList.add(ok?'ch':'wp');if(!ok)bx.classList.add('ch');}
+  else{bx.classList.add(ok?'ch':'wp');if(!ok)bo.classList.add('ch');}
+  const r=document.getElementById('or-'+n);
+  r.textContent=ok?'🎉 정답!':'❌ 오답 (정답: '+correct+')';
+  r.className='oxr show '+(ok?'ok':'ng');
+  document.getElementById('oe-'+n).className='oxe show '+(ok?'ok':'ng');
+  document.getElementById('ox-'+n).classList.add('ao');
+  upd();
+}
+
+function upd(){
+  let fc=0,ft=0,oc=0,ot=0,wr=0;
+  for(const q in FS){ft++;if(FS[q].done===FS[q].total){if(FS[q].wrong===0)fc++;else wr++;}}
+  for(const n in OS){ot++;if(OS[n].ok)oc++;else wr++;}
+  document.getElementById('fc').textContent=fc;
+  document.getElementById('ft').textContent=ft;
+  document.getElementById('oc').textContent=oc;
+  document.getElementById('ot').textContent=ot;
+  document.getElementById('wc').textContent=wr;
+}
+
+function resetAll(){
+  document.querySelectorAll('.fi').forEach(i=>{i.value='';i.disabled=false;i.classList.remove('ok','ng');});
+  document.querySelectorAll('.fb').forEach(f=>{f.textContent='';f.className='fb';});
+  document.querySelectorAll('.rev').forEach(r=>r.classList.remove('show'));
+  document.querySelectorAll('.oxb').forEach(b=>{b.disabled=false;b.className='oxb';});
+  document.querySelectorAll('.oxr').forEach(r=>{r.textContent='';r.className='oxr';});
+  document.querySelectorAll('.oxe').forEach(e=>{e.className='oxe';});
+  document.querySelectorAll('.qc').forEach(c=>c.classList.remove('ac','aw','ao'));
+  for(const k in FS)delete FS[k];
+  for(const k in OS)delete OS[k];
+  upd();
+}
+
+function showSec(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
