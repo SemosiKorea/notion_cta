@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제19~22조 | 세무사 1차 암기퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F6F2; --surf:#FFFFFF; --surf2:#F1F0EC; --bdr:#DDD9D1;
+  --acc:#1C3D5A; --acc2:#B85C1A; --acc3:#295C3E;
+  --danger:#9E2F25; --txt:#19180F; --txt2:#44413B; --txt3:#78746C;
+  --ok:#295C3E; --ng:#9E2F25;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif; --mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07); --shlg:0 8px 28px rgba(0,0,0,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+
+/* ── Header ── */
+.hd{background:var(--acc);color:#fff;padding:1.8rem 1.5rem 1.4rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(28,61,90,.35)}
+.hd-in{max-width:940px;margin:0 auto;display:flex;align-items:flex-end;gap:1.2rem;flex-wrap:wrap}
+.hbadge{font-family:var(--mono);font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:.22rem .55rem;color:#E2D0B4}
+.htitle{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htitle span{font-weight:400;font-size:.92rem;color:rgba(255,255,255,.78)}
+.hsub{font-size:.73rem;color:rgba(255,255,255,.58);margin-top:.2rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}
+.hscl{font-size:.66rem;color:rgba(255,255,255,.48);letter-spacing:.08em}
+.hscv{font-family:var(--mono);font-size:1.5rem;font-weight:600;color:#E2D0B4;line-height:1}
+
+/* ── Progress ── */
+.pw{background:var(--acc);padding:0 1.5rem .72rem}
+.pt{max-width:940px;margin:0 auto;height:4px;background:rgba(255,255,255,.13);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s ease;width:0%}
+
+/* ── Container ── */
+.wrap{max-width:940px;margin:0 auto;padding:1.8rem 1.2rem 4rem}
+
+/* ── Section head ── */
+.sh{display:flex;align-items:center;gap:.9rem;margin:2.5rem 0 1.1rem;flex-wrap:wrap}
+.st{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.27rem .7rem;border-radius:3px;white-space:nowrap}
+.st-b{background:var(--acc2);color:#fff}
+.st-o{background:var(--acc3);color:#fff}
+.sttl{font-family:var(--serif);font-size:1.05rem;font-weight:600}
+.scnt{margin-left:auto;font-family:var(--mono);font-size:.72rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.4rem}
+
+/* ── Card ── */
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1.2rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .34s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.qc:nth-child(1){animation-delay:.02s}.qc:nth-child(2){animation-delay:.05s}.qc:nth-child(3){animation-delay:.08s}
+.qc:nth-child(4){animation-delay:.11s}.qc:nth-child(5){animation-delay:.14s}.qc:nth-child(6){animation-delay:.17s}
+.qc:nth-child(7){animation-delay:.20s}.qc:nth-child(8){animation-delay:.23s}.qc:nth-child(9){animation-delay:.26s}
+.qc:nth-child(10){animation-delay:.29s}.qc:nth-child(11){animation-delay:.32s}.qc:nth-child(12){animation-delay:.35s}
+.qc:nth-child(13){animation-delay:.38s}
+
+.qh{padding:.95rem 1.2rem .72rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.8rem}
+.qn{font-family:var(--mono);font-size:.7rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px}
+.qn-b{background:#FDF0E3;color:var(--acc2)}
+.qn-o{background:#E9F3ED;color:var(--acc3)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.8;flex:1}
+.qt strong{color:var(--acc);font-weight:700}
+
+/* law quote */
+.lq{background:var(--surf2);border-left:3px solid var(--acc);padding:.68rem .92rem;margin:.42rem 0;font-size:.82rem;color:var(--txt2);border-radius:0 5px 5px 0;line-height:1.85}
+.bs{display:inline-block;min-width:3.5rem;border-bottom:2px solid var(--acc2);font-family:var(--mono);font-size:.78rem;padding:0 .24rem;text-align:center;color:#bbb;letter-spacing:.07em}
+
+/* inputs */
+.qbd{padding:.72rem 1.2rem .88rem}
+.bins{display:flex;flex-wrap:wrap;gap:.52rem;margin-top:.52rem}
+.biw{display:flex;align-items:center;gap:.32rem}
+.bil{font-family:var(--mono);font-size:.66rem;color:var(--txt3);background:var(--surf2);padding:.1rem .36rem;border-radius:3px;white-space:nowrap}
+.bi{border:1.5px solid var(--bdr);border-radius:6px;padding:.3rem .52rem;font-family:var(--sans);font-size:.8rem;min-width:90px;background:#fff;color:var(--txt);transition:border-color .14s;outline:none}
+.bi:focus{border-color:var(--acc)}
+.bi.ok{border-color:var(--ok);background:#E9F3ED;color:var(--ok)}
+.bi.ng{border-color:var(--ng);background:#FAF0EF;color:var(--ng)}
+
+/* OX */
+.oxs{display:flex;gap:.52rem;margin-top:.52rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:8px;padding:.43rem 1.25rem;font-family:var(--mono);font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .14s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EBF0F7}
+.oxb.so{border-color:var(--acc3);background:#E9F3ED;color:var(--acc3)}
+.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E9F3ED;color:var(--ok)}
+.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.52}
+
+/* action */
+.qa{padding:0 1.2rem .88rem;display:flex;align-items:center;gap:.68rem;flex-wrap:wrap}
+.bck{padding:.4rem 1.05rem;border:none;border-radius:6px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.77rem;font-weight:500;cursor:pointer;transition:opacity .14s;letter-spacing:.03em}
+.bck:hover{opacity:.83}.bck:disabled{opacity:.33;cursor:default}
+.rb{display:none;align-items:center;gap:.32rem;font-size:.77rem;font-weight:500;padding:.27rem .68rem;border-radius:20px}
+.rb.show{display:flex}
+.rb.ok{background:#E9F3ED;color:var(--ok)}
+.rb.ng{background:#FAF0EF;color:var(--ng)}
+
+/* explanation */
+.ex{display:none;background:#FAFAF8;border-top:1px solid var(--bdr);padding:.88rem 1.2rem;font-size:.8rem;color:var(--txt2);line-height:1.85}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.42rem}
+.ex .lr{font-family:var(--mono);font-size:.7rem;color:var(--acc);background:#EBF0F7;padding:.1rem .42rem;border-radius:3px;display:inline-block;margin-bottom:.32rem}
+.ex .al{font-weight:600;color:var(--ok);margin-bottom:.26rem}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.2rem}
+
+/* 열거 리스트 */
+.ex ul{padding-left:1.2rem;margin:.3rem 0}
+.ex ul li{margin-bottom:.18rem;font-size:.79rem}
+
+/* 비교표 */
+.ct{width:100%;border-collapse:collapse;font-size:.77rem;margin:.45rem 0}
+.ct th{background:var(--surf2);padding:.32rem .55rem;text-align:center;border:1px solid var(--bdr);font-weight:600;color:var(--acc)}
+.ct td{padding:.28rem .55rem;border:1px solid var(--bdr)}
+
+/* trend tag */
+.tb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.1rem .38rem;border-radius:3px;margin-left:.32rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#9E2F25}
+.tup{background:#E8F5E9;color:#295C3E}
+.twarn{background:#FFF8E1;color:#7A5D00}
+
+/* global btns */
+.ga{display:flex;justify-content:center;gap:.88rem;margin:2rem 0;flex-wrap:wrap}
+.bacl{padding:.58rem 1.75rem;background:var(--acc2);color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:.82rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .14s}
+.bacl:hover{opacity:.84}
+.brev{padding:.58rem 1.75rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:8px;font-family:var(--sans);font-size:.82rem;font-weight:600;cursor:pointer;transition:all .14s}
+.brev:hover{background:var(--acc);color:#fff}
+
+/* summary */
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.75rem 1.4rem;margin-top:2.4rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}
+.sum h2{font-family:var(--serif);font-size:1.2rem;color:var(--acc);margin-bottom:.32rem}
+.sum .gd{font-family:var(--mono);font-size:2.8rem;font-weight:700;color:var(--acc2);line-height:1;margin:.62rem 0}
+.sst{display:flex;justify-content:center;gap:1.75rem;margin:1rem 0 1.35rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.32rem;font-weight:600;color:var(--txt);display:block}
+.ssi .sd{font-size:.68rem;color:var(--txt3)}
+.brs{padding:.52rem 1.75rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.82rem;font-weight:600;border-radius:8px;cursor:pointer;transition:all .2s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+
+@media(max-width:600px){
+  .htitle{font-size:1.13rem}
+  .wrap{padding:1.1rem .8rem 3rem}
+  .qh{padding:.78rem .95rem .64rem}
+  .qbd{padding:.62rem .95rem .78rem}
+  .qa{padding:0 .95rem .78rem}
+  .bins{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="hd">
+  <div class="hd-in">
+    <div>
+      <div class="hbadge">세무사 1차 · 세법학개론</div>
+      <div class="htitle">법인세법 제19~22조<br><span>손금의 범위 · 대손금 · 손금불산입</span></div>
+      <div class="hsub">법제처 현행법령 기준 (시행일 2026.01.02) · 손금(26회) 전체 1위 최고빈출 영역</div>
+    </div>
+    <div class="hsc">
+      <div class="hscl">SCORE</div>
+      <div class="hscv" id="sv">–</div>
+    </div>
+  </div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════════
+     PART 1 : 빈칸 채우기 (13문제)
+══════════════════════════════════════ -->
+<div class="sh">
+  <span class="st st-b">Part 1</span>
+  <span class="sttl">주요 법조문 빈칸 채우기</span>
+  <span class="scnt" id="bc">0 / 13</span>
+</div>
+<hr class="shr">
+
+<!-- B1 -->
+<div class="qc" id="qB1">
+  <div class="qh">
+    <span class="qn qn-b">1</span>
+    <div class="qt">
+      <strong>법인세법 제19조 제1항 (손금의 정의)</strong><span class="tb thot">🔴손금 최빈출</span>
+      <div class="lq">
+        손금은 자본 또는 출자의 환급, 잉여금의 처분 및 이 법에서 규정하는 것은 <span class="bs">①</span>하고, 해당 법인의 <span class="bs">②</span>을 감소시키는 거래로 인하여 발생하는 손실 또는 비용의 금액으로 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 처리방법</span><input class="bi" id="b1_1" placeholder="제외/포함?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 재무개념</span><input class="bi" id="b1_2" placeholder="○○산" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B1')">정답 확인</button><span class="rb" id="rB1"></span></div>
+  <div class="ex" id="eB1">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제19조 제1항</div>
+    <div class="al">① 제외 &nbsp; ② 순자산(純資産)</div>
+    <p>손금도 익금(제15조)과 마찬가지로 <b>순자산 증감 거래</b>를 기준으로 정의됩니다. 자본 환급·잉여금 처분은 순자산을 감소시켜도 손금이 아닙니다(자본거래 제외). 익금 정의와 대칭 구조이므로 함께 암기하세요.</p>
+  </div>
+</div>
+
+<!-- B2 -->
+<div class="qc" id="qB2">
+  <div class="qh">
+    <span class="qn qn-b">2</span>
+    <div class="qt">
+      <strong>법인세법 제19조 제2항 (손비의 요건)</strong><span class="tb thot">🔴손금 최빈출</span>
+      <div class="lq">
+        손비는 이 법 및 다른 법률에서 달리 정하고 있는 것을 제외하고는 그 법인의 <span class="bs">①</span>과 관련하여 발생하거나 지출된 손실 또는 비용으로서 <span class="bs">②</span>인 것이거나 <span class="bs">③</span>과 직접 관련된 것으로 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 관련성</span><input class="bi" id="b2_1" placeholder="○업" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 통상성</span><input class="bi" id="b2_2" placeholder="일반적으로 ○○되는 통상적" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 수익관련</span><input class="bi" id="b2_3" placeholder="○익" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B2')">정답 확인</button><span class="rb" id="rB2"></span></div>
+  <div class="ex" id="eB2">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제19조 제2항</div>
+    <div class="al">① 사업 &nbsp; ② 일반적으로 인정되는 통상적 &nbsp; ③ 수익</div>
+    <p>손비 인정의 두 가지 요건: <b>(가) 사업관련성 + 통상성</b> 또는 <b>(나) 수익과 직접 관련</b>. 두 요건 중 하나만 충족하면 됩니다. 업무무관비용·과도한 지출은 이 요건을 충족하지 못해 손금불산입됩니다.</p>
+    <p class="trap">⚠ 오답 함정: "수익과 간접 관련된 것도 포함", "사업관련성만 있으면 모두 손금"</p>
+  </div>
+</div>
+
+<!-- B3 -->
+<div class="qc" id="qB3">
+  <div class="qh">
+    <span class="qn qn-b">3</span>
+    <div class="qt">
+      <strong>법인세법 제19조의2 제1항 (대손금의 손금 처리)</strong><span class="tb thot">🔴손금 빈출</span>
+      <div class="lq">
+        내국법인이 보유하고 있는 채권 중 채무자의 파산 등 대통령령으로 정하는 사유로 <span class="bs">①</span>할 수 없는 채권의 금액(대손금)은 대통령령으로 정하는 사업연도의 소득금액을 계산할 때 <span class="bs">②</span>에 산입한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 행위</span><input class="bi" id="b3_1" placeholder="회수/납부?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 산입 방향</span><input class="bi" id="b3_2" placeholder="손금/익금?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B3')">정답 확인</button><span class="rb" id="rB3"></span></div>
+  <div class="ex" id="eB3">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제19조의2 제1항</div>
+    <div class="al">① 회수 &nbsp; ② 손금</div>
+    <p>대손금은 회수 불능 채권을 <b>손금에 산입</b>합니다. 조문 제목이 "대손금의 손금불산입"이지만 실제 내용은 특정 채권(구상채권·가지급금)을 손금 <b>불산입</b>하는 것이고, 원칙적으로 대손금은 손금 <b>산입</b>입니다. 제목과 내용의 구분에 주의!</p>
+  </div>
+</div>
+
+<!-- B4 -->
+<div class="qc" id="qB4">
+  <div class="qh">
+    <span class="qn qn-b">4</span>
+    <div class="qt">
+      <strong>법인세법 제19조의2 제2항 (대손금 손금불산입 제외 채권)</strong><span class="tb thot">🔴손금 함정</span>
+      <div class="lq">
+        다음 채권에는 대손금 손금산입 규정을 적용하지 아니한다.<br>
+        1. <span class="bs">①</span>으로 인하여 발생한 구상채권(단, 공정거래법상 허용 채무보증 등 대통령령으로 정하는 것은 제외)<br>
+        2. 제28조 제1항 제4호 나목에 해당하는 <span class="bs">②</span> 등 (특수관계인 대한 판단은 <span class="bs">③</span>을 기준으로 한다)
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 원인행위</span><input class="bi" id="b4_1" placeholder="채무○○" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 채권종류</span><input class="bi" id="b4_2" placeholder="가지○금" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 판단기준</span><input class="bi" id="b4_3" placeholder="대여시점/회수시점?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B4')">정답 확인</button><span class="rb" id="rB4"></span></div>
+  <div class="ex" id="eB4">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제19조의2 제2항</div>
+    <div class="al">① 채무보증 &nbsp; ② 가지급금 &nbsp; ③ 대여시점</div>
+    <p><b>채무보증 구상채권</b>과 <b>특수관계인 가지급금</b>은 대손금 손금산입 불가합니다. 특수관계인 판단은 <b>대여시점</b> 기준 — "회수시점"으로 출제 함정이 자주 나옵니다.</p>
+    <p class="trap">⚠ 오답 함정: "특수관계인 판단은 회수시점 기준"</p>
+  </div>
+</div>
+
+<!-- B5 -->
+<div class="qc" id="qB5">
+  <div class="qh">
+    <span class="qn qn-b">5</span>
+    <div class="qt">
+      <strong>법인세법 제19조의2 제3항 (대손금 회수 시 처리)</strong>
+      <div class="lq">
+        제1항에 따라 손금에 산입한 대손금 중 <span class="bs">①</span>한 금액은 그 <span class="bs">②</span>한 날이 속하는 사업연도의 소득금액을 계산할 때 <span class="bs">③</span>에 산입한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 행위</span><input class="bi" id="b5_1" placeholder="회수/지급?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 시점</span><input class="bi" id="b5_2" placeholder="회수/발생?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 산입 방향</span><input class="bi" id="b5_3" placeholder="익금/손금?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B5')">정답 확인</button><span class="rb" id="rB5"></span></div>
+  <div class="ex" id="eB5">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제19조의2 제3항</div>
+    <div class="al">① 회수 &nbsp; ② 회수 &nbsp; ③ 익금</div>
+    <p>대손처리 후 회수하면 → <b>회수한 날이 속하는 사업연도에 익금 산입</b>. 손금산입 → 회수 → 익금환원의 대칭 구조를 파악해두세요.</p>
+  </div>
+</div>
+
+<!-- B6 -->
+<div class="qc" id="qB6">
+  <div class="qh">
+    <span class="qn qn-b">6</span>
+    <div class="qt">
+      <strong>법인세법 제20조 (자본거래 등 손금불산입)</strong><span class="tb thot">🔴손금 빈출</span>
+      <div class="lq">
+        다음 각 호의 금액은 손금에 산입하지 아니한다.<br>
+        1. 결산을 확정할 때 <span class="bs">①</span>을 손비로 계상한 금액<br>
+        2. 주식할인발행차금: 액면미달의 가액으로 신주를 발행하는 경우 그 <span class="bs">②</span>하는 금액과 <span class="bs">③</span>의 합계액
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 제1호</span><input class="bi" id="b6_1" placeholder="○여금의 처분" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 제2호 내용A</span><input class="bi" id="b6_2" placeholder="미달/초과?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 제2호 내용B</span><input class="bi" id="b6_3" placeholder="신주○○비" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B6')">정답 확인</button><span class="rb" id="rB6"></span></div>
+  <div class="ex" id="eB6">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제20조</div>
+    <div class="al">① 잉여금의 처분 &nbsp; ② 미달하는 &nbsp; ③ 신주발행비</div>
+    <p>잉여금 처분(배당 등)은 손비가 아닌 <b>자본거래</b>이므로 손금불산입. 주식할인발행차금은 <b>미달액 + 신주발행비</b> 합계액이 손금불산입됩니다. 주식발행초과액(익금불산입)과 대칭 구조로 이해하세요.</p>
+  </div>
+</div>
+
+<!-- B7 -->
+<div class="qc" id="qB7">
+  <div class="qh">
+    <span class="qn qn-b">7</span>
+    <div class="qt">
+      <strong>법인세법 제21조 (세금과공과금 손금불산입 — 법인세·법인지방소득세)</strong><span class="tb thot">🔴손금 최빈출</span>
+      <div class="lq">
+        각 사업연도에 납부하였거나 납부할 <span class="bs">①</span> 또는 <span class="bs">②</span>와 각 세법에 규정된 의무 불이행으로 인하여 납부하였거나 납부할 세액(<span class="bs">③</span>를 포함한다) 및 부가가치세의 <span class="bs">④</span>은 손금불산입이다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 세목</span><input class="bi" id="b7_1" placeholder="○인세" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 세목</span><input class="bi" id="b7_2" placeholder="법인○○○세" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 포함항목</span><input class="bi" id="b7_3" placeholder="가산세/가산금?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">④ 세액구분</span><input class="bi" id="b7_4" placeholder="매입/매출세액?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B7')">정답 확인</button><span class="rb" id="rB7"></span></div>
+  <div class="ex" id="eB7">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제21조 제1호</div>
+    <div class="al">① 법인세 &nbsp; ② 법인지방소득세 &nbsp; ③ 가산세 &nbsp; ④ 매입세액</div>
+    <p>법인세·법인지방소득세와 가산세는 <b>손금불산입</b>. 부가가치세 매입세액도 손금불산입이 원칙이나, <b>부가가치세가 면제되거나 대통령령으로 정하는 경우</b>의 매입세액은 예외적으로 손금산입 가능합니다.</p>
+    <p class="trap">⚠ 오답 함정: "가산세는 손금불산입 규정 적용 제외" / "부가가치세 매출세액이 손금불산입"</p>
+  </div>
+</div>
+
+<!-- B8 -->
+<div class="qc" id="qB8">
+  <div class="qh">
+    <span class="qn qn-b">8</span>
+    <div class="qt">
+      <strong>법인세법 제21조 제3호 (벌과금 등 손금불산입)</strong><span class="tb thot">🔴손금 최빈출</span>
+      <div class="lq">
+        <span class="bs">①</span>, <span class="bs">②</span>(통고처분에 따른 벌금 또는 과료에 상당하는 금액 포함), <span class="bs">③</span>(과료와 과태금을 포함), 가산금 및 강제징수비는 손금불산입이다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 항목</span><input class="bi" id="b8_1" placeholder="○금" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 항목</span><input class="bi" id="b8_2" placeholder="과○" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 항목</span><input class="bi" id="b8_3" placeholder="과○○" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B8')">정답 확인</button><span class="rb" id="rB8"></span></div>
+  <div class="ex" id="eB8">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제21조 제3호</div>
+    <div class="al">① 벌금 &nbsp; ② 과료 &nbsp; ③ 과태료</div>
+    <p>제재성 지출 5종 모두 손금불산입: <b>벌금·과료·과태료·가산금·강제징수비</b>. 통고처분(세관, 경찰 등)에 따른 벌금·과료 상당액도 포함됩니다. "과징금"은 별도로 제5호에서 불산입 여부를 판단하므로 혼동 주의.</p>
+    <p class="trap">⚠ 오답 함정: "과징금은 제3호에 해당" / "통고처분 벌금은 손금산입 가능"</p>
+  </div>
+</div>
+
+<!-- B9 -->
+<div class="qc" id="qB9">
+  <div class="qh">
+    <span class="qn qn-b">9</span>
+    <div class="qt">
+      <strong>법인세법 제21조 제4·5호 (공과금 손금불산입 구분)</strong><span class="tb thot">🔴기출 핵심 구분</span>
+      <div class="lq">
+        제4호: 법령에 따라 <span class="bs">①</span>으로 납부하는 것이 아닌 공과금은 손금불산입이다.<br>
+        제5호: 법령에 따른 의무의 <span class="bs">②</span> 또는 금지·제한 등의 <span class="bs">③</span>을 이유로 부과되는 공과금은 손금불산입이다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 의무성</span><input class="bi" id="b9_1" placeholder="의무적/임의적?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 제5호 사유A</span><input class="bi" id="b9_2" placeholder="불이행/위반?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 제5호 사유B</span><input class="bi" id="b9_3" placeholder="위반/불이행?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B9')">정답 확인</button><span class="rb" id="rB9"></span></div>
+  <div class="ex" id="eB9">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제21조 제4호·제5호</div>
+    <div class="al">① 의무적 &nbsp; ② 불이행 &nbsp; ③ 위반</div>
+    <p>제4호: <b>임의적 공과금</b>(자발적 납부) → 손금불산입. 법령에 따라 강제되는 것은 손금산입 가능.<br>
+    제5호: <b>제재성 공과금</b>(의무위반·금지위반) → 손금불산입. 예: 과징금, 환경부담금 중 위반에 따른 것.</p>
+    <p class="trap">⚠ 핵심: 법령상 의무로 납부하는 공과금(예: 산재보험료, 국민연금)은 손금산입 가능</p>
+  </div>
+</div>
+
+<!-- B10 -->
+<div class="qc" id="qB10">
+  <div class="qh">
+    <span class="qn qn-b">10</span>
+    <div class="qt">
+      <strong>법인세법 제21조 제2호 (개별소비세 등 미납액)</strong>
+      <div class="lq">
+        판매하지 아니한 제품에 대한 반출필의 개별소비세, <span class="bs">①</span> 또는 교통·에너지·환경세의 미납액은 손금불산입이다. 다만, <span class="bs">②</span>에 그 세액상당액을 가산한 경우에는 예외로 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 세목</span><input class="bi" id="b10_1" placeholder="주세/특소세?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 예외 조건</span><input class="bi" id="b10_2" placeholder="제품○격에" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B10')">정답 확인</button><span class="rb" id="rB10"></span></div>
+  <div class="ex" id="eB10">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제21조 제2호</div>
+    <div class="al">① 주세 &nbsp; ② 제품가격</div>
+    <p>반출필(공장 출하 후) 미판매 재고에 대한 간접세 미납액은 손금불산입. 단, <b>제품가격에 세액을 가산</b>한 경우(비용 전가)는 예외로 손금 인정. 주세 포함을 반드시 암기!</p>
+  </div>
+</div>
+
+<!-- B11 -->
+<div class="qc" id="qB11">
+  <div class="qh">
+    <span class="qn qn-b">11</span>
+    <div class="qt">
+      <strong>법인세법 제22조 (자산평가손실 손금불산입 — 원칙·예외)</strong><span class="tb tup">⬆출제 상승</span>
+      <div class="lq">
+        내국법인이 보유하는 자산의 <span class="bs">①</span>은 각 사업연도의 소득금액을 계산할 때 손금에 산입하지 아니한다. 다만, 제42조 <span class="bs">②</span> 및 <span class="bs">③</span>에 따른 평가로 인하여 발생하는 평가손실은 손금에 산입한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 손금불산입 대상</span><input class="bi" id="b11_1" placeholder="평가○실" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 예외 조항</span><input class="bi" id="b11_2" placeholder="제○항" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 예외 조항</span><input class="bi" id="b11_3" placeholder="제○항" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B11')">정답 확인</button><span class="rb" id="rB11"></span></div>
+  <div class="ex" id="eB11">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제22조</div>
+    <div class="al">① 평가손실 &nbsp; ② 제2항 &nbsp; ③ 제3항</div>
+    <p>자산평가손실은 손금불산입이 원칙. <b>제42조 제2항</b>(파생상품·외화자산 등 법정 평가) 및 <b>제3항</b>(재고자산·유가증권 등 특정 평가)에 의한 평가손실만 예외적으로 손금 인정. 제18조(평가이익 익금불산입)와 대칭 구조로 암기!</p>
+    <p class="trap">⚠ 오답 함정: "제42조 제1항에 따른 평가손실도 손금산입" (제1항은 익금 산입 평가이익 규정)</p>
+  </div>
+</div>
+
+<!-- B12 -->
+<div class="qc" id="qB12">
+  <div class="qh">
+    <span class="qn qn-b">12</span>
+    <div class="qt">
+      <strong>법인세법 제21조 종합 — 손금산입 vs 불산입 구분</strong><span class="tb thot">🔴기출 단골</span>
+      <div class="lq">
+        부가가치세 매입세액은 원칙적으로 손금에 산입하지 <span class="bs">①</span>한다. 다만, 부가가치세가 <span class="bs">②</span>되거나 그 밖에 대통령령으로 정하는 경우의 세액은 <span class="bs">③</span>한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 원칙</span><input class="bi" id="b12_1" placeholder="아니/않?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 예외 조건</span><input class="bi" id="b12_2" placeholder="면제/부과?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 예외 효과</span><input class="bi" id="b12_3" placeholder="손금산입/불산입?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B12')">정답 확인</button><span class="rb" id="rB12"></span></div>
+  <div class="ex" id="eB12">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제21조 제1호 단서</div>
+    <div class="al">① 아니 &nbsp; ② 면제 &nbsp; ③ 손금산입(제외, 즉 산입)</div>
+    <p>부가가치세 매입세액은 <b>환급 받으므로 비용이 아님 → 손금불산입</b>이 원칙. 그러나 면세사업자 등 <b>매입세액 공제·환급을 받지 못하는 경우</b>는 실질적 비용이므로 손금산입 가능합니다.</p>
+  </div>
+</div>
+
+<!-- B13 -->
+<div class="qc" id="qB13">
+  <div class="qh">
+    <span class="qn qn-b">13</span>
+    <div class="qt">
+      <strong>법인세법 제19조 제2항 + 제21조 종합 — 손금 판단 기준표</strong>
+      <div class="lq">
+        손비 인정의 두 가지 요건 중 하나를 충족해야 한다:<br>
+        (A) 법인의 <span class="bs">①</span>과 관련하여 발생하거나 지출된 것으로서 일반적으로 인정되는 <span class="bs">②</span>인 것<br>
+        (B) <span class="bs">③</span>과 직접 관련된 것
+      </div>
+    </div>
+  </div>
+  <div class="qbd">
+    <div class="bins">
+      <div class="biw"><span class="bil">① 관련성</span><input class="bi" id="b13_1" placeholder="사업/개인?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">② 특성</span><input class="bi" id="b13_2" placeholder="통상적/일시적?" autocomplete="off"></div>
+      <div class="biw"><span class="bil">③ 직접 관련</span><input class="bi" id="b13_3" placeholder="○익" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qa"><button class="bck" onclick="ck('B13')">정답 확인</button><span class="rb" id="rB13"></span></div>
+  <div class="ex" id="eB13">
+    <div class="eh">해설</div>
+    <div class="lr">법인세법 제19조 제2항</div>
+    <div class="al">① 사업 &nbsp; ② 통상적 &nbsp; ③ 수익</div>
+    <p>손비 인정: <b>사업관련 + 통상성</b> OR <b>수익과 직접 관련</b>. B2 문항과 동일 조문의 응용 문제입니다. "사업과 간접 관련"이나 "수익과 간접 관련"은 요건 미충족에 해당합니다.</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PART 2 : O/X 판단 (13문제)
+══════════════════════════════════════ -->
+<div class="sh" style="margin-top:3rem">
+  <span class="st st-o">Part 2</span>
+  <span class="sttl">법령 O / X 판단</span>
+  <span class="scnt" id="oc">0 / 13</span>
+</div>
+<hr class="shr">
+
+<!-- O1 -->
+<div class="qc" id="qO1">
+  <div class="qh">
+    <span class="qn qn-o">14</span>
+    <div class="qt">
+      자본 또는 출자의 환급은 법인의 순자산을 감소시키므로, 이는 손금으로 처리된다.<span class="tb thot">🔴익금·손금 기본 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O1','O')">O</button>
+    <button class="oxb" onclick="so('O1','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O1')">정답 확인</button><span class="rb" id="rO1"></span></div>
+  <div class="ex" id="eO1">
+    <div class="eh">해설</div><div class="lr">법인세법 제19조 제1항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>자본 또는 출자의 환급은 손금의 정의에서 <b>명시적으로 제외</b>됩니다. 순자산을 감소시키더라도 자본거래(자본반환)는 손금이 아닙니다. 익금의 경우도 "자본 또는 출자의 납입"을 제외하는 대칭 구조입니다.</p>
+  </div>
+</div>
+
+<!-- O2 -->
+<div class="qc" id="qO2">
+  <div class="qh">
+    <span class="qn qn-o">15</span>
+    <div class="qt">
+      손비로 인정받으려면 반드시 법인의 사업과 관련하여 발생하거나 지출된 것이어야 하며, 수익과 직접 관련된 것만으로는 손비로 인정받을 수 없다.<span class="tb thot">🔴손금 요건 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O2','O')">O</button>
+    <button class="oxb" onclick="so('O2','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O2')">정답 확인</button><span class="rb" id="rO2"></span></div>
+  <div class="ex" id="eO2">
+    <div class="eh">해설</div><div class="lr">법인세법 제19조 제2항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>손비 요건은 <b>두 가지 중 하나</b>를 충족하면 됩니다: (A) 사업관련·통상성 <b>또는</b> (B) 수익과 직접 관련. "수익과 직접 관련된 것"만으로도 손비 인정이 가능합니다.</p>
+  </div>
+</div>
+
+<!-- O3 -->
+<div class="qc" id="qO3">
+  <div class="qh">
+    <span class="qn qn-o">16</span>
+    <div class="qt">
+      채무보증으로 인하여 발생한 구상채권은 원칙적으로 대손금으로서 손금에 산입할 수 없다. 다만, 「독점규제 및 공정거래에 관한 법률」에서 허용하는 채무보증에 따른 구상채권 등 대통령령이 정하는 것은 예외이다.<span class="tb thot">🔴대손금 빈출</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O3','O')">O</button>
+    <button class="oxb" onclick="so('O3','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O3')">정답 확인</button><span class="rb" id="rO3"></span></div>
+  <div class="ex" id="eO3">
+    <div class="eh">해설</div><div class="lr">법인세법 제19조의2 제2항 제1호</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>채무보증 구상채권은 원칙적 손금불산입, 공정거래법상 허용 채무보증 등 대통령령이 정하는 예외는 손금산입 가능. 조문 그대로 정확합니다.</p>
+  </div>
+</div>
+
+<!-- O4 -->
+<div class="qc" id="qO4">
+  <div class="qh">
+    <span class="qn qn-o">17</span>
+    <div class="qt">
+      특수관계인에 대한 가지급금이 대손금으로 인정되는지 여부를 판단할 때, 특수관계인 해당 여부는 <b>회수시점</b>을 기준으로 한다.<span class="tb thot">🔴대손금 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O4','O')">O</button>
+    <button class="oxb" onclick="so('O4','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O4')">정답 확인</button><span class="rb" id="rO4"></span></div>
+  <div class="ex" id="eO4">
+    <div class="eh">해설</div><div class="lr">법인세법 제19조의2 제2항 제2호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>특수관계인 판단 기준은 <b>"대여시점"</b>입니다. "회수시점"으로 바꾼 것이 오류입니다. 대여 당시 특수관계인이었다면 이후 관계가 해소되어도 가지급금 대손은 불인정됩니다.</p>
+    <p class="trap">⚠ "회수시점" → "대여시점"으로 수정해야 옳습니다.</p>
+  </div>
+</div>
+
+<!-- O5 -->
+<div class="qc" id="qO5">
+  <div class="qh">
+    <span class="qn qn-o">18</span>
+    <div class="qt">
+      손금에 산입한 대손금을 나중에 회수한 경우, 그 금액은 회수한 날이 속하는 사업연도의 소득금액 계산 시 익금에 산입한다.<span class="tb thot">기출 기본</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O5','O')">O</button>
+    <button class="oxb" onclick="so('O5','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O5')">정답 확인</button><span class="rb" id="rO5"></span></div>
+  <div class="ex" id="eO5">
+    <div class="eh">해설</div><div class="lr">법인세법 제19조의2 제3항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>대손처리 후 회수 → <b>익금 환원</b>. 대손 발생 연도 환급이 아니라 <b>회수한 날이 속하는 사업연도</b>에 익금 산입합니다.</p>
+  </div>
+</div>
+
+<!-- O6 -->
+<div class="qc" id="qO6">
+  <div class="qh">
+    <span class="qn qn-o">19</span>
+    <div class="qt">
+      결산을 확정할 때 잉여금의 처분(배당 등)을 손비로 계상한 금액은 법인세법상 손금에 산입된다.<span class="tb thot">🔴손금 기본 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O6','O')">O</button>
+    <button class="oxb" onclick="so('O6','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O6')">정답 확인</button><span class="rb" id="rO6"></span></div>
+  <div class="ex" id="eO6">
+    <div class="eh">해설</div><div class="lr">법인세법 제20조 제1호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>잉여금의 처분은 손금불산입입니다. 배당금·임원상여 중 잉여금 처분으로 지급하는 것은 순자산 감소를 수반하나 자본거래이므로 손금이 아닙니다.</p>
+  </div>
+</div>
+
+<!-- O7 -->
+<div class="qc" id="qO7">
+  <div class="qh">
+    <span class="qn qn-o">20</span>
+    <div class="qt">
+      법인이 납부한 법인세는 손금불산입이지만, 각 세법에 규정된 의무 불이행으로 인한 가산세는 손금에 산입할 수 있다.<span class="tb thot">🔴가산세 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O7','O')">O</button>
+    <button class="oxb" onclick="so('O7','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O7')">정답 확인</button><span class="rb" id="rO7"></span></div>
+  <div class="ex" id="eO7">
+    <div class="eh">해설</div><div class="lr">법인세법 제21조 제1호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>법인세뿐 아니라 <b>가산세도 손금불산입</b>입니다. 제21조 제1호는 의무 불이행으로 납부할 세액에 "가산세를 포함한다"고 명시하여 손금불산입 대상에 포함시킵니다.</p>
+    <p class="trap">⚠ "가산세는 손금산입 가능" → 명백한 오류</p>
+  </div>
+</div>
+
+<!-- O8 -->
+<div class="qc" id="qO8">
+  <div class="qh">
+    <span class="qn qn-o">21</span>
+    <div class="qt">
+      법령에 따라 의무적으로 납부하는 공과금(예: 국민연금 사용자 부담분)은 손금에 산입할 수 있다.<span class="tb tup">⬆구분 필수</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O8','O')">O</button>
+    <button class="oxb" onclick="so('O8','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O8')">정답 확인</button><span class="rb" id="rO8"></span></div>
+  <div class="ex" id="eO8">
+    <div class="eh">해설</div><div class="lr">법인세법 제21조 제4호 반대해석</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>제21조 제4호는 <b>의무적이지 않은 공과금</b>을 손금불산입합니다. 반대로, 법령에 따라 <b>의무적으로</b> 납부해야 하는 공과금(산재보험료, 국민연금 사업주 부담분 등)은 손금산입 가능합니다.</p>
+  </div>
+</div>
+
+<!-- O9 -->
+<div class="qc" id="qO9">
+  <div class="qh">
+    <span class="qn qn-o">22</span>
+    <div class="qt">
+      통고처분에 따른 벌금 또는 과료에 상당하는 금액은 벌금·과료와 성격이 다르므로 손금에 산입할 수 있다.<span class="tb thot">🔴통고처분 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O9','O')">O</button>
+    <button class="oxb" onclick="so('O9','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O9')">정답 확인</button><span class="rb" id="rO9"></span></div>
+  <div class="ex" id="eO9">
+    <div class="eh">해설</div><div class="lr">법인세법 제21조 제3호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>제21조 제3호는 벌금·과료 정의에 <b>"통고처분에 따른 벌금 또는 과료에 상당하는 금액을 포함한다"</b>고 명시합니다. 따라서 세관·경찰 등의 통고처분 납부금도 손금불산입입니다.</p>
+  </div>
+</div>
+
+<!-- O10 -->
+<div class="qc" id="qO10">
+  <div class="qh">
+    <span class="qn qn-o">23</span>
+    <div class="qt">
+      내국법인이 보유하는 자산의 평가손실은 원칙적으로 손금불산입이나, 법인세법 제42조 제2항 및 제3항에 따른 평가로 발생한 평가손실은 손금에 산입한다.<span class="tb tup">⬆출제 상승</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O10','O')">O</button>
+    <button class="oxb" onclick="so('O10','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O10')">정답 확인</button><span class="rb" id="rO10"></span></div>
+  <div class="ex" id="eO10">
+    <div class="eh">해설</div><div class="lr">법인세법 제22조</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>조문 그대로 정확합니다. 제42조 <b>제2항·제3항</b>(파생상품·외화자산·재고자산·유가증권 등 법정 평가)에 의한 평가손실만 예외적으로 손금산입입니다.</p>
+  </div>
+</div>
+
+<!-- O11 -->
+<div class="qc" id="qO11">
+  <div class="qh">
+    <span class="qn qn-o">24</span>
+    <div class="qt">
+      법인세법 제42조 제1항에 따른 평가로 인한 평가손실은 손금에 산입한다.<span class="tb thot">🔴평가손익 항 구분 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O11','O')">O</button>
+    <button class="oxb" onclick="so('O11','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O11')">정답 확인</button><span class="rb" id="rO11"></span></div>
+  <div class="ex" id="eO11">
+    <div class="eh">해설</div><div class="lr">법인세법 제22조 / 제18조 제1호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>손금산입이 허용되는 예외는 <b>제42조 제2항 및 제3항</b>입니다. 제42조 제1항은 <b>익금 산입 평가이익</b>에 관한 규정으로, 이와 대응하는 평가손실은 손금산입 예외에 해당하지 않습니다. 항(項) 구분이 핵심 함정!</p>
+    <p class="trap">⚠ "제1항" → 손금산입 예외 아님; 반드시 "제2항·제3항"</p>
+  </div>
+</div>
+
+<!-- O12 -->
+<div class="qc" id="qO12">
+  <div class="qh">
+    <span class="qn qn-o">25</span>
+    <div class="qt">
+      부가가치세 면세사업자가 사업 관련 재화를 구입할 때 부담한 매입세액은 손금에 산입할 수 있다.<span class="tb tup">⬆부가세 연계</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O12','O')">O</button>
+    <button class="oxb" onclick="so('O12','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O12')">정답 확인</button><span class="rb" id="rO12"></span></div>
+  <div class="ex" id="eO12">
+    <div class="eh">해설</div><div class="lr">법인세법 제21조 제1호 단서</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>제21조 제1호 단서는 "부가가치세가 면제되거나 그 밖에 대통령령으로 정하는 경우의 세액은 제외한다"고 합니다. 즉 면세사업자의 매입세액(환급받지 못하는 실질 비용)은 손금불산입에서 제외 → 손금산입 가능합니다.</p>
+  </div>
+</div>
+
+<!-- O13 -->
+<div class="qc" id="qO13">
+  <div class="qh">
+    <span class="qn qn-o">26</span>
+    <div class="qt">
+      주식할인발행차금(액면미달 발행 시 미달액)은 손금에 산입하지 않으나, 신주발행비는 사업관련 비용이므로 별도로 손금에 산입할 수 있다.<span class="tb thot">🔴자본거래 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O13','O')">O</button>
+    <button class="oxb" onclick="so('O13','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O13')">정답 확인</button><span class="rb" id="rO13"></span></div>
+  <div class="ex" id="eO13">
+    <div class="eh">해설</div><div class="lr">법인세법 제20조 제2호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>제20조 제2호는 주식할인발행차금을 "미달하는 금액과 <b>신주발행비의 합계액</b>"으로 정의하고 이를 손금불산입합니다. 신주발행비도 주식할인발행차금에 <b>포함</b>되어 손금불산입 대상입니다. 별도 손금 처리 불가!</p>
+    <p class="trap">⚠ "신주발행비는 별도로 손금산입 가능" → 합계액 전체가 손금불산입</p>
+  </div>
+</div>
+
+<!-- 전체 액션 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+
+<!-- Summary -->
+<div class="sum" id="smPanel">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdTxt">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">26</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.69rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제19~22조 (법제처 현행법령, 시행일 2026.01.02) · 세무사 1차 세법학개론 출제동향 분석 반영<br>
+  [2026-05-30 16:30] &nbsp;&nbsp; #법인세법 #손금범위 #대손금 #손금불산입 #세금과공과 #평가손실 #세무사1차
+</p>
+
+</div><!-- /wrap -->
+
+<script>
+// ── 정답 데이터 ──
+const BA = {
+  B1:  {inp:['b1_1','b1_2'],              ans:[['제외'],['순자산']]},
+  B2:  {inp:['b2_1','b2_2','b2_3'],       ans:[['사업'],['일반적으로 인정되는 통상적','통상적'],['수익']]},
+  B3:  {inp:['b3_1','b3_2'],              ans:[['회수'],['손금']]},
+  B4:  {inp:['b4_1','b4_2','b4_3'],       ans:[['채무보증'],['가지급금'],['대여시점','대여 시점']]},
+  B5:  {inp:['b5_1','b5_2','b5_3'],       ans:[['회수'],['회수'],['익금']]},
+  B6:  {inp:['b6_1','b6_2','b6_3'],       ans:[['잉여금의 처분','잉여금처분'],['미달하는','미달'],['신주발행비']]},
+  B7:  {inp:['b7_1','b7_2','b7_3','b7_4'],ans:[['법인세'],['법인지방소득세'],['가산세'],['매입세액']]},
+  B8:  {inp:['b8_1','b8_2','b8_3'],       ans:[['벌금'],['과료'],['과태료']]},
+  B9:  {inp:['b9_1','b9_2','b9_3'],       ans:[['의무적'],['불이행'],['위반']]},
+  B10: {inp:['b10_1','b10_2'],            ans:[['주세'],['제품가격','제품 가격']]},
+  B11: {inp:['b11_1','b11_2','b11_3'],    ans:[['평가손실'],['제2항'],['제3항']]},
+  B12: {inp:['b12_1','b12_2','b12_3'],    ans:[['아니','않'],['면제'],['손금산입','제외']]},
+  B13: {inp:['b13_1','b13_2','b13_3'],    ans:[['사업'],['통상적'],['수익']]},
+};
+const OA = {O1:'X',O2:'X',O3:'O',O4:'X',O5:'O',O6:'X',O7:'X',O8:'O',O9:'X',O10:'O',O11:'X',O12:'O',O13:'X'};
+const oxSel={},bCk={},oCk={};
+let answered=0,correct=0;
+
+function nm(s){return s.trim().replace(/\s+/g,' ')}
+
+function so(id,val){
+  if(oCk[id])return;
+  oxSel[id]=val;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===val)b.classList.add('s'+val.toLowerCase())});
+}
+
+function ck(id){
+  if(bCk[id])return; bCk[id]=true;
+  const d=BA[id]; let allOk=true;
+  d.inp.forEach((inp,i)=>{
+    const el=document.getElementById(inp);
+    const v=nm(el.value);
+    const ok=d.ans[i].some(a=>nm(a)===v);
+    el.classList.add(ok?'ok':'ng');
+    if(!ok)allOk=false;
+    el.disabled=true;
+  });
+  const badge=document.getElementById('r'+id);
+  badge.textContent=allOk?'✓ 정답':'✗ 오답';
+  badge.className='rb show '+(allOk?'ok':'ng');
+  document.getElementById('e'+id).classList.add('show');
+  document.querySelector('#q'+id+' .bck').disabled=true;
+  upScore(allOk); upProg();
+}
+
+function co(id){
+  if(oCk[id])return;
+  const sel=oxSel[id],ans=OA[id];
+  if(!sel){alert('O 또는 X를 선택해주세요.');return;}
+  oCk[id]=true;
+  const ok=sel===ans;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim();
+    b.classList.remove('so','sx');
+    if(bv===ans)b.classList.add('c'+ans.toLowerCase());
+    else if(bv===sel&&!ok)b.classList.add('w'+sel.toLowerCase());
+  });
+  const badge=document.getElementById('r'+id);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+ans+')';
+  badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+id).classList.add('show');
+  document.querySelector('#qO'+id.slice(1)+' .bck').disabled=true;
+  upScore(ok); upProg();
+}
+
+function upScore(ok){
+  answered++;
+  if(ok)correct++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('bc').textContent=Object.keys(bCk).length+' / 13';
+  document.getElementById('oc').textContent=Object.keys(oCk).length+' / 13';
+}
+function upProg(){
+  const done=Object.keys(bCk).length+Object.keys(oCk).length;
+  document.getElementById('pf').style.width=(done/26*100)+'%';
+}
+function checkAll(){
+  Object.keys(BA).forEach(id=>{
+    if(!bCk[id]){
+      BA[id].inp.forEach(inp=>{if(!document.getElementById(inp).value)document.getElementById(inp).value='?';});
+      ck(id);
+    }
+  });
+  Object.keys(OA).forEach(id=>{if(!oCk[id]){if(!oxSel[id])oxSel[id]='O';co(id);}});
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/26*100);
+  document.getElementById('gdTxt').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=26-correct;
+  document.getElementById('smPanel').classList.add('show');
+  document.getElementById('smPanel').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>

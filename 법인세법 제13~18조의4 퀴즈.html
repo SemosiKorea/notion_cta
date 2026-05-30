@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제13~18조의4 | 세무사 1차 암기퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#F8F7F3; --surface:#FFF; --surface2:#F3F2EE; --border:#E0DBD3;
+    --accent:#1B3D6F; --accent2:#B8611A; --accent3:#2A5E3F;
+    --danger:#A63226; --text:#1A1916; --text2:#46433D; --text3:#7A766E;
+    --correct:#2A5E3F; --wrong:#A63226;
+    --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',sans-serif; --mono:'JetBrains Mono',monospace;
+    --sh:0 2px 10px rgba(0,0,0,.07); --sh-lg:0 8px 28px rgba(0,0,0,.1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+
+  /* ─ Header ─ */
+  .site-header{background:var(--accent);color:#fff;padding:1.8rem 1.5rem 1.4rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,111,.35)}
+  .header-inner{max-width:920px;margin:0 auto;display:flex;align-items:flex-end;gap:1.2rem;flex-wrap:wrap}
+  .hbadge{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:4px;padding:.22rem .55rem;color:#E4CFA8}
+  .htitle{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:-.02em;line-height:1.25}
+  .hsub{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:.2rem;font-weight:300;letter-spacing:.03em}
+  .hscore{margin-left:auto;text-align:right}
+  .slabel{font-size:.68rem;color:rgba(255,255,255,.5);letter-spacing:.08em}
+  .sval{font-family:var(--mono);font-size:1.55rem;font-weight:600;color:#E4CFA8;line-height:1}
+
+  /* ─ Progress ─ */
+  .prog-wrap{background:var(--accent);padding:0 1.5rem .75rem}
+  .prog-track{max-width:920px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:2px;overflow:hidden}
+  .prog-fill{height:100%;background:var(--accent2);border-radius:2px;transition:width .4s ease;width:0%}
+
+  /* ─ Layout ─ */
+  .container{max-width:920px;margin:0 auto;padding:1.8rem 1.2rem 4rem}
+
+  /* ─ Section head ─ */
+  .sec-head{display:flex;align-items:center;gap:.9rem;margin:2.4rem 0 1.1rem;flex-wrap:wrap}
+  .stag{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.28rem .7rem;border-radius:3px;white-space:nowrap}
+  .t-blank{background:var(--accent2);color:#fff}
+  .t-ox{background:var(--accent3);color:#fff}
+  .stitle{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--text)}
+  .scnt{margin-left:auto;font-family:var(--mono);font-size:.73rem;color:var(--text3)}
+  .sec-hr{border:none;border-top:1.5px solid var(--border);margin-bottom:1.4rem}
+
+  /* ─ Card ─ */
+  .qcard{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:1.2rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fadeUp .35s ease both}
+  .qcard:hover{box-shadow:var(--sh-lg)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+  .qcard:nth-child(1){animation-delay:.02s}.qcard:nth-child(2){animation-delay:.05s}.qcard:nth-child(3){animation-delay:.08s}
+  .qcard:nth-child(4){animation-delay:.11s}.qcard:nth-child(5){animation-delay:.14s}.qcard:nth-child(6){animation-delay:.17s}
+  .qcard:nth-child(7){animation-delay:.20s}.qcard:nth-child(8){animation-delay:.23s}.qcard:nth-child(9){animation-delay:.26s}
+  .qcard:nth-child(10){animation-delay:.29s}.qcard:nth-child(11){animation-delay:.32s}.qcard:nth-child(12){animation-delay:.35s}
+  .qcard:nth-child(13){animation-delay:.38s}
+
+  .qhead{padding:.95rem 1.2rem .75rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.8rem}
+  .qnum{font-family:var(--mono);font-size:.72rem;font-weight:600;min-width:27px;height:27px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px}
+  .qnum.nb{background:#FDF0E3;color:var(--accent2)}
+  .qnum.no{background:#EAF3EE;color:var(--accent3)}
+  .qtext{font-size:.875rem;color:var(--text);line-height:1.8;flex:1}
+  .qtext strong{color:var(--accent);font-weight:700}
+
+  /* law quote */
+  .lq{background:var(--surface2);border-left:3px solid var(--accent);padding:.7rem .95rem;margin:.45rem 0;font-size:.82rem;color:var(--text2);border-radius:0 5px 5px 0;line-height:1.85}
+  .bs{display:inline-block;min-width:3.5rem;border-bottom:2px solid var(--accent2);font-family:var(--mono);font-size:.8rem;padding:0 .25rem;text-align:center;color:#ccc;letter-spacing:.08em}
+
+  /* inputs */
+  .qbody{padding:.75rem 1.2rem .9rem}
+  .binputs{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.55rem}
+  .biwrap{display:flex;align-items:center;gap:.35rem}
+  .bilabel{font-family:var(--mono);font-size:.68rem;color:var(--text3);background:var(--surface2);padding:.12rem .38rem;border-radius:3px;white-space:nowrap}
+  .binput{border:1.5px solid var(--border);border-radius:6px;padding:.32rem .55rem;font-family:var(--sans);font-size:.8rem;min-width:95px;background:#fff;color:var(--text);transition:border-color .15s;outline:none}
+  .binput:focus{border-color:var(--accent)}
+  .binput.correct{border-color:var(--correct);background:#EAF3EE;color:var(--correct)}
+  .binput.wrong{border-color:var(--wrong);background:#FAF0EF;color:var(--wrong)}
+
+  /* OX */
+  .oxsel{display:flex;gap:.55rem;margin-top:.55rem}
+  .oxbtn{border:1.5px solid var(--border);background:#fff;border-radius:8px;padding:.45rem 1.3rem;font-family:var(--mono);font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .15s;color:var(--text3)}
+  .oxbtn:hover{border-color:var(--accent);color:var(--accent);background:#EAF0F7}
+  .oxbtn.sel-o{border-color:var(--accent3);background:#EAF3EE;color:var(--accent3)}
+  .oxbtn.sel-x{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+  .oxbtn.cor-o,.oxbtn.cor-x{border-color:var(--correct);background:#EAF3EE;color:var(--correct)}
+  .oxbtn.wr-o,.oxbtn.wr-x{border-color:var(--wrong);background:#FAF0EF;color:var(--wrong);opacity:.55}
+
+  /* action */
+  .qaction{padding:0 1.2rem .9rem;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+  .btnck{padding:.42rem 1.1rem;border:none;border-radius:6px;background:var(--accent);color:#fff;font-family:var(--sans);font-size:.78rem;font-weight:500;cursor:pointer;transition:opacity .15s;letter-spacing:.03em}
+  .btnck:hover{opacity:.83} .btnck:disabled{opacity:.35;cursor:default}
+  .rbadge{display:none;align-items:center;gap:.35rem;font-size:.78rem;font-weight:500;padding:.28rem .7rem;border-radius:20px}
+  .rbadge.show{display:flex}
+  .rbadge.ok{background:#EAF3EE;color:var(--correct)}
+  .rbadge.ng{background:#FAF0EF;color:var(--wrong)}
+
+  /* explanation */
+  .expl{display:none;background:#FAFAF8;border-top:1px solid var(--border);padding:.9rem 1.2rem;font-size:.8rem;color:var(--text2);line-height:1.85}
+  .expl.show{display:block}
+  .expl .ehead{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.45rem}
+  .expl .lref{font-family:var(--mono);font-size:.72rem;color:var(--accent);background:#EAF0F7;padding:.12rem .45rem;border-radius:3px;display:inline-block;margin-bottom:.35rem}
+  .expl .aline{font-weight:600;color:var(--correct);margin-bottom:.28rem}
+  .expl .trap{color:var(--wrong);font-style:italic}
+
+  /* table inside expl */
+  .rtable{width:100%;border-collapse:collapse;font-size:.78rem;margin:.5rem 0}
+  .rtable th{background:var(--surface2);padding:.35rem .6rem;text-align:center;border:1px solid var(--border);font-weight:600;color:var(--accent)}
+  .rtable td{padding:.3rem .6rem;border:1px solid var(--border);text-align:center}
+
+  /* trend badge */
+  .tbadge{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:.12rem .4rem;border-radius:3px;margin-left:.35rem;vertical-align:middle}
+  .thot{background:#FDECEA;color:#A63226}
+  .tup{background:#E8F5E9;color:#2A5E3F}
+  .twarn{background:#FFF8E1;color:#7B5E00}
+
+  /* global btns */
+  .global-action{display:flex;justify-content:center;gap:.9rem;margin:2rem 0;flex-wrap:wrap}
+  .btn-allck{padding:.6rem 1.8rem;background:var(--accent2);color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:.83rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .15s}
+  .btn-allck:hover{opacity:.85}
+  .btn-reveal{padding:.6rem 1.8rem;background:transparent;color:var(--accent);border:2px solid var(--accent);border-radius:8px;font-family:var(--sans);font-size:.83rem;font-weight:600;cursor:pointer;transition:all .15s}
+  .btn-reveal:hover{background:var(--accent);color:#fff}
+
+  /* summary */
+  .summary{display:none;background:var(--surface);border:1.5px solid var(--accent);border-radius:12px;padding:1.8rem 1.4rem;margin-top:2.4rem;text-align:center;box-shadow:var(--sh-lg)}
+  .summary.show{display:block}
+  .summary h2{font-family:var(--serif);font-size:1.2rem;color:var(--accent);margin-bottom:.35rem}
+  .summary .grade{font-family:var(--mono);font-size:2.8rem;font-weight:700;color:var(--accent2);line-height:1;margin:.65rem 0}
+  .sstats{display:flex;justify-content:center;gap:1.8rem;margin:1rem 0 1.4rem;flex-wrap:wrap}
+  .sstat .sn{font-family:var(--mono);font-size:1.35rem;font-weight:600;color:var(--text);display:block}
+  .sstat .sd{font-size:.7rem;color:var(--text3)}
+  .btn-reset{padding:.55rem 1.8rem;border:2px solid var(--accent);background:transparent;color:var(--accent);font-family:var(--sans);font-size:.83rem;font-weight:600;border-radius:8px;cursor:pointer;transition:all .2s;letter-spacing:.05em}
+  .btn-reset:hover{background:var(--accent);color:#fff}
+
+  @media(max-width:600px){
+    .htitle{font-size:1.15rem}
+    .container{padding:1.1rem .8rem 3rem}
+    .qhead{padding:.8rem .95rem .65rem}
+    .qbody{padding:.65rem .95rem .8rem}
+    .qaction{padding:0 .95rem .8rem}
+    .binputs{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="hbadge">세무사 1차 · 세법학개론</div>
+      <div class="htitle">법인세법 제13~18조의4<br><span style="font-weight:400;font-size:.95rem;color:rgba(255,255,255,.8)">과세표준 · 각사업연도소득 · 익금 · 익금불산입</span></div>
+      <div class="hsub">법제처 현행법령 기준 (시행일 2026.01.02) · 익금(18회)·과세표준(15회)·이월결손금(6회) 핵심 출제영역</div>
+    </div>
+    <div class="hscore">
+      <div class="slabel">SCORE</div>
+      <div class="sval" id="scoreVal">–</div>
+    </div>
+  </div>
+</header>
+<div class="prog-wrap"><div class="prog-track"><div class="prog-fill" id="progFill"></div></div></div>
+
+<div class="container">
+
+<!-- ═══ PART 1: 빈칸 채우기 ═══ -->
+<div class="sec-head">
+  <span class="stag t-blank">Part 1</span>
+  <span class="stitle">주요 법조문 빈칸 채우기</span>
+  <span class="scnt" id="blankCnt">0 / 13</span>
+</div>
+<hr class="sec-hr">
+
+<!-- B1 -->
+<div class="qcard" id="qB1">
+  <div class="qhead">
+    <span class="qnum nb">1</span>
+    <div class="qtext">
+      <strong>법인세법 제14조 (각 사업연도의 소득·결손금 정의)</strong>
+      <div class="lq">
+        내국법인의 각 사업연도의 소득은 그 사업연도에 속하는 <span class="bs">①</span>의 총액에서 그 사업연도에 속하는 <span class="bs">②</span>의 총액을 <span class="bs">③</span> 금액으로 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 수입항목</span><input class="binput" id="b1_1" placeholder="○금" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 지출항목</span><input class="binput" id="b1_2" placeholder="○금" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">③ 계산방법</span><input class="binput" id="b1_3" placeholder="더한/뺀?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B1')">정답 확인</button>
+    <span class="rbadge" id="resB1"></span>
+  </div>
+  <div class="expl" id="explB1">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제14조 제1항</div>
+    <div class="aline">① 익금 &nbsp; ② 손금 &nbsp; ③ 뺀</div>
+    <p>각사업연도소득 = <b>익금총액 - 손금총액</b>. 회계상 순이익과 다르게 세무조정을 거쳐 산출합니다. 손금이 익금을 초과하면 결손금(제14조 제2항)이 됩니다.</p>
+  </div>
+</div>
+
+<!-- B2 -->
+<div class="qcard" id="qB2">
+  <div class="qhead">
+    <span class="qnum nb">2</span>
+    <div class="qtext">
+      <strong>법인세법 제13조 (이월결손금 공제 한도)</strong><span class="tbadge thot">🔴이월결손금 빈출</span>
+      <div class="lq">
+        과세표준 계산 시 이월결손금 공제는 각 사업연도 소득의 <span class="bs">①</span>[중소기업과 회생계획 이행 중인 기업 등 대통령령으로 정하는 법인의 경우는 <span class="bs">②</span>]을 한도로 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 일반법인 한도</span><input class="binput" id="b2_1" placeholder="100분의 ○" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 중소기업 한도</span><input class="binput" id="b2_2" placeholder="100분의 ○" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B2')">정답 확인</button>
+    <span class="rbadge" id="resB2"></span>
+  </div>
+  <div class="expl" id="explB2">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제13조 제1항 제1호</div>
+    <div class="aline">① 100분의 80(80%) &nbsp; ② 100분의 100(100%)</div>
+    <p>일반법인: <b>80% 한도</b>, 중소기업·회생기업: <b>100% 한도</b>. 이 수치는 2025 미출제 → 2026 재출제 가능성 높은 핵심 숫자입니다.</p>
+    <p class="trap">⚠ 오답 함정: "100분의 60", "중소기업도 80%", "한도 없이 전액 공제 가능" 등</p>
+  </div>
+</div>
+
+<!-- B3 -->
+<div class="qcard" id="qB3">
+  <div class="qhead">
+    <span class="qnum nb">3</span>
+    <div class="qtext">
+      <strong>법인세법 제13조 (이월결손금 공제 요건 — 기간 요건)</strong><span class="tbadge thot">🔴이월결손금 빈출</span>
+      <div class="lq">
+        이월결손금으로 공제받으려면, 각 사업연도의 개시일 전 <span class="bs">①</span> 이내에 개시한 사업연도에서 발생한 결손금이어야 하며, 제60조에 따라 <span class="bs">②</span>하거나 결정·경정·수정신고한 과세표준에 포함된 결손금이어야 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 기간 요건</span><input class="binput" id="b3_1" placeholder="○년" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 행위 요건</span><input class="binput" id="b3_2" placeholder="신고/납부?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B3')">정답 확인</button>
+    <span class="rbadge" id="resB3"></span>
+  </div>
+  <div class="expl" id="explB3">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제13조 제1항 제1호 가·나목</div>
+    <div class="aline">① 15년 &nbsp; ② 신고</div>
+    <p>이월결손금 공제기간은 <b>15년</b>입니다(2019년 이전 발생분은 10년). 또한 반드시 <b>신고 또는 결정·경정·수정신고한</b> 과세표준에 포함된 결손금이어야 합니다 — 은닉 결손금은 공제 불가!</p>
+    <p class="trap">⚠ 오답 함정: "10년", "5년" / "납부한" 과세표준 등</p>
+  </div>
+</div>
+
+<!-- B4 -->
+<div class="qcard" id="qB4">
+  <div class="qhead">
+    <span class="qnum nb">4</span>
+    <div class="qtext">
+      <strong>법인세법 제13조 (비과세소득·소득공제의 이월 불가)</strong>
+      <div class="lq">
+        해당 사업연도의 과세표준을 계산할 때 공제되지 아니한 <span class="bs">①</span> 및 <span class="bs">②</span>는 그 다음 사업연도 이후로 이월하여 공제할 수 없다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 항목</span><input class="binput" id="b4_1" placeholder="비○○소득" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 항목</span><input class="binput" id="b4_2" placeholder="소득○○액" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B4')">정답 확인</button>
+    <span class="rbadge" id="resB4"></span>
+  </div>
+  <div class="expl" id="explB4">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제13조 제2항</div>
+    <div class="aline">① 비과세소득 &nbsp; ② 소득공제액</div>
+    <p><b>이월결손금은 15년간 이월 공제 가능</b>하지만, 비과세소득과 소득공제액은 당기 미사용분을 <b>이월할 수 없습니다</b>. "소멸"의 개념입니다. 최저한세로 미공제된 소득공제액도 마찬가지!</p>
+    <p class="trap">⚠ 오답 함정: "비과세소득도 이월 가능" / "소득공제액도 이월 가능"</p>
+  </div>
+</div>
+
+<!-- B5 -->
+<div class="qcard" id="qB5">
+  <div class="qhead">
+    <span class="qnum nb">5</span>
+    <div class="qtext">
+      <strong>법인세법 제15조 (익금의 정의)</strong><span class="tbadge thot">🔴익금 최빈출</span>
+      <div class="lq">
+        익금은 자본 또는 출자의 납입 및 이 법에서 규정하는 것은 <span class="bs">①</span>하고, 해당 법인의 <span class="bs">②</span>을 증가시키는 거래로 인하여 발생하는 <span class="bs">③</span> 또는 수입의 금액으로 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 처리방법</span><input class="binput" id="b5_1" placeholder="포함/제외?" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 재무개념</span><input class="binput" id="b5_2" placeholder="○○산" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">③ 수익구분</span><input class="binput" id="b5_3" placeholder="이익/이자?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B5')">정답 확인</button>
+    <span class="rbadge" id="resB5"></span>
+  </div>
+  <div class="expl" id="explB5">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제15조 제1항</div>
+    <div class="aline">① 제외 &nbsp; ② 순자산(純資産) &nbsp; ③ 이익</div>
+    <p>익금은 <b>"순자산 증가거래"</b>에서 발생합니다. 자본납입은 순자산을 증가시켜도 익금이 아닙니다(자본거래). 익금불산입 규정도 "이 법에서 규정하는 것은 제외"에 근거합니다.</p>
+  </div>
+</div>
+
+<!-- B6 -->
+<div class="qcard" id="qB6">
+  <div class="qhead">
+    <span class="qnum nb">6</span>
+    <div class="qtext">
+      <strong>법인세법 제15조 제2항 (간주익금 — 특수관계인으로부터 저가 매입)</strong><span class="tbadge thot">🔴익금 최빈출</span>
+      <div class="lq">
+        특수관계인인 <span class="bs">①</span>으로부터 유가증권을 제52조제2항에 따른 <span class="bs">②</span>보다 낮은 가액으로 매입하는 경우 시가와 그 매입가액의 <span class="bs">③</span>에 상당하는 금액은 익금으로 본다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 상대방</span><input class="binput" id="b6_1" placeholder="개인/법인?" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 기준가격</span><input class="binput" id="b6_2" placeholder="시가/장부가?" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">③ 차이</span><input class="binput" id="b6_3" placeholder="차액/합계?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B6')">정답 확인</button>
+    <span class="rbadge" id="resB6"></span>
+  </div>
+  <div class="expl" id="explB6">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제15조 제2항 제1호</div>
+    <div class="aline">① 개인 &nbsp; ② 시가 &nbsp; ③ 차액</div>
+    <p>특수관계 <b>개인</b>에 한정합니다(법인은 해당 없음). 시가보다 낮게 매입하면 그 차액만큼 이익이 있으므로 익금으로 의제합니다. 부당행위계산(제52조)과 연계하여 출제됩니다.</p>
+    <p class="trap">⚠ 오답 함정: "특수관계인인 법인으로부터" → 적용 안 됨</p>
+  </div>
+</div>
+
+<!-- B7 -->
+<div class="qcard" id="qB7">
+  <div class="qhead">
+    <span class="qnum nb">7</span>
+    <div class="qtext">
+      <strong>법인세법 제16조 (의제배당 — 주식소각·자본감소)</strong><span class="tbadge thot">🔴익금·합병 빈출</span>
+      <div class="lq">
+        주식의 소각, 자본의 감소 등으로 주주등인 내국법인이 취득하는 금전과 그 밖의 재산가액의 합계액이 해당 주식등을 취득하기 위하여 사용한 금액을 <span class="bs">①</span>하는 금액은 배당금을 <span class="bs">②</span>한 금액으로 본다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 비교결과</span><input class="binput" id="b7_1" placeholder="초과/미달?" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 의제방법</span><input class="binput" id="b7_2" placeholder="수령/지급?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B7')">정답 확인</button>
+    <span class="rbadge" id="resB7"></span>
+  </div>
+  <div class="expl" id="explB7">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제16조 제1항 제1호</div>
+    <div class="aline">① 초과 &nbsp; ② 배당받은(수령)</div>
+    <p>의제배당 = <b>회수금액 - 취득원가 &gt; 0</b>인 경우 그 초과액을 배당으로 봅니다. 취득원가 이하로 회수되면 의제배당 없습니다.</p>
+  </div>
+</div>
+
+<!-- B8 -->
+<div class="qcard" id="qB8">
+  <div class="qhead">
+    <span class="qnum nb">8</span>
+    <div class="qtext">
+      <strong>법인세법 제16조 (의제배당 — 잉여금의 자본전입)</strong><span class="tbadge thot">🔴합병·분할 빈출</span>
+      <div class="lq">
+        법인의 잉여금 전부 또는 일부를 자본이나 출자에 전입함으로써 주주등인 내국법인이 취득하는 주식등의 가액은 배당금으로 본다. 다만, 다음의 금액을 자본에 전입하는 경우는 제외한다.<br>
+        가. 「상법」 제459조제1항에 따른 <span class="bs">①</span>으로서 대통령령으로 정하는 것<br>
+        나. 「자산재평가법」에 따른 <span class="bs">②</span>(토지 재평가차액에 상당하는 금액은 제외)
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 예외항목 가</span><input class="binput" id="b8_1" placeholder="○○준비금" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 예외항목 나</span><input class="binput" id="b8_2" placeholder="재○○적립금" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B8')">정답 확인</button>
+    <span class="rbadge" id="resB8"></span>
+  </div>
+  <div class="expl" id="explB8">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제16조 제1항 제2호 가·나목</div>
+    <div class="aline">① 자본준비금 &nbsp; ② 재평가적립금</div>
+    <p>자본준비금·재평가적립금의 자본전입은 의제배당에서 <b>제외</b>됩니다 — 이미 과세된 소득이 아닌 순수 자본성 항목이기 때문입니다. 단, 토지 재평가차액 부분은 다시 제외(= 과세 대상).</p>
+    <p class="trap">⚠ 오답 함정: "이익잉여금의 자본전입도 의제배당 아니다" → 이익잉여금은 의제배당 해당!</p>
+  </div>
+</div>
+
+<!-- B9 -->
+<div class="qcard" id="qB9">
+  <div class="qhead">
+    <span class="qnum nb">9</span>
+    <div class="qtext">
+      <strong>법인세법 제17조 (익금불산입 — 주식발행액면초과액 예외)</strong>
+      <div class="lq">
+        액면금액 이상으로 주식을 발행하는 경우 그 초과액은 익금불산입이 원칙이다. 다만, <span class="bs">①</span>의 출자전환으로 주식등을 발행하는 경우에는 그 주식등의 시가를 <span class="bs">②</span>하여 발행된 금액은 <span class="bs">③</span>한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 전제 조건</span><input class="binput" id="b9_1" placeholder="○무의 출자전환" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 비교 기준</span><input class="binput" id="b9_2" placeholder="초과/미달?" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">③ 처리</span><input class="binput" id="b9_3" placeholder="포함/제외?" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B9')">정답 확인</button>
+    <span class="rbadge" id="resB9"></span>
+  </div>
+  <div class="expl" id="explB9">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제17조 제1항 제1호 단서</div>
+    <div class="aline">① 채무 &nbsp; ② 초과 &nbsp; ③ 제외(= 익금 산입)</div>
+    <p>채무의 출자전환 시 시가를 초과하여 발행된 주식 초과액은 <b>채무면제이익</b>에 해당하므로 익금불산입에서 제외되어 익금으로 과세됩니다.</p>
+    <p class="trap">⚠ 오답 함정: "채무의 출자전환으로 발행된 주식발행초과액도 모두 익금불산입"</p>
+  </div>
+</div>
+
+<!-- B10 -->
+<div class="qcard" id="qB10">
+  <div class="qhead">
+    <span class="qnum nb">10</span>
+    <div class="qtext">
+      <strong>법인세법 제18조 (평가이익 등 익금불산입 — 이월결손금 보전 충당)</strong>
+      <div class="lq">
+        무상으로 받은 자산의 가액과 채무의 면제 또는 소멸로 인한 부채의 감소액 중 대통령령으로 정하는 <span class="bs">①</span>을 보전하는 데에 충당한 금액은 익금에 산입하지 아니한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 충당 대상</span><input class="binput" id="b10_1" placeholder="○○결손금" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B10')">정답 확인</button>
+    <span class="rbadge" id="resB10"></span>
+  </div>
+  <div class="expl" id="explB10">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제18조 제6호</div>
+    <div class="aline">① 이월결손금</div>
+    <p>자산수증익·채무면제익은 원칙적으로 익금이나, <b>이월결손금 보전에 충당하는 금액</b>만 익금불산입 됩니다. 이 규정이 없으면 회생기업이 채무 감면을 받을 때마다 법인세를 내야 하는 불합리가 생깁니다.</p>
+  </div>
+</div>
+
+<!-- B11 -->
+<div class="qcard" id="qB11">
+  <div class="qhead">
+    <span class="qnum nb">11</span>
+    <div class="qtext">
+      <strong>법인세법 제18조의2 (내국법인 수입배당금 익금불산입률)</strong><span class="tbadge thot">🔴익금 최빈출</span>
+      <div class="lq">
+        출자비율에 따른 수입배당금 익금불산입률:
+      </div>
+      <table class="rtable" style="margin:.4rem 0">
+        <tr><th>피출자법인 출자비율</th><th>익금불산입률</th></tr>
+        <tr><td>50% 이상</td><td><span class="bs">①</span></td></tr>
+        <tr><td>20% 이상 50% 미만</td><td><span class="bs">②</span></td></tr>
+        <tr><td>20% 미만</td><td><span class="bs">③</span></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 50% 이상</span><input class="binput" id="b11_1" placeholder="○○%" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 20%이상~50%미만</span><input class="binput" id="b11_2" placeholder="○○%" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">③ 20% 미만</span><input class="binput" id="b11_3" placeholder="○○%" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B11')">정답 확인</button>
+    <span class="rbadge" id="resB11"></span>
+  </div>
+  <div class="expl" id="explB11">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제18조의2 제1항 제1호 (표)</div>
+    <div class="aline">① 100% &nbsp; ② 80% &nbsp; ③ 30%</div>
+    <p>수입배당금 익금불산입률은 <b>100 / 80 / 30%</b> 세 단계입니다. 출자비율이 높을수록(지배력이 클수록) 더 많이 공제됩니다. 이 숫자를 정확히 암기해야 합니다.</p>
+    <p class="trap">⚠ 오답 함정: "50%·30%·10%", "90%·70%·30%" 등 혼동 출제</p>
+  </div>
+</div>
+
+<!-- B12 -->
+<div class="qcard" id="qB12">
+  <div class="qhead">
+    <span class="qnum nb">12</span>
+    <div class="qtext">
+      <strong>법인세법 제18조의2 (수입배당금 익금불산입 적용 제외 — 배당기준일 요건)</strong><span class="tbadge tup">⬆트렌드 상승</span>
+      <div class="lq">
+        수입배당금 익금불산입은 배당기준일 전 <span class="bs">①</span> 이내에 취득한 주식등을 보유함으로써 발생하는 수입배당금액에 대해서는 적용하지 아니한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 기간</span><input class="binput" id="b12_1" placeholder="○개월" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B12')">정답 확인</button>
+    <span class="rbadge" id="resB12"></span>
+  </div>
+  <div class="expl" id="explB12">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제18조의2 제2항 제1호</div>
+    <div class="aline">① 3개월</div>
+    <p>배당기준일 직전 <b>3개월 이내 취득한 주식</b>에서 발생하는 수입배당금은 익금불산입 적용 제외입니다. 단기 매수 후 배당 직후 매도하는 배당거래 조세회피 방지 규정입니다.</p>
+    <p class="trap">⚠ 오답 함정: "6개월", "1개월"</p>
+  </div>
+</div>
+
+<!-- B13 -->
+<div class="qcard" id="qB13">
+  <div class="qhead">
+    <span class="qnum nb">13</span>
+    <div class="qtext">
+      <strong>법인세법 제18조의4 (외국자회사 수입배당금 익금불산입)</strong><span class="tbadge tup">⬆트렌드 상승</span>
+      <div class="lq">
+        외국자회사란 내국법인이 의결권 있는 발행주식총수의 <span class="bs">①</span>(해외자원개발사업 외국법인은 <span class="bs">②</span>) 이상을 출자하고 있는 외국법인으로서 대통령령 요건을 갖춘 법인이며, 해당 외국자회사 수입배당금액의 <span class="bs">③</span>에 해당하는 금액은 익금에 산입하지 아니한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbody">
+    <div class="binputs">
+      <div class="biwrap"><span class="bilabel">① 일반 기준</span><input class="binput" id="b13_1" placeholder="100분의 ○" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">② 자원개발 기준</span><input class="binput" id="b13_2" placeholder="100분의 ○" autocomplete="off"></div>
+      <div class="biwrap"><span class="bilabel">③ 익금불산입 비율</span><input class="binput" id="b13_3" placeholder="100분의 ○" autocomplete="off"></div>
+    </div>
+  </div>
+  <div class="qaction">
+    <button class="btnck" onclick="checkBlank('B13')">정답 확인</button>
+    <span class="rbadge" id="resB13"></span>
+  </div>
+  <div class="expl" id="explB13">
+    <div class="ehead">해설</div>
+    <div class="lref">법인세법 제18조의4 제1항</div>
+    <div class="aline">① 100분의 10(10%) &nbsp; ② 100분의 5(5%) &nbsp; ③ 100분의 95(95%)</div>
+    <p>외국자회사 요건: 일반 <b>10% 이상</b>, 해외자원개발 <b>5% 이상</b>. 수입배당금액의 <b>95%</b>를 익금불산입합니다(내국법인 수입배당금과 구조가 다름!). 나머지 5%는 관련 비용 등으로 간주하여 과세합니다.</p>
+    <p class="trap">⚠ 오답 함정: "전액(100%) 익금불산입", "출자비율 기준 20%·50%"(내국법인 기준과 혼동)</p>
+  </div>
+</div>
+
+<!-- ═══ PART 2: O/X ═══ -->
+<div class="sec-head" style="margin-top:3rem">
+  <span class="stag t-ox">Part 2</span>
+  <span class="stitle">법령 O / X 판단</span>
+  <span class="scnt" id="oxCnt">0 / 13</span>
+</div>
+<hr class="sec-hr">
+
+<!-- O1 -->
+<div class="qcard" id="qO1">
+  <div class="qhead">
+    <span class="qnum no">14</span>
+    <div class="qtext">
+      내국법인의 각 사업연도의 소득은 익금총액에서 손금총액을 뺀 금액이며, 손금이 익금을 초과하는 경우 그 초과액을 결손금이라 한다.<span class="tbadge thot">기출 기본</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O1','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O1','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O1')">정답 확인</button><span class="rbadge" id="resO1"></span></div>
+  <div class="expl" id="explO1">
+    <div class="ehead">해설</div><div class="lref">법인세법 제14조 제1항·제2항</div>
+    <div class="aline">정답: O (맞다)</div>
+    <p>각사업연도소득(제1항)과 결손금(제2항) 정의 모두 정확합니다.</p>
+  </div>
+</div>
+
+<!-- O2 -->
+<div class="qcard" id="qO2">
+  <div class="qhead">
+    <span class="qnum no">15</span>
+    <div class="qtext">
+      이월결손금은 발생한 사업연도 이후에도 계속 이월 공제 가능하며, 중소기업의 경우 각 사업연도 소득의 100%까지 공제 가능하다. 일반 내국법인도 마찬가지로 100% 한도 내에서 공제된다.<span class="tbadge thot">🔴이월결손금 함정</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O2','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O2','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O2')">정답 확인</button><span class="rbadge" id="resO2"></span></div>
+  <div class="expl" id="explO2">
+    <div class="ehead">해설</div><div class="lref">법인세법 제13조 제1항</div>
+    <div class="aline">정답: X (틀리다)</div>
+    <p>일반 내국법인의 이월결손금 공제 한도는 <b>80%</b>입니다. 중소기업과 회생기업 등은 100%지만, 일반법인은 80% 한도가 있습니다.</p>
+    <p class="trap">⚠ "일반 내국법인도 100% 한도" 부분이 오류</p>
+  </div>
+</div>
+
+<!-- O3 -->
+<div class="qcard" id="qO3">
+  <div class="qhead">
+    <span class="qnum no">16</span>
+    <div class="qtext">
+      이월결손금으로 공제받으려면 각 사업연도 개시일 전 15년 이내에 개시한 사업연도에서 발생하고, 법정 신고·결정·경정·수정신고한 과세표준에 포함된 결손금이어야 한다.<span class="tbadge thot">🔴이월결손금 빈출</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O3','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O3','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O3')">정답 확인</button><span class="rbadge" id="resO3"></span></div>
+  <div class="expl" id="explO3">
+    <div class="ehead">해설</div><div class="lref">법인세법 제13조 제1항 제1호 가·나목</div>
+    <div class="aline">정답: O (맞다)</div>
+    <p>15년 기간 요건과 신고·결정 포함 요건 모두 정확합니다.</p>
+  </div>
+</div>
+
+<!-- O4 -->
+<div class="qcard" id="qO4">
+  <div class="qhead">
+    <span class="qnum no">17</span>
+    <div class="qtext">
+      해당 사업연도에 공제되지 못한 비과세소득은 다음 사업연도 이후로 이월하여 공제할 수 있다.<span class="tbadge thot">기출 함정</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O4','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O4','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O4')">정답 확인</button><span class="rbadge" id="resO4"></span></div>
+  <div class="expl" id="explO4">
+    <div class="ehead">해설</div><div class="lref">법인세법 제13조 제2항</div>
+    <div class="aline">정답: X (틀리다)</div>
+    <p>비과세소득과 소득공제액은 당기 미사용 시 <b>이월 불가</b>합니다. 이월결손금(15년 이월 가능)과 혼동하면 안 됩니다.</p>
+  </div>
+</div>
+
+<!-- O5 -->
+<div class="qcard" id="qO5">
+  <div class="qhead">
+    <span class="qnum no">18</span>
+    <div class="qtext">
+      자본 또는 출자의 납입은 법인의 순자산을 증가시키더라도 익금에 해당하지 않는다.<span class="tbadge thot">🔴익금 빈출</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O5','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O5','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O5')">정답 확인</button><span class="rbadge" id="resO5"></span></div>
+  <div class="expl" id="explO5">
+    <div class="ehead">해설</div><div class="lref">법인세법 제15조 제1항</div>
+    <div class="aline">정답: O (맞다)</div>
+    <p>자본납입은 익금 정의에서 명시적으로 제외됩니다. 순자산이 증가해도 자본거래(자본납입·주식발행)에 의한 것은 익금이 아닙니다.</p>
+  </div>
+</div>
+
+<!-- O6 -->
+<div class="qcard" id="qO6">
+  <div class="qhead">
+    <span class="qnum no">19</span>
+    <div class="qtext">
+      특수관계인인 <b>법인</b>으로부터 유가증권을 시가보다 낮은 가액으로 매입하는 경우, 시가와 매입가액의 차액은 익금으로 본다.<span class="tbadge thot">🔴익금 함정</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O6','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O6','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O6')">정답 확인</button><span class="rbadge" id="resO6"></span></div>
+  <div class="expl" id="explO6">
+    <div class="ehead">해설</div><div class="lref">법인세법 제15조 제2항 제1호</div>
+    <div class="aline">정답: X (틀리다)</div>
+    <p>제15조 제2항 제1호는 특수관계인인 <b>"개인"</b>으로부터 저가 매입 시에만 적용됩니다. 특수관계인인 <b>법인</b>으로부터 저가 매입은 해당 조항이 아닌 부당행위계산(제52조) 등 다른 규정에 의합니다.</p>
+    <p class="trap">⚠ "법인으로부터" → 이 조항의 적용 대상이 아님</p>
+  </div>
+</div>
+
+<!-- O7 -->
+<div class="qcard" id="qO7">
+  <div class="qhead">
+    <span class="qnum no">20</span>
+    <div class="qtext">
+      법인이 이익잉여금을 자본에 전입하여 주주인 내국법인이 무상주를 취득하는 경우, 그 주식가액은 의제배당으로서 익금에 해당한다.<span class="tbadge thot">🔴합병·분할 빈출</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O7','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O7','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O7')">정답 확인</button><span class="rbadge" id="resO7"></span></div>
+  <div class="expl" id="explO7">
+    <div class="ehead">해설</div><div class="lref">법인세법 제16조 제1항 제2호</div>
+    <div class="aline">정답: O (맞다)</div>
+    <p>이익잉여금의 자본전입으로 취득하는 무상주 가액 → 의제배당입니다. 자본준비금·재평가적립금 전입만 제외되고, <b>이익잉여금 전입은 의제배당 과세됩니다.</b></p>
+  </div>
+</div>
+
+<!-- O8 -->
+<div class="qcard" id="qO8">
+  <div class="qhead">
+    <span class="qnum no">21</span>
+    <div class="qtext">
+      자본준비금의 자본전입으로 인한 무상주 취득액은 의제배당이 아니므로 해당 주주인 내국법인의 익금에 해당하지 않는다.<span class="tbadge twarn">⚠ 구분 필수</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O8','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O8','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O8')">정답 확인</button><span class="rbadge" id="resO8"></span></div>
+  <div class="expl" id="explO8">
+    <div class="ehead">해설</div><div class="lref">법인세법 제16조 제1항 제2호 가목 / 제18조 제8호</div>
+    <div class="aline">정답: O (맞다)</div>
+    <p>상법 §459①의 자본준비금(예: 주식발행초과금, 주식교환·이전차익)의 자본전입으로 받은 무상주는 의제배당 제외입니다. 또한 자본준비금 감액 배당도 제18조 제8호에 의해 익금불산입(주식 장부가액 한도)됩니다.</p>
+  </div>
+</div>
+
+<!-- O9 -->
+<div class="qcard" id="qO9">
+  <div class="qhead">
+    <span class="qnum no">22</span>
+    <div class="qtext">
+      자산의 평가이익은 원칙적으로 익금에 산입하지 않으나, 법인세법 제42조 제1항 각 호에 따른 평가로 인한 평가이익은 익금에 산입한다.<span class="tbadge tup">⬆출제 상승</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O9','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O9','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O9')">정답 확인</button><span class="rbadge" id="resO9"></span></div>
+  <div class="expl" id="explO9">
+    <div class="ehead">해설</div><div class="lref">법인세법 제18조 제1호</div>
+    <div class="aline">정답: O (맞다)</div>
+    <p>자산평가이익은 익금불산입이 원칙입니다. 단, <b>제42조 제1항</b>(파생상품 등의 법정 평가, 외화자산·부채 환산, 재고자산 평가특례 등)에 의한 평가이익은 예외적으로 익금에 산입합니다.</p>
+  </div>
+</div>
+
+<!-- O10 -->
+<div class="qcard" id="qO10">
+  <div class="qhead">
+    <span class="qnum no">23</span>
+    <div class="qtext">
+      내국법인이 출자비율 15%인 내국법인으로부터 받은 수입배당금에 대해서는 80%의 익금불산입률을 적용한다.<span class="tbadge thot">🔴익금불산입률 함정</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O10','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O10','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O10')">정답 확인</button><span class="rbadge" id="resO10"></span></div>
+  <div class="expl" id="explO10">
+    <div class="ehead">해설</div><div class="lref">법인세법 제18조의2 제1항 제1호 (표)</div>
+    <div class="aline">정답: X (틀리다)</div>
+    <p>출자비율 <b>15%는 "20% 미만"</b> 구간에 해당하므로 익금불산입률은 <b>30%</b>입니다. 80%는 20% 이상 ~ 50% 미만 구간 적용입니다.</p>
+    <p class="trap">⚠ 15%는 20% 미만 → 30% 구간임에 주의!</p>
+  </div>
+</div>
+
+<!-- O11 -->
+<div class="qcard" id="qO11">
+  <div class="qhead">
+    <span class="qnum no">24</span>
+    <div class="qtext">
+      고유목적사업준비금을 손금에 산입하는 비영리내국법인도 수입배당금 익금불산입(법인세법 제18조의2) 규정을 적용받는다.<span class="tbadge twarn">⚠ 적용 범위</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O11','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O11','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O11')">정답 확인</button><span class="rbadge" id="resO11"></span></div>
+  <div class="expl" id="explO11">
+    <div class="ehead">해설</div><div class="lref">법인세법 제18조의2 제1항 본문 괄호</div>
+    <div class="aline">정답: X (틀리다)</div>
+    <p>제18조의2는 "제29조에 따라 고유목적사업준비금을 손금에 산입하는 비영리내국법인은 <b>제외</b>"한다고 명시합니다. 고유목적사업준비금 손금 산입으로 이미 절세 혜택을 받으므로 이중 혜택을 방지합니다.</p>
+  </div>
+</div>
+
+<!-- O12 -->
+<div class="qcard" id="qO12">
+  <div class="qhead">
+    <span class="qnum no">25</span>
+    <div class="qtext">
+      외국자회사 수입배당금 익금불산입(제18조의4)에서 외국자회사 요건의 출자비율은 의결권 있는 발행주식의 10% 이상이며, 해외자원개발사업을 하는 외국법인은 5% 이상이다.<span class="tbadge tup">⬆출제 상승</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O12','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O12','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O12')">정답 확인</button><span class="rbadge" id="resO12"></span></div>
+  <div class="expl" id="explO12">
+    <div class="ehead">해설</div><div class="lref">법인세법 제18조의4 제1항</div>
+    <div class="aline">정답: O (맞다)</div>
+    <p>외국자회사 판단 기준: 일반 <b>10%</b>, 해외자원개발 <b>5%</b> — 조문 그대로 정확합니다.</p>
+  </div>
+</div>
+
+<!-- O13 -->
+<div class="qcard" id="qO13">
+  <div class="qhead">
+    <span class="qnum no">26</span>
+    <div class="qtext">
+      외국자회사 수입배당금액의 전액(100%)이 익금에 산입되지 않으므로, 관련 비용을 별도로 손금불산입할 필요가 없다.<span class="tbadge thot">🔴외국자회사 함정</span>
+    </div>
+  </div>
+  <div class="qbody"><div class="oxsel">
+    <button class="oxbtn" onclick="selectOX('O13','O')">O</button>
+    <button class="oxbtn" onclick="selectOX('O13','X')">X</button>
+  </div></div>
+  <div class="qaction"><button class="btnck" onclick="checkOX('O13')">정답 확인</button><span class="rbadge" id="resO13"></span></div>
+  <div class="expl" id="explO13">
+    <div class="ehead">해설</div><div class="lref">법인세법 제18조의4 제1항</div>
+    <div class="aline">정답: X (틀리다)</div>
+    <p>외국자회사 수입배당금은 <b>95%만</b> 익금불산입입니다(전액이 아님). 나머지 5%는 익금 산입됩니다. 내국법인 수입배당금(출자비율별 30~100%)과 구조가 다른 중요 포인트!</p>
+    <p class="trap">⚠ "전액 익금불산입" → 95%만 익금불산입이 정확한 표현</p>
+  </div>
+</div>
+
+<!-- 전체 액션 -->
+<div class="global-action">
+  <button class="btn-allck" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="btn-reveal" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+
+<!-- Summary -->
+<div class="summary" id="summaryPanel">
+  <h2>채점 결과</h2>
+  <div class="grade" id="gradeText">–</div>
+  <div class="sstats">
+    <div class="sstat"><span class="sn" id="stCorrect">–</span><span class="sd">정답</span></div>
+    <div class="sstat"><span class="sn" id="stWrong">–</span><span class="sd">오답</span></div>
+    <div class="sstat"><span class="sn">26</span><span class="sd">전체</span></div>
+  </div>
+  <button class="btn-reset" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.7rem;color:var(--text3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제13~18조의4 (법제처 현행법령, 시행일 2026.01.02) · 세무사 1차 세법학개론 출제동향 분석 반영<br>
+  [2026-05-30 16:00] &nbsp;&nbsp; #법인세법 #과세표준 #익금 #이월결손금 #수입배당금익금불산입 #의제배당 #세무사1차
+</p>
+
+</div><!-- /container -->
+
+<script>
+// ── 정답 데이터 ──
+const BA = {
+  B1:  { inp:['b1_1','b1_2','b1_3'],  ans:[['익금'],['손금'],['뺀']] },
+  B2:  { inp:['b2_1','b2_2'],          ans:[['100분의 80','80','80%'],['100분의 100','100','100%']] },
+  B3:  { inp:['b3_1','b3_2'],          ans:[['15년'],['신고']] },
+  B4:  { inp:['b4_1','b4_2'],          ans:[['비과세소득'],['소득공제액','소득공제']] },
+  B5:  { inp:['b5_1','b5_2','b5_3'],  ans:[['제외'],['순자산'],['이익']] },
+  B6:  { inp:['b6_1','b6_2','b6_3'],  ans:[['개인'],['시가'],['차액']] },
+  B7:  { inp:['b7_1','b7_2'],          ans:[['초과'],['배당받은','수령']] },
+  B8:  { inp:['b8_1','b8_2'],          ans:[['자본준비금'],['재평가적립금']] },
+  B9:  { inp:['b9_1','b9_2','b9_3'],  ans:[['채무'],['초과'],['제외','익금 산입','익금산입']] },
+  B10: { inp:['b10_1'],                ans:[['이월결손금']] },
+  B11: { inp:['b11_1','b11_2','b11_3'], ans:[['100%','100','100퍼센트'],['80%','80','80퍼센트'],['30%','30','30퍼센트']] },
+  B12: { inp:['b12_1'],                ans:[['3개월','3개월 이내']] },
+  B13: { inp:['b13_1','b13_2','b13_3'], ans:[['100분의 10','10%','10'],['100분의 5','5%','5'],['100분의 95','95%','95']] },
+};
+const OA = { O1:'O',O2:'X',O3:'O',O4:'X',O5:'O',O6:'X',O7:'O',O8:'O',O9:'O',O10:'X',O11:'X',O12:'O',O13:'X' };
+const oxSel={}, bCk={}, oCk={};
+let answered=0, correct=0;
+
+function norm(s){ return s.trim().replace(/\s+/g,' '); }
+
+function selectOX(id,val){
+  if(oCk[id]) return;
+  oxSel[id]=val;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxbtn').forEach(b=>b.classList.remove('sel-o','sel-x'));
+  card.querySelectorAll('.oxbtn').forEach(b=>{ if(b.textContent.trim()===val) b.classList.add('sel-'+val.toLowerCase()); });
+}
+
+function checkBlank(id){
+  if(bCk[id]) return; bCk[id]=true;
+  const d=BA[id]; let allOk=true;
+  d.inp.forEach((inp,i)=>{
+    const el=document.getElementById(inp);
+    const v=norm(el.value);
+    const ok=d.ans[i].some(a=>norm(a)===v);
+    el.classList.add(ok?'correct':'wrong');
+    if(!ok) allOk=false;
+    el.disabled=true;
+  });
+  const badge=document.getElementById('res'+id);
+  badge.textContent=allOk?'✓ 정답':'✗ 오답';
+  badge.className='rbadge show '+(allOk?'ok':'ng');
+  document.getElementById('expl'+id).classList.add('show');
+  document.querySelector('#q'+id+' .btnck').disabled=true;
+  updateScore(allOk); updateProgress();
+}
+
+function checkOX(id){
+  if(oCk[id]) return;
+  const sel=oxSel[id], ans=OA[id];
+  if(!sel){ alert('O 또는 X를 선택해주세요.'); return; }
+  oCk[id]=true;
+  const ok=sel===ans;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxbtn').forEach(b=>{
+    const bv=b.textContent.trim();
+    b.classList.remove('sel-o','sel-x');
+    if(bv===ans) b.classList.add('cor-'+ans.toLowerCase());
+    else if(bv===sel&&!ok) b.classList.add('wr-'+sel.toLowerCase());
+  });
+  const badge=document.getElementById('res'+id);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+ans+')';
+  badge.className='rbadge show '+(ok?'ok':'ng');
+  document.getElementById('expl'+id).classList.add('show');
+  document.querySelector('#qO'+id.slice(1)+' .btnck').disabled=true;
+  updateScore(ok); updateProgress();
+}
+
+function updateScore(ok){
+  answered++;
+  if(ok) correct++;
+  document.getElementById('scoreVal').textContent=correct+'/'+answered;
+  document.getElementById('blankCnt').textContent=Object.keys(bCk).length+' / 13';
+  document.getElementById('oxCnt').textContent=Object.keys(oCk).length+' / 13';
+}
+function updateProgress(){
+  const done=Object.keys(bCk).length+Object.keys(oCk).length;
+  document.getElementById('progFill').style.width=(done/26*100)+'%';
+}
+
+function checkAll(){
+  Object.keys(BA).forEach(id=>{
+    if(!bCk[id]){
+      BA[id].inp.forEach(inp=>{ if(!document.getElementById(inp).value) document.getElementById(inp).value='?'; });
+      checkBlank(id);
+    }
+  });
+  Object.keys(OA).forEach(id=>{ if(!oCk[id]){ if(!oxSel[id]) oxSel[id]='O'; checkOX(id); } });
+  showSummary();
+}
+function revealAll(){ document.querySelectorAll('.expl').forEach(e=>e.classList.add('show')); }
+function showSummary(){
+  const pct=Math.round(correct/26*100);
+  document.getElementById('gradeText').textContent=pct+'%';
+  document.getElementById('stCorrect').textContent=correct;
+  document.getElementById('stWrong').textContent=26-correct;
+  document.getElementById('summaryPanel').classList.add('show');
+  document.getElementById('summaryPanel').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){ location.reload(); }
+</script>
+</body>
+</html>

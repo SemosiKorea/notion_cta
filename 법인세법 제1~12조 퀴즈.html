@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제1~12조 | 세무사 1차 암기퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F9F8F5;
+    --surface: #FFFFFF;
+    --surface2: #F4F3EF;
+    --border: #E2DDD5;
+    --accent: #1A3A5C;
+    --accent2: #C8873A;
+    --accent3: #2E6B4A;
+    --danger: #B03A2E;
+    --text: #1C1B19;
+    --text2: #4A4740;
+    --text3: #7A766F;
+    --correct: #2E6B4A;
+    --wrong: #B03A2E;
+    --badge-fill: #EAF0F7;
+    --badge-stroke: #1A3A5C;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 2rem 1.5rem 1.6rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(26,58,92,0.3);
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .header-badge {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    padding: 0.25rem 0.6rem;
+    color: #E8D9C0;
+  }
+  .header-title {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+    line-height: 1.25;
+  }
+  .header-sub {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.25rem;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+  }
+  .header-score-box {
+    margin-left: auto;
+    text-align: right;
+  }
+  .score-label { font-size: 0.7rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; }
+  .score-val {
+    font-family: var(--mono);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #E8D9C0;
+    line-height: 1;
+  }
+
+  /* ── Progress bar ── */
+  .progress-bar-wrap {
+    background: var(--accent);
+    padding: 0 1.5rem 0.8rem;
+  }
+  .progress-track {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 4px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent2);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* ── Main layout ── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  /* ── Section header ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.25rem;
+  }
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .tag-fill { background: var(--accent); color: #fff; }
+  .tag-blank { background: var(--accent2); color: #fff; }
+  .tag-ox { background: var(--accent3); color: #fff; }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .section-count {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text3);
+  }
+  .section-divider {
+    border: none;
+    border-top: 1.5px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Question card ── */
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+  .q-card:hover { box-shadow: var(--shadow-lg); }
+
+  .q-head {
+    padding: 1rem 1.25rem 0.8rem;
+    border-bottom: 1px solid var(--surface2);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+  .q-num {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    border-radius: 5px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .q-num.blank { background: #FDF0E3; color: var(--accent2); }
+  .q-num.ox { background: #EAF3EE; color: var(--accent3); }
+
+  .q-text {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.75;
+    flex: 1;
+  }
+  .q-text strong { color: var(--accent); font-weight: 700; }
+
+  /* 법조문 인용 */
+  .law-quote {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1rem;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    color: var(--text2);
+    border-radius: 0 5px 5px 0;
+    line-height: 1.8;
+  }
+  .blank-slot {
+    display: inline-block;
+    min-width: 4rem;
+    border-bottom: 2px solid var(--accent2);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    padding: 0 0.3rem;
+    text-align: center;
+    color: #ccc;
+    letter-spacing: 0.1em;
+  }
+
+  /* Answer input area */
+  .q-body { padding: 0.8rem 1.25rem 1rem; }
+
+  /* Blank fill inputs */
+  .blank-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+  .blank-input-wrap { display: flex; align-items: center; gap: 0.4rem; }
+  .blank-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text3);
+    background: var(--surface2);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .blank-input {
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    min-width: 100px;
+    background: #fff;
+    color: var(--text);
+    transition: border-color 0.15s;
+    outline: none;
+  }
+  .blank-input:focus { border-color: var(--accent); }
+  .blank-input.correct { border-color: var(--correct); background: #EAF3EE; color: var(--correct); }
+  .blank-input.wrong { border-color: var(--wrong); background: #FAF0EF; color: var(--wrong); }
+
+  /* OX selector */
+  .ox-selector {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+  .ox-btn {
+    border: 1.5px solid var(--border);
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.5rem 1.4rem;
+    font-family: var(--mono);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--text3);
+  }
+  .ox-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--badge-fill); }
+  .ox-btn.selected-o { border-color: var(--accent3); background: #EAF3EE; color: var(--accent3); }
+  .ox-btn.selected-x { border-color: var(--danger); background: #FAF0EF; color: var(--danger); }
+  .ox-btn.correct-o { border-color: var(--correct); background: #EAF3EE; color: var(--correct); }
+  .ox-btn.correct-x { border-color: var(--correct); background: #EAF3EE; color: var(--correct); }
+  .ox-btn.wrong-o, .ox-btn.wrong-x { border-color: var(--wrong); background: #FAF0EF; color: var(--wrong); opacity: 0.6; }
+
+  /* Check / Result */
+  .q-action {
+    padding: 0 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .btn-check {
+    padding: 0.45rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    letter-spacing: 0.03em;
+  }
+  .btn-check:hover { opacity: 0.85; }
+  .btn-check:disabled { opacity: 0.4; cursor: default; }
+
+  .result-badge {
+    display: none;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+  }
+  .result-badge.show { display: flex; }
+  .result-badge.ok { background: #EAF3EE; color: var(--correct); }
+  .result-badge.ng { background: #FAF0EF; color: var(--wrong); }
+
+  /* Explanation */
+  .explanation {
+    display: none;
+    background: #FAFAF8;
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    font-size: 0.82rem;
+    color: var(--text2);
+    line-height: 1.8;
+  }
+  .explanation.show { display: block; }
+  .explanation .expl-head {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    margin-bottom: 0.5rem;
+  }
+  .explanation .law-ref {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: var(--badge-fill);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+  }
+  .explanation .answer-line {
+    font-weight: 600;
+    color: var(--correct);
+    margin-bottom: 0.3rem;
+  }
+  .explanation .trap-line {
+    color: var(--wrong);
+    font-style: italic;
+  }
+
+  /* ── Summary panel ── */
+  .summary-panel {
+    display: none;
+    background: var(--surface);
+    border: 1.5px solid var(--accent);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+  .summary-panel.show { display: block; }
+  .summary-panel h2 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+  .summary-panel .grade {
+    font-family: var(--mono);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent2);
+    line-height: 1;
+    margin: 0.75rem 0;
+  }
+  .summary-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0 1.5rem;
+    flex-wrap: wrap;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text);
+    display: block;
+  }
+  .stat-desc { font-size: 0.72rem; color: var(--text3); }
+  .btn-reset {
+    padding: 0.6rem 2rem;
+    border: 2px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+  .btn-reset:hover { background: var(--accent); color: #fff; }
+
+  /* ── Global action ── */
+  .global-action {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+  .btn-all-check {
+    padding: 0.65rem 2rem;
+    background: var(--accent2);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: opacity 0.15s;
+  }
+  .btn-all-check:hover { opacity: 0.85; }
+  .btn-reveal-all {
+    padding: 0.65rem 2rem;
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.15s;
+  }
+  .btn-reveal-all:hover { background: var(--accent); color: #fff; }
+
+  /* ── Trend tag ── */
+  .trend-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+  .trend-hot { background: #FDECEA; color: #B03A2E; }
+  .trend-up { background: #E8F5E9; color: #2E6B4A; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .header-title { font-size: 1.2rem; }
+    .container { padding: 1.25rem 0.85rem 3rem; }
+    .q-head { padding: 0.85rem 1rem 0.7rem; }
+    .q-body { padding: 0.7rem 1rem 0.85rem; }
+    .q-action { padding: 0 1rem 0.85rem; }
+    .blank-inputs { flex-direction: column; }
+  }
+
+  /* Fade-in for cards */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .q-card { animation: fadeUp 0.35s ease both; }
+  .q-card:nth-child(1)  { animation-delay: 0.02s; }
+  .q-card:nth-child(2)  { animation-delay: 0.05s; }
+  .q-card:nth-child(3)  { animation-delay: 0.08s; }
+  .q-card:nth-child(4)  { animation-delay: 0.11s; }
+  .q-card:nth-child(5)  { animation-delay: 0.14s; }
+  .q-card:nth-child(6)  { animation-delay: 0.17s; }
+  .q-card:nth-child(7)  { animation-delay: 0.20s; }
+  .q-card:nth-child(8)  { animation-delay: 0.23s; }
+  .q-card:nth-child(9)  { animation-delay: 0.26s; }
+  .q-card:nth-child(10) { animation-delay: 0.29s; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="header-badge">세무사 1차 · 세법학개론</div>
+      <div class="header-title">법인세법 제1~12조<br><span style="font-weight:400;font-size:1rem;color:rgba(255,255,255,0.8)">총칙 · 납세의무 · 사업연도 · 납세지</span></div>
+      <div class="header-sub">법제처 현행법령 기준 (시행일 2026.01.02) · 과세표준·납세의무 고정출제 영역</div>
+    </div>
+    <div class="header-score-box">
+      <div class="score-label">SCORE</div>
+      <div class="score-val" id="scoreVal">–</div>
+    </div>
+  </div>
+</header>
+<div class="progress-bar-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+
+<div class="container">
+
+  <!-- ───── SECTION 1: 빈칸 채우기 ───── -->
+  <div class="section-head">
+    <span class="section-tag tag-blank">Part 1</span>
+    <span class="section-title">주요 법조문 빈칸 채우기</span>
+    <span class="section-count" id="blankCount">0 / 10</span>
+  </div>
+  <hr class="section-divider">
+
+  <!-- Q1 -->
+  <div class="q-card" id="qB1">
+    <div class="q-head">
+      <span class="q-num blank">1</span>
+      <div class="q-text">
+        <strong>법인세법 제2조 제1호 (내국법인의 정의)</strong>
+        <div class="law-quote">
+          "내국법인"이란 <span class="blank-slot">①</span>, <span class="blank-slot">②</span> 또는 <span class="blank-slot">③</span>가 국내에 있는 법인을 말한다.
+        </div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 빈칸</span>
+          <input class="blank-input" id="b1_1" placeholder="첫 번째 요소" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 빈칸</span>
+          <input class="blank-input" id="b1_2" placeholder="두 번째 요소" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">③ 빈칸</span>
+          <input class="blank-input" id="b1_3" placeholder="세 번째 요소" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B1')">정답 확인</button>
+      <span class="result-badge" id="resB1"></span>
+    </div>
+    <div class="explanation" id="explB1">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제2조 제1호</div>
+      <div class="answer-line">① 본점 &nbsp; ② 주사무소 &nbsp; ③ 사업의 실질적 관리장소</div>
+      <p>내국법인 판단은 <b>세 가지 요건 중 하나</b>만 충족하면 됩니다. 특히 <b>"사업의 실질적 관리장소"</b>는 형식적 등기 주소가 해외더라도 실질 경영지가 국내라면 내국법인으로 봄 — 기출 함정 포인트!</p>
+      <p class="trap-line">⚠ 오답 함정: "주된 사무소" "사업장 소재지" 등으로 바꾸어 출제</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card" id="qB2">
+    <div class="q-head">
+      <span class="q-num blank">2</span>
+      <div class="q-text">
+        <strong>법인세법 제3조 (납세의무자) · 면세 주체</strong>
+        <div class="law-quote">
+          내국법인 중 <span class="blank-slot">①</span>와 <span class="blank-slot">②</span>(지방자치단체조합을 포함한다)는 그 소득에 대한 법인세를 납부할 의무가 없다.
+        </div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 빈칸</span>
+          <input class="blank-input" id="b2_1" placeholder="납세의무 없는 주체 ①" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 빈칸</span>
+          <input class="blank-input" id="b2_2" placeholder="납세의무 없는 주체 ②" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B2')">정답 확인</button>
+      <span class="result-badge" id="resB2"></span>
+    </div>
+    <div class="explanation" id="explB2">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제3조 제2항</div>
+      <div class="answer-line">① 국가 &nbsp; ② 지방자치단체</div>
+      <p>국가와 지방자치단체는 납세의무가 <b>없습니다</b>. 단, <b>비영리내국법인(예: 공공기관)</b>은 수익사업에서 생기는 소득에 대해서는 납세의무가 <b>있습니다</b>.</p>
+      <p class="trap-line">⚠ 오답 함정: "공공기관도 포함하여 납세의무 없다"로 출제 시 X</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card" id="qB3">
+    <div class="q-head">
+      <span class="q-num blank">3</span>
+      <div class="q-text">
+        <strong>법인세법 제4조 (비영리내국법인의 과세소득 범위)</strong>
+        <div class="law-quote">
+          내국법인에 법인세가 과세되는 소득은 ① 각 사업연도의 소득, ② 청산소득, ③ 토지등 양도소득이나, <b>비영리내국법인</b>의 경우에는 <span class="blank-slot">①</span>와 <span class="blank-slot">②</span>의 소득으로 한정한다.
+        </div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 빈칸 (제X호)</span>
+          <input class="blank-input" id="b3_1" placeholder="제?호" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 빈칸 (제X호)</span>
+          <input class="blank-input" id="b3_2" placeholder="제?호" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B3')">정답 확인</button>
+      <span class="result-badge" id="resB3"></span>
+    </div>
+    <div class="explanation" id="explB3">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제4조 제1항</div>
+      <div class="answer-line">① 제1호(각 사업연도의 소득) &nbsp; ② 제3호(토지등 양도소득)</div>
+      <p>비영리내국법인은 <b>청산소득(제2호)에 대한 납세의무가 없습니다</b>. 청산소득은 영리법인만 해당하며, 비영리법인은 해산 시 잔여재산을 국가 등에 귀속시키므로 과세 실익이 없기 때문입니다.</p>
+      <p class="trap-line">⚠ 오답 함정: "비영리내국법인은 제1호만" 또는 "모든 소득 과세"로 출제</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card" id="qB4">
+    <div class="q-head">
+      <span class="q-num blank">4</span>
+      <div class="q-text">
+        <strong>법인세법 제6조 (사업연도) · 기간 제한</strong>
+        <div class="law-quote">
+          사업연도는 법령이나 법인의 정관 등에서 정하는 1회계기간으로 한다. 다만, 그 기간은 <span class="blank-slot">①</span>을 초과하지 못한다.
+        </div>
+        그리고 법령이나 정관 등에 사업연도 규정이 없는 내국법인이 신고를 하지 아니하는 경우에는 매년 <span class="blank-slot">②</span>부터 <span class="blank-slot">③</span>까지를 그 법인의 사업연도로 한다.
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 기간</span>
+          <input class="blank-input" id="b4_1" placeholder="○년" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 시작일</span>
+          <input class="blank-input" id="b4_2" placeholder="○월 ○일" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">③ 종료일</span>
+          <input class="blank-input" id="b4_3" placeholder="○월 ○일" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B4')">정답 확인</button>
+      <span class="result-badge" id="resB4"></span>
+    </div>
+    <div class="explanation" id="explB4">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제6조 제1항·제5항</div>
+      <div class="answer-line">① 1년 &nbsp; ② 1월 1일 &nbsp; ③ 12월 31일</div>
+      <p>사업연도는 반드시 <b>1년 이하</b>여야 합니다. 예를 들어 창업 당시 사업연도가 6개월, 7개월이어도 무방합니다. 신고 미이행 시 역년(1.1~12.31) 의제 적용됩니다.</p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-card" id="qB5">
+    <div class="q-head">
+      <span class="q-num blank">5</span>
+      <div class="q-text">
+        <strong>법인세법 제7조 (사업연도의 변경) · 신고 기한</strong>
+        <div class="law-quote">
+          사업연도를 변경하려는 법인은 그 법인의 <span class="blank-slot">①</span> 종료일부터 <span class="blank-slot">②</span> 이내에 납세지 관할 세무서장에게 신고하여야 한다.
+        </div>
+        기한 내 신고를 하지 아니한 경우에는 그 법인의 사업연도는 <span class="blank-slot">③</span>된 것으로 본다.
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 기준시점</span>
+          <input class="blank-input" id="b5_1" placeholder="직전/당해?" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 기한</span>
+          <input class="blank-input" id="b5_2" placeholder="○개월" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">③ 효과</span>
+          <input class="blank-input" id="b5_3" placeholder="변경O/변경X?" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B5')">정답 확인</button>
+      <span class="result-badge" id="resB5"></span>
+    </div>
+    <div class="explanation" id="explB5">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제7조 제1항·제2항</div>
+      <div class="answer-line">① 직전 사업연도 &nbsp; ② 3개월 이내 &nbsp; ③ 변경되지 아니한</div>
+      <p>사업연도 변경은 <b>직전 사업연도 종료일로부터 3개월</b>이 핵심 숫자입니다. 기한 미신고 → 변경 불인정이므로 결과를 명확히 암기해야 합니다.</p>
+      <p class="trap-line">⚠ 오답 함정: "당해 사업연도 종료일부터" 또는 "1개월/2개월"로 출제</p>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-card" id="qB6">
+    <div class="q-head">
+      <span class="q-num blank">6</span>
+      <div class="q-text">
+        <strong>법인세법 제8조 (사업연도의 의제) · 합병해산</strong>
+        <div class="law-quote">
+          내국법인이 사업연도 중에 합병 또는 분할에 따라 해산한 경우에는 그 사업연도 개시일부터 <span class="blank-slot">①</span> 또는 <span class="blank-slot">②</span>까지의 기간을 그 해산한 법인의 1사업연도로 본다.
+        </div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 합병 시</span>
+          <input class="blank-input" id="b6_1" placeholder="합병OO일" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 분할 시</span>
+          <input class="blank-input" id="b6_2" placeholder="분할OO일" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B6')">정답 확인</button>
+      <span class="result-badge" id="resB6"></span>
+    </div>
+    <div class="explanation" id="explB6">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제8조 제2항</div>
+      <div class="answer-line">① 합병등기일 &nbsp; ② 분할등기일</div>
+      <p>합병·분할 시 소멸법인(피합병·분할법인)의 사업연도는 <b>등기일</b>까지로 의제됩니다. "등기일"이 핵심 — "합병일"이나 "해산결의일"과 혼동 주의!</p>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-card" id="qB7">
+    <div class="q-head">
+      <span class="q-num blank">7</span>
+      <div class="q-text">
+        <strong>법인세법 제9조 (납세지) · 내국법인</strong>
+        <div class="law-quote">
+          내국법인의 법인세 납세지는 그 법인의 <span class="blank-slot">①</span>에 따른 <span class="blank-slot">②</span>이나 <span class="blank-slot">③</span>의 소재지로 한다. (국내에 본점 또는 주사무소가 없는 경우: 사업을 실질적으로 관리하는 장소의 소재지)
+        </div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 근거</span>
+          <input class="blank-input" id="b7_1" placeholder="등기부/법령/정관?" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 장소</span>
+          <input class="blank-input" id="b7_2" placeholder="본점/지점?" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">③ 장소</span>
+          <input class="blank-input" id="b7_3" placeholder="사업장/주사무소?" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B7')">정답 확인</button>
+      <span class="result-badge" id="resB7"></span>
+    </div>
+    <div class="explanation" id="explB7">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제9조 제1항</div>
+      <div class="answer-line">① 등기부 &nbsp; ② 본점 &nbsp; ③ 주사무소</div>
+      <p>내국법인 납세지는 <b>등기부상 본점·주사무소</b>가 원칙입니다. "사업장 소재지"나 "주된 사업장" 등으로 바꾸어 출제하는 함정에 주의!</p>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-card" id="qB8">
+    <div class="q-head">
+      <span class="q-num blank">8</span>
+      <div class="q-text">
+        <strong>법인세법 제10조 (납세지의 지정) · 지정권자</strong>
+        <div class="law-quote">
+          납세지가 그 법인의 납세지로 적당하지 아니하다고 인정되는 경우에는 <span class="blank-slot">①</span>이나 <span class="blank-slot">②</span>이 납세지를 지정할 수 있다.
+        </div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 지정권자</span>
+          <input class="blank-input" id="b8_1" placeholder="관할○○○○" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 지정권자</span>
+          <input class="blank-input" id="b8_2" placeholder="○○○장" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B8')">정답 확인</button>
+      <span class="result-badge" id="resB8"></span>
+    </div>
+    <div class="explanation" id="explB8">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제10조 제1항</div>
+      <div class="answer-line">① 관할지방국세청장 &nbsp; ② 국세청장</div>
+      <p>납세지 <b>지정</b>은 <b>지방국세청장 또는 국세청장</b>이 합니다. "세무서장"이 지정한다고 하면 틀립니다! 세무서장은 일반 과세행정을 담당하지만, 납세지 '지정'이라는 특수한 권한은 상급기관에 있습니다.</p>
+      <p class="trap-line">⚠ 오답 함정: "납세지 관할 세무서장이 지정할 수 있다" → X</p>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-card" id="qB9">
+    <div class="q-head">
+      <span class="q-num blank">9</span>
+      <div class="q-text">
+        <strong>법인세법 제11조 (납세지의 변경) · 신고 기한</strong>
+        <div class="law-quote">
+          법인은 납세지가 변경된 경우에는 그 변경된 날부터 <span class="blank-slot">①</span> 이내에 변경 후의 <span class="blank-slot">②</span>에게 이를 신고하여야 한다.
+        </div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 기한</span>
+          <input class="blank-input" id="b9_1" placeholder="○일/○개월?" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 신고처</span>
+          <input class="blank-input" id="b9_2" placeholder="신고 대상 기관" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B9')">정답 확인</button>
+      <span class="result-badge" id="resB9"></span>
+    </div>
+    <div class="explanation" id="explB9">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제11조 제1항</div>
+      <div class="answer-line">① 15일 이내 &nbsp; ② 변경 후의 납세지 관할 세무서장</div>
+      <p>납세지 변경 신고는 <b>15일</b>이 핵심 숫자입니다. "종전" 납세지 세무서장이 아니라 <b>"변경 후"</b> 납세지 세무서장에게 신고한다는 점도 중요합니다. 부가가치세법에 따른 신고 시 의제 적용!</p>
+      <p class="trap-line">⚠ 오답 함정: "변경 후 30일 이내", "종전 납세지 관할 세무서장에게"</p>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-card" id="qB10">
+    <div class="q-head">
+      <span class="q-num blank">10</span>
+      <div class="q-text">
+        <strong>법인세법 제2조 제10호의2 (연결지배 정의) · 지분율</strong>
+        <div class="law-quote">
+          "연결지배"란 내국법인이 다른 내국법인의 발행주식총수 또는 출자총액의 <span class="blank-slot">①</span> 이상을 보유하고 있는 경우를 말한다.
+        </div>
+        이 때 보유비율 계산 시 의결권 없는 주식은 <span class="blank-slot">②</span>하고, 「상법」에 따른 자기주식은 <span class="blank-slot">③</span>한다.
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="blank-inputs">
+        <div class="blank-input-wrap">
+          <span class="blank-label">① 지분율</span>
+          <input class="blank-input" id="b10_1" placeholder="100분의 ○" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">② 의결권 없는 주식</span>
+          <input class="blank-input" id="b10_2" placeholder="포함/제외?" autocomplete="off">
+        </div>
+        <div class="blank-input-wrap">
+          <span class="blank-label">③ 자기주식</span>
+          <input class="blank-input" id="b10_3" placeholder="포함/제외?" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkBlank('B10')">정답 확인</button>
+      <span class="result-badge" id="resB10"></span>
+    </div>
+    <div class="explanation" id="explB10">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제2조 제10호의2</div>
+      <div class="answer-line">① 100분의 90(90%) &nbsp; ② 포함 &nbsp; ③ 제외</div>
+      <p>연결납세 요건인 연결지배는 <b>90% 이상</b>이 기준입니다. 의결권 없는 주식은 포함하지만, 자기주식(상법·자본시장법)은 제외합니다. 우리사주조합 주식(5% 이내)은 보유로 간주하는 특례도 있습니다.</p>
+      <p class="trap-line">⚠ 오답 함정: "100분의 50 이상", "의결권 없는 주식 제외"</p>
+    </div>
+  </div>
+
+  <!-- ───── SECTION 2: O/X ───── -->
+  <div class="section-head" style="margin-top:3rem;">
+    <span class="section-tag tag-ox">Part 2</span>
+    <span class="section-title">법령 O / X 판단</span>
+    <span class="section-count" id="oxCount">0 / 10</span>
+  </div>
+  <hr class="section-divider">
+
+  <!-- OX1 -->
+  <div class="q-card" id="qO1">
+    <div class="q-head">
+      <span class="q-num ox">11</span>
+      <div class="q-text">
+        내국법인 중 국가와 지방자치단체(지방자치단체조합 포함)는 수익사업에서 생기는 소득에 대해서도 법인세 납세의무가 없다.
+        <span class="trend-tag trend-hot">기출 빈출</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O1','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O1','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O1')">정답 확인</button>
+      <span class="result-badge" id="resO1"></span>
+    </div>
+    <div class="explanation" id="explO1">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제3조 제2항</div>
+      <div class="answer-line">정답: O (맞다)</div>
+      <p>국가와 지방자치단체는 수익사업 여부에 관계없이 <b>법인세 납세의무 없음</b>. 비영리내국법인(공공기관 등)과 혼동 주의 — 비영리내국법인은 수익사업에 대해 납세의무 있음.</p>
+    </div>
+  </div>
+
+  <!-- OX2 -->
+  <div class="q-card" id="qO2">
+    <div class="q-head">
+      <span class="q-num ox">12</span>
+      <div class="q-text">
+        비영리내국법인은 각 사업연도의 소득, 청산소득, 토지등 양도소득 모두에 대해 법인세 납세의무를 진다.
+        <span class="trend-tag trend-hot">기출 빈출</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O2','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O2','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O2')">정답 확인</button>
+      <span class="result-badge" id="resO2"></span>
+    </div>
+    <div class="explanation" id="explO2">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제4조 제1항</div>
+      <div class="answer-line">정답: X (틀리다)</div>
+      <p>비영리내국법인은 <b>청산소득</b>에 대한 납세의무가 없습니다. 각 사업연도의 소득(제1호)과 토지등 양도소득(제3호)만 해당합니다. 청산소득은 영리내국법인에만 과세됩니다.</p>
+    </div>
+  </div>
+
+  <!-- OX3 -->
+  <div class="q-card" id="qO3">
+    <div class="q-head">
+      <span class="q-num ox">13</span>
+      <div class="q-text">
+        사업의 실질적 관리장소가 국내에 있으나 본점과 주사무소가 외국에 등기된 법인은 외국법인으로 분류된다.
+        <span class="trend-tag trend-up">트렌드 상승</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O3','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O3','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O3')">정답 확인</button>
+      <span class="result-badge" id="resO3"></span>
+    </div>
+    <div class="explanation" id="explO3">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제2조 제1호·제3호</div>
+      <div class="answer-line">정답: X (틀리다)</div>
+      <p>내국법인의 정의는 "본점·주사무소 <b>또는</b> 사업의 실질적 관리장소"가 국내에 있으면 됩니다. 외국법인은 "사업의 실질적 관리장소가 국내에 있지 아니하는 경우"에만 해당합니다. 따라서 실질적 관리장소가 국내라면 <b>내국법인</b>입니다.</p>
+    </div>
+  </div>
+
+  <!-- OX4 -->
+  <div class="q-card" id="qO4">
+    <div class="q-head">
+      <span class="q-num ox">14</span>
+      <div class="q-text">
+        법인의 사업연도는 1년을 초과할 수 없으며, 법령이나 정관에 규정이 없는 내국법인이 사업연도를 신고하지 않은 경우 매년 1월 1일부터 12월 31일까지가 사업연도가 된다.
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O4','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O4','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O4')">정답 확인</button>
+      <span class="result-badge" id="resO4"></span>
+    </div>
+    <div class="explanation" id="explO4">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제6조 제1항·제5항</div>
+      <div class="answer-line">정답: O (맞다)</div>
+      <p>두 규정 모두 정확합니다. 사업연도 ≤ 1년, 무신고 시 역년(1.1~12.31) 의제 — 둘 다 암기!</p>
+    </div>
+  </div>
+
+  <!-- OX5 -->
+  <div class="q-card" id="qO5">
+    <div class="q-head">
+      <span class="q-num ox">15</span>
+      <div class="q-text">
+        사업연도를 변경하려는 법인은 당해 사업연도 종료일부터 3개월 이내에 납세지 관할 세무서장에게 신고하여야 한다.
+        <span class="trend-tag trend-hot">기출 함정</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O5','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O5','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O5')">정답 확인</button>
+      <span class="result-badge" id="resO5"></span>
+    </div>
+    <div class="explanation" id="explO5">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제7조 제1항</div>
+      <div class="answer-line">정답: X (틀리다)</div>
+      <p>"당해 사업연도"가 아닌 <b>"직전 사업연도"</b> 종료일부터 3개월입니다. 당해와 직전의 구분이 핵심 함정입니다. 3개월 기한 자체는 맞습니다.</p>
+      <p class="trap-line">⚠ "당해 사업연도" → "직전 사업연도"로 수정해야 옳습니다.</p>
+    </div>
+  </div>
+
+  <!-- OX6 -->
+  <div class="q-card" id="qO6">
+    <div class="q-head">
+      <span class="q-num ox">16</span>
+      <div class="q-text">
+        내국법인이 합병으로 해산한 경우, 그 사업연도 개시일부터 합병등기일까지와 합병등기일 다음날부터 사업연도 종료일까지의 두 기간이 각각 1사업연도가 된다.
+        <span class="trend-tag trend-up">합병·분할 상승</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O6','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O6','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O6')">정답 확인</button>
+      <span class="result-badge" id="resO6"></span>
+    </div>
+    <div class="explanation" id="explO6">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제8조 제1항·제2항</div>
+      <div class="answer-line">정답: X (틀리다)</div>
+      <p>합병으로 인한 해산은 <b>단 하나</b>의 의제 사업연도만 발생합니다 — "사업연도 개시일부터 합병등기일까지"만 1사업연도입니다. 두 기간으로 나뉘는 것은 <b>일반 해산</b>(제8조 제1항)의 경우입니다.</p>
+    </div>
+  </div>
+
+  <!-- OX7 -->
+  <div class="q-card" id="qO7">
+    <div class="q-head">
+      <span class="q-num ox">17</span>
+      <div class="q-text">
+        납세지 지정권은 관할지방국세청장이나 국세청장에게 있으며, 지정한 경우 해당 법인에 이를 알려야 한다.
+        <span class="trend-tag trend-hot">기출 빈출</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O7','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O7','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O7')">정답 확인</button>
+      <span class="result-badge" id="resO7"></span>
+    </div>
+    <div class="explanation" id="explO7">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제10조 제1항·제2항</div>
+      <div class="answer-line">정답: O (맞다)</div>
+      <p>납세지 지정 권한은 <b>지방국세청장 또는 국세청장</b>이며, 지정 시 법인에 통지의무도 있습니다. 세무서장은 납세지 지정 권한이 없습니다.</p>
+    </div>
+  </div>
+
+  <!-- OX8 -->
+  <div class="q-card" id="qO8">
+    <div class="q-head">
+      <span class="q-num ox">18</span>
+      <div class="q-text">
+        법인의 납세지가 변경된 경우, 변경된 날부터 15일 이내에 <b>종전</b> 납세지 관할 세무서장에게 신고하여야 한다.
+        <span class="trend-tag trend-hot">기출 함정</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O8','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O8','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O8')">정답 확인</button>
+      <span class="result-badge" id="resO8"></span>
+    </div>
+    <div class="explanation" id="explO8">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제11조 제1항</div>
+      <div class="answer-line">정답: X (틀리다)</div>
+      <p>"종전" 납세지가 아니라 <b>"변경 후"</b> 납세지 관할 세무서장에게 신고합니다. 15일 기한 자체는 맞습니다. "종전 vs 변경 후"는 매우 자주 출제되는 함정입니다.</p>
+      <p class="trap-line">⚠ "종전 납세지 관할" → "변경 후 납세지 관할"로 수정해야 옳습니다.</p>
+    </div>
+  </div>
+
+  <!-- OX9 -->
+  <div class="q-card" id="qO9">
+    <div class="q-head">
+      <span class="q-num ox">19</span>
+      <div class="q-text">
+        신탁재산에 귀속되는 소득에 대해서는 원칙적으로 수익자가 그 신탁재산을 가진 것으로 보고 법인세법을 적용한다.
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O9','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O9','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O9')">정답 확인</button>
+      <span class="result-badge" id="resO9"></span>
+    </div>
+    <div class="explanation" id="explO9">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제5조 제1항</div>
+      <div class="answer-line">정답: O (맞다)</div>
+      <p>신탁의 원칙: <b>수익자 과세</b>. 다만, 목적신탁·수익증권발행신탁·유한책임신탁 등은 수탁자(내국법인·거주자)가 납세의무를 지는 예외가 있으며, 위탁자가 실질 지배하는 경우엔 위탁자 과세입니다.</p>
+    </div>
+  </div>
+
+  <!-- OX10 -->
+  <div class="q-card" id="qO10">
+    <div class="q-head">
+      <span class="q-num ox">20</span>
+      <div class="q-text">
+        연결납세방식에서 연결지배는 발행주식총수 또는 출자총액의 100분의 90 이상을 보유한 경우이며, 보유비율 계산 시 의결권 없는 주식도 포함하고 자기주식도 포함한다.
+        <span class="trend-tag trend-up">연결납세 출제 증가</span>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="ox-selector">
+        <button class="ox-btn" onclick="selectOX('O10','O')">O</button>
+        <button class="ox-btn" onclick="selectOX('O10','X')">X</button>
+      </div>
+    </div>
+    <div class="q-action">
+      <button class="btn-check" onclick="checkOX('O10')">정답 확인</button>
+      <span class="result-badge" id="resO10"></span>
+    </div>
+    <div class="explanation" id="explO10">
+      <div class="expl-head">해설</div>
+      <div class="law-ref">법인세법 제2조 제10호의2</div>
+      <div class="answer-line">정답: X (틀리다)</div>
+      <p>90% 기준과 의결권 없는 주식 포함은 맞지만, <b>자기주식은 제외</b>합니다(상법·자본시장법에 따라 보유하는 자기주식). 자기주식을 '포함'한다는 서술이 오답 포인트!</p>
+      <p class="trap-line">⚠ "자기주식도 포함한다" → 제외한다로 수정해야 옳습니다.</p>
+    </div>
+  </div>
+
+  <!-- Global actions -->
+  <div class="global-action">
+    <button class="btn-all-check" onclick="checkAll()">📝 전체 채점하기</button>
+    <button class="btn-reveal-all" onclick="revealAll()">📖 전체 해설 보기</button>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-panel" id="summaryPanel">
+    <h2>채점 결과</h2>
+    <div class="grade" id="gradeText">–</div>
+    <div class="summary-stats">
+      <div class="stat-item"><span class="stat-num" id="statCorrect">–</span><span class="stat-desc">정답</span></div>
+      <div class="stat-item"><span class="stat-num" id="statWrong">–</span><span class="stat-desc">오답</span></div>
+      <div class="stat-item"><span class="stat-num" id="statTotal">20</span><span class="stat-desc">전체</span></div>
+    </div>
+    <button class="btn-reset" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+  </div>
+
+  <p style="margin-top:3rem;font-size:0.72rem;color:var(--text3);text-align:center;letter-spacing:0.05em;">
+    근거: 법인세법 제1~12조 (법제처 현행법령, 시행일 2026.01.02 기준) · 세무사 1차 세법학개론 출제동향 분석 반영<br>
+    [2026-05-30 07:00] &nbsp;&nbsp; #법인세법총칙 #납세의무자 #사업연도 #납세지 #세무사1차퀴즈
+  </p>
+
+</div><!-- /container -->
+
+<script>
+// ── State ──
+const blankAnswers = {
+  B1:  { inputs: ['b1_1','b1_2','b1_3'],   answers: [['본점'],['주사무소'],['사업의 실질적 관리장소','실질적 관리장소']] },
+  B2:  { inputs: ['b2_1','b2_2'],           answers: [['국가'],['지방자치단체']] },
+  B3:  { inputs: ['b3_1','b3_2'],           answers: [['제1호','1호','각 사업연도의 소득'],['제3호','3호','토지등 양도소득','토지 양도소득']] },
+  B4:  { inputs: ['b4_1','b4_2','b4_3'],   answers: [['1년'],['1월 1일','1.1'],['12월 31일','12.31']] },
+  B5:  { inputs: ['b5_1','b5_2','b5_3'],   answers: [['직전 사업연도','직전'],['3개월','3개월 이내'],['변경되지 아니한','변경되지 않은','변경 불인정']] },
+  B6:  { inputs: ['b6_1','b6_2'],           answers: [['합병등기일'],['분할등기일']] },
+  B7:  { inputs: ['b7_1','b7_2','b7_3'],   answers: [['등기부'],['본점'],['주사무소']] },
+  B8:  { inputs: ['b8_1','b8_2'],           answers: [['관할지방국세청장','지방국세청장'],['국세청장']] },
+  B9:  { inputs: ['b9_1','b9_2'],           answers: [['15일','15일 이내'],['변경 후의 납세지 관할 세무서장','변경 후 납세지 관할 세무서장','변경 후 세무서장']] },
+  B10: { inputs: ['b10_1','b10_2','b10_3'],answers: [['100분의 90','90%','90'],['포함'],['제외']] },
+};
+const oxAnswers = {
+  O1:'O', O2:'X', O3:'X', O4:'O', O5:'X',
+  O6:'X', O7:'O', O8:'X', O9:'O', O10:'X',
+};
+const oxSelected = {};
+const blankChecked = {};
+const oxChecked = {};
+let totalAnswered = 0;
+let totalCorrect  = 0;
+
+// ── OX select ──
+function selectOX(id, val) {
+  if (oxChecked[id]) return;
+  oxSelected[id] = val;
+  const card = document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.ox-btn').forEach(b => {
+    b.classList.remove('selected-o','selected-x');
+  });
+  card.querySelectorAll('.ox-btn').forEach(b => {
+    if (b.textContent.trim() === val) {
+      b.classList.add(val==='O' ? 'selected-o' : 'selected-x');
+    }
+  });
+}
+
+// ── Check blank ──
+function normalise(s){ return s.trim().replace(/\s+/g,' '); }
+function checkBlank(id) {
+  if (blankChecked[id]) return;
+  blankChecked[id] = true;
+  const def = blankAnswers[id];
+  let allCorrect = true;
+  def.inputs.forEach((inputId, i) => {
+    const el = document.getElementById(inputId);
+    const val = normalise(el.value);
+    const ok  = def.answers[i].some(a => normalise(a) === val);
+    el.classList.add(ok ? 'correct' : 'wrong');
+    if (!ok) allCorrect = false;
+    el.disabled = true;
+  });
+  const badge = document.getElementById('res'+id);
+  badge.textContent = allCorrect ? '✓ 정답' : '✗ 오답';
+  badge.className = 'result-badge show ' + (allCorrect ? 'ok' : 'ng');
+  document.getElementById('expl'+id).classList.add('show');
+  document.querySelector('#q'+id+' .btn-check').disabled = true;
+  updateScore(allCorrect);
+  updateProgress();
+}
+
+// ── Check OX ──
+function checkOX(id) {
+  if (oxChecked[id]) return;
+  oxChecked[id] = true;
+  const sel    = oxSelected[id];
+  const correct = oxAnswers[id];
+  if (!sel) { alert('O 또는 X를 선택해주세요.'); oxChecked[id]=false; return; }
+  const ok = sel === correct;
+  const card = document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.ox-btn').forEach(b => {
+    const bval = b.textContent.trim();
+    b.classList.remove('selected-o','selected-x');
+    if (bval === correct) b.classList.add('correct-'+correct.toLowerCase());
+    else if (bval === sel && !ok) b.classList.add('wrong-'+sel.toLowerCase());
+  });
+  const badge = document.getElementById('res'+id);
+  badge.textContent = ok ? '✓ 정답' : `✗ 오답 (정답: ${correct})`;
+  badge.className = 'result-badge show ' + (ok ? 'ok' : 'ng');
+  document.getElementById('expl'+id).classList.add('show');
+  document.querySelector('#qO'+id.slice(1)+' .btn-check').disabled = true;
+  updateScore(ok);
+  updateProgress();
+}
+
+// ── Score / Progress ──
+function updateScore(isCorrect) {
+  totalAnswered++;
+  if (isCorrect) totalCorrect++;
+  document.getElementById('scoreVal').textContent = totalCorrect + '/' + totalAnswered;
+  updateBlankCount();
+  updateOxCount();
+}
+function updateBlankCount(){
+  const done = Object.keys(blankChecked).length;
+  document.getElementById('blankCount').textContent = done + ' / 10';
+}
+function updateOxCount(){
+  const done = Object.keys(oxChecked).length;
+  document.getElementById('oxCount').textContent = done + ' / 10';
+}
+function updateProgress(){
+  const done = Object.keys(blankChecked).length + Object.keys(oxChecked).length;
+  document.getElementById('progressFill').style.width = (done/20*100) + '%';
+}
+
+// ── Check All ──
+function checkAll() {
+  // blanks
+  Object.keys(blankAnswers).forEach(id => {
+    if (!blankChecked[id]) {
+      blankAnswers[id].inputs.forEach(inp => {
+        if (!document.getElementById(inp).value) document.getElementById(inp).value = '?';
+      });
+      checkBlank(id);
+    }
+  });
+  // OX
+  Object.keys(oxAnswers).forEach(id => {
+    if (!oxChecked[id]) {
+      if (!oxSelected[id]) oxSelected[id] = 'O';
+      checkOX(id);
+    }
+  });
+  showSummary();
+}
+
+// ── Reveal All ──
+function revealAll() {
+  document.querySelectorAll('.explanation').forEach(e => e.classList.add('show'));
+}
+
+// ── Summary ──
+function showSummary() {
+  const correct = totalCorrect;
+  const total = 20;
+  const pct = Math.round(correct/total*100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('statCorrect').textContent = correct;
+  document.getElementById('statWrong').textContent = total-correct;
+  document.getElementById('summaryPanel').classList.add('show');
+  document.getElementById('summaryPanel').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// ── Reset ──
+function resetAll() {
+  location.reload();
+}
+</script>
+</body>
+</html>

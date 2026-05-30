@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국세기본법 §61~66조의2 | 심사청구·이의신청 절차 문제집</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F5;--sf:#FFF;--bd:#E5E0D8;--bds:#C3BBB0;
+  --t:#1A1714;--t2:#47423B;--tm:#797268;
+  --ac:#1C3D6E;--al:#EBF0F8;--am:#2D5499;
+  --re:#851919;--rl:#FDF1F1;
+  --gr:#184726;--gl:#F1F8F3;
+  --go:#785818;--gol:#FDF6E8;
+  --sh:0 1px 4px rgba(0,0,0,.07);--r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;padding-bottom:80px}
+.hd{background:var(--ac);color:#fff;padding:38px 40px 26px;border-bottom:4px solid #0C2244}
+.hd .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:3px 10px;border-radius:3px;margin-bottom:10px;font-family:'DM Mono',monospace}
+.hd h1{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:900;line-height:1.3;margin-bottom:7px}
+.hd p{font-size:13px;color:rgba(255,255,255,.75);font-weight:300}
+.hd-m{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap}
+.hd-m span{display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.8);font-family:'DM Mono',monospace}
+.dot{width:6px;height:6px;background:#6FC3FF;border-radius:50%;flex-shrink:0}
+.sb{background:#0C2244;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:9px 40px;font-size:13px;font-family:'DM Mono',monospace;flex-wrap:wrap;gap:8px}
+.si{display:flex;align-items:center;gap:8px}
+.sv{font-weight:700;font-size:15px}
+.sv.g{color:#6FE88A}.sv.r{color:#FF8A8A}.sv.y{color:#FFD97A}
+.rst{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 13px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'DM Mono',monospace;font-weight:700;transition:background .2s}
+.rst:hover{background:rgba(255,255,255,.25)}
+.nav{background:var(--sf);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;box-shadow:var(--sh)}
+.nav-i{max-width:880px;margin:0 auto;padding:0 24px;display:flex}
+.nb{padding:12px 20px;font-size:13px;font-weight:500;color:var(--tm);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap}
+.nb:hover{color:var(--ac)}.nb.active{color:var(--ac);border-bottom-color:var(--ac);font-weight:700}
+.w{max-width:880px;margin:0 auto;padding:0 24px}
+.sec{display:none;padding-top:26px}.sec.active{display:block}
+.sh2{margin-bottom:18px}
+.sh2 .ey{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);font-family:'DM Mono',monospace;margin-bottom:3px}
+.sh2 h2{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700}
+.sh2 p{margin-top:3px;font-size:13px;color:var(--tm)}
+.bgs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+.bg{display:flex;align-items:center;gap:5px;background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--t2)}
+.bg .n{font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.ib{background:var(--al);border:1px solid #C0D0E8;border-radius:var(--r);padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--am);line-height:1.7}
+.ib strong{color:var(--ac)}
+.qc{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh);transition:border-color .25s,border-width .1s}
+.qc.ac{border-color:#70C888;border-width:2px}.qc.aw{border-color:#E88080;border-width:2px}.qc.ao{border-color:#8AB0D8;border-width:2px}
+.qch{display:flex;align-items:flex-start;gap:10px;padding:12px 18px 10px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.qn{flex-shrink:0;width:24px;height:24px;background:var(--ac);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'DM Mono',monospace}
+.qt2{font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:3px;margin-top:2px;font-family:'DM Mono',monospace;flex-shrink:0}
+.bf{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.bx{background:var(--al);color:var(--ac);border:1px solid #B8CAE3}
+.qtl{font-size:12.5px;font-weight:600;color:var(--t2);flex:1;line-height:1.5}
+.qb{padding:13px 18px 15px}
+.qtxt{font-size:13.5px;color:var(--t);line-height:2.1;font-family:'Noto Serif KR',serif}
+.fg{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin:0 2px}
+.fl{font-size:11px;font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.fi{border:none;border-bottom:2.5px solid var(--ac);background:transparent;outline:none;font-size:13.5px;font-family:'Noto Sans KR',sans-serif;color:var(--t);font-weight:700;padding:2px 5px;min-width:80px;max-width:200px;transition:border-color .2s,background .2s;text-align:center}
+.fi::placeholder{color:#C0B8B0;font-weight:400;font-size:11px}
+.fi:focus{border-bottom-color:var(--am);background:var(--al);border-radius:4px 4px 0 0}
+.fi.ok{border-bottom-color:var(--gr);background:var(--gl);border-radius:4px 4px 0 0;color:var(--gr)}
+.fi.ng{border-bottom-color:var(--re);background:var(--rl);border-radius:4px 4px 0 0;color:var(--re)}
+.fb{display:none;font-size:11px;font-family:'DM Mono',monospace;margin-left:3px;font-weight:700;vertical-align:middle;white-space:nowrap}
+.fb.show{display:inline}.fb.ok{color:var(--gr)}.fb.ng{color:var(--re)}
+.rv{display:none;margin-top:9px;background:#F2F8F1;border:1px solid #AED4B5;border-radius:var(--r);padding:8px 12px;font-size:13px;color:var(--gr);line-height:1.8}
+.rv.show{display:block}
+.ref{display:inline-block;font-size:11px;font-family:'DM Mono',monospace;color:var(--tm);background:var(--bg);border:1px solid var(--bd);border-radius:3px;padding:2px 7px;margin-top:7px}
+.oxa{margin-top:11px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.oxb{padding:7px 28px;border-radius:22px;font-size:16px;font-weight:900;border:2px solid #BCB6B0;background:var(--bg);color:var(--tm);cursor:pointer;font-family:'DM Mono',monospace;transition:all .17s;user-select:none}
+.oxb:hover:not(:disabled){border-color:var(--ac);color:var(--ac);background:var(--al);transform:scale(1.07)}
+.oxb.ch{background:#CCEEDD;border-color:#358855;color:#184726;box-shadow:0 0 0 3px #96D8B0}
+.oxb.wp{background:#F5D3D3;border-color:#B02E2E;color:#851919}
+.oxb:disabled{cursor:default;transform:none}
+.oxr{display:none;font-size:13px;font-weight:700;padding:4px 11px;border-radius:11px;font-family:'DM Mono',monospace}
+.oxr.show{display:inline-block}
+.oxr.ok{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.oxr.ng{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.oxe{display:none;margin-top:9px;padding:10px 13px;border-radius:var(--r);font-size:13px;line-height:1.8;font-family:'Noto Sans KR',sans-serif}
+.oxe.show{display:block}
+.oxe.ok{background:var(--gl);border:1px solid #AEDAB8;color:#184726}
+.oxe.ng{background:var(--rl);border:1px solid #DFAEAE;color:#681212}
+.oxe .ca{font-weight:700;color:var(--t);font-size:13.5px}
+.div{height:1px;background:var(--bd);margin:26px 0}
+.ac2{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh)}
+.ach{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.an{flex-shrink:0;width:22px;height:22px;background:var(--t2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'DM Mono',monospace}
+.al2{font-size:13px;font-weight:600;color:var(--t2);flex:1}
+.vd{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'DM Mono',monospace}
+.vo{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.vx{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.va{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.ab{padding:12px 16px 14px}
+.ar{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.ak{font-size:12px;font-weight:700;color:var(--tm);font-family:'DM Mono',monospace;min-width:48px}
+.av{font-size:14px;font-weight:700;color:var(--ac);font-family:'Noto Serif KR',serif}
+.ad{font-size:13px;color:var(--t2);line-height:1.8;margin-top:8px;padding-top:8px;border-top:1px dashed var(--bd)}
+.ad strong{color:var(--t);font-weight:700}
+.lc{display:inline-block;background:var(--al);color:var(--am);font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;margin:2px;font-family:'DM Mono',monospace}
+.wp2{background:#FFF0F0;border-left:3px solid var(--re);padding:7px 11px;margin-top:7px;font-size:12.5px;color:var(--re);border-radius:0 4px 4px 0;line-height:1.7}
+.cp{background:var(--gl);border-left:3px solid var(--gr);padding:7px 11px;margin-top:5px;font-size:12.5px;color:var(--gr);border-radius:0 4px 4px 0;line-height:1.7}
+.sb2{background:#F7F5F1;border:1px solid var(--bds);border-radius:var(--r);padding:9px 13px;margin-top:7px;font-size:12px;color:var(--t2);line-height:1.9;font-family:'Noto Serif KR',serif}
+.sb2t{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--tm);font-family:'DM Mono',monospace;margin-bottom:4px;text-transform:uppercase}
+.foot{margin-top:40px;padding:16px;text-align:center;border-top:1px solid var(--bd);font-size:11px;color:var(--tm);line-height:1.8;font-family:'DM Mono',monospace}
+@media(max-width:600px){.hd{padding:22px 16px 18px}.hd h1{font-size:19px}.sb{padding:8px 16px}.w{padding:0 12px}}
+</style>
+</head>
+<body>
+
+<div class="hd"><div class="w">
+  <div class="tag">세무사(CTA) 시험 대비</div>
+  <h1>국세기본법 제61조 ~ 제66조의2<br>심사청구 절차 · 결정 · 이의신청 문제집</h1>
+  <p>법제처 공식 조문(시행 2026.01.02) 기반 · 빈칸 10문 + O/X 10문</p>
+  <div class="hd-m">
+    <span><span class="dot"></span>출제 범위: §61~§66의2</span>
+    <span><span class="dot"></span>법률 제20640호 (시행 2026.01.02)</span>
+    <span><span class="dot"></span>총 20문항</span>
+  </div>
+</div></div>
+
+<div class="sb">
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <div class="si">빈칸 맞춤 <span class="sv g" id="fc">0</span>/<span id="ft">0</span>문</div>
+    <div class="si">O/X 맞춤 <span class="sv y" id="oc">0</span>/<span id="ot">0</span>문</div>
+    <div class="si">오답 <span class="sv r" id="wc">0</span></div>
+  </div>
+  <button class="rst" onclick="resetAll()">↺ 전체 초기화</button>
+</div>
+
+<div class="nav"><div class="nav-i">
+  <button class="nb active" onclick="showSec('q',this)">📝 문제 편</button>
+  <button class="nb" onclick="showSec('a',this)">✅ 정답 및 해설</button>
+</div></div>
+
+<!-- ════ 문제 편 ════ -->
+<div id="sec-q" class="sec active"><div class="w">
+  <div class="sh2" style="padding-top:26px">
+    <div class="ey">Question Bank</div><h2>문제 편</h2>
+    <p>빈칸 → 입력 후 <strong>Enter ↵</strong> &nbsp;|&nbsp; O/X → 버튼 클릭</p>
+  </div>
+  <div class="bgs">
+    <div class="bg"><span class="n">10</span>빈칸 채우기</div>
+    <div class="bg"><span class="n">10</span>O/X 판단</div>
+    <div class="bg">총 <span class="n">20</span>문항</div>
+  </div>
+  <div class="ib">⚠️ <strong>출제 원칙:</strong> §61~§66의2 현행 조문 원문 기준. 청구기간(90일·14일), 청구 경로(세무서장→국세청장), 보정기간(20일), 결정 종류(각하·기각·취소경정·재조사), 결정기간(90일), 이의신청 결정기간(30일·60일), 국세심사위원회 구성이 핵심!</div>
+
+  <div class="sh2"><div class="ey">Part 01</div><h2>빈칸 채우기 (10문제)</h2><p>빈칸에 답을 입력하고 Enter를 누르세요.</p></div>
+
+  <!-- F1 -->
+  <div class="qc" id="fc-1"><div class="qch"><div class="qn">1</div><span class="qt2 bf">빈칸</span><span class="qtl">§61①·④ 심사청구 기간 · 원칙 및 불가피 사유</span></div>
+  <div class="qb"><div class="qtxt">심사청구는 해당 처분이 있음을 안 날(처분의 통지를 받은 때에는 그 받은 날)부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f1-1" data-ans="90일" data-q="1" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb1-1"></span></span> 이내에 제기하여야 한다. 천재지변 등으로 청구기간 내에 심사청구를 할 수 없을 때에는 그 사유가 소멸한 날부터 <span class="fg"><span class="fl">②</span><input class="fi" id="f1-2" data-ans="14일" data-q="1" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb1-2"></span></span> 이내에 심사청구를 할 수 있다.</div>
+  <div class="rv" id="rv-1"></div><div class="ref">§61①·④</div></div></div>
+
+  <!-- F2 -->
+  <div class="qc" id="fc-2"><div class="qch"><div class="qn">2</div><span class="qt2 bf">빈칸</span><span class="qtl">§61② 이의신청 후 심사청구 기간</span></div>
+  <div class="qb"><div class="qtxt">이의신청을 거친 후 심사청구를 하려면 이의신청에 대한 결정의 통지를 받은 날부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f2-1" data-ans="90일" data-q="2" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb2-1"></span></span> 이내에 제기하여야 한다. 다만, 이의신청 결정기간 내에 결정의 통지를 받지 못한 경우에는 그 결정기간이 지난 날부터 심사청구를 할 수 있다. 우편으로 제출한 심사청구서가 청구기간을 지나서 도달한 경우에는 그 기간의 <span class="fg"><span class="fl">②</span><input class="fi" id="f2-2" data-ans="만료일" data-q="2" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:70px"><span class="fb" id="fb2-2"></span></span>에 적법한 청구를 한 것으로 본다.</div>
+  <div class="rv" id="rv-2"></div><div class="ref">§61②·③</div></div></div>
+
+  <!-- F3 -->
+  <div class="qc" id="fc-3"><div class="qch"><div class="qn">3</div><span class="qt2 bf">빈칸</span><span class="qtl">§62①③ 심사청구 경로 · 세무서장 의견서 송부기한</span></div>
+  <div class="qb"><div class="qtxt">심사청구는 해당 처분을 하였거나 하였어야 할 <span class="fg"><span class="fl">①</span><input class="fi" id="f3-1" data-ans="세무서장" data-q="3" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb3-1"></span></span>을 거쳐 <span class="fg"><span class="fl">②</span><input class="fi" id="f3-2" data-ans="국세청장" data-q="3" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb3-2"></span></span>에게 하여야 한다. 청구서를 받은 세무서장은 받은 날부터 <span class="fg"><span class="fl">③</span><input class="fi" id="f3-3" data-ans="7일" data-q="3" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb3-3"></span></span> 이내에 의견서를 첨부하여 국세청장에게 송부하여야 한다.</div>
+  <div class="rv" id="rv-3"></div><div class="ref">§62①·③</div></div></div>
+
+  <!-- F4 -->
+  <div class="qc" id="fc-4"><div class="qch"><div class="qn">4</div><span class="qt2 bf">빈칸</span><span class="qtl">§63① 청구서 보정 · 기간 및 직권 보정</span></div>
+  <div class="qb"><div class="qtxt">국세청장은 심사청구의 내용이나 절차가 적합하지 않지만 보정할 수 있다고 인정되면 <span class="fg"><span class="fl">①</span><input class="fi" id="f4-1" data-ans="20일" data-q="4" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb4-1"></span></span> 이내의 기간을 정하여 보정을 요구할 수 있다. 다만, 보정할 사항이 <span class="fg"><span class="fl">②</span><input class="fi" id="f4-2" data-ans="경미한" data-q="4" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:70px"><span class="fb" id="fb4-2"></span></span> 경우에는 직권으로 보정할 수 있다.</div>
+  <div class="rv" id="rv-4"></div><div class="ref">§63①</div></div></div>
+
+  <!-- F5 -->
+  <div class="qc" id="fc-5"><div class="qch"><div class="qn">5</div><span class="qt2 bf">빈칸</span><span class="qtl">§63③ 보정기간의 불산입</span></div>
+  <div class="qb"><div class="qtxt">§63①의 보정기간은 §61에 규정된 <span class="fg"><span class="fl">①</span><input class="fi" id="f5-1" data-ans="심사청구기간" data-q="5" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:110px"><span class="fb" id="fb5-1"></span></span>에 산입하지 아니하며, §65④에 따라 §65②의 <span class="fg"><span class="fl">②</span><input class="fi" id="f5-2" data-ans="결정기간" data-q="5" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:90px"><span class="fb" id="fb5-2"></span></span>에도 산입하지 아니한다.</div>
+  <div class="rv" id="rv-5"></div><div class="ref">§63③, §65④</div></div></div>
+
+  <!-- F6 -->
+  <div class="qc" id="fc-6"><div class="qch"><div class="qn">6</div><span class="qt2 bf">빈칸</span><span class="qtl">§64① 결정 절차 · 국세심사위원회 의결</span></div>
+  <div class="qb"><div class="qtxt">국세청장은 심사청구를 받으면 <span class="fg"><span class="fl">①</span><input class="fi" id="f6-1" data-ans="국세심사위원회" data-q="6" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:120px"><span class="fb" id="fb6-1"></span></span>의 <span class="fg"><span class="fl">②</span><input class="fi" id="f6-2" data-ans="의결" data-q="6" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb6-2"></span></span>에 따라 결정을 하여야 한다. 국세심사위원회의 회의는 공개하지 않음이 원칙이나, 위원장이 필요하다고 인정할 때에는 <span class="fg"><span class="fl">③</span><input class="fi" id="f6-3" data-ans="공개" data-q="6" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb6-3"></span></span>할 수 있다.</div>
+  <div class="rv" id="rv-6"></div><div class="ref">§64①·③</div></div></div>
+
+  <!-- F7 -->
+  <div class="qc" id="fc-7"><div class="qch"><div class="qn">7</div><span class="qt2 bf">빈칸</span><span class="qtl">§65①·② 결정의 종류 · 결정기간</span></div>
+  <div class="qb"><div class="qtxt">심사청구에 대한 결정은 ① 청구기간이 지나는 등 부적법한 경우 → <span class="fg"><span class="fl">①</span><input class="fi" id="f7-1" data-ans="각하" data-q="7" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb7-1"></span></span>, ② 이유 없다고 인정될 때 → <span class="fg"><span class="fl">②</span><input class="fi" id="f7-2" data-ans="기각" data-q="7" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb7-2"></span></span>, ③ 이유 있다고 인정될 때 → <span class="fg"><span class="fl">③</span><input class="fi" id="f7-3" data-ans="취소·경정 또는 필요한 처분" data-q="7" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:160px"><span class="fb" id="fb7-3"></span></span>의 결정을 한다. 결정기간은 심사청구를 받은 날부터 <span class="fg"><span class="fl">④</span><input class="fi" id="f7-4" data-ans="90일" data-q="7" data-idx="4" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-4"></span></span> 이내이다.</div>
+  <div class="rv" id="rv-7"></div><div class="ref">§65①·②</div></div></div>
+
+  <!-- F8 -->
+  <div class="qc" id="fc-8"><div class="qch"><div class="qn">8</div><span class="qt2 bf">빈칸</span><span class="qtl">§65⑤ 재조사 결정 · 처분청 처리기간</span></div>
+  <div class="qb"><div class="qtxt">재조사 결정이 있는 경우 처분청은 재조사 결정일로부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f8-1" data-ans="60일" data-q="8" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb8-1"></span></span> 이내에 결정서 주문에 기재된 범위에 <span class="fg"><span class="fl">②</span><input class="fi" id="f8-2" data-ans="한정하여" data-q="8" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:80px"><span class="fb" id="fb8-2"></span></span> 조사하고 그 결과에 따라 취소·경정하거나 필요한 처분을 하여야 한다.</div>
+  <div class="rv" id="rv-8"></div><div class="ref">§65⑤</div></div></div>
+
+  <!-- F9 -->
+  <div class="qc" id="fc-9"><div class="qch"><div class="qn">9</div><span class="qt2 bf">빈칸</span><span class="qtl">§66① 이의신청 · 신청 대상 기관</span></div>
+  <div class="qb"><div class="qtxt">이의신청은 불복의 사유를 갖추어 해당 처분을 하였거나 하였어야 할 <span class="fg"><span class="fl">①</span><input class="fi" id="f9-1" data-ans="세무서장" data-q="9" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb9-1"></span></span>에게 하거나 세무서장을 거쳐 관할 <span class="fg"><span class="fl">②</span><input class="fi" id="f9-2" data-ans="지방국세청장" data-q="9" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:110px"><span class="fb" id="fb9-2"></span></span>에게 하여야 한다.</div>
+  <div class="rv" id="rv-9"></div><div class="ref">§66①</div></div></div>
+
+  <!-- F10 -->
+  <div class="qc" id="fc-10"><div class="qch"><div class="qn">10</div><span class="qt2 bf">빈칸</span><span class="qtl">§66의2① 국세심사위원회 설치 기관</span></div>
+  <div class="qb"><div class="qtxt">심사청구, 이의신청 및 과세전적부심사 청구사항을 심의하기 위하여 <span class="fg"><span class="fl">①</span><input class="fi" id="f10-1" data-ans="세무서" data-q="10" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb10-1"></span></span>, <span class="fg"><span class="fl">②</span><input class="fi" id="f10-2" data-ans="지방국세청" data-q="10" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:90px"><span class="fb" id="fb10-2"></span></span> 및 <span class="fg"><span class="fl">③</span><input class="fi" id="f10-3" data-ans="국세청" data-q="10" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb10-3"></span></span>에 각각 국세심사위원회를 둔다.</div>
+  <div class="rv" id="rv-10"></div><div class="ref">§66의2①</div></div></div>
+
+  <div class="div"></div>
+
+  <div class="sh2"><div class="ey">Part 02</div><h2>O/X 판단 문제 (10문제)</h2><p>옳으면 <strong>O</strong>, 틀리면 <strong>X</strong></p></div>
+
+  <!-- OX1 -->
+  <div class="qc" id="ox-1"><div class="qch"><div class="qn">1</div><span class="qt2 bx">O/X</span><span class="qtl">§61③ 우편 심사청구 · 청구기간 계산</span></div>
+  <div class="qb"><div class="qtxt">우편으로 제출한 심사청구서가 청구기간을 지나서 도달한 경우, 그 심사청구서가 실제 도달한 날을 기준으로 청구기간 내 청구인지 여부를 판단한다.</div>
+  <div class="oxa"><button class="oxb" id="ob1-o" onclick="po(1,'O',this)">O</button><button class="oxb" id="ob1-x" onclick="po(1,'X',this)">X</button><span class="oxr" id="or-1"></span></div>
+  <div class="oxe" id="oe-1"><span class="ca">✅ 정답: X</span><br>§61③에 따라 우편으로 제출한 심사청구서가 청구기간을 지나서 도달하더라도 <strong>그 기간의 만료일에 적법한 청구를 한 것으로 봅니다</strong>. 도달일이 아닌 <strong>만료일</strong> 기준으로 적법 청구로 처리됩니다.</div>
+  <div class="ref">§61③</div></div></div>
+
+  <!-- OX2 -->
+  <div class="qc" id="ox-2"><div class="qch"><div class="qn">2</div><span class="qt2 bx">O/X</span><span class="qtl">§62① 심사청구 제출 장소 · 타 세무서 제출</span></div>
+  <div class="qb"><div class="qtxt">심사청구서를 관할 세무서장이 아닌 다른 세무서장에게 제출한 경우, 청구기간 계산 시 그 청구서가 제출된 때를 심사청구 제기 시점으로 본다.</div>
+  <div class="oxa"><button class="oxb" id="ob2-o" onclick="po(2,'O',this)">O</button><button class="oxb" id="ob2-x" onclick="po(2,'X',this)">X</button><span class="oxr" id="or-2"></span></div>
+  <div class="oxe" id="oe-2"><span class="ca">✅ 정답: O</span><br>§62②에 따라 청구서가 관할 세무서장 외의 세무서장, 지방국세청장 또는 국세청장에게 제출된 경우에도 <strong>그때 심사청구를 한 것으로 봅니다</strong>. 납세자 편의를 위한 조항입니다.</div>
+  <div class="ref">§62②</div></div></div>
+
+  <!-- OX3 -->
+  <div class="qc" id="ox-3"><div class="qch"><div class="qn">3</div><span class="qt2 bx">O/X</span><span class="qtl">§63① 청구서 보정 요구 · 기간</span></div>
+  <div class="qb"><div class="qtxt">국세청장이 심사청구 청구서의 보정을 요구할 때, 보정 기간은 30일 이내로 정할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob3-o" onclick="po(3,'O',this)">O</button><button class="oxb" id="ob3-x" onclick="po(3,'X',this)">X</button><span class="oxr" id="or-3"></span></div>
+  <div class="oxe" id="oe-3"><span class="ca">✅ 정답: X</span><br>§63①에 따라 보정 기간은 <strong>20일 이내</strong>입니다. "30일"은 오답입니다.</div>
+  <div class="ref">§63①</div></div></div>
+
+  <!-- OX4 -->
+  <div class="qc" id="ox-4"><div class="qch"><div class="qn">4</div><span class="qt2 bx">O/X</span><span class="qtl">§64② 국세청장의 재심의 요청</span></div>
+  <div class="qb"><div class="qtxt">국세청장은 국세심사위원회의 의결이 법령에 명백히 위반된다고 판단하는 경우 두 차례까지 다시 심의할 것을 요청할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob4-o" onclick="po(4,'O',this)">O</button><button class="oxb" id="ob4-x" onclick="po(4,'X',this)">X</button><span class="oxr" id="or-4"></span></div>
+  <div class="oxe" id="oe-4"><span class="ca">✅ 정답: X</span><br>§64②에 따라 국세청장은 국세심사위원회로 하여금 <strong>한 차례에 한정하여</strong> 다시 심의할 것을 요청할 수 있습니다. "두 차례"는 오답입니다.</div>
+  <div class="ref">§64②</div></div></div>
+
+  <!-- OX5 -->
+  <div class="qc" id="ox-5"><div class="qch"><div class="qn">5</div><span class="qt2 bx">O/X</span><span class="qtl">§65①1호 각하 결정 · 심판청구 후 심사청구</span></div>
+  <div class="qb"><div class="qtxt">심판청구를 제기한 후 동일한 처분에 대해 심사청구를 같은 날 제기한 경우, 심사청구에 대해 각하 결정을 한다.</div>
+  <div class="oxa"><button class="oxb" id="ob5-o" onclick="po(5,'O',this)">O</button><button class="oxb" id="ob5-x" onclick="po(5,'X',this)">X</button><span class="oxr" id="or-5"></span></div>
+  <div class="oxe" id="oe-5"><span class="ca">✅ 정답: O</span><br>§65①1호 가목에 따라 심판청구를 제기한 후 심사청구를 제기한 경우(같은 날 제기한 경우 포함) 그 심사청구에 대해 <strong>각하 결정</strong>을 합니다. §55⑨의 중복청구 금지 규정과 연결됩니다.</div>
+  <div class="ref">§65①1호 가목</div></div></div>
+
+  <!-- OX6 -->
+  <div class="qc" id="ox-6"><div class="qch"><div class="qn">6</div><span class="qt2 bx">O/X</span><span class="qtl">§65②·④ 결정기간 · 보정기간 불산입</span></div>
+  <div class="qb"><div class="qtxt">심사청구의 결정기간(90일)을 계산할 때 청구서 보정기간은 결정기간에 산입한다.</div>
+  <div class="oxa"><button class="oxb" id="ob6-o" onclick="po(6,'O',this)">O</button><button class="oxb" id="ob6-x" onclick="po(6,'X',this)">X</button><span class="oxr" id="or-6"></span></div>
+  <div class="oxe" id="oe-6"><span class="ca">✅ 정답: X</span><br>§65④에 따라 §63①의 보정기간은 §65②의 결정기간(90일)에 <strong>산입하지 않습니다</strong>. 마찬가지로 §63③에 따라 심사청구기간 산입도 불가. 보정기간은 청구기간·결정기간 모두에서 제외됩니다.</div>
+  <div class="ref">§65④</div></div></div>
+
+  <!-- OX7 -->
+  <div class="qc" id="ox-7"><div class="qch"><div class="qn">7</div><span class="qt2 bx">O/X</span><span class="qtl">§65⑤ 재조사 결정 · 처분 범위 제한</span></div>
+  <div class="qb"><div class="qtxt">재조사 결정에 따라 처분청이 재조사할 때는 처분청이 필요하다고 판단하는 모든 범위에 대해 조사할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob7-o" onclick="po(7,'O',this)">O</button><button class="oxb" id="ob7-x" onclick="po(7,'X',this)">X</button><span class="oxr" id="or-7"></span></div>
+  <div class="oxe" id="oe-7"><span class="ca">✅ 정답: X</span><br>§65⑤에 따라 처분청의 재조사는 <strong>"결정서 주문에 기재된 범위에 한정"</strong>하여야 합니다. 처분청이 임의로 범위를 확장할 수 없습니다.</div>
+  <div class="ref">§65⑤</div></div></div>
+
+  <!-- OX8 -->
+  <div class="qc" id="ox-8"><div class="qch"><div class="qn">8</div><span class="qt2 bx">O/X</span><span class="qtl">§65의2① 결정의 경정 · 신청 방법</span></div>
+  <div class="qb"><div class="qtxt">심사청구에 대한 결정에 잘못된 기재나 계산착오가 있는 경우, 국세청장은 직권으로 또는 심사청구인의 신청에 의하여 이를 경정할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob8-o" onclick="po(8,'O',this)">O</button><button class="oxb" id="ob8-x" onclick="po(8,'X',this)">X</button><span class="oxr" id="or-8"></span></div>
+  <div class="oxe" id="oe-8"><span class="ca">✅ 정답: O</span><br>§65의2① 조문 원문과 일치합니다. 결정문의 명백한 잘못(기재착오·계산착오)에 대해 <strong>직권 경정 또는 신청에 의한 경정</strong> 모두 가능합니다.</div>
+  <div class="ref">§65의2①</div></div></div>
+
+  <!-- OX9 -->
+  <div class="qc" id="ox-9"><div class="qch"><div class="qn">9</div><span class="qt2 bx">O/X</span><span class="qtl">§66② 이의신청 · 세무서장의 이송 기한</span></div>
+  <div class="qb"><div class="qtxt">이의신청 대상 처분이 지방국세청장이 조사·결정하였어야 할 처분인 경우, 이의신청을 받은 세무서장은 받은 날부터 14일 이내에 해당 지방국세청장에게 송부하여야 한다.</div>
+  <div class="oxa"><button class="oxb" id="ob9-o" onclick="po(9,'O',this)">O</button><button class="oxb" id="ob9-x" onclick="po(9,'X',this)">X</button><span class="oxr" id="or-9"></span></div>
+  <div class="oxe" id="oe-9"><span class="ca">✅ 정답: X</span><br>§66②에 따라 세무서장은 이의신청을 받은 날부터 <strong>7일 이내</strong>에 의견서를 첨부하여 해당 지방국세청장에게 송부하고 그 사실을 이의신청인에게 통지하여야 합니다. "14일"은 오답입니다.</div>
+  <div class="ref">§66②</div></div></div>
+
+  <!-- OX10 -->
+  <div class="qc" id="ox-10"><div class="qch"><div class="qn">10</div><span class="qt2 bx">O/X</span><span class="qtl">§66의2②③ 국세심사위원회 비공무원 위원 · 형법 적용</span></div>
+  <div class="qb"><div class="qtxt">국세심사위원회의 위원 중 공무원이 아닌 위원은 「형법」 제127조 및 제129조부터 제132조까지의 규정을 적용할 때에는 공무원으로 본다.</div>
+  <div class="oxa"><button class="oxb" id="ob10-o" onclick="po(10,'O',this)">O</button><button class="oxb" id="ob10-x" onclick="po(10,'X',this)">X</button><span class="oxr" id="or-10"></span></div>
+  <div class="oxe" id="oe-10"><span class="ca">✅ 정답: O</span><br>§66의2③ 조문 원문과 일치합니다. 비공무원 위원도 공직자와 동일하게 직권남용·수뢰 등 형사 규정의 적용을 받아 공정한 심의를 보장합니다.</div>
+  <div class="ref">§66의2③</div></div></div>
+
+</div></div>
+
+<!-- ════ 정답 및 해설 편 ════ -->
+<div id="sec-a" class="sec"><div class="w">
+  <div class="sh2" style="padding-top:26px"><div class="ey">Answer &amp; Commentary</div><h2>정답 및 해설 편</h2><p>조문 원문 출처와 핵심 포인트를 확인하세요.</p></div>
+  <div class="ib">📌 <strong>기준 법령:</strong> 국세기본법 (법률 제20640호, 공포 2025.12.23 / 시행 2026.01.02) — 법제처 MCP API 조문 원문 직접 인용</div>
+
+  <div class="sh2"><div class="ey">Part 01 · 정답</div><h2>빈칸 채우기 정답</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§61①·④ 심사청구 기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">90일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">14일</span></div>
+    <div class="ad"><span class="lc">§61①·④</span>
+      <div class="sb2"><div class="sb2t">심사청구 기간 정리</div>
+        원칙: 처분을 안 날(통지받은 날)로부터 <strong>90일</strong><br>
+        이의신청 후: 결정 통지받은 날로부터 <strong>90일</strong><br>
+        천재지변 등 사유 소멸 시: 소멸한 날로부터 <strong>14일</strong>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§61②·③ 이의신청 후 심사청구 · 우편 제출</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">90일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">만료일</span></div>
+    <div class="ad"><span class="lc">§61②·③</span> 우편 청구서가 기간 경과 후 도달 → <strong>만료일</strong>에 청구한 것으로 봄. "도달일" 기준이라는 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§62①·③ 심사청구 경로 · 의견서 송부기한</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">세무서장</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">국세청장</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">7일</span></div>
+    <div class="ad"><span class="lc">§62①·③</span> 심사청구 경로: <strong>세무서장 경유 → 국세청장</strong>. 세무서장의 의견서 송부기한: <strong>7일</strong>. 이의신청 이송기한(§66②)도 동일하게 7일.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§63① 보정 요구 기간 · 직권 보정</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">20일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">경미한</span></div>
+    <div class="ad"><span class="lc">§63①</span> 보정 요구 기간 = <strong>20일</strong> 이내 (30일 아님!). <strong>경미한</strong> 사항은 직권 보정 가능.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§63③ · §65④ 보정기간 불산입</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">심사청구기간</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">결정기간</span></div>
+    <div class="ad"><span class="lc">§63③·§65④</span> 보정기간은 ① <strong>심사청구기간</strong> 불산입 + ② <strong>결정기간(90일)</strong> 불산입. 두 곳 모두 제외됨을 반드시 암기!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§64①·③ 심사위원회 의결 · 회의 공개</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">국세심사위원회</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">의결</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">공개</span></div>
+    <div class="ad"><span class="lc">§64①·③</span> 결정 = <strong>국세심사위원회 의결</strong>에 따름. 회의는 원칙 비공개, 위원장 필요 인정 시 예외적 <strong>공개</strong> 가능.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§65①·② 결정의 종류 4가지 · 결정기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">각하</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">기각</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">취소·경정 또는 필요한 처분</span></div>
+    <div class="ar"><span class="ak">④ 정답</span><span class="av">90일</span></div>
+    <div class="ad"><span class="lc">§65①·②</span>
+      <div class="sb2"><div class="sb2t">결정 종류 완전 정리</div>
+        부적법: <strong>각하</strong>(청구기간 경과, 보정 미이행 등)<br>
+        이유 없음: <strong>기각</strong><br>
+        이유 있음: <strong>취소·경정 / 필요한 처분</strong><br>
+        추가조사 필요: <strong>재조사 결정</strong>(취소경정 결정의 특수유형)<br>
+        결정기간: 청구받은 날로부터 <strong>90일</strong>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§65⑤ 재조사 결정 처분기간 · 범위 한정</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">60일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">한정하여</span></div>
+    <div class="ad"><span class="lc">§65⑤</span> 재조사 처분기간 = <strong>60일</strong>. 재조사 범위 = <strong>결정서 주문에 한정</strong>. "90일"이나 "전체 범위"로 바꾸는 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§66① 이의신청 기관</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">세무서장</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">지방국세청장</span></div>
+    <div class="ad"><span class="lc">§66①</span> 이의신청: <strong>세무서장</strong> 또는 세무서장을 거쳐 <strong>지방국세청장</strong>. 심사청구(세무서장→국세청장)와 경로 다름에 유의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§66의2① 국세심사위원회 설치 기관</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">세무서</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">지방국세청</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">국세청</span></div>
+    <div class="ad"><span class="lc">§66의2①</span> 국세심사위원회 3곳 설치: <strong>세무서 / 지방국세청 / 국세청</strong>. 세무서 위원회 비공무원 위원은 <strong>지방국세청장</strong>이 위촉(§66의2②1호).</div>
+  </div></div>
+
+  <div class="div"></div>
+  <div class="sh2"><div class="ey">Part 02 · 정답</div><h2>O/X 판단 정답 및 해설</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§61③ 우편 심사청구 기간</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "실제 도달한 날 기준"</div>
+    <div class="cp">✅ §61③: 기간 경과 후 도달해도 <strong>만료일</strong>에 청구한 것으로 봄.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§62② 타 세무서 제출 시 청구기간 계산</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§62②</span> 관할 외 세무서·지방국세청·국세청 제출도 제출 시점 기준으로 청구기간 계산. 납세자 편의 보호.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§63① 보정 기간 상한</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "30일 이내"</div>
+    <div class="cp">✅ §63①: <strong>20일 이내</strong>. "30일"은 오답 함정!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§64② 재심의 요청 횟수</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "두 차례까지"</div>
+    <div class="cp">✅ §64②: <strong>한 차례에 한정</strong>.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§65①1호가목 심판 후 심사청구 각하</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§65①1호 가목</span> 심판청구 후 심사청구 제기(같은 날 포함) → <strong>각하</strong>. 중복청구 금지(§55⑨) 위반.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§65④ 보정기간 결정기간 불산입</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "결정기간에 산입"</div>
+    <div class="cp">✅ §65④: 보정기간 결정기간(90일) <strong>불산입</strong>. 청구기간(§63③)도 마찬가지.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§65⑤ 재조사 범위 한정</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "처분청 임의 범위 조사 가능"</div>
+    <div class="cp">✅ §65⑤: <strong>결정서 주문 기재 범위에 한정</strong>하여 조사.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§65의2① 결정 경정 방법</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§65의2①</span> 조문 원문 일치. 기재착오·계산착오 등 명백한 잘못 → 직권 또는 신청에 의한 <strong>경정</strong> 가능.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§66② 세무서장 이송기한</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "14일 이내"</div>
+    <div class="cp">✅ §66②: <strong>7일 이내</strong>. 심사청구 의견서 송부기한(§62③)과 동일하게 7일.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§66의2③ 비공무원 위원 형법 적용</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§66의2③</span> 조문 원문 일치. 비공무원 위원도 형법(직권남용·뇌물 등) 적용 시 <strong>공무원으로 의제</strong>.</div>
+  </div></div>
+
+</div></div>
+
+<div class="foot">
+  2026-05-30 생성 · 국세기본법 §61~§66의2 기준<br>
+  법령 출처: 법제처 국세기본법 (법률 제20640호, 시행 2026.01.02) — MCP API 직접 조회<br>
+  #국세기본법 #심사청구 #이의신청 #결정 #국세심사위원회 #세무사시험
+</div>
+
+<script>
+const FS={},OS={};
+const FA={
+  '1-1':['90일'],'1-2':['14일'],
+  '2-1':['90일'],'2-2':['만료일'],
+  '3-1':['세무서장'],'3-2':['국세청장'],'3-3':['7일'],
+  '4-1':['20일'],'4-2':['경미한'],
+  '5-1':['심사청구기간'],'5-2':['결정기간'],
+  '6-1':['국세심사위원회'],'6-2':['의결'],'6-3':['공개'],
+  '7-1':['각하'],'7-2':['기각'],'7-3':['취소·경정 또는 필요한 처분','취소경정 또는 필요한 처분','취소·경정'],'7-4':['90일'],
+  '8-1':['60일'],'8-2':['한정하여'],
+  '9-1':['세무서장'],'9-2':['지방국세청장'],
+  '10-1':['세무서'],'10-2':['지방국세청'],'10-3':['국세청']
+};
+const FC={1:2,2:2,3:3,4:2,5:2,6:3,7:4,8:2,9:2,10:3};
+const OA={1:'X',2:'O',3:'X',4:'X',5:'O',6:'X',7:'X',8:'O',9:'X',10:'O'};
+
+function nm(s){return s.replace(/[\s「」·]/g,'').toLowerCase()}
+function cf(e,inp){
+  if(e.key!=='Enter')return;e.preventDefault();
+  const q=+inp.dataset.q,idx=+inp.dataset.idx,key=q+'-'+idx,val=inp.value.trim();
+  if(!val)return;
+  const ok=FA[key].some(a=>nm(val)===nm(a));
+  inp.classList.remove('ok','ng');inp.classList.add(ok?'ok':'ng');inp.disabled=true;
+  const fb=document.getElementById('fb'+q+'-'+idx);
+  fb.textContent=ok?'✓':'✗ '+FA[key][0];fb.className='fb show '+(ok?'ok':'ng');
+  if(!FS[q])FS[q]={total:FC[q],done:0,wrong:0};
+  if(!FS[q][idx]){FS[q][idx]=true;FS[q].done++;if(!ok)FS[q].wrong++;}
+  if(FS[q].done===FS[q].total){
+    document.getElementById('fc-'+q).classList.add(FS[q].wrong===0?'ac':'aw');
+    const rv=document.getElementById('rv-'+q);
+    const ks=Object.keys(FA).filter(k=>k.startsWith(q+'-'));
+    rv.innerHTML='✅ 정답: '+ks.map(k=>{const i=+k.split('-')[1];return '<strong>'+['①','②','③','④'][i-1]+' '+FA[k][0]+'</strong>';}).join(' | ');
+    rv.classList.add('show');
+  }upd();
+}
+function po(n,picked){
+  if(OS[n])return;
+  const correct=OA[n],ok=(picked===correct);OS[n]={ok};
+  const bo=document.getElementById('ob'+n+'-o'),bx=document.getElementById('ob'+n+'-x');
+  bo.disabled=true;bx.disabled=true;
+  if(picked==='O'){bo.classList.add(ok?'ch':'wp');if(!ok)bx.classList.add('ch');}
+  else{bx.classList.add(ok?'ch':'wp');if(!ok)bo.classList.add('ch');}
+  const r=document.getElementById('or-'+n);
+  r.textContent=ok?'🎉 정답!':'❌ 오답 (정답: '+correct+')';r.className='oxr show '+(ok?'ok':'ng');
+  document.getElementById('oe-'+n).className='oxe show '+(ok?'ok':'ng');
+  document.getElementById('ox-'+n).classList.add('ao');upd();
+}
+function upd(){
+  let fc=0,ft=0,oc=0,ot=0,wr=0;
+  for(const q in FS){ft++;if(FS[q].done===FS[q].total){if(FS[q].wrong===0)fc++;else wr++;}}
+  for(const n in OS){ot++;if(OS[n].ok)oc++;else wr++;}
+  document.getElementById('fc').textContent=fc;document.getElementById('ft').textContent=ft;
+  document.getElementById('oc').textContent=oc;document.getElementById('ot').textContent=ot;
+  document.getElementById('wc').textContent=wr;
+}
+function resetAll(){
+  document.querySelectorAll('.fi').forEach(i=>{i.value='';i.disabled=false;i.classList.remove('ok','ng');});
+  document.querySelectorAll('.fb').forEach(f=>{f.textContent='';f.className='fb';});
+  document.querySelectorAll('.rv').forEach(r=>r.classList.remove('show'));
+  document.querySelectorAll('.oxb').forEach(b=>{b.disabled=false;b.className='oxb';});
+  document.querySelectorAll('.oxr').forEach(r=>{r.textContent='';r.className='oxr';});
+  document.querySelectorAll('.oxe').forEach(e=>{e.className='oxe';});
+  document.querySelectorAll('.qc').forEach(c=>c.classList.remove('ac','aw','ao'));
+  for(const k in FS)delete FS[k];for(const k in OS)delete OS[k];upd();
+}
+function showSec(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국세기본법 §81의2~90 | 납세자권리·세무조사·과세전적부심사</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F5;--sf:#FFF;--bd:#E5E0D8;--bds:#C3BBB0;
+  --t:#1A1714;--t2:#47423B;--tm:#797268;
+  --ac:#1C3D6E;--al:#EBF0F8;--am:#2D5499;
+  --re:#851919;--rl:#FDF1F1;
+  --gr:#184726;--gl:#F1F8F3;
+  --go:#785818;--gol:#FDF6E8;
+  --sh:0 1px 4px rgba(0,0,0,.07);--r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;padding-bottom:80px}
+.hd{background:var(--ac);color:#fff;padding:38px 40px 26px;border-bottom:4px solid #0C2244}
+.hd .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:3px 10px;border-radius:3px;margin-bottom:10px;font-family:'DM Mono',monospace}
+.hd h1{font-family:'Noto Serif KR',serif;font-size:23px;font-weight:900;line-height:1.3;margin-bottom:7px}
+.hd p{font-size:13px;color:rgba(255,255,255,.75);font-weight:300}
+.hd-m{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap}
+.hd-m span{display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.8);font-family:'DM Mono',monospace}
+.dot{width:6px;height:6px;background:#6FC3FF;border-radius:50%;flex-shrink:0}
+.sb{background:#0C2244;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:9px 40px;font-size:13px;font-family:'DM Mono',monospace;flex-wrap:wrap;gap:8px}
+.si{display:flex;align-items:center;gap:8px}
+.sv{font-weight:700;font-size:15px}
+.sv.g{color:#6FE88A}.sv.r{color:#FF8A8A}.sv.y{color:#FFD97A}
+.rst{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 13px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'DM Mono',monospace;font-weight:700;transition:background .2s}
+.rst:hover{background:rgba(255,255,255,.25)}
+.nav{background:var(--sf);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;box-shadow:var(--sh)}
+.nav-i{max-width:880px;margin:0 auto;padding:0 24px;display:flex}
+.nb{padding:12px 20px;font-size:13px;font-weight:500;color:var(--tm);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap}
+.nb:hover{color:var(--ac)}.nb.active{color:var(--ac);border-bottom-color:var(--ac);font-weight:700}
+.w{max-width:880px;margin:0 auto;padding:0 24px}
+.sec{display:none;padding-top:26px}.sec.active{display:block}
+.sh2{margin-bottom:18px}
+.sh2 .ey{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);font-family:'DM Mono',monospace;margin-bottom:3px}
+.sh2 h2{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700}
+.sh2 p{margin-top:3px;font-size:13px;color:var(--tm)}
+.bgs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+.bg{display:flex;align-items:center;gap:5px;background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--t2)}
+.bg .n{font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.ib{background:var(--al);border:1px solid #C0D0E8;border-radius:var(--r);padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--am);line-height:1.7}
+.ib strong{color:var(--ac)}
+.qc{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh);transition:border-color .25s,border-width .1s}
+.qc.ac{border-color:#70C888;border-width:2px}.qc.aw{border-color:#E88080;border-width:2px}.qc.ao{border-color:#8AB0D8;border-width:2px}
+.qch{display:flex;align-items:flex-start;gap:10px;padding:12px 18px 10px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.qn{flex-shrink:0;width:24px;height:24px;background:var(--ac);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'DM Mono',monospace}
+.qt2{font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:3px;margin-top:2px;font-family:'DM Mono',monospace;flex-shrink:0}
+.bf{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.bx{background:var(--al);color:var(--ac);border:1px solid #B8CAE3}
+.qtl{font-size:12.5px;font-weight:600;color:var(--t2);flex:1;line-height:1.5}
+.qb{padding:13px 18px 15px}
+.qtxt{font-size:13.5px;color:var(--t);line-height:2.1;font-family:'Noto Serif KR',serif}
+.fg{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin:0 2px}
+.fl{font-size:11px;font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.fi{border:none;border-bottom:2.5px solid var(--ac);background:transparent;outline:none;font-size:13.5px;font-family:'Noto Sans KR',sans-serif;color:var(--t);font-weight:700;padding:2px 5px;min-width:80px;max-width:200px;transition:border-color .2s,background .2s;text-align:center}
+.fi::placeholder{color:#C0B8B0;font-weight:400;font-size:11px}
+.fi:focus{border-bottom-color:var(--am);background:var(--al);border-radius:4px 4px 0 0}
+.fi.ok{border-bottom-color:var(--gr);background:var(--gl);border-radius:4px 4px 0 0;color:var(--gr)}
+.fi.ng{border-bottom-color:var(--re);background:var(--rl);border-radius:4px 4px 0 0;color:var(--re)}
+.fb{display:none;font-size:11px;font-family:'DM Mono',monospace;margin-left:3px;font-weight:700;vertical-align:middle;white-space:nowrap}
+.fb.show{display:inline}.fb.ok{color:var(--gr)}.fb.ng{color:var(--re)}
+.rv{display:none;margin-top:9px;background:#F2F8F1;border:1px solid #AED4B5;border-radius:var(--r);padding:8px 12px;font-size:13px;color:var(--gr);line-height:1.8}
+.rv.show{display:block}
+.ref{display:inline-block;font-size:11px;font-family:'DM Mono',monospace;color:var(--tm);background:var(--bg);border:1px solid var(--bd);border-radius:3px;padding:2px 7px;margin-top:7px}
+.oxa{margin-top:11px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.oxb{padding:7px 28px;border-radius:22px;font-size:16px;font-weight:900;border:2px solid #BCB6B0;background:var(--bg);color:var(--tm);cursor:pointer;font-family:'DM Mono',monospace;transition:all .17s;user-select:none}
+.oxb:hover:not(:disabled){border-color:var(--ac);color:var(--ac);background:var(--al);transform:scale(1.07)}
+.oxb.ch{background:#CCEEDD;border-color:#358855;color:#184726;box-shadow:0 0 0 3px #96D8B0}
+.oxb.wp{background:#F5D3D3;border-color:#B02E2E;color:#851919}
+.oxb:disabled{cursor:default;transform:none}
+.oxr{display:none;font-size:13px;font-weight:700;padding:4px 11px;border-radius:11px;font-family:'DM Mono',monospace}
+.oxr.show{display:inline-block}
+.oxr.ok{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.oxr.ng{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.oxe{display:none;margin-top:9px;padding:10px 13px;border-radius:var(--r);font-size:13px;line-height:1.8;font-family:'Noto Sans KR',sans-serif}
+.oxe.show{display:block}
+.oxe.ok{background:var(--gl);border:1px solid #AEDAB8;color:#184726}
+.oxe.ng{background:var(--rl);border:1px solid #DFAEAE;color:#681212}
+.oxe .ca{font-weight:700;color:var(--t);font-size:13.5px}
+.div{height:1px;background:var(--bd);margin:26px 0}
+.ac2{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh)}
+.ach{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.an{flex-shrink:0;width:22px;height:22px;background:var(--t2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'DM Mono',monospace}
+.al2{font-size:13px;font-weight:600;color:var(--t2);flex:1}
+.vd{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'DM Mono',monospace}
+.vo{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.vx{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.va{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.ab{padding:12px 16px 14px}
+.ar{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.ak{font-size:12px;font-weight:700;color:var(--tm);font-family:'DM Mono',monospace;min-width:48px}
+.av{font-size:14px;font-weight:700;color:var(--ac);font-family:'Noto Serif KR',serif}
+.ad{font-size:13px;color:var(--t2);line-height:1.8;margin-top:8px;padding-top:8px;border-top:1px dashed var(--bd)}
+.ad strong{color:var(--t);font-weight:700}
+.lc{display:inline-block;background:var(--al);color:var(--am);font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;margin:2px;font-family:'DM Mono',monospace}
+.wp2{background:#FFF0F0;border-left:3px solid var(--re);padding:7px 11px;margin-top:7px;font-size:12.5px;color:var(--re);border-radius:0 4px 4px 0;line-height:1.7}
+.cp{background:var(--gl);border-left:3px solid var(--gr);padding:7px 11px;margin-top:5px;font-size:12.5px;color:var(--gr);border-radius:0 4px 4px 0;line-height:1.7}
+.sb2{background:#F7F5F1;border:1px solid var(--bds);border-radius:var(--r);padding:9px 13px;margin-top:7px;font-size:12px;color:var(--t2);line-height:1.9;font-family:'Noto Serif KR',serif}
+.sb2t{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--tm);font-family:'DM Mono',monospace;margin-bottom:4px;text-transform:uppercase}
+.foot{margin-top:40px;padding:16px;text-align:center;border-top:1px solid var(--bd);font-size:11px;color:var(--tm);line-height:1.8;font-family:'DM Mono',monospace}
+@media(max-width:600px){.hd{padding:22px 16px 18px}.hd h1{font-size:19px}.sb{padding:8px 16px}.w{padding:0 12px}}
+</style>
+</head>
+<body>
+
+<div class="hd"><div class="w">
+  <div class="tag">세무사(CTA) 시험 대비</div>
+  <h1>국세기본법 제81조의2 ~ 제90조<br>납세자권리 · 세무조사 · 과세전적부심사</h1>
+  <p>법제처 공식 조문(시행 2026.01.02) 기반 · 빈칸 10문 + O/X 10문</p>
+  <div class="hd-m">
+    <span><span class="dot"></span>출제 범위: §81의2~§90</span>
+    <span><span class="dot"></span>법률 제20640호 (2026.01.02)</span>
+    <span><span class="dot"></span>총 20문항</span>
+  </div>
+</div></div>
+
+<div class="sb">
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <div class="si">빈칸 맞춤 <span class="sv g" id="fc">0</span>/<span id="ft">0</span>문</div>
+    <div class="si">O/X 맞춤 <span class="sv y" id="oc">0</span>/<span id="ot">0</span>문</div>
+    <div class="si">오답 <span class="sv r" id="wc">0</span></div>
+  </div>
+  <button class="rst" onclick="resetAll()">↺ 전체 초기화</button>
+</div>
+
+<div class="nav"><div class="nav-i">
+  <button class="nb active" onclick="showSec('q',this)">📝 문제 편</button>
+  <button class="nb" onclick="showSec('a',this)">✅ 정답 및 해설</button>
+</div></div>
+
+<!-- ════ 문제 편 ════ -->
+<div id="sec-q" class="sec active"><div class="w">
+  <div class="sh2" style="padding-top:26px">
+    <div class="ey">Question Bank</div><h2>문제 편</h2>
+    <p>빈칸 → 입력 후 <strong>Enter ↵</strong> &nbsp;|&nbsp; O/X → 버튼 클릭</p>
+  </div>
+  <div class="bgs">
+    <div class="bg"><span class="n">10</span>빈칸 채우기</div>
+    <div class="bg"><span class="n">10</span>O/X 판단</div>
+    <div class="bg">총 <span class="n">20</span>문항</div>
+  </div>
+  <div class="ib">⚠️ <strong>출제 원칙:</strong> 납세자권리헌장, 성실성 추정, 재조사 금지(5가지 예외), 사전통지(20일/7일), 조사기간(20일), 조사결과 통지(20일/40일), 통합조사 원칙, 부분조사 2회 제한, 과세전적부심사(30일/100만원) 등이 핵심!</div>
+
+  <div class="sh2"><div class="ey">Part 01</div><h2>빈칸 채우기 (10문제)</h2><p>빈칸에 답 입력 후 Enter</p></div>
+
+  <!-- F1 -->
+  <div class="qc" id="fc-1"><div class="qch"><div class="qn">1</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의2①③ 납세자권리헌장 · 교부 및 낭독 의무</span></div>
+  <div class="qb"><div class="qtxt">납세자권리헌장은 <span class="fg"><span class="fl">①</span><input class="fi" id="f1-1" data-ans="국세청장" data-q="1" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb1-1"></span></span>이 제정·고시하여야 한다. 세무공무원은 세무조사를 시작할 때 <span class="fg"><span class="fl">②</span><input class="fi" id="f1-2" data-ans="조사원증" data-q="1" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb1-2"></span></span>을 납세자에게 제시한 후 납세자권리헌장을 교부하고 그 요지를 직접 <span class="fg"><span class="fl">③</span><input class="fi" id="f1-3" data-ans="낭독" data-q="1" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb1-3"></span></span>해 주어야 한다.</div>
+  <div class="rv" id="rv-1"></div><div class="ref">§81의2①③</div></div></div>
+
+  <!-- F2 -->
+  <div class="qc" id="fc-2"><div class="qch"><div class="qn">2</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의4② 재조사 금지 · 허용 예외 사유 (최빈출)</span></div>
+  <div class="qb"><div class="qtxt">같은 세목·같은 과세기간에 대한 재조사가 허용되는 예외 사유: ① 조세탈루 혐의를 인정할 만한 <span class="fg"><span class="fl">①</span><input class="fi" id="f2-1" data-ans="명백한 자료" data-q="2" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb2-1"></span></span>가 있는 경우, ② 거래상대방에 대한 <span class="fg"><span class="fl">②</span><input class="fi" id="f2-2" data-ans="조사" data-q="2" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb2-2"></span></span>가 필요한 경우, ③ <span class="fg"><span class="fl">③</span><input class="fi" id="f2-3" data-ans="2개 이상" data-q="2" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:80px"><span class="fb" id="fb2-3"></span></span>의 과세기간과 관련하여 잘못이 있는 경우.</div>
+  <div class="rv" id="rv-2"></div><div class="ref">§81의4②1~3호</div></div></div>
+
+  <!-- F3 -->
+  <div class="qc" id="fc-3"><div class="qch"><div class="qn">3</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의6② 정기선정 · 최근 미조사 기간 기준</span></div>
+  <div class="qb"><div class="qtxt">정기선정에 의한 세무조사 대상자 선정 기준 중 하나: 최근 <span class="fg"><span class="fl">①</span><input class="fi" id="f3-1" data-ans="4과세기간" data-q="3" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:90px"><span class="fb" id="fb3-1"></span></span> 이상 같은 세목의 세무조사를 받지 아니한 납세자에 대하여 업종, 규모, 경제력 집중 등을 고려하여 신고 내용이 적정한지를 검증할 필요가 있는 경우.</div>
+  <div class="rv" id="rv-3"></div><div class="ref">§81의6②2호</div></div></div>
+
+  <!-- F4 -->
+  <div class="qc" id="fc-4"><div class="qch"><div class="qn">4</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의7① 사전통지 기간 · 원칙 및 재조사 특례</span></div>
+  <div class="qb"><div class="qtxt">세무공무원은 세무조사를 하는 경우 조사를 시작하기 <span class="fg"><span class="fl">①</span><input class="fi" id="f4-1" data-ans="20일" data-q="4" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb4-1"></span></span> 전에 사전통지를 하여야 한다. 다만, 재조사 결정에 따른 재조사의 경우에는 <span class="fg"><span class="fl">②</span><input class="fi" id="f4-2" data-ans="7일" data-q="4" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb4-2"></span></span> 전에 통지하여야 한다.</div>
+  <div class="rv" id="rv-4"></div><div class="ref">§81의7①</div></div></div>
+
+  <!-- F5 -->
+  <div class="qc" id="fc-5"><div class="qch"><div class="qn">5</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의8②③ 소규모 납세자 조사기간 및 연장 승인</span></div>
+  <div class="qb"><div class="qtxt">연간 수입금액이 100억원 미만인 납세자에 대한 세무조사 기간은 <span class="fg"><span class="fl">①</span><input class="fi" id="f5-1" data-ans="20일" data-q="5" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb5-1"></span></span> 이내로 한다. 최초 연장 시에는 <span class="fg"><span class="fl">②</span><input class="fi" id="f5-2" data-ans="관할 세무관서의 장" data-q="5" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:140px"><span class="fb" id="fb5-2"></span></span>의 승인을 받아야 하고, 2회 이후 연장은 <span class="fg"><span class="fl">③</span><input class="fi" id="f5-3" data-ans="관할 상급 세무관서의 장" data-q="5" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:150px"><span class="fb" id="fb5-3"></span></span>의 승인을 받아야 한다.</div>
+  <div class="rv" id="rv-5"></div><div class="ref">§81의8②③</div></div></div>
+
+  <!-- F6 -->
+  <div class="qc" id="fc-6"><div class="qch"><div class="qn">6</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의11①④ 통합조사 원칙 · 부분조사 횟수 제한</span></div>
+  <div class="qb"><div class="qtxt">세무조사는 납세자의 사업과 관련하여 신고·납부의무가 있는 세목을 <span class="fg"><span class="fl">①</span><input class="fi" id="f6-1" data-ans="통합하여" data-q="6" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:80px"><span class="fb" id="fb6-1"></span></span> 실시하는 것을 원칙으로 한다. 부분조사(§81의11③3~6호 사유)는 같은 세목·과세기간에 대하여 <span class="fg"><span class="fl">②</span><input class="fi" id="f6-2" data-ans="2회" data-q="6" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb6-2"></span></span>를 초과하여 실시할 수 없다.</div>
+  <div class="rv" id="rv-6"></div><div class="ref">§81의11①④</div></div></div>
+
+  <!-- F7 -->
+  <div class="qc" id="fc-7"><div class="qch"><div class="qn">7</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의12① 세무조사 결과 통지 기한</span></div>
+  <div class="qb"><div class="qtxt">세무공무원은 세무조사를 마쳤을 때에는 조사를 마친 날부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f7-1" data-ans="20일" data-q="7" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-1"></span></span>(공시송달이 필요한 경우 등에는 <span class="fg"><span class="fl">②</span><input class="fi" id="f7-2" data-ans="40일" data-q="7" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb7-2"></span></span>) 이내에 조사결과를 납세자에게 설명하고 이를 서면으로 통지하여야 한다.</div>
+  <div class="rv" id="rv-7"></div><div class="ref">§81의12①</div></div></div>
+
+  <!-- F8 -->
+  <div class="qc" id="fc-8"><div class="qch"><div class="qn">8</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의15① 과세전적부심사 · 과세예고통지 기준금액</span></div>
+  <div class="qb"><div class="qtxt">납부고지하려는 세액이 <span class="fg"><span class="fl">①</span><input class="fi" id="f8-1" data-ans="100만원" data-q="8" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:80px"><span class="fb" id="fb8-1"></span></span> 이상인 경우에는 미리 납세자에게 그 내용을 서면으로 과세예고통지를 하여야 한다.</div>
+  <div class="rv" id="rv-8"></div><div class="ref">§81의15①3호</div></div></div>
+
+  <!-- F9 -->
+  <div class="qc" id="fc-9"><div class="qch"><div class="qn">9</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의15②④ 과세전적부심사 청구기간 · 결정기간</span></div>
+  <div class="qb"><div class="qtxt">과세전적부심사는 통지를 받은 날부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f9-1" data-ans="30일" data-q="9" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb9-1"></span></span> 이내에 청구할 수 있다. 청구를 받은 세무서장·지방국세청장·국세청장은 국세심사위원회의 심사를 거쳐 결정을 하고 그 결과를 청구를 받은 날부터 <span class="fg"><span class="fl">②</span><input class="fi" id="f9-2" data-ans="30일" data-q="9" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb9-2"></span></span> 이내에 청구인에게 통지하여야 한다.</div>
+  <div class="rv" id="rv-9"></div><div class="ref">§81의15②④</div></div></div>
+
+  <!-- F10 -->
+  <div class="qc" id="fc-10"><div class="qch"><div class="qn">10</div><span class="qt2 bf">빈칸</span><span class="qtl">§81의15③3호 과세전적부심사 배제 · 제척기간 잔여기간</span></div>
+  <div class="qb"><div class="qtxt">세무조사 결과 통지 및 과세예고통지를 하는 날부터 국세부과 제척기간의 만료일까지의 기간이 <span class="fg"><span class="fl">①</span><input class="fi" id="f10-1" data-ans="3개월" data-q="10" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:70px"><span class="fb" id="fb10-1"></span></span> 이하인 경우에는 과세전적부심사를 청구할 수 없다.</div>
+  <div class="rv" id="rv-10"></div><div class="ref">§81의15③3호</div></div></div>
+
+  <div class="div"></div>
+
+  <div class="sh2"><div class="ey">Part 02</div><h2>O/X 판단 문제 (10문제)</h2><p>옳으면 <strong>O</strong>, 틀리면 <strong>X</strong></p></div>
+
+  <!-- OX1 -->
+  <div class="qc" id="ox-1"><div class="qch"><div class="qn">1</div><span class="qt2 bx">O/X</span><span class="qtl">§81의3 납세자 성실성 추정 · 의무 주체</span></div>
+  <div class="qb"><div class="qtxt">세무공무원은 납세자가 §81의6③ 각 호 사유에 해당하는 경우를 제외하고는 납세자가 성실하며 제출한 신고서 등이 진실한 것으로 추정할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob1-o" onclick="po(1,'O',this)">O</button><button class="oxb" id="ob1-x" onclick="po(1,'X',this)">X</button><span class="oxr" id="or-1"></span></div>
+  <div class="oxe" id="oe-1"><span class="ca">✅ 정답: X</span><br>§81의3에 따라 성실성 추정은 세무공무원의 <strong>"하여야 한다"(의무)</strong>입니다. "추정할 수 있다(재량)"가 아닙니다. 또한 제척 예외 조항의 근거는 §81의6<strong>③</strong> 각 호입니다(비정기선정 사유).</div>
+  <div class="ref">§81의3</div></div></div>
+
+  <!-- OX2 -->
+  <div class="qc" id="ox-2"><div class="qch"><div class="qn">2</div><span class="qt2 bx">O/X</span><span class="qtl">§81의4① 세무조사권 남용 금지 · 최소 범위 원칙</span></div>
+  <div class="qb"><div class="qtxt">세무공무원은 적정하고 공평한 과세를 실현하기 위하여 필요한 최소한의 범위에서 세무조사를 하여야 하며, 다른 목적 등을 위하여 조사권을 남용해서는 아니 된다.</div>
+  <div class="oxa"><button class="oxb" id="ob2-o" onclick="po(2,'O',this)">O</button><button class="oxb" id="ob2-x" onclick="po(2,'X',this)">X</button><span class="oxr" id="or-2"></span></div>
+  <div class="oxe" id="oe-2"><span class="ca">✅ 정답: O</span><br>§81의4① 조문 원문과 정확히 일치합니다. 세무조사권 남용 금지의 핵심 원칙입니다.</div>
+  <div class="ref">§81의4①</div></div></div>
+
+  <!-- OX3 -->
+  <div class="qc" id="ox-3"><div class="qch"><div class="qn">3</div><span class="qt2 bx">O/X</span><span class="qtl">§81의4② 재조사 금지 · 납세자 금품제공 예외</span></div>
+  <div class="qb"><div class="qtxt">납세자가 세무공무원에게 직무와 관련하여 금품을 제공하거나 금품제공을 알선한 경우에는 동일 세목·동일 과세기간에 대해 재조사를 할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob3-o" onclick="po(3,'O',this)">O</button><button class="oxb" id="ob3-x" onclick="po(3,'X',this)">X</button><span class="oxr" id="or-3"></span></div>
+  <div class="oxe" id="oe-3"><span class="ca">✅ 정답: O</span><br>§81의4②5호에 따라 납세자가 세무공무원에게 직무 관련 <strong>금품을 제공하거나 금품제공을 알선한 경우</strong>는 재조사 허용 예외 사유 중 하나입니다.</div>
+  <div class="ref">§81의4②5호</div></div></div>
+
+  <!-- OX4 -->
+  <div class="qc" id="ox-4"><div class="qch"><div class="qn">4</div><span class="qt2 bx">O/X</span><span class="qtl">§81의7① 사전통지 · 증거인멸 우려 시 생략 가능</span></div>
+  <div class="qb"><div class="qtxt">사전통지를 하면 증거인멸 등으로 조사 목적을 달성할 수 없다고 인정되는 경우에는 사전통지를 하지 아니하고 조사를 개시할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob4-o" onclick="po(4,'O',this)">O</button><button class="oxb" id="ob4-x" onclick="po(4,'X',this)">X</button><span class="oxr" id="or-4"></span></div>
+  <div class="oxe" id="oe-4"><span class="ca">✅ 정답: O</span><br>§81의7① 단서 조문 원문과 일치합니다. 이 경우 세무공무원은 조사 개시 시 세무조사통지서를 납세자에게 교부하여야 합니다(§81의7⑥).</div>
+  <div class="ref">§81의7① 단서</div></div></div>
+
+  <!-- OX5 -->
+  <div class="qc" id="ox-5"><div class="qch"><div class="qn">5</div><span class="qt2 bx">O/X</span><span class="qtl">§81의8② 소규모 납세자 조사기간 상한 · 기준</span></div>
+  <div class="qb"><div class="qtxt">연간 수입금액이 50억원 미만인 납세자에 대한 세무조사 기간은 20일 이내로 제한된다.</div>
+  <div class="oxa"><button class="oxb" id="ob5-o" onclick="po(5,'O',this)">O</button><button class="oxb" id="ob5-x" onclick="po(5,'X',this)">X</button><span class="oxr" id="or-5"></span></div>
+  <div class="oxe" id="oe-5"><span class="ca">✅ 정답: X</span><br>§81의8②에 따라 20일 이내 조사기간 상한이 적용되는 기준은 연간 수입금액이 <strong>100억원 미만</strong>인 납세자입니다. "50억원 미만"은 오답입니다.</div>
+  <div class="ref">§81의8②</div></div></div>
+
+  <!-- OX6 -->
+  <div class="qc" id="ox-6"><div class="qch"><div class="qn">6</div><span class="qt2 bx">O/X</span><span class="qtl">§81의8④⑤ 조사 중지기간 · 세목 결정 행위 금지</span></div>
+  <div class="qb"><div class="qtxt">세무조사가 중지된 기간에는 납세자에 대하여 국세의 과세표준과 세액을 결정 또는 경정하기 위한 질문이나 장부 검사·조사 또는 제출 요구를 할 수 없다.</div>
+  <div class="oxa"><button class="oxb" id="ob6-o" onclick="po(6,'O',this)">O</button><button class="oxb" id="ob6-x" onclick="po(6,'X',this)">X</button><span class="oxr" id="or-6"></span></div>
+  <div class="oxe" id="oe-6"><span class="ca">✅ 정답: O</span><br>§81의8⑤ 조문 원문과 일치합니다. 조사 중지기간에는 실질적인 조사 행위가 전면 금지됩니다.</div>
+  <div class="ref">§81의8⑤</div></div></div>
+
+  <!-- OX7 -->
+  <div class="qc" id="ox-7"><div class="qch"><div class="qn">7</div><span class="qt2 bx">O/X</span><span class="qtl">§81의9② 세무조사 범위 확대 · 통지 방법</span></div>
+  <div class="qb"><div class="qtxt">세무공무원이 세무조사 범위를 확대하는 경우에는 그 사유와 범위를 납세자에게 구술로 통지할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob7-o" onclick="po(7,'O',this)">O</button><button class="oxb" id="ob7-x" onclick="po(7,'X',this)">X</button><span class="oxr" id="or-7"></span></div>
+  <div class="oxe" id="oe-7"><span class="ca">✅ 정답: X</span><br>§81의9②에 따라 세무조사 범위를 확대하는 경우 그 사유와 범위를 납세자에게 <strong>문서로 통지</strong>하여야 합니다. 구술(구두) 통지는 불가합니다.</div>
+  <div class="ref">§81의9②</div></div></div>
+
+  <!-- OX8 -->
+  <div class="qc" id="ox-8"><div class="qch"><div class="qn">8</div><span class="qt2 bx">O/X</span><span class="qtl">§81의15③3호 과세전적부심사 배제 · 제척기간 잔여</span></div>
+  <div class="qb"><div class="qtxt">국세부과 제척기간의 만료일까지 기간이 6개월 이하인 경우에는 과세전적부심사를 청구할 수 없다.</div>
+  <div class="oxa"><button class="oxb" id="ob8-o" onclick="po(8,'O',this)">O</button><button class="oxb" id="ob8-x" onclick="po(8,'X',this)">X</button><span class="oxr" id="or-8"></span></div>
+  <div class="oxe" id="oe-8"><span class="ca">✅ 정답: X</span><br>§81의15③3호에 따라 과세전적부심사 배제 기준은 제척기간 만료일까지의 기간이 <strong>3개월 이하</strong>인 경우입니다. "6개월"은 오답입니다.</div>
+  <div class="ref">§81의15③3호</div></div></div>
+
+  <!-- OX9 -->
+  <div class="qc" id="ox-9"><div class="qch"><div class="qn">9</div><span class="qt2 bx">O/X</span><span class="qtl">§81의15⑤ 과세전적부심사 결정 종류 · 채택 불가 결정</span></div>
+  <div class="qb"><div class="qtxt">과세전적부심사 청구가 이유 없다고 인정되는 경우 세무서장·지방국세청장은 기각 결정을 한다.</div>
+  <div class="oxa"><button class="oxb" id="ob9-o" onclick="po(9,'O',this)">O</button><button class="oxb" id="ob9-x" onclick="po(9,'X',this)">X</button><span class="oxr" id="or-9"></span></div>
+  <div class="oxe" id="oe-9"><span class="ca">✅ 정답: X</span><br>§81의15⑤1호에 따라 청구가 이유 없다고 인정되는 경우 <strong>"채택하지 아니한다는 결정"</strong>을 합니다. 일반 불복(심사청구 등)에서의 "기각"과 달리 과세전적부심사의 부정적 결정은 <strong>"채택하지 아니한다는 결정"</strong>입니다.</div>
+  <div class="ref">§81의15⑤1호</div></div></div>
+
+  <!-- OX10 -->
+  <div class="qc" id="ox-10"><div class="qch"><div class="qn">10</div><span class="qt2 bx">O/X</span><span class="qtl">§81의15⑧ 과세전적부심사 미청구 · 조기결정 신청</span></div>
+  <div class="qb"><div class="qtxt">과세예고통지를 받은 자는 과세전적부심사를 청구하지 아니하고, 세무서장이나 지방국세청장에게 조기에 과세표준 및 세액을 결정해 줄 것을 신청할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob10-o" onclick="po(10,'O',this)">O</button><button class="oxb" id="ob10-x" onclick="po(10,'X',this)">X</button><span class="oxr" id="or-10"></span></div>
+  <div class="oxe" id="oe-10"><span class="ca">✅ 정답: O</span><br>§81의15⑧ 조문 원문과 일치합니다. 납세자가 자발적으로 빨리 결정을 받고 싶을 때 사용하는 <strong>조기결정 신청</strong> 제도입니다. 이 경우 해당 세무서장이나 지방국세청장은 신청받은 내용대로 <strong>즉시</strong> 결정이나 경정결정을 하여야 합니다.</div>
+  <div class="ref">§81의15⑧</div></div></div>
+
+</div></div>
+
+<!-- ════ 정답 및 해설 편 ════ -->
+<div id="sec-a" class="sec"><div class="w">
+  <div class="sh2" style="padding-top:26px"><div class="ey">Answer &amp; Commentary</div><h2>정답 및 해설 편</h2></div>
+  <div class="ib">📌 <strong>기준 법령:</strong> 국세기본법 (법률 제20640호, 공포 2025.12.23 / 시행 2026.01.02) — 법제처 MCP API 조문 원문 직접 인용</div>
+
+  <div class="sh2"><div class="ey">Part 01 · 정답</div><h2>빈칸 채우기 정답</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§81의2①③ 납세자권리헌장 제정·교부</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">국세청장</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">조사원증</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">낭독</span></div>
+    <div class="ad"><span class="lc">§81의2①③</span> 헌장 제정자 = <strong>국세청장</strong>. 조사 시작 시 ① <strong>조사원증</strong> 제시 → ② 헌장 교부 → ③ 요지 <strong>낭독</strong> (순서 중요). 낭독 생략 불가!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§81의4② 재조사 허용 예외 사유</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">명백한 자료</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">조사</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">2개 이상</span></div>
+    <div class="ad"><span class="lc">§81의4②</span>
+      <div class="sb2"><div class="sb2t">재조사 허용 예외 7가지</div>
+        ① 탈루 혐의 <strong>명백한 자료</strong><br>
+        ② 거래상대방 <strong>조사</strong> 필요<br>
+        ③ <strong>2개 이상</strong> 과세기간 관련 잘못<br>
+        ④ 재조사 결정에 따른 조사<br>
+        ⑤ 납세자의 세무공무원 <strong>금품제공</strong><br>
+        ⑥ 부분조사 후 미포함 부분 조사<br>
+        ⑦ 대통령령 사유
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§81의6②2호 정기선정 기준</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">4과세기간</span></div>
+    <div class="ad"><span class="lc">§81의6②2호</span> 최근 <strong>4과세기간</strong> 이상 미조사 → 정기선정 가능. "3과세기간" "5과세기간"으로 바꾸는 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§81의7① 사전통지 기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">20일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">7일</span></div>
+    <div class="ad"><span class="lc">§81의7①</span>
+      <div class="sb2"><div class="sb2t">사전통지 기간 비교</div>
+        원칙: 조사 시작 <strong>20일</strong> 전<br>
+        재조사 결정에 따른 재조사: <strong>7일</strong> 전
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§81의8②③ 소규모 납세자 기간·연장 승인</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">20일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">관할 세무관서의 장</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">관할 상급 세무관서의 장</span></div>
+    <div class="ad"><span class="lc">§81의8②③</span> 100억원 미만 → <strong>20일</strong> 이내. 1차 연장: <strong>관할 세무관서의 장</strong> 승인. 2회 이상: <strong>관할 상급 세무관서의 장</strong> 승인. 각 최대 20일씩 연장.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§81의11①④ 통합조사 원칙·부분조사 횟수</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">통합하여</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">2회</span></div>
+    <div class="ad"><span class="lc">§81의11①④</span> 세목 <strong>통합</strong> 조사 원칙. 부분조사(③3~6호 사유)는 <strong>2회 초과 불가</strong>. ①②호(경정청구·재조사결정)는 횟수 제한 없음!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§81의12① 조사결과 통지 기한</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">20일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">40일</span></div>
+    <div class="ad"><span class="lc">§81의12①</span> 조사 마친 날로부터 <strong>20일</strong>(공시송달 필요 등: <strong>40일</strong>) 이내에 서면 통지. 구두 설명 + 서면 통지 모두 필요!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§81의15①3호 과세예고통지 기준금액</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">100만원</span></div>
+    <div class="ad"><span class="lc">§81의15①3호</span> 납부고지 예정 세액 <strong>100만원 이상</strong> → 과세예고통지 의무. "500만원" "50만원" 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§81의15②④ 청구기간·결정기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">30일</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">30일</span></div>
+    <div class="ad"><span class="lc">§81의15②④</span>
+      <div class="sb2"><div class="sb2t">과세전적부심사 주요 기간</div>
+        청구기간: 통지받은 날로부터 <strong>30일</strong><br>
+        결정기간: 청구받은 날로부터 <strong>30일</strong><br>
+        (심사청구·이의신청 결정기간과 다름!)
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§81의15③3호 과세전적부심사 배제 · 잔여기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">3개월</span></div>
+    <div class="ad"><span class="lc">§81의15③3호</span> 제척기간 만료일까지 <strong>3개월 이하</strong> 남은 경우 과세전적부심사 배제. 조기 결정 필요성 때문. "6개월" "1개월"로 바꾸는 함정!</div>
+  </div></div>
+
+  <div class="div"></div>
+  <div class="sh2"><div class="ey">Part 02 · 정답</div><h2>O/X 정답 및 해설</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§81의3 성실성 추정 · 의무 vs 재량</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "추정할 수 있다(재량)"</div>
+    <div class="cp">✅ §81의3: <strong>"추정하여야 한다"(의무)</strong>. 재량이 아님.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§81의4① 최소 범위 조사 의무</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§81의4①</span> 조문 원문과 일치. 세무조사권 남용 금지의 핵심 조항.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§81의4②5호 금품제공 · 재조사 허용</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§81의4②5호</span> 조문 원문과 일치. 납세자의 불공정 행위에 대한 제재 성격의 재조사 예외.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§81의7① 단서 사전통지 생략 가능</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§81의7① 단서</span> 조문 원문과 일치. 생략 후 조사 개시 시에는 세무조사통지서를 즉시 교부(§81의7⑥).</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§81의8② 20일 기준 · 100억원 미만</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "50억원 미만"</div>
+    <div class="cp">✅ §81의8②: <strong>100억원 미만</strong>이 기준.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§81의8⑤ 조사 중지기간 · 조사 행위 금지</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§81의8⑤</span> 조문 원문과 일치. 조사 중지기간은 세무조사 기간에도 불산입.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§81의9② 조사범위 확대 · 문서 통지</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "구술로 통지 가능"</div>
+    <div class="cp">✅ §81의9②: <strong>문서로 통지</strong>하여야 함.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§81의15③3호 과세전적부심사 배제 기간</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "6개월 이하"</div>
+    <div class="cp">✅ §81의15③3호: 제척기간 만료일까지 <strong>3개월 이하</strong>인 경우.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§81의15⑤1호 이유 없을 때 · "기각" vs "채택하지 아니한다"</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "기각 결정"</div>
+    <div class="cp">✅ §81의15⑤1호: <strong>"채택하지 아니한다는 결정"</strong>. 일반 불복의 "기각"과 용어 다름!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§81의15⑧ 조기결정 신청 제도</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§81의15⑧</span> 조문 원문과 일치. 납세자가 과세전적부심사 없이 바로 결정을 받고 싶을 때 신청 가능. 세무서장은 <strong>즉시</strong> 결정해야 함.</div>
+  </div></div>
+
+</div></div>
+
+<div class="foot">
+  2026-05-30 생성 · 국세기본법 §81의2~§90 기준<br>
+  법령 출처: 법제처 국세기본법 (법률 제20640호, 시행 2026.01.02) — MCP API 직접 조회<br>
+  #납세자권리 #세무조사 #재조사금지 #과세전적부심사 #통합조사 #세무사시험
+</div>
+
+<script>
+const FS={},OS={};
+const FA={
+  '1-1':['국세청장'],'1-2':['조사원증'],'1-3':['낭독'],
+  '2-1':['명백한 자료'],'2-2':['조사'],'2-3':['2개 이상'],
+  '3-1':['4과세기간'],
+  '4-1':['20일'],'4-2':['7일'],
+  '5-1':['20일'],'5-2':['관할 세무관서의 장','관할세무관서의장'],'5-3':['관할 상급 세무관서의 장','관할상급세무관서의장'],
+  '6-1':['통합하여'],'6-2':['2회'],
+  '7-1':['20일'],'7-2':['40일'],
+  '8-1':['100만원'],
+  '9-1':['30일'],'9-2':['30일'],
+  '10-1':['3개월']
+};
+const FC={1:3,2:3,3:1,4:2,5:3,6:2,7:2,8:1,9:2,10:1};
+const OA={1:'X',2:'O',3:'O',4:'O',5:'X',6:'O',7:'X',8:'X',9:'X',10:'O'};
+
+function nm(s){return s.replace(/[\s「」]/g,'').toLowerCase()}
+function cf(e,inp){
+  if(e.key!=='Enter')return;e.preventDefault();
+  const q=+inp.dataset.q,idx=+inp.dataset.idx,key=q+'-'+idx,val=inp.value.trim();
+  if(!val)return;
+  const ok=FA[key].some(a=>nm(val)===nm(a));
+  inp.classList.remove('ok','ng');inp.classList.add(ok?'ok':'ng');inp.disabled=true;
+  const fb=document.getElementById('fb'+q+'-'+idx);
+  fb.textContent=ok?'✓':'✗ '+FA[key][0];fb.className='fb show '+(ok?'ok':'ng');
+  if(!FS[q])FS[q]={total:FC[q],done:0,wrong:0};
+  if(!FS[q][idx]){FS[q][idx]=true;FS[q].done++;if(!ok)FS[q].wrong++;}
+  if(FS[q].done===FS[q].total){
+    document.getElementById('fc-'+q).classList.add(FS[q].wrong===0?'ac':'aw');
+    const rv=document.getElementById('rv-'+q);
+    const ks=Object.keys(FA).filter(k=>k.startsWith(q+'-'));
+    rv.innerHTML='✅ 정답: '+ks.map(k=>{const i=+k.split('-')[1];return '<strong>'+['①','②','③'][i-1]+' '+FA[k][0]+'</strong>';}).join(' | ');
+    rv.classList.add('show');
+  }upd();
+}
+function po(n,picked){
+  if(OS[n])return;
+  const correct=OA[n],ok=(picked===correct);OS[n]={ok};
+  const bo=document.getElementById('ob'+n+'-o'),bx=document.getElementById('ob'+n+'-x');
+  bo.disabled=true;bx.disabled=true;
+  if(picked==='O'){bo.classList.add(ok?'ch':'wp');if(!ok)bx.classList.add('ch');}
+  else{bx.classList.add(ok?'ch':'wp');if(!ok)bo.classList.add('ch');}
+  document.getElementById('or-'+n).textContent=ok?'🎉 정답!':'❌ 오답 (정답: '+correct+')';
+  document.getElementById('or-'+n).className='oxr show '+(ok?'ok':'ng');
+  document.getElementById('oe-'+n).className='oxe show '+(ok?'ok':'ng');
+  document.getElementById('ox-'+n).classList.add('ao');upd();
+}
+function upd(){
+  let fc=0,ft=0,oc=0,ot=0,wr=0;
+  for(const q in FS){ft++;if(FS[q].done===FS[q].total){if(FS[q].wrong===0)fc++;else wr++;}}
+  for(const n in OS){ot++;if(OS[n].ok)oc++;else wr++;}
+  document.getElementById('fc').textContent=fc;document.getElementById('ft').textContent=ft;
+  document.getElementById('oc').textContent=oc;document.getElementById('ot').textContent=ot;
+  document.getElementById('wc').textContent=wr;
+}
+function resetAll(){
+  document.querySelectorAll('.fi').forEach(i=>{i.value='';i.disabled=false;i.classList.remove('ok','ng');});
+  document.querySelectorAll('.fb').forEach(f=>{f.textContent='';f.className='fb';});
+  document.querySelectorAll('.rv').forEach(r=>r.classList.remove('show'));
+  document.querySelectorAll('.oxb').forEach(b=>{b.disabled=false;b.className='oxb';});
+  document.querySelectorAll('.oxr').forEach(r=>{r.textContent='';r.className='oxr';});
+  document.querySelectorAll('.oxe').forEach(e=>{e.className='oxe';});
+  document.querySelectorAll('.qc').forEach(c=>c.classList.remove('ac','aw','ao'));
+  for(const k in FS)delete FS[k];for(const k in OS)delete OS[k];upd();
+}
+function showSec(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

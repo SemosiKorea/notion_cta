@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>국세기본법 §67~81 | 심판청구·조세심판원 문제집</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F5;--sf:#FFF;--bd:#E5E0D8;--bds:#C3BBB0;
+  --t:#1A1714;--t2:#47423B;--tm:#797268;
+  --ac:#1C3D6E;--al:#EBF0F8;--am:#2D5499;
+  --re:#851919;--rl:#FDF1F1;
+  --gr:#184726;--gl:#F1F8F3;
+  --go:#785818;--gol:#FDF6E8;
+  --sh:0 1px 4px rgba(0,0,0,.07);--r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;padding-bottom:80px}
+.hd{background:var(--ac);color:#fff;padding:38px 40px 26px;border-bottom:4px solid #0C2244}
+.hd .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:3px 10px;border-radius:3px;margin-bottom:10px;font-family:'DM Mono',monospace}
+.hd h1{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:900;line-height:1.3;margin-bottom:7px}
+.hd p{font-size:13px;color:rgba(255,255,255,.75);font-weight:300}
+.hd-m{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap}
+.hd-m span{display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(255,255,255,.8);font-family:'DM Mono',monospace}
+.dot{width:6px;height:6px;background:#6FC3FF;border-radius:50%;flex-shrink:0}
+.sb{background:#0C2244;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:9px 40px;font-size:13px;font-family:'DM Mono',monospace;flex-wrap:wrap;gap:8px}
+.si{display:flex;align-items:center;gap:8px}
+.sv{font-weight:700;font-size:15px}
+.sv.g{color:#6FE88A}.sv.r{color:#FF8A8A}.sv.y{color:#FFD97A}
+.rst{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:5px 13px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'DM Mono',monospace;font-weight:700;transition:background .2s}
+.rst:hover{background:rgba(255,255,255,.25)}
+.nav{background:var(--sf);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;box-shadow:var(--sh)}
+.nav-i{max-width:880px;margin:0 auto;padding:0 24px;display:flex}
+.nb{padding:12px 20px;font-size:13px;font-weight:500;color:var(--tm);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:'Noto Sans KR',sans-serif;white-space:nowrap}
+.nb:hover{color:var(--ac)}.nb.active{color:var(--ac);border-bottom-color:var(--ac);font-weight:700}
+.w{max-width:880px;margin:0 auto;padding:0 24px}
+.sec{display:none;padding-top:26px}.sec.active{display:block}
+.sh2{margin-bottom:18px}
+.sh2 .ey{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);font-family:'DM Mono',monospace;margin-bottom:3px}
+.sh2 h2{font-family:'Noto Serif KR',serif;font-size:19px;font-weight:700}
+.sh2 p{margin-top:3px;font-size:13px;color:var(--tm)}
+.bgs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px}
+.bg{display:flex;align-items:center;gap:5px;background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--t2)}
+.bg .n{font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.ib{background:var(--al);border:1px solid #C0D0E8;border-radius:var(--r);padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--am);line-height:1.7}
+.ib strong{color:var(--ac)}
+.qc{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh);transition:border-color .25s,border-width .1s}
+.qc.ac{border-color:#70C888;border-width:2px}.qc.aw{border-color:#E88080;border-width:2px}.qc.ao{border-color:#8AB0D8;border-width:2px}
+.qch{display:flex;align-items:flex-start;gap:10px;padding:12px 18px 10px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.qn{flex-shrink:0;width:24px;height:24px;background:var(--ac);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'DM Mono',monospace}
+.qt2{font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:3px;margin-top:2px;font-family:'DM Mono',monospace;flex-shrink:0}
+.bf{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.bx{background:var(--al);color:var(--ac);border:1px solid #B8CAE3}
+.qtl{font-size:12.5px;font-weight:600;color:var(--t2);flex:1;line-height:1.5}
+.qb{padding:13px 18px 15px}
+.qtxt{font-size:13.5px;color:var(--t);line-height:2.1;font-family:'Noto Serif KR',serif}
+.fg{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;margin:0 2px}
+.fl{font-size:11px;font-weight:700;color:var(--ac);font-family:'DM Mono',monospace}
+.fi{border:none;border-bottom:2.5px solid var(--ac);background:transparent;outline:none;font-size:13.5px;font-family:'Noto Sans KR',sans-serif;color:var(--t);font-weight:700;padding:2px 5px;min-width:80px;max-width:200px;transition:border-color .2s,background .2s;text-align:center}
+.fi::placeholder{color:#C0B8B0;font-weight:400;font-size:11px}
+.fi:focus{border-bottom-color:var(--am);background:var(--al);border-radius:4px 4px 0 0}
+.fi.ok{border-bottom-color:var(--gr);background:var(--gl);border-radius:4px 4px 0 0;color:var(--gr)}
+.fi.ng{border-bottom-color:var(--re);background:var(--rl);border-radius:4px 4px 0 0;color:var(--re)}
+.fb{display:none;font-size:11px;font-family:'DM Mono',monospace;margin-left:3px;font-weight:700;vertical-align:middle;white-space:nowrap}
+.fb.show{display:inline}.fb.ok{color:var(--gr)}.fb.ng{color:var(--re)}
+.rv{display:none;margin-top:9px;background:#F2F8F1;border:1px solid #AED4B5;border-radius:var(--r);padding:8px 12px;font-size:13px;color:var(--gr);line-height:1.8}
+.rv.show{display:block}
+.ref{display:inline-block;font-size:11px;font-family:'DM Mono',monospace;color:var(--tm);background:var(--bg);border:1px solid var(--bd);border-radius:3px;padding:2px 7px;margin-top:7px}
+.oxa{margin-top:11px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.oxb{padding:7px 28px;border-radius:22px;font-size:16px;font-weight:900;border:2px solid #BCB6B0;background:var(--bg);color:var(--tm);cursor:pointer;font-family:'DM Mono',monospace;transition:all .17s;user-select:none}
+.oxb:hover:not(:disabled){border-color:var(--ac);color:var(--ac);background:var(--al);transform:scale(1.07)}
+.oxb.ch{background:#CCEEDD;border-color:#358855;color:#184726;box-shadow:0 0 0 3px #96D8B0}
+.oxb.wp{background:#F5D3D3;border-color:#B02E2E;color:#851919}
+.oxb:disabled{cursor:default;transform:none}
+.oxr{display:none;font-size:13px;font-weight:700;padding:4px 11px;border-radius:11px;font-family:'DM Mono',monospace}
+.oxr.show{display:inline-block}
+.oxr.ok{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.oxr.ng{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.oxe{display:none;margin-top:9px;padding:10px 13px;border-radius:var(--r);font-size:13px;line-height:1.8;font-family:'Noto Sans KR',sans-serif}
+.oxe.show{display:block}
+.oxe.ok{background:var(--gl);border:1px solid #AEDAB8;color:#184726}
+.oxe.ng{background:var(--rl);border:1px solid #DFAEAE;color:#681212}
+.oxe .ca{font-weight:700;color:var(--t);font-size:13.5px}
+.div{height:1px;background:var(--bd);margin:26px 0}
+.ac2{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);margin-bottom:11px;overflow:hidden;box-shadow:var(--sh)}
+.ach{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--bd);background:#FDFCFB}
+.an{flex-shrink:0;width:22px;height:22px;background:var(--t2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'DM Mono',monospace}
+.al2{font-size:13px;font-weight:600;color:var(--t2);flex:1}
+.vd{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;font-family:'DM Mono',monospace}
+.vo{background:var(--gl);color:var(--gr);border:1px solid #96D8B0}
+.vx{background:var(--rl);color:var(--re);border:1px solid #DFA8A8}
+.va{background:var(--gol);color:var(--go);border:1px solid #E5D3A0}
+.ab{padding:12px 16px 14px}
+.ar{display:flex;align-items:baseline;gap:9px;margin-bottom:5px;flex-wrap:wrap}
+.ak{font-size:12px;font-weight:700;color:var(--tm);font-family:'DM Mono',monospace;min-width:48px}
+.av{font-size:14px;font-weight:700;color:var(--ac);font-family:'Noto Serif KR',serif}
+.ad{font-size:13px;color:var(--t2);line-height:1.8;margin-top:8px;padding-top:8px;border-top:1px dashed var(--bd)}
+.ad strong{color:var(--t);font-weight:700}
+.lc{display:inline-block;background:var(--al);color:var(--am);font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;margin:2px;font-family:'DM Mono',monospace}
+.wp2{background:#FFF0F0;border-left:3px solid var(--re);padding:7px 11px;margin-top:7px;font-size:12.5px;color:var(--re);border-radius:0 4px 4px 0;line-height:1.7}
+.cp{background:var(--gl);border-left:3px solid var(--gr);padding:7px 11px;margin-top:5px;font-size:12.5px;color:var(--gr);border-radius:0 4px 4px 0;line-height:1.7}
+.sb2{background:#F7F5F1;border:1px solid var(--bds);border-radius:var(--r);padding:9px 13px;margin-top:7px;font-size:12px;color:var(--t2);line-height:1.9;font-family:'Noto Serif KR',serif}
+.sb2t{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--tm);font-family:'DM Mono',monospace;margin-bottom:4px;text-transform:uppercase}
+.foot{margin-top:40px;padding:16px;text-align:center;border-top:1px solid var(--bd);font-size:11px;color:var(--tm);line-height:1.8;font-family:'DM Mono',monospace}
+@media(max-width:600px){.hd{padding:22px 16px 18px}.hd h1{font-size:19px}.sb{padding:8px 16px}.w{padding:0 12px}}
+</style>
+</head>
+<body>
+
+<div class="hd"><div class="w">
+  <div class="tag">세무사(CTA) 시험 대비</div>
+  <h1>국세기본법 제67조 ~ 제81조<br>조세심판원 · 심판청구 절차 문제집</h1>
+  <p>법제처 공식 조문(시행 2026.01.02) 기반 · 빈칸 10문 + O/X 10문</p>
+  <div class="hd-m">
+    <span><span class="dot"></span>출제 범위: §67~§81</span>
+    <span><span class="dot"></span>법률 제20640호 (시행 2026.01.02)</span>
+    <span><span class="dot"></span>총 20문항</span>
+  </div>
+</div></div>
+
+<div class="sb">
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <div class="si">빈칸 맞춤 <span class="sv g" id="fc">0</span>/<span id="ft">0</span>문</div>
+    <div class="si">O/X 맞춤 <span class="sv y" id="oc">0</span>/<span id="ot">0</span>문</div>
+    <div class="si">오답 <span class="sv r" id="wc">0</span></div>
+  </div>
+  <button class="rst" onclick="resetAll()">↺ 전체 초기화</button>
+</div>
+
+<div class="nav"><div class="nav-i">
+  <button class="nb active" onclick="showSec('q',this)">📝 문제 편</button>
+  <button class="nb" onclick="showSec('a',this)">✅ 정답 및 해설</button>
+</div></div>
+
+<!-- 문제 편 -->
+<div id="sec-q" class="sec active"><div class="w">
+  <div class="sh2" style="padding-top:26px">
+    <div class="ey">Question Bank</div><h2>문제 편</h2>
+    <p>빈칸 → 입력 후 <strong>Enter ↵</strong> &nbsp;|&nbsp; O/X → 버튼 클릭</p>
+  </div>
+  <div class="bgs">
+    <div class="bg"><span class="n">10</span>빈칸 채우기</div>
+    <div class="bg"><span class="n">10</span>O/X 판단</div>
+    <div class="bg">총 <span class="n">20</span>문항</div>
+  </div>
+  <div class="ib">⚠️ <strong>출제 원칙:</strong> §67~81 현행 조문 원문 기준. 조세심판원 소속(국무총리), 상임심판관 임기(3년, 1회 중임), 조세심판관회의 구성(주심 1+배석 2 이상, 2/3 개의·과반 의결), 합동회의 구성(12~20명), 답변서(10일), 불고불리·불이익변경금지, 결정의 기속력이 핵심!</div>
+
+  <div class="sh2"><div class="ey">Part 01</div><h2>빈칸 채우기 (10문제)</h2><p>빈칸에 답을 입력하고 Enter를 누르세요.</p></div>
+
+  <!-- F1 -->
+  <div class="qc" id="fc-1"><div class="qch"><div class="qn">1</div><span class="qt2 bf">빈칸</span><span class="qtl">§67①② 조세심판원 · 소속 및 독립성</span></div>
+  <div class="qb"><div class="qtxt">심판청구에 대한 결정을 하기 위하여 <span class="fg"><span class="fl">①</span><input class="fi" id="f1-1" data-ans="국무총리" data-q="1" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb1-1"></span></span> 소속으로 조세심판원을 둔다. 조세심판원은 그 권한에 속하는 사무를 <span class="fg"><span class="fl">②</span><input class="fi" id="f1-2" data-ans="독립적으로" data-q="1" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:90px"><span class="fb" id="fb1-2"></span></span> 수행한다.</div>
+  <div class="rv" id="rv-1"></div><div class="ref">§67①②</div></div></div>
+
+  <!-- F2 -->
+  <div class="qc" id="fc-2"><div class="qch"><div class="qn">2</div><span class="qt2 bf">빈칸</span><span class="qtl">§67⑤⑥ 상임·비상임 조세심판관 임기</span></div>
+  <div class="qb"><div class="qtxt">상임조세심판관의 임기는 <span class="fg"><span class="fl">①</span><input class="fi" id="f2-1" data-ans="3년" data-q="2" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb2-1"></span></span>으로 하며 한 차례만 <span class="fg"><span class="fl">②</span><input class="fi" id="f2-2" data-ans="중임" data-q="2" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb2-2"></span></span>할 수 있다. 비상임조세심판관의 임기도 <span class="fg"><span class="fl">③</span><input class="fi" id="f2-3" data-ans="3년" data-q="2" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb2-3"></span></span>으로 하며 한 차례만 <span class="fg"><span class="fl">④</span><input class="fi" id="f2-4" data-ans="연임" data-q="2" data-idx="4" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb2-4"></span></span>할 수 있다.</div>
+  <div class="rv" id="rv-2"></div><div class="ref">§67⑤⑥</div></div></div>
+
+  <!-- F3 -->
+  <div class="qc" id="fc-3"><div class="qch"><div class="qn">3</div><span class="qt2 bf">빈칸</span><span class="qtl">§68① 심판청구 기간</span></div>
+  <div class="qb"><div class="qtxt">심판청구는 해당 처분이 있음을 안 날(처분의 통지를 받은 때에는 그 받은 날)부터 <span class="fg"><span class="fl">①</span><input class="fi" id="f3-1" data-ans="90일" data-q="3" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb3-1"></span></span> 이내에 제기하여야 한다.</div>
+  <div class="rv" id="rv-3"></div><div class="ref">§68①</div></div></div>
+
+  <!-- F4 -->
+  <div class="qc" id="fc-4"><div class="qch"><div class="qn">4</div><span class="qt2 bf">빈칸</span><span class="qtl">§69①④ 심판청구 절차 · 답변서 제출기한</span></div>
+  <div class="qb"><div class="qtxt">심판청구서는 처분을 한 <span class="fg"><span class="fl">①</span><input class="fi" id="f4-1" data-ans="세무서장" data-q="4" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb4-1"></span></span>이나 <span class="fg"><span class="fl">②</span><input class="fi" id="f4-2" data-ans="조세심판원장" data-q="4" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb4-2"></span></span>에게 제출하여야 한다. 청구서(또는 부본)를 받은 세무서장은 이를 받은 날부터 <span class="fg"><span class="fl">③</span><input class="fi" id="f4-3" data-ans="10일" data-q="4" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb4-3"></span></span> 이내에 답변서를 조세심판원장에게 제출하여야 한다.</div>
+  <div class="rv" id="rv-4"></div><div class="ref">§69①④</div></div></div>
+
+  <!-- F5 -->
+  <div class="qc" id="fc-5"><div class="qch"><div class="qn">5</div><span class="qt2 bf">빈칸</span><span class="qtl">§72①③ 조세심판관회의 구성 · 의결 정족수</span></div>
+  <div class="qb"><div class="qtxt">조세심판관회의는 주심조세심판관 <span class="fg"><span class="fl">①</span><input class="fi" id="f5-1" data-ans="1명" data-q="5" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb5-1"></span></span>과 배석조세심판관 <span class="fg"><span class="fl">②</span><input class="fi" id="f5-2" data-ans="2명 이상" data-q="5" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:80px"><span class="fb" id="fb5-2"></span></span>으로 구성하며, 담당 조세심판관 <span class="fg"><span class="fl">③</span><input class="fi" id="f5-3" data-ans="3분의 2 이상" data-q="5" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb5-3"></span></span>의 출석으로 개의하고 출석조세심판관 <span class="fg"><span class="fl">④</span><input class="fi" id="f5-4" data-ans="과반수" data-q="5" data-idx="4" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:70px"><span class="fb" id="fb5-4"></span></span>의 찬성으로 의결한다.</div>
+  <div class="rv" id="rv-5"></div><div class="ref">§72①③</div></div></div>
+
+  <!-- F6 -->
+  <div class="qc" id="fc-6"><div class="qch"><div class="qn">6</div><span class="qt2 bf">빈칸</span><span class="qtl">§73①3·5호 제척 사유 · 기간 기준</span></div>
+  <div class="qb"><div class="qtxt">조세심판관은 심판청구일을 기준으로 최근 <span class="fg"><span class="fl">①</span><input class="fi" id="f6-1" data-ans="5년" data-q="6" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb6-1"></span></span> 이내에 심판청구인의 사용인이었던 경우(§73①3호) 또는 불복 대상 처분·세무조사에 관여하였던 경우(§73①5호)에는 심판 관여로부터 <span class="fg"><span class="fl">②</span><input class="fi" id="f6-2" data-ans="제척" data-q="6" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb6-2"></span></span>된다.</div>
+  <div class="rv" id="rv-6"></div><div class="ref">§73①3·5호</div></div></div>
+
+  <!-- F7 -->
+  <div class="qc" id="fc-7"><div class="qch"><div class="qn">7</div><span class="qt2 bf">빈칸</span><span class="qtl">§78①②③ 조세심판관합동회의 구성</span></div>
+  <div class="qb"><div class="qtxt">조세심판관합동회의는 조세심판원장과 조세심판원장이 회의마다 지정하는 <span class="fg"><span class="fl">①</span><input class="fi" id="f7-1" data-ans="12명 이상 20명 이내" data-q="7" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:140px"><span class="fb" id="fb7-1"></span></span>의 상임 및 비상임조세심판관으로 구성하되, 상임조세심판관과 <span class="fg"><span class="fl">②</span><input class="fi" id="f7-2" data-ans="같은 수 이상" data-q="7" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb7-2"></span></span>의 비상임조세심판관이 포함되어야 한다.</div>
+  <div class="rv" id="rv-7"></div><div class="ref">§78③</div></div></div>
+
+  <!-- F8 -->
+  <div class="qc" id="fc-8"><div class="qch"><div class="qn">8</div><span class="qt2 bf">빈칸</span><span class="qtl">§79 불고불리·불이익변경금지 원칙</span></div>
+  <div class="qb"><div class="qtxt">조세심판관회의(합동회의)는 결정을 할 때 심판청구를 한 처분 <span class="fg"><span class="fl">①</span><input class="fi" id="f8-1" data-ans="외의 처분" data-q="8" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:90px"><span class="fb" id="fb8-1"></span></span>에 대해서는 그 처분의 전부 또는 일부를 취소 또는 변경하거나 새로운 처분의 결정을 하지 못하며(불고불리), 심판청구를 한 처분보다 청구인에게 <span class="fg"><span class="fl">②</span><input class="fi" id="f8-2" data-ans="불리한" data-q="8" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:65px"><span class="fb" id="fb8-2"></span></span> 결정을 하지 못한다(불이익변경금지).</div>
+  <div class="rv" id="rv-8"></div><div class="ref">§79①②</div></div></div>
+
+  <!-- F9 -->
+  <div class="qc" id="fc-9"><div class="qch"><div class="qn">9</div><span class="qt2 bf">빈칸</span><span class="qtl">§80 결정의 효력 · 기속력</span></div>
+  <div class="qb"><div class="qtxt">심판청구에 대한 결정은 관계 <span class="fg"><span class="fl">①</span><input class="fi" id="f9-1" data-ans="행정청" data-q="9" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)"><span class="fb" id="fb9-1"></span></span>을 <span class="fg"><span class="fl">②</span><input class="fi" id="f9-2" data-ans="기속" data-q="9" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:55px"><span class="fb" id="fb9-2"></span></span>한다. 심판청구에 대한 결정이 있으면 해당 행정청은 결정의 취지에 따라 즉시 필요한 처분을 <span class="fg"><span class="fl">③</span><input class="fi" id="f9-3" data-ans="하여야 한다" data-q="9" data-idx="3" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:100px"><span class="fb" id="fb9-3"></span></span>.</div>
+  <div class="rv" id="rv-9"></div><div class="ref">§80①②</div></div></div>
+
+  <!-- F10 -->
+  <div class="qc" id="fc-10"><div class="qch"><div class="qn">10</div><span class="qt2 bf">빈칸</span><span class="qtl">§78②③ 합동회의 회부 사유</span></div>
+  <div class="qb"><div class="qtxt">조세심판관합동회의로 회부하는 사유 중 대표적인 두 가지: ① 해당 심판청구사건에 관하여 세법의 해석이 쟁점이 되는 경우로서 이에 관한 종전의 조세심판원 <span class="fg"><span class="fl">①</span><input class="fi" id="f10-1" data-ans="결정" data-q="10" data-idx="1" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb10-1"></span></span>이 없는 경우, ② 종전에 조세심판원에서 한 세법의 해석·적용을 <span class="fg"><span class="fl">②</span><input class="fi" id="f10-2" data-ans="변경" data-q="10" data-idx="2" placeholder="입력→Enter" onkeydown="cf(event,this)" style="min-width:60px"><span class="fb" id="fb10-2"></span></span>하는 경우.</div>
+  <div class="rv" id="rv-10"></div><div class="ref">§78②1·2호</div></div></div>
+
+  <div class="div"></div>
+
+  <div class="sh2"><div class="ey">Part 02</div><h2>O/X 판단 문제 (10문제)</h2><p>옳으면 <strong>O</strong>, 틀리면 <strong>X</strong></p></div>
+
+  <!-- OX1 -->
+  <div class="qc" id="ox-1"><div class="qch"><div class="qn">1</div><span class="qt2 bx">O/X</span><span class="qtl">§67①③ 조세심판원 · 소속 및 원장 임명</span></div>
+  <div class="qb"><div class="qtxt">조세심판원은 기획재정부 소속이며, 조세심판원장은 국무총리의 제청으로 대통령이 임명한다.</div>
+  <div class="oxa"><button class="oxb" id="ob1-o" onclick="po(1,'O',this)">O</button><button class="oxb" id="ob1-x" onclick="po(1,'X',this)">X</button><span class="oxr" id="or-1"></span></div>
+  <div class="oxe" id="oe-1"><span class="ca">✅ 정답: X</span><br>§67①에 따라 조세심판원은 <strong>국무총리 소속</strong>입니다. "기획재정부 소속"은 오답입니다. 다만 원장이 국무총리 제청으로 대통령이 임명한다는 내용(§67③)은 맞습니다.</div>
+  <div class="ref">§67①③</div></div></div>
+
+  <!-- OX2 -->
+  <div class="qc" id="ox-2"><div class="qch"><div class="qn">2</div><span class="qt2 bx">O/X</span><span class="qtl">§67⑤ 원장인 조세심판관 임기 적용</span></div>
+  <div class="qb"><div class="qtxt">원장인 조세심판관은 상임조세심판관 임기 3년 및 신분 보장 규정(§67⑦)이 적용되지 않는다.</div>
+  <div class="oxa"><button class="oxb" id="ob2-o" onclick="po(2,'O',this)">O</button><button class="oxb" id="ob2-x" onclick="po(2,'X',this)">X</button><span class="oxr" id="or-2"></span></div>
+  <div class="oxe" id="oe-2"><span class="ca">✅ 정답: O</span><br>§67⑧에 따라 원장인 조세심판관에 대해서는 <strong>§67⑤(3년 임기 규정) 및 §67⑦(신분 보장 규정)을 적용하지 않습니다</strong>. 원장은 별도 규정에 따르는 정무직 성격의 자리이기 때문입니다.</div>
+  <div class="ref">§67⑧</div></div></div>
+
+  <!-- OX3 -->
+  <div class="qc" id="ox-3"><div class="qch"><div class="qn">3</div><span class="qt2 bx">O/X</span><span class="qtl">§69① 심판청구서 제출 · 세무서장 이송 의무</span></div>
+  <div class="qb"><div class="qtxt">심판청구서를 세무서장에게 제출한 경우, 세무서장은 이를 받은 날부터 7일 이내에 조세심판원장에게 송부하여야 한다.</div>
+  <div class="oxa"><button class="oxb" id="ob3-o" onclick="po(3,'O',this)">O</button><button class="oxb" id="ob3-x" onclick="po(3,'X',this)">X</button><span class="oxr" id="or-3"></span></div>
+  <div class="oxe" id="oe-3"><span class="ca">✅ 정답: X</span><br>§69①에 따라 심판청구서를 받은 세무서장은 이를 <strong>"지체 없이"</strong> 조세심판원장에게 송부하여야 합니다. 구체적인 기한(7일 등)이 지정되어 있지 않고 지체 없이 즉시 송부해야 합니다.</div>
+  <div class="ref">§69①</div></div></div>
+
+  <!-- OX4 -->
+  <div class="qc" id="ox-4"><div class="qch"><div class="qn">4</div><span class="qt2 bx">O/X</span><span class="qtl">§72③ 조세심판관회의 · 의결 정족수</span></div>
+  <div class="qb"><div class="qtxt">조세심판관회의는 담당 조세심판관 과반수의 출석으로 개의하고, 출석조세심판관 3분의 2 이상의 찬성으로 의결한다.</div>
+  <div class="oxa"><button class="oxb" id="ob4-o" onclick="po(4,'O',this)">O</button><button class="oxb" id="ob4-x" onclick="po(4,'X',this)">X</button><span class="oxr" id="or-4"></span></div>
+  <div class="oxe" id="oe-4"><span class="ca">✅ 정답: X</span><br>§72③에 따라 조세심판관회의는 담당 조세심판관 <strong>3분의 2 이상의 출석</strong>으로 개의하고, 출석조세심판관 <strong>과반수의 찬성</strong>으로 의결합니다. 개의와 의결 요건이 문장에서 뒤바뀌어 있습니다.</div>
+  <div class="ref">§72③</div></div></div>
+
+  <!-- OX5 -->
+  <div class="qc" id="ox-5"><div class="qch"><div class="qn">5</div><span class="qt2 bx">O/X</span><span class="qtl">§72④ 조세심판관회의 · 회의 공개 원칙</span></div>
+  <div class="qb"><div class="qtxt">조세심판관회의는 공개를 원칙으로 하며, 의장이 필요하다고 인정할 때에만 비공개로 진행할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob5-o" onclick="po(5,'O',this)">O</button><button class="oxb" id="ob5-x" onclick="po(5,'X',this)">X</button><span class="oxr" id="or-5"></span></div>
+  <div class="oxe" id="oe-5"><span class="ca">✅ 정답: X</span><br>§72④에 따라 조세심판관회의는 <strong>공개하지 아니함</strong>이 원칙입니다. 의장이 필요하다고 인정할 때에는 예외적으로 <strong>공개</strong>할 수 있습니다. 국세심사위원회(§64③)도 동일한 구조입니다.</div>
+  <div class="ref">§72④</div></div></div>
+
+  <!-- OX6 -->
+  <div class="qc" id="ox-6"><div class="qch"><div class="qn">6</div><span class="qt2 bx">O/X</span><span class="qtl">§73①② 제척 사유 · 회피 의무</span></div>
+  <div class="qb"><div class="qtxt">조세심판관이 제척 사유에 해당하는 경우에는 주심 또는 배석조세심판관 지정에서 회피하여야 한다.</div>
+  <div class="oxa"><button class="oxb" id="ob6-o" onclick="po(6,'O',this)">O</button><button class="oxb" id="ob6-x" onclick="po(6,'X',this)">X</button><span class="oxr" id="or-6"></span></div>
+  <div class="oxe" id="oe-6"><span class="ca">✅ 정답: O</span><br>§73②에 따라 제척 사유에 해당하는 조세심판관은 주심조세심판관 또는 배석조세심판관의 지정에서 <strong>회피하여야 합니다</strong>. 단순한 임의가 아닌 의무적 회피입니다.</div>
+  <div class="ref">§73②</div></div></div>
+
+  <!-- OX7 -->
+  <div class="qc" id="ox-7"><div class="qch"><div class="qn">7</div><span class="qt2 bx">O/X</span><span class="qtl">§74 기피신청 · 신청 주체</span></div>
+  <div class="qb"><div class="qtxt">담당 조세심판관에 대한 기피 신청은 심판청구인과 처분청 모두 할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob7-o" onclick="po(7,'O',this)">O</button><button class="oxb" id="ob7-x" onclick="po(7,'X',this)">X</button><span class="oxr" id="or-7"></span></div>
+  <div class="oxe" id="oe-7"><span class="ca">✅ 정답: X</span><br>§74①에 따라 기피 신청은 <strong>심판청구인</strong>만 할 수 있습니다. 처분청은 기피 신청 주체가 아닙니다.</div>
+  <div class="ref">§74①</div></div></div>
+
+  <!-- OX8 -->
+  <div class="qc" id="ox-8"><div class="qch"><div class="qn">8</div><span class="qt2 bx">O/X</span><span class="qtl">§78① 소액·경미 사건 · 주심 단독 결정</span></div>
+  <div class="qb"><div class="qtxt">소액이거나 경미한 심판청구 사건, 또는 청구기간이 지난 후에 제기된 심판청구의 경우 조세심판관회의의 심리를 거치지 않고 주심조세심판관이 단독으로 심리·결정할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob8-o" onclick="po(8,'O',this)">O</button><button class="oxb" id="ob8-x" onclick="po(8,'X',this)">X</button><span class="oxr" id="or-8"></span></div>
+  <div class="oxe" id="oe-8"><span class="ca">✅ 정답: O</span><br>§78① 단서 조문 원문과 일치합니다. 소액·경미 사건이거나 청구기간 도과 후 제기된 경우 <strong>주심조세심판관이 단독으로 심리·결정</strong>할 수 있어 효율적 절차를 도모합니다.</div>
+  <div class="ref">§78① 단서</div></div></div>
+
+  <!-- OX9 -->
+  <div class="qc" id="ox-9"><div class="qch"><div class="qn">9</div><span class="qt2 bx">O/X</span><span class="qtl">§79② 불이익변경금지 · 직권 취소 관계</span></div>
+  <div class="qb"><div class="qtxt">심판청구인이 청구한 처분에 대해 조세심판관회의는 청구 결과로 청구인에게 오히려 불리한 결정(예: 납세액 증액)을 할 수 있다.</div>
+  <div class="oxa"><button class="oxb" id="ob9-o" onclick="po(9,'O',this)">O</button><button class="oxb" id="ob9-x" onclick="po(9,'X',this)">X</button><span class="oxr" id="or-9"></span></div>
+  <div class="oxe" id="oe-9"><span class="ca">✅ 정답: X</span><br>§79②에 따라 조세심판관회의는 심판청구를 한 처분보다 청구인에게 <strong>불리한 결정을 하지 못합니다</strong>(불이익변경금지 원칙). 납세액 증액 결정은 이 원칙에 반합니다.</div>
+  <div class="ref">§79②</div></div></div>
+
+  <!-- OX10 -->
+  <div class="qc" id="ox-10"><div class="qch"><div class="qn">10</div><span class="qt2 bx">O/X</span><span class="qtl">§80①② 결정의 기속력 · 이행 의무</span></div>
+  <div class="qb"><div class="qtxt">심판청구에 대한 결정은 관계 행정청을 기속하며, 결정이 있는 경우 해당 행정청은 결정의 취지에 따라 즉시 필요한 처분을 하여야 한다.</div>
+  <div class="oxa"><button class="oxb" id="ob10-o" onclick="po(10,'O',this)">O</button><button class="oxb" id="ob10-x" onclick="po(10,'X',this)">X</button><span class="oxr" id="or-10"></span></div>
+  <div class="oxe" id="oe-10"><span class="ca">✅ 정답: O</span><br>§80①② 조문 원문과 정확히 일치합니다. 결정의 <strong>기속력</strong>과 <strong>즉시 이행 의무</strong>는 불복제도의 실효성을 담보하는 핵심 규정입니다.</div>
+  <div class="ref">§80①②</div></div></div>
+
+</div></div>
+
+<!-- 정답 및 해설 편 -->
+<div id="sec-a" class="sec"><div class="w">
+  <div class="sh2" style="padding-top:26px"><div class="ey">Answer &amp; Commentary</div><h2>정답 및 해설 편</h2></div>
+  <div class="ib">📌 <strong>기준 법령:</strong> 국세기본법 (법률 제20640호, 시행 2026.01.02) — 법제처 MCP API 조문 원문 직접 인용</div>
+
+  <div class="sh2"><div class="ey">Part 01 · 정답</div><h2>빈칸 채우기 정답</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§67①② 조세심판원 소속·독립성</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">국무총리</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">독립적으로</span></div>
+    <div class="ad"><span class="lc">§67①②</span> 조세심판원 = <strong>국무총리 소속</strong>. "기획재정부"가 아님! 독립적 수행으로 정치적 영향 배제.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§67⑤⑥ 상임·비상임 임기 비교</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">3년</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">중임</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">3년</span></div>
+    <div class="ar"><span class="ak">④ 정답</span><span class="av">연임</span></div>
+    <div class="ad"><span class="lc">§67⑤⑥</span>
+      <div class="sb2"><div class="sb2t">임기 비교 핵심</div>
+        상임조세심판관: <strong>3년, 1회 중임</strong> (총 최대 6년)<br>
+        비상임조세심판관: <strong>3년, 1회 연임</strong> (총 최대 6년)<br>
+        ※ "중임"과 "연임" 용어 구별 필수!
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§68① 심판청구 기간</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">90일</span></div>
+    <div class="ad"><span class="lc">§68①</span> 심판청구 기간 = <strong>90일</strong>. 심사청구(§61①)와 동일. 이의신청 후 심판청구도 결정통지 받은 날로부터 90일(§68② → §61② 준용).</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§69①④ 청구 절차 · 답변서 기한</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">세무서장</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">조세심판원장</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">10일</span></div>
+    <div class="ad"><span class="lc">§69①④</span> 심판청구서 제출처: <strong>세무서장</strong> 또는 <strong>조세심판원장</strong>. 세무서장 답변서 제출기한: <strong>10일</strong>. 심사청구 의견서(7일)와 다름에 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§72①③ 조세심판관회의 구성·의결</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">1명</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">2명 이상</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">3분의 2 이상</span></div>
+    <div class="ar"><span class="ak">④ 정답</span><span class="av">과반수</span></div>
+    <div class="ad"><span class="lc">§72①③</span> 구성: 주심 <strong>1명</strong> + 배석 <strong>2명 이상</strong>. 개의: <strong>2/3 이상</strong>. 의결: <strong>과반수</strong>. 개의와 의결 요건 뒤바꾸는 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§73①3·5호 제척 기간 기준</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">5년</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">제척</span></div>
+    <div class="ad"><span class="lc">§73①3·5호</span> 제척 기간 기준: 심판청구일 전 <strong>최근 5년 이내</strong>. 사용인이었던 경우, 처분·세무조사에 관여했던 경우 모두 5년 기준.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§78③ 합동회의 구성</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">12명 이상 20명 이내</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">같은 수 이상</span></div>
+    <div class="ad"><span class="lc">§78③</span> 합동회의: 원장 + <strong>12~20명</strong>의 상임·비상임 심판관. 비상임이 상임과 <strong>같은 수 이상</strong> 포함. "과반" 또는 "2/3"로 바꾸는 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§79 불고불리·불이익변경금지</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">외의 처분</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">불리한</span></div>
+    <div class="ad"><span class="lc">§79①②</span>
+      <div class="sb2"><div class="sb2t">두 원칙 요약</div>
+        불고불리 원칙(§79①): 심판청구 대상 <strong>외의 처분</strong>은 취소·변경 불가<br>
+        불이익변경금지(§79②): 청구인에게 <strong>불리한</strong> 결정 불가
+      </div>
+    </div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§80①② 결정의 기속력</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">행정청</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">기속</span></div>
+    <div class="ar"><span class="ak">③ 정답</span><span class="av">하여야 한다</span></div>
+    <div class="ad"><span class="lc">§80①②</span> 결정의 기속력 = <strong>관계 행정청</strong>을 구속. 이행 의무 = <strong>"하여야 한다"(의무)</strong>. "할 수 있다"로 바꾸는 함정 주의!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§78②1·2호 합동회의 회부 사유</span><span class="vd va">정답 확인</span></div><div class="ab">
+    <div class="ar"><span class="ak">① 정답</span><span class="av">결정</span></div>
+    <div class="ar"><span class="ak">② 정답</span><span class="av">변경</span></div>
+    <div class="ad"><span class="lc">§78②</span>
+      <div class="sb2"><div class="sb2t">합동회의 회부 4가지 사유</div>
+        ① 세법 해석 쟁점으로 종전 조세심판원 <strong>결정</strong>이 없는 경우<br>
+        ② 종전 세법 해석·적용을 <strong>변경</strong>하는 경우<br>
+        ③ 결정의 일관성 유지 필요<br>
+        ④ 국세행정·납세자 권리의무에 중대한 영향 예상
+      </div>
+    </div>
+  </div></div>
+
+  <div class="div"></div>
+  <div class="sh2"><div class="ey">Part 02 · 정답</div><h2>O/X 정답 및 해설</h2></div>
+
+  <div class="ac2"><div class="ach"><div class="an">1</div><span class="al2">§67① 조세심판원 소속</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "기획재정부 소속"</div>
+    <div class="cp">✅ §67①: <strong>국무총리 소속</strong>. 원장 임명: 국무총리 제청·대통령 임명(맞음).</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">2</div><span class="al2">§67⑧ 원장 임기·신분 보장 제외</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§67⑧</span> 원장에 대해서는 §67⑤(임기) 및 §67⑦(신분 보장) 적용 제외. 조문 원문과 일치.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">3</div><span class="al2">§69① 세무서장 이송 기한</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "7일 이내에 조세심판원장에게 송부"</div>
+    <div class="cp">✅ §69①: <strong>지체 없이</strong> 송부. 구체적 기한 없음. (답변서 제출은 10일, 의견서 송부는 심사청구에서 7일)</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">4</div><span class="al2">§72③ 개의·의결 정족수 역전</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "과반수 출석 개의 / 2/3 이상 의결"</div>
+    <div class="cp">✅ §72③: <strong>2/3 이상 출석</strong>으로 개의, <strong>과반수 찬성</strong>으로 의결. 역순 함정!</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">5</div><span class="al2">§72④ 회의 비공개 원칙</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "공개 원칙, 필요시 비공개"</div>
+    <div class="cp">✅ §72④: <strong>비공개 원칙</strong>, 의장 필요 인정 시 예외 공개.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">6</div><span class="al2">§73② 제척 사유 해당 시 회피 의무</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§73②</span> 조문 원문과 일치. 제척 사유 = 의무적 <strong>회피</strong>. 임의규정이 아님.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">7</div><span class="al2">§74① 기피신청 주체 · 심판청구인만 가능</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "심판청구인과 처분청 모두 가능"</div>
+    <div class="cp">✅ §74①: <strong>심판청구인만</strong> 기피 신청 가능.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">8</div><span class="al2">§78① 단서 소액·경미 주심 단독 결정</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§78① 단서</span> 조문 원문과 일치. 소액·경미 사건 또는 청구기간 도과 후 제기 → <strong>주심 단독</strong> 심리·결정.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">9</div><span class="al2">§79② 불이익변경금지</span><span class="vd vx">정답: X</span></div><div class="ab">
+    <div class="wp2">❌ "불리한 결정(납세액 증액) 가능"</div>
+    <div class="cp">✅ §79②: 청구인에게 <strong>불리한 결정 불가</strong>. 불이익변경금지 원칙.</div>
+  </div></div>
+
+  <div class="ac2"><div class="ach"><div class="an">10</div><span class="al2">§80 결정의 기속력·즉시 이행</span><span class="vd vo">정답: O</span></div><div class="ab">
+    <div class="ad"><span class="lc">§80①②</span> 조문 원문과 일치. 관계 행정청 기속 + 즉시 이행 의무.</div>
+  </div></div>
+
+</div></div>
+
+<div class="foot">
+  2026-05-30 생성 · 국세기본법 §67~§81 기준<br>
+  법령 출처: 법제처 국세기본법 (법률 제20640호, 시행 2026.01.02) — MCP API 직접 조회<br>
+  #조세심판원 #심판청구 #불고불리 #불이익변경금지 #기속력 #세무사시험
+</div>
+
+<script>
+const FS={},OS={};
+const FA={
+  '1-1':['국무총리'],'1-2':['독립적으로'],
+  '2-1':['3년'],'2-2':['중임'],'2-3':['3년'],'2-4':['연임'],
+  '3-1':['90일'],
+  '4-1':['세무서장'],'4-2':['조세심판원장'],'4-3':['10일'],
+  '5-1':['1명'],'5-2':['2명 이상'],'5-3':['3분의 2 이상','3/2이상'],'5-4':['과반수'],
+  '6-1':['5년'],'6-2':['제척'],
+  '7-1':['12명 이상 20명 이내','12이상20이내'],'7-2':['같은 수 이상','같은수이상'],
+  '8-1':['외의 처분','외의처분'],'8-2':['불리한'],
+  '9-1':['행정청'],'9-2':['기속'],'9-3':['하여야 한다','하여야한다'],
+  '10-1':['결정'],'10-2':['변경']
+};
+const FC={1:2,2:4,3:1,4:3,5:4,6:2,7:2,8:2,9:3,10:2};
+const OA={1:'X',2:'O',3:'X',4:'X',5:'X',6:'O',7:'X',8:'O',9:'X',10:'O'};
+
+function nm(s){return s.replace(/[\s「」·]/g,'').toLowerCase()}
+function cf(e,inp){
+  if(e.key!=='Enter')return;e.preventDefault();
+  const q=+inp.dataset.q,idx=+inp.dataset.idx,key=q+'-'+idx,val=inp.value.trim();
+  if(!val)return;
+  const ok=FA[key].some(a=>nm(val)===nm(a));
+  inp.classList.remove('ok','ng');inp.classList.add(ok?'ok':'ng');inp.disabled=true;
+  const fb=document.getElementById('fb'+q+'-'+idx);
+  fb.textContent=ok?'✓':'✗ '+FA[key][0];fb.className='fb show '+(ok?'ok':'ng');
+  if(!FS[q])FS[q]={total:FC[q],done:0,wrong:0};
+  if(!FS[q][idx]){FS[q][idx]=true;FS[q].done++;if(!ok)FS[q].wrong++;}
+  if(FS[q].done===FS[q].total){
+    document.getElementById('fc-'+q).classList.add(FS[q].wrong===0?'ac':'aw');
+    const rv=document.getElementById('rv-'+q);
+    const ks=Object.keys(FA).filter(k=>k.startsWith(q+'-'));
+    rv.innerHTML='✅ 정답: '+ks.map(k=>{const i=+k.split('-')[1];return '<strong>'+['①','②','③','④'][i-1]+' '+FA[k][0]+'</strong>';}).join(' | ');
+    rv.classList.add('show');
+  }upd();
+}
+function po(n,picked){
+  if(OS[n])return;
+  const correct=OA[n],ok=(picked===correct);OS[n]={ok};
+  const bo=document.getElementById('ob'+n+'-o'),bx=document.getElementById('ob'+n+'-x');
+  bo.disabled=true;bx.disabled=true;
+  if(picked==='O'){bo.classList.add(ok?'ch':'wp');if(!ok)bx.classList.add('ch');}
+  else{bx.classList.add(ok?'ch':'wp');if(!ok)bo.classList.add('ch');}
+  document.getElementById('or-'+n).textContent=ok?'🎉 정답!':'❌ 오답 (정답: '+correct+')';
+  document.getElementById('or-'+n).className='oxr show '+(ok?'ok':'ng');
+  document.getElementById('oe-'+n).className='oxe show '+(ok?'ok':'ng');
+  document.getElementById('ox-'+n).classList.add('ao');upd();
+}
+function upd(){
+  let fc=0,ft=0,oc=0,ot=0,wr=0;
+  for(const q in FS){ft++;if(FS[q].done===FS[q].total){if(FS[q].wrong===0)fc++;else wr++;}}
+  for(const n in OS){ot++;if(OS[n].ok)oc++;else wr++;}
+  document.getElementById('fc').textContent=fc;document.getElementById('ft').textContent=ft;
+  document.getElementById('oc').textContent=oc;document.getElementById('ot').textContent=ot;
+  document.getElementById('wc').textContent=wr;
+}
+function resetAll(){
+  document.querySelectorAll('.fi').forEach(i=>{i.value='';i.disabled=false;i.classList.remove('ok','ng');});
+  document.querySelectorAll('.fb').forEach(f=>{f.textContent='';f.className='fb';});
+  document.querySelectorAll('.rv').forEach(r=>r.classList.remove('show'));
+  document.querySelectorAll('.oxb').forEach(b=>{b.disabled=false;b.className='oxb';});
+  document.querySelectorAll('.oxr').forEach(r=>{r.textContent='';r.className='oxr';});
+  document.querySelectorAll('.oxe').forEach(e=>{e.className='oxe';});
+  document.querySelectorAll('.qc').forEach(c=>c.classList.remove('ac','aw','ao'));
+  for(const k in FS)delete FS[k];for(const k in OS)delete OS[k];upd();
+}
+function showSec(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
