@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제33~35조 | 세무사 1차 암기퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F3EF;--surf:#FFF;--surf2:#EDECE8;--bdr:#D9D5CD;
+  --acc:#1A3955;--acc2:#A44F12;--acc3:#215238;
+  --danger:#8B261D;--txt:#151410;--txt2:#3C3930;--txt3:#706B64;
+  --ok:#215238;--ng:#8B261D;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(26,57,85,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#DDD0B0}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}
+.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#DDD0B0;line-height:1}
+
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.st{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap}
+.stb{background:var(--acc2);color:#fff}.sto{background:var(--acc3);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1.1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .33s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.qh{padding:.9rem 1.15rem .68rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:25px;height:25px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;margin-top:1px}
+.qnb{background:#FDF0E3;color:var(--acc2)}.qno{background:#E7F3EC;color:var(--acc3)}
+.qt{font-size:.865rem;color:var(--txt);line-height:1.82;flex:1}
+.qt strong{color:var(--acc);font-weight:700}
+
+.lq{background:var(--surf2);border-left:3px solid var(--acc);padding:.65rem .9rem;margin:.4rem 0;font-size:.81rem;color:var(--txt2);border-radius:0 5px 5px 0;line-height:1.88}
+.bs{display:inline-block;min-width:3.5rem;border-bottom:2px solid var(--acc2);font-family:var(--mono);font-size:.77rem;padding:0 .22rem;text-align:center;color:#bbb;letter-spacing:.07em}
+
+.qbd{padding:.7rem 1.15rem .85rem}
+.bins{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.biw{display:flex;align-items:center;gap:.3rem}
+.bil{font-family:var(--mono);font-size:.64rem;color:var(--txt3);background:var(--surf2);padding:.08rem .34rem;border-radius:3px;white-space:nowrap}
+.bi{border:1.5px solid var(--bdr);border-radius:5px;padding:.28rem .5rem;font-family:var(--sans);font-size:.79rem;min-width:90px;background:#fff;color:var(--txt);transition:border-color .13s;outline:none}
+.bi:focus{border-color:var(--acc)}
+.bi.ok{border-color:var(--ok);background:#E7F3EC;color:var(--ok)}
+.bi.ng{border-color:var(--ng);background:#FAF0EF;color:var(--ng)}
+
+.oxs{display:flex;gap:.5rem;margin-top:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.4rem 1.2rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E7F3EC;color:var(--acc3)}
+.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E7F3EC;color:var(--ok)}
+.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+
+.qa{padding:0 1.15rem .85rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.25rem .65rem;border-radius:20px}
+.rb.show{display:flex}
+.rb.ok{background:#E7F3EC;color:var(--ok)}
+.rb.ng{background:#FAF0EF;color:var(--ng)}
+
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.85rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.88}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.4rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:600;color:var(--ok);margin-bottom:.24rem}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+
+/* 강조 박스 */
+.key-box{background:#FFF8F0;border:1.5px solid #E8A87C;border-radius:6px;padding:.55rem .9rem;margin:.4rem 0;font-size:.8rem;line-height:1.8}
+.key-box strong{color:var(--acc2)}
+
+/* 비교표 */
+.ct{width:100%;border-collapse:collapse;font-size:.76rem;margin:.42rem 0}
+.ct th{background:var(--surf2);padding:.3rem .52rem;text-align:center;border:1px solid var(--bdr);font-weight:600;color:var(--acc)}
+.ct td{padding:.26rem .52rem;border:1px solid var(--bdr);text-align:center}
+.ct td:first-child{text-align:left}
+
+/* trend tag */
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.08rem .35rem;border-radius:3px;margin-left:.3rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#8B261D}
+.tup{background:#E7F5EA;color:#215238}
+.twrn{background:#FFF8E1;color:#796000}
+.tnew{background:#E8F0FB;color:#1A3955}
+
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}
+.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}
+.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+
+@media(max-width:600px){
+  .htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}
+  .qh{padding:.75rem .9rem .62rem}.qbd{padding:.6rem .9rem .75rem}.qa{padding:0 .9rem .75rem}
+  .bins{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hdi">
+    <div>
+      <div class="hbg">세무사 1차 · 세법학개론</div>
+      <div class="htl">법인세법 제33~35조<br><span>퇴직급여충당금 · 대손충당금 · 구상채권상각충당금</span></div>
+      <div class="hsb">법제처 현행법령·시행령 기준 (2026.02.27 시행) · 충당금 2024~2025 연속 계산형 출제 · 핵심 수치 집중 대비</div>
+    </div>
+    <div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div>
+  </div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<!-- ════════════════════════════════════
+     PART 1 : 빈칸 채우기 13문제
+════════════════════════════════════ -->
+<div class="sh">
+  <span class="st stb">Part 1</span>
+  <span class="stl">주요 법조문 빈칸 채우기</span>
+  <span class="scn" id="bc">0 / 13</span>
+</div>
+<hr class="shr">
+
+<!-- B1 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">1</span>
+    <div class="qt">
+      <strong>법인세법 제33조 제1항 (퇴직급여충당금 — 계상 방식과 손금산입 원칙)</strong><span class="tb thot">🔴 충당금 2025 계산형 출제</span>
+      <div class="lq">
+        내국법인이 각 사업연도의 결산을 확정할 때 임원이나 직원의 퇴직급여에 충당하기 위하여 퇴직급여충당금을 <span class="bs">①</span>로 계상한 경우에는 대통령령으로 정하는 바에 따라 계산한 금액의 범위에서 그 계상한 퇴직급여충당금을 해당 사업연도의 소득금액을 계산할 때 <span class="bs">②</span>에 산입한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 계상 방법</span><input class="bi" id="b1_1" placeholder="손비/익금?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 산입 방향</span><input class="bi" id="b1_2" placeholder="손금/익금?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B1')">정답 확인</button><span class="rb" id="rB1"></span></div>
+  <div class="ex" id="eB1">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조 제1항</div>
+    <div class="al">① 손비 &nbsp; ② 손금</div>
+    <p>퇴직급여충당금은 <b>결산 시 손비로 계상</b>해야만 손금산입이 가능합니다(결산조정 방식). 신고조정(세무조정계산서 계상)으로는 불가합니다. 대손충당금·구상채권상각충당금도 동일한 결산조정 원칙을 따릅니다.</p>
+  </div>
+</div>
+
+<!-- B2 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">2</span>
+    <div class="qt">
+      <strong>법인세법 시행령 제60조 제1항 (퇴직급여충당금 — 당기 한도액)</strong><span class="tb thot">🔴 핵심 수치 암기</span>
+      <div class="lq">
+        퇴직급여충당금 당기 손금산입 한도 = 퇴직급여 지급대상 임원·직원에게 해당 사업연도에 지급한 총급여액의 <span class="bs">①</span>에 상당하는 금액
+      </div>
+      단, <span class="bs">②</span>형 퇴직연금등이 설정된 자는 총급여액 계산에서 <span class="bs">③</span>한다.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 당기 한도율</span><input class="bi" id="b2_1" placeholder="100분의 ○" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 퇴직연금 유형</span><input class="bi" id="b2_2" placeholder="확정기여/확정급여?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 포함 여부</span><input class="bi" id="b2_3" placeholder="제외/포함?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B2')">정답 확인</button><span class="rb" id="rB2"></span></div>
+  <div class="ex" id="eB2">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제60조 제1항</div>
+    <div class="al">① 100분의 5(5%) &nbsp; ② 확정기여형(DC형) &nbsp; ③ 제외</div>
+    <div class="key-box"><strong>퇴직급여충당금 당기 한도</strong> = 총급여액 × <strong>5%</strong><br>확정기여형(DC) 설정자는 외부 적립이므로 총급여에서 제외</div>
+    <p class="trap">⚠ 오답 함정: "총급여의 10%", "확정급여형(DB) 설정자 제외"</p>
+  </div>
+</div>
+
+<!-- B3 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">3</span>
+    <div class="qt">
+      <strong>법인세법 시행령 제60조 제2항 (퇴직급여충당금 — 누적 한도액, 2016년 이후)</strong><span class="tb thot">🔴 핵심 수치 암기</span>
+      <div class="lq">
+        퇴직급여충당금 손금산입 누적액 한도 = 전원 퇴직 시 지급해야 할 퇴직급여 추계액 × <span class="bs">①</span><br>
+        (2016년 1월 1일 이후 개시 사업연도 기준)
+      </div>
+      이 수치가 의미하는 것: 2016년 이후 퇴직급여충당금 누적 잔액은 사실상 <span class="bs">②</span>이 된다.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 2016년 이후 한도율</span><input class="bi" id="b3_1" placeholder="100분의 ○" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 누적 한도의 실질</span><input class="bi" id="b3_2" placeholder="0원/무제한?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B3')">정답 확인</button><span class="rb" id="rB3"></span></div>
+  <div class="ex" id="eB3">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제60조 제2항 제7호</div>
+    <div class="al">① 100분의 0(0%) &nbsp; ② 0원(사실상 누적 손금산입 불가)</div>
+    <div class="key-box"><strong>2016년 이후</strong> 퇴직급여충당금 누적 한도율 = <strong>0%</strong><br>
+    → 추계액 × 0% = <strong>0원</strong> → 충당금 잔액 유지 불가<br>
+    → 당기 5% 산입해도 누적 한도 0원이므로 실질적으로 손금산입 = <strong>0원</strong></div>
+    <p>퇴직연금제도(DC·DB) 전환 유도 목적으로 단계적 한도 축소 → 2016년부터 0%로 완전 폐지. <b>퇴직연금충당금(시행령 제44조의2)과 혼동하지 않도록 주의!</b></p>
+    <p class="trap">⚠ 오답 함정: "2016년 이후도 100%", "한도율 5%"</p>
+  </div>
+</div>
+
+<!-- B4 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">4</span>
+    <div class="qt">
+      <strong>법인세법 제33조 제2항 (퇴직급여충당금 — 퇴직금 지급 시 처리)</strong>
+      <div class="lq">
+        퇴직급여충당금을 손금에 산입한 내국법인이 임원이나 직원에게 퇴직금을 지급하는 경우에는 그 퇴직급여충당금에서 <span class="bs">①</span> 지급한 것으로 본다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 지급 우선순위</span><input class="bi" id="b4_1" placeholder="먼저/나중에?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B4')">정답 확인</button><span class="rb" id="rB4"></span></div>
+  <div class="ex" id="eB4">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조 제2항</div>
+    <div class="al">① 먼저</div>
+    <p>퇴직금 지급 시 <b>퇴직급여충당금에서 먼저 지급</b>한 것으로 봅니다. 즉, 충당금이 있으면 우선 상계 처리합니다. 대손충당금에서 대손금 상계 시의 "먼저 상계"와 동일한 구조입니다.</p>
+  </div>
+</div>
+
+<!-- B5 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">5</span>
+    <div class="qt">
+      <strong>법인세법 제33조 제3항 (퇴직급여충당금 — 합병·분할 시 승계)</strong>
+      <div class="lq">
+        퇴직급여충당금을 손금에 산입한 내국법인이 합병하거나 분할하는 경우, 합병법인등이 승계받은 금액은 그 합병법인등이 합병등기일 또는 분할등기일에 가지고 있는 <span class="bs">①</span>으로 본다.
+      </div>
+      같은 맥락에서 사업자가 그 사업을 내국법인에게 <span class="bs">②</span>으로 양도하는 경우에 관하여는 제3항을 <span class="bs">③</span>한다.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 승계 후 지위</span><input class="bi" id="b5_1" placeholder="퇴직급여충당금" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 양도 방식</span><input class="bi" id="b5_2" placeholder="포괄적/일부?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 적용 방식</span><input class="bi" id="b5_3" placeholder="준용/적용?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B5')">정답 확인</button><span class="rb" id="rB5"></span></div>
+  <div class="ex" id="eB5">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조 제3항·제4항</div>
+    <div class="al">① 퇴직급여충당금 &nbsp; ② 포괄적 &nbsp; ③ 준용</div>
+    <p>합병·분할 시 퇴직급여충당금은 합병법인등이 자신의 것으로 <b>승계</b>합니다. 포괄 양도 시 제3항 준용 — "포괄적"과 "준용"이 핵심 키워드입니다.</p>
+    <p class="trap">⚠ 오답 함정: "일부 양도 시에도 준용", "제4항을 적용한다" → "준용"이 정확</p>
+  </div>
+</div>
+
+<!-- B6 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">6</span>
+    <div class="qt">
+      <strong>법인세법 제34조 제1항 (대손충당금 — 적용 대상 채권)</strong><span class="tb thot">🔴 충당금 2024 계산형 출제</span>
+      <div class="lq">
+        내국법인이 각 사업연도의 결산을 확정할 때 <span class="bs">①</span>, <span class="bs">②</span> 및 그 밖에 이에 준하는 채권의 대손에 충당하기 위하여 대손충당금을 손비로 계상한 경우에는 대통령령으로 정하는 금액의 범위에서 손금에 산입한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 채권 종류A</span><input class="bi" id="b6_1" placeholder="외상○○금" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 채권 종류B</span><input class="bi" id="b6_2" placeholder="대여금" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B6')">정답 확인</button><span class="rb" id="rB6"></span></div>
+  <div class="ex" id="eB6">
+    <div class="eh">해설</div><div class="lr">법인세법 제34조 제1항</div>
+    <div class="al">① 외상매출금 &nbsp; ② 대여금</div>
+    <p>대손충당금 설정 대상: <b>외상매출금 + 대여금 + 그 밖에 이에 준하는 채권</b>(어음·미수금·기업회계기준 대손충당금 대상 채권). 단, 제19조의2 제2항의 채권(채무보증 구상채권·특수관계인 가지급금)은 제외(제34조 제2항).</p>
+  </div>
+</div>
+
+<!-- B7 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">7</span>
+    <div class="qt">
+      <strong>법인세법 시행령 제61조 제2항 (대손충당금 — 한도액 계산)</strong><span class="tb thot">🔴 계산형 최고빈출 수치</span>
+      <div class="lq">
+        대손충당금 손금산입 한도 = 다음 두 금액 중 <span class="bs">①</span> 금액<br>
+        (A) 채권잔액 × <span class="bs">②</span><br>
+        (B) 채권잔액 × <span class="bs">③</span>
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 선택 기준</span><input class="bi" id="b7_1" placeholder="큰/작은?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 법정 비율</span><input class="bi" id="b7_2" placeholder="100분의 ○" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 실적 기준</span><input class="bi" id="b7_3" placeholder="대손실적률" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B7')">정답 확인</button><span class="rb" id="rB7"></span></div>
+  <div class="ex" id="eB7">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제61조 제2항</div>
+    <div class="al">① 큰 &nbsp; ② 100분의 1(1%) &nbsp; ③ 대손실적률</div>
+    <div class="key-box"><strong>대손충당금 한도</strong> = MAX(채권잔액 × <strong>1%</strong>, 채권잔액 × <strong>대손실적률</strong>)<br>
+    대손실적률 = 당기 대손금 / 전기말 채권잔액<br>
+    실적률이 1%보다 높으면 실적률 적용, 낮으면 1% 최저 보장</div>
+    <p class="trap">⚠ 오답 함정: "둘 중 작은 금액", "채권잔액의 2%", "채권잔액의 1%만 적용"</p>
+  </div>
+</div>
+
+<!-- B8 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">8</span>
+    <div class="qt">
+      <strong>법인세법 시행령 제61조 제3항 (대손실적률 계산 공식)</strong><span class="tb thot">🔴 계산형 출제 필수</span>
+      <div class="lq">
+        대손실적률 = <span class="bs">①</span>에 대손이 확정된 금액 ÷ <span class="bs">②</span>말 현재 제1항에 따른 채권잔액
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 시점(분자)</span><input class="bi" id="b8_1" placeholder="당기/전기?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 시점(분모)</span><input class="bi" id="b8_2" placeholder="당기/전기?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B8')">정답 확인</button><span class="rb" id="rB8"></span></div>
+  <div class="ex" id="eB8">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제61조 제3항</div>
+    <div class="al">① 당기 &nbsp; ② 전기</div>
+    <div class="key-box"><strong>대손실적률</strong> = 당기 확정 대손금 ÷ <strong>전기말</strong> 채권잔액<br>
+    핵심: 분모는 전기말(당기말이 아님)!</div>
+    <p>계산형에서 전기말 채권잔액과 당기말 채권잔액을 혼동하는 함정이 자주 출제됩니다.</p>
+    <p class="trap">⚠ 오답 함정: "당기 대손금 ÷ 당기말 채권잔액"</p>
+  </div>
+</div>
+
+<!-- B9 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">9</span>
+    <div class="qt">
+      <strong>법인세법 제34조 제3항 (대손충당금 — 대손 발생 시 처리 순서)</strong><span class="tb thot">🔴 처리 순서 빈출</span>
+      <div class="lq">
+        대손충당금을 손금에 산입한 내국법인은 대손금이 발생한 경우 그 대손금을 대손충당금과 <span class="bs">①</span> 상계하여야 하고, 상계하고 남은 대손충당금의 금액은 다음 사업연도의 소득금액을 계산할 때 <span class="bs">②</span>에 산입한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 상계 우선순위</span><input class="bi" id="b9_1" placeholder="먼저/나중에?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 잔액 처리</span><input class="bi" id="b9_2" placeholder="익금/손금?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B9')">정답 확인</button><span class="rb" id="rB9"></span></div>
+  <div class="ex" id="eB9">
+    <div class="eh">해설</div><div class="lr">법인세법 제34조 제3항</div>
+    <div class="al">① 먼저 &nbsp; ② 익금</div>
+    <p>대손 발생 → ① <b>대손충당금과 먼저 상계</b> → ② 남은 잔액 <b>다음 연도 익금 환원</b>. 이 두 단계의 처리가 충당금 세무조정의 핵심 흐름입니다.</p>
+  </div>
+</div>
+
+<!-- B10 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">10</span>
+    <div class="qt">
+      <strong>법인세법 제34조 제2항 (대손충당금 — 적용 제외 채권)</strong><span class="tb thot">🔴 적용 제외 채권 빈출</span>
+      <div class="lq">
+        제1항(대손충당금 손금산입)은 <span class="bs">①</span> 제2항 각 호의 어느 하나에 해당하는 채권에는 <span class="bs">②</span>하지 아니한다.
+      </div>
+      → 적용 제외 채권: ① 채무보증으로 인한 <span class="bs">③</span>채권, ② 특수관계인에 대한 가지급금
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 준용 조문</span><input class="bi" id="b10_1" placeholder="제19조의2" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 효과</span><input class="bi" id="b10_2" placeholder="적용/적용하지?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 채권 종류</span><input class="bi" id="b10_3" placeholder="구상/일반?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B10')">정답 확인</button><span class="rb" id="rB10"></span></div>
+  <div class="ex" id="eB10">
+    <div class="eh">해설</div><div class="lr">법인세법 제34조 제2항</div>
+    <div class="al">① 제19조의2 &nbsp; ② 적용하지 &nbsp; ③ 구상</div>
+    <p>채무보증 구상채권과 특수관계인 가지급금은 <b>대손금 손금산입도 불가(제19조의2 제2항)</b>하고, <b>대손충당금 설정도 불가(제34조 제2항)</b>합니다. 이중으로 손금 인정이 배제됩니다.</p>
+  </div>
+</div>
+
+<!-- B11 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">11</span>
+    <div class="qt">
+      <strong>법인세법 제34조 제4항 (대손충당금 — 합병·분할 시 승계 요건)</strong><span class="tb tup">⬆ 합병·분할 연계</span>
+      <div class="lq">
+        합병·분할 시 대손충당금을 승계하려면, 해당 대손충당금에 대응하는 <span class="bs">①</span>이 함께 <span class="bs">②</span>되는 경우만 해당한다.
+      </div>
+      퇴직급여충당금 승계(제33조 제3항)와의 차이: 퇴직급여충당금은 채권·자산 동반 승계 요건이 <span class="bs">③</span>.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 동반 승계 대상</span><input class="bi" id="b11_1" placeholder="채권/자산?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 승계 조건</span><input class="bi" id="b11_2" placeholder="승계/취득?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 퇴직급여충당금과 비교</span><input class="bi" id="b11_3" placeholder="있다/없다?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B11')">정답 확인</button><span class="rb" id="rB11"></span></div>
+  <div class="ex" id="eB11">
+    <div class="eh">해설</div><div class="lr">법인세법 제34조 제4항</div>
+    <div class="al">① 채권 &nbsp; ② 승계 &nbsp; ③ 없다</div>
+    <p>대손충당금 승계 시 <b>대응 채권도 함께 승계</b>되어야 합니다(채권-충당금 연동). 반면, 퇴직급여충당금 승계(제33조 제3항)는 그런 조건이 없습니다. 두 충당금의 승계 요건 차이가 핵심!</p>
+    <p class="trap">⚠ 오답 함정: "대손충당금도 채권 없이 단독 승계 가능"</p>
+  </div>
+</div>
+
+<!-- B12 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">12</span>
+    <div class="qt">
+      <strong>법인세법 제35조 제1항·제2항 (구상채권상각충당금 — 대상 법인 및 IFRS 특례)</strong><span class="tb twrn">⚠ 특수 충당금</span>
+      <div class="lq">
+        법률에 따라 <span class="bs">①</span>사업을 하는 내국법인 중 대통령령으로 정하는 법인이 결산 시 손비로 계상한 경우 손금에 산입한다.(제1항)<br>
+        한국채택국제회계기준(IFRS) 적용 법인은 세무조정계산서에 계상하고 해당 사업연도의 <span class="bs">②</span>을 할 때 구상채권상각충당금으로 적립한 경우 결산 손비 계상으로 <span class="bs">③</span>한다.(제2항)
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 적용 사업</span><input class="bi" id="b12_1" placeholder="신용보증/신용대출?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② IFRS 특례 절차</span><input class="bi" id="b12_2" placeholder="이익처분/결산?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 의제 내용</span><input class="bi" id="b12_3" placeholder="본다/않는다?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B12')">정답 확인</button><span class="rb" id="rB12"></span></div>
+  <div class="ex" id="eB12">
+    <div class="eh">해설</div><div class="lr">법인세법 제35조 제1항·제2항</div>
+    <div class="al">① 신용보증 &nbsp; ② 이익처분 &nbsp; ③ 본다(손비 계상 의제)</div>
+    <p>구상채권상각충당금은 <b>신용보증사업자</b> 전용. IFRS 법인은 이익처분 적립 + 세무조정계산서 계상 → 결산 손비 의제(신고조정 허용). 대손충당금·퇴직급여충당금(결산조정만)과 구별 포인트!</p>
+  </div>
+</div>
+
+<!-- B13 -->
+<div class="qc">
+  <div class="qh"><span class="qn qnb">13</span>
+    <div class="qt">
+      <strong>제33~35조 종합 — 충당금 세무조정 핵심 구조</strong>
+      <div class="lq">
+        대손충당금: 당기 설정 → 손금산입 / 대손 발생 → 충당금 <span class="bs">①</span> / 잔액 → 익금 환원 / 당기말 재설정<br>
+        퇴직급여충당금: 당기 설정(총급여의 <span class="bs">②</span>%) → 손금산입 / 퇴직금 지급 → 충당금 <span class="bs">③</span> 지급 / 2016년 이후 누적 한도 <span class="bs">④</span>%
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 대손 발생 처리</span><input class="bi" id="b13_1" placeholder="먼저 상계" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 당기 한도율</span><input class="bi" id="b13_2" placeholder="○%" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 퇴직금 처리</span><input class="bi" id="b13_3" placeholder="먼저/나중?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">④ 2016년 이후 누적 한도</span><input class="bi" id="b13_4" placeholder="○%" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B13')">정답 확인</button><span class="rb" id="rB13"></span></div>
+  <div class="ex" id="eB13">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조·제34조 / 시행령 제60조·제61조</div>
+    <div class="al">① 먼저 상계 &nbsp; ② 5 &nbsp; ③ 먼저 &nbsp; ④ 0</div>
+    <table class="ct">
+      <tr><th>구분</th><th>퇴직급여충당금(§33)</th><th>대손충당금(§34)</th></tr>
+      <tr><td>계상 방식</td><td>결산조정</td><td>결산조정</td></tr>
+      <tr><td>당기 한도</td><td>총급여 × 5%</td><td>MAX(채권잔액×1%, ×대손실적률)</td></tr>
+      <tr><td>누적 한도(2016~)</td><td>추계액 × 0%</td><td>(별도 누적 한도 없음)</td></tr>
+      <tr><td>사용 시</td><td>퇴직금에서 먼저 지급</td><td>대손금과 먼저 상계</td></tr>
+      <tr><td>잔액 처리</td><td>다음 연도 익금 환원</td><td>다음 연도 익금 환원</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     PART 2 : O/X 13문제
+════════════════════════════════════ -->
+<div class="sh" style="margin-top:3rem">
+  <span class="st sto">Part 2</span>
+  <span class="stl">법령 O / X 판단</span>
+  <span class="scn" id="oc">0 / 13</span>
+</div>
+<hr class="shr">
+
+<!-- O1 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">14</span>
+    <div class="qt">
+      퇴직급여충당금은 결산 시 손비로 계상하지 않고 세무조정계산서에만 계상해도 손금에 산입할 수 있다.<span class="tb thot">🔴 결산조정 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O1','O')">O</button>
+    <button class="oxb" onclick="so('O1','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O1')">정답 확인</button><span class="rb" id="rO1"></span></div>
+  <div class="ex" id="eO1">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조 제1항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>퇴직급여충당금은 <b>결산 시 손비로 계상</b>해야만 손금산입이 가능합니다(결산조정 방식). 세무조정계산서만으로는 불가합니다. 구상채권상각충당금(IFRS 법인 제외)과 혼동 주의!</p>
+  </div>
+</div>
+
+<!-- O2 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">15</span>
+    <div class="qt">
+      확정기여형(DC형) 퇴직연금이 설정된 직원은 퇴직급여충당금 당기 한도 계산 시 총급여액 산정에서 제외한다.<span class="tb thot">🔴 DC형/DB형 구분</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O2','O')">O</button>
+    <button class="oxb" onclick="so('O2','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O2')">정답 확인</button><span class="rb" id="rO2"></span></div>
+  <div class="ex" id="eO2">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제60조 제1항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>DC형(확정기여형)은 회사가 연금을 외부에 적립하므로 내부 충당금을 쌓을 필요가 없습니다. 따라서 총급여 계산에서 <b>제외</b>합니다. DB형(확정급여형)은 포함됩니다.</p>
+  </div>
+</div>
+
+<!-- O3 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">16</span>
+    <div class="qt">
+      2016년 1월 1일 이후 개시하는 사업연도에 퇴직급여충당금의 누적 손금산입 한도율은 100분의 5이다.<span class="tb thot">🔴 핵심 수치 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O3','O')">O</button>
+    <button class="oxb" onclick="so('O3','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O3')">정답 확인</button><span class="rb" id="rO3"></span></div>
+  <div class="ex" id="eO3">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제60조 제2항 제7호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>2016년 이후 누적 한도율은 <b>100분의 0(0%)</b>입니다. "5%"는 당기 한도율(총급여 × 5%)이며, 누적 한도율과 혼동하는 대표적 함정입니다.</p>
+    <p class="trap">⚠ "100분의 5" → "100분의 0"으로 수정</p>
+  </div>
+</div>
+
+<!-- O4 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">17</span>
+    <div class="qt">
+      임원이나 직원에게 퇴직금을 지급할 때, 퇴직급여충당금 잔액이 있어도 직접 비용으로 처리하고 퇴직급여충당금은 나중에 상계할 수 있다.<span class="tb thot">🔴 지급 순서 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O4','O')">O</button>
+    <button class="oxb" onclick="so('O4','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O4')">정답 확인</button><span class="rb" id="rO4"></span></div>
+  <div class="ex" id="eO4">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조 제2항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>퇴직금 지급 시 퇴직급여충당금에서 <b>먼저</b> 지급한 것으로 봅니다. 충당금이 있으면 반드시 먼저 상계 처리해야 하며, 임의로 비용 처리 후 나중에 상계할 수 없습니다.</p>
+  </div>
+</div>
+
+<!-- O5 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">18</span>
+    <div class="qt">
+      대손충당금 손금산입 한도는 채권잔액의 1%와 채권잔액에 대손실적률을 곱한 금액 중 큰 금액이다.<span class="tb thot">🔴 한도 공식 핵심</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O5','O')">O</button>
+    <button class="oxb" onclick="so('O5','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O5')">정답 확인</button><span class="rb" id="rO5"></span></div>
+  <div class="ex" id="eO5">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제61조 제2항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>MAX(채권잔액 × 1%, 채권잔액 × 대손실적률) — 조문 그대로 정확합니다. 1%는 최저 보장, 실적률이 높으면 실적률을 적용합니다.</p>
+  </div>
+</div>
+
+<!-- O6 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">19</span>
+    <div class="qt">
+      대손실적률 계산 시 분모는 당기말 현재의 채권잔액을 사용한다.<span class="tb thot">🔴 계산형 핵심 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O6','O')">O</button>
+    <button class="oxb" onclick="so('O6','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O6')">정답 확인</button><span class="rb" id="rO6"></span></div>
+  <div class="ex" id="eO6">
+    <div class="eh">해설</div><div class="lr">법인세법 시행령 제61조 제3항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>대손실적률 분모는 <b>전기말</b> 채권잔액입니다. "당기말"이 오류입니다. 대손실적률 = 당기 대손금 ÷ <b>전기말</b> 채권잔액.</p>
+    <p class="trap">⚠ "당기말" → "전기말"로 수정해야 옳습니다.</p>
+  </div>
+</div>
+
+<!-- O7 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">20</span>
+    <div class="qt">
+      채무보증으로 인해 발생한 구상채권은 대손충당금 설정 대상 채권에 해당하지 않는다.<span class="tb thot">🔴 제외 채권 암기</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O7','O')">O</button>
+    <button class="oxb" onclick="so('O7','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O7')">정답 확인</button><span class="rb" id="rO7"></span></div>
+  <div class="ex" id="eO7">
+    <div class="eh">해설</div><div class="lr">법인세법 제34조 제2항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>제34조 제2항은 제19조의2 제2항 각 호 채권(채무보증 구상채권·특수관계인 가지급금)에 대손충당금 규정 적용을 배제합니다. 대손금 손금산입도 불가하고 대손충당금 설정도 불가합니다.</p>
+  </div>
+</div>
+
+<!-- O8 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">21</span>
+    <div class="qt">
+      대손충당금을 설정한 법인에서 대손금이 발생한 경우, 먼저 손금에 산입한 후 대손충당금을 나중에 상계하면 된다.<span class="tb thot">🔴 처리 순서 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O8','O')">O</button>
+    <button class="oxb" onclick="so('O8','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O8')">정답 확인</button><span class="rb" id="rO8"></span></div>
+  <div class="ex" id="eO8">
+    <div class="eh">해설</div><div class="lr">법인세법 제34조 제3항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>대손금 발생 시 <b>대손충당금과 먼저 상계</b>하여야 합니다(의무). 상계 후 남은 충당금은 다음 사업연도 익금 환원합니다. 대손금을 먼저 손금산입한 후 나중에 상계하는 방식은 불가합니다.</p>
+  </div>
+</div>
+
+<!-- O9 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">22</span>
+    <div class="qt">
+      합병 시 대손충당금은 대응 채권이 함께 승계되지 않아도 충당금만 단독으로 승계할 수 있다.<span class="tb thot">🔴 승계 요건 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O9','O')">O</button>
+    <button class="oxb" onclick="so('O9','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O9')">정답 확인</button><span class="rb" id="rO9"></span></div>
+  <div class="ex" id="eO9">
+    <div class="eh">해설</div><div class="lr">법인세법 제34조 제4항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>대손충당금 승계는 <b>해당 대손충당금에 대응하는 채권이 함께 승계되는 경우만</b> 가능합니다. 채권 없이 충당금만 단독 승계는 불가합니다. 퇴직급여충당금(조건 없음)과의 차이점을 반드시 구분!</p>
+  </div>
+</div>
+
+<!-- O10 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">23</span>
+    <div class="qt">
+      합병 시 퇴직급여충당금은 대응하는 채권 또는 자산의 동반 승계 요건 없이 합병법인이 승계받을 수 있다.<span class="tb tup">⬆ 퇴직급여충당금 vs 대손충당금</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O10','O')">O</button>
+    <button class="oxb" onclick="so('O10','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O10')">정답 확인</button><span class="rb" id="rO10"></span></div>
+  <div class="ex" id="eO10">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조 제3항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>퇴직급여충당금 승계(제33조 제3항)는 별도의 채권·자산 동반 승계 요건이 없습니다. 합병법인이 승계받은 금액은 합병등기일에 가지고 있는 퇴직급여충당금으로 봅니다. 대손충당금(채권 동반 필요)과 대조 암기!</p>
+  </div>
+</div>
+
+<!-- O11 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">24</span>
+    <div class="qt">
+      구상채권상각충당금은 모든 내국법인이 설정할 수 있으며, 일반 대손충당금과 동일한 한도 계산 방식을 사용한다.<span class="tb twrn">⚠ 구상채권상각충당금</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O11','O')">O</button>
+    <button class="oxb" onclick="so('O11','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O11')">정답 확인</button><span class="rb" id="rO11"></span></div>
+  <div class="ex" id="eO11">
+    <div class="eh">해설</div><div class="lr">법인세법 제35조 제1항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>구상채권상각충당금은 <b>법률에 따라 신용보증사업을 하는 내국법인 중 대통령령으로 정하는 법인</b>만 설정할 수 있습니다. 모든 내국법인에 허용되지 않습니다. 한도도 대통령령으로 별도 규정합니다.</p>
+  </div>
+</div>
+
+<!-- O12 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">25</span>
+    <div class="qt">
+      구상채권상각충당금에 대해 IFRS 적용 법인은 세무조정계산서에 계상하고 이익처분 시 적립하면 결산 손비 계상으로 본다.<span class="tb tup">⬆ IFRS 신고조정 특례</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O12','O')">O</button>
+    <button class="oxb" onclick="so('O12','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O12')">정답 확인</button><span class="rb" id="rO12"></span></div>
+  <div class="ex" id="eO12">
+    <div class="eh">해설</div><div class="lr">법인세법 제35조 제2항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>IFRS 법인의 구상채권상각충당금 특례: 세무조정계산서 계상 + 이익처분 적립 → 결산 손비 의제. 대손충당금·퇴직급여충당금(결산조정만)과 달리 IFRS 법인에 한해 신고조정 방식을 허용합니다.</p>
+  </div>
+</div>
+
+<!-- O13 -->
+<div class="qc">
+  <div class="qh"><span class="qn qno">26</span>
+    <div class="qt">
+      대손충당금과 퇴직급여충당금은 모두 결산조정(결산 시 손비 계상) 방식이며, 상계하고 남은 잔액은 다음 사업연도에 익금에 산입한다.<span class="tb tnew">📌 종합 정리</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O13','O')">O</button>
+    <button class="oxb" onclick="so('O13','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O13')">정답 확인</button><span class="rb" id="rO13"></span></div>
+  <div class="ex" id="eO13">
+    <div class="eh">해설</div><div class="lr">법인세법 제33조 제1항·제34조 제1항·제3항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>두 충당금 모두 <b>결산조정</b> 방식이며, <b>잔액은 다음 사업연도 익금 환원</b>됩니다. 이 두 공통점은 반드시 암기해야 합니다. 구상채권상각충당금(IFRS 특례 있음)과의 차이도 함께 정리하세요.</p>
+  </div>
+</div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">26</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제33~35조 / 시행령 제60·61조 (법제처 현행법령, 시행령 2026.02.27 기준) · 세무사 1차 출제동향 분석 반영<br>
+  [2026-05-30 18:00] &nbsp;&nbsp; #법인세법 #퇴직급여충당금 #대손충당금 #구상채권상각충당금 #충당금계산형 #세무사1차
+</p>
+</div>
+
+<script>
+const BA={
+  B1:{inp:['b1_1','b1_2'],ans:[['손비'],['손금']]},
+  B2:{inp:['b2_1','b2_2','b2_3'],ans:[['100분의 5','5%','5'],['확정기여형','DC형','확정기여'],['제외']]},
+  B3:{inp:['b3_1','b3_2'],ans:[['100분의 0','0%','0'],['0원','영원','사실상 0원']]},
+  B4:{inp:['b4_1'],ans:[['먼저']]},
+  B5:{inp:['b5_1','b5_2','b5_3'],ans:[['퇴직급여충당금'],['포괄적'],['준용']]},
+  B6:{inp:['b6_1','b6_2'],ans:[['외상매출금'],['대여금']]},
+  B7:{inp:['b7_1','b7_2','b7_3'],ans:[['큰'],['100분의 1','1%','1'],['대손실적률']]},
+  B8:{inp:['b8_1','b8_2'],ans:[['당기'],['전기']]},
+  B9:{inp:['b9_1','b9_2'],ans:[['먼저'],['익금']]},
+  B10:{inp:['b10_1','b10_2','b10_3'],ans:[['제19조의2'],['적용하지','적용 안'],['구상']]},
+  B11:{inp:['b11_1','b11_2','b11_3'],ans:[['채권'],['승계'],['없다']]},
+  B12:{inp:['b12_1','b12_2','b12_3'],ans:[['신용보증'],['이익처분'],['본다']]},
+  B13:{inp:['b13_1','b13_2','b13_3','b13_4'],ans:[['먼저 상계','먼저'],['5'],['먼저'],['0']]},
+};
+const OA={O1:'X',O2:'O',O3:'X',O4:'X',O5:'O',O6:'X',O7:'O',O8:'X',O9:'X',O10:'O',O11:'X',O12:'O',O13:'O'};
+const oxSel={},bCk={},oCk={};
+let answered=0,correct=0;
+const TOT=26;
+
+function nm(s){return s.trim().replace(/\s+/g,' ')}
+function so(id,val){
+  if(oCk[id])return; oxSel[id]=val;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===val)b.classList.add('s'+val.toLowerCase())});
+}
+function ck(id){
+  if(bCk[id])return; bCk[id]=true;
+  const d=BA[id]; let allOk=true;
+  d.inp.forEach((inp,i)=>{
+    const el=document.getElementById(inp);
+    const v=nm(el.value);
+    const ok=d.ans[i].some(a=>nm(a)===v);
+    el.classList.add(ok?'ok':'ng'); if(!ok)allOk=false; el.disabled=true;
+  });
+  const badge=document.getElementById('r'+id);
+  badge.textContent=allOk?'✓ 정답':'✗ 오답'; badge.className='rb show '+(allOk?'ok':'ng');
+  document.getElementById('e'+id).classList.add('show');
+  document.querySelectorAll('.bck').forEach(b=>{if(b.getAttribute('onclick')==="ck('"+id+"')")b.disabled=true;});
+  upScore(allOk); upProg();
+}
+function co(id){
+  if(oCk[id])return;
+  const sel=oxSel[id],ans=OA[id];
+  if(!sel){alert('O 또는 X를 선택해주세요.');return;} oCk[id]=true;
+  const ok=sel===ans;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim(); b.classList.remove('so','sx');
+    if(bv===ans)b.classList.add('c'+ans.toLowerCase());
+    else if(bv===sel&&!ok)b.classList.add('w'+sel.toLowerCase());
+  });
+  const badge=document.getElementById('r'+id);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+ans+')'; badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+id).classList.add('show');
+  document.querySelectorAll('.bck').forEach(b=>{if(b.getAttribute('onclick')==="co('"+id+"')")b.disabled=true;});
+  upScore(ok); upProg();
+}
+function upScore(ok){
+  answered++; if(ok)correct++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('bc').textContent=Object.keys(bCk).length+' / 13';
+  document.getElementById('oc').textContent=Object.keys(oCk).length+' / 13';
+}
+function upProg(){
+  const done=Object.keys(bCk).length+Object.keys(oCk).length;
+  document.getElementById('pf').style.width=(done/TOT*100)+'%';
+}
+function checkAll(){
+  Object.keys(BA).forEach(id=>{
+    if(!bCk[id]){BA[id].inp.forEach(inp=>{if(!document.getElementById(inp).value)document.getElementById(inp).value='?';});ck(id);}
+  });
+  Object.keys(OA).forEach(id=>{if(!oCk[id]){if(!oxSel[id])oxSel[id]='O';co(id);}});
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/TOT*100);
+  document.getElementById('gdT').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=TOT-correct;
+  document.getElementById('smP').classList.add('show');
+  document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>

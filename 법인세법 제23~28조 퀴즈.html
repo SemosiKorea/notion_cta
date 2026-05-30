@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제23~28조 | 세무사 1차 암기퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F5F1;--surf:#FFF;--surf2:#F0EFE9;--bdr:#DDD8CF;
+  --acc:#1A3852;--acc2:#B55A14;--acc3:#275840;
+  --danger:#992B22;--txt:#171610;--txt2:#403D36;--txt3:#757068;
+  --ok:#275840;--ng:#992B22;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+
+/* Header */
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(26,56,82,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#DECCAC}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}
+.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#DECCAC;line-height:1}
+
+/* Progress */
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s ease;width:0%}
+
+/* Container */
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+
+/* Section */
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.st{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap}
+.stb{background:var(--acc2);color:#fff}.sto{background:var(--acc3);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+
+/* Card */
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1.1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .33s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.qc:nth-child(n){animation-delay:calc(var(--i,.02s) + 0.03s * var(--n,1))}
+
+.qh{padding:.9rem 1.15rem .68rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:25px;height:25px;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;margin-top:1px}
+.qnb{background:#FDF0E3;color:var(--acc2)}.qno{background:#E8F3EC;color:var(--acc3)}
+.qt{font-size:.865rem;color:var(--txt);line-height:1.82;flex:1}
+.qt strong{color:var(--acc);font-weight:700}
+
+/* Law quote */
+.lq{background:var(--surf2);border-left:3px solid var(--acc);padding:.65rem .9rem;margin:.4rem 0;font-size:.81rem;color:var(--txt2);border-radius:0 5px 5px 0;line-height:1.88}
+.bs{display:inline-block;min-width:3.4rem;border-bottom:2px solid var(--acc2);font-family:var(--mono);font-size:.77rem;padding:0 .22rem;text-align:center;color:#bbb;letter-spacing:.07em}
+
+/* Inputs */
+.qbd{padding:.7rem 1.15rem .85rem}
+.bins{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.biw{display:flex;align-items:center;gap:.3rem}
+.bil{font-family:var(--mono);font-size:.64rem;color:var(--txt3);background:var(--surf2);padding:.08rem .34rem;border-radius:3px;white-space:nowrap}
+.bi{border:1.5px solid var(--bdr);border-radius:5px;padding:.28rem .5rem;font-family:var(--sans);font-size:.79rem;min-width:88px;background:#fff;color:var(--txt);transition:border-color .13s;outline:none}
+.bi:focus{border-color:var(--acc)}
+.bi.ok{border-color:var(--ok);background:#E8F3EC;color:var(--ok)}
+.bi.ng{border-color:var(--ng);background:#FAF0EF;color:var(--ng)}
+
+/* OX */
+.oxs{display:flex;gap:.5rem;margin-top:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.4rem 1.2rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E8F3EC;color:var(--acc3)}
+.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E8F3EC;color:var(--ok)}
+.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+
+/* Action */
+.qa{padding:0 1.15rem .85rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.25rem .65rem;border-radius:20px}
+.rb.show{display:flex}
+.rb.ok{background:#E8F3EC;color:var(--ok)}
+.rb.ng{background:#FAF0EF;color:var(--ng)}
+
+/* Explanation */
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.85rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.88}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.4rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:600;color:var(--ok);margin-bottom:.24rem}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ex .note{background:#FFFBF0;border-left:3px solid var(--acc2);padding:.45rem .7rem;margin:.35rem 0;border-radius:0 4px 4px 0;font-size:.78rem}
+
+/* Table */
+.ct{width:100%;border-collapse:collapse;font-size:.76rem;margin:.42rem 0}
+.ct th{background:var(--surf2);padding:.3rem .52rem;text-align:center;border:1px solid var(--bdr);font-weight:600;color:var(--acc)}
+.ct td{padding:.26rem .52rem;border:1px solid var(--bdr);text-align:center}
+.ct td:first-child{text-align:left}
+
+/* Trend tag */
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.08rem .35rem;border-radius:3px;margin-left:.3rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#992B22}
+.tup{background:#E7F5EA;color:#275840}
+.twrn{background:#FFF8E1;color:#796000}
+.tnew{background:#E8F0FB;color:#1A3852}
+
+/* Global btns */
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+
+/* Summary */
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}
+.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}
+.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+
+@media(max-width:600px){
+  .htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}
+  .qh{padding:.75rem .9rem .62rem}.qbd{padding:.6rem .9rem .75rem}.qa{padding:0 .9rem .75rem}
+  .bins{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="hd">
+  <div class="hdi">
+    <div>
+      <div class="hbg">세무사 1차 · 세법학개론</div>
+      <div class="htl">법인세법 제23~28조<br><span>감가상각 · 기부금 · 기업업무추진비 · 지급이자</span></div>
+      <div class="hsb">법제처 현행법령 기준 (시행일 2026.01.02) · 손금(26회) 1위 · 기부금·기업업무추진비·지급이자 2025 미출제→2026 재출제 유력</div>
+    </div>
+    <div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div>
+  </div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<!-- ════════════════ PART 1 빈칸 15문제 ════════════════ -->
+<div class="sh">
+  <span class="st stb">Part 1</span>
+  <span class="stl">주요 법조문 빈칸 채우기</span>
+  <span class="scn" id="bc">0 / 15</span>
+</div>
+<hr class="shr">
+
+<!-- B1 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">1</span>
+    <div class="qt">
+      <strong>법인세법 제23조 제1항 (감가상각비 손금산입 원칙)</strong><span class="tb tup">⬆ 2025 3회 급상승</span>
+      <div class="lq">
+        내국법인이 결산을 확정할 때 감가상각자산에 대한 감가상각비를 <span class="bs">①</span>로 계상한 경우에는 <span class="bs">②</span>(상각범위액)의 범위에서 손금에 산입하고, 상각범위액을 <span class="bs">③</span>하는 금액은 손금에 산입하지 아니한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 계상방법</span><input class="bi" id="b1_1" placeholder="손비/수익?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 기준금액</span><input class="bi" id="b1_2" placeholder="상각○○액" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 비교결과</span><input class="bi" id="b1_3" placeholder="초과/미달?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B1')">정답 확인</button><span class="rb" id="rB1"></span></div>
+  <div class="ex" id="eB1">
+    <div class="eh">해설</div><div class="lr">법인세법 제23조 제1항</div>
+    <div class="al">① 손비 &nbsp; ② 상각범위액 &nbsp; ③ 초과</div>
+    <p>감가상각비는 <b>결산계상 강제주의</b>가 원칙: 법인이 손비로 계상해야만 손금산입 가능합니다(임의상각 방식). 상각범위액 초과분은 손금불산입 후 차기 이월 가능합니다(제23조 제5항).</p>
+    <p class="trap">⚠ 오답 함정: "상각범위액 미달 시 손금불산입" → 초과분만 불산입</p>
+  </div>
+</div>
+
+<!-- B2 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">2</span>
+    <div class="qt">
+      <strong>법인세법 제23조 제3항 (법인세 감면 시 강제 상각)</strong><span class="tb tup">⬆ 기출 계산형</span>
+      <div class="lq">
+        내국법인이 이 법과 다른 법률에 따라 법인세를 <span class="bs">①</span>받거나 <span class="bs">②</span>받은 경우에는 해당 사업연도의 소득금액을 계산할 때 대통령령으로 정하는 바에 따라 감가상각비를 손금에 산입하여야 <span class="bs">③</span>.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 세제혜택A</span><input class="bi" id="b2_1" placeholder="면제/공제?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 세제혜택B</span><input class="bi" id="b2_2" placeholder="감면/면제?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 의무성</span><input class="bi" id="b2_3" placeholder="한다/있다?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B2')">정답 확인</button><span class="rb" id="rB2"></span></div>
+  <div class="ex" id="eB2">
+    <div class="eh">해설</div><div class="lr">법인세법 제23조 제3항</div>
+    <div class="al">① 면제 &nbsp; ② 감면 &nbsp; ③ 한다(의무)</div>
+    <p>감면·면제 법인은 <b>강제 상각</b> 적용 — 결산계상 여부와 무관하게 의무적으로 감가상각비를 손금산입해야 합니다. 감면세액 기준이 되는 소득을 임의로 늘리는 조작 방지 목적입니다.</p>
+    <p class="trap">⚠ "할 수 있다" → "하여야 한다"로 강제 의무. 핵심 함정!</p>
+  </div>
+</div>
+
+<!-- B3 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">3</span>
+    <div class="qt">
+      <strong>법인세법 제24조 제1항 (기부금의 정의)</strong><span class="tb thot">🔴 2025 미출제→재출제 유력</span>
+      <div class="lq">
+        "기부금"이란 내국법인이 사업과 <span class="bs">①</span> 관계없이 <span class="bs">②</span>으로 지출하는 금액(대통령령으로 정하는 거래를 통하여 실질적으로 <span class="bs">③</span>한 것으로 인정되는 금액을 포함한다)을 말한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 관계성</span><input class="bi" id="b3_1" placeholder="직접적인/간접적인?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 지출방식</span><input class="bi" id="b3_2" placeholder="무상/유상?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 인정유형</span><input class="bi" id="b3_3" placeholder="증여/대여?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B3')">정답 확인</button><span class="rb" id="rB3"></span></div>
+  <div class="ex" id="eB3">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제1항</div>
+    <div class="al">① 직접적인 &nbsp; ② 무상 &nbsp; ③ 증여</div>
+    <p>기부금의 핵심 3요소: <b>사업과 직접관계 없음 + 무상 지출 + 순수 증여성격</b>. 사업과 간접 관련이어도 기부금에 해당할 수 있습니다. 특수관계인 외 저가 양도로 실질 증여된 금액도 포함됩니다.</p>
+    <p class="trap">⚠ "간접적인 관계없이" → 조문은 "직접적인"</p>
+  </div>
+</div>
+
+<!-- B4 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">4</span>
+    <div class="qt">
+      <strong>법인세법 제24조 제2항 (특례기부금 손금산입한도)</strong><span class="tb thot">🔴 기부금 핵심 수치</span>
+      <div class="lq">
+        특례기부금의 손금산입한도액 = [기준소득금액 − 이월결손금(80% 한도 적용법인은 기준소득금액의 80% 한도)] × <span class="bs">①</span>퍼센트
+      </div>
+      특례기부금에 해당하는 것: 국가나 지방자치단체에 <span class="bs">②</span>으로 기증하는 금품, 국방헌금, 천재지변 이재민 <span class="bs">③</span>금품 등
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 한도율</span><input class="bi" id="b4_1" placeholder="○○%" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 지출방식</span><input class="bi" id="b4_2" placeholder="무상/유상?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 기부목적</span><input class="bi" id="b4_3" placeholder="구호/후원?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B4')">정답 확인</button><span class="rb" id="rB4"></span></div>
+  <div class="ex" id="eB4">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제2항</div>
+    <div class="al">① 50 &nbsp; ② 무상 &nbsp; ③ 구호</div>
+    <p>특례기부금(구 법정기부금): 한도 = 기준소득의 <b>50%</b>. 일반기부금(구 지정기부금): 한도 = <b>10%</b>(사회적기업 30%). 두 한도 수치를 반드시 함께 암기!</p>
+    <p class="trap">⚠ 오답 함정: "특례기부금 한도 10%", "일반기부금 한도 50%"로 바꾸어 출제</p>
+  </div>
+</div>
+
+<!-- B5 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">5</span>
+    <div class="qt">
+      <strong>법인세법 제24조 제3항 (일반기부금 손금산입한도)</strong><span class="tb thot">🔴 기부금 핵심 수치</span>
+      <div class="lq">
+        일반기부금의 손금산입한도액 = [기준소득금액 − 이월결손금 − 특례기부금 손금산입액] × <span class="bs">①</span>퍼센트<br>
+        단, 사업연도 종료일 현재 「사회적기업 육성법」상 사회적기업은 <span class="bs">②</span>퍼센트로 한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 일반 한도율</span><input class="bi" id="b5_1" placeholder="○○%" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 사회적기업</span><input class="bi" id="b5_2" placeholder="○○%" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B5')">정답 확인</button><span class="rb" id="rB5"></span></div>
+  <div class="ex" id="eB5">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제3항 제2호</div>
+    <div class="al">① 10 &nbsp; ② 30</div>
+    <p>일반기부금 한도: 일반법인 <b>10%</b>, 사회적기업 <b>30%</b>. 계산 순서도 중요 — <b>특례기부금 먼저 차감 후</b> 일반기부금 한도 계산.</p>
+    <p class="trap">⚠ 오답 함정: "사회적기업도 10%", "사회적기업 20%"</p>
+  </div>
+</div>
+
+<!-- B6 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">6</span>
+    <div class="qt">
+      <strong>법인세법 제24조 제4·5항 (비지정기부금 처리 및 이월공제)</strong><span class="tb thot">🔴 기부금 이월 빈출</span>
+      <div class="lq">
+        특례·일반기부금 외의 기부금(비지정기부금)은 <span class="bs">①</span>에 산입하지 아니한다.(제4항)<br>
+        한도 초과 기부금은 해당 사업연도 다음 사업연도 개시일부터 <span class="bs">②</span>년 이내에 끝나는 각 사업연도로 이월하여 손금에 산입한다.(제5항)
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 비지정 처리</span><input class="bi" id="b6_1" placeholder="손금/익금?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 이월 기간</span><input class="bi" id="b6_2" placeholder="○년" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B6')">정답 확인</button><span class="rb" id="rB6"></span></div>
+  <div class="ex" id="eB6">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제4항·제5항</div>
+    <div class="al">① 손금 &nbsp; ② 10</div>
+    <p>비지정기부금: <b>전액 손금불산입</b>. 한도초과 특례·일반기부금: <b>10년 이월공제</b>. 이월결손금(15년)보다 짧습니다. 소득처분은 <b>기타사외유출</b>.</p>
+    <p class="trap">⚠ 오답 함정: "이월공제 5년", "15년 이월"</p>
+  </div>
+</div>
+
+<!-- B7 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">7</span>
+    <div class="qt">
+      <strong>법인세법 제24조 제6항 (이월기부금의 손금산입 순서)</strong>
+      <div class="lq">
+        이월기부금과 당기 지출 기부금이 있는 경우, <span class="bs">①</span>된 금액을 해당 사업연도에 지출한 기부금보다 <span class="bs">②</span> 손금에 산입한다. 이 경우 이월된 금액은 <span class="bs">③</span> 발생한 이월금액부터 손금에 산입한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 적용대상</span><input class="bi" id="b7_1" placeholder="이월/당기?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 우선순위</span><input class="bi" id="b7_2" placeholder="먼저/나중?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 이월 순서</span><input class="bi" id="b7_3" placeholder="먼저/나중에?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B7')">정답 확인</button><span class="rb" id="rB7"></span></div>
+  <div class="ex" id="eB7">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제6항</div>
+    <div class="al">① 이월 &nbsp; ② 먼저 &nbsp; ③ 먼저</div>
+    <p>이월기부금 공제 순서: <b>이월분을 당기분보다 먼저</b>, 이월분 중에서는 <b>오래된 것(선입선출)부터</b>. 이월결손금 공제도 동일 원칙(선입선출)입니다.</p>
+    <p class="trap">⚠ 오답 함정: "당기 지출 기부금을 먼저 공제한 후 이월금액 공제"</p>
+  </div>
+</div>
+
+<!-- B8 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">8</span>
+    <div class="qt">
+      <strong>법인세법 제25조 제1항 (기업업무추진비의 정의)</strong><span class="tb thot">🔴 2025 미출제→재출제 유력</span>
+      <div class="lq">
+        "기업업무추진비"란 접대, 교제, 사례 또는 그 밖에 어떠한 <span class="bs">①</span>이든 상관없이 이와 유사한 목적으로 지출한 비용으로서 내국법인이 직접 또는 간접적으로 <span class="bs">②</span>와 관련이 있는 자와 업무를 <span class="bs">③</span>하게 진행하기 위하여 지출한 금액을 말한다.
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 명목</span><input class="bi" id="b8_1" placeholder="명목/명칭?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 관련성</span><input class="bi" id="b8_2" placeholder="업무/사업?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 진행방식</span><input class="bi" id="b8_3" placeholder="원활/신속?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B8')">정답 확인</button><span class="rb" id="rB8"></span></div>
+  <div class="ex" id="eB8">
+    <div class="eh">해설</div><div class="lr">법인세법 제25조 제1항</div>
+    <div class="al">① 명목 &nbsp; ② 업무 &nbsp; ③ 원활</div>
+    <p>기업업무추진비(구 접대비)는 <b>명목 불문</b> + <b>업무관련자 지출</b> + <b>원활한 업무 진행 목적</b>. 기부금(무상·사업 무관)과 달리 업무 관련이 있는 경우입니다.</p>
+  </div>
+</div>
+
+<!-- B9 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">9</span>
+    <div class="qt">
+      <strong>법인세법 제25조 제4항 (기업업무추진비 기본한도)</strong><span class="tb thot">🔴 기업업무추진비 핵심 수치</span>
+      <div class="lq">
+        기본한도금액 = A × B × (1/12)<br>
+        A: <span class="bs">①</span>만원 (중소기업의 경우에는 <span class="bs">②</span>만원)<br>
+        B: 해당 사업연도의 개월 수 (1개월 미만 → <span class="bs">③</span>개월로 계산)
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 일반법인(만원)</span><input class="bi" id="b9_1" placeholder="○,○○○만원" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 중소기업(만원)</span><input class="bi" id="b9_2" placeholder="○,○○○만원" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 단수처리</span><input class="bi" id="b9_3" placeholder="○개월" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B9')">정답 확인</button><span class="rb" id="rB9"></span></div>
+  <div class="ex" id="eB9">
+    <div class="eh">해설</div><div class="lr">법인세법 제25조 제4항 제1호</div>
+    <div class="al">① 1,200만원 &nbsp; ② 3,600만원 &nbsp; ③ 1개월</div>
+    <p>연간 기본한도: 일반법인 <b>1,200만원</b>, 중소기업 <b>3,600만원</b>. 사업연도가 12개월 미만일 때 월할 계산(1개월 미만 → 1개월로 올림). 중소기업이 3배 유리합니다.</p>
+    <p class="trap">⚠ 오답 함정: "일반법인 2,400만원", "중소기업 2,400만원"</p>
+  </div>
+</div>
+
+<!-- B10 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">10</span>
+    <div class="qt">
+      <strong>법인세법 제25조 제4항 (수입금액별 한도 — 특수관계인 거래)</strong><span class="tb thot">🔴 기업업무추진비 수입금액별 한도</span>
+      <div class="lq">
+        수입금액별 한도 계산 시, 특수관계인과의 거래에서 발생한 수입금액에 대해서는 그 수입금액에 비율을 적용하여 산출한 금액의 <span class="bs">①</span>분의 <span class="bs">②</span>에 상당하는 금액으로 한다.
+      </div>
+      수입금액 100억원 이하 구간의 비율은 <span class="bs">③</span>퍼센트이다.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 분모</span><input class="bi" id="b10_1" placeholder="100분의" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 분자(특수관계인)</span><input class="bi" id="b10_2" placeholder="○○" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 100억 이하 비율</span><input class="bi" id="b10_3" placeholder="○.○%" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B10')">정답 확인</button><span class="rb" id="rB10"></span></div>
+  <div class="ex" id="eB10">
+    <div class="eh">해설</div><div class="lr">법인세법 제25조 제4항 제2호</div>
+    <div class="al">① 100 &nbsp; ② 10 &nbsp; ③ 0.3%</div>
+    <p>특수관계인과의 거래 수입금액에 대한 기업업무추진비 한도는 일반 한도의 <b>1/10(10%)</b>만 인정됩니다. 100억 이하 일반 비율 0.3% × 1/10 = 특수관계인 거래는 0.03%에 해당합니다.</p>
+    <p class="trap">⚠ 오답 함정: "특수관계인 거래도 동일 한도 적용"</p>
+  </div>
+</div>
+
+<!-- B11 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">11</span>
+    <div class="qt">
+      <strong>법인세법 제25조 제2항 (기업업무추진비 증빙 요건)</strong><span class="tb thot">🔴 기업업무추진비 증빙 빈출</span>
+      <div class="lq">
+        내국법인이 한 차례의 접대에 지출한 기업업무추진비 중 대통령령으로 정하는 금액을 <span class="bs">①</span>하는 기업업무추진비로서 다음에 해당하지 않는 것은 손금에 산입하지 않는다.<br>
+        1. <span class="bs">②</span>(신용카드, 현금영수증 등)<br>
+        2. 계산서 또는 <span class="bs">③</span>를 발급받아 지출하는 것
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 초과기준</span><input class="bi" id="b11_1" placeholder="초과/미달?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 증빙수단</span><input class="bi" id="b11_2" placeholder="신용카드등" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 증빙서류</span><input class="bi" id="b11_3" placeholder="세금계산서" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B11')">정답 확인</button><span class="rb" id="rB11"></span></div>
+  <div class="ex" id="eB11">
+    <div class="eh">해설</div><div class="lr">법인세법 제25조 제2항</div>
+    <div class="al">① 초과 &nbsp; ② 신용카드등 &nbsp; ③ 세금계산서</div>
+    <p>1회 접대비가 대통령령 금액(3만원, 경조금 20만원)을 초과하면 <b>신용카드·현금영수증·세금계산서·계산서</b> 등 적격증빙 필수. 미구비 시 전액 손금불산입(업무 관련 입증 불가).</p>
+    <p class="trap">⚠ 오답 함정: "모든 기업업무추진비에 적격증빙 필요" → 대통령령 금액 초과분만</p>
+  </div>
+</div>
+
+<!-- B12 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">12</span>
+    <div class="qt">
+      <strong>법인세법 제28조 제1항 제1호 (채권자 불분명 사채 이자)</strong><span class="tb thot">🔴 2025 미출제→재출제 유력</span>
+      <div class="lq">
+        대통령령으로 정하는 채권자가 <span class="bs">①</span>한 사채의 이자는 손금에 산입하지 아니한다.
+      </div>
+      위 이자의 세무상 소득처분은 <span class="bs">②</span>으로 처분한다.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 채권자 상태</span><input class="bi" id="b12_1" placeholder="불분명/분명?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 소득처분</span><input class="bi" id="b12_2" placeholder="○○유출" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B12')">정답 확인</button><span class="rb" id="rB12"></span></div>
+  <div class="ex" id="eB12">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제1항 제1호</div>
+    <div class="al">① 불분명 &nbsp; ② 대표자 상여(기타사외유출 아님)</div>
+    <p>채권자 불분명 사채이자는 손금불산입 + <b>대표자 상여</b>로 소득처분됩니다. 기부금 한도 초과(기타사외유출)와 처분 방법이 다른 점에 주의!</p>
+    <p class="trap">⚠ 오답 함정: "기타사외유출로 처분" → 대표자 상여</p>
+  </div>
+</div>
+
+<!-- B13 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">13</span>
+    <div class="qt">
+      <strong>법인세법 제28조 제1항 제3호 (건설자금이자)</strong><span class="tb thot">🔴 지급이자 계산형 기출</span>
+      <div class="lq">
+        대통령령으로 정하는 <span class="bs">①</span>에 충당한 차입금의 이자는 손금에 산입하지 아니한다.
+      </div>
+      이 경우 해당 이자는 해당 자산의 <span class="bs">②</span>에 산입하여 처리한다.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 용도</span><input class="bi" id="b13_1" placeholder="건설자금/운영자금?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 회계처리</span><input class="bi" id="b13_2" placeholder="취득가액/비용?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B13')">정답 확인</button><span class="rb" id="rB13"></span></div>
+  <div class="ex" id="eB13">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제1항 제3호</div>
+    <div class="al">① 건설자금 &nbsp; ② 취득가액</div>
+    <p>건설자금이자는 당기 손금불산입 → <b>자산의 취득가액에 가산</b>(자본화). 이후 감가상각을 통해 비용화됩니다. 계산형 문제에서 자주 출제되는 흐름입니다.</p>
+  </div>
+</div>
+
+<!-- B14 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">14</span>
+    <div class="qt">
+      <strong>법인세법 제28조 제1항 제4호 (업무무관자산·가지급금 관련 이자)</strong><span class="tb thot">🔴 지급이자 핵심</span>
+      <div class="lq">
+        다음 자산을 취득하거나 보유한 내국법인이 지급한 차입금 이자 중 대통령령으로 정하는 금액(차입금 중 해당 <span class="bs">①</span>에 상당하는 금액의 이자를 한도로)은 손금불산입이다.<br>
+        가. 제27조 제1호에 해당하는 <span class="bs">②</span>자산<br>
+        나. 특수관계인에게 해당 법인의 업무와 관련 없이 지급한 <span class="bs">③</span> 등
+      </div>
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 한도 기준</span><input class="bi" id="b14_1" placeholder="자산가액/차입금?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 자산성격</span><input class="bi" id="b14_2" placeholder="업무무관/업무관련?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 지출성격</span><input class="bi" id="b14_3" placeholder="가지급금/가수금?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B14')">정답 확인</button><span class="rb" id="rB14"></span></div>
+  <div class="ex" id="eB14">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제1항 제4호</div>
+    <div class="al">① 자산가액 &nbsp; ② 업무무관 &nbsp; ③ 가지급금</div>
+    <p>업무무관자산·가지급금 관련 이자 손금불산입 한도: <b>차입금 중 자산가액에 상당하는 금액의 이자</b>가 한도입니다. 계산 시 차입금 총액에서 자산 해당분만큼의 이자율을 곱하여 계산합니다.</p>
+  </div>
+</div>
+
+<!-- B15 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qnb">15</span>
+    <div class="qt">
+      <strong>법인세법 제28조 제3항 (지급이자 손금불산입 적용 순서)</strong>
+      <div class="lq">
+        제1항 각 호에 따른 차입금 이자의 손금불산입 규정이 동시에 적용되는 경우에는 대통령령으로 정하는 <span class="bs">①</span>에 따라 적용한다.
+      </div>
+      일반적으로 적용 순위는 제1호(채권자 불분명) → 제2호(채권·증권 이자 지급자 불분명) → 제3호(<span class="bs">②</span>) → 제4호(<span class="bs">③</span>) 순이다.
+    </div>
+  </div>
+  <div class="qbd"><div class="bins">
+    <div class="biw"><span class="bil">① 적용기준</span><input class="bi" id="b15_1" placeholder="순위/금액?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">② 제3호</span><input class="bi" id="b15_2" placeholder="건설자금이자/가지급금?" autocomplete="off"></div>
+    <div class="biw"><span class="bil">③ 제4호</span><input class="bi" id="b15_3" placeholder="건설자금/업무무관?" autocomplete="off"></div>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="ck('B15')">정답 확인</button><span class="rb" id="rB15"></span></div>
+  <div class="ex" id="eB15">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제3항</div>
+    <div class="al">① 순위 &nbsp; ② 건설자금이자 &nbsp; ③ 업무무관자산·가지급금 이자</div>
+    <p>동시 적용 시 법령상 순위: <b>채권자 불분명 → 지급자 불분명 → 건설자금이자 → 업무무관자산·가지급금 이자</b>. 이 순서는 계산형 문제에서 필수 적용됩니다.</p>
+  </div>
+</div>
+
+
+<!-- ════════════════ PART 2 O/X 15문제 ════════════════ -->
+<div class="sh" style="margin-top:3rem">
+  <span class="st sto">Part 2</span>
+  <span class="stl">법령 O / X 판단</span>
+  <span class="scn" id="oc">0 / 15</span>
+</div>
+<hr class="shr">
+
+<!-- O1 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">16</span>
+    <div class="qt">
+      법인세를 감면받는 내국법인은 감가상각비를 결산에 계상하지 않아도 대통령령이 정하는 바에 따라 의무적으로 손금산입해야 한다.<span class="tb tup">⬆ 감가상각 핵심</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O1','O')">O</button>
+    <button class="oxb" onclick="so('O1','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O1')">정답 확인</button><span class="rb" id="rO1"></span></div>
+  <div class="ex" id="eO1">
+    <div class="eh">해설</div><div class="lr">법인세법 제23조 제3항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>법인세 면제·감면 법인의 강제 상각 — <b>"손금에 산입하여야 한다"</b>(의무). 결산 미계상 여부와 무관합니다. 일반 법인의 임의상각(결산계상 필요)과 다른 중요한 예외입니다.</p>
+  </div>
+</div>
+
+<!-- O2 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">17</span>
+    <div class="qt">
+      감가상각비 상각범위액 초과로 손금불산입된 금액은 그 후 사업연도에도 손금산입할 수 없고 영구적으로 손금불산입된다.<span class="tb thot">🔴 감가상각 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O2','O')">O</button>
+    <button class="oxb" onclick="so('O2','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O2')">정답 확인</button><span class="rb" id="rO2"></span></div>
+  <div class="ex" id="eO2">
+    <div class="eh">해설</div><div class="lr">법인세법 제23조 제5항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>초과 상각범위액은 <b>그 후 사업연도에 대통령령으로 정하는 방법에 따라 손금에 산입</b>합니다(유보→손금추인). 영구 불산입이 아닌 <b>이연</b>입니다. 자본금과 적립금 조정명세서(을)에 유보 기록.</p>
+  </div>
+</div>
+
+<!-- O3 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">18</span>
+    <div class="qt">
+      특례기부금(국가 기증, 국방헌금, 이재민 구호 등)의 손금산입한도액은 기준소득금액에서 이월결손금을 차감한 금액의 50%이다.<span class="tb thot">🔴 기부금 핵심 수치</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O3','O')">O</button>
+    <button class="oxb" onclick="so('O3','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O3')">정답 확인</button><span class="rb" id="rO3"></span></div>
+  <div class="ex" id="eO3">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제2항 제2호</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>특례기부금 한도 = (기준소득금액 − 이월결손금) × 50%. 정확합니다. 단, 80% 한도 적용 법인(일반법인)은 이월결손금 차감 시 기준소득의 80% 한도 제한이 적용됩니다.</p>
+  </div>
+</div>
+
+<!-- O4 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">19</span>
+    <div class="qt">
+      일반기부금의 손금산입한도액은 기준소득금액에서 이월결손금을 차감한 금액의 10%이며, 사회적기업은 30%로 한다. 한도 초과 일반기부금은 5년간 이월하여 손금산입할 수 있다.<span class="tb thot">🔴 이월기간 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O4','O')">O</button>
+    <button class="oxb" onclick="so('O4','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O4')">정답 확인</button><span class="rb" id="rO4"></span></div>
+  <div class="ex" id="eO4">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제3항·제5항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>한도율(10%·사회적기업 30%) 부분은 맞지만, 이월 기간은 <b>10년</b>입니다. "5년"이 오류입니다.</p>
+    <p class="trap">⚠ "5년 이월" → "10년 이월"로 수정해야 옳습니다.</p>
+  </div>
+</div>
+
+<!-- O5 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">20</span>
+    <div class="qt">
+      법인이 이월된 기부금과 당기에 지출한 기부금이 함께 있는 경우, 당기 지출 기부금을 먼저 손금에 산입한 후 이월된 기부금을 공제한다.<span class="tb thot">🔴 기부금 공제순서 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O5','O')">O</button>
+    <button class="oxb" onclick="so('O5','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O5')">정답 확인</button><span class="rb" id="rO5"></span></div>
+  <div class="ex" id="eO5">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제6항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>이월된 기부금을 <b>먼저</b> 손금산입하고, 이후 당기 지출 기부금을 공제합니다. 또한 이월분 중에서는 <b>오래된 것부터(선입선출)</b> 공제합니다.</p>
+    <p class="trap">⚠ "당기 지출 먼저" → "이월분 먼저"가 정확</p>
+  </div>
+</div>
+
+<!-- O6 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">21</span>
+    <div class="qt">
+      비지정기부금(특례기부금·일반기부금 외의 기부금)은 손금산입 한도를 초과한 금액만 손금불산입된다.<span class="tb thot">🔴 비지정기부금 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O6','O')">O</button>
+    <button class="oxb" onclick="so('O6','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O6')">정답 확인</button><span class="rb" id="rO6"></span></div>
+  <div class="ex" id="eO6">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제4항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>비지정기부금은 한도 개념 없이 <b>전액 손금불산입</b>입니다. 특례·일반기부금만 한도 계산이 있습니다.</p>
+  </div>
+</div>
+
+<!-- O7 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">22</span>
+    <div class="qt">
+      기업업무추진비(구 접대비)는 사업과 직접적 관계없이 무상으로 지출하는 금액이므로 기부금과 동일한 한도 규정을 적용받는다.<span class="tb thot">🔴 기부금·기업업무추진비 혼동 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O7','O')">O</button>
+    <button class="oxb" onclick="so('O7','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O7')">정답 확인</button><span class="rb" id="rO7"></span></div>
+  <div class="ex" id="eO7">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제1항·제25조 제1항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>두 부분 모두 오류. 기업업무추진비는 <b>업무 관련자</b>와 업무 원활 진행을 위한 지출(유상성 있음)이고, 기부금은 사업과 직접관계 없는 <b>무상</b> 지출입니다. 한도 계산 방식도 완전히 다릅니다.</p>
+  </div>
+</div>
+
+<!-- O8 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">23</span>
+    <div class="qt">
+      중소기업의 기업업무추진비 기본한도는 연간 3,600만원이며, 사업연도가 6개월인 경우 기본한도는 1,800만원이 된다.<span class="tb thot">🔴 기업업무추진비 계산형</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O8','O')">O</button>
+    <button class="oxb" onclick="so('O8','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O8')">정답 확인</button><span class="rb" id="rO8"></span></div>
+  <div class="ex" id="eO8">
+    <div class="eh">해설</div><div class="lr">법인세법 제25조 제4항 제1호</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>중소기업 기본한도 = 3,600만원 × 6/12 = <b>1,800만원</b>. 계산 정확합니다. 일반법인 동일 조건: 1,200만원 × 6/12 = 600만원.</p>
+  </div>
+</div>
+
+<!-- O9 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">24</span>
+    <div class="qt">
+      재화 또는 용역을 공급하는 신용카드 가맹점이 아닌 다른 가맹점 명의로 작성된 매출전표를 받은 경우, 해당 지출은 신용카드로 지출한 기업업무추진비로 인정된다.<span class="tb thot">🔴 기업업무추진비 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O9','O')">O</button>
+    <button class="oxb" onclick="so('O9','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O9')">정답 확인</button><span class="rb" id="rO9"></span></div>
+  <div class="ex" id="eO9">
+    <div class="eh">해설</div><div class="lr">법인세법 제25조 제3항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>실제 공급 가맹점과 다른 가맹점 명의의 매출전표는 <b>신용카드 사용으로 보지 않습니다</b>. 타 가맹점 명의로 허위 결제하는 우회행위를 방지하는 규정입니다.</p>
+  </div>
+</div>
+
+<!-- O10 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">25</span>
+    <div class="qt">
+      법인세법 제25조 제5항에 따라, 부동산임대업을 주된 사업으로 하는 등 대통령령 요건 해당 내국법인의 경우에는 기업업무추진비 한도의 50%를 초과하는 금액은 손금불산입된다.<span class="tb tup">⬆ 부동산임대업 특례</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O10','O')">O</button>
+    <button class="oxb" onclick="so('O10','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O10')">정답 확인</button><span class="rb" id="rO10"></span></div>
+  <div class="ex" id="eO10">
+    <div class="eh">해설</div><div class="lr">법인세법 제25조 제5항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>부동산임대업 주된 사업 법인 등은 일반 한도의 <b>50% 초과분</b>을 손금불산입합니다. 즉 한도가 절반으로 줄어드는 효과입니다. 조문 그대로 정확합니다.</p>
+  </div>
+</div>
+
+<!-- O11 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">26</span>
+    <div class="qt">
+      채권자가 불분명한 사채의 이자는 손금불산입되며, 소득처분 시 기타사외유출로 처분한다.<span class="tb thot">🔴 지급이자 소득처분 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O11','O')">O</button>
+    <button class="oxb" onclick="so('O11','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O11')">정답 확인</button><span class="rb" id="rO11"></span></div>
+  <div class="ex" id="eO11">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제1항 제1호 / 법인세법 시행령 제106조</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>채권자 불분명 사채이자 → 손금불산입 + <b>대표자 상여</b>로 소득처분합니다. 기타사외유출이 아닙니다. 이 구분은 매우 중요한 기출 함정입니다.</p>
+    <p class="trap">⚠ "기타사외유출" → "대표자 상여"로 수정해야 옳습니다.</p>
+  </div>
+</div>
+
+<!-- O12 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">27</span>
+    <div class="qt">
+      건설자금에 충당한 차입금의 이자는 당기 손금불산입되고, 해당 자산의 취득가액에 산입하여 이후 감가상각을 통해 손금화된다.<span class="tb tup">⬆ 건설자금이자 흐름</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O12','O')">O</button>
+    <button class="oxb" onclick="so('O12','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O12')">정답 확인</button><span class="rb" id="rO12"></span></div>
+  <div class="ex" id="eO12">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제1항 제3호</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>건설자금이자: 당기 손금불산입 → 자산 취득가액 가산 → 감가상각을 통한 비용화. 전체 흐름이 정확합니다. 토지의 경우는 감가상각이 없으므로 영구적으로 비용화되지 않는 점도 주의!</p>
+  </div>
+</div>
+
+<!-- O13 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">28</span>
+    <div class="qt">
+      업무무관자산 관련 이자의 손금불산입 한도는 총 차입금 × 전체 지급이자율이며, 업무무관자산 가액과 무관하게 계산한다.<span class="tb thot">🔴 지급이자 계산 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O13','O')">O</button>
+    <button class="oxb" onclick="so('O13','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O13')">정답 확인</button><span class="rb" id="rO13"></span></div>
+  <div class="ex" id="eO13">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제1항 제4호</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>업무무관자산 관련 지급이자는 <b>"차입금 중 해당 자산가액에 상당하는 금액의 이자를 한도"</b>로 합니다. 자산가액이 기준입니다. "총 차입금 × 이자율"이 아닌 <b>자산가액 비례 계산</b>이 핵심입니다.</p>
+    <p class="trap">⚠ "자산가액과 무관" → 자산가액 상당액이 한도</p>
+  </div>
+</div>
+
+<!-- O14 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">29</span>
+    <div class="qt">
+      법인세법 제28조에 따른 지급이자 손금불산입 규정이 동시에 적용되는 경우, 업무무관자산·가지급금 관련 이자를 가장 먼저 적용한다.<span class="tb thot">🔴 지급이자 적용순위 함정</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O14','O')">O</button>
+    <button class="oxb" onclick="so('O14','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O14')">정답 확인</button><span class="rb" id="rO14"></span></div>
+  <div class="ex" id="eO14">
+    <div class="eh">해설</div><div class="lr">법인세법 제28조 제3항</div>
+    <div class="al">정답: X (틀리다)</div>
+    <p>적용 순위: <b>①채권자불분명 → ②지급자불분명 → ③건설자금이자 → ④업무무관·가지급금이자</b>. 업무무관·가지급금 이자는 <b>가장 마지막(4순위)</b>입니다.</p>
+    <p class="trap">⚠ "가장 먼저" → 4순위(마지막)</p>
+  </div>
+</div>
+
+<!-- O15 -->
+<div class="qc">
+  <div class="qh">
+    <span class="qn qno">30</span>
+    <div class="qt">
+      기부금과 기업업무추진비의 구분 기준: 지출이 사업과 직접관계가 없고 무상으로 이루어진 경우는 기부금, 업무관련자와 원활한 업무 진행을 위한 지출은 기업업무추진비이다.<span class="tb tnew">📌 종합 구분</span>
+    </div>
+  </div>
+  <div class="qbd"><div class="oxs">
+    <button class="oxb" onclick="so('O15','O')">O</button>
+    <button class="oxb" onclick="so('O15','X')">X</button>
+  </div></div>
+  <div class="qa"><button class="bck" onclick="co('O15')">정답 확인</button><span class="rb" id="rO15"></span></div>
+  <div class="ex" id="eO15">
+    <div class="eh">해설</div><div class="lr">법인세법 제24조 제1항·제25조 제1항</div>
+    <div class="al">정답: O (맞다)</div>
+    <p>기부금 vs 기업업무추진비 핵심 구분:
+    <table class="ct" style="margin:.4rem 0">
+      <tr><th>구분</th><th>사업관련성</th><th>지출성격</th><th>손금한도</th></tr>
+      <tr><td>기부금</td><td>사업 직접관계 없음</td><td>무상</td><td>50%/10%/0%</td></tr>
+      <tr><td>기업업무추진비</td><td>업무관련자·업무 원활</td><td>유상(대가 없이 X)</td><td>기본+수입금액별</td></tr>
+    </table>
+    두 정의 모두 조문 그대로 정확합니다.</p>
+  </div>
+</div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+
+<!-- Summary -->
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">30</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제23~28조 (법제처 현행법령, 시행일 2026.01.02) · 세무사 1차 세법학개론 출제동향 분석 반영<br>
+  [2026-05-30 17:00] &nbsp;&nbsp; #법인세법 #감가상각 #기부금 #기업업무추진비 #지급이자 #손금불산입 #세무사1차
+</p>
+</div>
+
+<script>
+// ── 정답 데이터 ──
+const BA={
+  B1:{inp:['b1_1','b1_2','b1_3'],ans:[['손비'],['상각범위액'],['초과']]},
+  B2:{inp:['b2_1','b2_2','b2_3'],ans:[['면제'],['감면'],['한다']]},
+  B3:{inp:['b3_1','b3_2','b3_3'],ans:[['직접적인'],['무상'],['증여']]},
+  B4:{inp:['b4_1','b4_2','b4_3'],ans:[['50','50%','100분의 50'],['무상'],['구호']]},
+  B5:{inp:['b5_1','b5_2'],       ans:[['10','10%','100분의 10'],['30','30%','100분의 30']]},
+  B6:{inp:['b6_1','b6_2'],       ans:[['손금'],['10','10년']]},
+  B7:{inp:['b7_1','b7_2','b7_3'],ans:[['이월'],['먼저'],['먼저']]},
+  B8:{inp:['b8_1','b8_2','b8_3'],ans:[['명목'],['업무'],['원활']]},
+  B9:{inp:['b9_1','b9_2','b9_3'],ans:[['1200만원','1,200만원','1200'],['3600만원','3,600만원','3600'],['1','1개월']]},
+  B10:{inp:['b10_1','b10_2','b10_3'],ans:[['100'],['10'],['0.3','0.3%','0.3퍼센트']]},
+  B11:{inp:['b11_1','b11_2','b11_3'],ans:[['초과'],['신용카드등','신용카드 등'],['세금계산서']]},
+  B12:{inp:['b12_1','b12_2'],    ans:[['불분명'],['대표자 상여','대표자상여']]},
+  B13:{inp:['b13_1','b13_2'],    ans:[['건설자금'],['취득가액']]},
+  B14:{inp:['b14_1','b14_2','b14_3'],ans:[['자산가액'],['업무무관','업무 무관'],['가지급금']]},
+  B15:{inp:['b15_1','b15_2','b15_3'],ans:[['순위'],['건설자금이자'],['업무무관자산','업무무관','가지급금']]},
+};
+const OA={O1:'O',O2:'X',O3:'O',O4:'X',O5:'X',O6:'X',O7:'X',O8:'O',O9:'X',O10:'O',O11:'X',O12:'O',O13:'X',O14:'X',O15:'O'};
+
+const oxSel={},bCk={},oCk={};
+let answered=0,correct=0;
+const TOT=30;
+
+function nm(s){return s.trim().replace(/\s+/g,' ')}
+
+function so(id,val){
+  if(oCk[id])return;
+  oxSel[id]=val;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===val)b.classList.add('s'+val.toLowerCase())});
+}
+function ck(id){
+  if(bCk[id])return; bCk[id]=true;
+  const d=BA[id]; let allOk=true;
+  d.inp.forEach((inp,i)=>{
+    const el=document.getElementById(inp);
+    const v=nm(el.value);
+    const ok=d.ans[i].some(a=>nm(a)===v);
+    el.classList.add(ok?'ok':'ng');
+    if(!ok)allOk=false;
+    el.disabled=true;
+  });
+  const badge=document.getElementById('r'+id);
+  badge.textContent=allOk?'✓ 정답':'✗ 오답';
+  badge.className='rb show '+(allOk?'ok':'ng');
+  document.getElementById('e'+id).classList.add('show');
+  document.querySelector('#qc'+id+' .bck, [id="q'+id+'"] .bck, .qc .bck').disabled=true;
+  // target button
+  document.querySelectorAll('.bck').forEach(b=>{if(b.getAttribute('onclick')==="ck('"+id+"')")b.disabled=true;});
+  upScore(allOk); upProg();
+}
+function co(id){
+  if(oCk[id])return;
+  const sel=oxSel[id],ans=OA[id];
+  if(!sel){alert('O 또는 X를 선택해주세요.');return;}
+  oCk[id]=true;
+  const ok=sel===ans;
+  const card=document.getElementById('qO'+id.slice(1));
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim();
+    b.classList.remove('so','sx');
+    if(bv===ans)b.classList.add('c'+ans.toLowerCase());
+    else if(bv===sel&&!ok)b.classList.add('w'+sel.toLowerCase());
+  });
+  const badge=document.getElementById('r'+id);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+ans+')';
+  badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+id).classList.add('show');
+  document.querySelectorAll('.bck').forEach(b=>{if(b.getAttribute('onclick')==="co('"+id+"')")b.disabled=true;});
+  upScore(ok); upProg();
+}
+function upScore(ok){
+  answered++; if(ok)correct++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('bc').textContent=Object.keys(bCk).length+' / 15';
+  document.getElementById('oc').textContent=Object.keys(oCk).length+' / 15';
+}
+function upProg(){
+  const done=Object.keys(bCk).length+Object.keys(oCk).length;
+  document.getElementById('pf').style.width=(done/TOT*100)+'%';
+}
+function checkAll(){
+  Object.keys(BA).forEach(id=>{
+    if(!bCk[id]){BA[id].inp.forEach(inp=>{if(!document.getElementById(inp).value)document.getElementById(inp).value='?';});ck(id);}
+  });
+  Object.keys(OA).forEach(id=>{if(!oCk[id]){if(!oxSel[id])oxSel[id]='O';co(id);}});
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/TOT*100);
+  document.getElementById('gdT').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=TOT-correct;
+  document.getElementById('smP').classList.add('show');
+  document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>
