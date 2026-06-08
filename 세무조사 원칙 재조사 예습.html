@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세무조사 — 원칙과 재조사 가능 사유 | 세무사 1차 예습자료</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#F7F9FC;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.8;max-width:980px;margin:0 auto;padding:20px}
+  h1{color:#0D1B4B;font-size:1.75em}
+  h2{color:#1A3A6B;font-size:1.12em;margin-bottom:11px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+  h3{color:#2C5282;font-size:1em;margin:14px 0 8px}
+  h4{color:#2D3748;font-size:.94em;margin:10px 0 6px}
+  p{margin-bottom:8px}
+  ul,ol{padding-left:20px;margin-bottom:8px}
+  li{margin-bottom:4px;line-height:1.75}
+  strong{color:#1A1A2E}
+
+  /* ── HEADER ── */
+  .header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B);color:#fff;padding:26px 34px;border-radius:14px;margin-bottom:18px;position:relative;overflow:hidden}
+  .header::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.04)}
+  .subject-badge{background:rgba(255,255,255,.18);color:#fff;padding:4px 14px;border-radius:20px;font-size:.8em;display:inline-block;margin-bottom:9px}
+  .header h1{color:#fff;font-size:1.8em;position:relative}
+  .meta{font-size:.8em;opacity:.85;margin-top:7px;line-height:1.6;position:relative}
+
+  /* ── SECTION ── */
+  .section{background:#fff;margin:14px 0;padding:20px 24px;border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+  .section-title-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:9px 16px;border-radius:8px;font-size:1.04em;font-weight:700;margin:-20px -24px 16px;letter-spacing:.03em}
+  .sub-section{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:14px 18px;margin:12px 0}
+  .sub-section h3{margin-top:0;color:#1A3A6B}
+
+  /* ── BOXES ── */
+  .highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:14px 0}
+  .highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+  .trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:14px 0}
+  .trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+  .compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:14px 0}
+  .compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+  .analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+  .law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em;line-height:1.75}
+  .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+  .ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+  .red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+  .purple-box{background:#FAF5FF;border:1px solid #D6BCFA;border-left:4px solid #805AD5;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+
+  /* ── PRINCIPLE CARDS ── */
+  .principle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:14px 0}
+  .p-card{border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;transition:box-shadow .2s}
+  .p-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.1)}
+  .p-card-head{padding:10px 14px;font-weight:700;font-size:.9em;color:#fff;display:flex;align-items:center;gap:8px}
+  .p-card-head.c1{background:#1A3A6B}.p-card-head.c2{background:#276749}.p-card-head.c3{background:#744210}
+  .p-card-head.c4{background:#5A2D82}.p-card-head.c5{background:#9B2335}.p-card-head.c6{background:#2C7A7B}
+  .p-card-head.c7{background:#2A4A8A}.p-card-head.c8{background:#702459}
+  .p-card-body{background:#fff;padding:12px 14px;font-size:.86em;line-height:1.75;color:#374151}
+  .p-card-body .article{font-family:monospace;font-size:.8em;color:#1A3A6B;font-weight:600;margin-bottom:4px;display:block}
+  .p-card-body .key-rule{font-weight:600;color:#1A1A2E;margin-bottom:5px}
+  .p-card-body .exception{color:#9B2335;font-size:.84em;border-top:1px solid #F0F0F0;margin-top:6px;padding-top:6px}
+
+  /* ── REAUDIT CARDS ── */
+  .reaudit-grid{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+  .ra-item{display:flex;gap:0;border-radius:10px;overflow:hidden;border:1px solid #E2E8F0}
+  .ra-num{background:#1A3A6B;color:#fff;font-weight:700;font-size:1.1em;padding:14px 16px;display:flex;align-items:center;justify-content:center;min-width:48px;flex-shrink:0}
+  .ra-content{padding:12px 16px;flex:1;background:#fff}
+  .ra-title{font-weight:700;color:#1A1A2E;margin-bottom:4px;font-size:.92em}
+  .ra-desc{color:#4A5568;font-size:.86em;line-height:1.7}
+  .ra-note{background:#FFF8E1;border-radius:4px;padding:4px 8px;font-size:.82em;color:#744210;margin-top:6px;display:inline-block}
+
+  /* ── TABLE ── */
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.87em}
+  th{background:#EEF2FF;color:#1A3A6B;padding:9px 12px;text-align:left;font-weight:600;font-size:.86em;border-bottom:2px solid #C3D4F0}
+  td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+  tr:hover td{background:#F8FAFF}
+  .diff{color:#C53030;font-weight:600}
+  .ok-text{color:#276749;font-weight:600}
+  .center{text-align:center}
+  .hl{background:#FFFBEB!important}
+
+  /* ── BADGES ── */
+  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.78em;font-weight:600;margin:1px}
+  .b-blue{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}
+  .b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}
+  .b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}
+  .b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}
+  .b-gray{background:#F3F4F6;color:#374151;border:1px solid #D1D5DB}
+  .star{color:#D97706;font-size:.82em}
+
+  /* ── KEY NUMBER ── */
+  .key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+
+  /* ── TRAP ── */
+  .trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+  .trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+
+  /* ── TWO COL ── */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+  @media(max-width:640px){.two-col,.principle-grid{grid-template-columns:1fr}}
+  .col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+  .col-box h4{margin-top:0;color:#1A3A6B}
+
+  /* ── MISC ── */
+  .footnote{color:#718096;font-size:.82em;margin-top:8px}
+  .lr{font-family:monospace;font-size:.85em;font-weight:600;color:#1A3A6B}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="subject-badge">국세기본법 — 납세자 권리</div>
+  <h1>세무조사 원칙과 재조사 가능 사유</h1>
+  <div class="meta">
+    세무사 1차 시험 예습자료 &nbsp;|&nbsp;
+    국세기본법 §81조의2 ~ §81조의12 (2026.06.02 시행) &nbsp;|&nbsp;
+    MCP 직접 조회 기준
+  </div>
+</div>
+
+<!-- 최빈출 포인트 -->
+<div class="highlight-box">
+  <h2>🔥 최빈출 포인트</h2>
+  <ol>
+    <li><strong>재조사 금지 원칙 + 예외 7가지</strong> <span class="star">★★★</span> — 같은 세목·같은 과세기간 재조사 불가 / 예외 사유 정확히 암기 (§81의4②)</li>
+    <li><strong>사전통지 원칙: 20일 전</strong> <span class="star">★★★</span> — 재조사 결정은 7일 전 / 증거인멸 우려 시 면제 (§81의7①)</li>
+    <li><strong>세무조사 대상 선정 — 정기선정 vs 수시선정</strong> <span class="star">★★</span> — 정기선정 3가지 / 수시선정 5가지 (§81의6②③)</li>
+    <li><strong>통합조사 원칙 / 부분조사 허용</strong> <span class="star">★★</span> — 모든 세목 통합이 원칙, 부분조사는 예외적 허용 (§81의11)</li>
+    <li><strong>조사기간 — 100억 미만 납세자: 20일 이내</strong> <span class="star">★★</span> — 연장: 1회 관할 세무관서장 승인, 2회~ 관할 상급기관 승인 (§81의8)</li>
+    <li><strong>장부 임의 보관 금지</strong> <span class="star">★★</span> — 원칙: 불가 / 예외: 납세자 동의 + 일시 보관증 교부 (§81의10)</li>
+    <li><strong>조사 결과 통지: 20일 이내</strong> <span class="star">★</span> — 국제조세 협의 중 예외 가능 (§81의12)</li>
+    <li><strong>성실성 추정 원칙</strong> <span class="star">★</span> — 납세자 성실하다고 추정, 반증 있을 때만 불성실 인정 (§81의3)</li>
+  </ol>
+</div>
+
+
+<!-- ══ 1. 납세자 권리 기본 체계 ══ -->
+<div class="section">
+  <div class="section-title-bar">1. 납세자 권리 기본 체계 — 제도적 배경</div>
+
+  <div class="sub-section">
+    <h3>1-1. 납세자권리헌장 (§81의2)</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> "세무조사를 받더라도 납세자에게는 이런 권리가 있습니다"라고 헌장에 정리해 두고, 조사 시작할 때 반드시 낭독·교부해주는 제도예요.
+    </div>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>납세자권리헌장 제정·고시</h4>
+        <strong>국세청장</strong>이 제정·고시<br>
+        내용: §81의3~§81의16·§81의18·§81의19 사항 포함<br>
+        (납세자 권리보호에 관한 사항 전반)
+      </div>
+      <div class="col-box">
+        <h4>세무조사 시 교부 의무</h4>
+        ① 세무조사를 하는 경우<br>
+        ② 사업자등록증 발급 시<br>
+        ③ 대통령령으로 정하는 경우<br>
+        <br>
+        <span class="b-red badge">시작 시</span> 조사원증 제시 + 헌장 교부 + <strong>요지 낭독</strong>
+      </div>
+    </div>
+    <div class="warn-box">
+      ⚠ <strong>세무조사 시작 시 의무 절차 순서:</strong><br>
+      ① 조사원증 제시 → ② 납세자권리헌장 교부 → ③ 요지 낭독<br>
+      + 조사사유·조사기간·납세자보호위원회 심의 요청사항·권리구제 절차 설명 의무
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>1-2. 납세자의 성실성 추정 (§81의3)</h3>
+    <div class="law-box">
+      <span class="lr">국세기본법 §81의3</span><br>
+      세무공무원은 납세자가 <strong>§81의6③ 각 호의 어느 하나에 해당하는 경우를 제외</strong>하고는<br>
+      납세자가 성실하며 납세자가 제출한 신고서 등이 <strong>진실한 것으로 추정</strong>해야 한다
+    </div>
+    <div class="ok-box">
+      ✅ 성실성 추정의 반전 요건 = §81의6③ 각 호 (수시선정 사유)<br>
+      → 납세협력의무 불이행·가공거래 혐의·탈세 제보·탈루 혐의·금품 제공 등
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>1-3. 조력을 받을 권리 (§81의5)</h3>
+    <div class="law-box">
+      <span class="lr">국세기본법 §81의5</span><br>
+      납세자는 세무조사를 받는 경우 <strong>변호사·공인회계사·세무사</strong>로 하여금<br>
+      조사에 참여하게 하거나 의견을 진술하게 할 수 있다
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 2. 세무조사의 8대 원칙 ══ -->
+<div class="section">
+  <div class="section-title-bar">2. 세무조사의 8대 핵심 원칙</div>
+
+  <div class="principle-grid">
+
+    <!-- 원칙 1: 최소성 원칙 -->
+    <div class="p-card">
+      <div class="p-card-head c1">
+        <span>⚖️</span> 최소성 원칙 (§81의4①)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의4①</span>
+        <div class="key-rule">적정하고 공평한 과세를 위해 <strong>필요한 최소한의 범위</strong>에서 세무조사를 해야 한다</div>
+        다른 목적 등을 위한 조사권 남용 금지
+      </div>
+    </div>
+
+    <!-- 원칙 2: 재조사 금지 원칙 -->
+    <div class="p-card">
+      <div class="p-card-head c5">
+        <span>🚫</span> 재조사 금지 원칙 (§81의4②)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의4②</span>
+        <div class="key-rule">같은 세목 &amp; 같은 과세기간에 대해 <strong>재조사 원칙 금지</strong></div>
+        <div class="exception">예외: 7가지 재조사 가능 사유 (Section 3에서 상세 설명)</div>
+      </div>
+    </div>
+
+    <!-- 원칙 3: 성실성 추정 -->
+    <div class="p-card">
+      <div class="p-card-head c2">
+        <span>✅</span> 성실성 추정 (§81의3)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의3</span>
+        <div class="key-rule">납세자는 성실하며 신고서는 진실한 것으로 <strong>추정</strong></div>
+        수시선정 사유(§81의6③) 해당 시 추정 번복 가능
+      </div>
+    </div>
+
+    <!-- 원칙 4: 사전통지 원칙 -->
+    <div class="p-card">
+      <div class="p-card-head c3">
+        <span>📋</span> 사전통지 원칙 (§81의7①)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의7①</span>
+        <div class="key-rule">조사 시작 <strong>20일 전</strong> 사전통지 원칙<br>재조사 결정: <strong>7일 전</strong></div>
+        <div class="exception">예외: 증거인멸 우려 시 사전통지 없이 조사 가능</div>
+      </div>
+    </div>
+
+    <!-- 원칙 5: 통합조사 원칙 -->
+    <div class="p-card">
+      <div class="p-card-head c4">
+        <span>📂</span> 통합조사 원칙 (§81의11①)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의11①</span>
+        <div class="key-rule">사업과 관련된 모든 세목을 <strong>통합하여 조사</strong>하는 것이 원칙</div>
+        <div class="exception">예외: 특정 세목만 조사 가능한 3가지 사유 / 부분조사 6가지</div>
+      </div>
+    </div>
+
+    <!-- 원칙 6: 장부 보관 금지 원칙 -->
+    <div class="p-card">
+      <div class="p-card-head c6">
+        <span>📚</span> 장부 임의 보관 금지 (§81의10①)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의10①</span>
+        <div class="key-rule">세무조사 목적으로 납세자 장부등을 <strong>임의로 보관 불가</strong></div>
+        <div class="exception">예외: 수시선정 사유 해당 + 납세자 동의 + 일시 보관증 교부</div>
+      </div>
+    </div>
+
+    <!-- 원칙 7: 조사 범위 확대 제한 -->
+    <div class="p-card">
+      <div class="p-card-head c7">
+        <span>🎯</span> 범위 확대 제한 (§81의9)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의9</span>
+        <div class="key-rule">진행 중 조사 범위를 <strong>임의 확대 불가</strong></div>
+        탈루 혐의가 여러 과세기간·다른 세목과 관련 시 범위 확대 가능<br>
+        → 반드시 <strong>문서로 통지</strong>
+      </div>
+    </div>
+
+    <!-- 원칙 8: 결과 통지 원칙 -->
+    <div class="p-card">
+      <div class="p-card-head c8">
+        <span>📨</span> 결과 통지 원칙 (§81의12①)
+      </div>
+      <div class="p-card-body">
+        <span class="article">국세기본법 §81의12①</span>
+        <div class="key-rule">조사 마친 날부터 <strong>20일 이내</strong> 결과 설명 + 서면 통지 의무</div>
+        특수 사유(국제협의 진행 중 등): 납세자 동의 시 분리 통지 가능
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══ 3. 세무조사 대상자 선정 ══ -->
+<div class="section">
+  <div class="section-title-bar">3. 세무조사 대상자 선정 (§81의6) — 정기선정 vs 수시선정</div>
+
+  <div class="sub-section">
+    <h3>3-1. 정기선정 (§81의6②) — 3가지 사유</h3>
+    <div class="law-box">
+      <span class="lr">§81의6②</span> 신고의 적정성을 검증하기 위해 정기적으로 대상 선정 (객관적 기준으로 공정하게)
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>정기선정 사유</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="center">①</td>
+          <td>국세청장이 성실도를 분석한 결과 <strong>불성실 혐의가 있다고 인정</strong>하는 경우<br>(과세자료·세무정보·감사의견·외부감사 실시내용 등 고려)</td>
+          <td>가장 일반적</td>
+        </tr>
+        <tr class="hl">
+          <td class="center">②</td>
+          <td>최근 <strong>4과세기간 이상</strong> 같은 세목의 세무조사를 받지 않은 납세자<br>(업종·규모·경제력 집중 등 고려)</td>
+          <td><strong>4과세기간</strong> 기준 암기!</td>
+        </tr>
+        <tr>
+          <td class="center">③</td>
+          <td><strong>무작위추출방식</strong>으로 표본조사를 하려는 경우</td>
+          <td>무작위 샘플링</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <h3>3-2. 수시선정 (§81의6③) — 5가지 사유</h3>
+    <div class="law-box">
+      <span class="lr">§81의6③</span> 정기선정 이외에도 다음 사유 시 세무조사 가능 (성실성 추정 번복 사유와 동일)
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>수시선정 사유</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="center">1</td>
+          <td>납세자가 <strong>납세협력의무를 이행하지 않은 경우</strong><br>(신고·성실신고확인서 미제출·세금계산서 미발급·지급명세서 미제출 등)</td>
+          <td>§81의6③1</td>
+        </tr>
+        <tr>
+          <td class="center">2</td>
+          <td>무자료거래·위장거래·가공거래 등 <strong>거래 내용이 사실과 다른 혐의</strong>가 있는 경우</td>
+          <td>§81의6③2</td>
+        </tr>
+        <tr>
+          <td class="center">3</td>
+          <td>납세자에 대한 <strong>구체적인 탈세 제보</strong>가 있는 경우</td>
+          <td>§81의6③3</td>
+        </tr>
+        <tr>
+          <td class="center">4</td>
+          <td>신고 내용에 <strong>탈루나 오류의 혐의를 인정할 만한 명백한 자료</strong>가 있는 경우</td>
+          <td>§81의6③4</td>
+        </tr>
+        <tr>
+          <td class="center">5</td>
+          <td>납세자가 세무공무원에게 직무와 관련하여 <strong>금품을 제공하거나 금품 제공을 알선</strong>한 경우</td>
+          <td>§81의6③5</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <h3>3-3. 소규모 사업자 조사 면제 (§81의6⑤)</h3>
+    <div class="ok-box">
+      ✅ 다음 두 요건을 <strong>모두 충족</strong>하는 납세자는 정기선정 조사 면제 가능<br>
+      ① 업종별 수입금액이 대통령령으로 정하는 금액 이하<br>
+      ② 장부 기록 등이 대통령령으로 정하는 요건 충족<br>
+      단, 객관적 증거로 <strong>과소신고가 명백한 경우</strong>에는 예외
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 4. 재조사 금지 원칙과 예외 7가지 ══ -->
+<div class="section">
+  <div class="section-title-bar">4. 재조사 금지 원칙과 예외 7가지 (§81의4②) — 시험 핵심</div>
+
+  <div class="sub-section">
+    <h3>4-1. 재조사 금지의 원칙</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 한 번 세무조사를 마쳤으면 같은 기간·같은 세금에 대해 또 다시 조사하면 안 됩니다. 납세자가 이미 조사를 통과했는데 또 괴롭히면 안 되니까요. 단, 아래 7가지 예외 사유가 있을 때만 재조사가 허용됩니다.
+    </div>
+    <div class="red-box">
+      🚨 <strong>원칙:</strong> 같은 세목 &amp; 같은 과세기간에 대하여 <strong>재조사 불가</strong> (§81의4②)<br>
+      → 납세자 법적 안정성 보호 취지
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>4-2. 재조사 가능 사유 7가지 (§81의4②)</h3>
+
+    <div class="reaudit-grid">
+
+      <div class="ra-item">
+        <div class="ra-num">1</div>
+        <div class="ra-content">
+          <div class="ra-title">조세탈루의 혐의를 인정할 만한 명백한 자료가 있는 경우</div>
+          <div class="ra-desc">단순한 의심이 아닌 <strong>"명백한 자료"</strong>가 있어야 함. 막연한 혐의는 부족. 탈세 제보 + 구체적 증거자료 결합 시 해당 가능.</div>
+          <span class="ra-note">⚠ '명백한' 요건 — 의심만으로는 불가</span>
+        </div>
+      </div>
+
+      <div class="ra-item">
+        <div class="ra-num">2</div>
+        <div class="ra-content">
+          <div class="ra-title">거래상대방에 대한 조사가 필요한 경우</div>
+          <div class="ra-desc">납세자 본인이 아닌 <strong>거래상대방</strong>에 대한 조사를 위해 해당 납세자의 자료 확인이 필요한 경우. 파생적 조사 필요성에 따른 예외.</div>
+          <span class="ra-note">거래상대방 조사 → 당해 납세자에 대한 간접 재조사 허용</span>
+        </div>
+      </div>
+
+      <div class="ra-item">
+        <div class="ra-num">3</div>
+        <div class="ra-content">
+          <div class="ra-title">2개 이상의 과세기간과 관련하여 잘못이 있는 경우</div>
+          <div class="ra-desc">한 과세기간이 아닌 <strong>2개 이상 과세기간</strong>에 걸쳐 연결된 오류·잘못이 있는 경우. 예: A기간 조사 중 B기간과 연결된 탈루 발견.</div>
+          <span class="ra-note">2개↑ 과세기간 연결 오류 — 범위 확대 논리</span>
+        </div>
+      </div>
+
+      <div class="ra-item">
+        <div class="ra-num">4</div>
+        <div class="ra-content">
+          <div class="ra-title">이의신청·심사청구·심판청구에 따른 재조사 결정 (§65①3호 단서 등)</div>
+          <div class="ra-desc">이의신청·심사청구·심판청구 결과 <strong>재조사 결정</strong>이 내려진 경우. 결정서 주문에 기재된 <strong>범위 내</strong>의 조사에 한정.</div>
+          <span class="ra-note">⚠ 결정서 주문 범위 내에서만 — 범위 초과 불가</span>
+        </div>
+      </div>
+
+      <div class="ra-item">
+        <div class="ra-num">5</div>
+        <div class="ra-content">
+          <div class="ra-title">납세자가 세무공무원에게 직무와 관련하여 금품을 제공하거나 금품제공을 알선한 경우</div>
+          <div class="ra-desc">조사 과정에서 납세자가 <strong>공무원에게 뇌물을 제공</strong>한 경우. 정상적인 조사를 스스로 오염시킨 것이므로 재조사 허용.</div>
+          <span class="ra-note">납세자의 귀책사유 — 자기 책임 원칙</span>
+        </div>
+      </div>
+
+      <div class="ra-item">
+        <div class="ra-num">6</div>
+        <div class="ra-content">
+          <div class="ra-title">부분조사를 실시한 후 해당 조사에 포함되지 않은 부분에 대해 조사하는 경우 (§81의11③)</div>
+          <div class="ra-desc">이전 조사가 <strong>부분조사</strong>(경정 청구 처리 등)였던 경우, 그 부분조사에서 다루지 않은 나머지 부분에 대해 조사 가능. 전체 조사의 연속성 보장.</div>
+          <span class="ra-note">부분조사 후 나머지 부분 → 재조사 아닌 보완 조사</span>
+        </div>
+      </div>
+
+      <div class="ra-item">
+        <div class="ra-num">7</div>
+        <div class="ra-content">
+          <div class="ra-title">그 밖에 제1호~제6호와 유사한 경우로서 대통령령으로 정하는 경우</div>
+          <div class="ra-desc">포괄 조항. 시행령에서 구체적 사유를 추가로 규정할 수 있는 위임 조항.</div>
+          <span class="ra-note">포괄적 위임 — 시행령 확인 필요</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>4-3. 재조사 가능 사유 — 시험 핵심 비교 암기</h3>
+    <table>
+      <thead>
+        <tr><th>사유</th><th>핵심 키워드</th><th>특이사항</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hl"><td>1호</td><td><strong>명백한</strong> 탈루 자료</td><td>"의심"만으로는 부족, 명백성 요건 필수</td></tr>
+        <tr><td>2호</td><td>거래<strong>상대방</strong> 조사 필요</td><td>본인 조사 아닌 거래처 조사 필요성</td></tr>
+        <tr><td>3호</td><td><strong>2개 이상</strong> 과세기간 연결 오류</td><td>1개 과세기간만이면 해당 안 됨</td></tr>
+        <tr class="hl"><td>4호</td><td>불복 절차 <strong>재조사 결정</strong></td><td><strong>결정서 주문 범위 내</strong>만 허용</td></tr>
+        <tr><td>5호</td><td>납세자의 <strong>금품 제공·알선</strong></td><td>납세자 귀책, 재조사 금지 보호 배제</td></tr>
+        <tr class="hl"><td>6호</td><td><strong>부분조사</strong> 후 미포함 부분</td><td>부분조사의 나머지는 재조사 아님</td></tr>
+        <tr><td>7호</td><td>대통령령 위임 사항</td><td>포괄 조항</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ══ 5. 세무조사 절차 상세 ══ -->
+<div class="section">
+  <div class="section-title-bar">5. 세무조사 절차 상세</div>
+
+  <div class="sub-section">
+    <h3>5-1. 사전통지 (§81의7①)</h3>
+    <table>
+      <thead><tr><th>구분</th><th>통지 기한</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>일반 세무조사</strong></td><td>조사 시작 <span class="key-num">20일</span> 전</td><td>조사대상 세목·조사기간·조사 사유 등</td></tr>
+        <tr class="hl"><td><strong>재조사 결정에 따른 재조사</strong></td><td>조사 시작 <span class="key-num">7일</span> 전</td><td>동일 내용</td></tr>
+        <tr><td><strong>사전통지 면제</strong></td><td>즉시 개시 가능</td><td>사전통지 시 증거인멸 등으로 조사 목적 달성 불가 시</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      ⚠ 사전통지 없이 개시 시 또는 연기 기간 만료 전 긴급 재개 시: <strong>세무조사통지서를 납세자에게 교부</strong> 의무 (사전통지 사항 + 미통지 사유 포함)
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>5-2. 세무조사 기간 (§81의8)</h3>
+    <table>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr class="hl">
+          <td><strong>100억원 미만 납세자</strong></td>
+          <td>원칙: <span class="key-num">20일</span> 이내 (연간 수입금액 또는 양도가액 기준)</td>
+        </tr>
+        <tr>
+          <td>1차 연장</td>
+          <td><strong>관할 세무관서장 승인</strong> → 20일 이내 연장 가능</td>
+        </tr>
+        <tr>
+          <td>2회 이후 연장</td>
+          <td><strong>관할 상급 세무관서장 승인</strong> → 각 20일 이내 연장</td>
+        </tr>
+        <tr class="hl">
+          <td><strong>기간 제한 없는 경우</strong></td>
+          <td>
+            ① 무자료·위장·가공거래 혐의<br>
+            ② 역외거래 탈루·해외 유출 혐의<br>
+            ③ 명의위장·이중장부·차명계좌·현금 누락 탈루 혐의<br>
+            ④ 거짓계약서·미등기양도 부동산 투기 혐의<br>
+            ⑤ 상속·증여세 조사, 주식변동 조사, 범칙조사, 동시조사
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      ⚠ 조사 <strong>중지</strong> 기간은 조사기간·연장기간에 산입하지 않음<br>
+      중지 기간 중에는 질문·장부 검사·제출 요구 <strong>금지</strong>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>5-3. 통합조사 원칙과 예외 (§81의11)</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>원칙: 통합조사</h4>
+        사업과 관련된 <strong>모든 세목을 통합</strong>하여 조사<br>
+        납세자 부담 최소화·이중 조사 방지 취지
+      </div>
+      <div class="col-box">
+        <h4>예외: 특정 세목만 조사 (3가지)</h4>
+        ① 세목 특성·납세자 유형·규모·탈루 혐의상 필요<br>
+        ② 조세채권 확보 위해 특정 세목 긴급 조사<br>
+        ③ 기타 대통령령으로 정하는 경우
+      </div>
+    </div>
+    <div class="purple-box">
+      📌 <strong>부분조사 (§81의11③)</strong> — 6가지 사유로 허용<br>
+      ① 경정 청구 처리·국세환급금 결정 확인<br>
+      ② 재조사 결정에 따른 사실관계 확인<br>
+      ③ 거래상대방 조사 중 거래 일부 확인<br>
+      ④ 구체적 탈세 제보 해당 혐의 확인<br>
+      ⑤ 명의위장·차명계좌 탈루 혐의 확인<br>
+      ⑥ 기타 대통령령 사유<br>
+      <br>
+      ⚠ <strong>③~⑥호 사유 부분조사는 같은 세목·같은 과세기간 2회 초과 불가</strong>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>5-4. 장부 보관 (§81의10)</h3>
+    <table>
+      <thead><tr><th>구분</th><th>원칙</th><th>예외</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>임의 보관</strong></td>
+          <td class="diff">원칙 불가</td>
+          <td>수시선정 사유(§81의6③) + <strong>납세자 동의</strong> 시 일시 보관 가능</td>
+        </tr>
+        <tr>
+          <td><strong>반환 요청 시</strong></td>
+          <td colspan="2">요청일로부터 <span class="key-num">14일</span> 이내 반환 의무<br>(납세자보호위원회 심의 거쳐 1회, 14일 이내 연장 가능)</td>
+        </tr>
+        <tr>
+          <td><strong>사본 보관</strong></td>
+          <td colspan="2">반환 시 세무공무원은 사본 보관 가능 + 납세자 서명·날인 요구 가능</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <h3>5-5. 조사 결과 통지 (§81의12)</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>원칙</h4>
+        조사 마친 날부터 <strong>20일 이내</strong><br>
+        (국제조세·역외거래 관련: <strong>40일</strong>)<br>
+        조사 내용·과세표준·세액·산출근거 포함<br>
+        납세자에게 설명 + 서면 통지
+      </div>
+      <div class="col-box">
+        <h4>분리 통지 가능 (납세자 동의 필요)</h4>
+        ① 국외자료 수집·상호합의절차 진행 중<br>
+        ② 세법 해석·사실관계 확정 위해 질의 진행 중<br>
+        → 통지 불가 부분 제외한 나머지만 먼저 통지<br>
+        → 사유 해소 후 <strong>20일(40일) 이내</strong> 나머지 통지
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 6. 요점 총정리 비교표 ══ -->
+<div class="compare-box">
+  <h2>⚖️ 세무조사 핵심 기한·기준 총정리</h2>
+  <table>
+    <thead>
+      <tr><th>항목</th><th>원칙</th><th>예외·특이사항</th><th>근거</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl">
+        <td><strong>사전통지</strong></td>
+        <td><span class="key-num">20일</span> 전</td>
+        <td>재조사 결정에 따른 재조사: <span class="key-num">7일</span> 전 / 증거인멸 우려: 면제</td>
+        <td>§81의7①</td>
+      </tr>
+      <tr>
+        <td><strong>정기선정 주기</strong></td>
+        <td>최근 <span class="key-num">4과세기간</span> 이상 미조사</td>
+        <td>업종·규모·경제력 집중 고려</td>
+        <td>§81의6②2</td>
+      </tr>
+      <tr class="hl">
+        <td><strong>조사기간</strong></td>
+        <td>100억 미만: <span class="key-num">20일</span> 이내</td>
+        <td>1차 연장: 관할 세무관서장 / 2회~: 관할 상급기관 / 무자료·역외 등: 제한 없음</td>
+        <td>§81의8</td>
+      </tr>
+      <tr>
+        <td><strong>장부 반환</strong></td>
+        <td>요청일부터 <span class="key-num">14일</span> 이내</td>
+        <td>납세자보호위원회 심의 후 1회, 14일 연장 가능</td>
+        <td>§81의10④</td>
+      </tr>
+      <tr class="hl">
+        <td><strong>결과 통지</strong></td>
+        <td>조사 완료 후 <span class="key-num">20일</span> 이내</td>
+        <td>국제조세 관련: <span class="key-num">40일</span> / 상호합의 진행 중: 분리 통지 가능</td>
+        <td>§81의12①</td>
+      </tr>
+      <tr>
+        <td><strong>부분조사 횟수 제한</strong></td>
+        <td>③~⑥호 사유: <span class="key-num">2회</span> 초과 불가</td>
+        <td>①②호(경정청구·재조사결정)는 횟수 제한 없음</td>
+        <td>§81의11④</td>
+      </tr>
+      <tr class="hl">
+        <td><strong>재조사 금지</strong></td>
+        <td>같은 세목·같은 과세기간 원칙 금지</td>
+        <td>7가지 예외 사유 해당 시 가능</td>
+        <td>§81의4②</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ══ 오답 함정 ══ -->
+<div class="trap-box">
+  <h2>⚠️ 오답 함정 — 자주 틀리는 포인트</h2>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"단순한 탈세 의심만 있어도 재조사 가능하다"</strong>
+      <p>→ 정답: 재조사 1호 사유는 <strong>"명백한" 자료</strong>가 있어야 함. 막연한 의심이나 단순 혐의만으로는 재조사 불가.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"재조사 결정에 따른 재조사 시 사전통지도 20일 전이다"</strong>
+      <p>→ 정답: 재조사 결정에 따른 재조사는 <strong>7일 전</strong>에 사전통지. 일반 세무조사(20일)와 구별.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"정기선정에서 3과세기간 이상 조사를 받지 않으면 대상이 될 수 있다"</strong>
+      <p>→ 정답: 최근 <strong>4과세기간 이상</strong> 같은 세목의 조사를 받지 않은 경우에 정기선정 대상 (§81의6②2).</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"재조사 결정에 따른 재조사는 결정서 주문 범위를 벗어나도 가능하다"</strong>
+      <p>→ 정답: 이의신청·심판청구 등에 따른 재조사 결정 시 <strong>결정서 주문에 기재된 범위</strong>의 조사에만 한정 (§81의4②4호).</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"세무공무원은 조사 목적에 필요하면 납세자 동의 없이 장부를 보관할 수 있다"</strong>
+      <p>→ 정답: 원칙 불가. 수시선정 사유에 해당하더라도 반드시 <strong>납세자 동의</strong>를 받아야 하며 <strong>일시 보관증</strong>을 교부해야 함 (§81의10②③).</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"1개 과세기간에 오류가 있어도 재조사 3호 사유에 해당한다"</strong>
+      <p>→ 정답: 3호 사유는 <strong>2개 이상의 과세기간</strong>에 걸쳐 잘못이 있는 경우. 1개 과세기간만의 오류는 해당 안 됨.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"부분조사(③~⑥호)는 같은 세목·과세기간에 3회까지 가능하다"</strong>
+      <p>→ 정답: ③~⑥호 사유의 부분조사는 같은 세목·과세기간에 <strong>2회 초과 불가</strong> (§81의11④). ①②호는 횟수 제한 없음.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"무자료·가공거래 혐의가 있어도 100억 미만 납세자는 20일 조사기간 제한을 받는다"</strong>
+      <p>→ 정답: 무자료·위장·가공거래 혐의, 역외 탈루, 명의위장·이중장부 혐의 등은 <strong>조사기간 제한을 받지 않음</strong> (§81의8③ 단서).</p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <table>
+    <thead><tr><th>조항</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>§81의2</td><td>납세자권리헌장 제정·교부 (국세청장 제정, 조사원증 제시 + 헌장 교부 + 낭독)</td></tr>
+      <tr><td>§81의3</td><td>납세자의 성실성 추정 (§81의6③ 사유 해당 시 번복 가능)</td></tr>
+      <tr><td>§81의4①</td><td>세무조사권 남용 금지 (최소성 원칙, 다른 목적 남용 금지)</td></tr>
+      <tr><td>§81의4②</td><td>재조사 금지 원칙 + 7가지 예외 사유</td></tr>
+      <tr><td>§81의4③</td><td>장부등 제출 최소 범위 원칙</td></tr>
+      <tr><td>§81의5</td><td>조력을 받을 권리 (변호사·회계사·세무사 참여)</td></tr>
+      <tr><td>§81의6①~⑤</td><td>세무조사 관할 / 정기선정 3가지 / 수시선정 5가지 / 소규모 면제</td></tr>
+      <tr><td>§81의7①~⑥</td><td>사전통지 (20일/7일 전, 면제 사유) + 연기신청</td></tr>
+      <tr><td>§81의8①~⑧</td><td>조사기간 (100억 미만 20일, 연장 절차, 기간 제한 없는 5가지)</td></tr>
+      <tr><td>§81의9①②</td><td>조사 범위 확대 제한 (문서 통지 의무)</td></tr>
+      <tr><td>§81의10①~⑦</td><td>장부 보관 금지 원칙 (동의·보관증·14일 반환 의무)</td></tr>
+      <tr><td>§81의11①~④</td><td>통합조사 원칙 / 특정 세목만 조사 3가지 / 부분조사 6가지 / 2회 초과 제한</td></tr>
+      <tr><td>§81의12①~③</td><td>결과 통지 (20일/40일 이내, 분리 통지 요건)</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote" style="margin-top:10px">※ 국세기본법 (2026.06.02 시행) 기준</p>
+</div>
+
+</body>
+</html>

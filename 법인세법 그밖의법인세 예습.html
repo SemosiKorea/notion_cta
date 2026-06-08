@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 — 그 밖의 법인세 | 세무사 1차 예습자료</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.8;max-width:980px;margin:0 auto;padding:20px}
+  h1{color:#0D1B4B;font-size:1.75em;margin-bottom:6px}
+  h2{color:#1A3A6B;font-size:1.15em;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+  h3{color:#2C5282;font-size:1.02em;margin:14px 0 8px}
+  h4{color:#2D3748;font-size:.95em;margin:10px 0 6px}
+  p{margin-bottom:8px}
+  ul,ol{padding-left:20px;margin-bottom:8px}
+  li{margin-bottom:4px;line-height:1.75}
+  strong{color:#1A1A2E}
+
+  /* HEADER */
+  .header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B);color:#fff;padding:26px 34px;border-radius:12px;margin-bottom:18px}
+  .subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:.8em;display:inline-block;margin-bottom:9px}
+  .header h1{color:#fff;font-size:1.8em}
+  .meta{font-size:.8em;opacity:.85;margin-top:7px;line-height:1.6}
+
+  /* SECTION */
+  .section{background:#fff;margin:16px 0;padding:20px 24px;border-radius:12px;border:1px solid #E8ECF0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .section-title-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:9px 16px;border-radius:8px;font-size:1.04em;font-weight:700;margin:-20px -24px 16px;letter-spacing:.03em}
+  .sub-section{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:14px 18px;margin:12px 0}
+  .sub-section h3{margin-top:0;color:#1A3A6B}
+
+  /* BOXES */
+  .highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:12px 0}
+  .highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+  .trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:12px 0}
+  .trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+  .compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:12px 0}
+  .compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+  .analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+  .calc-box{background:#F8F4FF;border:1px solid #D6BCFA;border-radius:10px;padding:16px 20px;margin:12px 0}
+  .calc-box h3{color:#5A2D82;margin-top:0}
+  .law-ref-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.89em}
+  .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #ECC94B;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.89em}
+  .ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.89em}
+  .info-box{background:#EDF2F7;border:1px solid #CBD5E0;border-left:4px solid #4A5568;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.89em}
+
+  /* TABLE */
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.88em}
+  th{background:#EEF2FF;color:#1A3A6B;padding:9px 12px;text-align:left;font-weight:600;font-size:.87em}
+  td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+  tr:hover td{background:#FAFBFF}
+  .diff{color:#C53030;font-weight:600}
+  .ok-text{color:#276749;font-weight:600}
+  .center{text-align:center}
+
+  /* BADGE */
+  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.78em;font-weight:600;margin:1px}
+  .badge-kyul{background:#FFF3CD;color:#856404;border:1px solid #FFEAA7}
+  .badge-shin{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}
+  .badge-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}
+  .badge-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}
+  .badge-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}
+  .badge-gray{background:#F3F4F6;color:#374151;border:1px solid #D1D5DB}
+  .star{color:#D97706;font-size:.83em}
+
+  /* FLOWCHART */
+  .flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:14px 0}
+  .flow-node{background:#1A3A6B;color:#fff;padding:8px 22px;border-radius:8px;font-size:.86em;font-weight:600;text-align:center;min-width:180px;max-width:340px}
+  .flow-node.g{background:#276749}
+  .flow-node.r{background:#9B2335}
+  .flow-node.o{background:#92400E}
+  .flow-node.p{background:#5A2D82}
+  .flow-diamond{background:#92400E;color:#fff;padding:7px 18px;border-radius:50px;font-size:.84em;font-weight:600;text-align:center}
+  .flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+  .flow-branch{display:flex;gap:24px;align-items:flex-start;justify-content:center;width:100%}
+  .flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px}
+  .branch-label{font-size:.78em;color:#718096;font-weight:600}
+
+  /* CALC STEPS */
+  .calc-step{display:flex;align-items:baseline;gap:9px;margin:5px 0;padding:6px 11px;background:#fff;border-radius:6px;border:1px solid #E0D6FF}
+  .step-num{background:#5A2D82;color:#fff;padding:2px 7px;border-radius:10px;font-size:.78em;font-weight:700;flex-shrink:0}
+  .step-label{font-weight:600;color:#2D3748;flex:1;font-size:.9em}
+  .step-formula{color:#5A2D82;font-family:monospace;font-size:.9em}
+  .step-ref{color:#718096;font-size:.78em;flex-shrink:0}
+  .calc-result{background:#5A2D82;color:#fff;padding:9px 14px;border-radius:8px;font-weight:700;margin-top:9px;text-align:center;font-size:.93em}
+
+  /* TRAP */
+  .trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+  .trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+
+  /* MISC */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+  .col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+  .col-box h4{margin-top:0;color:#1A3A6B}
+  .footnote{color:#718096;font-size:.82em;margin-top:8px}
+  .rate-badge{display:inline-block;background:#1A3A6B;color:#fff;padding:3px 10px;border-radius:6px;font-size:.85em;font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="subject-badge">법인세법</div>
+  <h1>그 밖의 법인세</h1>
+  <div class="meta">
+    세무사 1차 시험 예습자료 &nbsp;|&nbsp;
+    근거: 법 §4·§5·§29·§55의2·§75의11 / 조특법 §100의32 &nbsp;|&nbsp;
+    법령 기준: 2026.01.02 시행 (조특법 2026.06.02)
+  </div>
+</div>
+
+<!-- 최빈출 포인트 -->
+<div class="highlight-box">
+  <h2>🔥 최빈출 포인트</h2>
+  <ol>
+    <li><strong>토지등 양도소득 세율</strong> <span class="star">★★★</span> — 주택·별장 20%, 비사업용 토지 10%, 미등기 40% (법§55의2①)</li>
+    <li><strong>토지등 양도소득 계산</strong> <span class="star">★★★</span> — 양도금액 − <em>장부가액</em> (시가 아님!) (법§55의2⑥)</li>
+    <li><strong>비영리법인 수익사업 범위</strong> <span class="star">★★★</span> — 이자·배당·제조·건설 등 한정 열거 / 고유목적사업 소득 제외 (법§4③)</li>
+    <li><strong>고유목적사업준비금 한도</strong> <span class="star">★★★</span> — 이자·배당 100% + 그 밖 수익사업 50% (장학금 법인 80%) (법§29①)</li>
+    <li><strong>고유목적사업준비금 5년 미사용 시</strong> <span class="star">★★</span> — 익금산입 + 이자상당액 추가납부 (법§29⑤④⑦)</li>
+    <li><strong>미환류소득 적용대상</strong> <span class="star">★★</span> — 상호출자제한기업집단 소속 내국법인 (조특법§100의32①)</li>
+    <li><strong>미환류소득세율</strong> <span class="star">★★</span> — 미환류소득의 20% (조특법§100의32①)</li>
+    <li><strong>신탁소득 원칙</strong> <span class="star">★★</span> — 수익자 과세 원칙 / 법인과세신탁은 수탁자 과세 (법§5①②)</li>
+  </ol>
+</div>
+
+
+<!-- ===== 1. 토지등 양도소득에 대한 법인세 ===== -->
+<div class="section">
+  <div class="section-title-bar">1. 토지등 양도소득에 대한 법인세 (법§55의2)</div>
+
+  <!-- 1-1 개요 -->
+  <div class="sub-section">
+    <h3>1-1. 개요</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 법인이 부동산을 팔 때, 일반 법인세(각사소 과세) 외에 "부동산 투기 억제"를 위해 추가로 내는 세금이에요. 기본 법인세에 더해 납부하는 것이 포인트입니다.
+    </div>
+    <div class="law-ref-box">
+      <strong>성격:</strong> 각 사업연도 소득에 대한 법인세와 <strong>별개로 추가 납부</strong>하는 세금<br>
+      <strong>비영리법인 포함:</strong> 법§4①단서 — 비영리내국법인도 토지등 양도소득에 대한 법인세 납세의무 있음<br>
+      <strong>최저한세 적용 제외:</strong> 토지등 양도소득 법인세는 최저한세 계산에서 제외
+    </div>
+  </div>
+
+  <!-- 1-2 과세대상·비과세 -->
+  <div class="sub-section">
+    <h3>1-2. 과세대상과 비과세대상</h3>
+
+    <h4>① 과세대상 자산 ("토지등"의 범위)</h4>
+    <table>
+      <thead><tr><th>자산 종류</th><th>세율</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>주택</strong> (부수 토지 포함)<br>+ <strong>별장</strong></td>
+          <td><span class="rate-badge">20%</span><br><span class="badge badge-red">미등기 40%</span></td>
+          <td>농어촌주택(읍·면 소재, 요건 충족) 제외</td>
+        </tr>
+        <tr>
+          <td><strong>비사업용 토지</strong></td>
+          <td><span class="rate-badge">10%</span><br><span class="badge badge-red">미등기 40%</span></td>
+          <td>농지·임야·목장용지·기타 비업무용 토지</td>
+        </tr>
+        <tr>
+          <td><strong>조합원입주권·분양권</strong></td>
+          <td><span class="rate-badge">20%</span></td>
+          <td>소득세법 §88⑨⑩ 준용</td>
+        </tr>
+        <tr>
+          <td>지정지역 부동산<br>(2012.12.31 이전 양도)</td>
+          <td>10%</td>
+          <td>현재는 실질 적용 없음 (기한 경과)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      ⚠ <strong>중복 적용 시:</strong> 하나의 자산이 2개 이상의 호에 해당하는 경우 → <strong>가장 높은 세액</strong> 적용 (법§55의2① 후단)
+    </div>
+
+    <h4>② 비사업용 토지란? (법§55의2②)</h4>
+    <table>
+      <thead><tr><th>비사업용 토지 유형</th><th>제외(사업용으로 인정되는) 경우</th></tr></thead>
+      <tbody>
+        <tr><td>농업 주업이 아닌 법인 소유 농지</td><td>농지법 등 법률에 따라 소유 가능한 농지</td></tr>
+        <tr><td>도시지역 내 농지</td><td>도시지역 편입 후 대통령령 기간 미경과</td></tr>
+        <tr><td>임야 (원칙)</td><td>채종림·시험림, 산림보호구역, 임업 주업 법인 소유</td></tr>
+        <tr><td>목장용지 기준면적 초과</td><td>업무 직접 관련 인정 목장용지</td></tr>
+        <tr><td>기타 업무무관 토지</td><td>재산세 비과세·별도합산·분리과세 대상 토지</td></tr>
+      </tbody>
+    </table>
+
+    <h4>③ 비과세대상 (법§55의2④) — 단, 미등기 자산 제외</h4>
+    <table>
+      <thead><tr><th>비과세 사유</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td>파산선고에 의한 처분</td><td>법§55의2④1</td></tr>
+        <tr><td>법인이 직접 경작하던 농지의 교환·분할·통합</td><td>법§55의2④2</td></tr>
+        <tr><td>환지처분 등 대통령령으로 정하는 사유</td><td>법§55의2④3</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      ⚠ <strong>미등기 토지등은 비과세 규정 적용 안 됨</strong> → 무조건 40% 세율 적용
+    </div>
+  </div>
+
+  <!-- 1-3 귀속시기 -->
+  <div class="sub-section">
+    <h3>1-3. 귀속시기</h3>
+    <div class="law-ref-box">
+      <strong>법§55의2⑦</strong> → 대통령령으로 정함<br>
+      원칙: 각 사업연도 소득 귀속시기 규정과 동일 적용 (권리의무확정주의)<br>
+      → 토지등 양도에 따른 손익의 귀속사업연도는 법인세 시행령 §92의11 적용
+    </div>
+  </div>
+
+  <!-- 1-4 세액계산 -->
+  <div class="sub-section">
+    <h3>1-4. 세액계산방법</h3>
+
+    <div class="calc-box">
+      <h3>📐 토지등 양도소득에 대한 법인세 계산</h3>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">토지등 양도소득</span>
+        <span class="step-formula">= 양도금액 − 장부가액</span>
+        <span class="step-ref">(법§55의2⑥)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">해당 세율 적용</span>
+        <span class="step-formula">× 20% (주택·별장) / 10% (비사업용토지) / 40% (미등기)</span>
+        <span class="step-ref"></span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">일반 법인세 산출</span>
+        <span class="step-formula">과세표준 × 기본세율 (§55)</span>
+        <span class="step-ref"></span>
+      </div>
+      <div class="calc-result">총 납부세액 = 일반 법인세 + 토지등 양도소득에 대한 법인세 (②의 세액)</div>
+    </div>
+
+    <div class="warn-box">
+      ⚠ <strong>양도소득 계산 시 장부가액 기준!</strong><br>
+      소득세(개인)의 양도소득은 실지거래가액 기준이지만, 법인세는 <strong>장부가액</strong> 기준으로 양도소득 계산<br>
+      단, 비영리내국법인이 1990.12.31 이전 취득 자산: 장부가액과 1991.1.1 기준 상증세법 평가액 중 큰 가액
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 2. 미환류소득에 대한 법인세 ===== -->
+<div class="section">
+  <div class="section-title-bar">2. 미환류소득에 대한 법인세 (조특법§100의32)</div>
+
+  <!-- 2-1 개요 -->
+  <div class="sub-section">
+    <h3>2-1. 개요</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 대기업이 번 돈을 투자·임금인상·배당 등으로 사회에 돌려주지 않고 사내에 쌓아두면, "환류하지 않은 소득"에 추가로 세금을 매기는 제도입니다. "돈을 풀어야 한다"는 경제 정책 의도가 담겨 있어요.
+    </div>
+    <div class="law-ref-box">
+      <strong>근거:</strong> 조특법§100의32 (투자·배당 및 상생협력 촉진을 위한 과세특례)<br>
+      <strong>성격:</strong> 각 사업연도 법인세에 <strong>추가 납부</strong>하는 별도 법인세<br>
+      <strong>적용 기한:</strong> 2028년 12월 31일이 속하는 사업연도까지 (일몰 있음)
+    </div>
+  </div>
+
+  <!-- 2-2 적용대상 -->
+  <div class="sub-section">
+    <h3>2-2. 적용대상 기업</h3>
+    <div class="ok-box">
+      ✅ <strong>각 사업연도 종료일 현재</strong> 공정거래법 제31조①에 따른 <strong>상호출자제한기업집단</strong>에 속하는 내국법인
+    </div>
+    <div class="info-box">
+      <strong>상호출자제한기업집단이란?</strong> 자산총액 10조원 이상의 기업집단으로 공정거래위원회가 지정하는 대규모기업집단 (삼성, 현대차 등 대규모 그룹)
+    </div>
+  </div>
+
+  <!-- 2-3 세액계산 -->
+  <div class="sub-section">
+    <h3>2-3. 세액계산방법</h3>
+
+    <h4>① 기본 구조 (조특법§100의32①②)</h4>
+    <div class="calc-box">
+      <h3>📐 미환류소득에 대한 법인세 계산</h3>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">기업소득 산출</span>
+        <span class="step-formula">각 사업연도 소득 중 대통령령으로 정하는 소득</span>
+        <span class="step-ref">(조특법§100의32②)</span>
+      </div>
+
+      <h4 style="margin:10px 0 6px;color:#5A2D82">방법 1 선택 시 (투자·배당·임금·상생 공제)</h4>
+      <div class="calc-step">
+        <span class="step-num">②-1</span>
+        <span class="step-label">미환류소득</span>
+        <span class="step-formula">= 기업소득×(65~85%) − (투자합계+배당금+임금증가+상생협력비×300%)</span>
+        <span class="step-ref">(§100의32②1)</span>
+      </div>
+      <h4 style="margin:10px 0 6px;color:#5A2D82">방법 2 선택 시 (투자 제외)</h4>
+      <div class="calc-step">
+        <span class="step-num">②-2</span>
+        <span class="step-label">미환류소득</span>
+        <span class="step-formula">= 기업소득×(20~40%) − (배당금+임금증가+상생협력비×300%)</span>
+        <span class="step-ref">(§100의32②2)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">차기환류적립금 공제</span>
+        <span class="step-formula">다음 2년간 투자·배당 예정액 적립 → 미환류소득에서 차감</span>
+        <span class="step-ref">(§100의32⑤)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">④</span>
+        <span class="step-label">초과환류액 이월 공제</span>
+        <span class="step-formula">전기 초과환류액 → 다음 2개 사업연도 이월 공제</span>
+        <span class="step-ref">(§100의32⑦)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">⑤</span>
+        <span class="step-label">미환류소득세액</span>
+        <span class="step-formula">= 미환류소득 × 20%</span>
+        <span class="step-ref">(§100의32①)</span>
+      </div>
+      <div class="calc-result">납부세액 = 일반 법인세 + 미환류소득에 대한 법인세 (⑤)</div>
+    </div>
+
+    <h4>② 방법 선택 및 유지</h4>
+    <table>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>방법 선택</td><td>방법 1(투자·배당·임금·상생) 또는 방법 2(배당·임금·상생) 중 선택</td></tr>
+        <tr><td>계속 적용 의무</td><td>선택한 방법을 대통령령으로 정하는 기간 동안 계속 적용</td></tr>
+        <tr><td>신고 기한</td><td>사업연도 종료일 속하는 달의 말일부터 <strong>3개월 이내</strong></td></tr>
+        <tr><td>미신고 시</td><td>대통령령으로 정하는 방법으로 신고한 것으로 간주 → 계속 적용 의무 제외</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      ⚠ <strong>차기환류적립금 미사용 시 추징</strong> (조특법§100의32⑥)<br>
+      적립 후 다음다음 사업연도에 실제 환류(투자·배당 등)에 미달하면 → 미달금액에 이자상당액 가산하여 추가납부
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 3. 비영리법인에 대한 법인세 ===== -->
+<div class="section">
+  <div class="section-title-bar">3. 비영리법인에 대한 법인세 (법§4·§29)</div>
+
+  <!-- 3-1 수익사업 범위와 구분경리 -->
+  <div class="sub-section">
+    <h3>3-1. 비영리법인의 범위와 납세의무</h3>
+
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 종교단체나 학교법인도 이자소득을 받거나 수익 사업을 하면 세금을 냅니다. 단, 학교·종교 등 고유목적사업에서 생기는 소득은 세금 없이 쓸 수 있어요.
+    </div>
+
+    <h4>① 비영리법인의 과세소득 범위 (법§4①단서·③)</h4>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>과세 (수익사업소득)</h4>
+        <ul>
+          <li>각 사업연도 소득 중 <strong>수익사업</strong>에서 생기는 소득</li>
+          <li>토지등 <strong>양도소득</strong></li>
+          <li>청산소득 <span class="badge badge-red">⚠ 과세 없음</span></li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h4>비과세 (고유목적사업)</h4>
+        <ul>
+          <li>고유목적사업에서 직접 발생하는 소득</li>
+          <li>기부금 수입 등</li>
+          <li>청산소득 (비영리법인 해산 시)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>② 수익사업의 범위 (법§4③ — 열거주의)</h4>
+    <table>
+      <thead><tr><th>#</th><th>수익사업 종류</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>1호</td><td>제조업·건설업·도소매업 등 한국표준산업분류에 따른 사업</td><td>대통령령으로 정하는 것</td></tr>
+        <tr><td>2호</td><td>이자소득 (소득세법 §16①)</td><td>비영업대금이익 포함</td></tr>
+        <tr><td>3호</td><td>배당소득 (소득세법 §17①)</td><td></td></tr>
+        <tr><td>4호</td><td>주식·신주인수권·출자지분의 양도로 인한 수입</td><td></td></tr>
+        <tr><td>5호</td><td>유형자산·무형자산의 처분으로 인한 수입</td><td>고유목적사업 직접 사용 자산 제외</td></tr>
+        <tr><td>6호</td><td>소득세법 §94①2호·4호 자산의 양도 수입</td><td>양도소득세 대상 자산</td></tr>
+        <tr><td>7호</td><td>대가를 얻는 계속적 행위로 인한 수입</td><td>대통령령으로 정하는 것</td></tr>
+      </tbody>
+    </table>
+
+    <h4>③ 구분경리 의무 (법§113)</h4>
+    <div class="law-ref-box">
+      비영리법인은 <strong>수익사업과 그 외(고유목적사업)를 구분하여 경리</strong>해야 함<br>
+      → 수익사업에서 발생한 소득만을 과세표준으로 하여 법인세 납부<br>
+      → 고유목적사업에 전출한 금액: 지출로 처리 가능 (고유목적사업준비금 또는 손금산입)
+    </div>
+  </div>
+
+  <!-- 3-2 과세특례 1) 고유목적사업준비금 -->
+  <div class="sub-section">
+    <h3>3-2. 비영리법인에 대한 과세특례</h3>
+    <h4>① 고유목적사업준비금 (법§29) <span class="badge badge-kyul">결산조정</span></h4>
+
+    <h4>▶ 손금산입 한도 계산</h4>
+    <div class="calc-box">
+      <h3>📐 고유목적사업준비금 한도</h3>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">1호 금액 (100% 한도)</span>
+        <span class="step-formula">이자소득 (비영업대금이익 제외) + 배당소득 + 특별법인 복지사업 융자이자</span>
+        <span class="step-ref">(법§29①1호)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">2호 금액 (비율 한도)</span>
+        <span class="step-formula">그 밖의 수익사업 소득 × 50% (장학금 법인 80%)</span>
+        <span class="step-ref">(법§29①2호)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">수익사업 결손금 조정</span>
+        <span class="step-formula">수익사업에서 결손금 발생 시 → 1호 합계액에서 차감</span>
+        <span class="step-ref">(법§29①단서)</span>
+      </div>
+      <div class="calc-result">한도 = ①(1호합계) + ②(2호금액) [단, ①에서 수익사업 결손금 차감]</div>
+    </div>
+
+    <div class="warn-box">
+      ⚠ <strong>배당소득 중 제외항목:</strong> 상속세·증여세 과세가액에 산입되거나 증여세 부과되는 주식등으로부터 발생한 배당소득은 1호에서 제외
+    </div>
+
+    <h4>▶ 외부감사 대상 법인 특례 (법§29②) — 신고조정 가능</h4>
+    <div class="ok-box">
+      ✅ 외부회계감사(주식회사 등의 외부감사에 관한 법률)를 받는 비영리내국법인:<br>
+      고유목적사업준비금을 <strong>세무조정계산서에 계상</strong>하고 이익처분 시 적립 → 결산 손비 계상으로 간주
+    </div>
+
+    <h4>▶ 사용 방법 및 익금산입 사유</h4>
+    <table>
+      <thead><tr><th>사유</th><th>처리</th><th>이자상당액</th></tr></thead>
+      <tbody>
+        <tr><td>해산 (포괄양도 제외)</td><td>잔액 익금산입</td><td>없음</td></tr>
+        <tr><td>고유목적사업 전부 폐지</td><td>잔액 익금산입</td><td>없음</td></tr>
+        <tr><td>법인으로 보는 단체 승인 취소·거주자 변경</td><td>잔액 익금산입</td><td>없음</td></tr>
+        <tr class="diff"><td><strong>손금산입 후 5년 내 미사용</strong></td><td>미사용 잔액 익금산입</td><td><strong>이자상당액 추가납부</strong></td></tr>
+        <tr class="diff"><td><strong>고유목적사업 외 용도 사용</strong></td><td>해당 금액 익금산입</td><td><strong>이자상당액 추가납부</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="law-ref-box">
+      <strong>임의 익금산입 가능 (법§29⑥):</strong> 5년 이내에 자발적으로 익금산입 가능 → 먼저 손금산입한 사업연도 분부터<br>
+      <strong>포괄적 양도 후 해산 시 (법§29④):</strong> 다른 비영리내국법인이 준비금 잔액 승계 가능
+    </div>
+  </div>
+
+  <!-- 3-3 기타 과세특례 -->
+  <div class="sub-section">
+    <h3>기타 과세특례</h3>
+    <table>
+      <thead><tr><th>특례 내용</th><th>내용</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>이자소득 분리과세</strong></td>
+          <td>비영리법인이 금융회사등으로부터 받는 이자소득에 대해 14% 원천징수로 납세의무 종결 선택 가능</td>
+          <td>법§73①</td>
+        </tr>
+        <tr>
+          <td><strong>수익사업 소득의 고유목적 전출</strong></td>
+          <td>수익사업 소득에서 고유목적사업 지출액 전출 시 → 고유목적사업준비금과 동일하게 처리</td>
+          <td>법§29③</td>
+        </tr>
+        <tr>
+          <td><strong>자산양도 비과세</strong></td>
+          <td>고유목적사업에 직접 사용하는 자산의 처분 수입 → 수익사업 제외</td>
+          <td>법§4③5호단서</td>
+        </tr>
+        <tr>
+          <td><strong>청산소득 비과세</strong></td>
+          <td>비영리법인의 해산 시 청산소득에 대한 법인세 없음</td>
+          <td>법§4①단서</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ===== 4. 신탁소득에 대한 법인세 ===== -->
+<div class="section">
+  <div class="section-title-bar">4. 신탁소득에 대한 법인세 (법§5·§75의11)</div>
+
+  <!-- 4-1 신탁의 개념 -->
+  <div class="sub-section">
+    <h3>4-1. 신탁의 개념</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 내 재산을 전문 관리인(수탁자)에게 맡기고, 그 수익을 수익자가 받는 구조. 세법에서는 "그 재산에서 생기는 소득은 누구에게 과세할 것인가?"가 핵심입니다.
+    </div>
+    <table>
+      <thead><tr><th>당사자</th><th>역할</th></tr></thead>
+      <tbody>
+        <tr><td><strong>위탁자</strong></td><td>신탁 재산을 맡기는 자</td></tr>
+        <tr><td><strong>수탁자</strong></td><td>신탁 재산을 관리·운용하는 자 (은행·신탁회사 등)</td></tr>
+        <tr><td><strong>수익자</strong></td><td>신탁 이익을 받는 자</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4-2 과세방식 -->
+  <div class="sub-section">
+    <h3>4-2. 신탁소득에 대한 법인세 과세방식 및 납세의무자 (법§5)</h3>
+
+    <h4>① 신탁 과세 3원칙</h4>
+    <div class="flowchart">
+      <div class="flow-node g">신탁재산의 소득 발생</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-diamond">위탁자 신탁재산 실질 통제? (§5③)</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">Yes</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node o">위탁자 과세<br>(법§5③)</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">No</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-diamond">법인과세신탁<br>요건 충족? (§5②)</div>
+          <div class="flow-branch">
+            <div class="flow-branch-item">
+              <div class="branch-label">Yes</div>
+              <div class="flow-node p">수탁자(법인) 과세<br>신탁재산 = 별도 법인<br>(법§5②)</div>
+            </div>
+            <div class="flow-branch-item">
+              <div class="branch-label">No (원칙)</div>
+              <div class="flow-node">수익자 과세<br>(법§5①)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>과세 유형</th><th>납세의무자</th><th>요건/특징</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>① 수익자 과세 (원칙)</strong></td>
+          <td><strong>수익자</strong></td>
+          <td>신탁재산을 수익자가 소유한 것으로 봄<br>(도관이론 적용)</td>
+          <td>법§5①</td>
+        </tr>
+        <tr>
+          <td><strong>② 수탁자 과세</strong><br>(법인과세신탁)</td>
+          <td><strong>수탁자</strong><br>(내국법인 또는 거주자)</td>
+          <td>목적신탁·수익증권발행신탁·유한책임신탁 등<br>신탁재산 = <strong>별도 1내국법인</strong>으로 봄</td>
+          <td>법§5②</td>
+        </tr>
+        <tr>
+          <td><strong>③ 위탁자 과세</strong></td>
+          <td><strong>위탁자</strong></td>
+          <td>위탁자가 신탁재산 <strong>실질적 통제</strong>하는 경우<br>(대통령령으로 정하는 요건)</td>
+          <td>법§5③</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>② 법인과세신탁의 유형 (법§5②)</h4>
+    <table>
+      <thead><tr><th>유형</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>목적신탁</td><td>신탁법 §3①단서에 따른 신탁</td></tr>
+        <tr><td>수익증권발행신탁</td><td>신탁법 §78②에 따른 신탁</td></tr>
+        <tr><td>유한책임신탁</td><td>신탁법 §114①에 따른 신탁</td></tr>
+        <tr><td>이와 유사한 신탁</td><td>대통령령으로 정하는 신탁</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      ⚠ <strong>법인과세신탁에서 제외:</strong><br>
+      · 자본시장법상 투자신탁 (집합투자기구)<br>
+      · 소득세법§17①5의3의 수익증권이 발행된 신탁<br>
+      → 이들은 수익자 과세 원칙 적용
+    </div>
+
+    <h4>③ 자본시장법 적용 법인의 신탁재산 (법§5④)</h4>
+    <div class="law-ref-box">
+      자본시장법 적용 법인의 신탁재산에 귀속되는 수입·지출 → 그 법인의 수입·지출로 보지 아니함<br>
+      (단, 보험회사의 특별계정은 제외)
+    </div>
+  </div>
+
+  <!-- 4-3 법인과세 신탁재산 특례 -->
+  <div class="sub-section">
+    <h3>4-3. 신탁재산의 각사소에 대한 법인세 과세특례 (법§75의11)</h3>
+
+    <table>
+      <thead><tr><th>특례 내용</th><th>세부 사항</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>구분 납부 의무</strong></td>
+          <td>법인과세 수탁자는 법인과세 신탁재산 소득을 그 밖의 소득과 <strong>구분하여</strong> 법인세 납부 (§75의11①)</td>
+        </tr>
+        <tr>
+          <td><strong>수익자의 제2차 납세의무</strong></td>
+          <td>법인과세 신탁재산의 법인세 등이 부족한 경우 → 수익자가 <strong>분배받은 재산가액 한도</strong>로 제2차 납세의무 (§75의11②)</td>
+        </tr>
+        <tr>
+          <td><strong>이익 분배 = 배당</strong></td>
+          <td>법인과세 신탁재산이 수익자에게 이익 분배 시 → <strong>배당</strong>으로 봄 (§75의11③)</td>
+        </tr>
+        <tr>
+          <td><strong>법인과세신탁 요건 불충족 시</strong></td>
+          <td>신탁계약 변경 등으로 법인과세 요건 미충족 → 해당 사유 발생일 속하는 사업연도부터 법인과세신탁 적용 중단 (§75의11④)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="ok-box">
+      ✅ <strong>핵심 정리:</strong> 법인과세 신탁재산은 수탁자가 별도 법인처럼 법인세를 납부하고, 수익자에게 이익을 분배할 때는 배당으로 처리 → 이중과세 조정 문제 발생 가능
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 비교표 ===== -->
+<div class="compare-box">
+  <h2>⚖️ 추가 법인세 4가지 종류 비교</h2>
+  <table>
+    <thead>
+      <tr><th>구분</th><th>토지등 양도소득</th><th>미환류소득</th><th>청산소득</th><th>연결납세</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>근거</strong></td>
+        <td>법§55의2</td>
+        <td>조특법§100의32</td>
+        <td>법§79</td>
+        <td>법§76의14</td>
+      </tr>
+      <tr>
+        <td><strong>납세의무자</strong></td>
+        <td>내국법인<br>(비영리 포함)</td>
+        <td>상호출자제한<br>기업집단 법인</td>
+        <td>해산하는 내국법인<br>(비영리 제외)</td>
+        <td>연결법인</td>
+      </tr>
+      <tr>
+        <td><strong>세율</strong></td>
+        <td>10~40%<br>(대상별 차등)</td>
+        <td class="diff">20%</td>
+        <td>기본세율</td>
+        <td>기본세율</td>
+      </tr>
+      <tr>
+        <td><strong>기본세액에 추가?</strong></td>
+        <td class="diff">추가 납부</td>
+        <td class="diff">추가 납부</td>
+        <td>별도 납부</td>
+        <td>연대 납부</td>
+      </tr>
+      <tr>
+        <td><strong>비영리법인</strong></td>
+        <td class="diff">과세 있음</td>
+        <td>해당 없음</td>
+        <td>비과세</td>
+        <td>해당 없음</td>
+      </tr>
+      <tr>
+        <td><strong>최저한세</strong></td>
+        <td>제외</td>
+        <td>제외</td>
+        <td>적용</td>
+        <td>적용</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ===== 오답 함정 ===== -->
+<div class="trap-box">
+  <h2>⚠️ 오답 함정 — 자주 틀리는 포인트</h2>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"토지등 양도소득은 양도금액에서 취득원가(취득가액)를 빼서 계산한다"</strong>
+      <p>→ 정답: 양도금액에서 <strong>장부가액</strong>을 차감 (취득가액·시가 아님!) (법§55의2⑥)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"비영리법인은 토지등 양도소득에 대한 법인세를 납부할 의무가 없다"</strong>
+      <p>→ 정답: 비영리법인도 토지등 <strong>양도소득에 대한 법인세 납세의무 있음</strong> (법§4①단서는 각사소·청산소득 한정, 양도소득세는 별도 적용)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"미등기 토지등을 양도하는 경우에도 비과세 규정을 적용받을 수 있다"</strong>
+      <p>→ 정답: 미등기 토지등은 파산·농지교환·환지 등 <strong>비과세 적용 불가</strong> (법§55의2④단서)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"미환류소득 적용대상은 자산 5조원 이상 기업집단이다"</strong>
+      <p>→ 정답: <strong>상호출자제한기업집단(자산 10조원 이상)</strong>에 속하는 내국법인 (조특법§100의32①, 공정거래법§31①)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"고유목적사업준비금 한도 = 이자·배당 50% + 수익사업 소득 100%"</strong>
+      <p>→ 정답: 이자·배당 <strong>100%</strong> + 그 밖 수익사업 소득 <strong>50%</strong> (장학금 법인 80%). 비율이 반대! (법§29①)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"고유목적사업준비금 5년 미사용 시 익금산입만 하면 된다"</strong>
+      <p>→ 정답: 5년 미사용·목적 외 사용 시 익금산입 + <strong>이자상당액 추가납부</strong> (법§29⑦)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"신탁소득은 항상 수탁자에게 법인세가 과세된다"</strong>
+      <p>→ 정답: 원칙은 <strong>수익자 과세</strong> / 법인과세신탁(목적신탁·수익증권발행신탁 등)만 수탁자 과세 / 위탁자 실질통제 시 위탁자 과세 (법§5①②③)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"법인과세 신탁재산이 수익자에게 이익 분배 시 이자소득으로 처리한다"</strong>
+      <p>→ 정답: <strong>배당</strong>으로 봄 (법§75의11③)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"비영리법인의 비사업용 토지 양도소득에 대해서는 법인세를 납부하지 않는다"</strong>
+      <p>→ 정답: 비영리법인도 <strong>비사업용 토지 양도 시 토지등 양도소득 법인세 10% 추가납부</strong> 의무 있음</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 세무조정 요약 -->
+<div class="section" style="background:#F8FAFE">
+  <h2>📋 세무조정 요약표</h2>
+  <table>
+    <thead><tr><th>항목</th><th>조정유형</th><th>처리 내용</th><th>소득처분</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>고유목적사업준비금 설정</td>
+        <td><span class="badge badge-kyul">결산조정</span><br>(외부감사법인: 신고조정 가능)</td>
+        <td>한도 내 손금산입</td>
+        <td>△유보</td>
+      </tr>
+      <tr>
+        <td>고유목적사업 사용(지출)</td>
+        <td>—</td>
+        <td>준비금 잔액에서 순서대로 상계</td>
+        <td>유보</td>
+      </tr>
+      <tr>
+        <td>고유목적사업준비금 익금산입<br>(해산·폐지·5년 미사용 등)</td>
+        <td><span class="badge badge-shin">신고조정</span></td>
+        <td>잔액 익금산입<br>(5년 미사용·목적 외: 이자상당액 추가납부)</td>
+        <td>유보</td>
+      </tr>
+      <tr>
+        <td>토지등 양도소득 법인세</td>
+        <td><span class="badge badge-shin">신고조정</span></td>
+        <td>기본 법인세에 추가 납부</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>미환류소득 법인세</td>
+        <td><span class="badge badge-shin">신고조정</span></td>
+        <td>기본 법인세에 추가 납부 (20%)</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFE">
+  <h2>📚 법조항 근거 색인</h2>
+  <table>
+    <thead><tr><th>조항</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>법§4①③</td><td>과세소득의 범위 / 비영리법인 수익사업 열거 (7가지)</td></tr>
+      <tr><td>법§5①②③④</td><td>신탁소득 — 수익자/수탁자/위탁자 과세 원칙</td></tr>
+      <tr><td>법§29①~⑩</td><td>비영리내국법인 고유목적사업준비금 (한도·사용·익금산입·이자상당액)</td></tr>
+      <tr><td>법§55의2①~⑦</td><td>토지등 양도소득에 대한 법인세 (과세대상·세율·비과세·계산)</td></tr>
+      <tr><td>법§75의11①~⑤</td><td>법인과세 신탁재산의 법인세 과세방식 적용</td></tr>
+      <tr><td>법§113</td><td>비영리법인·합병·분할법인의 구분경리 의무</td></tr>
+      <tr><td>조특법§100의32①~⑩</td><td>미환류소득에 대한 법인세 (적용대상·계산·차기적립금·이월)</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote" style="margin-top:10px">※ 법인세법 (2026.01.02 시행) / 조세특례제한법 (2026.06.02 시행)</p>
+</div>
+
+</body>
+</html>

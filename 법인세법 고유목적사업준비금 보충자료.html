@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법인세법 — 고유목적사업준비금 보충자료 | 세무사 1차</title>
+  <style>
+    body {
+      background: #FAFAFA;
+      color: #1A1A2E;
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+      line-height: 1.85;
+    }
+    .header {
+      background: linear-gradient(135deg, #1A3A6B, #2E6DA4);
+      color: #FFF;
+      padding: 32px 40px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+    }
+    .subject-badge {
+      background: rgba(255,255,255,0.2);
+      color: #FFF;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .header h1 { color: #FFF; margin: 8px 0 4px; font-size: 1.7em; }
+    .header .meta { color: rgba(255,255,255,0.75); font-size: 0.85em; margin-top: 8px; }
+
+    .section {
+      background: #FFFFFF;
+      margin: 20px 0;
+      padding: 24px 28px;
+      border-radius: 12px;
+      border: 1px solid #E8ECF0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    h2 { color: #1A3A6B; margin-top: 0; font-size: 1.2em; }
+    h3 { color: #2C5282; font-size: 1.05em; margin: 20px 0 10px; }
+
+    .highlight-box { background: #FFF8E1; }
+    .trap-box      { background: #FFF3F3; }
+    .compare-box   { background: #F0F7FF; }
+    .analogy-box {
+      background: #F0FFF4;
+      border-left: 4px solid #38A169;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-size: 0.95em;
+    }
+    .warn-box {
+      background: #FFFBEB;
+      border-left: 4px solid #D97706;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-size: 0.94em;
+    }
+    .ok-box {
+      background: #F0FFF4;
+      border-left: 4px solid #38A169;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-size: 0.94em;
+    }
+    .error-box {
+      background: #FFF5F5;
+      border-left: 4px solid #E53E3E;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-size: 0.94em;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92em; }
+    th { background: #EEF2FF; color: #1A3A6B; padding: 10px 14px; text-align: left; font-size: 0.9em; }
+    td { padding: 9px 14px; border-bottom: 1px solid #F0F0F0; }
+    tr:hover td { background: #FAFBFF; }
+
+    .badge-ok  { background: #C6F6D5; color: #276749; border: 1px solid #9AE6B4; padding: 2px 9px; border-radius: 12px; font-size: 0.82em; font-weight: 700; }
+    .badge-ng  { background: #FED7D7; color: #9B2C2C; border: 1px solid #FC8181; padding: 2px 9px; border-radius: 12px; font-size: 0.82em; font-weight: 700; }
+    .badge-kyul { background: #FFF3CD; color: #856404; border: 1px solid #FFEAA7; padding: 2px 8px; border-radius: 12px; font-size: 0.82em; font-weight: 600; }
+
+    .section-title-bar {
+      background: linear-gradient(90deg, #1A3A6B, #2E6DA4);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05em;
+      margin-bottom: 16px;
+    }
+
+    .key   { color: #2C5282; font-weight: 700; background: #EBF4FF; padding: 1px 6px; border-radius: 4px; }
+    .diff  { color: #C53030; font-weight: 700; }
+    .law-ref { color: #718096; font-size: 0.82em; }
+
+    /* 문제 지문 카드 */
+    .q-card {
+      border: 1px solid #CBD5E0;
+      border-radius: 10px;
+      margin: 18px 0;
+      overflow: hidden;
+    }
+    .q-card .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 18px;
+      font-weight: 700;
+      font-size: 0.95em;
+    }
+    .q-card.ok   .q-header { background: #C6F6D5; color: #22543D; }
+    .q-card.ng   .q-header { background: #FED7D7; color: #742A2A; }
+    .q-card .q-body  { padding: 14px 18px; font-size: 0.94em; background: white; }
+    .q-card .q-body .stmt { color: #2D3748; font-style: italic; margin-bottom: 10px; }
+    .q-card .q-body .reason { color: #1A1A2E; }
+    .q-card .q-body .law-line { color: #718096; font-size: 0.83em; margin-top: 8px; }
+
+    .keyword-table td:first-child { font-weight: 700; color: #1A3A6B; width: 30%; }
+
+    /* 한도 계산 박스 */
+    .calc-box { background: #F8F4FF; border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+    .calc-box h3 { margin-top: 0; }
+    .formula-block {
+      background: white;
+      border: 1.5px solid #D6BCFA;
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin: 12px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.95em;
+      color: #44337A;
+    }
+    .formula-block .plus  { color: #276749; font-weight: 700; }
+    .formula-block .limit { color: #C53030; font-weight: 700; }
+
+    hr { border: none; border-top: 1px solid #E8ECF0; margin: 22px 0; }
+
+    /* 타임라인 */
+    .timeline { margin: 18px 0; }
+    .tl-item {
+      display: flex;
+      gap: 16px;
+      margin: 10px 0;
+      align-items: flex-start;
+    }
+    .tl-dot {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.85em;
+      flex-shrink: 0;
+      color: white;
+    }
+    .tl-dot.blue  { background: #2C5282; }
+    .tl-dot.green { background: #276749; }
+    .tl-dot.red   { background: #C53030; }
+    .tl-dot.gray  { background: #718096; }
+    .tl-content { padding-top: 6px; font-size: 0.94em; }
+  </style>
+</head>
+<body>
+
+<!-- ===== 헤더 ===== -->
+<div class="header">
+  <div class="subject-badge">법인세법</div>
+  <h1>📦 고유목적사업준비금 — 보충자료</h1>
+  <div class="meta">
+    세무사 1차 | 근거: 법§29 | 2026.06 (시행령 2026.02.27 기준)
+  </div>
+</div>
+
+
+<!-- ===== 최빈출 포인트 ===== -->
+<div class="section highlight-box">
+  <h2>🔥 최빈출 포인트</h2>
+  <ol>
+    <li><strong>손금산입 한도 구조</strong> ★★★ — 이자·배당 100% + 기타 수익사업 50% (장학금 80%) (법§29①)</li>
+    <li><strong>5년 내 미사용 → 익금산입 + 이자상당액</strong> ★★★ — "10년"으로 바꿔 출제됨! (법§29⑤4호, ⑦)</li>
+    <li><strong>고유목적사업 "전부" 폐지 시 익금산입</strong> ★★★ — "일부 폐지"는 해당 없음! (법§29⑤2호)</li>
+    <li><strong>포괄 양도·해산 시 승계 가능</strong> ★★ — 해산해도 승계하면 익금산입 제외 (법§29④, ⑤1호)</li>
+    <li><strong>거주자 변경 시 익금산입 + 이자상당액</strong> ★★ — 이자상당액 가산세 대상임에 주의 (법§29⑤3호, ⑦)</li>
+    <li><strong>이자·배당은 50% 곱하지 않음</strong> ★★ — 100% 전액이 한도 (법§29①1호)</li>
+    <li><strong>결산조정 원칙 + KIFRS 법인 신고조정 특례</strong> ★ — 회계감사 받는 비영리법인은 세무조정계산서 계상 가능 (법§29②)</li>
+  </ol>
+</div>
+
+
+<!-- ===== 핵심 개념 ===== -->
+<div class="section">
+  <div class="section-title-bar">📖 핵심 개념 — 고유목적사업준비금이란?</div>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유:</strong> 학교법인이 돈을 벌어서 "나중에 장학금 줄 거야!"라고 미리 통장에 적립해두면, 세법은 그 돈을 올해 비용으로 인정해줍니다. 대신 5년 안에 실제로 그 목적에 써야 하고, 안 쓰면 이자까지 내야 합니다.
+  </div>
+
+  <p>비영리내국법인이 <strong>고유목적사업</strong>이나 <strong>일반기부금</strong>에 쓰기 위해 적립한 준비금을 결산 시 손비로 계상하면, 일정 한도 내에서 손금에 산입합니다. (법§29①)</p>
+
+  <h3>① 손금산입 한도 (법§29①)</h3>
+  <div class="calc-box">
+    <h3>📐 한도 계산 구조</h3>
+    <div class="formula-block">
+      한도액 =
+      <span class="plus">[ 이자소득 금액 (비영업대금 이익 제외) ]</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="plus">+ [ 배당소득 금액 (상증법 과세 주식 배당 제외) ]</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="plus">+ [ 특별법인의 융자금 이자 ]</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="plus">+ [ 기타 수익사업 소득 × <span class="limit">50%</span> (장학금 50%↑ 법인은 <span class="limit">80%</span>) ]</span>
+    </div>
+    <div class="warn-box" style="margin-top:10px;">
+      ⚠️ <strong>이자소득·배당소득은 50% 곱하지 않습니다! 전액(100%)이 한도에 포함됩니다.</strong><br>
+      50%는 "기타 수익사업 소득"에만 적용됩니다.
+    </div>
+  </div>
+
+  <h3>② 사용의 우선순위 (법§29③)</h3>
+  <p>고유목적사업등에 지출 시 → <strong>먼저 계상한 사업연도의 준비금부터 차례로 상계</strong> (선입선출)</p>
+
+  <h3>③ 조정 유형</h3>
+  <table>
+    <thead><tr><th>상황</th><th>조정 유형</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>원칙: 결산 시 손비 계상한 경우</td>
+        <td><span class="badge-kyul">결산조정</span></td>
+      </tr>
+      <tr>
+        <td>특례: 외부감사 받는 비영리법인 → 세무조정계산서에 계상 + 이익처분 시 적립</td>
+        <td><span class="badge-kyul">결산조정으로 간주</span> (법§29②)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ===== 익금산입 사유 5가지 ===== -->
+<div class="section">
+  <div class="section-title-bar">⚡ 익금산입 강제 사유 5가지 (법§29⑤) — 완전 암기 필수!</div>
+
+  <div class="analogy-box">
+    💡 <strong>비유:</strong> "장학금 줄게"라고 약속하고 세금 혜택을 받았는데, 약속을 어기면(해산·폐지·미사용 등) 받은 혜택을 다시 토해내야 합니다. 그게 익금산입입니다.
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot red">1</div>
+      <div class="tl-content">
+        <strong>해산한 경우</strong> — 단, 포괄 양도·승계(§29④)하면 <span class="key">제외</span>
+        <span class="law-ref">(§29⑤1호)</span>
+        <br><span class="law-ref">이자상당액: 없음</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot red">2</div>
+      <div class="tl-content">
+        <strong>고유목적사업을 <span class="diff">전부</span> 폐지한 경우</strong> — "일부" 폐지는 해당 없음!
+        <span class="law-ref">(§29⑤2호)</span>
+        <br><span class="law-ref">이자상당액: 없음</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot red">3</div>
+      <div class="tl-content">
+        <strong>법인으로 보는 단체가 승인 취소 또는 <span class="diff">거주자로 변경</span>된 경우</strong>
+        <span class="law-ref">(§29⑤3호)</span>
+        <br><span class="law-ref">이자상당액: 없음</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot red">4</div>
+      <div class="tl-content">
+        <strong>손금산입 사업연도 종료일 이후 <span class="diff">5년</span>이 되는 날까지 미사용한 경우</strong>
+        → 5년 내 미사용 잔액만 익금산입
+        <span class="law-ref">(§29⑤4호)</span>
+        <br><span class="diff">이자상당액: 있음! (법§29⑦)</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot red">5</div>
+      <div class="tl-content">
+        <strong>고유목적사업등이 아닌 <span class="diff">다른 용도</span>에 사용한 경우</strong>
+        → 그 금액만 익금산입
+        <span class="law-ref">(§29⑤5호)</span>
+        <br><span class="diff">이자상당액: 있음! (법§29⑦)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    ⚠️ <strong>이자상당액 가산 여부 구분!</strong><br>
+    · 1·2·3호 (해산, 전부폐지, 거주자변경): <strong>이자상당액 없음</strong><br>
+    · 4·5호 (5년 미사용, 목적외 사용): <strong>이자상당액 있음</strong> → 법인세에 더하여 납부 (법§29⑦)
+  </div>
+</div>
+
+
+<!-- ===== 문제 지문 정오 분석 ===== -->
+<div class="section">
+  <div class="section-title-bar">🎯 문제 지문 정오 분석 — 5개 지문 완전 해설</div>
+
+  <!-- 지문 1 -->
+  <div class="q-card ok">
+    <div class="q-header">
+      <span>지문 ①</span>
+      <span class="badge-ok">✅ 옳음</span>
+    </div>
+    <div class="q-body">
+      <div class="stmt">"고유목적사업준비금을 손금에 산입한 비영리내국법인이 사업에 관한 모든 권리와 의무를 다른 비영리내국법인에 포괄적으로 양도하고 해산하는 경우 해산등기일 현재의 고유목적사업준비금 잔액은 그 다른 비영리내국법인이 승계할 수 있다."</div>
+      <div class="reason">
+        ✅ <strong>정답 근거:</strong> 법§29④에 정확히 규정된 내용입니다.<br>
+        핵심 요건 3가지: ①포괄 양도 ②다른 비영리내국법인에게 ③해산하는 경우<br>
+        → 승계 시 해산해도 익금산입하지 않음 (§29⑤1호 단서)
+      </div>
+      <div class="law-line">근거: 법인세법 제29조 제4항, 제5항 제1호</div>
+    </div>
+  </div>
+
+  <!-- 지문 2 -->
+  <div class="q-card ng">
+    <div class="q-header">
+      <span>지문 ②</span>
+      <span class="badge-ng">❌ 틀림</span>
+    </div>
+    <div class="q-body">
+      <div class="stmt">"손금에 산입한 고유목적사업준비금의 잔액이 있는 비영리내국법인이 고유목적사업을 <span class="diff">일부라도 폐지한 경우</span> 그 잔액은 해당 사유가 발생한 날이 속하는 사업연도의 소득금액을 계산할 때 익금에 산입한다."</div>
+      <div class="reason">
+        ❌ <strong>오류 포인트:</strong> "일부 폐지" → <span class="diff">익금산입 해당 없음!</span><br><br>
+        법§29⑤2호는 "<strong>고유목적사업을 전부 폐지한 경우</strong>"에만 익금산입합니다.<br>
+        일부 폐지는 아직 고유목적사업이 남아 있으므로 준비금을 사용할 여지가 있어 익금산입 대상이 아닙니다.<br><br>
+        <strong>→ "일부" → "전부"로 바꿔야 옳은 지문</strong>
+      </div>
+      <div class="law-line">근거: 법인세법 제29조 제5항 제2호</div>
+    </div>
+  </div>
+
+  <!-- 지문 3 -->
+  <div class="q-card ng">
+    <div class="q-header">
+      <span>지문 ③</span>
+      <span class="badge-ng">❌ 틀림 (두 군데!)</span>
+    </div>
+    <div class="q-body">
+      <div class="stmt">"고유목적사업준비금을 손금에 산입한 사업연도의 종료일 이후 <span class="diff">10년</span>이 되는 날까지 고유목적사업에 <span class="diff">일부만 사용한 경우 미사용 잔액</span>을 익금에 산입한다."</div>
+      <div class="reason">
+        ❌ <strong>오류 포인트 1 — 기간:</strong> "10년" → <span class="diff">5년</span>이 정답 (법§29⑤4호)<br>
+        ❌ <strong>오류 포인트 2 — 사용 조건:</strong> 법문은 "고유목적사업<strong>등</strong>에 사용하지 아니한 경우"입니다.<br>
+        "일부만 사용한 경우 미사용 잔액" 표현 자체는 맞지만, "고유목적사업에" → "<strong>고유목적사업등에</strong>"가 정확합니다.<br>
+        (일반기부금 지출도 사용으로 인정됨)<br><br>
+        <strong>→ "10년" → "5년"으로 바꿔야 옳은 지문</strong><br>
+        또한 이 경우 <span class="diff">이자상당액도 납부</span>해야 합니다 (법§29⑦).
+      </div>
+      <div class="law-line">근거: 법인세법 제29조 제5항 제4호, 제7항</div>
+    </div>
+  </div>
+
+  <!-- 지문 4 -->
+  <div class="q-card ng">
+    <div class="q-header">
+      <span>지문 ④</span>
+      <span class="badge-ng">❌ 틀림</span>
+    </div>
+    <div class="q-body">
+      <div class="stmt">"법인으로 보는 단체가 거주자로 변경된 경우 손금에 산입한 고유목적사업준비금 잔액을 익금에 산입하고 그 잔액에 대한 이자상당액을 법인세에 더하여 납부하여야 한다."</div>
+      <div class="reason">
+        ❌ <strong>오류 포인트:</strong> 거주자 변경은 <strong>§29⑤3호</strong> 사유 → 익금산입은 맞지만,<br>
+        이자상당액을 납부하는 것은 <strong>§29⑦ — 4호·5호에만 해당</strong>합니다.<br><br>
+        거주자 변경(3호)은 이자상당액 납부 대상이 <span class="diff">아닙니다!</span><br><br>
+        <strong>→ 이자상당액 납부 대상: 5년 미사용(4호), 목적외 사용(5호)만 해당</strong>
+      </div>
+      <div class="law-line">근거: 법인세법 제29조 제5항 제3호, 제7항</div>
+    </div>
+  </div>
+
+  <!-- 지문 5 -->
+  <div class="q-card ng">
+    <div class="q-header">
+      <span>지문 ⑤</span>
+      <span class="badge-ng">❌ 틀림</span>
+    </div>
+    <div class="q-body">
+      <div class="stmt">"고유목적사업준비금은 「소득세법」상 이자소득금액 및 배당소득금액에 <span class="diff">100분의 50을 곱하여 산출한 금액</span>을 한도로 손금에 산입한다."</div>
+      <div class="reason">
+        ❌ <strong>오류 포인트:</strong> 이자·배당소득은 <span class="diff">50%를 곱하지 않습니다!</span><br>
+        이자·배당소득은 <strong>전액(100%)</strong>이 손금산입 한도에 포함됩니다.<br>
+        50%(또는 80%)를 곱하는 것은 "<strong>그 밖의 수익사업 소득</strong>"에만 적용됩니다.<br><br>
+        <table style="margin-top:8px;">
+          <thead><tr><th>소득 종류</th><th>한도 반영 비율</th></tr></thead>
+          <tbody>
+            <tr><td>이자소득, 배당소득, 특별법인 융자 이자</td><td><span class="key">100%</span> (전액)</td></tr>
+            <tr><td>기타 수익사업 소득 (일반)</td><td><span class="key">50%</span></td></tr>
+            <tr><td>기타 수익사업 소득 (장학금 50%↑ 법인)</td><td><span class="key">80%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="law-line">근거: 법인세법 제29조 제1항 제1호·제2호</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 핵심 비교표 ===== -->
+<div class="section compare-box">
+  <h2>⚖️ 익금산입 사유별 이자상당액 비교 — 시험 최빈출 비교!</h2>
+  <table>
+    <thead>
+      <tr><th>사유</th><th>호수</th><th>이자상당액</th><th>기억 팁</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>해산 (승계 제외)</td>
+        <td class="law-ref">§29⑤1호</td>
+        <td><span class="badge-ng">없음</span></td>
+        <td>자연 소멸 — 페널티 없음</td>
+      </tr>
+      <tr>
+        <td>고유목적사업 <strong>전부</strong> 폐지</td>
+        <td class="law-ref">§29⑤2호</td>
+        <td><span class="badge-ng">없음</span></td>
+        <td>"일부"는 아예 해당 없음</td>
+      </tr>
+      <tr>
+        <td>법인단체 승인취소 / <strong>거주자 변경</strong></td>
+        <td class="law-ref">§29⑤3호</td>
+        <td><span class="badge-ng">없음</span></td>
+        <td>지위 변경 — 페널티 없음</td>
+      </tr>
+      <tr style="background:#FFF8E1;">
+        <td><strong>5년 미사용</strong></td>
+        <td class="law-ref">§29⑤4호</td>
+        <td><span class="badge-ok">있음 ✅</span></td>
+        <td>약속 불이행 → 이자 페널티</td>
+      </tr>
+      <tr style="background:#FFF8E1;">
+        <td><strong>목적외 사용</strong></td>
+        <td class="law-ref">§29⑤5호</td>
+        <td><span class="badge-ok">있음 ✅</span></td>
+        <td>용도 위반 → 이자 페널티</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="warn-box">
+    💡 <strong>암기 공식:</strong> 이자상당액은 <strong>"법인 스스로 잘못 쓰거나 안 쓴 경우(4·5호)"에만</strong> 부과됩니다. 해산·폐지·지위변경(1·2·3호)처럼 외부적 사유에는 이자상당액이 없습니다.
+  </div>
+</div>
+
+
+<!-- ===== 오답 함정 ===== -->
+<div class="section trap-box">
+  <h2>⚠️ 오답 함정 — 시험에서 자주 틀리는 포인트</h2>
+
+  <div class="error-box">
+    <strong>함정 ①: "5년" vs "10년"</strong><br>
+    법§29⑤4호는 <span class="diff">5년</span>입니다. 10년으로 바꾸면 틀린 지문이 됩니다. 이번 지문 ③이 정확히 이 함정입니다.
+  </div>
+  <div class="error-box">
+    <strong>함정 ②: "일부 폐지" vs "전부 폐지"</strong><br>
+    익금산입 사유는 <span class="diff">전부</span> 폐지입니다. 일부 폐지면 아직 고유목적사업이 남아있으므로 익금산입하지 않습니다. (이번 지문 ②)
+  </div>
+  <div class="error-box">
+    <strong>함정 ③: 거주자 변경 → 이자상당액 부과 여부</strong><br>
+    거주자 변경(3호)은 익금산입은 하지만 <span class="diff">이자상당액 납부 대상이 아닙니다.</span> (이번 지문 ④)
+  </div>
+  <div class="error-box">
+    <strong>함정 ④: 이자·배당에 50% 곱하기</strong><br>
+    이자·배당소득은 <span class="diff">50% 없이 전액</span> 한도에 산입됩니다. 50%는 "기타 수익사업 소득"에만 적용됩니다. (이번 지문 ⑤)
+  </div>
+  <div class="error-box">
+    <strong>함정 ⑤: 포괄 양도 해산 시 익금산입 여부</strong><br>
+    포괄 양도 후 해산 + 승계한 경우 → <span class="diff">익금산입 제외</span>입니다. "해산 = 무조건 익금산입"으로 혼동하면 안 됩니다.
+  </div>
+</div>
+
+
+<!-- ===== 법조항 색인 ===== -->
+<div class="section" style="background:#F7FAFC;">
+  <h2>📚 법조항 근거 색인</h2>
+  <table class="keyword-table">
+    <thead><tr><th>조문</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>법§29①1호</td><td>이자·배당소득 전액 손금산입 한도 포함</td></tr>
+      <tr><td>법§29①2호</td><td>기타 수익사업 소득 × 50%(또는 80%) 한도</td></tr>
+      <tr><td>법§29②</td><td>외부감사 비영리법인 — 세무조정계산서 계상 인정</td></tr>
+      <tr><td>법§29③</td><td>고유목적사업 지출 시 선입선출 상계</td></tr>
+      <tr><td>법§29④</td><td>포괄 양도·해산 시 다른 비영리법인 승계 가능</td></tr>
+      <tr><td>법§29⑤1호</td><td>해산 → 익금산입 (승계 제외)</td></tr>
+      <tr><td>법§29⑤2호</td><td>고유목적사업 <strong>전부</strong> 폐지 → 익금산입</td></tr>
+      <tr><td>법§29⑤3호</td><td>거주자 변경·승인취소 → 익금산입 (이자상당액 없음)</td></tr>
+      <tr><td>법§29⑤4호</td><td><strong>5년</strong> 내 미사용 잔액 → 익금산입</td></tr>
+      <tr><td>법§29⑤5호</td><td>목적외 사용 금액 → 익금산입</td></tr>
+      <tr><td>법§29⑦</td><td>이자상당액 납부 — 4호·5호에만 해당</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

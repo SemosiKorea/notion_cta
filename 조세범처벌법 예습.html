@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조세범 처벌법 & 처벌절차법 | 세무사 1차 예습자료</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.8;max-width:1000px;margin:0 auto;padding:20px}
+  h1{color:#0D1B4B;font-size:1.75em}
+  h2{color:#1A3A6B;font-size:1.12em;margin-bottom:11px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+  h3{color:#2C5282;font-size:1em;margin:14px 0 8px}
+  h4{color:#2D3748;font-size:.94em;margin:10px 0 6px}
+  p{margin-bottom:8px}
+  ul,ol{padding-left:20px;margin-bottom:8px}
+  li{margin-bottom:4px;line-height:1.75}
+  strong{color:#1A1A2E}
+
+  /* ── HEADER ── */
+  .header{background:linear-gradient(135deg,#1A0533,#3B1F6B);color:#fff;padding:26px 34px;border-radius:12px;margin-bottom:18px}
+  .subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:.8em;display:inline-block;margin-bottom:9px}
+  .header h1{color:#fff;font-size:1.8em}
+  .meta{font-size:.8em;opacity:.85;margin-top:7px;line-height:1.6}
+
+  /* ── SECTION ── */
+  .section{background:#fff;margin:16px 0;padding:20px 24px;border-radius:12px;border:1px solid #E8ECF0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+  .section-title-bar{background:linear-gradient(90deg,#3B1F6B,#6B3FA0);color:#fff;padding:9px 16px;border-radius:8px;font-size:1.04em;font-weight:700;margin:-20px -24px 16px;letter-spacing:.03em}
+  .sub-section{background:#FAF8FF;border:1px solid #E0D6FF;border-radius:8px;padding:14px 18px;margin:12px 0}
+  .sub-section h3{margin-top:0;color:#5A2D82}
+
+  /* ── BOXES ── */
+  .highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:14px 0}
+  .highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+  .trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:14px 0}
+  .trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+  .compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:14px 0}
+  .compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+  .analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+  .law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+  .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #ECC94B;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+  .ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+  .red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+  .purple-box{background:#FAF5FF;border:1px solid #D6BCFA;border-left:4px solid #805AD5;border-radius:6px;padding:11px 15px;margin:9px 0;font-size:.88em}
+
+  /* ── CRIME CARD ── */
+  .crime-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin:14px 0}
+  .crime-card{border-radius:10px;overflow:hidden;border:1px solid #E2E8F0;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  .crime-card-head{padding:9px 14px;font-weight:700;font-size:.9em;color:#fff;display:flex;align-items:center;gap:8px}
+  .crime-card-head.lv1{background:#9B2335}
+  .crime-card-head.lv2{background:#744210}
+  .crime-card-head.lv3{background:#276749}
+  .crime-card-head.lv4{background:#2A4A8A}
+  .crime-card-head.lv5{background:#1A0533}
+  .crime-card-body{background:#fff;padding:11px 14px;font-size:.86em;line-height:1.7}
+  .crime-card-body .label{color:#718096;font-size:.82em;font-weight:600;margin-bottom:3px}
+  .crime-card-body .penalty{color:#1A1A2E;font-weight:600;margin-bottom:5px}
+  .crime-card-body .note{color:#4A5568;font-size:.84em;border-top:1px solid #EDF2F7;padding-top:5px;margin-top:5px}
+
+  /* ── TABLE ── */
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.87em}
+  th{background:#F3EEF9;color:#5A2D82;padding:9px 12px;text-align:left;font-weight:600;font-size:.86em;border-bottom:2px solid #D6BCFA}
+  td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+  tr:hover td{background:#FAF8FF}
+  .diff{color:#C53030;font-weight:600}
+  .ok-text{color:#276749;font-weight:600}
+  .center{text-align:center}
+  .hl{background:#FFFBEB!important}
+
+  /* ── BADGES ── */
+  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.78em;font-weight:600;margin:1px}
+  .b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}
+  .b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}
+  .b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}
+  .b-blue{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}
+  .b-purple{background:#EDE9FE;color:#5B21B6;border:1px solid #DDD6FE}
+  .b-gray{background:#F3F4F6;color:#374151;border:1px solid #D1D5DB}
+  .star{color:#D97706;font-size:.83em}
+
+  /* ── PENALTY SCALE ── */
+  .scale-bar{background:#F3F4F6;border-radius:10px;padding:16px 20px;margin:12px 0}
+  .scale-title{font-weight:700;font-size:.88em;color:#1A1A2E;margin-bottom:10px}
+  .scale-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:.85em}
+  .scale-num{background:#5A2D82;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;font-size:.82em;width:34px;text-align:center;flex-shrink:0}
+  .scale-bar-fill{height:20px;border-radius:4px;display:flex;align-items:center;padding:0 10px;color:#fff;font-weight:700;font-size:.82em;flex:1}
+  .s5{background:linear-gradient(90deg,#9B2335,#E53E3E);width:100%}
+  .s3{background:linear-gradient(90deg,#744210,#D97706);width:75%}
+  .s2{background:linear-gradient(90deg,#276749,#38A169);width:55%}
+  .s1{background:linear-gradient(90deg,#2A4A8A,#4299E1);width:35%}
+  .s0{background:linear-gradient(90deg,#4A5568,#718096);width:20%}
+  .scale-desc{color:#4A5568;font-size:.84em;flex:2}
+
+  /* ── FLOW ── */
+  .flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:14px 0}
+  .flow-node{background:#5A2D82;color:#fff;padding:8px 22px;border-radius:8px;font-size:.86em;font-weight:600;text-align:center;min-width:200px;max-width:380px}
+  .flow-node.g{background:#276749}.flow-node.r{background:#9B2335}
+  .flow-node.o{background:#744210}.flow-node.gray{background:#4A5568}
+  .flow-diamond{background:#744210;color:#fff;padding:7px 18px;border-radius:50px;font-size:.84em;font-weight:600;text-align:center}
+  .flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+  .flow-branch{display:flex;gap:24px;align-items:flex-start;justify-content:center;width:100%}
+  .flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px}
+  .branch-label{font-size:.78em;color:#718096;font-weight:600}
+
+  /* ── TRAP ── */
+  .trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+  .trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+
+  /* ── TWO COL ── */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+  .col-box{background:#FAF8FF;border:1px solid #E0D6FF;border-radius:8px;padding:13px}
+  .col-box h4{margin-top:0;color:#5A2D82}
+
+  /* ── MISC ── */
+  .footnote{color:#718096;font-size:.82em;margin-top:8px}
+  .key-num{display:inline-block;background:#5A2D82;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+  .yl{background:#FFFBEB;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="subject-badge">세법학 — 조세범 처벌법 &amp; 처벌절차법</div>
+  <h1>조세범 처벌법 &amp; 조세범 처벌절차법</h1>
+  <div class="meta">
+    세무사 1차 시험 예습자료 &nbsp;|&nbsp;
+    조세범처벌법 (2021.01.01 시행) · 조세범처벌절차법 (2023.01.17 시행) &nbsp;|&nbsp;
+    MCP 법령 직접 조회 기준
+  </div>
+</div>
+
+<!-- ══ 최빈출 포인트 ══ -->
+<div class="highlight-box">
+  <h2>🔥 최빈출 포인트</h2>
+  <ol>
+    <li><strong>조세 포탈죄 부정한 행위 7가지</strong> <span class="star">★★★</span> — 이중장부·거짓증빙·장부파기·은닉조작·미작성·ERP조작·기타위계 (처벌법§3⑥)</li>
+    <li><strong>가중처벌 요건 2가지</strong> <span class="star">★★★</span> — ① 3억↑ & 30%↑ / ② 5억↑ → 3년·3배 (처벌법§3① 단서)</li>
+    <li><strong>가짜 세금계산서 처벌 구조</strong> <span class="star">★★★</span> — 미발급·거짓발급 1년·2배 / 실거래 없는 가공 3년·3배 (처벌법§10)</li>
+    <li><strong>통고처분 → 고발 → 즉시고발 구분</strong> <span class="star">★★</span> — 이행 시 처벌 없음, 15일 내 미이행 시 고발 (절차법§15·§17)</li>
+    <li><strong>양벌 규정</strong> <span class="star">★★</span> — 행위자 + 법인·개인에게 벌금형 / 상당한 주의·감독 시 면제 (처벌법§18)</li>
+    <li><strong>상습범 가중</strong> <span class="star">★★</span> — 형의 2분의 1 가중 (처벌법§3④)</li>
+    <li><strong>공소시효 정지</strong> <span class="star">★</span> — 통고처분일부터 고발일까지 정지 (절차법§16)</li>
+    <li><strong>체납처분 면탈죄</strong> <span class="star">★</span> — 재산 은닉·거짓 계약, 3년·3천만원 (처벌법§7)</li>
+  </ol>
+</div>
+
+
+<!-- ══ 1. 총칙 ══ -->
+<div class="section">
+  <div class="section-title-bar">1. 총칙 (조세범처벌법 §1·§2)</div>
+
+  <div class="sub-section">
+    <h3>1-1. 목적 및 조세의 정의</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 세금을 빼돌리거나 탈루하는 행위에 형벌을 규정한 법. 가산세는 "행정 제재"지만, 조세범처벌법은 "형사 처벌(징역·벌금)"이 가해지는 훨씬 무거운 제재예요.
+    </div>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>목적 (§1)</h4>
+        세법 위반자에 대한 <strong>형벌</strong>에 관한 사항 규정<br>
+        → 세법의 실효성 제고<br>
+        → 국민의 건전한 납세의식 확립
+      </div>
+      <div class="col-box">
+        <h4>조세의 범위 (§2)</h4>
+        <strong>"조세"</strong> = <strong>관세를 제외한 국세</strong><br>
+        ⚠ 지방세·관세는 이 법의 적용 대상 아님<br>
+        (지방세기본법·관세법에 별도 규정)
+      </div>
+    </div>
+    <div class="warn-box">
+      ⚠ <strong>가산세 vs 조세범처벌법 비교:</strong><br>
+      가산세: 행정적 제재 (납세의무 이행 강제, 별도 신고·납부 가능)<br>
+      조세범처벌법: <strong>형사 처벌</strong> (징역·벌금, 검찰 수사·법원 재판)
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 2. 조세 포탈죄 ══ -->
+<div class="section">
+  <div class="section-title-bar">2. 조세 포탈죄 (처벌법§3) — 핵심 조문</div>
+
+  <div class="sub-section">
+    <h3>2-1. 구성요건</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 단순히 세금을 안 내는 것은 체납이지만, 속임수로 세금을 빼돌리는 것이 포탈이에요. 법에서는 "사기나 그 밖의 부정한 행위"가 있어야만 조세포탈죄가 성립합니다.
+    </div>
+
+    <table>
+      <thead><tr><th>구성요건</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td><strong>주체</strong></td><td>사기나 그 밖의 부정한 행위를 한 자 (납세의무자 포함)</td></tr>
+        <tr><td><strong>행위</strong></td><td>① 조세를 포탈하거나 ② 조세의 환급·공제를 받은 행위</td></tr>
+        <tr><td><strong>수단 (필수)</strong></td><td><strong>사기나 그 밖의 부정한 행위</strong> — 단순 무신고·과소신고는 해당 안 됨</td></tr>
+        <tr><td><strong>결과</strong></td><td>조세 포탈 또는 부당 환급·공제 실현</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <h3>2-2. "사기나 그 밖의 부정한 행위" 7가지 (처벌법§3⑥)</h3>
+    <div class="red-box">
+      🚨 <strong>정의:</strong> 조세의 부과와 징수를 <strong>불가능하게 하거나 현저히 곤란하게 하는 적극적 행위</strong><br>
+      → 소극적 미신고만으로는 부정한 행위 해당 안 됨
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>부정한 행위의 유형</th><th>예시</th></tr></thead>
+      <tbody>
+        <tr><td class="center">1</td><td><strong>이중장부 작성 등 장부의 거짓 기장</strong></td><td>세무용 장부와 내부용 장부 이중 작성</td></tr>
+        <tr><td class="center">2</td><td><strong>거짓 증빙 또는 거짓 문서의 작성 및 수취</strong></td><td>허위 계산서·영수증 수취</td></tr>
+        <tr><td class="center">3</td><td><strong>장부와 기록의 파기</strong></td><td>세무조사 전 장부 폐기</td></tr>
+        <tr><td class="center">4</td><td><strong>재산의 은닉, 소득·수익·행위·거래의 조작 또는 은폐</strong></td><td>타인 명의로 자산 분산</td></tr>
+        <tr><td class="center">5</td><td><strong>고의적 장부 미작성·미비치, 계산서·세금계산서 합계표 조작</strong></td><td>무장부 경영, 합계표 허위 작성</td></tr>
+        <tr><td class="center">6</td><td><strong>ERP(전사적 자원관리설비) 조작 또는 전자세금계산서 조작</strong></td><td>시스템 조작으로 매출 축소</td></tr>
+        <tr class="hl"><td class="center">7</td><td><strong>그 밖의 위계에 의한 행위 또는 부정한 행위</strong></td><td>포괄적 조항 (해석 논란 있음)</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      ⚠ <strong>판례 입장 (통설):</strong> 단순 과소신고나 무신고는 '부정한 행위'에 해당하지 않음. 반드시 적극적 행위가 수반되어야 조세포탈죄 성립.
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>2-3. 법정형 — 기본과 가중</h3>
+
+    <div class="scale-bar">
+      <div class="scale-title">📊 조세포탈죄 법정형 체계</div>
+      <div class="scale-row">
+        <div class="scale-num">기본</div>
+        <div class="scale-bar-fill s2">2년 이하 징역 / 포탈세액의 2배 이하 벌금</div>
+        <div class="scale-desc">일반 포탈 (§3①본문)</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-num">가중①</div>
+        <div class="scale-bar-fill s3">3년 이하 징역 / 포탈세액의 3배 이하 벌금</div>
+        <div class="scale-desc">포탈세액 3억원↑ & 30%↑ (§3①1호)</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-num">가중②</div>
+        <div class="scale-bar-fill s3">3년 이하 징역 / 포탈세액의 3배 이하 벌금</div>
+        <div class="scale-desc">포탈세액 5억원↑ (§3①2호)</div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-num">상습</div>
+        <div class="scale-bar-fill s1">위 각 형의 1/2 가중</div>
+        <div class="scale-desc">상습범 (§3④)</div>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>구분</th><th>징역</th><th>벌금</th><th>병과 가능?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>기본 포탈</strong></td><td>2년 이하</td><td>포탈세액등 × <span class="key-num">2배</span> 이하</td><td>가능 (§3②)</td></tr>
+        <tr class="hl"><td><strong>가중 ①</strong> (3억↑ & 30%↑)</td><td>3년 이하</td><td>포탈세액등 × <span class="key-num">3배</span> 이하</td><td>가능</td></tr>
+        <tr class="hl"><td><strong>가중 ②</strong> (5억↑)</td><td>3년 이하</td><td>포탈세액등 × <span class="key-num">3배</span> 이하</td><td>가능</td></tr>
+        <tr><td><strong>상습범</strong></td><td colspan="2">위 형의 <span class="key-num">1/2 가중</span></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <h3>2-4. 기수 시기 (처벌법§3⑤) &amp; 형 감경 사유 (§3③)</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>기수 시기</h4>
+        <strong>신고·납부 조세:</strong><br>
+        과세표준을 정부가 결정·조사결정한 후 <strong>납부기한이 지난 때</strong><br>
+        (포탈 목적으로 미신고 → 신고기한이 지난 때)<br><br>
+        <strong>그 밖의 조세:</strong><br>
+        신고·납부기한이 지난 때
+      </div>
+      <div class="col-box">
+        <h4>형 감경 가능 사유 (§3③)</h4>
+        ① 법정신고기한 경과 후 <strong>2년 이내 수정신고</strong><br>
+        (국기법 §45)<br>
+        ② 법정신고기한 경과 후 <strong>6개월 이내 기한 후 신고</strong><br>
+        (국기법 §45의3)<br>
+        → 형 감경 "할 수 있다" (임의적 감경)
+      </div>
+    </div>
+    <div class="warn-box">
+      ⚠ 형 감경은 <strong>"할 수 있다"</strong> (임의적). 수정신고·기한후신고를 해도 무조건 감경되는 것은 아님!
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 3. 각종 범칙행위 ══ -->
+<div class="section">
+  <div class="section-title-bar">3. 각종 범칙행위 요약 (처벌법§4~§16)</div>
+
+  <div class="crime-grid">
+
+    <!-- 카드 1: 가짜석유 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv1">🛢 가짜석유제품 제조·판매 (§5)</div>
+      <div class="crime-card-body">
+        <div class="label">처벌</div>
+        <div class="penalty">5년 이하 징역 또는 포탈세액 × 5배 이하 벌금</div>
+        <div class="note">가짜석유제품 제조·판매로 조세 포탈 시<br>가장 높은 법정형!</div>
+      </div>
+    </div>
+
+    <!-- 카드 2: 무면허 주류 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv2">🍺 무면허 주류 제조·판매 (§6)</div>
+      <div class="crime-card-body">
+        <div class="label">처벌</div>
+        <div class="penalty">3년 이하 징역 또는 3천만원(주세 상당 3배 중 큰 금액) 이하 벌금</div>
+        <div class="note">개인 자가소비 목적 제조는 제외<br>밑술·술덧 = 탁주로 봄</div>
+      </div>
+    </div>
+
+    <!-- 카드 3: 체납처분 면탈 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv2">🏃 체납처분 면탈 (§7)</div>
+      <div class="crime-card-body">
+        <div class="label">주체: 납세의무자·재산 점유자</div>
+        <div class="penalty">재산 은닉·탈루·거짓 계약: 3년↓ / 3천만원↓</div>
+        <div class="note">압류물 보관자 횡령·손괴도 동일<br>방조·거짓 계약 승낙자: 2년↓ / 2천만원↓</div>
+      </div>
+    </div>
+
+    <!-- 카드 4: 장부 소각·파기 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv3">📚 장부 소각·파기 (§8)</div>
+      <div class="crime-card-body">
+        <div class="label">요건</div>
+        <div class="penalty">증거인멸 목적 + 법정신고기한 후 5년 이내 소각·파기·은닉</div>
+        <div class="note">2년 이하 징역 또는 2천만원 이하 벌금<br>전산 장부 포함</div>
+      </div>
+    </div>
+
+    <!-- 카드 5: 면세유 부정유통 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv2">⛽ 면세유 부정유통 (§4)</div>
+      <div class="crime-card-body">
+        <div class="label">처벌</div>
+        <div class="penalty">3년 이하 징역 또는 포탈세액등 × 5배 이하 벌금</div>
+        <div class="note">면세 석유류 다른 용도 사용·판매<br>외항선박·원양어업선박 면세유 부정사용</div>
+      </div>
+    </div>
+
+    <!-- 카드 6: 명의대여 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv3">👤 명의대여 행위 (§11)</div>
+      <div class="crime-card-body">
+        <div class="label">구분</div>
+        <div class="penalty">타인 명의 도용자: 2년↓ / 2천만원↓<br>명의 대여자: 1년↓ / 1천만원↓</div>
+        <div class="note">조세 회피 또는 강제집행 면탈 목적 필수<br>명의 빌린 자 &gt; 빌려준 자 형량 무거움</div>
+      </div>
+    </div>
+
+    <!-- 카드 7: 성실신고 방해 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv3">🚫 성실신고 방해 (§9)</div>
+      <div class="crime-card-body">
+        <div class="label">구분</div>
+        <div class="penalty">대리인 거짓 신고: 2년↓ / 2천만원↓<br>신고 거부 교사·선동: 1년↓ / 1천만원↓</div>
+        <div class="note">세무사 등 대리인이 고의 거짓신고<br>납세의무자에게 무신고 교사</div>
+      </div>
+    </div>
+
+    <!-- 카드 8: 원천징수 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv3">💰 원천징수의무자 처벌 (§13)</div>
+      <div class="crime-card-body">
+        <div class="label">구분</div>
+        <div class="penalty">징수 안 한 경우: 1천만원 이하 벌금<br>징수 후 미납: 2년↓ / 2천만원↓</div>
+        <div class="note">정당한 사유 없이가 요건<br>징수 후 미납이 더 무거운 처벌!</div>
+      </div>
+    </div>
+
+    <!-- 카드 9: 납세증명표지 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv4">🏷 납세증명표지 불법사용 (§12)</div>
+      <div class="crime-card-body">
+        <div class="label">처벌</div>
+        <div class="penalty">2년 이하 징역 또는 2천만원 이하 벌금</div>
+        <div class="note">주류 납세증명표지 재사용·위조·변조<br>전자수입인지 재사용 포함</div>
+      </div>
+    </div>
+
+    <!-- 카드 10: 해외금융계좌 비밀유지 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv5">🌏 해외금융계좌 비밀유지 위반 (§15)</div>
+      <div class="crime-card-body">
+        <div class="label">처벌</div>
+        <div class="penalty">5년 이하 징역 또는 3천만원 이하 벌금<br>징역·벌금 병과 가능</div>
+        <div class="note">국제조세조정법 §38②~④·§57 위반<br>가장 높은 형량 중 하나</div>
+      </div>
+    </div>
+
+    <!-- 카드 11: 해외금융계좌 신고의무 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv4">📋 해외금융계좌 신고의무 불이행 (§16)</div>
+      <div class="crime-card-body">
+        <div class="label">처벌 (위반금액 50억원 초과 시)</div>
+        <div class="penalty">2년 이하 징역 또는 위반금액 × 13%~20% 벌금</div>
+        <div class="note">50억원 이하는 형사처벌 아닌 과태료 적용<br>병과 가능</div>
+      </div>
+    </div>
+
+    <!-- 카드 12: 거짓 원천징수영수증 -->
+    <div class="crime-card">
+      <div class="crime-card-head lv3">📄 거짓 근로소득 원천징수영수증 (§14)</div>
+      <div class="crime-card-body">
+        <div class="label">목적: 근로장려금 거짓 신청 지원</div>
+        <div class="penalty">2년↓ / 총급여·총지급액 × 20% 이하 벌금</div>
+        <div class="note">알선·중개자도 동일 처벌<br>근로장려금 부정수급 지원 목적</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══ 4. 세금계산서 관련 범칙행위 ══ -->
+<div class="section">
+  <div class="section-title-bar">4. 세금계산서 관련 범칙행위 (처벌법§10) — 시험 핵심</div>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유:</strong> 세금계산서 범죄는 "실제 거래는 있는데 서류 문제(①②항)"와 "아예 없는 거래를 있는 것처럼 꾸미는 것(③항)"을 엄격히 구분합니다. 가공거래가 훨씬 무거운 처벌을 받습니다.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>유형</th><th>행위</th><th>징역</th><th>벌금</th><th>병과</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>①항 발급자 위반</strong><br>(실거래 있음)</td>
+        <td>세금계산서·계산서 <strong>미발급</strong> 또는 <strong>거짓 기재 발급</strong><br>매출처별 합계표 <strong>거짓 기재 제출</strong></td>
+        <td>1년 이하</td>
+        <td>공급가액 × 부가세율 상당액 × 2배 이하</td>
+        <td>없음</td>
+      </tr>
+      <tr>
+        <td><strong>②항 수취자 위반</strong><br>(통정 필요)</td>
+        <td><strong>통정하여</strong> 세금계산서·계산서 <strong>미수취·거짓 수취</strong><br>매입처별 합계표 <strong>거짓 기재 제출</strong></td>
+        <td>1년 이하</td>
+        <td>공급가액 × 부가세율 상당액 × 2배 이하</td>
+        <td>없음</td>
+      </tr>
+      <tr class="hl">
+        <td><strong>③항 가공 거래</strong><br>(실거래 없음)</td>
+        <td>재화·용역의 <strong>공급 없이</strong> 세금계산서·계산서 <strong>발급·수취</strong><br>합계표 <strong>거짓 기재 제출</strong></td>
+        <td class="diff">3년 이하</td>
+        <td class="diff">공급가액 × 부가세율 상당액 × 3배 이하</td>
+        <td class="diff">가능</td>
+      </tr>
+      <tr class="hl">
+        <td><strong>③항 알선·중개</strong></td>
+        <td>가공거래 알선·중개 행위<br>세무사·회계사·변호사의 알선·중개</td>
+        <td class="diff">3년 이하</td>
+        <td class="diff">←동일<br>+ 세무사법 등 불구 <strong>형의 1/2 가중</strong></td>
+        <td class="diff">가능</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="red-box">
+    🚨 <strong>①②항 vs ③항 핵심 차이:</strong><br>
+    ① 실거래는 있으나 서류 처리 위반 → 1년·2배<br>
+    ② <strong>통정</strong> 필요 (수취자 일방적 허위 수취는 해당 안 됨)<br>
+    ③ 실거래 자체가 없는 <strong>가공</strong> → 3년·3배·병과 / 알선·중개자 동일 + 세무전문직 1/2 가중
+  </div>
+
+  <div class="warn-box">
+    ⚠ <strong>②항 '통정' 요건 주의:</strong> 수취자 혼자 거짓 세금계산서를 받은 것은 ②항이 아닌 다른 규정 적용. 반드시 발급자와 <strong>합의(통정)</strong>가 있어야 함.
+  </div>
+</div>
+
+
+<!-- ══ 5. 양벌 규정 ══ -->
+<div class="section">
+  <div class="section-title-bar">5. 양벌 규정 (처벌법§18)</div>
+
+  <div class="sub-section">
+    <h3>양벌 규정 구조</h3>
+    <div class="flowchart">
+      <div class="flow-node g">법인의 대표자·대리인·사용인·종업원이<br>법인 또는 개인의 업무에 관하여 범칙행위</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-node">행위자 처벌<br>(해당 조문의 형사처벌)</div>
+      <div class="flow-arrow">↓ 동시에</div>
+      <div class="flow-diamond">법인·개인에게도 해당 조문의 벌금형 과(科)</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">원칙</div>
+          <div class="flow-node r">법인·개인에게 벌금형 추가</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">면제 사유</div>
+          <div class="flow-node g">위반 방지를 위해<br>상당한 주의·감독을<br>게을리하지 않은 경우</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law-box">
+      <strong>적용 범위:</strong> 이 법에서 규정하는 범칙행위 전반 적용<br>
+      단, <strong>국제조세조정법 §57(해외금융계좌 비밀유지) 위반은 양벌규정 제외</strong>
+    </div>
+
+    <div class="warn-box">
+      ⚠ <strong>양벌규정의 면제 요건:</strong> 단순히 몰랐다는 것만으로는 부족. <strong>"상당한 주의와 감독"을 실제로 했음을 입증</strong>해야 면제 가능 (과실 추정 배제)
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 6. 조세범 처벌절차법 ══ -->
+<div class="section">
+  <div class="section-title-bar">6. 조세범 처벌절차법 — 처분 절차 (절차법§13·§15·§16·§17)</div>
+
+  <div class="sub-section">
+    <h3>6-1. 조세범칙처분의 종류 (절차법§13)</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>① 통고처분</h4>
+        행정적 처리 — 형사 처벌 없이 <strong>벌금상당액 납부</strong>로 종결<br>
+        이행 시 → 동일 사건 재처벌 없음
+      </div>
+      <div class="col-box">
+        <h4>② 고발</h4>
+        검찰에 고발 → 형사소추 진행
+      </div>
+    </div>
+    <div class="ok-box">
+      ✅ 세 번째 처분: <strong>무혐의</strong> — 범칙행위 없다고 판단 시 무혐의 처분
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>6-2. 통고처분 절차 (절차법§15)</h3>
+
+    <div class="flowchart">
+      <div class="flow-node">지방국세청장 또는 세무서장<br>조세범칙행위 확증 확보</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-node gray">위원회 심의 거쳐야 함 (절차법§14)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-node">통고처분<br>① 벌금상당액 납부 통고<br>② 몰수·몰취 해당 물품 납부 통고<br>③ 추징금 납부 통고</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-diamond">통고서 송달 후 15일 이내 이행?</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">이행 O</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node g">동일 사건 재처벌 없음<br>(일사부재리 효력)</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">이행 X</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node r">의무적 고발 (§17②)<br>단, 15일 후라도 고발 전 이행 시 고발 안 함</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      ⚠ 이행 기한: 통고서 <strong>송달받은 날부터 15일</strong> (통고처분일이 아님!)
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <h3>6-3. 즉시 고발 사유 (절차법§17①) — 통고처분 불요</h3>
+
+    <table>
+      <thead><tr><th>#</th><th>즉시 고발 사유</th></tr></thead>
+      <tbody>
+        <tr><td class="center">1</td><td>정상에 따라 <strong>징역형</strong>에 처할 것으로 판단되는 경우</td></tr>
+        <tr><td class="center">2</td><td>통고대로 이행할 <strong>자금이나 납부 능력이 없다</strong>고 인정되는 경우</td></tr>
+        <tr><td class="center">3</td><td><strong>거소가 분명하지 않거나 서류 수령 거부</strong>로 통고처분 불가한 경우</td></tr>
+        <tr><td class="center">4</td><td><strong>도주하거나 증거 인멸 우려</strong>가 있는 경우</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-section">
+    <h3>6-4. 공소시효 정지 (절차법§16)</h3>
+    <div class="purple-box">
+      ✅ 통고처분이 있는 경우 → <strong>통고일부터 고발일까지</strong> 공소시효 정지<br>
+      (통고처분으로 인해 고발이 지연되는 기간만큼 공소시효 정지하여 범죄자 보호 방지)
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 7. 범칙행위 법정형 종합 비교표 ══ -->
+<div class="compare-box">
+  <h2>⚖️ 조세범처벌법 범칙행위 법정형 종합</h2>
+  <table>
+    <thead>
+      <tr><th>범칙행위</th><th>근거</th><th>징역</th><th>벌금</th><th>병과</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl">
+        <td><strong>가짜석유제품 제조·판매</strong></td>
+        <td>§5</td>
+        <td class="diff">5년 이하</td>
+        <td class="diff">포탈세액 × 5배 이하</td>
+        <td>—</td>
+      </tr>
+      <tr class="hl">
+        <td><strong>해외금융계좌 비밀유지 위반</strong></td>
+        <td>§15</td>
+        <td class="diff">5년 이하</td>
+        <td>3천만원 이하</td>
+        <td class="diff">가능</td>
+      </tr>
+      <tr>
+        <td>조세 포탈 (가중 — 3억·30% / 5억)</td>
+        <td>§3①단서</td>
+        <td class="diff">3년 이하</td>
+        <td>포탈세액 × 3배 이하</td>
+        <td class="diff">가능</td>
+      </tr>
+      <tr>
+        <td>면세유 부정유통</td>
+        <td>§4</td>
+        <td class="diff">3년 이하</td>
+        <td>포탈세액 × 5배 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>무면허 주류 제조·판매</td>
+        <td>§6</td>
+        <td class="diff">3년 이하</td>
+        <td>3천만원(또는 주세 3배) 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>체납처분 면탈</td>
+        <td>§7①②</td>
+        <td class="diff">3년 이하</td>
+        <td>3천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>가공 세금계산서 발급·수취</strong></td>
+        <td>§10③</td>
+        <td class="diff">3년 이하</td>
+        <td>공급가액 × 부가세율 상당 × 3배 이하</td>
+        <td class="diff">가능</td>
+      </tr>
+      <tr>
+        <td>조세 포탈 (기본)</td>
+        <td>§3①본문</td>
+        <td>2년 이하</td>
+        <td>포탈세액 × 2배 이하</td>
+        <td>가능</td>
+      </tr>
+      <tr>
+        <td>장부 소각·파기</td>
+        <td>§8</td>
+        <td>2년 이하</td>
+        <td>2천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>원천징수 후 미납</td>
+        <td>§13②</td>
+        <td>2년 이하</td>
+        <td>2천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>납세증명표지 불법사용</td>
+        <td>§12</td>
+        <td>2년 이하</td>
+        <td>2천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>명의대여 (도용자)</td>
+        <td>§11①</td>
+        <td>2년 이하</td>
+        <td>2천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>대리인 거짓 신고</td>
+        <td>§9①</td>
+        <td>2년 이하</td>
+        <td>2천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>거짓 근로소득 원천징수영수증 발급</td>
+        <td>§14①</td>
+        <td>2년 이하</td>
+        <td>총급여 × 20% 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>해외금융계좌 신고의무 불이행 (50억↑)</td>
+        <td>§16①</td>
+        <td>2년 이하</td>
+        <td>위반금액 × 13~20%</td>
+        <td>가능</td>
+      </tr>
+      <tr>
+        <td>실거래 세금계산서 미발급·거짓발급</td>
+        <td>§10①②</td>
+        <td>1년 이하</td>
+        <td>공급가액 × 부가세율 상당 × 2배 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>신고 거부 교사·선동</td>
+        <td>§9②</td>
+        <td>1년 이하</td>
+        <td>1천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>명의대여 (대여자)</td>
+        <td>§11②</td>
+        <td>1년 이하</td>
+        <td>1천만원 이하</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>원천징수 미징수</td>
+        <td>§13①</td>
+        <td>없음</td>
+        <td>1천만원 이하</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="footnote">※ 상습범은 형의 1/2 가중 / 병과: 징역+벌금 동시 부과 가능 여부</p>
+</div>
+
+
+<!-- ══ 오답 함정 ══ -->
+<div class="trap-box">
+  <h2>⚠️ 오답 함정 — 자주 틀리는 포인트</h2>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"단순 무신고나 과소신고만으로도 조세포탈죄가 성립한다"</strong>
+      <p>→ 정답: 조세포탈죄는 반드시 <strong>사기나 그 밖의 부정한 행위(적극적 행위)</strong>가 있어야 성립. 단순 무신고는 가산세 대상.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"포탈세액 3억원 이상이면 무조건 가중처벌(3년·3배)을 받는다"</strong>
+      <p>→ 정답: 3억원 이상 + <strong>신고·납부 세액의 30% 이상</strong> 두 요건 모두 충족해야 가중 (§3①1호). 단, 5억원 이상은 30% 요건 없이 단독 가중 가능 (§3①2호)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"수정신고를 하면 조세포탈죄의 형이 반드시 감경된다"</strong>
+      <p>→ 정답: 2년 이내 수정신고·6개월 이내 기한후신고 시 형을 감경 <strong>"할 수 있다"</strong> (임의적 감경, §3③). 법원 재량이므로 반드시 감경되는 것은 아님.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"통고처분을 이행하지 않으면 즉시 처벌받는다"</strong>
+      <p>→ 정답: 15일 이내 이행하지 않으면 <strong>고발</strong> 후 형사소추가 진행됨. 단, 15일이 지난 후라도 <strong>고발 전에 이행하면 고발 안 함</strong> (절차법§17②단서).</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"실거래 있는 세금계산서 미발급과 가공 세금계산서 발급 처벌이 동일하다"</strong>
+      <p>→ 정답: 실거래 있는 미발급·거짓발급은 1년·2배 / 가공거래(실거래 없음)는 <strong>3년·3배·병과 가능</strong>으로 훨씬 무거움.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"명의를 빌려준 자(대여자)가 도용한 자보다 더 무거운 처벌을 받는다"</strong>
+      <p>→ 정답: 명의 도용자: 2년·2천만원 / 명의 <strong>대여자: 1년·1천만원</strong>. 도용한 자가 더 무거운 처벌을 받음 (§11①②).</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"원천징수를 안 한 경우와 징수 후 미납한 경우의 처벌이 동일하다"</strong>
+      <p>→ 정답: 미징수: 1천만원 이하 <strong>벌금만</strong> / 징수 후 미납: 2년 이하 징역 또는 2천만원 이하 벌금. 징수 후 미납이 훨씬 무거움 (§13①②).</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"조세범처벌법상 '조세'에는 관세도 포함된다"</strong>
+      <p>→ 정답: 이 법의 '조세'는 <strong>관세를 제외한 국세</strong>. 관세는 관세법에 별도 처벌 규정 (§2).</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"양벌규정으로 법인 대표가 처벌받으면 법인은 무조건 면제된다"</strong>
+      <p>→ 정답: 행위자(대표자 등) + 법인 <strong>모두</strong> 처벌. 법인이 면제되려면 상당한 주의·감독을 게을리하지 않은 것을 <strong>입증</strong>해야 함 (§18).</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#FAF8FF">
+  <h2>📚 법조항 근거 색인</h2>
+  <table>
+    <thead><tr><th>조항</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>처벌법§1·§2</td><td>목적 / 조세의 정의 (관세 제외 국세)</td></tr>
+      <tr><td>처벌법§3①~⑥</td><td>조세 포탈죄 (기본·가중·병과·감경·기수시기·부정한행위 7가지)</td></tr>
+      <tr><td>처벌법§4·§5·§6</td><td>면세유 부정유통 / 가짜석유제품 / 무면허 주류</td></tr>
+      <tr><td>처벌법§7·§8</td><td>체납처분 면탈 / 장부 소각·파기</td></tr>
+      <tr><td>처벌법§9</td><td>성실신고 방해 (대리인 거짓신고, 신고 교사)</td></tr>
+      <tr><td>처벌법§10①②③④⑤</td><td>세금계산서 발급의무 위반 (실거래 vs 가공거래, 병과, 세무전문직 가중)</td></tr>
+      <tr><td>처벌법§11</td><td>명의대여 (도용자 vs 대여자)</td></tr>
+      <tr><td>처벌법§12·§13·§14</td><td>납세증명표지 / 원천징수의무자 처벌 / 거짓 원천징수영수증</td></tr>
+      <tr><td>처벌법§15·§16</td><td>해외금융계좌 비밀유지 위반 / 신고의무 불이행</td></tr>
+      <tr><td>처벌법§18</td><td>양벌규정 (행위자+법인, 상당한 주의·감독 면제)</td></tr>
+      <tr><td>절차법§13</td><td>조세범칙처분의 종류 (통고처분·고발·무혐의)</td></tr>
+      <tr><td>절차법§14</td><td>위원회 심의 (처분 전 심의 의무)</td></tr>
+      <tr><td>절차법§15</td><td>통고처분 (벌금상당액·몰수물품·추징금 / 15일 이행 / 일사부재리)</td></tr>
+      <tr><td>절차법§16</td><td>공소시효 정지 (통고일~고발일)</td></tr>
+      <tr><td>절차법§17</td><td>즉시 고발 4가지 사유 / 15일 미이행 시 의무 고발</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote" style="margin-top:10px">※ 조세범처벌법 (2021.01.01 시행) / 조세범처벌절차법 (2023.01.17 시행)<br>
+  ※ 본 자료는 MCP 법령정보 직접 조회 기준으로 작성되었습니다.</p>
+</div>
+
+</body>
+</html>

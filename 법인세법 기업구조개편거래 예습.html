@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 — 기업구조개편거래 | 세무사 1차 예습자료</title>
+<style>
+  /* ========== BASE ========== */
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.8;max-width:980px;margin:0 auto;padding:20px}
+  h1{color:#0D1B4B;font-size:1.8em;margin-bottom:6px}
+  h2{color:#1A3A6B;font-size:1.2em;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+  h3{color:#2C5282;font-size:1.05em;margin:14px 0 8px}
+  h4{color:#2D3748;font-size:.96em;margin:10px 0 6px}
+  p{margin-bottom:8px}
+  ul,ol{padding-left:20px;margin-bottom:8px}
+  li{margin-bottom:4px}
+  strong{color:#1A1A2E}
+
+  /* ========== HEADER ========== */
+  .header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B);color:#fff;padding:28px 36px;border-radius:12px;margin-bottom:20px}
+  .subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 16px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:10px}
+  .header h1{color:#fff;font-size:1.9em}
+  .meta{font-size:.82em;opacity:.85;margin-top:8px;line-height:1.6}
+
+  /* ========== SECTION ========== */
+  .section{background:#fff;margin:18px 0;padding:22px 26px;border-radius:12px;border:1px solid #E8ECF0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .section-title-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:10px 18px;border-radius:8px;font-size:1.05em;font-weight:700;margin:-22px -26px 18px;letter-spacing:.03em}
+  .sub-section{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:16px 20px;margin:14px 0}
+  .sub-section h3{margin-top:0;color:#1A3A6B}
+
+  /* ========== SPECIAL BOXES ========== */
+  .highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:18px 22px;margin:14px 0}
+  .highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+  .trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:18px 22px;margin:14px 0}
+  .trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+  .compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:18px 22px;margin:14px 0}
+  .compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+  .analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:14px 18px;margin:12px 0;font-size:.93em}
+  .calc-box{background:#F8F4FF;border:1px solid #D6BCFA;border-radius:10px;padding:18px 22px;margin:14px 0}
+  .calc-box h3{color:#5A2D82;margin-top:0}
+  .law-ref-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:6px;padding:12px 16px;margin:10px 0;font-size:.9em}
+  .warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #ECC94B;border-radius:6px;padding:12px 16px;margin:10px 0;font-size:.9em}
+  .ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:6px;padding:12px 16px;margin:10px 0;font-size:.9em}
+
+  /* ========== TABLE ========== */
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9em}
+  th{background:#EEF2FF;color:#1A3A6B;padding:9px 12px;text-align:left;font-weight:600;font-size:.88em}
+  td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top}
+  tr:hover td{background:#FAFBFF}
+  .tbl-ok td:first-child{color:#276749;font-weight:600}
+  .tbl-no td:first-child{color:#C53030;font-weight:600}
+  .diff{color:#C53030;font-weight:600}
+  .ok-text{color:#276749;font-weight:600}
+
+  /* ========== BADGES ========== */
+  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.8em;font-weight:600;margin:1px}
+  .badge-kyul{background:#FFF3CD;color:#856404;border:1px solid #FFEAA7}
+  .badge-shin{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}
+  .badge-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}
+  .badge-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}
+  .badge-purple{background:#EDE9FE;color:#5B21B6;border:1px solid #DDD6FE}
+  .badge-gray{background:#F3F4F6;color:#374151;border:1px solid #D1D5DB}
+  .star{color:#D97706;font-size:.85em}
+
+  /* ========== FLOWCHART ========== */
+  .flowchart{display:flex;flex-direction:column;align-items:center;gap:4px;margin:16px 0}
+  .flow-node{background:#1A3A6B;color:#fff;padding:8px 24px;border-radius:8px;font-size:.88em;font-weight:600;text-align:center;min-width:200px}
+  .flow-node.start{background:#276749}
+  .flow-node.end-ok{background:#2C7A7B}
+  .flow-node.end-no{background:#9B2335}
+  .flow-diamond{background:#744210;color:#fff;padding:8px 20px;border-radius:50px;font-size:.86em;font-weight:600;text-align:center}
+  .flow-arrow{font-size:1.3em;color:#718096;line-height:1}
+  .flow-branch{display:flex;gap:30px;align-items:flex-start;justify-content:center;width:100%}
+  .flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .branch-label{font-size:.8em;color:#718096;font-weight:600}
+
+  /* ========== CALC STEPS ========== */
+  .calc-step{display:flex;align-items:baseline;gap:10px;margin:6px 0;padding:6px 12px;background:#fff;border-radius:6px;border:1px solid #E0D6FF}
+  .step-num{background:#5A2D82;color:#fff;padding:2px 8px;border-radius:10px;font-size:.8em;font-weight:700;flex-shrink:0}
+  .step-label{font-weight:600;color:#2D3748;flex:1}
+  .step-formula{color:#5A2D82;font-family:monospace;font-size:.92em}
+  .step-ref{color:#718096;font-size:.8em;flex-shrink:0}
+  .calc-result{background:#5A2D82;color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;margin-top:10px;text-align:center}
+
+  /* ========== TRAP ITEMS ========== */
+  .trap-item{display:flex;gap:10px;align-items:flex-start;margin:10px 0;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+  .trap-icon{font-size:1.2em;flex-shrink:0;margin-top:1px}
+
+  /* ========== MISC ========== */
+  .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  .indent{padding-left:18px;border-left:3px solid #CBD5E0;margin:8px 0}
+  .footnote{color:#718096;font-size:.83em;margin-top:8px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+  @media(max-width:640px){.two-col{grid-template-columns:1fr}}
+  .col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:14px}
+  .col-box h4{margin-top:0;color:#1A3A6B}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <div class="subject-badge">법인세법</div>
+  <h1>기업구조개편거래</h1>
+  <div class="meta">
+    세무사 1차 시험 예습자료 &nbsp;|&nbsp;
+    근거: 법 §44~§47의2, §50, §79~§84 / 령 §80~§92 &nbsp;|&nbsp;
+    법령 기준: 2026.01.02 시행
+  </div>
+</div>
+
+<!-- ===== 최빈출 포인트 ===== -->
+<div class="highlight-box">
+  <h2>🔥 최빈출 포인트</h2>
+  <ol>
+    <li><strong>적격합병 4대 요건</strong> <span class="star">★★★</span> — 사업 1년↑·주식대가 80%↑·사업계속·근로자 80%↑ (법§44②)</li>
+    <li><strong>피합병법인 양도손익</strong> <span class="star">★★★</span> — 비적격: 시가 기준 익금/손금 / 적격: 양도손익 없음(장부가액) (법§44①②)</li>
+    <li><strong>합병법인 합병매수손익</strong> <span class="star">★★★</span> — 양도가액 &lt; 순자산시가 → 합병매수차익(익금) / 초과 → 영업권(손금) 5년 균등 (법§44의2②③)</li>
+    <li><strong>인적분할 vs 물적분할</strong> <span class="star">★★★</span> — 인적분할: 분할법인 주주에게 주식 배정 / 물적분할: 분할법인이 주식 취득 (법§46·§47)</li>
+    <li><strong>적격분할 사업연속 요건</strong> <span class="star">★★</span> — 분할법인 5년↑ (합병과 달리 5년!) / 분할합병 상대방 1년↑ (법§46②1)</li>
+    <li><strong>청산소득 과세표준</strong> <span class="star">★★</span> — 잔여재산가액 − 자기자본총액 (법§79①)</li>
+    <li><strong>적격현물출자 요건</strong> <span class="star">★★</span> — 5년↑ 사업 + 사업계속 + 비특수관계 공동출자 + 80%↑ 주식 보유 (법§47의2①)</li>
+    <li><strong>자산교환 손금산입 특례</strong> <span class="star">★</span> — 동종 사업용자산, 2년↑ 사용, 비특수관계 법인 간 (법§50①)</li>
+  </ol>
+</div>
+
+
+<!-- ===== 1. 회사의 합병 ===== -->
+<div class="section">
+  <div class="section-title-bar">1. 회사의 합병</div>
+
+  <!-- 1-1 의의 -->
+  <div class="sub-section">
+    <h3>1-1. 합병의 의의</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 두 회사가 하나로 합쳐지는 것. A회사가 B회사를 흡수하면 B회사는 사라지고 A회사만 남아요. 세법에서는 이를 "B가 자산을 A에게 양도한 것"으로 봅니다.
+    </div>
+    <div class="law-ref-box">
+      <strong>법§44①</strong> — 피합병법인이 합병으로 해산하는 경우 → 피합병법인이 자산을 합병법인에 <strong>양도</strong>한 것으로 본다
+    </div>
+  </div>
+
+  <!-- 1-2 유형 -->
+  <div class="sub-section">
+    <h3>1-2. 합병의 유형</h3>
+    <table>
+      <thead><tr><th>유형</th><th>내용</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td><strong>흡수합병</strong></td><td>피합병법인 → 합병법인에 흡수 (피합병법인 소멸)</td><td>가장 일반적</td></tr>
+        <tr><td><strong>신설합병</strong></td><td>합병 당사자 모두 소멸 → 신설법인 설립</td><td>드문 경우</td></tr>
+        <tr><td><strong>모자간 합병</strong></td><td>100% 지배하는 완전 모자회사 간 합병</td><td>§44③ 적격 의제</td></tr>
+        <tr><td><strong>삼각합병</strong></td><td>합병대가로 합병법인의 <strong>모회사</strong> 주식을 지급</td><td>§44②2호 요건 적용</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1-3 적격합병 요건 -->
+  <div class="sub-section">
+    <h3>1-3. 적격합병의 요건 (법§44②) <span class="badge badge-green">4가지 모두 충족</span></h3>
+    <table>
+      <thead><tr><th>요건</th><th>세부 내용</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>① 사업 계속성</strong></td>
+          <td>합병등기일 현재 <strong>1년 이상</strong> 사업을 계속하던 내국법인 간 합병</td>
+          <td>합병만을 목적으로 설립된 법인은 예외 인정</td>
+        </tr>
+        <tr>
+          <td><strong>② 주식 대가 비율</strong></td>
+          <td>합병대가 중 <strong>합병법인 주식 80% 이상</strong><br>또는 합병법인 모회사 주식 80% 이상</td>
+          <td>삼각합병 허용 / 대통령령으로 정하는 주주가 연도말까지 보유</td>
+        </tr>
+        <tr>
+          <td><strong>③ 사업 계속</strong></td>
+          <td>합병법인이 합병등기일 속하는 사업연도 종료일까지 <strong>피합병법인 사업 계속</strong></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><strong>④ 근로자 승계</strong></td>
+          <td>합병등기일 1개월 전 피합병법인 근로자 중 <strong>80% 이상 승계</strong> + 연도말까지 유지</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      ⚠ <strong>적격합병 특례 (법§44③)</strong>: 아래 경우 4대 요건 없이 적격합병으로 봄<br>
+      ① 내국법인이 100% 소유하는 법인을 합병하거나 그 법인에 흡수되는 경우 (완전 모자간)<br>
+      ② 동일 내국법인이 100% 소유하는 서로 다른 법인 간의 합병 (형제회사간)
+    </div>
+
+    <!-- 적격합병 판단 플로우 -->
+    <h4>▶ 적격합병 판단 흐름</h4>
+    <div class="flowchart">
+      <div class="flow-node start">합병 발생</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-diamond">완전 모자간 / 형제간 합병? (§44③)</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">Yes</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node end-ok">적격합병 의제<br>(요건 불필요)</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">No</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-diamond">4대 요건 모두 충족?</div>
+          <div class="flow-branch">
+            <div class="flow-branch-item">
+              <div class="branch-label">Yes</div>
+              <div class="flow-node end-ok">적격합병<br>(과세이연)</div>
+            </div>
+            <div class="flow-branch-item">
+              <div class="branch-label">No</div>
+              <div class="flow-node end-no">비적격합병<br>(즉시 과세)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1-4 합병의 과세 -->
+  <div class="sub-section">
+    <h3>1-4. 합병의 과세 — 적격 vs 비적격</h3>
+
+    <h4>① 피합병법인 (양도법인) 과세</h4>
+    <table>
+      <thead><tr><th>구분</th><th>비적격합병</th><th>적격합병</th></tr></thead>
+      <tbody>
+        <tr><td>양도가액</td><td class="diff">시가 (합병등기일 현재)</td><td class="ok-text">순자산 장부가액</td></tr>
+        <tr><td>양도손익</td><td class="diff">익금/손금 산입<br>(시가 − 장부 순자산)</td><td class="ok-text">양도손익 없는 것으로 함<br>(과세이연)</td></tr>
+        <tr><td>처리 사업연도</td><td colspan="2">합병등기일이 속하는 사업연도</td></tr>
+        <tr><td>법조항</td><td colspan="2">법§44①②</td></tr>
+      </tbody>
+    </table>
+
+    <h4>② 합병법인 (취득법인) 과세 (법§44의2)</h4>
+    <table>
+      <thead><tr><th>구분</th><th>비적격합병 (§44의2)</th><th>적격합병 (§44의3)</th></tr></thead>
+      <tbody>
+        <tr><td>자산 취득가액</td><td class="diff">시가</td><td class="ok-text">장부가액 (과세이연)</td></tr>
+        <tr><td>합병매수차익<br>(양도가액 &lt; 순자산시가)</td><td>합병등기일부터 <strong>5년간 균등 익금산입</strong></td><td>해당 없음</td></tr>
+        <tr><td>합병매수차손<br>(양도가액 &gt; 순자산시가)</td><td>합병등기일부터 <strong>5년간 균등 손금산입</strong><br>(영업권, 대통령령 요건)</td><td>해당 없음</td></tr>
+        <tr><td>결손금 승계</td><td><span class="diff">불가</span></td><td><span class="ok-text">승계 가능</span></td></tr>
+        <tr><td>세무조정·자산·부채 승계</td><td><span class="diff">일부만 가능</span></td><td><span class="ok-text">전면 승계</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="law-ref-box">
+      <strong>합병매수차익/차손 처리 (법§44의2②③)</strong><br>
+      차익: 양도가액 &lt; 순자산시가 → 세무조정계산서 계상 후 <strong>5년 균등 익금산입</strong><br>
+      차손: 양도가액 &gt; 순자산시가 → 세무조정계산서 계상 후 <strong>5년 균등 손금산입</strong> (대통령령 요건 충족 시)
+    </div>
+
+    <h4>③ 적격합병 사후 관리 (법§44의3③) — 3년 내 위반 시 추징</h4>
+    <table>
+      <thead><tr><th>사후 위반 사유</th><th>추징 내용</th></tr></thead>
+      <tbody>
+        <tr><td>승계 사업 <strong>폐지</strong></td><td rowspan="3">시가·장부가액 차액 익금산입 + 승계 결손금 공제분 환수 + 감면·세액공제 추가납부</td></tr>
+        <tr><td>지배주주 등이 받은 <strong>주식 처분</strong></td></tr>
+        <tr><td>근로자 수 <strong>80% 미만</strong> 하락</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 계산 예제 -->
+    <div class="calc-box">
+      <h3>📐 계산 예제: 비적격합병 시 피합병법인 양도손익</h3>
+      <div class="law-ref-box" style="margin-bottom:10px">
+        피합병법인 자산 시가: 10억원 / 부채: 3억원 / 자산 장부가액: 7억원 / 부채 장부가액: 3억원<br>
+        합병법인이 지급한 합병대가(주식): 8억원
+      </div>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">양도가액 (합병대가)</span>
+        <span class="step-formula">= 8억원</span>
+        <span class="step-ref">(법§44①1호)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">순자산 장부가액</span>
+        <span class="step-formula">= 7억 − 3억 = 4억원</span>
+        <span class="step-ref">(법§44①2호)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">합병양도차익 (익금)</span>
+        <span class="step-formula">= 8억 − 4억 = 4억원</span>
+        <span class="step-ref">합병등기일 속하는 사업연도</span>
+      </div>
+      <div class="calc-result">비적격합병 → 양도차익 4억원 즉시 익금산입</div>
+
+      <h3 style="margin-top:16px">📐 합병법인 합병매수차익 계산 (비적격)</h3>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">순자산시가</span>
+        <span class="step-formula">= 10억 − 3억 = 7억원</span>
+        <span class="step-ref">(법§44의2)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">양도가액(합병대가)</span>
+        <span class="step-formula">= 8억원</span>
+        <span class="step-ref"></span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">합병매수차익 (양도가액 &gt; 순자산시가)</span>
+        <span class="step-formula">= 8억 − 7억 = 1억원 → 5년 균등 손금산입</span>
+        <span class="step-ref">(법§44의2③)</span>
+      </div>
+      <div class="calc-result">합병매수차익 1억원 → 매년 2,000만원씩 5년간 손금산입</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 2. 회사의 분할 ===== -->
+<div class="section">
+  <div class="section-title-bar">2. 회사의 분할</div>
+
+  <!-- 2-1 의의 -->
+  <div class="sub-section">
+    <h3>2-1. 분할의 의의</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 한 회사를 두 개로 쪼개는 것. 빵 가게와 케이크 가게를 함께 운영하던 회사를 각각 독립된 회사로 분리하는 것이에요.
+    </div>
+    <p>내국법인이 사업부문을 분리하여 새로운 법인을 설립하거나 다른 법인에 합병시키는 것. 자산·부채를 포괄 승계.</p>
+  </div>
+
+  <!-- 2-2 유형 -->
+  <div class="sub-section">
+    <h3>2-2. 분할의 유형</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>🟦 인적분할 (§46)</h4>
+        <ul>
+          <li>분할신설법인 주식이 <strong>분할법인 주주</strong>에게 직접 배정</li>
+          <li>분할법인이 자산을 분할신설법인에 양도한 것으로 봄</li>
+          <li>분할법인이 해산하는 경우 포함</li>
+          <li><strong>분할합병</strong>: 분할 후 다른 법인에 합병</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h4>🟧 물적분할 (§47)</h4>
+        <ul>
+          <li>분할신설법인 주식이 <strong>분할법인</strong> 자신에게 배정</li>
+          <li>분할법인은 분할신설법인의 주주가 됨</li>
+          <li>분할법인이 해산하지 않음</li>
+          <li>현물출자와 유사한 구조</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>▶ 인적분할 vs 물적분할 비교</h4>
+    <table>
+      <thead><tr><th>구분</th><th>인적분할</th><th>물적분할</th></tr></thead>
+      <tbody>
+        <tr><td>주식 배정 대상</td><td>분할법인의 <strong>주주</strong></td><td class="diff">분할법인 <strong>자신</strong></td></tr>
+        <tr><td>과세 근거</td><td>법§46 (인적분할 양도손익)</td><td class="diff">법§47 (물적분할 특례)</td></tr>
+        <tr><td>적격 요건 중 주식 대가</td><td>분할대가 <strong>전액</strong>이 주식</td><td class="diff">분할대가 <strong>전액</strong>이 주식등 (더 엄격)</td></tr>
+        <tr><td>사업 연속 요건</td><td>분할법인 <strong>5년↑</strong></td><td>분할법인 <strong>5년↑</strong> (동일)</td></tr>
+        <tr><td>적격 시 양도손익</td><td>없는 것으로 함</td><td class="diff">차익 상당액 <strong>손금산입</strong> (압축기장)</td></tr>
+        <tr><td>사후관리 기간</td><td>3년</td><td>3년</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2-3 분할의 과세 -->
+  <div class="sub-section">
+    <h3>2-3. 분할의 과세</h3>
+
+    <h4>① 인적분할 과세 (법§46)</h4>
+    <table>
+      <thead><tr><th>구분</th><th>비적격분할</th><th>적격분할</th></tr></thead>
+      <tbody>
+        <tr><td>양도가액</td><td class="diff">분할신설법인등으로부터 받은 가액(시가)</td><td class="ok-text">순자산 장부가액</td></tr>
+        <tr><td>양도손익</td><td class="diff">익금/손금 산입</td><td class="ok-text">양도손익 없음 (과세이연)</td></tr>
+        <tr><td>적격요건 핵심</td><td colspan="2">① 5년↑ 사업 + 독립사업부문 + 포괄승계 + 분할법인만의 출자<br>② 주식 대가 전액 (분할합병: 80%↑) + 주주 보유<br>③ 사업 계속 ④ 근로자 80%↑</td></tr>
+        <tr><td>부동산임대업 주업 분할</td><td colspan="2" class="diff">적격분할 불인정 (법§46③)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      ⚠ <strong>합병과 분할의 사업 연속 요건 비교 주의!</strong><br>
+      합병: 피합병법인이 합병등기일 현재 <strong>1년↑</strong> 사업 계속<br>
+      분할: 분할법인이 분할등기일 현재 <strong>5년↑</strong> 사업 계속 (합병보다 더 길다!)
+    </div>
+
+    <h4>② 물적분할 과세 (법§47) — 압축기장 구조</h4>
+    <div class="law-ref-box">
+      적격물적분할 시: 양도차익 상당액을 <strong>손금산입(압축기장충당금)</strong> 처리<br>
+      → 이후 분할법인이 주식 처분 또는 분할신설법인이 승계 자산 처분 시 <strong>익금산입</strong>
+    </div>
+    <table>
+      <thead><tr><th>물적분할 사후관리 (법§47②③)</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>① 주식 처분 시</td><td>처분 비율에 따라 익금산입</td></tr>
+        <tr><td>② 분할신설법인의 승계자산 처분 시</td><td>자산 처분비율에 따라 익금산입 (통지 의무: 1개월 내)</td></tr>
+        <tr><td>③ 3년 내 위반 (사업폐지·50% 미만 보유·근로자 80% 미만)</td><td>잔여 손금산입 금액 전부 익금산입</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ===== 3. 현물출자와 자산교환 ===== -->
+<div class="section">
+  <div class="section-title-bar">3. 현물출자와 자산교환</div>
+
+  <!-- 3-1 현물출자 원칙 -->
+  <div class="sub-section">
+    <h3>3-1. 현물출자의 과세 (원칙)</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 현금 대신 공장·땅·기계를 가지고 회사에 출자하는 것. 자산을 '판다'고 보기 때문에 양도차익이 발생하면 세금을 냅니다.
+    </div>
+    <p><strong>원칙:</strong> 현물출자로 인한 자산의 양도차익 → 당해 사업연도 익금산입 (즉시 과세)</p>
+    <div class="law-ref-box">
+      <strong>현물출자 시 세무처리</strong>: 출자법인이 자산을 시가로 양도한 것으로 보아 양도차익 발생 시 익금산입
+    </div>
+  </div>
+
+  <!-- 3-2 적격현물출자 -->
+  <div class="sub-section">
+    <h3>3-2. 적격현물출자의 요건과 특례 (법§47의2)</h3>
+    <table>
+      <thead><tr><th>적격현물출자 요건</th><th>세부 내용</th></tr></thead>
+      <tbody>
+        <tr><td><strong>① 출자법인 사업 연속</strong></td><td>출자법인이 현물출자일 현재 <strong>5년 이상</strong> 사업 계속</td></tr>
+        <tr><td><strong>② 피출자법인 사업 계속</strong></td><td>현물출자일 속하는 사업연도 종료일까지 <strong>출자 자산으로 사업 계속</strong></td></tr>
+        <tr><td><strong>③ 비특수관계 공동출자</strong></td><td>다른 내국인·외국인과 공동 출자 시 → 공동출자자가 출자법인의 <strong>특수관계인이 아닐 것</strong></td></tr>
+        <tr><td><strong>④ 주식 보유 비율</strong></td><td>출자법인등이 현물출자일 다음날 현재 피출자법인 주식의 <strong>80% 이상</strong> 보유 + 연도말까지 유지</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ok-box">
+      ✅ <strong>적격현물출자 특례:</strong> 양도차익 상당액을 <strong>손금산입(압축기장)</strong> → 과세이연<br>
+      물적분할과 동일한 구조 (주식·자산 처분 시 익금산입, 3년 내 위반 시 추징)
+    </div>
+
+    <h4>▶ 합병·분할·현물출자·자산교환 적격요건 비교</h4>
+    <table>
+      <thead><tr><th>구분</th><th>합병</th><th>분할(인적)</th><th>현물출자</th><th>자산교환</th></tr></thead>
+      <tbody>
+        <tr><td>사업 연속 요건</td><td>1년↑</td><td class="diff">5년↑</td><td class="diff">5년↑</td><td>2년↑ 사용</td></tr>
+        <tr><td>주식 대가 비율</td><td>80%↑</td><td>전액(분할합병 80%)</td><td>80%↑ 보유</td><td>해당 없음</td></tr>
+        <tr><td>특수관계 요건</td><td>없음</td><td>없음</td><td>비특수관계(공동출자시)</td><td>비특수관계</td></tr>
+        <tr><td>근로자 승계</td><td>80%↑</td><td>80%↑</td><td>없음</td><td>없음</td></tr>
+        <tr><td>적격 시 처리</td><td>과세이연(장부가액)</td><td>과세이연(장부가액)</td><td>압축기장(손금)</td><td>압축기장(손금)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3-3 자산교환 -->
+  <div class="sub-section">
+    <h3>3-3. 자산교환의 과세 (법§50)</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> A공장이 B공장과 "내 창고를 줄게, 네 트럭을 줘"라고 서로 같은 종류의 사업용 자산을 맞바꾸는 것.
+    </div>
+
+    <div class="two-col">
+      <div class="col-box">
+        <h4>원칙 (시가 과세)</h4>
+        <p>자산 교환 시 시가로 양도한 것으로 보아 양도차익 익금산입</p>
+      </div>
+      <div class="col-box">
+        <h4>특례 (법§50 — 압축기장)</h4>
+        <p>요건 충족 시 양도차익 상당액 <strong>손금산입</strong></p>
+      </div>
+    </div>
+
+    <h4>▶ 자산교환 특례 요건 (법§50①)</h4>
+    <table>
+      <thead><tr><th>요건</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>① 대상 법인</td><td>대통령령으로 정하는 사업을 하는 내국법인</td></tr>
+        <tr><td>② 2년 이상 사용</td><td>교환 전 <strong>2년 이상</strong> 자신의 사업에 <strong>직접 사용</strong>하던 자산</td></tr>
+        <tr><td>③ 동종 자산</td><td>교환 취득 자산이 상대방이 <strong>2년 이상 직접 사용</strong>하던 <strong>동일한 종류</strong>의 사업용자산</td></tr>
+        <tr><td>④ 비특수관계</td><td><strong>특수관계인 외</strong>의 다른 내국법인과 교환</td></tr>
+        <tr><td>⑤ 교환 당기 사용</td><td>취득 자산을 교환일 속하는 사업연도 종료일까지 자신의 사업에 사용</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ===== 4. 법인의 해산 및 특례 ===== -->
+<div class="section">
+  <div class="section-title-bar">4. 법인의 해산 및 각종 과세특례</div>
+
+  <!-- 4-1 해산 의의 -->
+  <div class="sub-section">
+    <h3>4-1. 해산의 의의</h3>
+    <p>법인이 소멸하는 절차. 합병·분할에 의한 해산과 자발적 해산(청산)으로 구분.</p>
+    <div class="law-ref-box">
+      <strong>법§79①</strong>: 합병·분할에 의한 해산은 별도 규정(§44, §46) 적용 / 그 외 해산 → 청산소득세 과세
+    </div>
+  </div>
+
+  <!-- 4-2 청산소득 -->
+  <div class="sub-section">
+    <h3>4-2. 청산소득에 대한 법인세</h3>
+
+    <h4>① 과세표준 계산 (법§79①)</h4>
+    <div class="calc-box">
+      <h3>📐 청산소득 과세표준 계산</h3>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">잔여재산의 가액</span>
+        <span class="step-formula">= 청산 완료 시 주주에게 분배할 재산 시가</span>
+        <span class="step-ref">(법§79①)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">자기자본의 총액 차감</span>
+        <span class="step-formula">= 해산등기일 현재 자본금·출자금 + 잉여금 합계</span>
+        <span class="step-ref">(법§79①)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">이월결손금 상계</span>
+        <span class="step-formula">= 자기자본총액 중 잉여금 한도로 상계 (법§79④)</span>
+        <span class="step-ref"></span>
+      </div>
+      <div class="calc-result">청산소득금액 = 잔여재산가액 − 자기자본총액 (이월결손금 상계 후)</div>
+    </div>
+
+    <div class="warn-box">
+      ⚠ <strong>해산 전 2년 이내 잉여금 자본전입 시 (법§79⑤)</strong>: 해당 금액을 자본전입하지 않은 것으로 보아 청산소득 계산 → 세금 회피 방지 규정
+    </div>
+
+    <h4>② 세율 적용 및 신고납부 (법§82, §83)</h4>
+    <table>
+      <thead><tr><th>구분</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>세율</td><td>각 사업연도 소득과 동일한 <strong>기본세율</strong> 적용</td></tr>
+        <tr><td>중간신고</td><td>잔여재산가액 확정 전 분배 시 → 분배일부터 <strong>1개월 이내</strong> 신고납부</td></tr>
+        <tr><td>확정신고</td><td>잔여재산가액 확정일이 속하는 달의 말일부터 <strong>3개월 이내</strong></td></tr>
+        <tr><td>결정·경정</td><td>세무서장이 결정·경정 가능</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4-3 조세조정 승계 -->
+  <div class="sub-section">
+    <h3>4-3. 합병·분할로 인한 조세조정 승계 (원칙과 특례)</h3>
+    <table>
+      <thead><tr><th>구분</th><th>원칙 (비적격)</th><th>특례 (적격)</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>세무조정 항목 승계</td>
+          <td class="diff">일부만 승계 가능<br>(대통령령으로 정하는 것만)</td>
+          <td class="ok-text">전면 승계<br>(법§44의3②, §46의3②)</td>
+        </tr>
+        <tr>
+          <td>이월결손금 승계</td>
+          <td class="diff">승계 불가</td>
+          <td class="ok-text">승계 가능<br>(단, 3년 내 사후관리)</td>
+        </tr>
+        <tr>
+          <td>감면·세액공제 승계</td>
+          <td class="diff">승계 불가</td>
+          <td class="ok-text">승계 가능</td>
+        </tr>
+        <tr>
+          <td>이월결손금 공제 한도</td>
+          <td>—</td>
+          <td class="ok-text">승계받은 사업에서 발생한 소득금액 한도 내</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4-4 포합주식 -->
+  <div class="sub-section">
+    <h3>4-4. 포합주식이 있는 경우 과세특례 (령§80의2)</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 합병법인이 합병 전에 이미 피합병법인의 주식을 갖고 있는 경우. 이 주식(포합주식)을 처리하는 방법이 문제입니다.
+    </div>
+    <div class="law-ref-box">
+      <strong>포합주식</strong>: 합병법인이 합병 전에 이미 보유하고 있는 피합병법인의 주식<br>
+      합병 시 합병법인은 자기 자신에게 합병신주를 배정할 수 없으므로 포합주식 처리가 필요
+    </div>
+    <p>포합주식에 해당하는 피합병법인 자산의 양도가액 계산 시 → 합병법인이 지급한 합병대가 외에 포합주식의 장부가액 등을 고려하여 계산</p>
+  </div>
+
+  <!-- 4-5 완전모자회사간 합병 -->
+  <div class="sub-section">
+    <h3>4-5. 완전(모)자회사간 합병의 과세특례</h3>
+    <div class="ok-box">
+      ✅ <strong>법§44③ — 완전 모자간/형제간 합병 → 적격합병 의제</strong><br>
+      ① 내국법인이 <strong>100% 소유</strong>하는 다른 법인을 합병하거나 그 법인에 흡수되는 경우<br>
+      ② 동일한 내국법인이 <strong>100%</strong> 소유하는 서로 다른 법인 간의 합병<br>
+      → 4대 요건(사업1년·주식80%·사업계속·근로자80%) 없이도 적격합병으로 처리
+    </div>
+    <div class="warn-box">
+      ⚠ 완전 모자간 합병으로 인한 적격합병 특례 적용 시 → 사후관리 규정(3년 내 추징) 적용 <strong>제외</strong> (법§44의3③ 괄호)
+    </div>
+  </div>
+
+  <!-- 4-6 적격합병 상각범위액 특례 -->
+  <div class="sub-section">
+    <h3>4-6. 적격합병에 따른 자산 상각범위액 산정 특례</h3>
+    <div class="law-ref-box">
+      적격합병으로 승계받은 자산의 감가상각:<br>
+      취득가액 = 장부가액으로 승계받지만, <strong>시가와의 차액(차이금액)을 별도로 계상</strong><br>
+      → 이 차이금액을 <strong>감가상각방법과 내용연수에 따라 상각</strong> (법§44의3①)
+    </div>
+    <table>
+      <thead><tr><th>구분</th><th>상각 기준</th></tr></thead>
+      <tbody>
+        <tr><td>장부가액 부분</td><td>피합병법인이 적용하던 방법·내용연수 계속 적용 (승계)</td></tr>
+        <tr><td>시가·장부가액 차액 부분</td><td>별도 계상 후 합병법인의 방법·내용연수로 상각</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4-7 구분경리 -->
+  <div class="sub-section">
+    <h3>4-7. 합병·분할합병의 경우 구분경리 (법§113)</h3>
+    <div class="law-ref-box">
+      <strong>법§113</strong> — 합병·분할합병 후 승계받은 사업과 자신의 사업을 <strong>구분하여 경리</strong>해야 함
+    </div>
+    <table>
+      <thead><tr><th>구분경리 목적</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>이월결손금 공제 한도 산정</td><td>승계받은 결손금 → 승계받은 사업에서 발생한 소득 한도 내 공제</td></tr>
+        <tr><td>감면·세액공제 한도 산정</td><td>승계받은 감면·공제 → 승계 사업 소득(세액) 한도 내 적용</td></tr>
+        <tr><td>적용 기간</td><td>합병·분할등기일 속하는 사업연도부터 <strong>5년간</strong> 구분경리 (대통령령)</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      ⚠ 구분경리 의무를 이행하지 않으면 이월결손금 공제 및 감면 배제 등 불이익 발생
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 비교표 ===== -->
+<div class="compare-box">
+  <h2>⚖️ 기업구조개편 거래 유형별 종합 비교</h2>
+  <table>
+    <thead>
+      <tr><th>구분</th><th>합병</th><th>인적분할</th><th>물적분할</th><th>현물출자</th><th>자산교환</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>근거</strong></td>
+        <td>법§44~44의3</td>
+        <td>법§46</td>
+        <td>법§47</td>
+        <td>법§47의2</td>
+        <td>법§50</td>
+      </tr>
+      <tr>
+        <td><strong>사업연속</strong></td>
+        <td>1년↑</td>
+        <td class="diff">5년↑</td>
+        <td class="diff">5년↑</td>
+        <td class="diff">5년↑</td>
+        <td>2년↑ 사용</td>
+      </tr>
+      <tr>
+        <td><strong>주식 대가</strong></td>
+        <td>80%↑</td>
+        <td>전액(합병 80%)</td>
+        <td>전액</td>
+        <td>80%↑ 보유</td>
+        <td>해당 없음</td>
+      </tr>
+      <tr>
+        <td><strong>근로자 승계</strong></td>
+        <td>80%↑</td>
+        <td>80%↑</td>
+        <td>80%↑</td>
+        <td>없음</td>
+        <td>없음</td>
+      </tr>
+      <tr>
+        <td><strong>적격 시 처리</strong></td>
+        <td>과세이연</td>
+        <td>과세이연</td>
+        <td class="diff">손금산입</td>
+        <td class="diff">손금산입</td>
+        <td class="diff">손금산입</td>
+      </tr>
+      <tr>
+        <td><strong>사후관리</strong></td>
+        <td>3년</td>
+        <td>3년</td>
+        <td>3년</td>
+        <td>3년</td>
+        <td>별도 없음</td>
+      </tr>
+      <tr>
+        <td><strong>특수관계 제한</strong></td>
+        <td>없음</td>
+        <td>없음</td>
+        <td>없음</td>
+        <td>공동출자 시</td>
+        <td class="diff">비특수관계 필수</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ===== 오답 함정 ===== -->
+<div class="trap-box">
+  <h2>⚠️ 오답 함정 — 시험에서 자주 틀리는 포인트</h2>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"합병과 분할 모두 사업 계속 요건이 1년 이상이다"</strong>
+      <p>→ 정답: 합병은 <strong>1년↑</strong>, 분할은 <strong>5년↑</strong>. 분할이 훨씬 더 엄격! (법§44②1, §46②1)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"비적격합병 시 합병법인은 자산을 장부가액으로 취득한다"</strong>
+      <p>→ 정답: 비적격합병 시 합병법인은 <strong>시가</strong>로 취득. 장부가액 취득은 적격합병의 특례. (법§44의2①, §44의3①)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"물적분할이 적격요건을 갖추면 양도손익이 없는 것으로 한다"</strong>
+      <p>→ 정답: 물적분할 적격 시 양도차익 상당액을 <strong>손금산입(압축기장)</strong>. 인적분할만 '양도손익 없음' 처리. (법§47①)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"완전 모자간 합병도 주식대가 80% 요건을 충족해야 적격합병이다"</strong>
+      <p>→ 정답: 완전 모자간/형제간 합병은 <strong>4대 요건 없이도</strong> 적격합병으로 의제 (법§44③)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"청산소득 과세표준 = 잔여재산가액 − 자본금"</strong>
+      <p>→ 정답: 자본금뿐만 아니라 <strong>잉여금까지 포함한 자기자본 총액</strong>을 차감. 또한 이월결손금은 <strong>잉여금 한도</strong>로 상계. (법§79①④)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"현물출자 적격요건에 근로자 승계 요건이 있다"</strong>
+      <p>→ 정답: 현물출자에는 근로자 승계 요건 <strong>없음</strong>. 합병·분할에만 80% 근로자 승계 요건 있음. (법§47의2①)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"자산교환 특례는 특수관계인 간에도 적용 가능하다"</strong>
+      <p>→ 정답: 자산교환 특례는 <strong>특수관계인 외</strong>의 다른 내국법인과의 교환에만 적용. (법§50①)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"합병매수차익(양도가액 &lt; 순자산시가)은 합병 당기에 전액 익금산입"</strong>
+      <p>→ 정답: 합병등기일부터 <strong>5년간 균등</strong> 익금산입 (세무조정계산서 계상 후). (법§44의2②)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"부동산임대업을 주업으로 하는 경우에도 적격분할이 가능하다"</strong>
+      <p>→ 정답: 부동산임대업 주업 사업부문 분할은 <strong>적격분할 불인정</strong> (법§46③)</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== 세무조정 요약 ===== -->
+<div class="section">
+  <h2>📋 기업구조개편 세무조정 요약표</h2>
+  <table>
+    <thead>
+      <tr><th>거래 유형</th><th>조정 유형</th><th>비적격 시 처리</th><th>적격 시 처리</th><th>소득처분</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>피합병법인 양도손익</td>
+        <td><span class="badge badge-shin">신고조정</span></td>
+        <td>시가 − 장부순자산 익금/손금</td>
+        <td>양도손익 없음</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>합병법인 합병매수차익</td>
+        <td><span class="badge badge-shin">신고조정</span></td>
+        <td>5년 균등 익금산입</td>
+        <td>해당 없음</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>합병법인 합병매수차손</td>
+        <td><span class="badge badge-shin">신고조정</span></td>
+        <td>5년 균등 손금산입</td>
+        <td>해당 없음</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>분할법인 인적분할 양도손익</td>
+        <td><span class="badge badge-shin">신고조정</span></td>
+        <td>시가 기준 익금/손금</td>
+        <td>양도손익 없음</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>물적분할 양도차익 (적격)</td>
+        <td><span class="badge badge-kyul">결산조정</span></td>
+        <td>익금산입</td>
+        <td>손금산입 (압축기장)</td>
+        <td>△유보</td>
+      </tr>
+      <tr>
+        <td>현물출자 양도차익 (적격)</td>
+        <td><span class="badge badge-kyul">결산조정</span></td>
+        <td>익금산입</td>
+        <td>손금산입 (압축기장)</td>
+        <td>△유보</td>
+      </tr>
+      <tr>
+        <td>자산교환 양도차익 (특례)</td>
+        <td><span class="badge badge-kyul">결산조정</span></td>
+        <td>익금산입</td>
+        <td>손금산입 (압축기장)</td>
+        <td>△유보</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ===== 법조항 근거 색인 ===== -->
+<div class="section" style="background:#F8FAFE">
+  <h2>📚 법조항 근거 색인</h2>
+  <table>
+    <thead><tr><th>조항</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>법 §44①②③</td><td>합병 시 피합병법인 과세 (양도손익, 적격합병 요건, 완전모자간 특례)</td></tr>
+      <tr><td>법 §44의2①②③</td><td>합병 시 합병법인 과세 (시가 승계, 합병매수차익, 합병매수차손)</td></tr>
+      <tr><td>법 §44의3①②③</td><td>적격합병 시 합병법인 특례 (장부가 승계, 세무조정 승계, 사후관리)</td></tr>
+      <tr><td>법 §46①②③</td><td>분할 시 분할법인 과세 (인적분할 양도손익, 적격분할 요건, 부동산임대업 불인정)</td></tr>
+      <tr><td>법 §47①②③</td><td>물적분할 시 분할법인 과세특례 (손금산입, 익금환원, 사후관리)</td></tr>
+      <tr><td>법 §47의2①②③</td><td>현물출자 시 과세특례 (적격요건, 익금환원, 3년 사후관리)</td></tr>
+      <tr><td>법 §50①②③</td><td>자산교환 양도차익 손금산입 (요건, 사업 사용 조건)</td></tr>
+      <tr><td>법 §79①~⑤</td><td>해산에 의한 청산소득 금액 계산</td></tr>
+      <tr><td>법 §82, §83</td><td>청산소득 법인세 신고·납부</td></tr>
+      <tr><td>법 §113</td><td>합병·분할합병의 경우 구분경리 의무</td></tr>
+    </tbody>
+  </table>
+  <p class="footnote" style="margin-top:10px">※ 법령 기준: 법인세법 (2026.01.02 시행), 법인세법 시행령 (2026.02.27 시행)</p>
+</div>
+
+</body>
+</html>
