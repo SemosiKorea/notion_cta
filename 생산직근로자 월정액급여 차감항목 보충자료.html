@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>생산직 근로자 연장·야간·휴일근로 비과세 — 월정액급여 차감 항목 보충자료</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#F7F9FC;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.85;max-width:900px;margin:0 auto;padding:24px}
+h1{color:#0D1B4B;font-size:1.6em}
+h2{color:#1A3A6B;font-size:1.08em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+h3{color:#2C5282;font-size:.97em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.92em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:20px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.75}strong{color:#1A1A2E}
+
+.header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B);color:#fff;padding:26px 32px;border-radius:12px;margin-bottom:18px}
+.header h1{color:#fff}
+.header .meta{font-size:.8em;opacity:.85;margin-top:7px;line-height:1.6}
+.supp-badge{background:rgba(255,255,255,.2);color:#fff;padding:3px 12px;border-radius:16px;font-size:.8em;display:inline-block;margin-bottom:9px}
+
+.section{margin:16px 0;padding:20px 24px;border-radius:12px;border:1px solid #E8ECF0;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:8px 14px;border-radius:7px;font-size:1em;font-weight:700;margin:-20px -24px 14px}
+.sub{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:13px 16px;margin:10px 0}
+.sub h3{margin-top:0;color:#1A3A6B}
+
+.law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:0 7px 7px 0;padding:10px 14px;margin:9px 0;font-size:.87em;line-height:1.8}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:11px 14px;margin:10px 0;font-size:.91em}
+.lr{font-family:monospace;font-size:.81em;font-weight:700;color:#1A3A6B;display:block;margin-bottom:3px}
+
+.tw{overflow-x:auto;border-radius:8px;border:1px solid #E2E8F0;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:.87em}
+th{background:#EEF2FF;color:#1A3A6B;padding:9px 12px;text-align:left;font-weight:600;font-size:.85em;border-bottom:2px solid #C3D4F0}
+td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+tr:hover td{background:#FAFBFF}
+.diff{color:#C53030;font-weight:600}.ok-text{color:#276749;font-weight:600}
+.hl{background:#FFFBEB!important}.center{text-align:center}
+.tc{font-family:monospace;font-size:.83em;color:#1A3A6B}
+
+/* 핵심 구조 다이어그램 */
+.formula-card{background:#0D1B4B;color:#fff;border-radius:10px;padding:18px 22px;margin:14px 0}
+.formula-card h3{color:#93C5FD;margin-top:0;font-size:.95em}
+.formula-line{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:.91em;flex-wrap:wrap}
+.f-item{background:rgba(255,255,255,.12);padding:5px 12px;border-radius:6px;font-weight:600}
+.f-item.base{background:#1D4ED8;color:#fff}
+.f-item.minus{background:#7F1D1D;color:#fff}
+.f-item.result{background:#14532D;color:#fff}
+.f-op{font-size:1.2em;font-weight:700;color:#93C5FD}
+
+/* 포함·차감 카드 */
+.inc-exc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+@media(max-width:600px){.inc-exc-grid{grid-template-columns:1fr}}
+.inc-card{border-radius:9px;overflow:hidden;border:1px solid #9AE6B4}
+.exc-card{border-radius:9px;overflow:hidden;border:1px solid #FED7D7}
+.card-head{padding:9px 14px;font-weight:700;font-size:.89em;color:#fff}
+.card-head.inc{background:#276749}
+.card-head.exc{background:#9B2335}
+.card-body{padding:11px 14px;font-size:.86em;line-height:1.8;background:#fff}
+.card-body li{margin-bottom:5px}
+.card-body li::marker{color:#276749}
+.exc-card .card-body li::marker{color:#9B2335}
+
+/* 차감 항목 상세 */
+.deduct-item{background:#fff;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 8px 8px 0;padding:12px 16px;margin:10px 0}
+.deduct-title{font-weight:700;color:#9B2335;font-size:.93em;margin-bottom:5px}
+.deduct-body{font-size:.88em;color:#374151;line-height:1.75}
+.deduct-note{margin-top:7px;padding:7px 11px;background:#FFF3F3;border-radius:5px;font-size:.84em;color:#7F1D1D}
+
+.trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 12px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+.trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+
+.key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.badge-r{display:inline-block;background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:600}
+.footnote{color:#718096;font-size:.82em;margin-top:8px}
+
+/* 계산 예시 */
+.calc-box{background:#F8F4FF;border:1px solid #D6BCFA;border-radius:10px;padding:14px 18px;margin:12px 0}
+.calc-box h3{color:#5A2D82;margin-top:0}
+.calc-step{display:flex;align-items:baseline;gap:8px;margin:5px 0;padding:6px 10px;background:#fff;border-radius:6px;border:1px solid #E0D6FF}
+.step-num{background:#5A2D82;color:#fff;padding:2px 7px;border-radius:10px;font-size:.78em;font-weight:700;flex-shrink:0}
+.step-label{font-weight:600;color:#2D3748;flex:1;font-size:.89em}
+.step-formula{color:#5A2D82;font-family:monospace;font-size:.88em}
+.calc-result{background:#5A2D82;color:#fff;padding:9px 14px;border-radius:8px;font-weight:700;margin-top:9px;text-align:center;font-size:.92em}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="supp-badge">📎 보충자료</div>
+  <h1>생산직 근로자 연장·야간·휴일근로 비과세<br><span style="font-size:.82em;font-weight:400">월정액급여 계산 시 차감 항목 상세</span></h1>
+  <div class="meta">
+    소득세법 §12③더목 / 소득세법 시행령 §17①<br>
+    법령 기준: 소득세법 2026.04.21 시행 / 시행령 2026.05.22 시행
+  </div>
+</div>
+
+
+<!-- 1. 핵심 구조 -->
+<div class="section">
+  <div class="bar">1. 비과세 적용 구조 — 전체 조건 한눈에</div>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유:</strong> 공장 근로자가 야근·주말 근무를 해서 추가로 받는 수당은 세금을 안 내도 됩니다. 단, "월급이 260만원 이하인 사람"이어야 하는데, 이 260만원 계산할 때 야근수당 자체와 일부 비과세 급여는 미리 빼고 계산해요.
+  </div>
+
+  <div class="formula-card">
+    <h3>📐 월정액급여 계산식 (시행령 §17①)</h3>
+    <div class="formula-line">
+      <span class="f-item base">매월 직급별 급여 총액</span>
+      <span class="f-op">−</span>
+      <span class="f-item minus">차감 항목 ①②③</span>
+      <span class="f-op">=</span>
+      <span class="f-item result">월정액급여</span>
+    </div>
+    <div style="font-size:.82em;color:#93C5FD;margin-top:10px">
+      ↓ 이 월정액급여가 <span style="font-weight:700;color:#FDE68A">260만원 이하</span>이어야 비과세 적용 가능 (§17①)
+    </div>
+  </div>
+
+  <div class="law-box">
+    <span class="lr">소득세법 시행령 §17① (2026.05.22 시행)</span>
+    "월정액급여"는 매월 직급별로 받는 봉급·급료·보수·임금·수당, 그 밖에 이와 유사한 성질의 급여<br>
+    <strong>단, 다음 3가지를 제외한 금액</strong>의 총액에서<br>
+    → 「근로기준법」에 따른 <strong>연장근로·야간근로·휴일근로</strong>를 하여 통상임금에 더하여 받는 급여 및 「선원법」에 따라 받는 <strong>생산수당</strong>을 뺀 급여
+  </div>
+</div>
+
+
+<!-- 2. 차감 대상 항목 상세 -->
+<div class="section">
+  <div class="bar">2. 월정액급여에서 차감하는 항목 — 3가지</div>
+
+  <div class="sub">
+    <h3>차감 항목 ① — 부정기적 급여 (시행령 §17① 괄호)</h3>
+    <div class="deduct-item">
+      <div class="deduct-title">📌 해당 과세기간 중에 받는 상여 등 부정기적인 급여</div>
+      <div class="deduct-body">
+        <strong>월정액급여 계산에서 제외(차감)됩니다.</strong><br><br>
+        <strong>포함 예시:</strong>
+        <ul>
+          <li>명절 상여금 (설·추석 상여)</li>
+          <li>인사고과 성과상여금 (경영성과에 따른 특별상여)</li>
+          <li>업적 포상금</li>
+          <li>격월·분기·반기·연간 단위로 지급되는 상여</li>
+          <li>비정기 인센티브, 특별수당</li>
+        </ul>
+      </div>
+      <div class="deduct-note">
+        ⚠ 핵심 기준: <strong>"매월" 정기적으로 지급되지 않는 것</strong>은 모두 부정기 급여로 차감<br>
+        → 지급 주기가 불규칙하거나 성과에 따라 변동되면 부정기 급여
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>차감 항목 ② — 실비변상적 성질의 급여 (시행령 §17① 괄호 · §12)</h3>
+    <div class="deduct-item">
+      <div class="deduct-title">📌 시행령 §12에 따른 실비변상적 성질의 급여</div>
+      <div class="deduct-body">
+        업무수행에 실제로 발생하는 비용을 변상해 주는 성질의 급여입니다.<br><br>
+        <strong>포함 예시:</strong>
+        <ul>
+          <li>일·숙직료 (실비 범위 내)</li>
+          <li>여비 (출장비, 교통비 실비 변상)</li>
+          <li>자가운전보조금 (월 20만원 한도)</li>
+          <li>업무수행 중 실제 발생하는 비용 변상액</li>
+          <li>벽지근무수당 (실비 성질 부분)</li>
+        </ul>
+      </div>
+      <div class="deduct-note">
+        ⚠ 실비변상적 급여 = 실제 지출 비용에 대한 보전 성격<br>
+        → 생활비 보조·처우 개선 목적의 수당은 실비변상 아님 (차감 대상 아님)
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>차감 항목 ③ — 복리후생적 성질의 급여 (시행령 §17① 괄호 · §17의4)</h3>
+    <div class="deduct-item">
+      <div class="deduct-title">📌 시행령 §17의4에 따른 복리후생적 성질의 급여 — 4가지만 해당</div>
+      <div class="deduct-body">
+        <strong>시행령 §17의4 실제 열거 항목 (MCP 직접 확인):</strong>
+        <ul>
+          <li><strong>1호</strong> — 사택 제공 이익<br>
+            <span style="color:#4A5568;font-size:.9em">(비주주·소액주주 임원, 비임원 종업원, 공무원 등이 받는 사택)</span></li>
+          <li><strong>2호</strong> — 중소기업 종업원이 주택 구입·임차 자금을 저리·무상으로 대여받아 얻는 이익<br>
+            <span style="color:#4A5568;font-size:.9em">(단, 지배주주·친족 등 특수관계자 제외)</span></li>
+          <li><strong>2의2호</strong> — 직장어린이집 설치·운영 또는 위탁보육 사업주의 비용 부담으로 종업원이 얻는 이익<br>
+            <span style="color:#4A5568;font-size:.9em">(「영유아보육법」§14 직장어린이집 관련)</span></li>
+          <li><strong>3호</strong> — 단체순수보장성보험·단체환급부보장성보험 보험료 <strong>연 70만원 이하</strong><br>
+            + 임직원 배상책임보험(업무상 고의 외 손해배상 보험) 보험료 전액</li>
+          <li><strong>4호</strong> — 공무원이 공무 수행 관련 받는 상금·부상 <strong>연 240만원 이내</strong></li>
+        </ul>
+      </div>
+      <div class="deduct-note">
+        ⚠ <strong>식사대·보육수당은 §17의4에 없습니다!</strong><br>
+        · 식사대(월 20만원 이하) → <strong>소득세법 §12③러목</strong> 별도 비과세 열거<br>
+        · 6세 이하 자녀 보육수당(월 20만원) → <strong>소득세법 §12③머목2)</strong> 별도 비과세 열거<br>
+        위 두 항목은 §12③에서 직접 비과세로 규정된 것으로, 시행령 §17①의 차감 대상인 §17의4 목록에는 포함되지 않습니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>차감 항목 ④ (추가) — 연장·야간·휴일근로로 받는 수당 자체 (시행령 §17① 후단)</h3>
+    <div class="deduct-item">
+      <div class="deduct-title">📌 「근로기준법」상 연장·야간·휴일근로 통상임금 추가분 &amp; 선원법 생산수당</div>
+      <div class="deduct-body">
+        비과세 적용 판단의 기준이 되는 급여 자체이므로, 월정액급여 산정에서 제외합니다.<br><br>
+        <strong>해당 항목:</strong>
+        <ul>
+          <li>근로기준법에 따른 연장근로(1일 8시간·주 40시간 초과) 가산수당</li>
+          <li>근로기준법에 따른 야간근로(오후 10시~오전 6시) 가산수당</li>
+          <li>근로기준법에 따른 휴일근로 가산수당</li>
+          <li>선원법에 따라 받는 생산수당 (비율급인 경우 월 고정급 초과 비율급)</li>
+        </ul>
+      </div>
+      <div class="deduct-note">
+        ⚠ "통상임금에 더하여" 받는 부분만 해당<br>
+        → 통상임금 자체(기본 근로에 대한 임금)는 차감 대상 아님, 월정액급여에 포함
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 3. 포함 vs 제외 비교 -->
+<div class="section">
+  <div class="bar">3. 월정액급여 포함 vs 차감 항목 비교표</div>
+
+  <div class="inc-exc-grid">
+    <div class="inc-card">
+      <div class="card-head inc">✅ 월정액급여에 포함 (산입)</div>
+      <div class="card-body">
+        <ul>
+          <li><strong>기본급</strong> (직급별 봉급)</li>
+          <li>매월 정기 지급 수당<br>(직책수당·가족수당·주택수당 등)</li>
+          <li>매월 정기 지급 통상임금</li>
+          <li>야간근로의 <strong>통상임금 부분</strong></li>
+          <li>식사대 (월 20만원 초과분)</li>
+          <li>정기적으로 지급되는 교통비</li>
+          <li>기타 매월 고정 지급 급여 성격 수당</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exc-card">
+      <div class="card-head exc">❌ 월정액급여에서 차감 (제외)</div>
+      <div class="card-body">
+        <ul>
+          <li><strong>부정기 상여·인센티브</strong></li>
+          <li>명절 상여, 성과상여금</li>
+          <li><strong>실비변상적 급여</strong><br>(출장비·자가운전보조금 등)</li>
+          <li><strong>복리후생적 급여</strong> (시행령 §17의4)<br>
+            · 사택 제공 이익<br>
+            · 중소기업 종업원 주택자금 저리 대여이익<br>
+            · 직장어린이집 비용 부담 이익<br>
+            · 단체보험료 연 70만원 이하 등</li>
+          <li><strong>연장·야간·휴일 가산수당</strong><br>(통상임금 초과분)</li>
+          <li>선원법 생산수당<br>(월 고정급 초과 비율급)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    ⚠ <strong>"매월 직급별로 받는 급여의 총액"의 의미:</strong><br>
+    봉급·급료·보수·임금·수당 및 이와 유사한 성질의 급여를 모두 합산<br>
+    → 급여 명칭이 아닌 <strong>실질 성격</strong>으로 판단 (시행령 §17①)
+  </div>
+</div>
+
+
+<!-- 4. 계산 구조 예제 -->
+<div class="section">
+  <div class="bar">4. 월정액급여 계산 예제</div>
+
+  <div class="calc-box">
+    <h3>📐 사례: 공장 근로자 甲의 월정액급여 계산</h3>
+    <div class="law-box" style="margin-bottom:10px;font-size:.85em">
+      <strong>甲의 당월 급여 내역</strong><br>
+      ① 기본급: 180만원 &nbsp;② 직책수당: 20만원 &nbsp;③ 가족수당: 10만원<br>
+      ④ 명절 상여금: 50만원 (설 상여) &nbsp;⑤ 야간근로 가산수당: 30만원<br>
+      ⑥ 자가운전보조금: 20만원 &nbsp;⑦ 식사대: 20만원 (현금, 식사 별도 미제공)<br>
+      ⑧ 연장근로 가산수당: 15만원
+    </div>
+    <div class="calc-step">
+      <span class="step-num">①</span>
+      <span class="step-label">매월 급여 총액 합산</span>
+      <span class="step-formula">180+20+10+50+30+20+20+15 = 345만원</span>
+    </div>
+    <div class="calc-step">
+      <span class="step-num">②</span>
+      <span class="step-label">차감 ① 부정기 상여금</span>
+      <span class="step-formula">명절 상여금 50만원 차감</span>
+    </div>
+    <div class="calc-step">
+      <span class="step-num">③</span>
+      <span class="step-label">차감 ② 실비변상적 급여 (시행령 §12)</span>
+      <span class="step-formula">자가운전보조금 20만원 차감</span>
+    </div>
+    <div class="calc-step">
+      <span class="step-num">④</span>
+      <span class="step-label">식사대 처리</span>
+      <span class="step-formula">⚠ 식사대 20만원 → §17의4 복리후생 아님!<br>§12③러목 비과세이지만 월정액급여 차감 항목이 아니므로 포함 유지</span>
+    </div>
+    <div class="calc-step">
+      <span class="step-num">⑤</span>
+      <span class="step-label">차감 ④ 연장·야간 가산수당</span>
+      <span class="step-formula">야간 30만원 + 연장 15만원 = 45만원 차감</span>
+    </div>
+    <div class="calc-result">월정액급여 = 345 − 50 − 20 − 45 = 230만원 ≤ 260만원 → 비과세 요건 충족!</div>
+  </div>
+
+  <div class="warn-box">
+    ⚠ <strong>식사대(§12③러목)의 처리:</strong><br>
+    식사대는 소득세법 §12③러목에 따라 비과세이지만, 시행령 §17①에서 월정액급여 차감 항목으로 규정한 것은 <strong>시행령 §12(실비변상)</strong>과 <strong>§17의4(복리후생)</strong>입니다.<br>
+    식사대는 두 목록 중 어디에도 없으므로 <strong>월정액급여에 포함된 채로 260만원 기준을 적용</strong>합니다.
+  </div>
+
+  <div class="ok-box">
+    ✅ <strong>비과세 적용 급여:</strong> 야간 30만원 + 연장 15만원 = 45만원<br>
+    → 연 240만원 한도 내이므로 전액 비과세 (§17②1호)<br>
+    <br>
+    ✅ 만약 월정액급여가 260만원을 초과했다면 → 야간·연장 수당에 대한 비과세 <strong>불적용</strong>
+  </div>
+</div>
+
+
+<!-- 5. 비과세 한도 및 최종 요건 정리 -->
+<div class="section">
+  <div class="bar">5. 비과세 적용 전체 요건 정리</div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>요건</th><th>내용</th><th class="tc">근거</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>① 대상 근로자</strong></td><td>생산 및 관련직, 어업, 운전·운송·서비스 관련 단순노무직 등 시행령 §17①1~3호에 해당하는 자</td><td class="tc">령§17①각호</td></tr>
+        <tr class="hl"><td><strong>② 월정액급여</strong></td><td><span class="key-num">260만원</span> 이하 (차감 항목 제외 후)</td><td class="tc">령§17①</td></tr>
+        <tr class="hl"><td><strong>③ 직전연도 총급여액</strong></td><td><span class="key-num">3,700만원</span> 이하</td><td class="tc">령§17①</td></tr>
+        <tr><td><strong>④ 비과세 한도</strong></td><td>연 <span class="key-num">240만원</span> 이하 (광산근로자·일용근로자는 한도 없음)</td><td class="tc">령§17②1호</td></tr>
+        <tr><td><strong>⑤ 해당 급여</strong></td><td>근로기준법상 연장·야간·휴일근로 통상임금 초과 가산수당</td><td class="tc">§12③더목</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- 6. 오답 함정 -->
+<div class="section" style="background:#FFF3F3;border:1px solid #FED7D7">
+  <h2 style="color:#9B2335;border-bottom-color:#FED7D7">⚠️ 오답 함정 — 자주 틀리는 포인트</h2>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"야간근로 수당은 월정액급여에 포함하여 260만원 한도를 판단한다"</strong>
+      <p>→ 정답: 야간·연장·휴일 가산수당은 월정액급여에서 <strong>차감</strong>한 후 260만원과 비교. 가산수당을 포함해서 260만원 초과해도, 이를 빼고 나면 260만원 이하일 수 있음</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"명절 상여금은 매월 받으니 월정액급여에 포함된다"</strong>
+      <p>→ 정답: 명절 상여금은 <strong>부정기적 급여</strong>에 해당 → 월정액급여에서 차감. "매월"이라는 표현은 지급 주기가 아닌 정기성·고정성으로 판단</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"자가운전보조금은 월급에 포함되므로 월정액급여에 산입해야 한다"</strong>
+      <p>→ 정답: 자가운전보조금은 <strong>실비변상적 성질의 급여</strong> (시행령 §12)에 해당 → 월정액급여에서 차감</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"비과세 한도 연 240만원을 넘으면 초과분 전체가 과세된다"</strong>
+      <p>→ 정답: 연 240만원 이하 부분만 비과세, <strong>240만원 초과분은 과세</strong>. 전체 과세가 아닌 초과분만 과세</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"야간근로의 통상임금 자체(기본분)도 비과세이다"</strong>
+      <p>→ 정답: 비과세 대상은 <strong>"통상임금에 더하여(추가로) 받는 급여"</strong>만 해당. 야간에 근무한 시간에 대한 통상임금 자체는 월정액급여에 포함되어 과세됨</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="tc">소득세법 §12③더목</td><td>생산직 근로자 연장·야간·휴일근로 수당 비과세 근거</td></tr>
+        <tr><td class="tc">시행령 §17①</td><td>대상 근로자·월정액급여 계산 (260만원 기준 / 차감 항목 3가지)</td></tr>
+        <tr><td class="tc">시행령 §17②1호</td><td>비과세 한도: 연 240만원 이하 (광산근로자·일용근로자 제외)</td></tr>
+        <tr><td class="tc">시행령 §12</td><td>실비변상적 성질의 급여 목록 (자가운전보조금·여비 등)</td></tr>
+        <tr><td class="tc">시행령 §17의4</td><td>복리후생적 성질의 급여 (사택이익·중소기업 주택자금 대여이익·직장어린이집 이익·단체보험료 연 70만원 이하 등 — 식사대·보육수당 <strong>포함 안 됨</strong>)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote" style="margin-top:10px">
+    ※ 소득세법 (2026.04.21 시행) / 소득세법 시행령 (2026.05.22 시행) 직접 조회 기준
+  </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 — 사업소득 | 세무사 1차 예습자료</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.85;max-width:960px;margin:0 auto;padding:24px}
+h1{color:#0D1B4B;font-size:1.75em}
+h2{color:#1A3A6B;font-size:1.12em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+h3{color:#2C5282;font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:20px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.75}strong{color:#1A1A2E}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B);color:#fff;padding:30px 38px;border-radius:14px;margin-bottom:20px}
+.subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 16px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:10px}
+.header h1{color:#fff;font-size:1.8em}
+.header .meta{font-size:.8em;opacity:.85;margin-top:7px;line-height:1.6}
+.freq-badge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin-left:6px}
+
+/* SECTION */
+.section{margin:20px 0;padding:22px 26px;border-radius:12px;border:1px solid #E8ECF0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.section-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:8px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-22px -26px 16px}
+.sub{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:13px 17px;margin:11px 0}
+.sub h3{margin-top:0;color:#1A3A6B}
+
+/* BOXES */
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}
+.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}
+.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:11px 15px;margin:10px 0;font-size:.91em}
+.law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:0 8px 8px 0;padding:10px 14px;margin:9px 0;font-size:.87em;line-height:1.8}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.lr{font-family:monospace;font-size:.81em;font-weight:700;color:#1A3A6B;display:block;margin-bottom:3px}
+
+/* TABLE */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid #E2E8F0;margin:11px 0}
+table{width:100%;border-collapse:collapse;font-size:.87em}
+th{background:#EEF2FF;color:#1A3A6B;padding:9px 12px;text-align:left;font-weight:600;font-size:.86em;border-bottom:2px solid #C3D4F0}
+td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+tr:hover td{background:#FAFBFF}
+.diff{color:#C53030;font-weight:600}.ok-text{color:#276749;font-weight:600}
+.hl{background:#FFFBEB!important}.center{text-align:center}
+.tc{font-family:monospace;font-size:.83em;color:#1A3A6B}
+
+/* FLOWCHART */
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:14px 0}
+.flow-node{background:#1A3A6B;color:#fff;padding:8px 22px;border-radius:8px;font-size:.86em;font-weight:600;text-align:center;min-width:180px;max-width:420px;line-height:1.4}
+.flow-node.g{background:#276749}.flow-node.r{background:#9B2335}
+.flow-node.o{background:#744210}.flow-node.gray{background:#4A5568}
+.flow-diamond{background:#744210;color:#fff;padding:7px 18px;border-radius:50px;font-size:.84em;font-weight:600;text-align:center;max-width:380px}
+.flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+.flow-branch{display:flex;gap:18px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px}
+.branch-label{font-size:.78em;color:#718096;font-weight:600}
+
+/* CALC */
+.calc-box{background:#F8F4FF;border:1px solid #D6BCFA;border-radius:10px;padding:16px 20px;margin:12px 0}
+.calc-box h3{color:#5A2D82;margin-top:0}
+.calc-step{display:flex;align-items:baseline;gap:8px;margin:5px 0;padding:6px 10px;background:#fff;border-radius:6px;border:1px solid #E0D6FF}
+.step-num{background:#5A2D82;color:#fff;padding:2px 7px;border-radius:10px;font-size:.78em;font-weight:700;flex-shrink:0}
+.step-label{font-weight:600;color:#2D3748;flex:1;font-size:.89em}
+.step-formula{color:#5A2D82;font-family:monospace;font-size:.88em}
+.step-ref{color:#718096;font-size:.78em;flex-shrink:0}
+.calc-result{background:#5A2D82;color:#fff;padding:9px 14px;border-radius:8px;font-weight:700;margin-top:9px;text-align:center;font-size:.92em}
+
+/* TRAP */
+.trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 12px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+.trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+
+/* MISC */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:640px){.two-col{grid-template-columns:1fr}}
+.col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+.col-box h4{margin-top:0;color:#1A3A6B}
+.key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.footnote{color:#718096;font-size:.82em;margin-top:8px}
+.b{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:600;margin:1px}
+.b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}
+.b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}
+.b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}
+.star{color:#D97706;font-size:.81em}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="subject-badge">소득세법 — 사업소득</div>
+  <h1>사업소득</h1>
+  <div class="meta">
+    세무사 1차 예습자료 &nbsp;|&nbsp;
+    소득세법 §12·§19·§24~§35·§37·§70·§73·§144의2 / 시행령 §143 (2026.04.21 / 2026.05.22 시행)
+    <span class="freq-badge">🔴 5년간 22회 — 47~48번 필요경비·추계 핵심 출제</span>
+  </div>
+</div>
+
+<!-- 최빈출 포인트 -->
+<div class="section highlight-box">
+  <h2>🔥 최빈출 포인트 (5년 22회 출제)</h2>
+  <ol>
+    <li><strong>필요경비 산입·불산입 판별</strong> <span class="star">★★★</span> — 가사 관련 비용, 자산 관련 비용, 초과인출금 이자, 채권자 불분명 이자 (§33~§35) — 2021·2024년 계산형 핵심</li>
+    <li><strong>총수입금액 산입·불산입</strong> <span class="star">★★★</span> — 부가가치세 매출세액은 불산입, 환입·환급금 산입, 간주임대료 (§24~§26)</li>
+    <li><strong>기준경비율 vs 단순경비율 적용대상 기준금액</strong> <span class="star">★★★</span> — 업종별 기준금액 암기 (령§143④)</li>
+    <li><strong>추계 소득금액 계산식</strong> <span class="star">★★★</span> — 기준경비율: 수입금액 − 주요경비 − (수입×기준경비율) / 단순경비율: 수입금액 × (1 − 단순경비율)</li>
+    <li><strong>분리과세 주택임대소득 사업소득금액</strong> <span class="star">★★</span> — 등록·미등록 구분, 필요경비율 50%/60%, 기본공제 200만원/400만원 (2021년 54번 기출)</li>
+    <li><strong>연말정산 대상 사업소득 — 3가지</strong> <span class="star">★★</span> — §73①4호 원천징수 사업소득 (보험모집인·방문판매원·음료품배달원) → 확정신고 면제</li>
+    <li><strong>복식부기의무자 추계 시 기준경비율 1/2 적용</strong> <span class="star">★★</span> — 령§143③1호다목 (일반 기준경비율의 절반)</li>
+    <li><strong>법인 각사소 vs 개인 사업소득 차이</strong> <span class="star">★</span> — 대표자 급여·퇴직금, 세무조정 vs 필요경비 차이</li>
+  </ol>
+</div>
+
+
+<!-- ════ 1. 사업소득의 범위 ════ -->
+<div class="section">
+  <div class="section-bar">1. 사업소득의 범위 (§19①)</div>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유:</strong> 사업소득은 "계속적·반복적으로 돈을 버는 사업에서 나오는 소득"이에요. 음식점, 학원, 의원, 부동산 임대업 등이 모두 포함됩니다. 단, 한 번만 하는 것은 기타소득이고, 계속·반복해야 사업소득!
+  </div>
+
+  <div class="sub">
+    <h3>주요 사업소득 범위 (§19①)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>번호</th><th>소득 종류</th><th>주의 사항</th></tr></thead>
+        <tbody>
+          <tr><td>1호</td><td>농업·임업·어업 (단, 곡물·식량작물 재배업 제외)</td><td>곡물·식량작물 재배업은 사업소득 범위 밖</td></tr>
+          <tr><td>6호</td><td>건설업</td><td></td></tr>
+          <tr><td>12호</td><td>부동산업 (임대·매매 포함)</td><td>공익사업 관련 지역권·지상권 설정·대여 소득 제외</td></tr>
+          <tr class="hl"><td>20호</td><td>복식부기의무자의 사업용 유형자산 양도</td><td>차량·운반구 등 / 양도소득세 대상은 제외</td></tr>
+          <tr class="hl"><td>21호</td><td>유사 사업소득 — 영리 목적 + 계속·반복적 활동</td><td>포괄 조항</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn-box">
+      ⚠ <strong>사업소득 vs 기타소득 구별 기준:</strong> <strong>계속적·반복적</strong>으로 행하는 활동 → 사업소득 / 일시적·우발적 → 기타소득<br>
+      단, 기타소득으로 원천징수하거나 확정신고한 경우에는 사업소득으로 보지 않음 (§19①단서)
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 2. 비과세 사업소득 ════ -->
+<div class="section">
+  <div class="section-bar">2. 비과세 사업소득 (§12②)</div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>한도·비고</th><th class="tc">근거</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td><strong>논밭 작물생산 임대</strong></td><td>논·밭을 작물 생산에 이용하게 함으로써 발생하는 소득</td><td>한도 없음</td><td class="tc">§12②가</td></tr>
+        <tr class="hl"><td><strong>1주택 주택임대소득</strong></td><td>1개의 주택 소유자의 주택임대소득</td><td>기준시가 12억 초과 주택 및 국외주택 제외</td><td class="tc">§12②나</td></tr>
+        <tr><td>농어가부업소득</td><td>대통령령으로 정하는 농어가부업소득</td><td>대통령령 요건</td><td class="tc">§12②다</td></tr>
+        <tr><td>전통주 제조 소득</td><td>대통령령으로 정하는 전통주 제조</td><td>대통령령 요건</td><td class="tc">§12②라</td></tr>
+        <tr class="hl"><td><strong>임목 벌채·양도 소득</strong></td><td>조림기간 5년 이상인 임지의 임목 벌채·양도</td><td><strong>연 3,000만원 이하</strong></td><td class="tc">§12②마</td></tr>
+        <tr><td>작물재배업 소득</td><td>대통령령으로 정하는 작물재배업</td><td>대통령령 요건</td><td class="tc">§12②바</td></tr>
+        <tr><td>어로·양식어업</td><td>대통령령으로 정하는 어로어업 또는 양식어업</td><td>대통령령 요건</td><td class="tc">§12②사</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="red-box">
+    🚨 <strong>1주택 주택임대소득 비과세 요건:</strong><br>
+    기준시가 <span class="key-num">12억원</span> 이하 + 국내 소재 주택만 비과세<br>
+    기준시가 12억원 초과 주택이나 국외 소재 주택은 1주택이어도 과세!
+  </div>
+</div>
+
+
+<!-- ════ 3. 사업소득의 계산방법 ════ -->
+<div class="section">
+  <div class="section-bar">3. 사업소득의 계산방법</div>
+
+  <!-- 3-1 기본 구조 -->
+  <div class="sub">
+    <h3>3-1. 사업소득금액 계산 기본 구조 (§19②)</h3>
+    <div class="law-box">
+      <span class="lr">§19②</span>
+      <strong>사업소득금액 = 총수입금액 − 필요경비</strong><br>
+      필요경비 &gt; 총수입금액인 경우 → 그 초과액을 <strong>"결손금"</strong>이라 함
+    </div>
+  </div>
+
+  <!-- 3-2 총수입금액 -->
+  <div class="sub">
+    <h3>3-2. 총수입금액 산입·불산입 <span class="b b-red">🔴 기출 자주 출제</span></h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>항목</th><th>처리</th><th class="tc">근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>불산입</strong></td><td>부가가치세 매출세액</td><td><span class="ok-text">총수입금액 불산입</span></td><td class="tc">§24①</td></tr>
+          <tr><td>산입</td><td>사업 관련 수입금액 (판매·서비스 등)</td><td>총수입금액 산입</td><td class="tc">§24①</td></tr>
+          <tr class="hl"><td><strong>산입</strong></td><td><strong>간주임대료</strong></td><td>보증금·전세금에 대한 간주임대료</td><td class="tc">§25</td></tr>
+          <tr><td>산입</td><td>재고자산·임의평가</td><td>평가이익 총수입금액 산입</td><td class="tc">§26</td></tr>
+          <tr class="hl"><td><strong>불산입</strong></td><td>자산수증이익·채무면제이익<br>(사업과 관련 없는 것)</td><td><span class="ok-text">불산입</span></td><td class="tc">§24②</td></tr>
+          <tr><td>산입</td><td>환입된 접대비 등</td><td>당기 총수입금액 산입</td><td class="tc"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3-3 필요경비 -->
+  <div class="sub">
+    <h3>3-3. 필요경비 산입·불산입 (§27~§35) <span class="b b-red">🔴 최빈출</span></h3>
+    <div class="law-box">
+      <span class="lr">§27①</span>
+      필요경비 = 해당 과세기간 총수입금액에 대응하는 비용으로서 <strong>일반적으로 용인되는 통상적인 것</strong>의 합계액
+    </div>
+
+    <h4>▶ 주요 필요경비 불산입 항목</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th class="tc">근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>가사 관련 비용</strong></td><td>가사와 공동으로 관련된 경비 중 가사 관련 부분<br>(사업 관련 입증 못하면 전액 불산입)</td><td class="tc">§33①1</td></tr>
+          <tr class="hl"><td><strong>초과인출금 이자</strong></td><td>사업용 자산 합계 &lt; 부채 합계인 경우<br>초과 부분에 대응하는 지급이자 불산입</td><td class="tc">§33①2</td></tr>
+          <tr class="hl"><td><strong>채권자 불분명 이자·사채이자</strong></td><td>채권자가 불분명한 차입금 이자 → 전액 필요경비 불산입</td><td class="tc">§33①3</td></tr>
+          <tr><td>업무와 관련 없는 자산의 비용</td><td>사업과 관계없는 자산 취득·유지 비용</td><td class="tc">§33①1</td></tr>
+          <tr><td>소득세·개인지방소득세</td><td>납세자 본인의 소득세·지방소득세</td><td class="tc">§33①4</td></tr>
+          <tr><td>벌금·과태료·체납처분비 등</td><td>각종 제재 성격의 비용</td><td class="tc">§33①5</td></tr>
+          <tr class="hl"><td><strong>자본적 지출</strong></td><td>자산 가치 증가 지출 → 취득가액에 포함, 감가상각으로 처리</td><td class="tc">§33①8</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>▶ 초과인출금 이자 계산 (기출 2021년 53번)</h4>
+    <div class="calc-box">
+      <h3>📐 초과인출금 이자 필요경비 불산입 계산</h3>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">초과인출금</span>
+        <span class="step-formula">= 사업용 부채 합계 − 사업용 자산 합계 (세법상 충당금 제외)</span>
+        <span class="step-ref">(§33①2)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">초과인출금 이자율</span>
+        <span class="step-formula">= (초과인출금 적수 / 차입금 적수) × 지급이자</span>
+        <span class="step-ref"></span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">불산입 이자</span>
+        <span class="step-formula">= 총지급이자 × (초과인출금 적수 / 차입금 적수)</span>
+        <span class="step-ref">채권자불분명이자 먼저 제거 후 계산</span>
+      </div>
+      <div class="calc-result">필요경비 불산입 = 채권자불분명이자 + 초과인출금 이자</div>
+    </div>
+
+    <h4>▶ 분리과세 주택임대소득 사업소득금액 계산 (§64의4, 기출 2021년 54번)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>등록 임대주택</th><th>미등록 임대주택</th></tr></thead>
+        <tbody>
+          <tr><td>필요경비율</td><td><span class="key-num">60%</span></td><td><span class="key-num">50%</span></td></tr>
+          <tr><td>기본공제</td><td><span class="key-num">400만원</span></td><td><span class="key-num">200만원</span></td></tr>
+          <tr><td>세율</td><td colspan="2">14%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="calc-box">
+      <h3>📐 분리과세 주택임대 사업소득금액</h3>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">필요경비</span>
+        <span class="step-formula">= 총수입금액 × 50%(미등록) or 60%(등록)</span>
+        <span class="step-ref"></span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">사업소득금액</span>
+        <span class="step-formula">= 총수입금액 − 필요경비 − 기본공제(200만/400만)</span>
+        <span class="step-ref">(단, 0 미만이면 0)</span>
+      </div>
+      <div class="calc-result">분리과세 선택 시 세액 = 사업소득금액 × 14%</div>
+    </div>
+  </div>
+
+  <!-- 3-4 수입시기 -->
+  <div class="sub">
+    <h3>3-4. 사업소득 수입시기 — 권리의무확정주의</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>소득 종류</th><th>수입시기</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>상품·제품 등 판매</td><td><strong>인도한 날</strong></td></tr>
+          <tr><td>시용판매</td><td>상대방이 매수의사 표시한 날 (기간 내 표시 없으면 기간 만료일)</td></tr>
+          <tr><td>부동산 등 자산 양도</td><td>대금 청산일 (등기·등록·인도 중 빠른 날)</td></tr>
+          <tr class="hl"><td>용역 제공</td><td><strong>용역 제공을 완료한 날</strong></td></tr>
+          <tr><td>이자수익</td><td>약정에 의한 이자지급일</td></tr>
+          <tr class="hl"><td>임대료 수입</td><td>계약 또는 관습에 따른 <strong>지급일</strong></td></tr>
+          <tr><td>간주임대료</td><td>해당 과세기간 종료일</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn-box">
+      ⚠ 사업소득도 법인세 손익귀속시기(권리의무확정주의)와 유사하게 '확정된 날'이 수입시기 기준
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 4. 과세방법 ════ -->
+<div class="section">
+  <div class="section-bar">4. 사업소득 과세방법 (원천징수·연말정산·확정신고)</div>
+
+  <!-- 4-1 원천징수 -->
+  <div class="sub">
+    <h3>4-1. 원천징수 — 원칙과 예외</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th><th>원천징수세율</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>원칙: 원천징수 없음</strong></td><td>사업소득은 원칙적으로 원천징수 없이 확정신고로 납부</td><td>없음 (확정신고)</td></tr>
+          <tr class="hl"><td><strong>예외: 원천징수 대상 (§127①3호)</strong></td><td>봉사료·원천징수 대상 사업소득 (의료업·수의사업·약사업 등)</td><td><span class="key-num">3%</span></td></tr>
+          <tr><td><strong>연말정산 대상 사업소득 (§73①4호)</strong></td><td>보험모집인·방문판매원·음료품배달원 등 대통령령 지정 소득</td><td><span class="key-num">3%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ok-box">
+      ✅ <strong>원천징수 대상 사업소득 세율: 3%</strong> (이자 14%·배당 14%·기타소득 20%와 구별!)
+    </div>
+  </div>
+
+  <!-- 4-2 연말정산 -->
+  <div class="sub">
+    <h3>4-2. 연말정산 대상 사업소득 (§144의2)</h3>
+    <div class="law-box">
+      <span class="lr">§73①4호 / §144의2</span>
+      연말정산 대상 사업소득 = <strong>§127에 따라 원천징수되는 사업소득으로서 대통령령으로 정하는 것</strong><br>
+      → 보험모집인, 방문판매원, 음료품 배달원 등
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>연말정산 시기</strong></td><td>다음 연도 <strong>2월분</strong> 사업소득 지급 시<br>(2월 말까지 미지급·소득 없으면 2월 말일)</td></tr>
+          <tr><td>거래계약 해지 시</td><td>해지하는 달의 사업소득 지급 시 연말정산</td></tr>
+          <tr><td>추가납부세액 분납</td><td>10만원 초과 시 2월~4월분 사업소득 지급 시 분납 가능</td></tr>
+          <tr><td>확정신고 면제</td><td>연말정산 사업소득만 있으면 확정신고 불필요 (§73①4호)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn-box">
+      ⚠ <strong>연말정산 vs 근로소득 연말정산 시기:</strong><br>
+      근로소득: 다음 연도 <strong>2월분 급여</strong> 지급 시 (동일)<br>
+      공적연금: 다음 연도 <strong>1월분</strong> 연금 지급 시 (다름!)
+    </div>
+  </div>
+
+  <!-- 4-3 확정신고 -->
+  <div class="sub">
+    <h3>4-3. 확정신고 (§70)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>신고기한</td><td>해당 과세기간 다음 연도 <strong>5월 1일 ~ 5월 31일</strong></td></tr>
+          <tr><td>신고 의무자</td><td>종합소득금액이 있는 거주자 (결손금·과세표준 없어도 신고)</td></tr>
+          <tr class="hl"><td><strong>확정신고 면제 (§73①)</strong></td><td>① 근로소득만 있는 자<br>② 퇴직소득만 있는 자<br>③ 공적연금소득만 있는 자<br>④ 연말정산 사업소득만 있는 자 (§73①4호)<br>⑤ 분리과세소득만 있는 자</td></tr>
+          <tr><td>복식부기의무자</td><td>재무상태표·손익계산서·합계잔액시산표·조정계산서 필수 첨부<br>미제출 시 신고 안 한 것으로 봄 (§70④3호)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 5. 법인 각사소 vs 개인 사업소득 비교 ════ -->
+<div class="section compare-box">
+  <h2>⚖️ 법인의 각 사업연도 소득 vs 개인의 사업소득 비교</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th>법인 각 사업연도 소득</th><th>개인 사업소득</th></tr></thead>
+      <tbody>
+        <tr><td><strong>근거</strong></td><td>법인세법 §14~§19</td><td>소득세법 §19~§35</td></tr>
+        <tr><td><strong>납세 주체</strong></td><td>법인</td><td class="diff">개인 (거주자)</td></tr>
+        <tr><td><strong>세율</strong></td><td>10~25% (비례 누진)</td><td class="diff">6~45% (초과 누진)</td></tr>
+        <tr class="hl"><td><strong>대표자 급여</strong></td><td>손금산입 가능<br>(임원 급여 한도 내)</td><td class="diff">필요경비 불산입<br>(사업주 본인 인건비)</td></tr>
+        <tr class="hl"><td><strong>대표자 퇴직금</strong></td><td>한도 내 손금산입</td><td class="diff">필요경비 불산입</td></tr>
+        <tr><td><strong>접대비 한도</strong></td><td>수입금액 기준 한도 적용</td><td>동일 (§35)</td></tr>
+        <tr><td><strong>기부금</strong></td><td>손금산입 한도 적용</td><td>필요경비 한도 적용 (§34)</td></tr>
+        <tr class="hl"><td><strong>가사 관련 비용</strong></td><td>가사비 없음 (법인이므로)</td><td class="diff">필요경비 불산입 (§33①1)</td></tr>
+        <tr><td><strong>과세기간</strong></td><td>정관에 따른 사업연도</td><td class="diff">1.1~12.31 고정</td></tr>
+        <tr><td><strong>세무조정</strong></td><td>결산조정·신고조정</td><td class="diff">필요경비 산입·불산입</td></tr>
+        <tr><td><strong>결손금 이월</strong></td><td>15년 이월</td><td class="diff">10년 이월 (종합소득)</td></tr>
+        <tr class="hl"><td><strong>소득 개념</strong></td><td>순자산 증가설 (포괄적)</td><td class="diff">열거주의 (소득세법 열거)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="warn-box" style="margin-top:10px">
+    ⚠ <strong>핵심 차이 암기:</strong> 개인사업자는 <strong>본인(사업주) 인건비, 퇴직금, 개인 생활비</strong>를 필요경비로 못 씁니다. 법인은 대표이사 급여도 한도 내 손금 처리 가능한 것과 대비!
+  </div>
+</div>
+
+
+<!-- ════ 6. 추계 시 사업소득 계산 ════ -->
+<div class="section">
+  <div class="section-bar">6. 추계 시 사업소득 계산 (령§143)</div>
+
+  <!-- 6-1 추계 의의 -->
+  <div class="sub">
+    <h3>6-1. 추계 결정·경정의 의의 (§80③단서)</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 장부나 증빙서류가 없거나 믿을 수 없으면, 세무서가 업종별 평균 경비율(경비율)을 적용해서 소득을 추정합니다 — 이것이 추계과세입니다.
+    </div>
+    <div class="law-box">
+      <span class="lr">령§143①</span>
+      추계 결정·경정 사유:<br>
+      1호: 장부·증빙서류 없거나 수입금액·주요 경비 등이 미비·허위<br>
+      2호: 기장 내용이 시설규모·종업원수·시가 등에 비추어 허위임이 명백<br>
+      3호: 기장 내용이 원자재·전력사용량 등 조업상황에 비추어 허위임이 명백
+    </div>
+  </div>
+
+  <!-- 6-2 단순/기준 경비율 대상자 판정 -->
+  <div class="sub">
+    <h3>6-2. 단순경비율 vs 기준경비율 적용대상자 판정 (령§143④)</h3>
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 작은 사업자(소규모)는 단순경비율로 간단하게 계산하고, 규모가 큰 사업자(기장의무자 등)는 주요경비를 직접 증빙해야 하는 기준경비율을 씁니다.
+    </div>
+
+    <div class="flowchart">
+      <div class="flow-node">추계 과세 시 경비율 선택</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-diamond">단순경비율 적용대상자인가? (령§143④)</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">해당 O</div>
+          <div class="flow-node g">단순경비율 적용<br>(소득금액 간편 계산)</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">해당 X</div>
+          <div class="flow-node o">기준경비율 적용<br>(주요경비 증빙 + 기준경비율)</div>
+        </div>
+      </div>
+    </div>
+
+    <h4>▶ 단순경비율 적용대상자 기준 (령§143④)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>기준</th><th>업종</th><th>직전연도 수입금액 기준</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>신규 사업자</strong></td><td>모든 업종</td><td>해당 연도 수입금액이 업종별 기준금액 미달 시</td></tr>
+          <tr class="hl"><td rowspan="3"><strong>직전연도 수입금액 기준</strong></td><td>가목: 농림·어업, 광업, 도매·소매업, 부동산매매업 등</td><td><span class="key-num">6,000만원</span> 미달</td></tr>
+          <tr class="hl"><td>나목: 제조업, 음식점, 건설업, 운수업, 금융·보험업 등</td><td><span class="key-num">3,600만원</span> 미달</td></tr>
+          <tr class="hl"><td>다목: 부동산임대업, 전문·기술서비스업, 교육서비스업, 보건·복지업 등</td><td><span class="key-num">2,400만원</span> 미달</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="red-box">
+      🚨 <strong>단순경비율 적용 제외자 (령§143⑦) — 기준금액 미달이어도 기준경비율 강제!</strong><br>
+      ① 전문직 사업자 (변호사·회계사 등 령§147의2)<br>
+      ② 현금영수증 미가입·의무불이행자<br>
+      ③ 부가세법상 면세유흥주점업 등
+    </div>
+  </div>
+
+  <!-- 6-3 계산방법 -->
+  <div class="sub">
+    <h3>6-3. 추계 소득금액 계산방법 (령§143③)</h3>
+
+    <div class="two-col">
+      <div class="col-box">
+        <h4>기준경비율 방법 (1호)</h4>
+        <div class="calc-box" style="margin-top:6px">
+          <div class="calc-step">
+            <span class="step-num">①</span>
+            <span class="step-label">주요경비 공제</span>
+            <span class="step-formula">매입비용+임차료+인건비 (증빙서류)</span>
+          </div>
+          <div class="calc-step">
+            <span class="step-num">②</span>
+            <span class="step-label">기준경비율 공제</span>
+            <span class="step-formula">수입금액 × 기준경비율<br>(복식부기의무자: × 기준경비율 / 2)</span>
+          </div>
+          <div class="calc-result" style="font-size:.84em">소득금액 = 수입금액 − 주요경비 − (수입×기준경비율)</div>
+        </div>
+      </div>
+      <div class="col-box">
+        <h4>단순경비율 방법 (1의2호)</h4>
+        <div class="calc-box" style="margin-top:6px">
+          <div class="calc-step">
+            <span class="step-num">①</span>
+            <span class="step-label">소득금액</span>
+            <span class="step-formula">= 수입금액 − (수입금액 × 단순경비율)</span>
+          </div>
+          <div class="calc-step">
+            <span class="step-num">②</span>
+            <span class="step-label">정리</span>
+            <span class="step-formula">= 수입금액 × (1 − 단순경비율)</span>
+          </div>
+          <div class="calc-result" style="font-size:.84em">소득금액 = 수입금액 × (1 − 단순경비율)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      ⚠ <strong>복식부기의무자 기준경비율 적용 시 주의!</strong><br>
+      일반 사업자: 수입금액 × 기준경비율<br>
+      <strong>복식부기의무자: 수입금액 × (기준경비율 / 2)</strong> → 절반만 적용 (령§143③1호다목)
+    </div>
+
+    <div class="warn-box">
+      ⚠ <strong>기준경비율 방법 배율 한도 적용 (령§143③1호단서)</strong><br>
+      기준소득금액이 단순경비율 방법 소득금액 × 배율보다 크면 → 배율 × 단순경비율 소득금액으로 결정 가능 (2027년 12월 31일까지)
+    </div>
+
+    <h4>▶ 추계 계산 예제</h4>
+    <div class="calc-box">
+      <h3>📐 기준경비율 방법 — 계산 예</h3>
+      <div class="law-ref-box" style="padding:8px 12px;background:#EEF2FF;border-radius:6px;font-size:.85em;margin-bottom:8px">
+        수입금액: 8,000만원 / 매입비용(증빙): 2,000만원 / 임차료(증빙): 500만원 / 인건비(증빙): 1,000만원 / 기준경비율: 20% (일반 사업자)
+      </div>
+      <div class="calc-step">
+        <span class="step-num">①</span>
+        <span class="step-label">주요경비</span>
+        <span class="step-formula">= 2,000 + 500 + 1,000 = 3,500만원</span>
+        <span class="step-ref">(매입+임차+인건비)</span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">②</span>
+        <span class="step-label">기준경비율 적용 금액</span>
+        <span class="step-formula">= 8,000만 × 20% = 1,600만원</span>
+        <span class="step-ref"></span>
+      </div>
+      <div class="calc-step">
+        <span class="step-num">③</span>
+        <span class="step-label">소득금액</span>
+        <span class="step-formula">= 8,000 − 3,500 − 1,600 = 2,900만원</span>
+        <span class="step-ref">(령§143③1호)</span>
+      </div>
+      <div class="calc-result">기준경비율 적용 소득금액 = 2,900만원</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 오답 함정 ════ -->
+<div class="section trap-box">
+  <h2>⚠️ 오답 함정 — 기출 기반 10선</h2>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"개인사업자도 사업주 본인의 급여를 필요경비로 처리할 수 있다"</strong>
+      <p>→ 정답: 개인사업자 본인의 급여·퇴직금은 <strong>필요경비 불산입</strong>. 법인의 대표이사 급여 손금 처리와 구별!</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"모든 사업소득은 원천징수한다"</strong>
+      <p>→ 정답: 사업소득은 원칙적으로 원천징수 없이 확정신고. 예외: 의료업·수의사업 등 3%, 연말정산 사업소득(보험모집인 등) 3%</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"사업소득 연말정산은 다음 연도 1월분 지급 시"</strong>
+      <p>→ 정답: 사업소득 연말정산은 <strong>다음 연도 2월분</strong> 사업소득 지급 시 (§144의2①). 공적연금 연말정산(1월분)과 혼동 주의!</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"부가가치세 매출세액은 총수입금액에 포함된다"</strong>
+      <p>→ 정답: 부가가치세 매출세액은 <strong>총수입금액 불산입</strong> (§24①). 실제 수취한 금액에서 분리</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"직전연도 수입금액이 3,600만원인 제조업 사업자는 단순경비율 적용대상이다"</strong>
+      <p>→ 정답: 제조업은 나목 기준 3,600만원 <strong>미달</strong> 시 단순경비율 적용. 3,600만원은 <strong>기준값과 동일</strong>하므로 <strong>기준경비율 적용</strong> (미달이 아님)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"복식부기의무자도 기준경비율을 그대로(100%) 적용한다"</strong>
+      <p>→ 정답: 복식부기의무자는 기준경비율의 <strong>1/2(50%)만</strong> 적용 (령§143③1호다목)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"채권자가 불분명한 이자는 초과인출금 이자 계산에서 차감하지 않는다"</strong>
+      <p>→ 정답: 초과인출금 이자 불산입 계산 시 채권자불분명이자를 먼저 제거하고 남은 차입금으로 비율 계산. 채권자불분명이자는 별도 전액 불산입</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"기준시가 12억원 이하 2주택 소유자의 주택임대소득은 비과세이다"</strong>
+      <p>→ 정답: 비과세는 <strong>1주택</strong> 소유자만. 2주택부터는 과세 (§12②나)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"복식부기의무자가 재무상태표를 제출하지 않아도 확정신고 효력이 유지된다"</strong>
+      <p>→ 정답: 복식부기의무자가 재무상태표 등을 미제출하면 <strong>확정신고를 하지 않은 것으로 봄</strong> (§70④3호)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"미등록 임대주택의 분리과세 주택임대 필요경비율은 60%이다"</strong>
+      <p>→ 정답: 미등록은 <strong>50%</strong>, 등록 임대주택이 <strong>60%</strong>. 순서 반대로 혼동 주의 (등록이 더 유리)</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="tc">§12②</td><td>비과세 사업소득 (논밭·1주택·임목·전통주 등)</td></tr>
+        <tr><td class="tc">§19①②</td><td>사업소득 범위 (21가지) / 소득금액 = 총수입 − 필요경비</td></tr>
+        <tr><td class="tc">§24~§26</td><td>총수입금액 계산 (부가세 불산입, 간주임대료, 재고자산)</td></tr>
+        <tr><td class="tc">§27</td><td>필요경비 계산 원칙 (대응원칙, 통상성)</td></tr>
+        <tr><td class="tc">§33~§35</td><td>필요경비 불산입 (가사비·초과인출금이자·채권자불분명이자·소득세·접대비)</td></tr>
+        <tr><td class="tc">§70①④</td><td>확정신고 (5월1일~5월31일 / 복식부기의무자 미제출 시 무신고)</td></tr>
+        <tr><td class="tc">§73①4호</td><td>확정신고 면제 — 연말정산 사업소득만 있는 자</td></tr>
+        <tr><td class="tc">§144의2①②</td><td>사업소득 연말정산 (2월분 지급 시 / 10만원 초과 분납)</td></tr>
+        <tr><td class="tc">령§143①③④⑦</td><td>추계 결정·경정 (사유 / 기준경비율·단순경비율 계산 / 대상자 기준 / 제외자)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote" style="margin-top:10px">
+    ※ 소득세법 (2026.04.21 시행) / 소득세법 시행령 (2026.05.22 시행) 기준<br>
+    ※ 출제동향 반영: 사업소득 22회 출제 — 47~48번 필요경비·추계 반복 출제
+  </p>
+</div>
+
+</body>
+</html>

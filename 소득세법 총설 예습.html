@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 총설 — 납세의무자·과세기간·납세지 | 세무사 1차 예습자료</title>
+<style>
+/* ──────────────────────────────────────────
+   BASE
+────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#FAFAFA;color:#1A1A2E;
+  font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  font-size:14px;line-height:1.85;
+  max-width:960px;margin:0 auto;padding:24px
+}
+h1{color:#0D1B4B;font-size:1.75em;margin-bottom:6px}
+h2{color:#1A3A6B;font-size:1.12em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+h3{color:#2C5282;font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}
+ul,ol{padding-left:20px;margin-bottom:8px}
+li{margin-bottom:4px;line-height:1.75}
+strong{color:#1A1A2E}
+
+/* ──────────────────────────────────────────
+   HEADER
+────────────────────────────────────────── */
+.header{
+  background:linear-gradient(135deg,#0D1B4B,#1A3A6B);
+  color:#fff;padding:32px 40px;border-radius:14px;margin-bottom:20px
+}
+.subject-badge{
+  background:rgba(255,255,255,.2);color:#fff;
+  padding:4px 16px;border-radius:20px;
+  font-size:.82em;display:inline-block;margin-bottom:11px
+}
+.header h1{color:#fff;font-size:1.8em}
+.header .meta{font-size:.8em;opacity:.85;margin-top:7px;line-height:1.6}
+.freq-badge{
+  display:inline-block;font-size:.8em;font-weight:700;
+  padding:2px 10px;border-radius:12px;
+  background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin-left:6px
+}
+
+/* ──────────────────────────────────────────
+   SECTION WRAPPERS
+────────────────────────────────────────── */
+.section{
+  margin:20px 0;padding:24px 28px;
+  border-radius:12px;border:1px solid #E8ECF0;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)
+}
+.section-title-bar{
+  background:linear-gradient(90deg,#1A3A6B,#2C5282);
+  color:#fff;padding:9px 16px;border-radius:8px;
+  font-size:1.03em;font-weight:700;
+  margin:-24px -28px 18px;letter-spacing:.02em
+}
+.sub-block{
+  background:#F8FAFE;border:1px solid #DCE7F5;
+  border-radius:8px;padding:14px 18px;margin:12px 0
+}
+.sub-block h3{margin-top:0;color:#1A3A6B}
+
+/* ──────────────────────────────────────────
+   SPECIAL BOXES
+────────────────────────────────────────── */
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}
+.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}
+.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+.law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:0 8px 8px 0;padding:11px 15px;margin:9px 0;font-size:.88em;line-height:1.78}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.lr{font-family:monospace;font-size:.82em;font-weight:700;color:#1A3A6B;display:block;margin-bottom:3px}
+
+/* ──────────────────────────────────────────
+   TABLE
+────────────────────────────────────────── */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid #E2E8F0;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#EEF2FF;color:#1A3A6B;padding:10px 13px;text-align:left;font-weight:600;font-size:.87em;border-bottom:2px solid #C3D4F0}
+td{padding:9px 13px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+tr:hover td{background:#FAFBFF}
+.diff{color:#C53030;font-weight:600}
+.ok-text{color:#276749;font-weight:600}
+.hl{background:#FFFBEB!important}
+.center{text-align:center}
+.tc{font-family:monospace;font-size:.84em;color:#1A3A6B}
+
+/* ──────────────────────────────────────────
+   FLOWCHART
+────────────────────────────────────────── */
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:16px 0}
+.flow-node{background:#1A3A6B;color:#fff;padding:9px 24px;border-radius:8px;font-size:.87em;font-weight:600;text-align:center;min-width:190px;max-width:400px;line-height:1.45}
+.flow-node.g{background:#276749}.flow-node.r{background:#9B2335}
+.flow-node.o{background:#744210}.flow-node.gray{background:#4A5568}
+.flow-diamond{background:#744210;color:#fff;padding:7px 20px;border-radius:50px;font-size:.84em;font-weight:600;text-align:center;max-width:360px}
+.flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+.flow-branch{display:flex;gap:20px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px}
+.branch-label{font-size:.79em;color:#718096;font-weight:600}
+
+/* ──────────────────────────────────────────
+   TRAP / MISC
+────────────────────────────────────────── */
+.trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+.trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:640px){.two-col{grid-template-columns:1fr}}
+.col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+.col-box h4{margin-top:0;color:#1A3A6B}
+.key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.footnote{color:#718096;font-size:.82em;margin-top:8px}
+
+/* ──────────────────────────────────────────
+   FEATURE CARDS — 소득세 7대 특징
+────────────────────────────────────────── */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:11px;margin:13px 0}
+.feat-card{border-radius:9px;overflow:hidden;border:1px solid #E2E8F0}
+.feat-head{padding:8px 12px;font-weight:700;font-size:.86em;color:#fff}
+.feat-head.c1{background:#1A3A6B}.feat-head.c2{background:#276749}
+.feat-head.c3{background:#744210}.feat-head.c4{background:#5A2D82}
+.feat-head.c5{background:#9B2335}.feat-head.c6{background:#2C7A7B}
+.feat-head.c7{background:#2A4A8A}
+.feat-body{background:#fff;padding:10px 12px;font-size:.84em;color:#374151;line-height:1.65}
+
+/* ──────────────────────────────────────────
+   TIMELINE (과세기간)
+────────────────────────────────────────── */
+.timeline{margin:14px 0;position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:9px;top:4px;bottom:4px;width:3px;background:linear-gradient(180deg,#1A3A6B,#38A169)}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-dot{position:absolute;left:-22px;top:4px;width:13px;height:13px;border-radius:50%;background:#1A3A6B;border:2px solid #fff;box-shadow:0 0 0 2px #1A3A6B}
+.tl-dot.g{background:#38A169;box-shadow:0 0 0 2px #38A169}
+.tl-dot.r{background:#E53E3E;box-shadow:0 0 0 2px #E53E3E}
+.tl-date{font-size:.82em;font-weight:700;color:#1A3A6B;margin-bottom:3px}
+.tl-content{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:6px;padding:9px 12px;font-size:.87em}
+
+/* ──────────────────────────────────────────
+   PRINCIPLE vs EXCEPTION
+────────────────────────────────────────── */
+.pe-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:12px 0;border:2px solid #1A3A6B;border-radius:10px;overflow:hidden}
+@media(max-width:620px){.pe-wrap{grid-template-columns:1fr}}
+.pe-p{background:#EEF2FF;padding:14px 16px;border-right:2px solid #1A3A6B}
+.pe-e{background:#FFF8E1;padding:14px 16px}
+.pe-title{font-weight:700;font-size:.9em;padding:5px 9px;border-radius:5px;margin-bottom:8px;display:inline-block}
+.pe-title.p{background:#1A3A6B;color:#fff}
+.pe-title.e{background:#744210;color:#fff}
+@media(max-width:620px){.pe-p{border-right:none;border-bottom:2px solid #1A3A6B}}
+
+/* ──────────────────────────────────────────
+   BADGE
+────────────────────────────────────────── */
+.b{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:600;margin:1px}
+.b-blue{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}
+.b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}
+.b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}
+.b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}
+.star{color:#D97706;font-size:.82em}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<div class="header">
+  <div class="subject-badge">소득세법 — 총설</div>
+  <h1>소득세 총설</h1>
+  <div class="meta">
+    세무사 1차 예습자료 &nbsp;|&nbsp;
+    소득세법 §1의2·§2·§2의2·§2의3·§3·§4·§5~§11 / 시행령 §2~§4 &nbsp;|&nbsp;
+    법령 기준: 2026.04.21 / 시행령 2026.05.22
+    <span class="freq-badge">🔴 5년간 36회 — 소득세법 최빈출 영역</span>
+  </div>
+</div>
+
+<!-- ════════════════ 최빈출 포인트 ════════════════ -->
+<div class="section highlight-box">
+  <h2>🔥 최빈출 포인트 (2021~2025 36회 출제)</h2>
+  <ol>
+    <li><strong>거주자·비거주자 판정 기준 (주소·거소 183일)</strong> <span class="star">★★★</span> — 주소는 생활관계 객관적 사실 / 거소는 183일 이상 (§1의2 / 령§2) — 매년 고정 출제</li>
+    <li><strong>주소 있는 것으로 보는 2가지 요건 vs 없는 것으로 보는 요건</strong> <span class="star">★★★</span> — 직업(183일↑) vs 가족+직업·자산 상태 / 외국국적·영주권+가족없음+재입국 불인정 (령§2③④)</li>
+    <li><strong>거주자가 되는 시기 vs 비거주자가 되는 시기</strong> <span class="star">★★★</span> — 입국일 다음 날 vs 출국한 날 (기출 2024년 58번)</li>
+    <li><strong>과세기간 3가지 유형</strong> <span class="star">★★</span> — 원칙 1.1~12.31 / 사망: 1.1~사망일 / 출국: 1.1~출국일 (§5)</li>
+    <li><strong>법인 아닌 단체 납세의무</strong> <span class="star">★★</span> — 주사무소 有 → 1거주자 / 없음 → 1비거주자 / 분배비율 확인 시 각 구성원 과세 (§2③④)</li>
+    <li><strong>원천징수 납세지 — 법인의 독립채산제 지점</strong> <span class="star">★★</span> — 원칙 본점·주사무소 / 독립채산제 지점 → 지점 소재지 (§7①3·4호)</li>
+    <li><strong>납세지 변경신고 기한: 15일</strong> <span class="star">★★</span> — 변경된 날부터 15일 이내 / 신고처: 변경 후 납세지 관할 세무서장 (§10)</li>
+    <li><strong>외국인 거주자 과세특례</strong> <span class="star">★</span> — 10년 중 국내 5년 이하 → 국외소득 중 국내 지급·송금분만 과세 (§3①단서)</li>
+  </ol>
+</div>
+
+
+<!-- ════════════════ 1. 소득세의 특징 ════════════════ -->
+<div class="section">
+  <div class="section-title-bar">1. 소득세의 특징</div>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유:</strong> 소득세는 "개인"이 번 돈에 내는 세금이에요. 회사(법인)가 내는 법인세와 달리, 소득세는 사람에게 부과되며 많이 벌수록 더 높은 세율이 적용됩니다 — 이것이 <strong>초과누진세율</strong>이에요!
+  </div>
+
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-head c1">① 개인 단위 과세</div>
+      <div class="feat-body">법인세는 법인, 소득세는 <strong>개인</strong>이 납세 주체<br>원칙: 개인별 과세</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-head c2">② 초과누진세율</div>
+      <div class="feat-body">소득이 높을수록 높은 세율 적용<br>6%~45% (종합소득 기준)</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-head c3">③ 역년 과세기간</div>
+      <div class="feat-body">1월 1일 ~ 12월 31일 고정<br>법인세와 달리 임의 변경 불가</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-head c4">④ 열거주의</div>
+      <div class="feat-body">법에 열거된 소득만 과세<br>이자·배당·사업·근로·연금·기타·퇴직·양도 (§4)</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-head c5">⑤ 원천징수 제도</div>
+      <div class="feat-body">지급 시 원천징수의무자가 세금 미리 납부<br>분리과세 또는 종합과세 연계</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-head c6">⑥ 종합과세 + 분류과세</div>
+      <div class="feat-body">종합소득: 합산 과세<br>퇴직·양도소득: 분류과세 (합산 안 함)</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-head c7">⑦ 응능부담 원칙</div>
+      <div class="feat-body">부담 능력에 따른 과세<br>각종 소득공제·세액공제 반영</div>
+    </div>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>소득세법 §1 목적</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td>목적</td><td>개인의 소득에 대하여 소득의 성격과 납세자의 <strong>부담능력</strong> 등에 따라 적정하게 과세 → <strong>조세부담의 형평</strong> + 재정수입 원활한 조달</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ════════════════ 2. 납세의무자 ════════════════ -->
+<div class="section">
+  <div class="section-title-bar">2. 납세의무자 (§1의2·§2·§2의2·§2의3 / 령§2~§4)</div>
+
+  <!-- 2-1 거주자·비거주자 정의 -->
+  <div class="sub-block">
+    <h3>2-1. 거주자·비거주자의 정의 (§1의2)</h3>
+    <div class="law-box">
+      <span class="lr">소득세법 §1의2①</span>
+      <strong>"거주자"</strong>: 국내에 <strong>주소</strong>를 두거나 <span class="key-num">183일</span> 이상의 <strong>거소</strong>를 둔 개인<br>
+      <strong>"비거주자"</strong>: 거주자가 아닌 개인 (소극적 정의)<br>
+      <strong>"사업자"</strong>: 사업소득이 있는 <strong>거주자</strong> (비거주자는 사업자 아님!)
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>주소 (§1의2①1)</th><th>거소 (§1의2①1, 령§2②)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>정의</strong></td><td>생활의 본거지</td><td>주소지 외의 장소 중 상당기간 거주 / 주소와 같은 밀접한 생활관계 미형성</td></tr>
+          <tr><td><strong>판정 기준</strong></td><td>생계를 같이하는 가족 및 국내 자산의 유무 등 <strong>생활관계의 객관적 사실</strong></td><td>주소처럼 일반적 생활관계가 형성되지 않은 장소</td></tr>
+          <tr><td><strong>거주자 요건</strong></td><td>주소 있으면 바로 거주자</td><td><span class="key-num">183일 이상</span> 거소 두면 거주자</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 2-2 거주자 판정 세부 -->
+  <div class="sub-block">
+    <h3>2-2. 주소 판정 세부 기준 (령§2③④⑤) <span class="b b-red">🔴 최빈출</span></h3>
+
+    <h4>▶ 국내에 주소가 있는 것으로 보는 경우 (령§2③)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>호</th><th>요건</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr class="hl">
+            <td><strong>1호</strong></td>
+            <td>계속하여 <span class="key-num">183일 이상</span> 국내 거주가 통상 필요한 <strong>직업</strong>을 가진 때</td>
+            <td>직업 요건만으로 충족 (가족 불요)</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>2호</strong></td>
+            <td>국내에 <strong>생계를 같이하는 가족</strong>이 있고, 직업·자산상태에 비추어 183일↑ 거주 인정되는 때</td>
+            <td>가족 + 직업·자산 두 가지 모두 필요</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>▶ 국내에 주소가 없는 것으로 보는 경우 (령§2④) — 3요건 모두 충족</h4>
+    <div class="law-box">
+      <span class="lr">시행령 §2④</span>
+      ① <strong>외국국적</strong>을 갖거나 <strong>외국 영주권</strong>을 얻은 자 &nbsp;+&nbsp;
+      ② 국내에 <strong>생계를 같이하는 가족 없음</strong> &nbsp;+&nbsp;
+      ③ 직업·자산상태로 보아 재입국하여 주로 국내 거주할 것으로 <strong>인정되지 않는</strong> 때
+    </div>
+    <div class="warn-box">
+      ⚠ 3가지 요건 모두 충족해야 국내 주소 없음으로 봄 — 외국국적 하나만으로는 비거주자 불가!
+    </div>
+
+    <h4>▶ 선박·항공기 승무원 (령§2⑤)</h4>
+    <div class="two-col">
+      <div class="col-box">
+        <h4 style="color:var(--ok-text)">국내 주소 있음 (거주자)</h4>
+        가족 거주지 또는 근무기간 외 체재 장소가<br><strong>국내에 있는 때</strong>
+      </div>
+      <div class="col-box">
+        <h4 style="color:#9B2335">국내 주소 없음 (비거주자)</h4>
+        가족 거주지 또는 체재 장소가<br><strong>국외에 있는 때</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2-3 의제 -->
+  <div class="sub-block">
+    <h3>2-3. 거주자·비거주자 의제 (령§3)</h3>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>의제 유형</th><th>대상</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl">
+            <td><strong>거주자 의제</strong></td>
+            <td>거주자·내국법인의 국외사업장 또는 <strong>100% 직·간접 출자 해외현지법인</strong>에 파견된 임원·직원<br>또는 <strong>국외에서 근무하는 공무원</strong></td>
+            <td class="tc">령§3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="red-box">
+      🚨 해외현지법인 요건: 내국법인이 발행주식총수 또는 출자지분의 <strong>100%</strong>를 직·간접 출자한 법인만 해당<br>
+      99%는 해당 없음! / 공무원은 무조건 거주자 의제
+    </div>
+  </div>
+
+  <!-- 2-4 되는 시기 -->
+  <div class="sub-block">
+    <h3>2-4. 거주자·비거주자가 되는 시기 <span class="b b-red">🔴 기출 2024년 58번</span></h3>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>시기</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl">
+            <td><strong>비거주자 → 거주자</strong></td>
+            <td>국내에 주소를 두거나 거소를 둔 날 (입국일 <strong>다음 날</strong>부터 거소 기간 산정 → 183일 달성일)</td>
+            <td class="tc">령§4①</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>거주자 → 비거주자</strong></td>
+            <td>주소·거소를 국외로 이전한 날 = <strong>출국한 날</strong></td>
+            <td class="tc">§5③</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>▶ 거주기간 계산 (령§4)</h4>
+    <div class="law-box">
+      <span class="lr">시행령 §4①</span>
+      국내 거소를 둔 기간 = <strong>입국하는 날의 다음 날</strong>부터 <strong>출국하는 날</strong>까지<br>
+      (입국일 당일은 미산입, 출국일은 산입)
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>거소 기간 특례 (령§4③)</th><th>183일 이상으로 보는 경우</th></tr></thead>
+        <tbody>
+          <tr><td>1호</td><td><strong>1과세기간 동안</strong> 183일 이상인 경우</td></tr>
+          <tr><td>2호</td><td><strong>2과세기간에 걸쳐 계속하여</strong> 183일 이상인 경우</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn-box">
+      ⚠ 일시적 출국 기간도 국내 거소 기간에 포함 (령§4②): 관광·질병 치료 등 명백히 일시적 사유에 해당 시
+    </div>
+  </div>
+
+  <!-- 2-5 법인 아닌 단체 -->
+  <div class="sub-block">
+    <h3>2-5. 법인으로 보는 단체 외의 법인 아닌 단체 (§2③④⑤)</h3>
+
+    <div class="analogy-box">
+      💡 <strong>쉬운 비유:</strong> 공식 법인도 아니고 개인도 아닌 중간 형태의 단체(동호회, 종중, 조합 등)는 어떻게 세금을 낼까요? 소득세법은 단체를 하나의 개인처럼 취급하거나, 구성원 각자에게 과세하는 두 가지 방식을 씁니다.
+    </div>
+
+    <div class="pe-wrap">
+      <div class="pe-p">
+        <span class="pe-title p">원칙 — 단체 자체에 과세 (§2③본문)</span>
+        <ul style="font-size:.88em;color:#1A1A2E;line-height:1.85">
+          <li>국내 주사무소·사업의 실질적 관리장소 有<br>→ <strong>1거주자</strong>로 보아 소득세법 적용</li>
+          <li>위 장소 없음<br>→ <strong>1비거주자</strong>로 보아 소득세법 적용</li>
+        </ul>
+      </div>
+      <div class="pe-e">
+        <span class="pe-title e">예외 — 구성원 각자에게 과세 (§2③단서)</span>
+        <ul style="font-size:.88em;color:#1A1A2E;line-height:1.85">
+          <li><strong>1호:</strong> 구성원 간 이익 분배비율이 정해지고 구성원별 비율이 <strong>확인</strong>되는 경우</li>
+          <li><strong>2호:</strong> 분배비율 미정이나 사실상 구성원별 분배가 <strong>확인</strong>되는 경우</li>
+          <li>→ 각 구성원이 소득세 또는 법인세 납부</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>▶ 일부 확인되는 경우 (§2④) — 혼합 처리</h4>
+    <div class="law-box">
+      <span class="lr">§2④</span>
+      전체 중 <strong>일부 구성원의 분배비율만</strong> 확인되는 경우:<br>
+      · 확인되는 부분 → 해당 구성원별 납세의무<br>
+      · 확인되지 않는 부분 → 단체를 <strong>1거주자 또는 1비거주자</strong>로 보아 납세의무
+    </div>
+
+    <h4>▶ 국외투자기구 (§2⑤)</h4>
+    <div class="law-box">
+      <span class="lr">§2⑤</span>
+      법인으로 보는 단체 외의 법인 아닌 단체에 해당하는 <strong>국외투자기구</strong>가 §119의2에 따라 국내원천소득의 실질귀속자로 보는 경우 → <strong>1비거주자</strong>로 소득세 납부의무
+    </div>
+  </div>
+
+  <!-- 2-6 납세의무 특례 -->
+  <div class="sub-block">
+    <h3>2-6. 납세의무 특례 (§2의2·§2의3)</h3>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>특례 유형</th><th>납세의무자</th><th>내용</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>공동사업 기본</strong></td>
+            <td>각 공동사업자</td>
+            <td>공동사업 소득금액 계산 → <strong>공동사업자별</strong> 납세의무</td>
+            <td class="tc">§2의2①본문</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>주된 공동사업자 합산과세</strong></td>
+            <td>특수관계인: 연대납세의무</td>
+            <td>합산과세 소득금액에 대해 특수관계인은 <strong>손익분배비율 한도</strong> 내 연대납세의무</td>
+            <td class="tc">§2의2①단서</td>
+          </tr>
+          <tr>
+            <td><strong>피상속인 소득</strong></td>
+            <td>상속인</td>
+            <td>피상속인 소득금액에 과세 → <strong>상속인</strong>이 납세의무</td>
+            <td class="tc">§2의2②</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>증여 후 양도</strong></td>
+            <td>증여자+증여받은자: 연대납세의무</td>
+            <td>증여자가 자산 직접 양도한 것으로 보는 경우 → <strong>연대</strong> 납세의무</td>
+            <td class="tc">§2의2③</td>
+          </tr>
+          <tr>
+            <td><strong>공동소유 자산 양도</strong></td>
+            <td>각 공동소유자</td>
+            <td>공동 소유 자산 양도소득 → 각 거주자가 납세의무</td>
+            <td class="tc">§2의2⑤</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>신탁소득 — 원칙</strong></td>
+            <td>수익자 (사망 시 상속인)</td>
+            <td>신탁재산 귀속소득 → <strong>수익자</strong>에게 귀속된 것으로 봄</td>
+            <td class="tc">§2의3①</td>
+          </tr>
+          <tr>
+            <td><strong>신탁소득 — 위탁자 실질 통제</strong></td>
+            <td>위탁자</td>
+            <td>위탁자가 신탁재산을 <strong>실질적으로 통제</strong>하는 경우 → 위탁자 귀속</td>
+            <td class="tc">§2의3②</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 과세소득 범위 -->
+  <div class="sub-block">
+    <h3>2-7. 과세소득의 범위 (§3) — 거주자 vs 비거주자 vs 외국인 거주자</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>납세자</th><th>과세 범위</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td><strong>거주자 (일반)</strong></td><td><strong>모든 소득</strong> (국내+국외 전부)</td><td class="tc">§3①본문</td></tr>
+          <tr class="hl">
+            <td><strong>외국인 거주자</strong><br>(10년 중 국내 5년 이하)</td>
+            <td>국내 소득 전부 + 국외소득 중 <strong>국내 지급 또는 국내 송금분</strong></td>
+            <td class="tc">§3①단서</td>
+          </tr>
+          <tr><td><strong>비거주자</strong></td><td><strong>국내원천소득</strong>만 (§119)</td><td class="tc">§3②</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════ 3. 과세기간 ════════════════ -->
+<div class="section">
+  <div class="section-title-bar">3. 과세기간 (§5)</div>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유:</strong> 소득세는 "1년"이라는 정해진 기간 단위로 계산해요. 법인세와 달리 반드시 1월 1일~12월 31일이어야 하며, 예외는 사망하거나 해외로 이사 갈 때 단축됩니다.
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">원칙 (§5①) — 1년</div>
+      <div class="tl-content"><strong>1월 1일 ~ 12월 31일</strong> &nbsp; (역년 강제, 임의 변경 불가)</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot r"></div>
+      <div class="tl-date">예외 ① (§5②) — 거주자 사망</div>
+      <div class="tl-content"><strong>1월 1일 ~ 사망한 날</strong></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot r"></div>
+      <div class="tl-date">예외 ② (§5③) — 출국으로 비거주자가 되는 경우</div>
+      <div class="tl-content"><strong>1월 1일 ~ 출국한 날</strong></div>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    ⚠ <strong>거주자가 비거주자가 되는 시기</strong>: 출국한 날<br>
+    <strong>과세기간 종료일</strong>: 출국한 날 (출국일 포함!) — 출국일 다음 날이 아님
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th>과세기간</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td>원칙</td><td>1.1 ~ 12.31 (1년)</td><td class="tc">§5①</td></tr>
+        <tr><td>사망</td><td>1.1 ~ 사망일</td><td class="tc">§5②</td></tr>
+        <tr><td>출국 (비거주자 됨)</td><td>1.1 ~ 출국일</td><td class="tc">§5③</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ════════════════ 4. 납세지 ════════════════ -->
+<div class="section">
+  <div class="section-title-bar">4. 납세지 (§6~§11)</div>
+
+  <!-- 4-1 소득세 납세지 -->
+  <div class="sub-block">
+    <h3>4-1. 소득세의 납세지 (§6)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>납세자</th><th>원칙 납세지</th><th>예외</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl">
+            <td><strong>거주자</strong></td>
+            <td><strong>주소지</strong></td>
+            <td>주소지 없으면 <strong>거소지</strong></td>
+            <td class="tc">§6①</td>
+          </tr>
+          <tr>
+            <td><strong>비거주자 (국내사업장 1개)</strong></td>
+            <td><strong>국내사업장 소재지</strong></td>
+            <td>—</td>
+            <td class="tc">§6②본문</td>
+          </tr>
+          <tr>
+            <td><strong>비거주자 (국내사업장 2개↑)</strong></td>
+            <td><strong>주된 국내사업장 소재지</strong></td>
+            <td>—</td>
+            <td class="tc">§6②단서1</td>
+          </tr>
+          <tr>
+            <td><strong>비거주자 (국내사업장 없음)</strong></td>
+            <td><strong>국내원천소득이 발생하는 장소</strong></td>
+            <td>—</td>
+            <td class="tc">§6②단서2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 4-2 원천징수 납세지 -->
+  <div class="sub-block">
+    <h3>4-2. 원천징수하는 소득세의 납세지 (§7) <span class="b b-red">🔴 기출 자주 출제</span></h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>원천징수하는 자</th><th>납세지</th><th>예외</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>거주자</strong></td>
+            <td>주된 사업장 소재지</td>
+            <td>다른 사업장에서 징수 시 → 그 사업장 / 사업장 없으면 주소지·거소지</td>
+            <td class="tc">§7①1</td>
+          </tr>
+          <tr>
+            <td><strong>비거주자</strong></td>
+            <td>주된 국내사업장 소재지</td>
+            <td>다른 국내사업장에서 징수 시 → 그 장소 / 없으면 거류지·체류지</td>
+            <td class="tc">§7①2</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>법인 (원칙)</strong></td>
+            <td><strong>본점 또는 주사무소 소재지</strong></td>
+            <td>—</td>
+            <td class="tc">§7①3</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>법인 (독립채산제 지점)</strong></td>
+            <td><strong>그 사업장의 소재지</strong><br>(국외 소재 지점 제외)</td>
+            <td>대통령령으로 정하는 경우 → 본점·주사무소 소재지 선택 가능</td>
+            <td class="tc">§7①4</td>
+          </tr>
+          <tr>
+            <td>납세조합</td>
+            <td>납세조합의 소재지</td>
+            <td>—</td>
+            <td class="tc">§7②</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="warn-box">
+      ⚠ 법인의 원천징수 납세지 핵심: <strong>원칙 = 본점·주사무소</strong> / 독립채산제로 독자 회계처리하는 지점 = <strong>그 지점 소재지</strong> (단, 국외 지점은 제외)
+    </div>
+  </div>
+
+  <!-- 4-3 납세지 지정 -->
+  <div class="sub-block">
+    <h3>4-3. 납세지의 지정 (§9)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>지정 권한</th><th>지정 사유</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr>
+            <td rowspan="2"><strong>국세청장 또는<br>관할 지방국세청장</strong></td>
+            <td>① 사업소득 거주자가 <strong>사업장 소재지</strong>를 납세지로 <strong>신청</strong>한 경우</td>
+            <td>신청 기반 지정</td>
+          </tr>
+          <tr>
+            <td>② ①외의 거주자·비거주자로서 기존 납세지가 소득 상황에 <strong>부적당하거나 이행 불편</strong>한 경우</td>
+            <td>직권 지정</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ok-box">
+      ✅ <strong>지정 거부 시</strong>: 세무관리상 부적절하다고 인정되어 신청대로 지정하지 않는 경우 → <strong>서면으로 통지</strong> 의무<br>
+      ✅ <strong>지정 사유 소멸 시</strong>: 지정 <strong>취소하여야 한다</strong> (의무 취소)<br>
+      ✅ <strong>취소 효력</strong>: 취소 전에 한 신고·납부 등의 행위의 효력에는 영향 없음
+    </div>
+  </div>
+
+  <!-- 4-4 납세지 변경 -->
+  <div class="sub-block">
+    <h3>4-4. 납세지 변경신고 (§10) &amp; 과세 관할 (§11)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl">
+            <td><strong>변경신고 기한</strong></td>
+            <td>납세지 변경된 날부터 <span class="key-num">15일</span> 이내</td>
+            <td class="tc">§10</td>
+          </tr>
+          <tr class="hl">
+            <td><strong>신고처</strong></td>
+            <td><strong>변경 후</strong> 납세지 관할 세무서장</td>
+            <td class="tc">§10</td>
+          </tr>
+          <tr>
+            <td><strong>과세 관할</strong></td>
+            <td>소득세는 납세지를 관할하는 <strong>세무서장 또는 지방국세청장</strong>이 과세</td>
+            <td class="tc">§11</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 납세지 종합 플로우 -->
+  <div class="sub-block">
+    <h3>4-5. 거주자 납세지 결정 플로우</h3>
+    <div class="flowchart">
+      <div class="flow-node">거주자의 소득세 납세지는?</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-diamond">국내에 주소지 있나?</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">Yes</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node g">주소지가 납세지 (§6①)</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">No</div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-node">거소지가 납세지 (§6①단서)</div>
+        </div>
+      </div>
+      <div class="flow-arrow" style="margin-top:8px">↓ 사업소득 있는 거주자</div>
+      <div class="flow-diamond">납세지 지정 신청했나? (§9①1)</div>
+      <div class="flow-branch">
+        <div class="flow-branch-item">
+          <div class="branch-label">Yes + 승인</div>
+          <div class="flow-node g">사업장 소재지가 납세지</div>
+        </div>
+        <div class="flow-branch-item">
+          <div class="branch-label">No or 거부</div>
+          <div class="flow-node gray">주소지(거소지) 유지</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════ 비교표 ════════════════ -->
+<div class="section compare-box">
+  <h2>⚖️ 핵심 비교 — 거주자 vs 비거주자</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th>거주자</th><th>비거주자</th></tr></thead>
+      <tbody>
+        <tr><td><strong>정의</strong></td><td>국내 주소 OR 183일↑ 거소</td><td class="diff">거주자가 아닌 개인</td></tr>
+        <tr><td><strong>과세 범위</strong></td><td>모든 소득 (국내+국외)</td><td class="diff">국내원천소득만</td></tr>
+        <tr><td><strong>납세지</strong></td><td>주소지 (→ 거소지)</td><td class="diff">국내사업장 소재지 (→ 원천소득 발생 장소)</td></tr>
+        <tr><td><strong>소득 구분</strong></td><td>§4 (종합·퇴직·양도)</td><td class="diff">§119 (국내원천소득 구분)</td></tr>
+        <tr><td><strong>"사업자" 해당</strong></td><td>사업소득 있으면 사업자</td><td class="diff">사업소득 있어도 사업자 아님</td></tr>
+        <tr><td><strong>비거주자 되는 시기</strong></td><td>출국한 날</td><td>—</td></tr>
+        <tr><td><strong>거주자 되는 시기</strong></td><td>—</td><td>주소 또는 183일↑ 거소를 둔 날</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ════════════════ 오답 함정 ════════════════ -->
+<div class="section trap-box">
+  <h2>⚠️ 오답 함정 — 기출 기반 9선</h2>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"비거주자는 국내에 거소를 둔 기간이 183일이 되는 날에 거주자가 된다" (2022년 59번 선지)</strong>
+      <p>→ 정답: 거주기간 계산은 입국일 <strong>다음 날</strong>부터 계산. 즉 183일이 되는 날이 거주자가 되는 시기임. 단, "183일이 되는 날"이라는 표현 자체는 맞지만 기산점(입국 다음 날)을 주의해야 함. 실제로는 186번째 날 이후 (입국 당일 제외 + 출국일 포함)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"거주자는 출국일의 다음 날에 비거주자가 된다" (2024년 58번 정답 선지)</strong>
+      <p>→ 정답: 거주자는 <strong>출국한 날</strong>에 비거주자가 됨. 과세기간도 출국일까지 (§5③). 출국일 '다음 날'이 아님!</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"외국 국적을 가지면 무조건 비거주자이다"</strong>
+      <p>→ 정답: 외국 국적 + 국내 생계 가족 없음 + 재입국 불인정 3요건 모두 충족해야 국내 주소 없음으로 봄 (령§2④). 외국 국적 하나만으로는 비거주자 판정 불가</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"해외현지법인에 파견된 임직원은 거주자로 의제된다"</strong>
+      <p>→ 정답: <strong>100% 직·간접 출자</strong> 해외현지법인에 파견된 경우만 해당. 99% 출자 법인이라면 의제 안 됨 (령§3)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"법인 아닌 단체는 항상 구성원 각자에게 과세한다"</strong>
+      <p>→ 정답: <strong>원칙은 단체 자체를 1거주자·1비거주자</strong>로 보아 과세. 구성원 분배비율이 확인될 때만 예외적으로 구성원 각자에게 과세 (§2③)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"법인의 원천징수 납세지는 항상 독립채산제 지점 소재지이다"</strong>
+      <p>→ 정답: 법인의 원천징수 납세지는 <strong>원칙 = 본점·주사무소</strong>. 독립채산제로 독자 회계처리하는 지점은 <strong>예외</strong>적으로 그 지점 소재지 (§7①3·4호)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"납세지 변경신고는 변경 전 납세지 관할 세무서장에게 한다"</strong>
+      <p>→ 정답: <strong>변경 후</strong> 납세지 관할 세무서장에게 신고 (§10). 기한은 변경된 날부터 15일 이내</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"피상속인과 상속인의 소득금액에 대한 소득세는 합산하여 계산한다" (2024년 59번 ①번 선지)</strong>
+      <p>→ 정답: <strong>각각 별도로</strong> 계산. 피상속인 소득분은 상속인이 납세의무를 지지만, 합산 계산하는 것은 아님 (§2의2②, 기출 2024년 59번 오답 선지)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <span class="trap-icon">❌</span>
+    <div>
+      <strong>"신탁소득은 위탁자에게 귀속되는 것이 원칙이다"</strong>
+      <p>→ 정답: 신탁소득 귀속 원칙은 <strong>수익자</strong>에게 귀속 (§2의3①). 위탁자 귀속은 위탁자가 신탁재산을 실질적으로 통제하는 예외적 경우 (§2의3②)</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════ 법조항 색인 ════════════════ -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="tc">§1의2①</td><td>거주자·비거주자·사업자 정의 (주소/183일 거소)</td></tr>
+        <tr><td class="tc">§2①②</td><td>납세의무자 — 소득세/원천징수 납세의무</td></tr>
+        <tr><td class="tc">§2③④⑤</td><td>법인 아닌 단체 납세의무 (1거주자·1비거주자·구성원별 혼합)</td></tr>
+        <tr><td class="tc">§2의2①~⑤</td><td>납세의무 특례 (공동사업·상속·증여양도·공동소유)</td></tr>
+        <tr><td class="tc">§2의3①②</td><td>신탁소득 귀속 (수익자 원칙 / 위탁자 실질 통제 예외)</td></tr>
+        <tr><td class="tc">§3①②</td><td>과세소득 범위 (거주자 전소득 / 외국인 거주자 특례 / 비거주자 국내원천)</td></tr>
+        <tr><td class="tc">§4①</td><td>소득 구분 (종합·퇴직·양도소득)</td></tr>
+        <tr><td class="tc">§5①②③</td><td>과세기간 (원칙 1.1~12.31 / 사망 / 출국)</td></tr>
+        <tr><td class="tc">§6①②</td><td>소득세 납세지 (거주자·비거주자)</td></tr>
+        <tr><td class="tc">§7①②</td><td>원천징수 납세지 (거주자·비거주자·법인·독립채산제·납세조합)</td></tr>
+        <tr><td class="tc">§9①~④</td><td>납세지 지정 (신청·직권 / 서면통지 / 취소 의무)</td></tr>
+        <tr><td class="tc">§10</td><td>납세지 변경신고 (15일 이내 / 변경 후 납세지 관할 세무서장)</td></tr>
+        <tr><td class="tc">§11</td><td>과세 관할 (세무서장·지방국세청장)</td></tr>
+        <tr><td class="tc">령§2①~⑤</td><td>주소·거소 판정 / 주소 있는·없는 것으로 보는 경우 / 승무원</td></tr>
+        <tr><td class="tc">령§3</td><td>해외파견 임직원·공무원 거주자 의제 (100% 출자 현지법인)</td></tr>
+        <tr><td class="tc">령§4①~④</td><td>거주기간 계산 (입국 다음 날 ~ 출국일 / 일시적 출국 포함 / 183일 특례)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote" style="margin-top:10px">
+    ※ 소득세법 (2026.04.21 시행) / 소득세법 시행령 (2026.05.22 시행) 기준<br>
+    ※ 출제동향 반영: 납세의무·거주자 판단 영역 5년간 36회 출제 — 소득세법 최빈출 (2021~2025년)
+  </p>
+</div>
+
+</body>
+</html>
