@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 — 종합소득세액 | 세무사 1차 예습자료</title>
+<style>
+:root{
+  --navy:#0D1B4B;--blue:#1A3A6B;--blm:#2C5282;--bll:#EEF2FF;--blb:#C3D4F0;
+  --green:#145C36;--grl:#F0FFF4;--grb:#9AE6B4;
+  --red:#9B2335;--rdl:#FFF3F3;--rdb:#FED7D7;
+  --org:#744210;--orl:#FFFBEB;--orb:#F6E05E;
+  --pur:#5A2D82;--prl:#FAF5FF;--prb:#D6BCFA;
+  --tel:#0C7470;--tll:#EAFAF8;--tlb:#99E4DC;
+  --bg:#FAFAFA;--sf:#FFFFFF;--tx:#1A1A2E;--txm:#718096;--bd:#E8ECF0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.88;max-width:980px;margin:0 auto;padding:24px}
+h2{color:var(--blue);font-size:1.12em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+h3{color:var(--blm);font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:20px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.75}strong{color:var(--tx)}
+.header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:30px 38px;border-radius:14px;margin-bottom:20px}
+.sbadge{background:rgba(255,255,255,.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:10px}
+.header h1{color:#fff;font-size:1.8em;line-height:1.3}
+.header .meta{font-size:.8em;opacity:.85;margin-top:8px;line-height:1.65}
+.fbadge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:var(--rdl);color:var(--red);border:1px solid var(--rdb);margin-left:6px}
+.section{margin:20px 0;padding:22px 26px;border-radius:12px;border:1px solid var(--bd);background:var(--sf);box-shadow:0 2px 7px rgba(0,0,0,.05)}
+.bar{color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-22px -26px 17px;letter-spacing:.02em}
+.b-blue{background:linear-gradient(90deg,var(--navy),var(--blm))}
+.b-red{background:linear-gradient(90deg,#5A0A14,var(--red))}
+.b-green{background:linear-gradient(90deg,#0A3A20,var(--green))}
+.b-purple{background:linear-gradient(90deg,#2D0A60,var(--pur))}
+.b-teal{background:linear-gradient(90deg,#054044,var(--tel))}
+.b-orange{background:linear-gradient(90deg,#4A1A04,var(--org))}
+.sub{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:13px 17px;margin:11px 0}
+.sub h3{margin-top:0;color:var(--blue)}
+.hbox{background:var(--orl);border:1px solid var(--orb);border-radius:10px;padding:16px 20px;margin:20px 0}
+.hbox h2{color:var(--org);border-bottom-color:var(--orb)}
+.trapbox{background:var(--rdl);border:1px solid var(--rdb);border-radius:10px;padding:16px 20px;margin:20px 0}
+.trapbox h2{color:var(--red);border-bottom-color:var(--rdb)}
+.cmpbox{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.cmpbox h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.an{background:var(--grl);border:1px solid var(--grb);border-radius:8px;padding:11px 15px;margin:10px 0;font-size:.91em}
+.lb{background:var(--bll);border:1px solid var(--blb);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:10px 14px;margin:9px 0;font-size:.87em;line-height:1.8}
+.wb{background:var(--orl);border:1px solid var(--orb);border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.gb{background:var(--grl);border:1px solid var(--grb);border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.rb{background:var(--rdl);border:1px solid var(--rdb);border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.pb{background:var(--prl);border:1px solid var(--prb);border-left:4px solid var(--pur);border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.lr{font-family:monospace;font-size:.8em;font-weight:700;color:var(--blue);display:block;margin-bottom:3px}
+.tw{overflow-x:auto;border-radius:8px;border:1px solid var(--bd);margin:11px 0}
+table{width:100%;border-collapse:collapse;font-size:.87em}
+th{background:var(--bll);color:var(--blue);padding:9px 12px;text-align:left;font-weight:600;font-size:.86em;border-bottom:2px solid var(--blb)}
+td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.72}
+tr:hover td{background:#FAFBFF}
+.xr{color:#C53030;font-weight:600}.ok{color:#276749;font-weight:600}
+.hl{background:var(--orl)!important}.ctr{text-align:center}
+.mn{font-family:monospace;font-size:.83em;color:var(--blue)}
+/* 세율표 */
+.rate-table th{background:var(--navy);color:#fff}
+.rate-table .top-rate{background:#FFF3F3;font-weight:700;color:#C53030}
+/* calc */
+.cb{background:var(--prl);border:1px solid var(--prb);border-radius:10px;padding:15px 19px;margin:12px 0}
+.cb h3{color:var(--pur);margin-top:0;font-size:.95em}
+.cs{display:flex;align-items:flex-start;gap:8px;margin:5px 0;padding:7px 10px;background:#fff;border-radius:6px;border:1px solid var(--prb)}
+.cn{background:var(--pur);color:#fff;padding:2px 7px;border-radius:10px;font-size:.78em;font-weight:700;flex-shrink:0;margin-top:2px}
+.cl{font-weight:600;color:#2D3748;flex:1;font-size:.89em}
+.cf{color:var(--pur);font-family:monospace;font-size:.88em}
+.cref{color:var(--txm);font-size:.78em;flex-shrink:0}
+.cres{background:var(--pur);color:#fff;padding:9px 14px;border-radius:8px;font-weight:700;margin-top:9px;text-align:center;font-size:.92em}
+/* 산출세액 계산구조 */
+.tax-flow{display:flex;flex-direction:column;gap:0;margin:14px 0}
+.tf-row{display:flex;align-items:stretch;margin:2px 0}
+.tf-op{width:36px;display:flex;align-items:center;justify-content:center;font-size:1.3em;font-weight:700;color:var(--blue);flex-shrink:0}
+.tf-box{flex:1;padding:9px 14px;border-radius:8px;font-size:.88em;font-weight:600;color:#fff}
+.tf-b1{background:var(--navy)}.tf-b2{background:var(--red)}.tf-b3{background:var(--green)}
+.tf-b4{background:var(--org)}.tf-b5{background:var(--pur)}.tf-b6{background:#276749}
+.tf-sub{flex:1;padding:8px 14px;border-radius:8px;font-size:.86em;background:#F8FAFE;border:1px solid #DCE7F5;margin-left:44px;color:var(--txm)}
+/* 비교과세 */
+.compare-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:2px solid var(--blue);margin:12px 0}
+@media(max-width:640px){.compare-card{grid-template-columns:1fr}}
+.cc-a{background:var(--bll);padding:13px 16px;border-right:2px solid var(--blue)}
+.cc-b{background:var(--orl);padding:13px 16px}
+.cc-title{font-weight:700;font-size:.89em;color:var(--blue);margin-bottom:6px}
+.cc-title.o{color:var(--org)}
+/* 세액공제 그리드 */
+.ded-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:12px 0}
+.ded-card{border-radius:9px;overflow:hidden;border:1px solid var(--bd)}
+.ded-head{padding:8px 12px;font-weight:700;font-size:.87em;color:#fff}
+.ded-body{background:#fff;padding:10px 12px;font-size:.85em;line-height:1.75}
+/* 기납부세액 */
+.prepaid-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:640px){.prepaid-grid{grid-template-columns:1fr}}
+.pp-card{background:#fff;border:1px solid var(--bd);border-radius:9px;padding:13px;border-top:4px solid var(--blue)}
+.pp-card.g{border-top-color:#276749}.pp-card.o{border-top-color:var(--org)}.pp-card.p{border-top-color:var(--pur)}
+.pp-head{font-weight:700;font-size:.89em;color:var(--blue);margin-bottom:6px}
+.pp-head.g{color:#276749}.pp-head.o{color:var(--org)}.pp-head.p{color:var(--pur)}
+/* MISC */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.kn{display:inline-block;background:var(--blue);color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.bd2{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:600;margin:1px}
+.bdr{background:var(--rdl);color:var(--red);border:1px solid var(--rdb)}
+.bdg{background:var(--grl);color:#065F46;border:1px solid var(--grb)}
+.star{color:#D97706;font-size:.81em}
+.ti{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 12px;background:#fff;border-radius:8px;border:1px solid var(--rdb)}
+.tic{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.footnote{color:var(--txm);font-size:.82em;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="sbadge">소득세법 §55~§76</div>
+  <h1>종합소득세액 — 산출세액 · 세액공제 · 결정세액 · 기납부세액</h1>
+  <div class="meta">
+    세무사 1차 예습자료 | 소득세법 §55·§56·§59~§69·§76 (2026.04.21 시행)
+    <span class="fbadge">🔴 5년간 25회 — 52번 계산형 고정 출제</span>
+  </div>
+</div>
+
+<!-- 최빈출 포인트 -->
+<div class="section hbox">
+  <h2>🔥 최빈출 포인트 (25회 출제)</h2>
+  <ol>
+    <li><strong>금융소득 비교과세 구조 (§62)</strong> <span class="star">★★★</span> — 1호(초과분 합산+2,000만×14%) vs 2호(원천징수세율 그대로+타소득) 중 큰 금액 — 2021년 60번·2022년 51번 기출</li>
+    <li><strong>근로소득세액공제 한도: 총급여별 20~74만원</strong> <span class="star">★★★</span> — §59②1~4호: 3,300만원 이하 74만원, 3,300~7,000만원 66~74만원, 7,000만~1.2억 50~66만원, 1.2억초과 20~50만원</li>
+    <li><strong>의료비 세액공제: 총급여 3% 초과분 15%</strong> <span class="star">★★★</span> — 본인·65세↑·장애인·미숙아·난임 등 제한 없음 / 한도: 일반 700만원 / 특정 한도 없음 — 계산형 필수</li>
+    <li><strong>교육비 세액공제율 15%</strong> <span class="star">★★</span> — 대학생 900만원/초중고 300만원/본인 한도없음 / 직계존속 불가</li>
+    <li><strong>기부금 세액공제: 1,000만원 이하 15%, 초과 30%</strong> <span class="star">★★</span> — §59의4④ / 특례기부금 먼저</li>
+    <li><strong>중간예납 기준액 계산</strong> <span class="star">★★</span> — 전년 소득세 합산액에서 환급세액 차감 / 추계액이 30% 미달 시 신고 가능 (§65)</li>
+    <li><strong>분리과세 주택임대 vs 종합과세 선택</strong> <span class="star">★★</span> — §64의2: 유리한 쪽 선택 / 등록 60%필요경비+400만원·미등록 50%+200만원 / 14% 세율</li>
+    <li><strong>사적연금 1,500만원 초과 시 15% 분리과세</strong> <span class="star">★</span> — §64의3: 1,500만원 이하 선택 vs 초과 종합과세·15%분리 선택</li>
+  </ol>
+</div>
+
+
+<!-- ════ 1. 종합소득 산출세액 ════ -->
+<div class="section">
+  <div class="bar b-blue">1. 종합소득 산출세액 (§55)</div>
+
+  <div class="sub">
+    <h3>1-1. 기본세율 (§55①)</h3>
+    <div class="tw">
+      <table class="rate-table">
+        <thead><tr><th>종합소득과세표준</th><th>세율</th><th>누진공제</th></tr></thead>
+        <tbody>
+          <tr><td>1,400만원 이하</td><td class="ctr">6%</td><td class="ctr">—</td></tr>
+          <tr><td>1,400만원 초과 ~ 5,000만원 이하</td><td class="ctr">15%</td><td class="ctr">126만원</td></tr>
+          <tr><td>5,000만원 초과 ~ 8,800만원 이하</td><td class="ctr">24%</td><td class="ctr">576만원</td></tr>
+          <tr><td>8,800만원 초과 ~ 1.5억원 이하</td><td class="ctr">35%</td><td class="ctr">1,544만원</td></tr>
+          <tr><td>1.5억원 초과 ~ 3억원 이하</td><td class="ctr">38%</td><td class="ctr">1,994만원</td></tr>
+          <tr><td>3억원 초과 ~ 5억원 이하</td><td class="ctr">40%</td><td class="ctr">2,594만원</td></tr>
+          <tr><td>5억원 초과 ~ 10억원 이하</td><td class="ctr">42%</td><td class="ctr">3,594만원</td></tr>
+          <tr class="top-rate"><td>10억원 초과</td><td class="ctr"><strong>45%</strong></td><td class="ctr">6,594만원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="an">💡 <strong>누진공제 활용법:</strong> 산출세액 = 과세표준 × 세율 − 누진공제<br>예: 과세표준 6,000만원 → 6,000만 × 24% − 576만 = 1,440만 − 576만 = <strong>864만원</strong></div>
+  </div>
+
+  <div class="sub">
+    <h3>1-2. 종합소득세액 계산 구조</h3>
+    <div class="tax-flow">
+      <div class="tf-row"><div class="tf-op"></div><div class="tf-box tf-b1">① 종합소득과세표준 × 기본세율 = 종합소득 산출세액</div></div>
+      <div class="tf-row"><div class="tf-op">−</div><div class="tf-box tf-b2">② 감면세액 (조특법상 소득세 감면)</div></div>
+      <div class="tf-row"><div class="tf-op">−</div><div class="tf-box tf-b2">③ 세액공제 (배당·근로·자녀·연금계좌·특별·외국납부 등)</div></div>
+      <div class="tf-row"><div class="tf-op">=</div><div class="tf-box tf-b3">④ 종합소득 결정세액</div></div>
+      <div class="tf-row"><div class="tf-op">−</div><div class="tf-box tf-b4">⑤ 기납부세액 (원천징수+중간예납+토지매매차익예정신고 등)</div></div>
+      <div class="tf-row"><div class="tf-op">=</div><div class="tf-box tf-b6">⑥ 차감납부세액 (환급세액)</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 2. 금융소득 비교과세 ════ -->
+<div class="section">
+  <div class="bar b-teal">2. 금융소득에 대한 세액계산 특례 — 비교과세 (§62)</div>
+
+  <div class="sub">
+    <h3>2-1. 비교과세 구조 (§62)</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 이자·배당이 2,000만원을 넘으면 "합산과세"와 "원천징수세율로 내는 방식" 중 세금이 더 많은 쪽으로 납부합니다. 절세 방지 장치입니다.</div>
+    <div class="lb"><span class="lr">§62 — 비교과세 적용 요건</span>
+      종합소득과세표준에 포함된 이자소득과 배당소득의 합계가 <strong>종합과세기준금액(2,000만원)</strong>을 초과하는 경우<br>
+      → 1호와 2호 중 <strong>큰 금액</strong>을 산출세액으로 함
+    </div>
+
+    <div class="compare-card">
+      <div class="cc-a">
+        <div class="cc-title">1호 — 합산과세 방식 (초과분 기본세율)</div>
+        <ul style="font-size:.87em;line-height:1.8">
+          <li>가목: (금융소득 − 2,000만원 + 타소득금액) × 기본세율</li>
+          <li>나목: 2,000만원 × 14% (종합과세기준금액 × 원천징수세율)</li>
+          <li>가목 + 나목 = <strong>1호 세액</strong></li>
+        </ul>
+      </div>
+      <div class="cc-b">
+        <div class="cc-title o">2호 — 원천징수세율 방식 (금융소득 전체)</div>
+        <ul style="font-size:.87em;line-height:1.8">
+          <li>가목: 이자·배당소득 × 원천징수세율 (14% 또는 25% 등)</li>
+          <li>나목: 타소득금액에 대한 산출세액</li>
+          <li>가목 + 나목 = <strong>2호 세액</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rb">🚨 <strong>출자공동사업자 배당소득(§17①8호)은 이자소득등으로 보지 않음!</strong><br>
+      §62 후단: 해당 배당소득금액은 이자소득등으로 보지 아니함 → 2,000만원 기준 계산에서 제외<br>
+      → 이 배당소득은 종합과세만 적용 (비교과세 틀 밖)</div>
+    <div class="wb">⚠ <strong>2,000만원 이하인 경우:</strong> §62는 2호 금액으로 함 (비교과세 없이 원천징수세율 적용)</div>
+  </div>
+
+  <div class="sub">
+    <h3>2-2. 비교과세 계산 예제 (2022년 51번 유사형)</h3>
+    <div class="cb">
+      <h3>📐 금융소득 비교과세 계산</h3>
+      <div class="lb" style="margin-bottom:8px;font-size:.85em">
+        이자소득: 1,500만원 / 배당소득(Gross-up포함): 1,500만원 (수령액 1,364만원) / 근로소득금액: 3,000만원<br>
+        ※ 2,000만원 기준: Gross-up 제외 → 이자 1,500 + 배당수령 1,364 = 2,864만원 &gt; 2,000만원 → 비교과세 적용
+      </div>
+      <div class="cs"><span class="cn">1호</span><span class="cl">가목: (금융소득 3,000 − 2,000 + 근로 3,000) = 4,000만원 × 기본세율</span><span class="cf">4,000만 × 15% − 126만 = 474만원</span></div>
+      <div class="cs"><span class="cn">1호</span><span class="cl">나목: 2,000만원 × 14%</span><span class="cf">= 280만원</span></div>
+      <div class="cs"><span class="cn">1호</span><span class="cl">1호 세액 합계</span><span class="cf">474 + 280 = 754만원</span></div>
+      <div class="cs"><span class="cn">2호</span><span class="cl">가목: 금융소득 3,000만원 × 14%</span><span class="cf">= 420만원</span></div>
+      <div class="cs"><span class="cn">2호</span><span class="cl">나목: 근로 3,000만원 × 15% − 126만 (누진공제)</span><span class="cf">= 324만원</span></div>
+      <div class="cs"><span class="cn">2호</span><span class="cl">2호 세액 합계</span><span class="cf">420 + 324 = 744만원</span></div>
+      <div class="cres">산출세액 = MAX(1호 754만, 2호 744만) = 754만원 (1호 선택)</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 3. 부동산매매업자 세액계산 특례 ════ -->
+<div class="section">
+  <div class="bar b-orange">3. 부동산매매업자에 대한 세액계산 특례 (§64)</div>
+
+  <div class="sub">
+    <h3>3-1. 개요 및 구조</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 부동산 매매를 사업으로 하는 사람의 토지·건물 매도 소득에는, 양도소득세처럼 높은 세율이 적용되도록 비교과세합니다.</div>
+    <div class="lb"><span class="lr">§64①</span>
+      부동산매매업자가 토지·건물을 매도한 경우:<br>
+      종합소득 산출세액 = <span class="kn">다음 1호·2호 중 큰 금액</span><br>
+      <strong>1호</strong>: 종합소득과세표준 전체에 기본세율 적용한 산출세액<br>
+      <strong>2호</strong>: (토지·건물 매도 부분 제외 소득 산출세액) + (토지·건물 매도소득에 §104①(양도소득세율) 적용 세액)
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>항목</th><th>내용</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>목적</td><td>부동산매매업자가 종합소득세를 이용해 양도세율 회피 방지</td><td class="mn">§64</td></tr>
+          <tr><td>대상</td><td>부동산매매업자가 양도한 토지·건물</td><td></td></tr>
+          <tr class="hl"><td>비교세액 기준</td><td>1호(기본세율 전체합산) vs 2호(토지건물분 양도소득세율 별도) → 큰 것</td><td class="mn">§64①</td></tr>
+          <tr><td>예정신고</td><td>부동산매매업자는 토지등 매매차익 예정신고 의무 (§69)</td><td class="mn">§69</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 4. 세액공제 및 세액감면 ════ -->
+<div class="section">
+  <div class="bar b-blue">4. 세액공제 및 세액감면</div>
+
+  <!-- 4-1 배당세액공제 -->
+  <div class="sub">
+    <h3>4-1. 배당세액공제 (§56)</h3>
+    <div class="lb"><span class="lr">§56①④</span>
+      종합소득에 Gross-up 배당소득이 합산된 경우<br>
+      → Gross-up 금액(배당수령액 × 10%) = <strong>배당세액공제액</strong>으로 산출세액에서 공제<br>
+      공제 대상: 종합소득과세표준에 포함된 배당소득 중 <strong>2,000만원 초과분</strong>에 해당하는 것
+    </div>
+  </div>
+
+  <!-- 4-2 근로소득세액공제 -->
+  <div class="sub">
+    <h3>4-2. 근로소득세액공제 (§59) <span class="bd2 bdr">계산형 핵심</span></h3>
+    <div class="lb"><span class="lr">§59①</span>
+      근로소득에 대한 종합소득 산출세액에서 공제:<br>
+      산출세액 130만원 이하: × 55% / 130만원 초과: 71만5천원 + (130만원 초과분 × 30%)
+    </div>
+    <h4>▶ 총급여액별 공제 한도 (§59②)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>총급여액</th><th>공제 한도</th></tr></thead>
+        <tbody>
+          <tr><td>3,300만원 이하</td><td><span class="kn">74만원</span></td></tr>
+          <tr><td>3,300만원 초과 ~ 7,000만원 이하</td><td>74만원 − [(총급여 − 3,300만) × 8/1,000] <em>(최소 66만원)</em></td></tr>
+          <tr class="hl"><td>7,000만원 초과 ~ 1억2,000만원 이하</td><td>66만원 − [(총급여 − 7,000만) × 1/2] <em>(최소 50만원)</em></td></tr>
+          <tr class="hl"><td>1억2,000만원 초과</td><td>50만원 − [(총급여 − 1.2억) × 1/2] <em>(최소 20만원)</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gb">✅ 일용근로자: 산출세액의 55% 공제 (별도, §59③)</div>
+  </div>
+
+  <!-- 4-3 특별세액공제 -->
+  <div class="sub">
+    <h3>4-3. 특별세액공제 (§59의4) <span class="bd2 bdr">계산형 핵심</span></h3>
+    <div class="ded-grid">
+      <div class="ded-card">
+        <div class="ded-head" style="background:#9B2335">보험료 세액공제 (§59의4①)</div>
+        <div class="ded-body">
+          <strong>일반보장성:</strong> 보험료 × <span class="kn">12%</span><br>
+          <strong>장애인전용:</strong> 보험료 × <span class="kn">15%</span><br>
+          각 한도: 연 100만원 (이상 시 100만원 × 해당율)
+        </div>
+      </div>
+      <div class="ded-card">
+        <div class="ded-head" style="background:#744210">의료비 세액공제 (§59의4②)</div>
+        <div class="ded-body">
+          <strong>공제율: 15%</strong> (미숙아·선천성이상아 20%, 난임 30%)<br>
+          <strong>일반 의료비:</strong> 총급여 3% 초과분 × 15% (한도 700만원)<br>
+          <strong>특정인 (본인·65세↑·장애인 등):</strong> 한도 없음<br>
+          <span style="color:var(--txm);font-size:.84em">특정인 의료비가 3% 미달 시 → 일반에서 차감</span>
+        </div>
+      </div>
+      <div class="ded-card">
+        <div class="ded-head" style="background:#145C36">교육비 세액공제 (§59의4③)</div>
+        <div class="ded-body">
+          <strong>공제율: 15%</strong><br>
+          본인: 한도 없음<br>
+          대학생: 1인 연 900만원<br>
+          초중고+취학전: 1인 연 300만원<br>
+          <span style="color:var(--txm);font-size:.84em">직계존속 교육비 공제 불가</span>
+        </div>
+      </div>
+      <div class="ded-card">
+        <div class="ded-head" style="background:#1A3A6B">기부금 세액공제 (§59의4④)</div>
+        <div class="ded-body">
+          <strong>1,000만원 이하:</strong> × 15%<br>
+          <strong>1,000만원 초과분:</strong> × 30%<br>
+          특례기부금 먼저 공제<br>
+          <span style="color:var(--txm);font-size:.84em">2024년 3,000만원 초과분 추가 10% (§59의4⑧)</span>
+        </div>
+      </div>
+      <div class="ded-card">
+        <div class="ded-head" style="background:#5A2D82">표준세액공제 (§59의4⑨)</div>
+        <div class="ded-body">
+          근로자 (공제 미신청): <span class="kn">13만원</span><br>
+          성실사업자 (미신청): <span class="kn">12만원</span><br>
+          기타 종합소득자: <span class="kn">7만원</span>
+        </div>
+      </div>
+    </div>
+
+    <h4>▶ 의료비 세액공제 계산 구조 (계산형 핵심)</h4>
+    <div class="cb">
+      <h3>📐 의료비 세액공제 계산</h3>
+      <div class="lb" style="margin-bottom:8px;font-size:.85em">
+        총급여 5,000만원 / 일반 의료비 200만원 / 본인 의료비 50만원 / 장애인 자녀 의료비 30만원
+      </div>
+      <div class="cs"><span class="cn">①</span><span class="cl">총급여 3% 기준선</span><span class="cf">5,000만 × 3% = 150만원</span></div>
+      <div class="cs"><span class="cn">②</span><span class="cl">특정인 의료비 합계 (본인+장애인 자녀)</span><span class="cf">50 + 30 = 80만원 (한도 없음, 3% 미만이어도 전액)</span></div>
+      <div class="cs"><span class="cn">③</span><span class="cl">일반 의료비 공제 대상</span><span class="cf">(200 − 150 + 80) = 130만원 → 단, 음수이면 0<br>일반 200 − (150 − 80) = 130만원 (한도 700만원 이내)</span></div>
+      <div class="cs"><span class="cn">④</span><span class="cl">세액공제액</span><span class="cf">(특정인 80 + 일반 130) × 15% = 31.5만원</span></div>
+      <div class="cres">의료비 세액공제 = 315,000원</div>
+    </div>
+  </div>
+
+  <!-- 4-4 기타 세액공제 -->
+  <div class="sub">
+    <h3>4-4. 기타 세액공제</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>세액공제 종류</th><th>공제 내용</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td><strong>자녀세액공제</strong></td><td>기본공제 대상 자녀 1명: 15만원, 2명: 35만원(30+5), 3명↑: 35만+(초과×30만원)<br>출산·입양: 첫째 30만·둘째 50만·셋째↑ 70만원</td><td class="mn">§59의2</td></tr>
+          <tr><td><strong>연금계좌세액공제</strong></td><td>연금저축·IRP 납입액 × 12%(15%)<br>총급여 5,500만원 이하: 15% / 초과: 12%<br>연금저축 600만원 + IRP 포함 900만원 한도</td><td class="mn">§59의3</td></tr>
+          <tr><td><strong>외국납부세액공제</strong></td><td>국외원천소득에 대한 외국납부세액 공제<br>한도: (산출세액 × 국외원천소득/종합소득금액)</td><td class="mn">§57</td></tr>
+          <tr><td><strong>재해손실세액공제</strong></td><td>사업용 자산 재해 손실 → 손실분 × 산출세액/소득금액</td><td class="mn">§58</td></tr>
+          <tr><td><strong>기장세액공제</strong></td><td>간편장부대상자가 복식부기로 신고 시 → 산출세액의 20% (한도 100만원)</td><td class="mn">§56의2</td></tr>
+          <tr><td><strong>성실신고확인비용 세액공제</strong></td><td>성실신고확인서 작성 비용 × 60% (한도 120만원)</td><td class="mn">§56의3</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 5. 결정세액 계산의 특례 ════ -->
+<div class="section">
+  <div class="bar b-purple">5. 종합소득 결정세액 계산의 특례</div>
+
+  <!-- 5-1 분리과세 주택임대 -->
+  <div class="sub">
+    <h3>5-1. 분리과세 주택임대소득에 대한 세액계산 특례 (§64의2)</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 주택 임대 수입이 있으면 종합과세와 분리과세 중 유리한 방식을 선택할 수 있습니다.</div>
+
+    <div class="lb"><span class="lr">§64의2① — 납세자 선택</span>
+      분리과세 주택임대소득이 있는 거주자의 종합소득 결정세액 = 다음 중 <strong>선택</strong>:<br>
+      <strong>1호</strong>: §14③7호 적용 전 종합소득 결정세액 (= 종합과세)<br>
+      <strong>2호</strong>: 분리과세 주택임대 사업소득금액 × 14% + 나머지 종합소득 결정세액
+    </div>
+
+    <h4>▶ 분리과세 선택 시 사업소득금액 계산 (§64의2②)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>필요경비율</th><th>기본공제</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>미등록 임대주택</strong></td><td>총수입금액 × <span class="kn">50%</span></td><td>종합소득금액(분리과세 제외) ≤ 2,000만원 시 <span class="kn">200만원</span></td></tr>
+          <tr class="hl"><td><strong>등록 임대주택 (대통령령)</strong></td><td>총수입금액 × <span class="kn">60%</span></td><td>종합소득금액(분리과세 제외) ≤ 2,000만원 시 <span class="kn">400만원</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wb">⚠ 2,000만원 기준 = 분리과세 주택임대소득 <strong>제외</strong>한 종합소득금액 기준</div>
+  </div>
+
+  <!-- 5-2 사적연금소득 -->
+  <div class="sub">
+    <h3>5-2. 종합과세 사적연금소득에 대한 세액계산 특례 (§64의3)</h3>
+    <div class="lb"><span class="lr">§64의3 — 1,500만원 기준</span>
+      사적연금소득(연금계좌 연금수령) 합계가 <strong>1,500만원 이하</strong>:<br>
+      → 분리과세(3~5%) 또는 종합과세 선택 가능<br><br>
+      사적연금소득 합계가 <strong>1,500만원 초과</strong>:<br>
+      → 15% 분리과세 또는 종합과세 중 선택
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>사적연금소득 합계</th><th>과세방식</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>1,500만원 이하</td><td>3~5% 분리과세 <strong>또는</strong> 종합과세 선택</td></tr>
+          <tr class="hl"><td>1,500만원 초과</td><td><strong>15% 분리과세 또는 종합과세 중 선택</strong> (§64의3)</td></tr>
+          <tr><td>이연퇴직소득 연금수령</td><td>분리과세 (70%~50% 세율 적용)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5-3 분리과세 기타소득 -->
+  <div class="sub">
+    <h3>5-3. 분리과세 기타소득에 대한 세액계산 특례</h3>
+    <div class="lb">
+      기타소득금액 300만원 이하이며 원천징수된 기타소득 → 분리과세 또는 종합과세 선택 (§14③8호)<br>
+      복권 당첨금 등 무조건 분리과세 소득 → 별도 정산 없이 원천징수로 납세 종결<br>
+      기타소득금액 300만원 초과 → 종합과세 의무
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 6. 기납부세액 ════ -->
+<div class="section">
+  <div class="bar b-green">6. 기납부세액 (§76③)</div>
+
+  <div class="sub">
+    <h3>6-1. 기납부세액 구성</h3>
+    <div class="lb"><span class="lr">§76③ — 확정신고납부 시 공제하는 기납부세액</span>
+      1호. 중간예납세액 (§65)<br>
+      2호. 토지등 매매차익예정신고 산출세액 또는 결정·경정 세액 (§69)<br>
+      3호. 수시부과세액 (§82)<br>
+      4호. 원천징수세액 (§127)<br>
+      5호. 납세조합 징수세액과 공제액 (§150)
+    </div>
+  </div>
+
+  <div class="prepaid-grid">
+    <!-- 원천징수 -->
+    <div class="pp-card">
+      <div class="pp-head">원천징수세액</div>
+      <ul style="font-size:.85em;line-height:1.8">
+        <li>소득 지급 시 미리 징수된 세액</li>
+        <li>이자·배당: 14% (비영업대금 25%)</li>
+        <li>기타: 20% / 사업소득: 3%</li>
+        <li>근로소득: 간이세액표</li>
+        <li>확정신고 시 결정세액과 정산</li>
+      </ul>
+    </div>
+    <!-- 중간예납 -->
+    <div class="pp-card g">
+      <div class="pp-head g">중간예납세액 (§65)</div>
+      <ul style="font-size:.85em;line-height:1.8">
+        <li>기간: 1.1~6.30</li>
+        <li>납부: 11월 30일까지</li>
+        <li><strong>기준액: 직전연도 소득세 납부세액 × 1/2</strong></li>
+        <li>추계액이 기준액의 30% 미달 → 11월 추계신고 가능</li>
+        <li>신규사업자, 이자·배당·근로소득만 있는 자 = 제외</li>
+      </ul>
+    </div>
+    <!-- 토지매매차익 -->
+    <div class="pp-card o">
+      <div class="pp-head o">토지등 매매차익 예정신고 (§69)</div>
+      <ul style="font-size:.85em;line-height:1.8">
+        <li>부동산매매업자 의무 적용</li>
+        <li>기간: 토지·건물 양도일 속하는 달의 말일부터 2개월 이내</li>
+        <li>세율: 양도소득세율(§104) 준용</li>
+        <li>중간예납세액에서 차감 (§65⑩)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>6-2. 중간예납 기준액 계산 (§65⑦)</h3>
+    <div class="lb"><span class="lr">§65⑦</span>
+      중간예납 기준액 = 다음 각 호의 합계 − 환급세액<br>
+      1호. 직전 과세기간 중간예납세액<br>
+      2호. §76 확정신고납부세액<br>
+      3호. §85 추가납부세액 (가산세 포함)<br>
+      4호. 기한후신고납부세액·추가자진납부세액
+    </div>
+    <div class="wb">⚠ <strong>추계액 신고 가능 요건 (§65③):</strong><br>
+      중간예납기간 종료일까지 종합소득에 대한 소득세액(추계액)이 <strong>중간예납 기준액의 30%에 미달</strong>하는 경우<br>
+      → 11.1~11.30 사이에 중간예납추계액으로 신고 가능</div>
+
+    <h4>▶ 중간예납 추계액 계산 방법 (§65⑧)</h4>
+    <div class="cb">
+      <h3>📐 중간예납 추계액 계산</h3>
+      <div class="cs"><span class="cn">①</span><span class="cl">종합소득과세표준</span><span class="cf">= (중간예납기간 종합소득금액 × 2) − 이월결손금 − 종합소득공제</span></div>
+      <div class="cs"><span class="cn">②</span><span class="cl">종합소득 산출세액</span><span class="cf">= 과세표준 × 기본세율</span></div>
+      <div class="cs"><span class="cn">③</span><span class="cl">중간예납 추계액</span><span class="cf">= (산출세액 / 2) − (감면세액·세액공제·예정신고세액·수시부과·원천징수세액)</span></div>
+      <div class="cres">최종 납부 중간예납세액 = 중간예납추계액</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 7. 최저한세 ════ -->
+<div class="section">
+  <div class="bar b-red">7. 최저한세 (조특법 §132)</div>
+
+  <div class="sub">
+    <h3>7-1. 개인의 최저한세</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 세액감면·세액공제를 많이 받아도 "최소한 이 정도는 내야 한다"는 하한선입니다.</div>
+    <div class="lb"><span class="lr">조특법 §132</span>
+      거주자(개인)의 종합소득에 대한 소득세가 조특법에 따른 감면·공제 적용 전 세액의 <strong>일정 비율</strong> 미만인 경우<br>
+      → 그 일정 비율에 해당하는 세액을 납부하여야 함
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>과세표준</th><th>최저한세율</th></tr></thead>
+        <tbody>
+          <tr><td>1억원 이하</td><td><span class="kn">35%</span> (2억원 이하 소득자에 대한 최저한세)</td></tr>
+          <tr class="hl"><td colspan="2">※ 개인사업자의 경우: 과세표준 구간별 세율 적용 (법인세보다 낮은 기준)<br>일반적으로 개인의 경우 45%를 최저한세율로 보는 경우는 없음</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wb">⚠ <strong>개인(소득세) 최저한세 vs 법인(법인세) 최저한세:</strong><br>
+      법인: 중소기업 7%, 일반기업 10~17% (조특법 §132①)<br>
+      개인: 조특법 §132②에 따라 규모가 작아 시험에서 자주 출제되지 않으나, 감면 전 세액의 35%(과표 3억이하), 45%(3억초과) 등을 최저한세율로 설정 (구간에 따라 상이)</div>
+  </div>
+</div>
+
+
+<!-- 종합 계산 예제 -->
+<div class="section">
+  <div class="bar b-blue">📐 종합소득세액 계산 예제 — 52번 계산형 유사형</div>
+  <div class="cb">
+    <h3>결정세액 계산</h3>
+    <div class="lb" style="margin-bottom:8px;font-size:.85em">
+      甲(근로자, 총급여 6,000만원): 종합소득과세표준 4,000만원<br>
+      의료비: 본인 80만원 + 일반가족 100만원 / 교육비: 대학생 자녀 1,000만원<br>
+      기부금 특례: 500만원 / 연금저축 납입: 400만원 (총급여 5,500만원 초과)
+    </div>
+    <div class="cs"><span class="cn">①</span><span class="cl">산출세액 (기본세율)</span><span class="cf">4,000만 × 15% − 126만 = 474만원</span><span class="cref">§55①</span></div>
+    <div class="cs"><span class="cn">②</span><span class="cl">근로소득세액공제</span><span class="cf">474만 × 55% = 260.7만 → 한도 적용: 총급여 6,000만원 → 66만원 한도<br>(3,300~7,000만원 구간: 74 − [(6,000−3,300)×8/1,000] = 74−21.6 = 52.4만 → 최소 66만원 = 66만원)</span><span class="cref">§59②</span></div>
+    <div class="cs"><span class="cn">③</span><span class="cl">의료비 세액공제</span><span class="cf">본인 80만원: 3% 기준선(6,000×3%=180만) 미달로 일반에서 차감<br>일반 100 − (180−80) = 0 → 세액공제 없음</span><span class="cref">§59의4②</span></div>
+    <div class="cs"><span class="cn">④</span><span class="cl">교육비 세액공제</span><span class="cf">대학생 한도 900만원 → 900만 × 15% = 135만원</span><span class="cref">§59의4③</span></div>
+    <div class="cs"><span class="cn">⑤</span><span class="cl">기부금 세액공제</span><span class="cf">500만원 × 15% = 75만원</span><span class="cref">§59의4④</span></div>
+    <div class="cs"><span class="cn">⑥</span><span class="cl">연금계좌 세액공제</span><span class="cf">400만원 × 12% = 48만원 (총급여 5,500만원 초과 → 12%)</span><span class="cref">§59의3</span></div>
+    <div class="cres">결정세액 = 474 − 66 − 0 − 135 − 75 − 48 = 150만원</div>
+  </div>
+</div>
+
+
+<!-- 오답 함정 -->
+<div class="section trapbox">
+  <h2>⚠️ 오답 함정 — 기출 기반 11선</h2>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"금융소득 비교과세 시 항상 1호(합산과세)를 적용한다"</strong><p>→ 1호와 2호 중 <strong>큰 금액</strong>으로 산출세액 결정. 2호가 더 클 수도 있음 (§62)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"의료비 세액공제는 총급여 3%를 초과한 전체 의료비에 15%를 곱한다"</strong><p>→ 본인·65세↑·장애인 등은 3% 기준선 없이 전액. 일반 가족은 3% 초과분 × 15% (한도 700만원)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"직계존속의 교육비도 세액공제를 받을 수 있다"</strong><p>→ 교육비 세액공제 대상: 거주자 본인 + 기본공제대상 직계비속·형제자매 등. <strong>직계존속은 제외</strong> (§59의4③)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"기부금 세액공제율은 일률적으로 15%이다"</strong><p>→ 1,000만원 이하 15%, <strong>1,000만원 초과분 30%</strong> 적용 (§59의4④)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"사적연금 합계 1,500만원 초과 시 무조건 종합과세된다"</strong><p>→ 1,500만원 초과 시 <strong>15% 분리과세 또는 종합과세 중 선택</strong> (§64의3)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"중간예납 대상자는 1년 치 세액의 50%를 6월에 납부한다"</strong><p>→ 납부기한은 <strong>11월 30일</strong>. 1~6월 중간예납기간이지만 납부는 11월 말 (§65①)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"분리과세 주택임대 14% 세율은 등록·미등록 모두 동일하다"</strong><p>→ 세율(14%)은 동일. 차이는 필요경비율(등록 60% vs 미등록 50%)과 기본공제(400만 vs 200만원)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"근로소득세액공제 한도는 총급여와 무관하게 74만원이다"</strong><p>→ 총급여에 따라 한도 상이: 3,300만 이하 74만원 / 3,300~7,000만 66~74만원 / 7,000만~1.2억 50~66만원 / 1.2억 초과 20~50만원 (§59②)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"연금계좌 세액공제율은 모두 15%이다"</strong><p>→ 총급여 5,500만원(종합소득금액 4,000만원) 이하: 15% / 초과: <strong>12%</strong> (§59의3)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"중간예납추계액이 기준액의 50% 미달 시 추계신고 가능"</strong><p>→ 추계액이 중간예납기준액의 <strong>30% 미달</strong> 시 추계신고 가능 (§65③)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"배당세액공제는 금융소득이 2,000만원 이하여도 받을 수 있다"</strong><p>→ §56④: 배당세액공제 대상은 종합소득과세표준에 포함된 배당소득 중 <strong>2,000만원 초과분</strong>만 해당</p></div></div>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="mn">§55①</td><td>기본세율 (6%~45%, 8구간) / 종합소득 산출세액</td></tr>
+        <tr><td class="mn">§56①④</td><td>배당세액공제 (Gross-up 10% / 2,000만원 초과분)</td></tr>
+        <tr><td class="mn">§57</td><td>외국납부세액공제 (한도: 산출세액 × 국외원천/종합소득)</td></tr>
+        <tr><td class="mn">§59①②③</td><td>근로소득세액공제 (55%·30% 적용 / 총급여별 한도 20~74만원 / 일용 55%)</td></tr>
+        <tr><td class="mn">§59의2</td><td>자녀세액공제 (1명15·2명35·3명↑30만 추가 / 출산·입양 30·50·70만원)</td></tr>
+        <tr><td class="mn">§59의3</td><td>연금계좌세액공제 (5,500만이하 15%·초과 12% / 연금저축600+IRP 900만원 한도)</td></tr>
+        <tr><td class="mn">§59의4①~⑩</td><td>특별세액공제 (보험료12·15% / 의료비15·20·30% / 교육비15% / 기부금15·30% / 표준세액공제)</td></tr>
+        <tr><td class="mn">§62</td><td>금융소득 비교과세 (2,000만원 기준 / 1호 합산vs2호 원천징수율 / 큰 금액)</td></tr>
+        <tr><td class="mn">§64①</td><td>부동산매매업자 세액계산 특례 (1호 기본세율 vs 2호 양도세율 / 큰 금액)</td></tr>
+        <tr><td class="mn">§64의2①②</td><td>분리과세 주택임대 특례 (선택 / 미등록50%+200만·등록60%+400만 / 14%)</td></tr>
+        <tr><td class="mn">§64의3</td><td>종합과세 사적연금소득 특례 (1,500만이하 3~5% or 종합 / 초과 15% or 종합)</td></tr>
+        <tr><td class="mn">§65①③⑦⑧⑩</td><td>중간예납 (1/2기준액·11/30납부 / 30% 미달 추계신고 / 기준액 계산 / 추계액 계산 / 부동산매매업)</td></tr>
+        <tr><td class="mn">§76③</td><td>기납부세액 (원천징수·중간예납·토지예정신고·수시부과·납세조합)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote" style="margin-top:10px">
+    ※ 소득세법 (2026.04.21 시행) MCP 직접 조회 기준<br>
+    ※ 5년간 25회 출제 — 52번 계산형 고정 배치 / 2021년 60번·2022년 51번 기출 반영
+  </p>
+</div>
+
+</body>
+</html>

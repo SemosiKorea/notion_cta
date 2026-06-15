@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 — 종합소득 과세표준 | 세무사 1차 예습자료</title>
+<style>
+:root{
+  --navy:#0D1B4B;--blue:#1A3A6B;--blm:#2C5282;--bll:#EEF2FF;--blb:#C3D4F0;
+  --green:#145C36;--grl:#F0FFF4;--grb:#9AE6B4;
+  --red:#9B2335;--rdl:#FFF3F3;--rdb:#FED7D7;
+  --org:#744210;--orl:#FFFBEB;--orb:#F6E05E;
+  --pur:#5A2D82;--prl:#FAF5FF;--prb:#D6BCFA;
+  --tel:#0C7470;--tll:#EAFAF8;--tlb:#99E4DC;
+  --bg:#FAFAFA;--sf:#FFFFFF;--tx:#1A1A2E;--txm:#718096;--bd:#E8ECF0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.88;max-width:980px;margin:0 auto;padding:24px}
+h2{color:var(--blue);font-size:1.12em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+h3{color:var(--blm);font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:20px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.75}strong{color:var(--tx)}
+.header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:30px 38px;border-radius:14px;margin-bottom:20px}
+.sbadge{background:rgba(255,255,255,.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:10px}
+.header h1{color:#fff;font-size:1.8em;line-height:1.3}
+.header .meta{font-size:.8em;opacity:.85;margin-top:8px;line-height:1.65}
+.fbadge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:var(--rdl);color:var(--red);border:1px solid var(--rdb);margin-left:6px}
+.section{margin:20px 0;padding:22px 26px;border-radius:12px;border:1px solid var(--bd);background:var(--sf);box-shadow:0 2px 7px rgba(0,0,0,.05)}
+.bar{color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-22px -26px 17px;letter-spacing:.02em}
+.b-blue{background:linear-gradient(90deg,var(--navy),var(--blm))}
+.b-red{background:linear-gradient(90deg,#5A0A14,var(--red))}
+.b-green{background:linear-gradient(90deg,#0A3A20,var(--green))}
+.b-purple{background:linear-gradient(90deg,#2D0A60,var(--pur))}
+.b-teal{background:linear-gradient(90deg,#054044,var(--tel))}
+.b-orange{background:linear-gradient(90deg,#4A1A04,var(--org))}
+.sub{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:13px 17px;margin:11px 0}
+.sub h3{margin-top:0;color:var(--blue)}
+.hbox{background:var(--orl);border:1px solid var(--orb);border-radius:10px;padding:16px 20px;margin:20px 0}
+.hbox h2{color:var(--org);border-bottom-color:var(--orb)}
+.trapbox{background:var(--rdl);border:1px solid var(--rdb);border-radius:10px;padding:16px 20px;margin:20px 0}
+.trapbox h2{color:var(--red);border-bottom-color:var(--rdb)}
+.cmpbox{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.cmpbox h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.an{background:var(--grl);border:1px solid var(--grb);border-radius:8px;padding:11px 15px;margin:10px 0;font-size:.91em}
+.lb{background:var(--bll);border:1px solid var(--blb);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:10px 14px;margin:9px 0;font-size:.87em;line-height:1.8}
+.wb{background:var(--orl);border:1px solid var(--orb);border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.gb{background:var(--grl);border:1px solid var(--grb);border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.rb{background:var(--rdl);border:1px solid var(--rdb);border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.pb{background:var(--prl);border:1px solid var(--prb);border-left:4px solid var(--pur);border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.lr{font-family:monospace;font-size:.8em;font-weight:700;color:var(--blue);display:block;margin-bottom:3px}
+.tw{overflow-x:auto;border-radius:8px;border:1px solid var(--bd);margin:11px 0}
+table{width:100%;border-collapse:collapse;font-size:.87em}
+th{background:var(--bll);color:var(--blue);padding:9px 12px;text-align:left;font-weight:600;font-size:.86em;border-bottom:2px solid var(--blb)}
+td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.72}
+tr:hover td{background:#FAFBFF}
+.xr{color:#C53030;font-weight:600}.ok{color:#276749;font-weight:600}
+.hl{background:var(--orl)!important}.ctr{text-align:center}
+.mn{font-family:monospace;font-size:.83em;color:var(--blue)}
+.cb{background:var(--prl);border:1px solid var(--prb);border-radius:10px;padding:15px 19px;margin:12px 0}
+.cb h3{color:var(--pur);margin-top:0;font-size:.95em}
+.cs{display:flex;align-items:flex-start;gap:8px;margin:5px 0;padding:7px 10px;background:#fff;border-radius:6px;border:1px solid var(--prb)}
+.cn{background:var(--pur);color:#fff;padding:2px 7px;border-radius:10px;font-size:.78em;font-weight:700;flex-shrink:0;margin-top:2px}
+.cl{font-weight:600;color:#2D3748;flex:1;font-size:.89em}
+.cf{color:var(--pur);font-family:monospace;font-size:.88em}
+.cref{color:var(--txm);font-size:.78em;flex-shrink:0}
+.cres{background:var(--pur);color:#fff;padding:9px 14px;border-radius:8px;font-weight:700;margin-top:9px;text-align:center;font-size:.92em}
+/* 계산 구조 박스 */
+.calc-flow{display:flex;flex-direction:column;gap:0;margin:14px 0}
+.calc-row{display:flex;align-items:stretch;margin:2px 0}
+.cr-op{width:36px;display:flex;align-items:center;justify-content:center;font-size:1.3em;font-weight:700;color:var(--blue);flex-shrink:0}
+.cr-box{flex:1;padding:9px 14px;border-radius:8px;font-size:.88em;font-weight:600;color:#fff}
+.cr-b1{background:var(--navy)}.cr-b2{background:var(--red)}.cr-b3{background:var(--green)}
+.cr-b4{background:var(--org)}.cr-b5{background:var(--pur)}.cr-b6{background:#276749}
+.cr-sub{flex:1;padding:8px 14px;border-radius:8px;font-size:.86em;background:#F8FAFE;border:1px solid #DCE7F5;margin-left:44px;color:var(--txm)}
+/* 공제 카드 그리드 */
+.ded-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:12px 0}
+.ded-card{border-radius:9px;overflow:hidden;border:1px solid var(--bd)}
+.ded-head{padding:7px 12px;font-weight:700;font-size:.86em;color:#fff}
+.ded-body{background:#fff;padding:9px 12px;font-size:.84em;line-height:1.75}
+/* 신용카드 구조 */
+.card-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:10px 0}
+@media(max-width:640px){.card-grid{grid-template-columns:1fr}}
+.ci{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:10px 12px;font-size:.85em}
+.ci-head{font-weight:700;color:var(--blue);margin-bottom:4px;font-size:.88em}
+.ci-rate{display:inline-block;background:var(--bll);color:var(--blue);padding:2px 8px;border-radius:5px;font-weight:700;font-size:.9em}
+/* 주택자금 표 */
+.hf-table{width:100%;border-collapse:collapse;font-size:.85em;margin:10px 0}
+.hf-table th{background:var(--navy);color:#fff;padding:8px 10px;text-align:center}
+.hf-table td{padding:7px 10px;border:1px solid var(--bd);text-align:center;vertical-align:middle}
+.hf-table .hl-r{background:var(--orl)}
+/* 종합한도 */
+.limit-box{display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;padding:18px 24px;border-radius:12px;font-size:1.4em;font-weight:700;margin:14px 0;gap:12px}
+/* MISC */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.kn{display:inline-block;background:var(--blue);color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.bd2{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:600;margin:1px}
+.bdr{background:var(--rdl);color:var(--red);border:1px solid var(--rdb)}
+.bdg{background:var(--grl);color:#065F46;border:1px solid var(--grb)}
+.star{color:#D97706;font-size:.81em}
+.ti{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 12px;background:#fff;border-radius:8px;border:1px solid var(--rdb)}
+.tic{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.footnote{color:var(--txm);font-size:.82em;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="sbadge">소득세법 §50~§54의2</div>
+  <h1>종합소득 과세표준 &amp; 소득공제</h1>
+  <div class="meta">
+    세무사 1차 예습자료 | 소득세법 §50~§54의2 / 조세특례제한법 §87·§126의2 (2026.04.21 시행)
+    <span class="fbadge">🔴 5년간 25회 — 52번 계산형 고정 출제</span>
+  </div>
+</div>
+
+<!-- 최빈출 포인트 -->
+<div class="section hbox">
+  <h2>🔥 최빈출 포인트 (25회 출제)</h2>
+  <ol>
+    <li><strong>기본공제 대상자 소득요건: 100만원 이하 (근로소득만 있는 경우 500만원 이하)</strong> <span class="star">★★★</span> — §50①2·3호 / 연간 총급여액 500만원 이하의 근로소득만 있으면 충족</li>
+    <li><strong>부양가족 나이 요건 — 직계존속 60세↑, 직계비속 20세↓, 형제자매 20세↓ or 60세↑</strong> <span class="star">★★★</span> — §50①3호 / 장애인은 나이 제한 없음</li>
+    <li><strong>추가공제 — 경로우대 100만원, 장애인 200만원, 한부모 100만원</strong> <span class="star">★★★</span> — §51①1·2·6호 / 부녀자·한부모 중복 시 한부모 적용</li>
+    <li><strong>장기주택저당차입금 이자 공제한도: 800만·1,800만·2,000만원</strong> <span class="star">★★★</span> — §52⑤⑥ / 기준시가 6억 이하, 상환기간 조건별 공제한도</li>
+    <li><strong>신용카드 공제율: 신용카드 15%, 직불·현금 30%, 도서·공연 30%, 대중교통 40%</strong> <span class="star">★★</span> — 조특법 §126의2 / 총급여액 25% 초과분에 적용</li>
+    <li><strong>소득공제 종합한도: 2,500만원</strong> <span class="star">★★</span> — §52③ 준용 / 초과 공제액 = 없는 것으로 봄</li>
+    <li><strong>부녀자공제 요건: 종합소득금액 3,000만원 이하 + 배우자 없는 세대주(부양가족 있을 것) or 배우자 있는 여성</strong> <span class="star">★★</span> — §51①3호</li>
+    <li><strong>판정시기 원칙: 과세기간 종료일 현재</strong> <span class="star">★★</span> — §53④ / 사망·장애치유는 그 전날 / 나이 요건은 과세기간 중 해당일</li>
+  </ol>
+</div>
+
+
+<!-- ════ 1. 종합소득 과세표준 계산구조 ════ -->
+<div class="section">
+  <div class="bar b-blue">1. 종합소득 과세표준 계산구조</div>
+
+  <div class="calc-flow">
+    <div class="calc-row"><div class="cr-op"></div><div class="cr-box cr-b1">① 종합소득금액 (이자+배당+사업+근로+연금+기타)</div></div>
+    <div class="calc-row"><div class="cr-op">−</div><div class="cr-box cr-b2">② 인적공제 (기본공제 + 추가공제)</div></div>
+    <div class="calc-row"><div class="cr-sub">기본공제: 본인·배우자·부양가족 × 150만원 / 추가공제: 경로우대·장애인·부녀자·한부모</div></div>
+    <div class="calc-row"><div class="cr-op">−</div><div class="cr-box cr-b4">③ 연금보험료공제 (공적연금 기여금 전액)</div></div>
+    <div class="calc-row"><div class="cr-op">−</div><div class="cr-box cr-b4">④ 주택담보노후연금 이자비용공제 (한도 200만원)</div></div>
+    <div class="calc-row"><div class="cr-op">−</div><div class="cr-box cr-b3">⑤ 특별소득공제 (근로자: 건강보험료·주택임차차입금·장기주택저당차입금)</div></div>
+    <div class="calc-row"><div class="cr-op">−</div><div class="cr-box cr-b5">⑥ 조특법상 소득공제 (신용카드·청약저축·우리사주 등)</div></div>
+    <div class="calc-row"><div class="cr-op">=</div><div class="cr-box cr-b6">종합소득과세표준</div></div>
+  </div>
+
+  <div class="wb">⚠ <strong>소득공제 적용 순서:</strong> ①인적공제 → ②연금보험료 → ③주택담보노후연금 → ④특별소득공제 → ⑤조특법<br>
+  <strong>공제 한도 초과 시:</strong> 연금보험료공제 포함 그룹(§51의3③)은 종합소득금액 초과 불가 / 특별소득공제는 합산과세 종합소득금액 초과 불가</div>
+</div>
+
+
+<!-- ════ 2. 인적공제 ════ -->
+<div class="section">
+  <div class="bar b-blue">2. 인적공제 (§50·§51·§53)</div>
+
+  <!-- 기본공제 -->
+  <div class="sub">
+    <h3>2-1. 기본공제 (§50) — 1인당 연 150만원</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 부양하는 가족 1인당 연 150만원씩 과세소득에서 빼줍니다. 단, 소득이 너무 많거나 나이 요건이 안 맞으면 공제 불가!</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>대상자</th><th>나이 요건</th><th>소득 요건</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>본인</strong></td><td>제한 없음</td><td>제한 없음</td><td>항상 공제 (150만원)</td></tr>
+          <tr class="hl"><td><strong>배우자</strong></td><td>제한 없음</td><td>소득금액 합계 <span class="kn">100만원 이하</span><br>(근로소득만 있는 경우 총급여 <span class="kn">500만원 이하</span>)</td><td>사실혼 관계 배우자 불가</td></tr>
+          <tr><td><strong>직계존속</strong></td><td><span class="kn">60세 이상</span></td><td>소득금액 합계 100만원 이하<br>(근로 500만원 이하)</td><td>재혼 배우자 포함 (대통령령)</td></tr>
+          <tr><td><strong>직계비속·입양자</strong></td><td><span class="kn">20세 이하</span></td><td>소득금액 합계 100만원 이하<br>(근로 500만원 이하)</td><td>장애인 직계비속의 장애인 배우자 포함</td></tr>
+          <tr><td><strong>형제자매</strong></td><td><span class="kn">20세 이하 or 60세 이상</span></td><td>소득금액 합계 100만원 이하</td><td>생계 같이 하는 요건</td></tr>
+          <tr><td>기초생활수급권자</td><td>제한 없음</td><td>소득금액 합계 100만원 이하</td><td>대통령령 정하는 자</td></tr>
+          <tr><td>위탁아동</td><td>18세 미만 (대통령령)</td><td>소득금액 합계 100만원 이하</td><td>가정위탁 아동</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rb">🚨 <strong>장애인은 나이 요건 없음!</strong><br>§50①3호: "장애인에 해당하는 경우에는 나이의 제한을 받지 아니한다"<br>단, 소득 요건(100만원·500만원 이하)은 적용</div>
+    <div class="wb">⚠ <strong>소득금액 100만원 vs 총급여 500만원:</strong><br>
+      소득금액 100만원 이하 = 원칙 (이자·배당·사업·연금·기타소득금액 합산)<br>
+      근로소득만 있는 경우 → 총급여액 500만원 이하 (500만원 × (1-70%) ≈ 150만원 ≤ 100만원 아님, 총급여 기준 완화!)<br>
+      단, 총급여 500만원 이하 = 근로소득공제 후 소득금액 약 150만원 → 100만원 기준 초과. 따라서 '근로소득만 있는 경우' 특칙으로 별도 500만원 기준 적용</div>
+  </div>
+
+  <!-- 추가공제 -->
+  <div class="sub">
+    <h3>2-2. 추가공제 (§51①) <span class="bd2 bdr">기출 자주 출제</span></h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>추가공제 종류</th><th>공제금액</th><th>요건</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>경로우대공제</strong></td><td>1인당 연 <span class="kn">100만원</span></td><td>기본공제대상자 중 <strong>70세 이상</strong></td><td class="mn">§51①1</td></tr>
+          <tr class="hl"><td><strong>장애인공제</strong></td><td>1인당 연 <span class="kn">200만원</span></td><td>기본공제대상자 중 장애인 (대통령령)</td><td class="mn">§51①2</td></tr>
+          <tr class="hl"><td><strong>부녀자공제</strong></td><td>연 <span class="kn">50만원</span></td><td>①종합소득금액 3,000만원 이하 + 배우자 없는 여성 세대주(부양가족 있을 것)<br>②또는 배우자 있는 여성</td><td class="mn">§51①3</td></tr>
+          <tr class="hl"><td><strong>한부모공제</strong></td><td>연 <span class="kn">100만원</span></td><td>배우자 없는 자 + 기본공제대상 직계비속·입양자 있는 경우</td><td class="mn">§51①6</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rb">🚨 <strong>부녀자공제 vs 한부모공제 중복 시:</strong><br>
+      §51①단서: "3호와 6호에 모두 해당되는 경우에는 6호를 적용한다"<br>
+      → <strong>한부모공제(100만원) 적용, 부녀자공제(50만원) 배제</strong></div>
+    <div class="gb">✅ <strong>인적공제의 초과 처리 (§51④):</strong><br>
+      인적공제 합계액이 종합소득금액을 초과하는 경우 → 초과분은 없는 것으로 봄 (이월 불가)</div>
+  </div>
+
+  <!-- 인적공제 적용방법 -->
+  <div class="sub">
+    <h3>2-3. 인적공제 적용방법 (§53)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>항목</th><th>원칙</th><th>예외</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>판정 시기</strong></td><td>과세기간 <strong>종료일(12.31) 현재</strong> 상황</td><td>사망자: 사망일 전날 / 장애치유: 치유일 전날</td><td class="mn">§53④</td></tr>
+          <tr class="hl"><td><strong>나이 요건 판정</strong></td><td>과세기간 중 <strong>해당 나이에 해당되는 날이 있는 경우</strong></td><td>— (종료일 기준 아님!)</td><td class="mn">§53⑤</td></tr>
+          <tr><td><strong>생계 같이 하는 요건</strong></td><td>주민등록표 동거 + 현실적으로 생계 같이 함</td><td>직계비속·입양자: 동거 요건 없음<br>직계존속: 별거해도 인정</td><td class="mn">§53①③</td></tr>
+          <tr><td><strong>일시 퇴거</strong></td><td>취학·질병·근무·사업 형편 등 일시 퇴거</td><td>생계 같이 하는 것으로 봄</td><td class="mn">§53②</td></tr>
+          <tr class="hl"><td><strong>중복 공제 금지</strong></td><td>같은 사람이 두 거주자의 공제대상 → 어느 한 거주자만 공제</td><td>합의 못하면 대통령령 기준</td><td class="mn">§50③</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wb">⚠ <strong>나이 요건 과세기간 중 판정 예시:</strong><br>
+      2025.7.1. 만 20세가 된 직계비속 → 2025년 과세기간 중 20세 이하인 날이 있음 → 2025년 기본공제 대상 ✓<br>
+      2025.1.1. 만 20세가 된 경우 → 2025년 개시 시점에 이미 20세 초과 → 2025년 기본공제 대상 ✗</div>
+  </div>
+</div>
+
+
+<!-- ════ 3. 연금보험료공제 ════ -->
+<div class="section">
+  <div class="bar b-teal">3. 연금보험료공제 (§51의3) &amp; 주택담보노후연금 이자비용공제 (§51의4)</div>
+
+  <div class="sub">
+    <h3>3-1. 연금보험료공제 (§51의3①)</h3>
+    <div class="lb"><span class="lr">§51의3①</span>
+      종합소득이 있는 거주자가 <strong>공적연금 관련법에 따른 기여금 또는 개인부담금</strong>(이하 "연금보험료")을 납입한 경우<br>
+      → 해당 과세기간에 <strong>납입한 연금보험료 전액</strong>을 종합소득금액에서 공제
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>공제 대상</td><td>국민연금·공무원연금·군인연금·사학연금 등 공적연금 관련법에 따른 기여금</td></tr>
+          <tr><td>공제 금액</td><td>납입액 전액 (한도 없음)</td></tr>
+          <tr><td>공제 제한</td><td>인적공제+연금보험료공제+주택담보노후연금이자비용공제+특별소득공제+조특법공제 합계가 종합소득금액 초과 시 → 연금보험료공제 미적용 처리 (§51의3③)</td></tr>
+          <tr><td>사업소득자</td><td>국민연금 보험료 납입 시 연금보험료공제 적용 가능 (근로소득자 전용 아님)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>3-2. 주택담보노후연금 이자비용공제 (§51의4)</h3>
+    <div class="lb"><span class="lr">§51의4①</span>
+      <strong>연금소득이 있는 거주자</strong>가 대통령령 요건의 주택담보노후연금(역모기지론)을 받은 경우<br>
+      → 해당 과세기간에 발생한 이자비용 상당액을 <strong>연금소득금액에서 공제</strong><br>
+      한도: <span class="kn">200만원</span> / 연금소득금액 초과 불가 (§51의4①)
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>항목</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>적용 대상</td><td>연금소득이 있는 거주자 (사업소득자·근로소득자에는 적용 불가)</td></tr>
+          <tr class="hl"><td>공제 한도</td><td>연 <span class="kn">200만원</span> 이하 (초과 시 200만원 공제)</td></tr>
+          <tr><td>적용 방식</td><td>거주자가 신청한 경우에 적용 (§51의4②)</td></tr>
+          <tr><td>공제 대상 소득</td><td>연금소득금액에서만 공제 (종합소득금액 전체 아님)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 4. 특별소득공제 ════ -->
+<div class="section">
+  <div class="bar b-green">4. 특별소득공제 (§52) — 근로소득자 전용</div>
+
+  <div class="sub">
+    <h3>4-1. 보험료 소득공제 (§52①) — 건강·고용·장기요양보험료</h3>
+    <div class="lb"><span class="lr">§52①</span>
+      <strong>근로소득이 있는 거주자</strong>(일용근로자 제외)가 국민건강보험법·고용보험법·노인장기요양보험법에 따라 <strong>근로자가 부담하는 보험료</strong>를 지급한 경우<br>
+      → 그 <strong>전액</strong>을 근로소득금액에서 공제
+    </div>
+    <div class="gb">✅ 근로자 부담분만 공제 (사용자 부담분은 급여에서 제외된 것이므로 별도)</div>
+  </div>
+
+  <div class="sub">
+    <h3>4-2. 주택자금 소득공제 (§52④⑤⑥) <span class="bd2 bdr">기출 계산형 핵심</span></h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 집 없는 직장인이 월세 집을 구하거나(임차자금) 집을 사면서 대출을 받을 때(장기주택저당차입금), 상환금 일부를 소득에서 빼줍니다.</div>
+
+    <h4>① 주택임차차입금 원리금 상환액 공제 (§52④)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>요건</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>대상자</td><td>근로소득 있는 거주자 / 과세기간 종료일 현재 <strong>무주택 세대의 세대주</strong> (세대주가 공제 안 받으면 세대원 가능)</td></tr>
+          <tr><td>대상 주택</td><td>대통령령으로 정하는 일정 규모 이하 주택 (오피스텔 포함)</td></tr>
+          <tr class="hl"><td>공제금액</td><td>원리금 상환액 × <span class="kn">40%</span></td></tr>
+          <tr class="hl"><td>공제한도</td><td>조특법 §87②(청약저축 등) 포함 합계 연 <span class="kn">400만원</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>② 장기주택저당차입금 이자 상환액 공제 (§52⑤⑥)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>요건</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr><td>대상자</td><td>근로소득 있는 거주자 / 무주택 또는 <strong>1주택 세대의 세대주</strong> (2주택↑ 불가, §52⑤2)</td></tr>
+          <tr class="hl"><td>대상 주택</td><td>취득 당시 기준시가 <span class="kn">6억원 이하</span> 주택에 저당권 설정 + 금융회사·주택도시기금 차입</td></tr>
+          <tr><td>공제금액</td><td>지급한 이자 상환액 (이자만, 원금 제외)</td></tr>
+          <tr><td>세대주 아닌 자</td><td>실제 거주하는 경우만 적용 (§52⑤3)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>▶ 장기주택저당차입금 공제한도 (§52⑤⑥) — 3단계 암기!</h4>
+    <table class="hf-table">
+      <thead>
+        <tr><th>상환기간</th><th>금리 방식</th><th>상환 방식</th><th>공제한도</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hl-r"><td rowspan="3">15년 이상</td><td>고정금리</td><td>비거치식 분할상환</td><td><strong>2,000만원</strong></td></tr>
+        <tr class="hl-r"><td>고정금리 <em>or</em> 비거치식 분할상환 (하나만)</td><td></td><td><strong>1,800만원</strong></td></tr>
+        <tr><td>기타 (변동금리+거치식)</td><td></td><td><strong>800만원</strong></td></tr>
+        <tr><td>10년 이상 15년 미만</td><td>고정금리 <em>or</em> 비거치식 분할상환</td><td></td><td><strong>600만원</strong></td></tr>
+        <tr><td>10년 미만</td><td colspan="2">해당 없음</td><td>공제 불가</td></tr>
+      </tbody>
+    </table>
+    <div class="rb">🚨 위 공제한도는 §52④(임차자금) + 조특법 §87②(청약저축) 합계에서도 800만원 통합한도 적용</div>
+  </div>
+</div>
+
+
+<!-- ════ 5. 조세특례제한법상 소득공제 ════ -->
+<div class="section">
+  <div class="bar b-purple">5. 조세특례제한법상 소득공제</div>
+
+  <!-- 신용카드 -->
+  <div class="sub">
+    <h3>5-1. 신용카드 등 사용금액에 대한 소득공제 (조특법 §126의2)</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 연봉의 25%를 넘게 카드·현금으로 쓴 금액에 대해 소득을 깎아줍니다. 쓰는 방법(신용카드·현금·대중교통)에 따라 공제율이 다릅니다.</div>
+
+    <div class="lb"><span class="lr">공제금액 계산 구조</span>
+      1단계: 총급여액의 <span class="kn">25%</span> 초과 사용금액 = 공제 대상 금액<br>
+      2단계: 사용 수단별 공제율 적용 → 공제 대상 소득공제액 산출
+    </div>
+
+    <div class="card-grid">
+      <div class="ci"><div class="ci-head">💳 신용카드</div><div class="ci-rate">15%</div><div style="font-size:.84em;margin-top:4px;color:var(--txm)">일반 신용카드 사용분</div></div>
+      <div class="ci"><div class="ci-head">💵 직불카드·선불카드·현금영수증</div><div class="ci-rate">30%</div><div style="font-size:.84em;margin-top:4px;color:var(--txm)">직불·체크·선불·현금영수증</div></div>
+      <div class="ci"><div class="ci-head">📚 도서·공연·박물관·미술관</div><div class="ci-rate">30%</div><div style="font-size:.84em;margin-top:4px;color:var(--txm)">총급여 7,000만원 이하자만</div></div>
+      <div class="ci"><div class="ci-head">🚌 대중교통</div><div class="ci-rate">40%</div><div style="font-size:.84em;margin-top:4px;color:var(--txm)">버스·지하철·KTX 등</div></div>
+      <div class="ci"><div class="ci-head">🍀 전통시장</div><div class="ci-rate">40%</div><div style="font-size:.84em;margin-top:4px;color:var(--txm)">전통시장 사용분</div></div>
+    </div>
+
+    <h4>▶ 공제한도 (총급여 구간별)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>총급여액</th><th>기본 공제한도</th><th>추가 한도 (전통시장·대중교통·도서·문화)</th></tr></thead>
+        <tbody>
+          <tr><td>7,000만원 이하</td><td><span class="kn">300만원</span></td><td>각 100만원씩 (전통시장·대중교통·도서공연 각 100만원)</td></tr>
+          <tr><td>7,000만원 초과 1.2억원 이하</td><td><span class="kn">250만원</span></td><td>전통시장·대중교통 각 100만원 (도서공연 추가 없음)</td></tr>
+          <tr><td>1.2억원 초과</td><td><span class="kn">200만원</span></td><td>전통시장·대중교통 각 100만원</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wb">⚠ <strong>공제 제외 사용처:</strong> 사업관련비용, 취득세·등록면허세 대상 재산 구입, 국가·지방자치단체 납부금, 자동차 구입비(신차), 현금서비스 등</div>
+  </div>
+
+  <!-- 기타 조특법 소득공제 -->
+  <div class="sub">
+    <h3>5-2. 그 밖의 조세특례제한법상 소득공제 (조특법 §87 등)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>공제 종류</th><th>공제 내용</th><th>한도</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>주택청약종합저축 소득공제</strong><br>(조특법 §87②)</td><td>무주택 세대주인 근로자가 납입한 금액의 40%<br>(청약저축·주택청약종합저축)</td><td>납입액 연 300만원 한도 × 40% = 120만원<br>§52④ 포함 합계 400만원</td></tr>
+          <tr><td>우리사주조합 출연금 소득공제<br>(조특법 §88의4)</td><td>우리사주조합원이 조합에 출연하는 금액</td><td>연 400만원 (벤처기업 1,500만원)</td></tr>
+          <tr><td>소기업·소상공인 공제부금<br>(조특법 §86의3)</td><td>소기업·소상공인 공제(노란우산공제) 납입금</td><td>사업소득 구간별 200~500만원</td></tr>
+          <tr><td>장기집합투자증권저축 소득공제<br>(조특법 §91의17)</td><td>장기집합투자증권저축 납입금의 40%</td><td>납입액 연 600만원 × 40% = 240만원</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 6. 소득세 소득공제의 종합한도 ════ -->
+<div class="section">
+  <div class="bar b-red">6. 소득세 소득공제의 종합한도 (§51의3③ 준용)</div>
+
+  <div class="sub">
+    <h3>6-1. 종합한도 개요</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 소득공제를 너무 많이 받으면 과세표준이 0 이하가 될 수 있어요. 그걸 방지하기 위해 특정 공제들의 합계가 2,500만원을 초과하면 초과분은 없는 것으로 봅니다.</div>
+    <div class="limit-box">소득공제 종합한도 = <span style="font-size:1.3em;margin:0 8px">2,500만원</span></div>
+    <div class="lb"><span class="lr">§51의3③ 준용</span>
+      다음 공제들의 합계가 <span class="kn">2,500만원</span>을 초과하는 경우 → 그 초과하는 금액만큼 공제하지 아니한다:<br>
+      1. 인적공제 (기본공제 + 추가공제)<br>
+      2. 연금보험료공제<br>
+      3. 주택담보노후연금 이자비용공제<br>
+      4. 특별소득공제<br>
+      5. 조세특례제한법에 따른 소득공제
+    </div>
+    <div class="gb">✅ 단, 인적공제(기본·추가)와 연금보험료공제는 종합소득금액 초과 불가 규정이 별도 적용</div>
+    <div class="wb">⚠ 종합한도 적용 시 먼저 기본공제·추가공제를 제외한 나머지 공제부터 한도 초과 여부 확인<br>(한도 내에서 어느 공제를 받을지 납세자가 선택 가능)</div>
+  </div>
+</div>
+
+
+<!-- ════ 7. 종합소득공제의 특례와 배제 ════ -->
+<div class="section">
+  <div class="bar b-orange">7. 종합소득공제의 특례와 배제 (§54·§54의2)</div>
+
+  <div class="sub">
+    <h3>7-1. 종합소득공제의 배제 (§54)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>상황</th><th>적용 공제</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>분리과세 소득만 있는 자</strong><br>(분리과세이자·배당·연금·기타소득만)</td><td><span class="xr">종합소득공제 전부 적용 안 됨</span></td><td class="mn">§54①</td></tr>
+          <tr class="hl"><td><strong>과세표준 확정신고 미이행자</strong><br>(§70④1호 서류 미제출)</td><td>기본공제 중 <strong>본인분만</strong> + 표준세액공제만<br>(나중에 서류 제출하면 정상 적용)</td><td class="mn">§54②</td></tr>
+          <tr><td><strong>수시부과 결정</strong><br>(§82 수시부과)</td><td>기본공제 중 <strong>본인분만</strong></td><td class="mn">§54③</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rb">🚨 <strong>배제 요약:</strong><br>
+      분리과세 소득만 → 전부 배제<br>
+      확정신고 미이행 → 본인 기본공제+표준세액공제만<br>
+      수시부과 → 본인 기본공제만
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>7-2. 공동사업에 대한 소득공제 특례 (§54의2)</h3>
+    <div class="lb"><span class="lr">§54의2</span>
+      §51의3(연금보험료공제) 또는 조특법 소득공제를 적용하거나 §59의3 세액공제를 적용하는 경우<br>
+      §43③에 따라 <strong>합산과세되는 특수관계인이 지출·납입·투자·출자 등을 한 금액</strong>이 있으면<br>
+      → 주된 공동사업자의 소득에 합산과세되는 소득금액 한도에서<br>
+      → <strong>주된 공동사업자가 지출 등을 한 금액으로 보아</strong> 주된 공동사업자의 소득공제·세액공제 적용 가능
+    </div>
+    <div class="gb">✅ 합산과세 특수관계인이 납입한 연금보험료, 신용카드 사용액 등 → 주된 공동사업자가 공제받을 수 있음</div>
+  </div>
+</div>
+
+
+<!-- 종합 계산 예제 -->
+<div class="section">
+  <div class="bar b-blue">📐 종합 계산 예제 — 52번 계산형 유사형</div>
+  <div class="cb">
+    <h3>종합소득과세표준 계산</h3>
+    <div class="lb" style="margin-bottom:8px;font-size:.85em">
+      甲(근로자, 총급여 8,000만원): 사업소득금액 500만원, 근로소득금액 5,000만원<br>
+      배우자(소득 없음), 자녀 18세, 부친 65세(소득 없음), 모친 61세 장애인(소득 없음)<br>
+      국민연금 납입: 400만원, 건강보험료(근로자부담): 300만원<br>
+      장기주택저당차입금 이자: 600만원 (15년↑, 고정금리+비거치식)
+    </div>
+    <div class="cs"><span class="cn">①</span><span class="cl">종합소득금액</span><span class="cf">500 + 5,000 = 5,500만원</span></div>
+    <div class="cs"><span class="cn">②</span><span class="cl">기본공제</span><span class="cf">본인+배우자+자녀(18세)+부친(65세)+모친(61세 장애인) = 5명 × 150만원 = 750만원</span></div>
+    <div class="cs"><span class="cn">③</span><span class="cl">추가공제</span><span class="cf">모친 장애인 200만원 (장애인, 나이 제한 없음)</span></div>
+    <div class="cs"><span class="cn">④</span><span class="cl">연금보험료공제</span><span class="cf">400만원 (전액)</span></div>
+    <div class="cs"><span class="cn">⑤</span><span class="cl">특별소득공제 (보험료)</span><span class="cf">건강보험료 300만원 (전액)</span></div>
+    <div class="cs"><span class="cn">⑥</span><span class="cl">특별소득공제 (장기주택저당차입금)</span><span class="cf">600만원 (한도 2,000만원 이내, 전액 공제 가능)</span></div>
+    <div class="cres">과세표준 = 5,500 − 750 − 200 − 400 − 300 − 600 = 3,250만원</div>
+  </div>
+  <div class="wb" style="margin-top:8px">⚠ 부친(65세)은 60세 이상 직계존속으로 기본공제 해당 / 자녀(18세)는 20세 이하로 기본공제 해당 / 모친은 장애인으로 나이 무관 기본공제+추가공제(200만원)</div>
+</div>
+
+
+<!-- 오답 함정 -->
+<div class="section trapbox">
+  <h2>⚠️ 오답 함정 — 기출 기반 12선</h2>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"배우자 소득금액이 150만원이면 기본공제 가능"</strong><p>→ 기본공제 소득요건: 소득금액 합계 100만원 이하 (150만원 초과 → 불가)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"총급여 600만원의 근로소득만 있는 배우자는 기본공제 불가"</strong><p>→ 근로소득만 있는 경우 총급여 500만원 이하면 기본공제 가능. 600만원 → 불가 (§50①2)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"장애인인 직계비속은 나이 요건 없이 기본공제 가능하나 소득 요건은 있다"</strong><p>→ 정답: 장애인은 나이 요건만 없음. 소득 요건(100만원·500만원 이하)은 여전히 적용 (§50①3)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"부녀자공제와 한부모공제 모두 해당하면 50만원+100만원 = 150만원 공제"</strong><p>→ §51①단서: 중복 시 한부모공제(100만원)만 적용, 부녀자공제 배제</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"장기주택저당차입금 공제는 2주택 보유자도 받을 수 있다"</strong><p>→ §52⑤2: 세대 구성원 보유 포함 2주택 이상 보유 시 공제 불가</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"주택임차차입금 원리금 상환액의 공제한도는 단독으로 400만원"</strong><p>→ 조특법 §87②(청약저축 포함) 합계 400만원 한도. 청약저축 공제가 있으면 그만큼 임차차입금 공제 한도 감소</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"신용카드 공제율은 모두 15%"</strong><p>→ 신용카드 15% / 직불·현금 30% / 대중교통·전통시장 40% / 도서·공연 30% (7천만원 이하 자)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"과세기간 종료일(12.31) 현재 21세인 직계비속은 20세 이하 요건 불충족"</strong><p>→ §53⑤: 나이 요건은 과세기간 중 해당 나이에 해당되는 날이 있으면 인정. 2025.3.1. 만 20세가 되었다면 2025년에 20세 이하인 날이 있음 → 공제 가능</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"주택담보노후연금 이자비용공제는 사업소득자도 받을 수 있다"</strong><p>→ §51의4①: 연금소득이 있는 거주자만 적용. 사업소득자·근로소득자 적용 불가</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"분리과세소득만 있는 자도 기본공제는 받을 수 있다"</strong><p>→ §54①: 분리과세이자·배당·연금·기타소득만 있는 자 → 종합소득공제 전부 불적용</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"장기주택저당차입금 이자는 원리금 합계에 대해 공제"</strong><p>→ §52⑤: 이자 상환액만 공제 (원금 상환액 제외) / 주택임차차입금은 원리금 40%가 공제</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"기준시가 7억원 주택을 취득해도 장기주택저당차입금 공제 가능"</strong><p>→ §52⑤: 취득 당시 기준시가 6억원 이하 주택만 해당</p></div></div>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="mn">§50①②③</td><td>기본공제 (1인당 150만원 / 나이·소득 요건 / 중복 공제 배제)</td></tr>
+        <tr><td class="mn">§51①~④</td><td>추가공제 (경로100·장애200·부녀50·한부모100 / 중복시한부모 / 인적공제 종합소득금액 초과불가)</td></tr>
+        <tr><td class="mn">§53①~⑤</td><td>부양가족 범위·판정시기 (종료일 원칙 / 사망·치유 전날 / 나이 과세기간 중 판정 / 별거 직계존속 인정)</td></tr>
+        <tr><td class="mn">§51의3①③</td><td>연금보험료공제 (공적연금 기여금 전액 / 공제한도 초과 처리)</td></tr>
+        <tr><td class="mn">§51의4①②</td><td>주택담보노후연금 이자비용공제 (연금소득자 / 200만원 한도 / 신청 시 적용)</td></tr>
+        <tr><td class="mn">§52①</td><td>보험료 소득공제 (건강·고용·장기요양 근로자 부담분 전액)</td></tr>
+        <tr><td class="mn">§52④</td><td>주택임차차입금 원리금 상환액 × 40% / 400만원 한도</td></tr>
+        <tr><td class="mn">§52⑤⑥</td><td>장기주택저당차입금 이자 (6억 이하 / 15년↑ 고정+비거치 2,000만 / 1,800만 / 800만 / 10년↑ 600만)</td></tr>
+        <tr><td class="mn">§54①②③</td><td>종합소득공제 배제 (분리과세만·확정신고미이행·수시부과)</td></tr>
+        <tr><td class="mn">§54의2</td><td>공동사업 소득공제 특례 (합산과세 특수관계인 지출 → 주된 공동사업자 공제)</td></tr>
+        <tr><td class="mn">조특법 §87②</td><td>주택청약종합저축 소득공제 (무주택 세대주 근로자 / 납입액 40% / §52④와 합산 400만원)</td></tr>
+        <tr><td class="mn">조특법 §126의2</td><td>신용카드 소득공제 (총급여 25% 초과분 / 신용15%·직불30%·대중교통·전통시장40%·도서공연30%)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote" style="margin-top:10px">
+    ※ 소득세법 (2026.04.21 시행) / 조세특례제한법 (2026 시행) MCP 직접 조회 기준<br>
+    ※ 5년간 25회 출제 — 52번 계산형 고정 배치 반영
+  </p>
+</div>
+
+</body>
+</html>
