@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>임대보증금 간주임대료 계산기 | 법인세법 (조세특례제한법 §138)</title>
+  <style>
+    /* ===== 기본 레이아웃 ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #FAFAFA;
+      color: #1A1A2E;
+      font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      line-height: 1.8;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+      font-size: 15px;
+    }
+
+    /* ===== 헤더 ===== */
+    .header {
+      background: linear-gradient(135deg, #1A3A0D, #2E6B1A);
+      color: #fff;
+      padding: 32px 40px;
+      border-radius: 14px;
+      margin-bottom: 28px;
+    }
+    .subject-badge {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.82em;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .header h1 { font-size: 1.65em; font-weight: 700; margin-bottom: 6px; }
+    .header .meta { font-size: 0.8em; opacity: 0.82; margin-top: 8px; }
+
+    /* ===== 섹션 공통 ===== */
+    .section {
+      background: #fff;
+      border: 1px solid #E8ECF0;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .section h2 { color: #1A3A6B; font-size: 1.1em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #EEF2FF; }
+    .section h3 { color: #2C5282; font-size: 0.98em; margin: 14px 0 8px; }
+
+    /* ===== 컬러 박스 ===== */
+    .highlight-box  { background: #FFF8E1; }
+    .trap-box       { background: #FFF3F3; }
+    .compare-box    { background: #F0F7FF; }
+    .calc-box       { background: #F8F4FF; }
+    .analogy-box    { background: #F0FFF4; border-left: 4px solid #38A169; padding: 14px 18px; border-radius: 8px; margin: 12px 0; }
+    .law-box        { background: #F0F7FF; border-left: 4px solid #3182CE; padding: 13px 18px; border-radius: 8px; margin: 10px 0; font-size: 0.88em; color: #1A3A6B; }
+    .formula-box    { background: #F3F0FF; border: 1.5px solid #B794F4; border-radius: 10px; padding: 16px 20px; margin: 14px 0; font-size: 0.9em; }
+    .info-box       { background: #EBF8FF; border-left: 4px solid #3182CE; border-radius: 6px; padding: 10px 16px; font-size: 0.86em; color: #2C5282; margin: 10px 0; }
+    .warn-box       { background: #FFFBEB; border-left: 4px solid #D69E2E; border-radius: 6px; padding: 10px 16px; font-size: 0.86em; color: #744210; margin: 10px 0; }
+
+    /* ===== 테이블 ===== */
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+    th { background: #EEF2FF; color: #1A3A6B; padding: 10px 14px; text-align: left; font-size: 0.88em; }
+    td { padding: 9px 14px; border-bottom: 1px solid #F0F0F0; font-size: 0.9em; vertical-align: top; }
+    tr:hover td { background: #FAFBFF; }
+    .diff { color: #C53030; font-weight: 600; }
+    .good { color: #276749; font-weight: 600; }
+    .center { text-align: center; }
+
+    /* ===== 계산기 ===== */
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+    .calc-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 660px) { .calc-grid, .calc-grid-3 { grid-template-columns: 1fr; } }
+
+    .input-group { display: flex; flex-direction: column; gap: 5px; }
+    .input-group label { font-size: 0.86em; color: #2C5282; font-weight: 600; }
+    .input-group input, .input-group select {
+      border: 1.5px solid #C3D1E8; border-radius: 8px; padding: 9px 12px;
+      font-size: 0.93em; color: #1A1A2E; background: #fff; transition: border 0.2s;
+    }
+    .input-group input:focus, .input-group select:focus { outline: none; border-color: #38A169; }
+    .input-hint { font-size: 0.76em; color: #888; }
+
+    .section-divider { border: none; border-top: 1.5px dashed #C3D1E8; margin: 18px 0; }
+
+    .tenant-card {
+      background: #F8FFF8;
+      border: 1.5px solid #9AE6B4;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .tenant-card h4 { color: #276749; font-size: 0.9em; margin-bottom: 12px; }
+    .btn-remove { position: absolute; top: 12px; right: 14px; background: #FED7D7; border: none; border-radius: 6px; padding: 4px 10px; font-size: 0.8em; color: #C53030; cursor: pointer; font-weight: 600; }
+    .btn-add { background: #F0FFF4; border: 1.5px dashed #38A169; border-radius: 8px; padding: 10px; width: 100%; font-size: 0.9em; color: #276749; font-weight: 600; cursor: pointer; margin-bottom: 18px; }
+    .btn-add:hover { background: #C6F6D5; }
+
+    .btn-calc {
+      background: linear-gradient(135deg, #1A3A0D, #2E6B1A);
+      color: #fff; border: none; border-radius: 10px; padding: 13px 36px;
+      font-size: 1em; font-weight: 700; cursor: pointer; margin: 8px 6px 8px 0; transition: opacity 0.2s;
+    }
+    .btn-calc:hover { opacity: 0.88; }
+    .btn-reset { background: #EEF2FF; color: #1A3A6B; border: 1.5px solid #C3D1E8; border-radius: 10px; padding: 13px 24px; font-size: 0.93em; font-weight: 600; cursor: pointer; }
+
+    /* ===== 결과 패널 ===== */
+    .result-panel { background: #F0FFF4; border: 1.5px solid #9AE6B4; border-radius: 12px; padding: 22px 26px; margin-top: 16px; display: none; }
+    .result-panel.show { display: block; }
+    .result-panel h3 { color: #276749; font-size: 1em; margin-bottom: 16px; }
+
+    .step-list { list-style: none; padding: 0; }
+    .step-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #9AE6B4; }
+    .step-item:last-child { border-bottom: none; }
+    .step-num { background: #38A169; color: #fff; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 0.78em; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .step-body { flex: 1; }
+    .step-label { font-size: 0.86em; color: #555; display: block; }
+    .step-value { font-size: 1.08em; font-weight: 700; color: #1A3A0D; }
+    .step-ref { font-size: 0.76em; color: #888; display: block; margin-top: 2px; }
+
+    .result-final { background: linear-gradient(135deg, #1A3A0D, #2E6B1A); color: #fff; border-radius: 10px; padding: 16px 22px; margin-top: 16px; display: flex; justify-content: space-between; align-items: center; }
+    .result-final .label { font-size: 0.92em; opacity: 0.85; }
+    .result-final .value { font-size: 1.5em; font-weight: 700; }
+
+    .tenant-result { background: #fff; border: 1px solid #C6F6D5; border-radius: 8px; padding: 12px 16px; margin: 8px 0; }
+    .tenant-result .t-name { font-weight: 700; color: #276749; font-size: 0.9em; }
+    .tenant-result .t-vals { font-size: 0.85em; color: #444; margin-top: 4px; display: flex; gap: 20px; flex-wrap: wrap; }
+
+    /* ===== 최빈출 ===== */
+    .highlight-box ol { padding-left: 22px; }
+    .highlight-box ol li { margin-bottom: 8px; }
+
+    /* ===== 오답함정 ===== */
+    .trap-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #FFCDD2; }
+    .trap-item:last-child { border-bottom: none; }
+    .trap-body strong { color: #C53030; display: block; }
+    .trap-body p { font-size: 0.87em; margin-top: 4px; color: #444; }
+
+    /* ===== 플로우차트 ===== */
+    .flowchart { display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .flow-node { background: #fff; border: 2px solid #38A169; border-radius: 10px; padding: 10px 28px; font-size: 0.88em; font-weight: 600; color: #1A3A0D; text-align: center; min-width: 260px; }
+    .flow-node.start { background: #F0FFF4; }
+    .flow-node.end-yes { background: #F0FFF4; border-color: #38A169; color: #276749; }
+    .flow-node.end-no  { background: #FFF3F3; border-color: #E53E3E; color: #C53030; }
+    .flow-diamond { background: #FFF8E1; border: 2px solid #ECC94B; border-radius: 4px; padding: 10px 24px; font-size: 0.87em; font-weight: 600; color: #744210; text-align: center; min-width: 260px; }
+    .flow-arrow { font-size: 1.4em; color: #888; line-height: 1.2; text-align: center; }
+
+    /* ===== 법조항 색인 ===== */
+    .law-index { background: #F0FFF4; }
+    .law-index-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 600px) { .law-index-grid { grid-template-columns: 1fr; } }
+    .law-item { background: #fff; border: 1px solid #9AE6B4; border-radius: 8px; padding: 10px 14px; font-size: 0.85em; }
+    .law-item .law-no { color: #276749; font-weight: 700; }
+    .law-item .law-desc { color: #444; }
+
+    /* 뱃지 */
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.78em; font-weight: 700; }
+    .badge-req { background: #C6F6D5; color: #22543D; }
+    .badge-opt { background: #FEF3C7; color: #744210; }
+    .badge-no  { background: #FED7D7; color: #742A2A; }
+
+    .rate-row { background: #FFF8E1; font-weight: 700; }
+
+    /* 산식 박스 */
+    .formula-line { font-family: 'Courier New', monospace; background: #EEF2FF; border-radius: 6px; padding: 10px 16px; margin: 8px 0; font-size: 0.88em; color: #1A3A6B; line-height: 2; }
+    .formula-line .var { color: #C53030; font-weight: 700; }
+    .formula-line .op  { color: #38A169; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<!-- ===== 헤더 ===== -->
+<div class="header">
+  <div class="subject-badge">법인세법 / 조세특례제한법</div>
+  <h1>🏢 임대보증금 간주임대료 계산기</h1>
+  <div class="meta">
+    근거: 조세특례제한법 제138조 / 동법 시행령 제132조 / 동법 시행규칙 제59조 / 법인세법 시행규칙 제6조<br>
+    2026.06.02 시행 기준 | 정기예금이자율 연 3.1% (법인세법 시행규칙 §6)
+  </div>
+</div>
+
+<!-- ===== 최빈출 포인트 ===== -->
+<div class="section highlight-box">
+  <h2>🔥 최빈출 포인트 (법인세법 기출 — 간주임대료 관련)</h2>
+  <ol>
+    <li><strong>적용 요건 3가지</strong> ★★★ — ①부동산임대업 주업 법인 ②차입금 > 자기자본 × 2 ③주택 제외 부동산 임대 (조특법§138①)</li>
+    <li><strong>산식 핵심: 보증금 적수 × 이자율 − 운용수익</strong> ★★★ — 보증금 적수에서 건설비 상당액 적수 차감 후 이자율 적용 (조특령§132⑤)</li>
+    <li><strong>운용수익 차감 순서</strong> ★★★ — 수입이자 + 배당금수입 + <span style="color:#C53030">유가증권처분익(= 처분이익 − 처분손실)</span> 포함 (조특규§59⑤)</li>
+    <li><strong>건설비 상당액 = 취득가액(토지 제외)</strong> ★★★ — 자본적 지출 포함, 재평가차액 제외 (조특규§59②)</li>
+    <li><strong>일부 임대 시 건설비 적수 안분</strong> ★★ — 건설비 적수 × (임대면적 적수 / 건물 연면적 적수) (조특규§59②2호)</li>
+    <li><strong>차입금 자기자본 2배 초과 판단</strong> ★★ — 적수(積數)로 계산, 자기자본은 재무상태표 순자산 또는 납입자본금 중 큰 값 (조특령§132①)</li>
+    <li><strong>간주임대료 < 0 → 0으로 처리</strong> ★ — 운용수익이 이자금액보다 크면 익금 가산 없음 (조특령§132⑤)</li>
+  </ol>
+</div>
+
+<!-- ===== 핵심 개념 ===== -->
+<div class="section">
+  <h2>💡 핵심 개념 — 초등학생도 이해하는 간주임대료</h2>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유:</strong><br>
+    친구한테 방을 빌려줬는데, 월세는 안 받고 보증금 1억원만 받았어요.<br>
+    그 1억원을 은행에 넣으면 이자가 생기잖아요? 세금 내야 할 돈이 생기는 거예요.<br>
+    그런데 법인이 빚(차입금)이 자기 돈(자기자본)의 2배가 넘을 만큼 많으면서<br>
+    부동산 임대를 주업으로 한다면, "<strong>보증금으로 이자 벌었다고 치고 세금 내!</strong>" 라고 하는 게 바로 간주임대료입니다.
+  </div>
+
+  <div class="law-box">
+    📖 <strong>조세특례제한법 제138조 제1항 (2026.06.02 시행)</strong><br>
+    자기자본에 대한 차입금 비율 등이 <strong>대통령령 기준 초과</strong>하는 내국법인으로서
+    <strong>부동산임대업을 주업</strong>으로 하는 법인(비영리법인 제외)이
+    <strong>대통령령이 정하는 주택을 제외한</strong> 부동산 등을 대여하고
+    보증금·전세금 등을 받은 경우에는 대통령령으로 정하는 바에 따라 계산한 금액을
+    <span class="diff">법인세법 제15조 제1항에 따른 익금에 가산</span>한다.
+  </div>
+
+  <h3>📐 핵심 산식 (조세특례제한법 시행령 제132조 제5항)</h3>
+  <div class="formula-box">
+    <div class="formula-line">
+      <span class="var">간주임대료</span> <span class="op">=</span>
+      (<span class="var">보증금등 적수</span> <span class="op">-</span> <span class="var">건설비상당액 적수</span>) <span class="op">÷</span> <span class="var">해당 사업연도 일수</span>
+      <span class="op">×</span> <span class="var">정기예금이자율</span>
+      <span class="op">-</span> <span class="var">운용수익</span>
+    </div>
+    <div style="margin-top:10px;font-size:0.85em;color:#555;">
+      ※ 간주임대료 &lt; 0이면 → <strong>0으로 처리</strong> (익금 가산 없음)<br>
+      ※ 적수 = 매월말 잔액 × 경과일수 (또는 보증금 × 임대일수)<br>
+      ※ 정기예금이자율 = <strong>연 3.1%</strong> (법인세법 시행규칙 §6 기준; 시험에서는 별도 제시 우선)
+    </div>
+  </div>
+
+  <div class="law-box" style="margin-top:14px;">
+    📖 <strong>운용수익의 범위 (조세특례제한법 시행규칙 제59조 제5항)</strong><br>
+    "유가증권처분익" = 유가증권 매각익 <strong>−</strong> 매각손<br>
+    → 운용수익 = 수입이자 + 배당금수입 + (유가증권매각익 − 유가증권매각손)
+  </div>
+</div>
+
+<!-- ===== 적용 요건 정리표 ===== -->
+<div class="section">
+  <h2>📋 적용 요건 상세 정리</h2>
+  <table>
+    <thead>
+      <tr><th>요건</th><th>내용</th><th>세부 기준</th><th>근거</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>① 주체</strong></td>
+        <td>부동산임대업 주업 내국법인 (비영리 제외)</td>
+        <td>자산총액 중 임대사업 사용 자산 ≥ 50%</td>
+        <td>조특령 §132③</td>
+      </tr>
+      <tr>
+        <td><strong>② 차입금</strong></td>
+        <td>차입금 적수 > 자기자본 적수 × 2</td>
+        <td>자기자본 = Max(순자산, 납입자본금) 적수 기준</td>
+        <td>조특령 §132①</td>
+      </tr>
+      <tr>
+        <td><strong>③ 임대 대상</strong></td>
+        <td>주택 제외 부동산(상가·오피스텔 등)</td>
+        <td>주택 = 연면적(지하층 제외) 또는 정착면적 × 5배 중 넓은 면적 이내의 부속토지 포함</td>
+        <td>조특령 §132④</td>
+      </tr>
+      <tr>
+        <td><strong>④ 대가</strong></td>
+        <td>보증금·전세금 또는 이에 준하는 것</td>
+        <td>월세 수수 여부와 무관하게 보증금 존재 시 적용</td>
+        <td>조특법 §138①</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 탭: 계산기 ===== -->
+<div class="section calc-box">
+  <h2>🧮 인터랙티브 간주임대료 계산기</h2>
+
+  <!-- 기본 정보 -->
+  <h3>① 사업연도 기본 정보</h3>
+  <div class="calc-grid">
+    <div class="input-group">
+      <label>사업연도 일수</label>
+      <input type="number" id="fy_days" value="365" min="1" max="366">
+      <span class="input-hint">윤년(366일) 또는 일반(365일) 입력</span>
+    </div>
+    <div class="input-group">
+      <label>정기예금이자율 (%)</label>
+      <input type="number" id="interest_rate" value="3.1" step="0.1" min="0">
+      <span class="input-hint">법인세법 시행규칙 §6: 3.1% (시험 별도 제시 우선)</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 건물 정보 -->
+  <h3>② 임대 부동산 건물 정보</h3>
+  <div class="calc-grid">
+    <div class="input-group">
+      <label>건물 취득가액 (원) — 토지 포함 전체</label>
+      <input type="number" id="bldg_total" placeholder="예: 600000000" min="0">
+      <span class="input-hint">토지가액이 포함된 전체 취득가액</span>
+    </div>
+    <div class="input-group">
+      <label>토지 취득가액 (원)</label>
+      <input type="number" id="land_val" placeholder="예: 200000000" min="0">
+      <span class="input-hint">건설비상당액 = 전체 − 토지 (조특규§59②)</span>
+    </div>
+    <div class="input-group">
+      <label>감가상각누계액 (원)</label>
+      <input type="number" id="depr_acc" placeholder="예: 30000000" min="0">
+      <span class="input-hint">취득가액에서 차감하지 않음 (취득가액 기준 적용)</span>
+    </div>
+    <div class="input-group">
+      <label>건물 연면적 (㎡)</label>
+      <input type="number" id="bldg_area" placeholder="예: 900" min="0">
+      <span class="input-hint">지하층 포함 전체 연면적</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- 임차인 목록 -->
+  <h3>③ 임차인별 임대 내역</h3>
+  <div id="tenant-list"></div>
+  <button class="btn-add" onclick="addTenant()">+ 임차인 추가</button>
+
+  <hr class="section-divider">
+
+  <!-- 운용수익 -->
+  <h3>④ 임대보증금 운용수익 (해당 사업연도)</h3>
+  <div class="calc-grid-3">
+    <div class="input-group">
+      <label>수입이자 (원)</label>
+      <input type="number" id="rev_interest" placeholder="예: 2500000" min="0">
+    </div>
+    <div class="input-group">
+      <label>배당금수입 (원)</label>
+      <input type="number" id="rev_dividend" placeholder="예: 500000" min="0">
+    </div>
+    <div class="input-group">
+      <label>유가증권처분익 (원)</label>
+      <input type="number" id="rev_securities" placeholder="손실이면 음수 입력: −1500000" >
+      <span class="input-hint">처분이익 − 처분손실 = 순액 입력 (조특규§59⑤)</span>
+    </div>
+  </div>
+
+  <div style="margin-top:6px;">
+    <button class="btn-calc" onclick="calculate()">계산하기 ▶</button>
+    <button class="btn-reset" onclick="resetAll()">초기화</button>
+  </div>
+
+  <!-- 결과 패널 -->
+  <div id="result-panel" class="result-panel">
+    <h3>📋 단계별 계산 결과</h3>
+
+    <!-- 임차인별 적수 -->
+    <div id="tenant-results"></div>
+
+    <ul class="step-list" id="step-list"></ul>
+
+    <div class="result-final">
+      <span class="label">간주임대료 (익금 가산액)</span>
+      <span class="value" id="val-final">—</span>
+    </div>
+
+    <div class="info-box" style="margin-top:14px;">
+      ℹ️ 이 계산기는 학습 목적용입니다. 실제 신고 시 전문가 검토가 필요합니다.
+    </div>
+  </div>
+</div>
+
+<!-- ===== 비교표 ===== -->
+<div class="section compare-box">
+  <h2>⚖️ 비교표 — 법인 vs 개인(소득세법) 간주임대료</h2>
+  <table>
+    <thead>
+      <tr><th>구분</th><th>법인 (조세특례제한법 §138)</th><th>개인사업자 (소득세법 §25)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>적용 대상</strong></td><td>부동산임대업 주업 법인<br>차입금 > 자기자본 × 2</td><td>3주택 이상 보유자의 주택 임대<br>보증금 합계 3억 초과분</td></tr>
+      <tr><td><strong>임대 유형</strong></td><td>주택 제외 부동산<br>(상가·오피스 등)</td><td class="diff">주택(소형주택 제외) 전용</td></tr>
+      <tr><td><strong>건설비 차감</strong></td><td>건설비상당액 적수 차감 O</td><td class="diff">3억원 기준 공제 (시행령 §53①)</td></tr>
+      <tr><td><strong>운용수익 차감</strong></td><td>수입이자+배당+유가증권처분익</td><td class="diff">임대 관련 금융수익만</td></tr>
+      <tr><td><strong>이자율</strong></td><td>정기예금이자율 (연 3.1%)</td><td>정기예금이자율 (동일)</td></tr>
+      <tr><td><strong>근거</strong></td><td>조특법 §138, 조특령 §132</td><td>소득세법 §25, 소득세법령 §53</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 플로우차트 ===== -->
+<div class="section">
+  <h2>🔄 간주임대료 적용 판단 흐름도</h2>
+  <div class="flowchart">
+    <div class="flow-node start">내국법인 부동산 임대, 보증금 수령</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-diamond">① 비영리법인인가?</div>
+    <div class="flow-arrow" style="display:flex;justify-content:space-around;width:300px;">
+      <span style="color:#C53030;">Yes → 적용 제외</span>
+      <span style="color:#276749;">No ↓</span>
+    </div>
+    <div class="flow-diamond">② 부동산임대업 주업?<br>(임대자산 ≥ 자산총액 50%)</div>
+    <div class="flow-arrow" style="display:flex;justify-content:space-around;width:300px;">
+      <span style="color:#C53030;">No → 적용 제외</span>
+      <span style="color:#276749;">Yes ↓</span>
+    </div>
+    <div class="flow-diamond">③ 차입금 적수 > 자기자본 적수 × 2?</div>
+    <div class="flow-arrow" style="display:flex;justify-content:space-around;width:300px;">
+      <span style="color:#C53030;">No → 적용 제외</span>
+      <span style="color:#276749;">Yes ↓</span>
+    </div>
+    <div class="flow-diamond">④ 임대 부동산이 주택인가?</div>
+    <div class="flow-arrow" style="display:flex;justify-content:space-around;width:300px;">
+      <span style="color:#C53030;">주택 → 적용 제외</span>
+      <span style="color:#276749;">주택 외 ↓</span>
+    </div>
+    <div class="flow-node end-yes">✅ 간주임대료 익금 가산 적용<br>(조특법 §138①, 조특령 §132⑤ 산식 계산)</div>
+  </div>
+</div>
+
+<!-- ===== 오답 함정 ===== -->
+<div class="section trap-box">
+  <h2>⚠️ 오답 함정 — 시험에서 자주 틀리는 포인트</h2>
+
+  <div class="trap-item">
+    <div style="font-size:1.2em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"건설비상당액에서 감가상각누계액을 차감한 장부가액을 쓴다"</strong>
+      <p>→ <strong>오답!</strong> 건설비상당액 = <strong>취득가액(자본적 지출 포함, 재평가차액 제외)</strong>입니다. 감가상각누계액은 차감하지 않습니다. (조특규§59②)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.2em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"운용수익에 유가증권처분손실은 포함되지 않는다"</strong>
+      <p>→ <strong>오답!</strong> 조세특례제한법 시행규칙 §59⑤: "유가증권처분익 = 매각익 − 매각손". 매각손이 있으면 운용수익에서 차감되어 간주임대료가 <strong>늘어납니다</strong>. 2025년 기출(62회) 핵심 포인트!</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.2em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"건물 전체를 임대하지 않아도 건설비 전액을 적수 계산에 사용한다"</strong>
+      <p>→ <strong>오답!</strong> 일부 임대 시: 건설비 적수 × (임대면적 적수 / 건물 연면적 적수)로 안분합니다. (조특규§59②2호)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.2em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"부동산임대업 법인이면 무조건 간주임대료를 계산해야 한다"</strong>
+      <p>→ <strong>오답!</strong> 차입금 적수 > 자기자본 적수 × 2 요건을 <strong>동시에</strong> 충족해야 합니다. 차입금이 자기자본의 2배 이하면 적용 제외입니다. (조특령§132①)</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.2em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"주택도 간주임대료 계산 대상이다"</strong>
+      <p>→ <strong>오답!</strong> 조특법 §138①: 대통령령이 정하는 주택은 명시적으로 제외합니다. 주택 임대보증금에 대한 간주임대료는 소득세법 §25(개인) 적용 대상입니다.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.2em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"간주임대료 계산 결과가 음수면 손금에 산입한다"</strong>
+      <p>→ <strong>오답!</strong> 조특령 §132⑤: "익금에 가산할 금액이 영보다 적은 때에는 없는 것으로 본다". 즉, 0원으로 처리하고 손금 산입은 없습니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 기출 예제 ===== -->
+<div class="section">
+  <h2>📝 기출 예제 풀이 — 2025년 제62회 기출 (64번)</h2>
+  <div class="info-box">
+    (주)A: 부동산임대업 주업, 차입금적수 > 자기자본적수 × 2 / 제25기(2025.1.1.~12.31.)<br>
+    건물 연면적 900㎡, 토지 1,500㎡ / 취득가액 600,000,000원(토지 200,000,000원 포함), 감가상각누계액 30,000,000원<br>
+    상가1: 임대면적 600㎡, 보증금 5억원 (임대기간: 2024.10.1~2026.9.30, 제25기 임대일수: 365일)<br>
+    상가2: 임대면적 300㎡, 보증금 3억원 (임대기간: 2025.8.8~2027.8.7, 제25기 임대일수: 146일)<br>
+    운용수익: 수입이자 2,500,000원, 배당금수입 500,000원, 유가증권처분손실 1,500,000원<br>
+    정기예금이자율: 연 3%
+  </div>
+
+  <ul class="step-list">
+    <li class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <span class="step-label">건설비상당액 = 취득가액 − 토지가액 (감가상각누계액 불차감)</span>
+        <span class="step-value">600,000,000 − 200,000,000 = 400,000,000원</span>
+        <span class="step-ref">조특규§59②: 취득가액 기준, 재평가차액 제외</span>
+      </div>
+    </li>
+    <li class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <span class="step-label">상가1 보증금 적수 = 500,000,000 × 365일</span>
+        <span class="step-value">182,500,000,000</span>
+        <span class="step-ref">사업연도 전체 임대 (365일)</span>
+      </div>
+    </li>
+    <li class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <span class="step-label">상가2 보증금 적수 = 300,000,000 × 146일</span>
+        <span class="step-value">43,800,000,000</span>
+        <span class="step-ref">2025.8.8 ~ 12.31 = 146일</span>
+      </div>
+    </li>
+    <li class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <span class="step-label">보증금 합계 적수</span>
+        <span class="step-value">182,500,000,000 + 43,800,000,000 = 226,300,000,000</span>
+        <span class="step-ref">조특령§132⑤</span>
+      </div>
+    </li>
+    <li class="step-item">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <span class="step-label">건설비상당액 적수 (전체 임대 — 연면적 = 임대면적 900㎡)</span>
+        <span class="step-value">400,000,000 × 365 = 146,000,000,000</span>
+        <span class="step-ref">건물 연면적 전체 임대 → 안분 없음 (상가1 600+상가2 300 = 900㎡)</span>
+      </div>
+    </li>
+    <li class="step-item">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <span class="step-label">(보증금 적수 − 건설비 적수) ÷ 사업연도일수 × 이자율</span>
+        <span class="step-value">(226,300,000,000 − 146,000,000,000) ÷ 365 × 3% = 6,600,000원</span>
+        <span class="step-ref">80,300,000,000 ÷ 365 × 0.03</span>
+      </div>
+    </li>
+    <li class="step-item">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <span class="step-label">운용수익 = 수입이자 + 배당 + 유가증권처분익(손실이므로 음수)</span>
+        <span class="step-value">2,500,000 + 500,000 + (−1,500,000) = 1,500,000원</span>
+        <span class="step-ref">조특규§59⑤: 유가증권처분익 = 매각익 − 매각손 = 0 − 1,500,000 = △1,500,000</span>
+      </div>
+    </li>
+    <li class="step-item">
+      <div class="step-num">8</div>
+      <div class="step-body">
+        <span class="step-label">간주임대료 = 6,600,000 − 1,500,000</span>
+        <span class="step-value" style="color:#276749;font-size:1.2em;">✅ 5,100,000원 (정답 ②)</span>
+        <span class="step-ref">조특령§132⑤</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- ===== 법조항 색인 ===== -->
+<div class="section law-index">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="law-index-grid">
+    <div class="law-item">
+      <div class="law-no">조세특례제한법 §138①</div>
+      <div class="law-desc">간주임대료 적용 요건 및 익금 가산 근거</div>
+    </div>
+    <div class="law-item">
+      <div class="law-no">조세특례제한법 시행령 §132①</div>
+      <div class="law-desc">차입금 > 자기자본 2배 기준 (적수 계산), 자기자본 정의</div>
+    </div>
+    <div class="law-item">
+      <div class="law-no">조세특례제한법 시행령 §132③</div>
+      <div class="law-desc">부동산임대업 주업 판단 (임대자산 ≥ 자산총액 50%)</div>
+    </div>
+    <div class="law-item">
+      <div class="law-no">조세특례제한법 시행령 §132④</div>
+      <div class="law-desc">적용 제외 주택의 범위 (연면적 또는 정착면적 × 5배)</div>
+    </div>
+    <div class="law-item">
+      <div class="law-no">조세특례제한법 시행령 §132⑤</div>
+      <div class="law-desc">간주임대료 계산 산식 (보증금 적수 − 건설비 적수) / 일수 × 이자율 − 운용수익</div>
+    </div>
+    <div class="law-item">
+      <div class="law-no">조세특례제한법 시행규칙 §59②</div>
+      <div class="law-desc">건설비상당액 = 취득가액(자본적 지출 포함, 재평가차액 제외); 일부 임대 시 안분</div>
+    </div>
+    <div class="law-item">
+      <div class="law-no">조세특례제한법 시행규칙 §59⑤</div>
+      <div class="law-desc">유가증권처분익 = 매각익 − 매각손 (순액)</div>
+    </div>
+    <div class="law-item">
+      <div class="law-no">법인세법 시행규칙 §6</div>
+      <div class="law-desc">정기예금이자율 = 연 3.1% (추계 적용; 시험은 별도 제시)</div>
+    </div>
+  </div>
+  <div style="margin-top:14px;font-size:0.79em;color:#888;text-align:right;">
+    기준 법령: 조세특례제한법 (2026.06.02 시행, mst:286597) / 시행령 (2026.06.03 시행, mst:286143) / 시행규칙 (2026.05.22 시행, mst:286381) / 법인세법 시행규칙 (2026.03.20 시행, mst:284993)
+  </div>
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+  let tenantCount = 0;
+
+  function fmt(n) {
+    if (isNaN(n) || n === null) return '0 원';
+    return Math.round(n).toLocaleString('ko-KR') + ' 원';
+  }
+  function v(id) { return parseFloat(document.getElementById(id).value) || 0; }
+  function vs(id) { return parseFloat(document.getElementById(id).value) || 0; } // 음수 허용
+
+  function addTenant() {
+    tenantCount++;
+    const id = tenantCount;
+    const div = document.createElement('div');
+    div.className = 'tenant-card';
+    div.id = 'tenant_' + id;
+    div.innerHTML = `
+      <h4>🏬 임차인 ${id}</h4>
+      <button class="btn-remove" onclick="removeTenant(${id})">✕ 삭제</button>
+      <div class="calc-grid">
+        <div class="input-group">
+          <label>임차인명 (메모)</label>
+          <input type="text" id="t${id}_name" placeholder="예: 상가1 (주)A">
+        </div>
+        <div class="input-group">
+          <label>보증금 (원)</label>
+          <input type="number" id="t${id}_deposit" placeholder="예: 500000000" min="0">
+        </div>
+        <div class="input-group">
+          <label>임대일수 (해당 사업연도 내)</label>
+          <input type="number" id="t${id}_days" placeholder="예: 365" min="1" max="366">
+          <span class="input-hint">보증금 수령일 기준, 사업연도 내 일수</span>
+        </div>
+        <div class="input-group">
+          <label>임대면적 (㎡)</label>
+          <input type="number" id="t${id}_area" placeholder="예: 600" min="0">
+          <span class="input-hint">건설비 적수 안분 시 사용</span>
+        </div>
+      </div>
+    `;
+    document.getElementById('tenant-list').appendChild(div);
+  }
+
+  function removeTenant(id) {
+    const el = document.getElementById('tenant_' + id);
+    if (el) el.remove();
+  }
+
+  function getTenants() {
+    const tenants = [];
+    for (let i = 1; i <= tenantCount; i++) {
+      if (!document.getElementById('tenant_' + i)) continue;
+      const dep   = v(`t${i}_deposit`);
+      const days  = v(`t${i}_days`);
+      const area  = v(`t${i}_area`);
+      const name  = document.getElementById(`t${i}_name`).value || `임차인 ${i}`;
+      if (dep > 0 && days > 0) {
+        tenants.push({ name, dep, days, area });
+      }
+    }
+    return tenants;
+  }
+
+  function calculate() {
+    const fyDays  = v('fy_days') || 365;
+    const rate    = v('interest_rate') / 100;
+    const bldgTotal = v('bldg_total');
+    const landVal   = v('land_val');
+    const bldgArea  = v('bldg_area');
+
+    // 건설비상당액 = 취득가액 - 토지가액 (감가상각 불차감)
+    const constructionCost = bldgTotal - landVal;
+
+    const revInt  = v('rev_interest');
+    const revDiv  = v('rev_dividend');
+    const revSec  = vs('rev_securities'); // 음수 가능
+    const totalRev = revInt + revDiv + revSec;
+
+    const tenants = getTenants();
+    if (tenants.length === 0) {
+      alert('임차인을 하나 이상 추가해주세요.');
+      return;
+    }
+
+    // 보증금 적수 합계
+    let depositAcumTotal = 0;
+    const tResults = [];
+    for (const t of tenants) {
+      const depositAccum = t.dep * t.days;
+      depositAcumTotal += depositAccum;
+      tResults.push({ ...t, depositAccum });
+    }
+
+    // 건설비 적수: 일부 임대 시 안분
+    // 전체 임대면적 적수 합계 (각 임차인 임대면적 × 임대일수)
+    let totalRentAreaAccum = 0;
+    for (const t of tenants) {
+      totalRentAreaAccum += t.area * t.days;
+    }
+    // 건물 연면적 적수 = 건물 연면적 × 사업연도 일수
+    const bldgAreaAccum = bldgArea * fyDays;
+    // 건설비 적수 = 취득가액(건물분) × 사업연도 일수 × (임대면적 적수 / 연면적 적수)
+    let constructionAccum;
+    if (bldgArea > 0 && totalRentAreaAccum > 0) {
+      constructionAccum = constructionCost * fyDays * (totalRentAreaAccum / bldgAreaAccum);
+    } else {
+      // 면적 미입력 시 전체 임대로 간주
+      constructionAccum = constructionCost * fyDays;
+    }
+
+    // 간주임대료 계산
+    const interestAmt = (depositAcumTotal - constructionAccum) / fyDays * rate;
+    const janju = Math.max(0, interestAmt - totalRev);
+
+    // 결과 렌더링
+    const tResDiv = document.getElementById('tenant-results');
+    tResDiv.innerHTML = '<h4 style="color:#276749;font-size:0.9em;margin-bottom:8px;">📋 임차인별 보증금 적수</h4>';
+    tResults.forEach(t => {
+      const d = document.createElement('div');
+      d.className = 'tenant-result';
+      d.innerHTML = `
+        <div class="t-name">🏬 ${t.name}</div>
+        <div class="t-vals">
+          <span>보증금: <strong>${t.dep.toLocaleString()}원</strong></span>
+          <span>임대일수: <strong>${t.days}일</strong></span>
+          <span>임대면적: <strong>${t.area}㎡</strong></span>
+          <span>보증금 적수: <strong>${t.depositAccum.toLocaleString()}</strong></span>
+        </div>`;
+      tResDiv.appendChild(d);
+    });
+
+    const steps = [
+      { n:'1', label:'보증금 합계 적수',
+        value: depositAcumTotal.toLocaleString(),
+        ref: '= 각 임차인 (보증금 × 임대일수) 합계' },
+      { n:'2', label:'건설비상당액 (= 취득가액 − 토지가액)',
+        value: fmt(constructionCost),
+        ref: '조특규§59②: 감가상각누계액 불차감, 재평가차액 제외' },
+      { n:'3', label:`건설비상당액 적수 (안분 적용: 임대면적 적수 ${totalRentAreaAccum.toLocaleString()} / 연면적 적수 ${bldgAreaAccum.toLocaleString()})`,
+        value: Math.round(constructionAccum).toLocaleString(),
+        ref: '조특규§59②2호: 건설비 적수 × (임대면적 적수 / 건물 연면적 적수)' },
+      { n:'4', label:'(보증금 적수 − 건설비 적수) ÷ 사업연도 일수 × 이자율',
+        value: fmt(interestAmt),
+        ref: `= (${depositAcumTotal.toLocaleString()} − ${Math.round(constructionAccum).toLocaleString()}) ÷ ${fyDays} × ${(rate*100).toFixed(1)}%` },
+      { n:'5', label:`운용수익 합계 (수입이자 ${revInt.toLocaleString()} + 배당 ${revDiv.toLocaleString()} + 유가증권처분익 ${revSec.toLocaleString()})`,
+        value: fmt(totalRev),
+        ref: '조특규§59⑤: 유가증권처분익 = 매각익 − 매각손 (순액)' },
+      { n:'6', label:'간주임대료 = ④ − ⑤ (음수면 0)',
+        value: fmt(janju),
+        ref: `조특령§132⑤ | ${interestAmt < 0 || interestAmt - totalRev < 0 ? '결과 < 0 → 0으로 처리' : '익금 가산액 확정'}` },
+    ];
+
+    const ul = document.getElementById('step-list');
+    ul.innerHTML = '';
+    steps.forEach(s => {
+      const li = document.createElement('li');
+      li.className = 'step-item';
+      li.innerHTML = `
+        <div class="step-num">${s.n}</div>
+        <div class="step-body">
+          <span class="step-label">${s.label}</span>
+          <span class="step-value">${s.value}</span>
+          <span class="step-ref">${s.ref}</span>
+        </div>`;
+      ul.appendChild(li);
+    });
+
+    document.getElementById('val-final').textContent = fmt(janju);
+    document.getElementById('result-panel').classList.add('show');
+    document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function resetAll() {
+    ['fy_days','interest_rate','bldg_total','land_val','depr_acc','bldg_area',
+     'rev_interest','rev_dividend','rev_securities'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = id === 'fy_days' ? '365' : id === 'interest_rate' ? '3.1' : '';
+    });
+    document.getElementById('tenant-list').innerHTML = '';
+    tenantCount = 0;
+    document.getElementById('result-panel').classList.remove('show');
+  }
+
+  // 초기 임차인 1개 추가
+  addTenant();
+</script>
+</body>
+</html>
