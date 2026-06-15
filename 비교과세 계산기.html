@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>금융소득 종합과세 비교과세 계산기 | 소득세법 §62</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #FAFAFA;
+      color: #1A1A2E;
+      font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+      line-height: 1.8;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      font-size: 14.5px;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: linear-gradient(135deg, #0D1B4B 0%, #1A3A6B 60%, #2563A8 100%);
+      color: #fff;
+      padding: 30px 38px;
+      border-radius: 14px;
+      margin-bottom: 26px;
+    }
+    .subject-badge {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      display: inline-block;
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+    .header h1 { font-size: 1.6em; font-weight: 700; margin-bottom: 6px; }
+    .header .meta { font-size: 0.79em; opacity: 0.82; line-height: 1.6; }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      background: #fff;
+      border: 1px solid #E8ECF0;
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .section h2 {
+      color: #1A3A6B;
+      font-size: 1.05em;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #EEF2FF;
+    }
+    .section h3 { color: #2C5282; font-size: 0.95em; margin: 14px 0 8px; }
+
+    /* ===== COLOUR BOXES ===== */
+    .highlight-box { background: #FFF8E1; }
+    .trap-box      { background: #FFF3F3; }
+    .calc-box      { background: #F8F4FF; }
+    .compare-box   { background: #F0F7FF; }
+    .analogy-box   {
+      background: #F0FFF4;
+      border-left: 4px solid #38A169;
+      padding: 13px 17px;
+      border-radius: 8px;
+      margin: 12px 0;
+    }
+    .law-box {
+      background: #F0F7FF;
+      border-left: 4px solid #3182CE;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 10px 0;
+      font-size: 0.87em;
+      color: #1A3A6B;
+    }
+    .info-box {
+      background: #EBF8FF;
+      border-left: 4px solid #3182CE;
+      border-radius: 6px;
+      padding: 9px 14px;
+      font-size: 0.84em;
+      color: #2C5282;
+      margin: 9px 0;
+    }
+    .warn-box {
+      background: #FFFBEB;
+      border-left: 4px solid #D69E2E;
+      border-radius: 6px;
+      padding: 9px 14px;
+      font-size: 0.84em;
+      color: #744210;
+      margin: 9px 0;
+    }
+    .formula-box {
+      background: #F3F0FF;
+      border: 1.5px solid #B794F4;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 0.88em;
+    }
+
+    /* ===== TABLES ===== */
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+    th { background: #EEF2FF; color: #1A3A6B; padding: 9px 13px; text-align: left; font-size: 0.87em; }
+    td { padding: 8px 13px; border-bottom: 1px solid #F0F0F0; font-size: 0.88em; vertical-align: top; }
+    tr:hover td { background: #FAFBFF; }
+    .diff { color: #C53030; font-weight: 600; }
+    .good { color: #276749; font-weight: 600; }
+    .rate-hi { background: #FFF8E1; font-weight: 700; }
+    .center { text-align: center; }
+
+    /* ===== INPUTS ===== */
+    .calc-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
+    .calc-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 640px) {
+      .calc-grid, .calc-grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .ig { display: flex; flex-direction: column; gap: 5px; }
+    .ig label { font-size: 0.84em; color: #2C5282; font-weight: 600; }
+    .ig input, .ig select {
+      border: 1.5px solid #C3D1E8; border-radius: 8px;
+      padding: 8px 11px; font-size: 0.91em;
+      color: #1A1A2E; background: #fff; transition: border 0.2s;
+    }
+    .ig input:focus, .ig select:focus { outline: none; border-color: #4299E1; }
+    .hint { font-size: 0.76em; color: #888; margin-top: 2px; }
+
+    hr.div { border: none; border-top: 1.5px dashed #C3D1E8; margin: 16px 0; }
+
+    /* ===== BUTTONS ===== */
+    .btn-calc {
+      background: linear-gradient(135deg, #0D1B4B, #2563A8);
+      color: #fff; border: none; border-radius: 10px;
+      padding: 12px 34px; font-size: 0.97em; font-weight: 700;
+      cursor: pointer; margin: 6px 6px 6px 0; transition: opacity .2s;
+    }
+    .btn-calc:hover { opacity: .88; }
+    .btn-reset {
+      background: #EEF2FF; color: #1A3A6B;
+      border: 1.5px solid #C3D1E8; border-radius: 10px;
+      padding: 12px 22px; font-size: 0.9em; font-weight: 600; cursor: pointer;
+    }
+
+    /* ===== RESULT PANEL ===== */
+    .result-panel {
+      display: none;
+      background: #F0F7FF;
+      border: 1.5px solid #BEE3F8;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+    .result-panel.show { display: block; }
+    .result-panel h3 { color: #1A3A6B; font-size: 0.97em; margin-bottom: 14px; }
+
+    /* Step list */
+    .sl { list-style: none; padding: 0; }
+    .si {
+      display: flex; align-items: flex-start; gap: 11px;
+      padding: 9px 0; border-bottom: 1px dashed #BEE3F8;
+    }
+    .si:last-child { border-bottom: none; }
+    .sn {
+      background: #3182CE; color: #fff; border-radius: 50%;
+      width: 24px; height: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.76em; font-weight: 700; flex-shrink: 0; margin-top: 3px;
+    }
+    .sb { flex: 1; }
+    .slabel { font-size: 0.84em; color: #555; display: block; }
+    .sval   { font-size: 1.06em; font-weight: 700; color: #0D1B4B; }
+    .sref   { font-size: 0.75em; color: #888; display: block; margin-top: 2px; }
+
+    /* Winner cards */
+    .winner-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px; margin-top: 14px;
+    }
+    @media (max-width: 560px) { .winner-row { grid-template-columns: 1fr; } }
+
+    .tax-card {
+      background: #fff;
+      border: 2px solid #BEE3F8;
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .tax-card.winner {
+      border-color: #0D1B4B;
+      background: linear-gradient(135deg, #0D1B4B, #1A3A6B);
+      color: #fff;
+    }
+    .tax-card.winner .card-title,
+    .tax-card.winner .card-ref { color: rgba(255,255,255,.8); }
+    .tax-card.winner .card-val  { color: #fff; }
+    .card-badge {
+      font-size: 0.72em; font-weight: 700;
+      padding: 2px 8px; border-radius: 10px;
+      display: inline-block; margin-bottom: 6px;
+    }
+    .badge-a { background: #BEE3F8; color: #1A3A6B; }
+    .badge-b { background: #C6F6D5; color: #22543D; }
+    .badge-win { background: rgba(255,255,255,.25); color: #fff; }
+    .card-title { font-size: 0.83em; color: #555; margin-bottom: 4px; }
+    .card-val   { font-size: 1.28em; font-weight: 700; color: #0D1B4B; }
+    .card-ref   { font-size: 0.73em; color: #888; margin-top: 4px; }
+
+    .result-answer {
+      background: linear-gradient(135deg, #0D1B4B, #2563A8);
+      color: #fff; border-radius: 10px;
+      padding: 14px 20px; margin-top: 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .result-answer .rl { font-size: 0.9em; opacity: .85; }
+    .result-answer .rv { font-size: 1.45em; font-weight: 700; }
+
+    .detail-toggle {
+      background: none; border: 1.5px solid #BEE3F8;
+      color: #1A3A6B; border-radius: 8px;
+      padding: 6px 14px; font-size: 0.82em;
+      cursor: pointer; margin-top: 12px;
+    }
+    .detail-section { display: none; margin-top: 12px; }
+    .detail-section.open { display: block; }
+
+    /* ===== FLOWCHART ===== */
+    .fc { display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .fn {
+      background: #fff; border: 2px solid #3182CE;
+      border-radius: 10px; padding: 9px 24px;
+      font-size: 0.86em; font-weight: 600; color: #1A3A6B;
+      text-align: center; min-width: 260px;
+    }
+    .fn.start  { background: #EEF2FF; }
+    .fn.yes    { background: #F0FFF4; border-color: #38A169; color: #276749; }
+    .fn.no     { background: #FFF3F3; border-color: #E53E3E; color: #C53030; }
+    .fd {
+      background: #FFF8E1; border: 2px solid #ECC94B;
+      border-radius: 4px; padding: 9px 22px;
+      font-size: 0.85em; font-weight: 600; color: #744210;
+      text-align: center; min-width: 260px;
+    }
+    .fa { font-size: 1.3em; color: #888; line-height: 1.2; text-align: center; }
+    .fbranch { display: flex; gap: 60px; align-items: flex-start; margin: 4px 0; }
+    .fb { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .fbl { font-size: 0.78em; font-weight: 700; }
+    .fbl.y { color: #276749; }
+    .fbl.n { color: #C53030; }
+
+    /* ===== TRAP ===== */
+    .trap-item { display: flex; gap: 11px; padding: 9px 0; border-bottom: 1px solid #FFCDD2; }
+    .trap-item:last-child { border-bottom: none; }
+    .trap-body strong { color: #C53030; display: block; margin-bottom: 3px; }
+    .trap-body p { font-size: 0.86em; color: #444; }
+
+    /* ===== HIGHLIGHT BOX LIST ===== */
+    .highlight-box ol { padding-left: 22px; }
+    .highlight-box ol li { margin-bottom: 7px; }
+
+    /* ===== LAW INDEX ===== */
+    .law-index { background: #F0F7FF; }
+    .li-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    @media (max-width: 560px) { .li-grid { grid-template-columns: 1fr; } }
+    .li-item {
+      background: #fff; border: 1px solid #BEE3F8;
+      border-radius: 8px; padding: 9px 13px; font-size: 0.84em;
+    }
+    .li-item .li-no   { color: #1A3A6B; font-weight: 700; }
+    .li-item .li-desc { color: #444; }
+
+    /* ===== MISC ===== */
+    .badge { display: inline-block; padding: 1px 9px; border-radius: 10px; font-size: 0.77em; font-weight: 700; }
+    .badge-yes  { background: #C6F6D5; color: #22543D; }
+    .badge-no   { background: #FED7D7; color: #742A2A; }
+    .badge-cond { background: #FEF3C7; color: #744210; }
+    .mono { font-family: 'Courier New', monospace; }
+    .tag-a { background: #DBEAFE; color: #1E40AF; padding: 2px 8px; border-radius: 6px; font-size: .78em; font-weight: 700; }
+    .tag-b { background: #D1FAE5; color: #065F46; padding: 2px 8px; border-radius: 6px; font-size: .78em; font-weight: 700; }
+    .box-a { border-left: 3px solid #3182CE; padding-left: 10px; margin: 6px 0; }
+    .box-b { border-left: 3px solid #38A169; padding-left: 10px; margin: 6px 0; }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<div class="header">
+  <div class="subject-badge">소득세법 | 이자·배당소득</div>
+  <h1>💰 금융소득 종합과세 비교과세 계산기</h1>
+  <div class="meta">
+    근거: 소득세법 제62조 (이자소득등의 종합과세 시 세액 계산 특례) | 2026.04.21 시행<br>
+    원천징수세율: 소득세법 제129조 / 기본세율: 소득세법 제55조 | 2천만원 기준: 소득세법 제14조③6호
+  </div>
+</div>
+
+<!-- ========== 최빈출 포인트 ========== -->
+<div class="section highlight-box">
+  <h2>🔥 최빈출 포인트 (이자·배당소득 — 기출 19회, 매년 출제)</h2>
+  <ol>
+    <li><strong>비교과세 = Max(①방법, ②방법)</strong> ★★★★★ — 두 계산 중 큰 금액이 최종 산출세액 (소법§62)</li>
+    <li><strong>2천만원 초과 판단 시 Gross-up 금액 제외</strong> ★★★★ — 원금 기준으로만 2천만원 비교 (소법§14④)</li>
+    <li><strong>①방법: (금융소득 − 2천만원 + 타소득) 기본세율 + 2천만원×14%</strong> ★★★★ — (소법§62①1호)</li>
+    <li><strong>②방법: 금융소득×14%(또는 25%) + 타소득 기본세율</strong> ★★★★ — 분리과세 가정 비교 (소법§62①2호)</li>
+    <li><strong>비영업대금이익 25%, 출자공동사업자 배당 25%</strong> ★★★ — 금융소득 내 세율 차이 (소법§129①)</li>
+    <li><strong>출자공동사업자 배당 = 이자소득등 제외</strong> ★★★ — §62 본문 후단: 이자소득등으로 보지 않음</li>
+    <li><strong>Gross-up 대상 배당 → 배당소득금액에만 포함, 2천만원 판단엔 미포함</strong> ★★★</li>
+  </ol>
+</div>
+
+<!-- ========== 핵심 개념 ========== -->
+<div class="section">
+  <h2>💡 핵심 개념 — 초등학생도 이해하는 비교과세</h2>
+
+  <div class="analogy-box">
+    💡 <strong>쉬운 비유 — "2가지 계산서 중 더 비싼 것으로 내기"</strong><br>
+    은행이자·배당이 2천만원을 넘으면 나라에서 말합니다:<br>
+    "① 번 계산서(종합과세 방식)로 계산해봐, ② 번 계산서(분리과세 방식으로 그냥 14% 때리기)로도 계산해봐.<br>
+    둘 중에 <strong>더 비싼 걸로 내!</strong>" — 이게 바로 비교과세입니다.<br>
+    왜냐고요? 금융소득이 너무 적으면 종합합산이 오히려 세금을 줄여주는 경우가 생기거든요. 그걸 막으려는 거예요.
+  </div>
+
+  <div class="law-box">
+    📖 <strong>소득세법 제62조 (2026.04.21 시행)</strong><br>
+    거주자의 종합소득과세표준에 포함된 이자소득과 배당소득(이하 "이자소득등")이
+    종합과세기준금액(2천만원)을 <strong>초과</strong>하는 경우 → 종합소득 산출세액 =
+    <span class="diff">다음 ①·② 중 큰 금액</span><br>
+    ※ 제17조①8호 출자공동사업자 배당 → 이자소득등으로 보지 않음 (별도 처리)
+  </div>
+
+  <!-- 두 방법 나란히 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
+    <div class="formula-box">
+      <div class="tag-a">① 종합과세 방식 (소법§62①1호)</div>
+      <div class="box-a" style="margin-top:10px;">
+        <div style="font-size:0.88em;line-height:2;">
+          <span class="diff">가.</span> [금융소득 중 2천만원 초과분 + 타종합소득금액]<br>
+          &nbsp;&nbsp;&nbsp;→ 기본세율 적용 산출세액<br><br>
+          <span class="diff">나.</span> 2천만원 × 14%<br><br>
+          <strong>= 가 + 나</strong>
+        </div>
+      </div>
+    </div>
+    <div class="formula-box" style="background:#F0FFF4;border-color:#9AE6B4;">
+      <div class="tag-b">② 분리과세 비교 방식 (소법§62①2호)</div>
+      <div class="box-b" style="margin-top:10px;">
+        <div style="font-size:0.88em;line-height:2;">
+          <span class="good">가.</span> 금융소득 전체 × 원천징수세율<br>
+          &nbsp;&nbsp;&nbsp;(이자·배당 14%, 비영업대금 25%)<br><br>
+          <span class="good">나.</span> 타종합소득금액 → 기본세율 산출세액<br><br>
+          <strong>= 가 + 나</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box" style="margin-top:10px;">
+    ⚠️ <strong>2천만원 이하인 경우:</strong> §62①2호(분리과세 방식)만 적용 → 금융소득 14% + 타소득 기본세율
+  </div>
+</div>
+
+<!-- ========== 적용 구조표 ========== -->
+<div class="section">
+  <h2>📋 금융소득 세액 계산 구조 한눈에 보기</h2>
+  <table>
+    <thead>
+      <tr><th>구분</th><th>금융소득 합계</th><th>계산 방식</th><th>근거</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>분리과세</strong></td>
+        <td>2천만원 이하</td>
+        <td>원천징수(14%)로 납세 종결, 종합소득 미합산</td>
+        <td>소법§14③6호</td>
+      </tr>
+      <tr class="rate-hi">
+        <td><strong>비교과세</strong></td>
+        <td class="diff">2천만원 초과</td>
+        <td>Max(①종합과세, ②분리과세 비교) — 큰 금액 납부</td>
+        <td>소법§62①</td>
+      </tr>
+      <tr>
+        <td><strong>배당세액공제</strong></td>
+        <td>Gross-up 대상 배당 포함 시</td>
+        <td>종합과세 시 Gross-up 금액을 산출세액에서 공제</td>
+        <td>소법§56①④</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>금융소득 내 원천징수세율 구분</h3>
+  <table>
+    <thead>
+      <tr><th>소득 유형</th><th>세율</th><th>이자소득등 포함?</th><th>근거</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>일반 이자소득 (예금이자 등)</td><td>14%</td><td><span class="badge badge-yes">포함</span></td><td>§129①1호라목</td></tr>
+      <tr class="rate-hi"><td>비영업대금이익 (사인간 대여)</td><td class="diff">25%</td><td><span class="badge badge-yes">포함</span></td><td>§129①1호나목</td></tr>
+      <tr><td>일반 배당소득 (내국법인 등)</td><td>14%</td><td><span class="badge badge-yes">포함</span></td><td>§129①2호나목</td></tr>
+      <tr class="rate-hi"><td>출자공동사업자 배당소득</td><td class="diff">25%</td><td><span class="badge badge-no">제외</span></td><td>§129①2호가목, §62 후단</td></tr>
+      <tr><td>직장공제회 초과반환금</td><td>기본세율(연분연승)</td><td><span class="badge badge-no">제외</span></td><td>§129①1호다목, §14③3호</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ========== 계산기 ========== -->
+<div class="section calc-box">
+  <h2>🧮 비교과세 인터랙티브 계산기</h2>
+
+  <h3>① 금융소득 입력</h3>
+  <div class="calc-grid-3">
+    <div class="ig">
+      <label>일반 이자소득 (14%)</label>
+      <input type="number" id="i_normal" placeholder="예: 15000000" min="0">
+      <span class="hint">예금이자, 채권이자 등</span>
+    </div>
+    <div class="ig">
+      <label>비영업대금이익 (25%)</label>
+      <input type="number" id="i_pri" placeholder="예: 5000000" min="0">
+      <span class="hint">사인간 대여 이익 (§129①1호나목)</span>
+    </div>
+    <div class="ig">
+      <label>일반 배당소득 — Gross-up 대상 (14%)</label>
+      <input type="number" id="d_grossup" placeholder="예: 10000000" min="0">
+      <span class="hint">내국법인 배당 (Gross-up 적용됨)</span>
+    </div>
+    <div class="ig">
+      <label>일반 배당소득 — Gross-up 제외 (14%)</label>
+      <input type="number" id="d_nogrossup" placeholder="예: 3000000" min="0">
+      <span class="hint">외국법인 배당, 의제배당 일부 등</span>
+    </div>
+    <div class="ig">
+      <label>출자공동사업자 배당 (25%)</label>
+      <input type="number" id="d_partner" placeholder="예: 0" min="0">
+      <span class="hint">§62 이자소득등 제외 → 별도 처리</span>
+    </div>
+  </div>
+
+  <hr class="div">
+  <h3>② 타종합소득금액 및 공제</h3>
+  <div class="calc-grid">
+    <div class="ig">
+      <label>타종합소득금액 합계 (금융소득 제외)</label>
+      <input type="number" id="other_income" placeholder="예: 50000000" min="0">
+      <span class="hint">사업·근로·연금·기타소득금액 합계</span>
+    </div>
+    <div class="ig">
+      <label>종합소득공제</label>
+      <input type="number" id="deduction" placeholder="예: 5000000" min="0">
+      <span class="hint">인적공제 등 종합소득공제 합계액</span>
+    </div>
+  </div>
+
+  <hr class="div">
+  <div style="margin-top:4px;">
+    <button class="btn-calc" onclick="calculate()">비교과세 계산 ▶</button>
+    <button class="btn-reset" onclick="resetAll()">초기화</button>
+  </div>
+
+  <!-- ===== RESULT ===== -->
+  <div id="result-panel" class="result-panel">
+    <h3>📋 단계별 계산 결과</h3>
+    <ul class="sl" id="step-list"></ul>
+
+    <!-- Two-card comparison -->
+    <div class="winner-row" id="winner-row"></div>
+
+    <!-- Final answer -->
+    <div class="result-answer">
+      <span class="rl">종합소득 산출세액 (비교과세 적용)</span>
+      <span class="rv" id="rv-final">—</span>
+    </div>
+
+    <!-- Detail toggle -->
+    <button class="detail-toggle" onclick="toggleDetail()">▼ 세부 계산 내역 보기/닫기</button>
+    <div class="detail-section" id="detail-section">
+      <ul class="sl" id="detail-list"></ul>
+    </div>
+
+    <div class="info-box" style="margin-top:12px;">
+      ℹ️ 배당세액공제(Gross-up)·세액공제·기납부세액은 포함되지 않은 산출세액 기준입니다. 실제 결정세액은 추가 계산이 필요합니다.
+    </div>
+  </div>
+</div>
+
+<!-- ========== 플로우차트 ========== -->
+<div class="section">
+  <h2>🔄 금융소득 종합과세 판단 흐름도</h2>
+  <div class="fc">
+    <div class="fn start">금융소득 (이자·배당) 발생</div>
+    <div class="fa">↓</div>
+    <div class="fd">출자공동사업자 배당(§17①8호) 포함?</div>
+    <div class="fbranch">
+      <div class="fb">
+        <span class="fbl y">Yes</span>
+        <div class="fa">↓</div>
+        <div class="fn yes" style="min-width:140px;font-size:.82em;">별도 타소득 처리<br>(§62 이자소득등 제외)</div>
+      </div>
+      <div class="fb">
+        <span class="fbl n">No</span>
+        <div class="fa">↓</div>
+        <div class="fd" style="min-width:200px;">금융소득 원금 합계 &gt; 2천만원?<br><small>(Gross-up 금액 제외 — §14④)</small></div>
+        <div class="fbranch" style="gap:28px;">
+          <div class="fb">
+            <span class="fbl n">미초과</span>
+            <div class="fa">↓</div>
+            <div class="fn no" style="min-width:120px;font-size:.82em;">분리과세<br>14% 원천징수<br>납세 종결</div>
+          </div>
+          <div class="fb">
+            <span class="fbl y">초과</span>
+            <div class="fa">↓</div>
+            <div class="fn yes" style="min-width:140px;font-size:.82em;">종합소득 합산<br>①방법 계산<br>②방법 계산</div>
+            <div class="fa">↓</div>
+            <div class="fn" style="min-width:140px;font-size:.82em;background:#EEF2FF;">Max(①, ②)<br>= 산출세액</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 기출 예제 ========== -->
+<div class="section" style="background:#FAFFFE;">
+  <h2>📝 기출 예제 풀이 — 2023년 제60회 57번 (계산형)</h2>
+  <div class="info-box">
+    은행예금이자 3천만원 / 비실명이자 400만원 / 비영업대금이익 1,200만원 / 외국법인 배당 500만원 / 사업소득금액 4천만원 / 종합소득공제 900만원<br>
+    <small>기본세율 일부: ≤1,400만원→6% / 1,400~5,000만원→84만원+초과분×15% / 5,000~8,800만원→624만원+초과분×24%</small>
+  </div>
+  <ul class="sl" style="background:#fff;padding:14px;border-radius:8px;border:1px solid #E8ECF0;">
+    <li class="si">
+      <div class="sn">①</div>
+      <div class="sb">
+        <span class="slabel">비실명이자: 분리과세 42% → 종합과세기준금액 판단에서 제외</span>
+        <span class="sval" style="font-size:0.92em;">이자소득등 = 3천+1,200+500 = 4,700만원 (2천만원 초과 → 비교과세)</span>
+        <span class="sref">비실명이자 §129②2호 45% → §14③3호 분리과세</span>
+      </div>
+    </li>
+    <li class="si">
+      <div class="sn">②</div>
+      <div class="sb">
+        <span class="slabel">①방법: (4,700만원 − 2,000만원 + 4,000만원 − 900만원) × 기본세율 + 2,000만원×14%</span>
+        <span class="sval" style="font-size:0.92em;">과세표준 5,800만원 → 산출세액: 624만원+(5,800−5,000)만원×24% = 624+192 = 816만원 / 2,000×14% = 280만원 → 합계 1,096만원</span>
+        <span class="sref">소법§62①1호</span>
+      </div>
+    </li>
+    <li class="si">
+      <div class="sn">③</div>
+      <div class="sb">
+        <span class="slabel">②방법: 금융소득 4,700만원×14% + 비영업대금이익은 이미 14% 적용 + 사업소득 기본세율</span>
+        <span class="sval" style="font-size:0.92em;">이자소득 3,000×14%=420 / 비영업대금 1,200×25%=300 / 외국법인 배당 500×14%=70 → 소계 790만원 / 사업소득 과세표준(4,000−900)=3,100만원 → 84+(3,100−1,400)×15%=84+255=339만원 → 합계 1,129만원</span>
+        <span class="sref">소법§62①2호</span>
+      </div>
+    </li>
+    <li class="si">
+      <div class="sn">④</div>
+      <div class="sb">
+        <span class="slabel">Max(①1,096만, ②1,129만) = 최종 산출세액</span>
+        <span class="sval" style="color:#276749;font-size:1.15em;">✅ 11,290,000원 (정답 ②)</span>
+        <span class="sref">소법§62①</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- ========== 비교표 ========== -->
+<div class="section compare-box">
+  <h2>⚖️ ① 방법 vs ② 방법 핵심 비교</h2>
+  <table>
+    <thead>
+      <tr><th>항목</th><th><span class="tag-a">① 종합과세 방식</span></th><th><span class="tag-b">② 분리과세 비교 방식</span></th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>금융소득 처리</strong></td>
+        <td>2천만원 초과분만 기본세율 합산<br>2천만원은 14% 단순 적용</td>
+        <td class="diff">전액을 원천징수세율(14%·25%)로 계산</td>
+      </tr>
+      <tr>
+        <td><strong>타소득 처리</strong></td>
+        <td>금융소득 초과분과 합산 후 기본세율</td>
+        <td class="diff">금융소득과 분리하여 별도 기본세율</td>
+      </tr>
+      <tr>
+        <td><strong>유리한 경우</strong></td>
+        <td>타소득이 낮아 낮은 세율 구간에 걸릴 때</td>
+        <td class="diff">금융소득이 방대하거나 타소득이 높아 세율 구간이 높을 때</td>
+      </tr>
+      <tr>
+        <td><strong>비영업대금 효과</strong></td>
+        <td>초과분에 기본세율 → 낮을 수 있음</td>
+        <td class="diff">25% 단일 적용 → ①보다 커질 수 있음</td>
+      </tr>
+      <tr>
+        <td><strong>Gross-up 반영</strong></td>
+        <td>배당소득금액에 Gross-up 포함(+10%)</td>
+        <td>동일하게 배당소득금액 기준 계산</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ========== 오답 함정 ========== -->
+<div class="section trap-box">
+  <h2>⚠️ 오답 함정 — 시험에서 자주 틀리는 포인트</h2>
+
+  <div class="trap-item">
+    <div style="font-size:1.15em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"2천만원 기준 판단 시 Gross-up 금액을 포함한다"</strong>
+      <p>→ <strong>오답!</strong> 소득세법 §14④ 명시: 종합과세기준금액(2천만원) 판단 시 Gross-up(§17③ 단서 가산금)은 포함하지 않습니다. 원금 기준으로만 비교합니다.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.15em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"출자공동사업자 배당소득도 이자소득등에 포함하여 비교과세 계산한다"</strong>
+      <p>→ <strong>오답!</strong> §62 본문 후단: 제17조①8호 출자공동사업자 배당은 이자소득등으로 보지 않습니다. 타소득으로 분류해 ②방법 나목 처리 대상입니다.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.15em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"비영업대금이익은 항상 14%를 적용한다"</strong>
+      <p>→ <strong>오답!</strong> §129①1호나목: 비영업대금이익 원천징수세율은 <strong>25%</strong>입니다. 단, 온라인투자연계금융업자를 통해 받는 이자소득은 예외적으로 14%입니다.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.15em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"①방법이 항상 ②방법보다 크다(또는 작다)"</strong>
+      <p>→ <strong>오답!</strong> 어느 쪽이 클지는 금융소득 구성(비영업대금 비중)과 타소득 크기에 따라 달라집니다. 반드시 두 방법을 모두 계산하고 Max를 취해야 합니다.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.15em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"2천만원 이하 금융소득은 아무런 세금이 없다"</strong>
+      <p>→ <strong>오답!</strong> 분리과세로 원천징수(14%)로 납세의무가 종결됩니다. 종합과세 미합산이지, 세금이 없는 게 아닙니다.</p>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div style="font-size:1.15em;flex-shrink:0;">❌</div>
+    <div class="trap-body">
+      <strong>"비교과세에서 ②방법의 타소득 계산 시 금융소득 공제액도 차감한다"</strong>
+      <p>→ <strong>오답!</strong> ②방법은 금융소득을 완전히 분리한 상태로 계산합니다. 타소득 과세표준 = 타종합소득금액 − 종합소득공제 (금융소득 포함 여부 무관하게 동일 공제 적용).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 법조항 색인 ========== -->
+<div class="section law-index">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="li-grid">
+    <div class="li-item">
+      <div class="li-no">소득세법 §14③6호</div>
+      <div class="li-desc">이자·배당소득 2천만원 이하 → 분리과세 (종합소득 미합산)</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §14④</div>
+      <div class="li-desc">2천만원 기준 판단 시 Gross-up 금액 제외</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §17③</div>
+      <div class="li-desc">Gross-up: 배당소득금액 = 총수입금액 + 10%</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §55①</div>
+      <div class="li-desc">종합소득 기본세율 (6%~45% 누진)</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §56①④</div>
+      <div class="li-desc">배당세액공제 = Gross-up 금액 / 2천만원 초과분에만 적용</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §62 본문</div>
+      <div class="li-desc">비교과세 적용 조건 + 출자공동사업자 배당 이자소득등 제외</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §62①1호</div>
+      <div class="li-desc">① 방법: (초과분+타소득)×기본세율 + 2천만원×14%</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §62①2호</div>
+      <div class="li-desc">② 방법: 금융소득 전체×원천징수세율 + 타소득×기본세율</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §129①1호나목</div>
+      <div class="li-desc">비영업대금이익 원천징수세율 25% (온라인투자연계업자 14%)</div>
+    </div>
+    <div class="li-item">
+      <div class="li-no">소득세법 §129①2호가목</div>
+      <div class="li-desc">출자공동사업자 배당 원천징수세율 25%</div>
+    </div>
+  </div>
+  <div style="margin-top:12px;font-size:0.78em;color:#888;text-align:right;">
+    기준 법령: 소득세법 (2026.04.21 시행, mst:285523)
+  </div>
+</div>
+
+<!-- ========== SCRIPT ========== -->
+<script>
+  /* ── 유틸 ── */
+  function v(id)   { return parseFloat(document.getElementById(id).value) || 0; }
+  function fmt(n)  { return Math.round(n).toLocaleString('ko-KR') + ' 원'; }
+  function pct(n)  { return (n * 100).toFixed(1) + '%'; }
+
+  /* ── 기본세율 (소법§55①) ── */
+  const BRACKETS = [
+    [14_000_000,   0.06,    0],
+    [50_000_000,   0.15,  840_000],
+    [88_000_000,   0.24, 5_760_000],
+    [150_000_000,  0.35, 15_440_000],
+    [300_000_000,  0.38, 19_940_000],
+    [500_000_000,  0.40, 25_940_000],
+    [1_000_000_000,0.42, 35_940_000],
+    [Infinity,     0.45, 65_940_000],
+  ];
+  function basicTax(base) {
+    if (base <= 0) return 0;
+    for (const [upper, rate, deduct] of BRACKETS) {
+      if (base <= upper) return Math.round(base * rate - deduct);
+    }
+    return 0;
+  }
+  function rateLabel(base) {
+    for (const [upper, rate] of BRACKETS) {
+      if (base <= upper) return (rate * 100).toFixed(0) + '%';
+    }
+    return '45%';
+  }
+
+  /* ── 상세 토글 ── */
+  function toggleDetail() {
+    const d = document.getElementById('detail-section');
+    d.classList.toggle('open');
+  }
+
+  /* ── 초기화 ── */
+  function resetAll() {
+    ['i_normal','i_pri','d_grossup','d_nogrossup','d_partner','other_income','deduction']
+      .forEach(id => document.getElementById(id).value = '');
+    document.getElementById('result-panel').classList.remove('show');
+  }
+
+  /* ── 메인 계산 ── */
+  function calculate() {
+    // ── 입력값 ──
+    const iNormal    = v('i_normal');     // 일반이자 14%
+    const iPri       = v('i_pri');        // 비영업대금 25%
+    const dGrossup   = v('d_grossup');    // 배당(Gross-up 대상) 14%
+    const dNoGrossup = v('d_nogrossup');  // 배당(Gross-up 제외) 14%
+    const dPartner   = v('d_partner');    // 출자공동사업자 배당 25% (이자소득등 제외)
+    const otherInc   = v('other_income');
+    const deduction  = v('deduction');
+
+    // ── Gross-up 계산 ──
+    const grossupAmt = dGrossup * 0.10;           // §17③
+    const dGrossupAmt = dGrossup + grossupAmt;    // 배당소득금액
+
+    // ── 이자소득등 (출자공동사업자 배당 제외) ──
+    // 2천만원 판단 기준: Gross-up 금액 제외한 원금 합계
+    const finRaw = iNormal + iPri + dGrossup + dNoGrossup;  // §14④ — Gross-up 제외 원금
+    const isOver20M = finRaw > 20_000_000;
+
+    // ── 이자소득등 금액 (Gross-up 반영) ──
+    const finAmt = iNormal + iPri + dGrossupAmt + dNoGrossup; // 배당소득금액 포함
+
+    // ── 타소득 과세표준 ──
+    // ① 방법 타소득 = (이자소득등 - 2천만원) + 타소득금액 - 공제 (금융소득이 2천만원 초과 가정 시)
+    // ② 방법 타소득 = 타소득금액 - 공제 (출자공동사업자 배당도 타소득)
+    const OTHER_INCOME_WITH_PARTNER = otherInc + (dPartner > 0 ? dPartner : 0);
+
+    if (!isOver20M) {
+      // ── 2천만원 이하 → 분리과세 ──
+      const fin14 = Math.round(finRaw * 0.14);  // 원천징수
+      const otherBase = Math.max(0, OTHER_INCOME_WITH_PARTNER - deduction);
+      const otherTax  = basicTax(otherBase);
+      const total = fin14 + otherTax;
+
+      renderResult({
+        over20M: false,
+        finRaw, finAmt, grossupAmt, dGrossup,
+        fin14, otherBase, otherTax, total,
+        dPartner, iNormal, iPri, dNoGrossup, dGrossupAmt
+      });
+    } else {
+      // ── 2천만원 초과 → 비교과세 ──
+
+      /* ① 방법 */
+      // 가: (금융소득금액 − 2천만원) + 타소득금액 → 기본세율 / 단 출자공동사업자 배당 별도
+      const method1_base = Math.max(0,
+        (finAmt - 20_000_000) + OTHER_INCOME_WITH_PARTNER - deduction
+      );
+      const method1_a = basicTax(method1_base);
+      // 나: 2천만원 × 14%
+      const method1_b = Math.round(20_000_000 * 0.14);
+      const method1   = method1_a + method1_b;
+
+      /* ② 방법 */
+      // 가: 금융소득 전체 × 원천징수세율 (출자공동사업자 배당 제외)
+      const method2_a_normal   = Math.round((iNormal + dNoGrossup) * 0.14);
+      const method2_a_pri      = Math.round(iPri * 0.25);
+      const method2_a_grossup  = Math.round(dGrossupAmt * 0.14);  // 배당소득금액(Gross-up 포함) × 14%
+      const method2_a_partner  = Math.round(dPartner * 0.25);     // 출자공동사업자 25%
+      const method2_a = method2_a_normal + method2_a_pri + method2_a_grossup + method2_a_partner;
+      // 나: 타소득 기본세율
+      const method2_b_base = Math.max(0, OTHER_INCOME_WITH_PARTNER - deduction);
+      const method2_b = basicTax(method2_b_base);
+      const method2   = method2_a + method2_b;
+
+      const final = Math.max(method1, method2);
+
+      renderResult({
+        over20M: true,
+        finRaw, finAmt, grossupAmt, dGrossup,
+        iNormal, iPri, dGrossupAmt, dNoGrossup, dPartner,
+        OTHER_INCOME_WITH_PARTNER, deduction,
+        method1_base, method1_a, method1_b, method1,
+        method2_a_normal, method2_a_pri, method2_a_grossup, method2_a_partner,
+        method2_a, method2_b_base, method2_b, method2,
+        final
+      });
+    }
+  }
+
+  function renderResult(d) {
+    const panel = document.getElementById('result-panel');
+    const sl    = document.getElementById('step-list');
+    const dl    = document.getElementById('detail-list');
+    const wr    = document.getElementById('winner-row');
+    sl.innerHTML = ''; dl.innerHTML = ''; wr.innerHTML = '';
+
+    if (!d.over20M) {
+      // ── 분리과세 ──
+      const steps = [
+        { n:'1', label:'금융소득 합계 (Gross-up 제외 원금)', value: fmt(d.finRaw), ref:'§14④ — 2천만원 판단 기준' },
+        { n:'2', label:'종합과세 여부', value:'분리과세 (2천만원 이하)', ref:'§14③6호 — 원천징수 납세 종결' },
+        { n:'3', label:'금융소득 원천징수 세액 (14%)', value: fmt(d.fin14), ref:'§129①1호라목·2호나목' },
+        { n:'4', label:'타소득 과세표준', value: fmt(d.otherBase), ref:'타종합소득금액 − 종합소득공제' },
+        { n:'5', label:'타소득 기본세율 산출세액', value: fmt(d.otherTax), ref:`§55① (세율구간: ${rateLabel(d.otherBase)})` },
+      ];
+      steps.forEach(s => addStep(sl, s));
+      wr.innerHTML = `<div class="tax-card" style="grid-column:1/-1;"><div class="card-title">분리과세 — 원천징수 납세 종결</div><div class="card-val">${fmt(d.fin14)}</div><div class="card-ref">금융소득 원천징수 + 타소득 별도 계산</div></div>`;
+      document.getElementById('rv-final').textContent = fmt(d.total);
+    } else {
+      // ── 비교과세 ──
+      const winner = d.method1 >= d.method2 ? '①' : '②';
+
+      /* main steps */
+      const steps = [
+        { n:'1', label:'금융소득 원금 합계 (2천만원 판단)', value: fmt(d.finRaw), ref:'Gross-up 금액 제외 (§14④)' },
+        { n:'2', label:'Gross-up 금액 (Gross-up 대상 배당 × 10%)', value: fmt(d.grossupAmt), ref:`${fmt(d.dGrossup)} × 10% (§17③)` },
+        { n:'3', label:'이자소득등 금액 합계 (Gross-up 반영)', value: fmt(d.finAmt), ref:'일반이자+비영업대금+배당소득금액+Gross-up 제외배당' },
+        { n:'4', label:'✅ 종합과세 해당 (2천만원 초과) → 비교과세 적용', value:'Max(①방법, ②방법)', ref:'소득세법 §62①' },
+        { n:'5', label:'①방법 산출세액', value: fmt(d.method1), ref:`= 가(${fmt(d.method1_a)}) + 나(${fmt(d.method1_b)}) [§62①1호]` },
+        { n:'6', label:'②방법 산출세액', value: fmt(d.method2), ref:`= 가(${fmt(d.method2_a)}) + 나(${fmt(d.method2_b)}) [§62①2호]` },
+        { n:'7', label:`최종 산출세액 = Max(①, ②) — ${winner}방법 적용`, value: fmt(d.final), ref:'소득세법 §62①' },
+      ];
+      steps.forEach(s => addStep(sl, s));
+
+      /* detail steps */
+      const details = [
+        { n:'①가', label:'금융소득 − 2천만원 + 타소득 − 공제 = 과세표준', value: fmt(d.method1_base), ref:'§62①1호가목' },
+        { n:'①가T', label:'과세표준 기본세율 산출세액', value: fmt(d.method1_a), ref:`§55① (${rateLabel(d.method1_base)})` },
+        { n:'①나', label:'2천만원 × 14%', value: fmt(d.method1_b), ref:'§62①1호나목 — §129①1호라목 세율' },
+        { n:'②가1', label:'일반이자·배당(Gross-up 제외) × 14%', value: fmt(d.method2_a_normal), ref:`${fmt(d.iNormal + d.dNoGrossup)} × 14%` },
+        { n:'②가2', label:'비영업대금이익 × 25%', value: fmt(d.method2_a_pri), ref:`${fmt(d.iPri)} × 25% (§129①1호나목)` },
+        { n:'②가3', label:'Gross-up 대상 배당소득금액 × 14%', value: fmt(d.method2_a_grossup), ref:`배당소득금액 ${fmt(d.dGrossupAmt)} × 14%` },
+        { n:'②가4', label:'출자공동사업자 배당 × 25%', value: fmt(d.method2_a_partner), ref:`${fmt(d.dPartner)} × 25% (§129①2호가목)` },
+        { n:'②나', label:'타소득 과세표준', value: fmt(d.method2_b_base), ref:`타소득금액 ${fmt(d.OTHER_INCOME_WITH_PARTNER)} − 공제 ${fmt(d.deduction)}` },
+        { n:'②나T', label:'타소득 기본세율 산출세액', value: fmt(d.method2_b), ref:`§55① (${rateLabel(d.method2_b_base)})` },
+      ];
+      details.forEach(s => addStep(dl, s));
+
+      /* Winner cards */
+      const mkCard = (label, tax, isWin, tag) => `
+        <div class="tax-card ${isWin ? 'winner' : ''}">
+          <div><span class="card-badge ${isWin ? 'badge-win' : (tag === 'a' ? 'badge-a' : 'badge-b')}">${isWin ? '✅ 적용' : tag === 'a' ? '①방법' : '②방법'}</span></div>
+          <div class="card-title">${label}</div>
+          <div class="card-val">${fmt(tax)}</div>
+          <div class="card-ref">${isWin ? '최종 산출세액 (Max 선택)' : '비교 참고값'}</div>
+        </div>`;
+      wr.innerHTML  = mkCard('① 종합과세 방식 (§62①1호)', d.method1, winner === '①', 'a');
+      wr.innerHTML += mkCard('② 분리과세 비교 방식 (§62①2호)', d.method2, winner === '②', 'b');
+
+      document.getElementById('rv-final').textContent = fmt(d.final);
+    }
+
+    panel.classList.add('show');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function addStep(ul, s) {
+    const li = document.createElement('li');
+    li.className = 'si';
+    li.innerHTML = `
+      <div class="sn">${s.n}</div>
+      <div class="sb">
+        <span class="slabel">${s.label}</span>
+        <span class="sval">${s.value}</span>
+        <span class="sref">${s.ref}</span>
+      </div>`;
+    ul.appendChild(li);
+  }
+</script>
+</body>
+</html>
