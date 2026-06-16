@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>복식부기의무자 여부에 따른 특례규정 보충자료</title>
+<style>
+:root{
+  --navy:#0D1B4B;--blue:#1A3A6B;--blm:#2C5282;--bll:#EEF2FF;--blb:#C3D4F0;
+  --green:#145C36;--grl:#F0FFF4;--grb:#9AE6B4;
+  --red:#9B2335;--rdl:#FFF3F3;--rdb:#FED7D7;
+  --org:#744210;--orl:#FFFBEB;--orb:#F6E05E;
+  --pur:#5A2D82;--prl:#FAF5FF;--prb:#D6BCFA;
+  --bg:#FAFAFA;--sf:#FFFFFF;--tx:#1A1A2E;--txm:#718096;--bd:#E8ECF0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.88;max-width:980px;margin:0 auto;padding:24px}
+h2{color:var(--blue);font-size:1.12em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+h3{color:var(--blm);font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:20px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.75}strong{color:var(--tx)}
+
+.header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:28px 36px;border-radius:14px;margin-bottom:20px}
+.sbadge{background:rgba(255,255,255,.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:10px}
+.header h1{color:#fff;font-size:1.7em;line-height:1.3}
+.header .meta{font-size:.8em;opacity:.85;margin-top:8px;line-height:1.65}
+
+.section{margin:18px 0;padding:22px 26px;border-radius:12px;border:1px solid var(--bd);background:var(--sf);box-shadow:0 2px 7px rgba(0,0,0,.05)}
+.bar{color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-22px -26px 17px}
+.b-blue{background:linear-gradient(90deg,var(--navy),var(--blm))}
+.b-green{background:linear-gradient(90deg,#0A3A20,var(--green))}
+.b-red{background:linear-gradient(90deg,#5A0A14,var(--red))}
+.b-purple{background:linear-gradient(90deg,#2D0A60,var(--pur))}
+.b-orange{background:linear-gradient(90deg,#4A1A04,var(--org))}
+.sub{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:13px 17px;margin:11px 0}
+.sub h3{margin-top:0;color:var(--blue)}
+
+.lb{background:var(--bll);border:1px solid var(--blb);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:10px 14px;margin:9px 0;font-size:.87em;line-height:1.8}
+.wb{background:var(--orl);border:1px solid var(--orb);border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.gb{background:var(--grl);border:1px solid var(--grb);border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.rb{background:var(--rdl);border:1px solid var(--rdb);border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.pb{background:var(--prl);border:1px solid var(--prb);border-left:4px solid var(--pur);border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.an{background:var(--grl);border:1px solid var(--grb);border-radius:8px;padding:11px 15px;margin:10px 0;font-size:.91em}
+.lr{font-family:monospace;font-size:.8em;font-weight:700;color:var(--blue);display:block;margin-bottom:3px}
+
+.tw{overflow-x:auto;border-radius:8px;border:1px solid var(--bd);margin:11px 0}
+table{width:100%;border-collapse:collapse;font-size:.87em}
+th{background:var(--bll);color:var(--blue);padding:9px 12px;text-align:left;font-weight:600;font-size:.86em;border-bottom:2px solid var(--blb)}
+td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.72}
+tr:hover td{background:#FAFBFF}
+.xr{color:#C53030;font-weight:600}.ok{color:#276749;font-weight:600}
+.hl{background:var(--orl)!important}.ctr{text-align:center}
+.mn{font-family:monospace;font-size:.83em;color:var(--blue)}
+
+/* 판정 흐름도 */
+.flow{display:flex;flex-direction:column;align-items:center;gap:3px;margin:14px 0}
+.fn{background:var(--blue);color:#fff;padding:8px 22px;border-radius:8px;font-size:.86em;font-weight:600;text-align:center;min-width:200px;max-width:440px;line-height:1.4}
+.fn.g{background:#276749}.fn.r{background:var(--red)}.fn.o{background:var(--org)}
+.fd{background:var(--org);color:#fff;padding:7px 18px;border-radius:50px;font-size:.84em;font-weight:600;text-align:center;max-width:420px}
+.fa{font-size:1.2em;color:var(--txm);line-height:1}
+.fb{display:flex;gap:16px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.fbi{display:flex;flex-direction:column;align-items:center;gap:3px}
+.fbl{font-size:.78em;color:var(--txm);font-weight:600}
+
+/* 비교 매트릭스 */
+.matrix{width:100%;border-collapse:collapse;font-size:.87em;margin:14px 0}
+.matrix th{background:var(--navy);color:#fff;padding:10px 13px;text-align:center;font-weight:600;border:1px solid #2A4A8A}
+.matrix .cat{background:var(--bll);color:var(--navy);font-weight:700;padding:10px 13px;border:1px solid var(--blb)}
+.matrix td{padding:9px 12px;border:1px solid var(--bd);vertical-align:top;line-height:1.72}
+.matrix tr:nth-child(even) td{background:#FAFBFF}
+
+/* 트랩 */
+.ti{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 12px;background:#fff;border-radius:8px;border:1px solid var(--rdb)}
+.tic{font-size:1.1em;flex-shrink:0;margin-top:1px}
+
+.kn{display:inline-block;background:var(--blue);color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.kn-r{display:inline-block;background:var(--red);color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.kn-g{display:inline-block;background:#276749;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.bd2{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:600;margin:1px}
+.bdr{background:var(--rdl);color:var(--red);border:1px solid var(--rdb)}
+.bdg{background:var(--grl);color:#065F46;border:1px solid var(--grb)}
+.star{color:#D97706;font-size:.81em}
+.footnote{color:var(--txm);font-size:.82em;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="sbadge">📎 보충자료 — 사업소득</div>
+  <h1>복식부기의무자 여부에 따른 특례규정</h1>
+  <div class="meta">
+    소득세법 §56의2·§70·§80·§81·§81의8·§160·§160의5 / 시행령 §143·§208 (2026.04.21 / 2026.05.22 시행)
+  </div>
+</div>
+
+
+<!-- ════ 0. 판정 구조 — 전체 한눈에 ════ -->
+<div class="section">
+  <div class="bar b-blue">0. 복식부기의무자 vs 간편장부대상자 — 판정 구조</div>
+
+  <div class="sub">
+    <h3>정의 (§160②③)</h3>
+    <div class="lb"><span class="lr">§160③</span>
+      <strong>복식부기의무자</strong> = 간편장부대상자 외의 사업자<br>
+      <strong>간편장부대상자</strong> = 업종별 일정 규모 미만의 사업자 (직전연도 수입금액 기준)
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>간편장부대상자 판정 기준 (시행령 §208⑤) <span class="bd2 bdr">암기 필수</span></h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>업종 구분</th><th>직전연도 수입금액 기준</th><th>대표 업종</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>가목</strong></td><td>직전연도 수입금액 <span class="kn">3억원 미만</span></td><td>농림어업, 광업, 도소매업(상품중개업 제외), 부동산매매업, 기타</td></tr>
+          <tr class="hl"><td><strong>나목</strong></td><td>직전연도 수입금액 <span class="kn">1억5,000만원 미만</span></td><td>제조업, 음식점·숙박업, 건설업(비주거용 제외), 운수·정보통신·금융·보험업, 상품중개업</td></tr>
+          <tr class="hl"><td><strong>다목</strong></td><td>직전연도 수입금액 <span class="kn">7,500만원 미만</span></td><td>부동산임대업, 전문·과학기술서비스업, 교육서비스업, 보건·복지업, 예술·스포츠</td></tr>
+          <tr><td colspan="3" style="background:var(--bll);font-size:.86em;color:var(--blue)">
+            ⚠ 해당 과세기간 <strong>신규 사업 개시자</strong> → 간편장부대상자<br>
+            ⚠ 전문직 사업자 (의료업·수의업·약사업 등 령§147의2) → <strong>복식부기의무자 강제</strong> (규모 무관)
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flow">
+      <div class="fn">사업소득 있는 거주자</div>
+      <div class="fa">↓</div>
+      <div class="fd">직전연도 수입금액 ≥ 업종별 기준금액?<br>또는 전문직 사업자?</div>
+      <div class="fb">
+        <div class="fbi">
+          <span class="fbl">Yes (기준 이상 or 전문직)</span>
+          <div class="fa">↓</div>
+          <div class="fn r">복식부기의무자<br>→ 아래 특례 모두 적용</div>
+        </div>
+        <div class="fbi">
+          <span class="fbl">No (기준 미만 + 비전문직)</span>
+          <div class="fa">↓</div>
+          <div class="fn g">간편장부대상자<br>→ 복식부기 자발적 기장 시 기장세액공제</div>
+        </div>
+      </div>
+    </div>
+    <div class="wb">⚠ 신규 사업자는 해당 과세기간은 <strong>간편장부대상자</strong>. 다음 해부터 수입금액으로 판정</div>
+  </div>
+</div>
+
+
+<!-- ════ 대비표 ════ -->
+<div class="section">
+  <div class="bar b-blue">1. 복식부기의무자 vs 간편장부대상자 — 항목별 차이 종합표</div>
+
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th style="width:22%">항목</th>
+        <th style="width:39%">🔴 복식부기의무자</th>
+        <th style="width:39%">🟢 간편장부대상자</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="cat">기장 의무</td>
+        <td><strong>복식부기</strong> 필수 (§160①)</td>
+        <td>간편장부 가능 (§160②)</td>
+      </tr>
+      <tr>
+        <td class="cat">확정신고 첨부서류 (§70④3호)</td>
+        <td class="hl">재무상태표·손익계산서·합계잔액시산표·<strong>조정계산서</strong> 필수<br><span class="xr">미제출 시 → 무신고로 봄</span></td>
+        <td>간편장부소득금액계산서만</td>
+      </tr>
+      <tr>
+        <td class="cat">세무조정계산서 작성자 (§70⑥)</td>
+        <td class="hl">일정 규모 이상 → <strong>세무사·공인회계사·변호사</strong>만 작성 가능<br>(외부조정의무)</td>
+        <td>자기작성 가능</td>
+      </tr>
+      <tr>
+        <td class="cat">기장세액공제 (§56의2)</td>
+        <td><span class="xr">적용 없음</span></td>
+        <td class="hl"><span class="ok">간편장부대상자가 복식부기로 기장 시</span><br>사업소득 비율 × 산출세액 × 20%<br>한도: <span class="kn-g">100만원</span></td>
+      </tr>
+      <tr>
+        <td class="cat">사업용계좌 신고·사용의무 (§160의5)</td>
+        <td class="hl"><span class="xr">의무 있음</span><br>복식부기의무자 해당 과세기간 개시일부터 <strong>6개월 이내</strong> 신고<br>금융거래·인건비·임차료 지급 시 사업용계좌 사용</td>
+        <td><span class="ok">의무 없음</span></td>
+      </tr>
+      <tr>
+        <td class="cat">사업용계좌 미신고·미사용 가산세 (§81의8)</td>
+        <td class="hl"><span class="xr">미사용: 금액의 2/1,000<br>미신고: MAX(일수기준액, 2/1,000)</span></td>
+        <td><span class="ok">해당 없음</span></td>
+      </tr>
+      <tr>
+        <td class="cat">추계 시 기준경비율 적용 (령§143③1호다목)</td>
+        <td class="hl"><span class="xr">기준경비율의 <strong>1/2</strong>만 적용</span><br>(불이익 — 경비 인정 감소)</td>
+        <td><span class="ok">기준경비율 100% 적용</span></td>
+      </tr>
+      <tr>
+        <td class="cat">성실신고확인 대상 (조특법 §121의28 등)</td>
+        <td class="hl">업종별 수입금액 기준 초과 시<br><strong>성실신고확인서 제출 의무</strong> 발생</td>
+        <td>기준 미달이면 해당 없음</td>
+      </tr>
+      <tr>
+        <td class="cat">이월결손금 소급공제 (§85의2)</td>
+        <td class="hl">중소기업 복식부기의무자: <strong>소급공제 가능</strong><br>(전년도 세액 환급 방식)</td>
+        <td>소급공제 불가</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ════ 세부 항목 상세 ════ -->
+
+<!-- 기장세액공제 -->
+<div class="section">
+  <div class="bar b-green">2. 기장세액공제 (§56의2) — 간편장부대상자에게만 적용</div>
+
+  <div class="sub">
+    <h3>요건 및 계산</h3>
+    <div class="lb"><span class="lr">§56의2①</span>
+      <strong>간편장부대상자</strong>가 확정신고 시 <strong>복식부기로 기장</strong>하여 소득금액을 계산 + §70④3호 서류 제출<br>
+      → 공제액 = (사업소득금액 / 종합소득금액) × 종합소득 산출세액 × 20%<br>
+      → 한도: <span class="kn">100만원</span>
+    </div>
+    <div class="rb">🚨 <strong>적용 배제 (§56의2②)</strong>:<br>
+      1호. 비치·기록 장부에 의한 소득금액의 <strong>20% 이상 누락</strong>하여 신고한 경우<br>
+      2호. 관련 장부·증명서류를 확정신고기간 종료일부터 <strong>5년간 미보관</strong>한 경우 (천재지변 예외)
+    </div>
+    <div class="wb">⚠ 복식부기의무자가 복식부기로 기장해도 → 기장세액공제 <strong>없음</strong> (의무이므로 혜택 불가)</div>
+  </div>
+</div>
+
+<!-- 확정신고 첨부서류 -->
+<div class="section">
+  <div class="bar b-orange">3. 확정신고 서류 미제출의 효과 (§70④3호)</div>
+
+  <div class="sub">
+    <h3>복식부기의무자 재무제표 미제출 → 무신고 의제</h3>
+    <div class="lb"><span class="lr">§70④ 단서</span>
+      <strong>복식부기의무자</strong>가 제70조④3호에 따른 서류(재무상태표·손익계산서·합계잔액시산표·조정계산서)를 제출하지 아니한 경우<br>
+      → <strong>종합소득 과세표준확정신고를 하지 아니한 것으로 봄</strong>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>납세자 유형</th><th>제출해야 할 서류 (§70④3호)</th><th>미제출 효과</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>복식부기의무자</strong></td><td>재무상태표 + 손익계산서 + 합계잔액시산표 + 조정계산서</td><td><span class="xr">무신고로 봄 → 무신고 가산세 적용</span></td></tr>
+          <tr><td>간편장부 기장자</td><td>간편장부소득금액계산서</td><td>미제출이어도 무신고 아님</td></tr>
+          <tr><td>추계 신고자</td><td>추계소득금액계산서 (§70④6호)</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gb">✅ <strong>조정계산서 외부 작성 의무 (§70⑥):</strong><br>
+      복식부기의무자 중 일정 규모 이상 사업자 → 세무사·공인회계사·변호사만 조정계산서 작성 가능<br>
+      (세무대리인 선임 의무 발생)
+    </div>
+  </div>
+</div>
+
+<!-- 사업용계좌 -->
+<div class="section">
+  <div class="bar b-purple">4. 사업용계좌 신고·사용의무 (§160의5) — 복식부기의무자 전용</div>
+
+  <div class="sub">
+    <h3>4-1. 사용의무 (§160의5①)</h3>
+    <div class="lb"><span class="lr">§160의5①</span>
+      <strong>복식부기의무자</strong>는 다음의 경우 반드시 사업용계좌를 사용:<br>
+      1호. 거래 대금을 금융회사 등을 통해 결제하거나 결제받는 경우<br>
+      2호. 인건비 및 임차료를 지급하거나 지급받는 경우<br>
+      (단, 거래상대방 사정으로 사업용계좌 사용 어려운 인건비 거래는 제외)
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>4-2. 신고의무 (§160의5③④)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>상황</th><th>신고 기한</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>복식부기의무자 해당 과세기간 개시일 (기존 사업자)</td><td>개시일부터 <span class="kn">6개월 이내</span></td></tr>
+          <tr><td>사업 개시와 동시에 복식부기의무자인 경우</td><td><strong>다음</strong> 과세기간 개시일부터 6개월 이내</td></tr>
+          <tr class="hl"><td>사업용계좌 변경·추가</td><td>확정신고기한까지 (5.31.)</td></tr>
+          <tr><td>이미 신고된 계좌 있는 경우</td><td>재신고 불필요</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>4-3. 미신고·미사용 가산세 (§81의8)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>위반 유형</th><th>가산세</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>사업용계좌 미사용</strong> (§81의8①1호)</td><td>미사용 금액의 <span class="kn-r">2/1,000 (0.2%)</span></td></tr>
+          <tr class="hl"><td><strong>사업용계좌 미신고</strong> (§81의8①2호)</td><td>다음 중 <strong>큰 금액</strong>:<br>가목: 미신고 기간(일수) 기준 계산액<br>나목: §160의5①1·2호 거래금액 합계 × <span class="kn-r">2/1,000</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gb">✅ 가산세는 산출세액이 없어도 적용 (§81의8②)</div>
+  </div>
+</div>
+
+<!-- 추계 특례 -->
+<div class="section">
+  <div class="bar b-red">5. 추계 시 복식부기의무자 불이익 (시행령 §143③1호다목)</div>
+
+  <div class="sub">
+    <h3>기준경비율 1/2 적용 — 복식부기의무자에게만 적용되는 불이익</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 장부를 반드시 써야 하는 사람이 쓰지 않아서 추계과세되면, 경비 인정을 절반밖에 안 해줍니다. 장부를 써서 제대로 신고하라는 패널티입니다.</div>
+
+    <div class="lb"><span class="lr">시행령 §143③1호다목</span>
+      추계 시 기준경비율 방법으로 소득금액 계산 시:<br>
+      · 일반 사업자: 수입금액 × 기준경비율<br>
+      · <strong>복식부기의무자: 수입금액 × (기준경비율 × 1/2)</strong>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>기준경비율 방법 적용 경비</th><th>효과</th></tr></thead>
+        <tbody>
+          <tr><td>간편장부대상자 (추계)</td><td>수입금액 × 기준경비율 (100%)</td><td>경비 정상 인정</td></tr>
+          <tr class="hl"><td><strong>복식부기의무자 (추계)</strong></td><td>수입금액 × 기준경비율 × <span class="kn-r">1/2 (50%)</span></td><td class="xr">경비 절반만 인정 → 소득금액 증가 → 세금 증가</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wb">⚠ 이 불이익은 기준경비율 방법에만 해당. 단순경비율 방법은 복식부기의무자 해당 없음 (단순경비율은 간편장부대상자만 사용)</div>
+  </div>
+</div>
+
+
+<!-- 이월결손금 소급공제 -->
+<div class="section">
+  <div class="bar b-green">6. 이월결손금 소급공제 — 중소기업 복식부기의무자 혜택 (§85의2)</div>
+
+  <div class="sub">
+    <h3>소급공제 요건</h3>
+    <div class="lb"><span class="lr">§85의2</span>
+      <strong>중소기업</strong>인 <strong>복식부기의무자</strong>가 사업소득에서 결손금 발생 시<br>
+      → 직전 과세기간의 사업소득에 대한 소득세 한도 내에서 소급공제 가능<br>
+      → 환급 방식 (이월공제 대신 전년도 세액 환급)
+    </div>
+    <div class="wb">⚠ 간편장부대상자는 소급공제 불가 → 이월결손금만 가능 (15년 이월)</div>
+  </div>
+</div>
+
+
+<!-- 종합 정리 -->
+<div class="section" style="background:var(--bll);border:1px solid var(--blb)">
+  <h2 style="color:var(--navy)">📋 복식부기의무자 특례 — 핵심 정리표</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>특례 항목</th><th>복식부기의무자에게 적용</th><th>간편장부대상자</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td>기장세액공제 (20%, 한도100만)</td><td><span class="xr">❌ 없음</span></td><td><span class="ok">✓ 복식부기 자발적 기장 시</span></td><td class="mn">§56의2</td></tr>
+        <tr class="hl"><td>재무제표 미제출 → 무신고</td><td><span class="xr">❌ 불이익 (무신고 처리)</span></td><td><span class="ok">✓ 해당 없음</span></td><td class="mn">§70④단서</td></tr>
+        <tr><td>사업용계좌 신고·사용 의무</td><td><span class="xr">❌ 의무 (미이행 시 가산세)</span></td><td><span class="ok">✓ 의무 없음</span></td><td class="mn">§160의5</td></tr>
+        <tr class="hl"><td>사업용계좌 미사용 가산세 0.2%</td><td><span class="xr">❌ 가산세 부과</span></td><td><span class="ok">✓ 해당 없음</span></td><td class="mn">§81의8</td></tr>
+        <tr><td>추계 시 기준경비율 1/2 적용</td><td><span class="xr">❌ 불이익 (절반만 인정)</span></td><td><span class="ok">✓ 전액 인정</span></td><td class="mn">령§143③다목</td></tr>
+        <tr class="hl"><td>이월결손금 소급공제</td><td><span class="ok">✓ 중소기업이면 가능</span></td><td><span class="xr">❌ 불가 (이월만)</span></td><td class="mn">§85의2</td></tr>
+        <tr><td>조정계산서 외부조정 의무</td><td><span class="xr">❌ 일정규모↑: 세무사 등만 작성</span></td><td><span class="ok">✓ 해당 없음</span></td><td class="mn">§70⑥</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- 오답 함정 -->
+<div class="section" style="background:var(--rdl);border:1px solid var(--rdb)">
+  <h2 style="color:var(--red);border-bottom-color:var(--rdb)">⚠️ 오답 함정 — 자주 틀리는 포인트</h2>
+
+  <div class="ti"><span class="tic">❌</span><div>
+    <strong>"복식부기의무자도 복식부기로 기장하면 기장세액공제를 받을 수 있다"</strong>
+    <p>→ 기장세액공제는 <strong>간편장부대상자</strong>가 자발적으로 복식부기를 했을 때만 가능. 복식부기의무자는 의무를 이행한 것뿐이므로 공제 없음 (§56의2①)</p>
+  </div></div>
+
+  <div class="ti"><span class="tic">❌</span><div>
+    <strong>"간편장부대상자도 사업용계좌 신고·사용의무가 있다"</strong>
+    <p>→ 사업용계좌 의무는 <strong>복식부기의무자에게만</strong> 적용 (§160의5①·③)</p>
+  </div></div>
+
+  <div class="ti"><span class="tic">❌</span><div>
+    <strong>"복식부기의무자가 재무제표를 제출하지 않으면 가산세만 부과된다"</strong>
+    <p>→ 재무제표 등 §70④3호 서류 미제출 시 → <strong>확정신고를 하지 않은 것으로 봄</strong> (무신고 의제) → 무신고 가산세 적용</p>
+  </div></div>
+
+  <div class="ti"><span class="tic">❌</span><div>
+    <strong>"추계 시 복식부기의무자와 간편장부대상자 모두 기준경비율을 100% 적용한다"</strong>
+    <p>→ <strong>복식부기의무자는 기준경비율의 1/2만</strong> 적용 (령§143③1호다목). 간편장부대상자는 100% 적용</p>
+  </div></div>
+
+  <div class="ti"><span class="tic">❌</span><div>
+    <strong>"신규 사업자는 첫해부터 복식부기의무자일 수 있다"</strong>
+    <p>→ 신규 사업자는 해당 과세기간은 <strong>간편장부대상자</strong> (령§208⑤1호). 단, 전문직은 첫해도 복식부기의무자</p>
+  </div></div>
+
+  <div class="ti"><span class="tic">❌</span><div>
+    <strong>"사업용계좌 신고 기한은 복식부기의무자 해당 과세기간 종료 후 3개월"</strong>
+    <p>→ 해당 과세기간 <strong>개시일부터 6개월 이내</strong> 신고 (§160의5③)</p>
+  </div></div>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="mn">§56의2①②</td><td>기장세액공제 (간편장부대상자 복식부기 자발적 기장 시 / 사업소득비율×산출세액×20% / 한도100만원 / 누락20%·5년미보관 시 배제)</td></tr>
+        <tr><td class="mn">§70④단서</td><td>복식부기의무자 §70④3호 서류 미제출 → 무신고 의제</td></tr>
+        <tr><td class="mn">§70⑥</td><td>복식부기의무자 일정 규모 이상 → 조정계산서 세무사·공인회계사·변호사만 작성</td></tr>
+        <tr><td class="mn">§81의8①②</td><td>사업용계좌 미사용 0.2% / 미신고 MAX(일수기준, 0.2%) / 산출세액 없어도 적용</td></tr>
+        <tr><td class="mn">§85의2</td><td>이월결손금 소급공제 (중소기업 복식부기의무자 / 직전 과세기간 사업소득세 한도)</td></tr>
+        <tr><td class="mn">§160①②③</td><td>복식부기 의무 / 간편장부대상자·복식부기의무자 정의</td></tr>
+        <tr><td class="mn">§160의5①③④</td><td>사업용계좌 사용의무 / 신고의무(6개월) / 변경·추가(확정신고기한)</td></tr>
+        <tr><td class="mn">령§143③1호다목</td><td>복식부기의무자 추계 시 기준경비율 1/2 적용</td></tr>
+        <tr><td class="mn">령§208⑤</td><td>간편장부대상자 업종별 수입금액 기준 (가목3억/나목1.5억/다목7,500만)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote" style="margin-top:10px">
+    ※ 소득세법 (2026.04.21 시행) / 소득세법 시행령 (2026.05.22 시행) MCP 직접 조회 기준
+  </p>
+</div>
+
+</body>
+</html>

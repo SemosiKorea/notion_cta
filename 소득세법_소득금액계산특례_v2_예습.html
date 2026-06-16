@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 소득금액계산의 특례 v2 | 세무사 1차 예습자료</title>
+<style>
+:root{
+  --navy:#0D1B4B;--blue:#1A3A6B;--blm:#2C5282;--bll:#EEF2FF;--blb:#C3D4F0;
+  --green:#145C36;--grl:#F0FFF4;--grb:#9AE6B4;
+  --red:#9B2335;--rdl:#FFF3F3;--rdb:#FED7D7;
+  --org:#744210;--orl:#FFFBEB;--orb:#F6E05E;
+  --pur:#5A2D82;--prl:#FAF5FF;--prb:#D6BCFA;
+  --tel:#0C7470;--tll:#EAFAF8;--tlb:#99E4DC;
+  --bg:#FAFAFA;--sf:#FFFFFF;--tx:#1A1A2E;--txm:#718096;--bd:#E8ECF0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.88;max-width:980px;margin:0 auto;padding:24px}
+h2{color:var(--blue);font-size:1.12em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--blue)}
+h3{color:var(--blm);font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:20px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.75}strong{color:var(--tx)}
+.header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:30px 38px;border-radius:14px;margin-bottom:20px}
+.sbadge{background:rgba(255,255,255,.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:10px}
+.header h1{color:#fff;font-size:1.8em;line-height:1.3}
+.header .meta{font-size:.8em;opacity:.85;margin-top:8px;line-height:1.65}
+.fbadge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:var(--rdl);color:var(--red);border:1px solid var(--rdb);margin-left:6px}
+.section{margin:20px 0;padding:22px 26px;border-radius:12px;border:1px solid var(--bd);background:var(--sf);box-shadow:0 2px 7px rgba(0,0,0,.05)}
+.bar{color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-22px -26px 17px;letter-spacing:.02em}
+.b-blue{background:linear-gradient(90deg,var(--navy),var(--blm))}
+.b-red{background:linear-gradient(90deg,#5A0A14,var(--red))}
+.b-green{background:linear-gradient(90deg,#0A3A20,var(--green))}
+.b-purple{background:linear-gradient(90deg,#2D0A60,var(--pur))}
+.b-teal{background:linear-gradient(90deg,#054044,var(--tel))}
+.sub{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:13px 17px;margin:11px 0}
+.sub h3{margin-top:0;color:var(--blue)}
+.hbox{background:var(--orl);border:1px solid var(--orb);border-radius:10px;padding:16px 20px;margin:20px 0}
+.hbox h2{color:var(--org);border-bottom-color:var(--orb)}
+.trapbox{background:var(--rdl);border:1px solid var(--rdb);border-radius:10px;padding:16px 20px;margin:20px 0}
+.trapbox h2{color:var(--red);border-bottom-color:var(--rdb)}
+.cmpbox{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.cmpbox h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.an{background:var(--grl);border:1px solid var(--grb);border-radius:8px;padding:11px 15px;margin:10px 0;font-size:.91em}
+.lb{background:var(--bll);border:1px solid var(--blb);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:10px 14px;margin:9px 0;font-size:.87em;line-height:1.8}
+.wb{background:var(--orl);border:1px solid var(--orb);border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.gb{background:var(--grl);border:1px solid var(--grb);border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.rb{background:var(--rdl);border:1px solid var(--rdb);border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.pb{background:var(--prl);border:1px solid var(--prb);border-left:4px solid var(--pur);border-radius:0 6px 6px 0;padding:10px 14px;margin:9px 0;font-size:.87em}
+.lr{font-family:monospace;font-size:.8em;font-weight:700;color:var(--blue);display:block;margin-bottom:3px}
+.tw{overflow-x:auto;border-radius:8px;border:1px solid var(--bd);margin:11px 0}
+table{width:100%;border-collapse:collapse;font-size:.87em}
+th{background:var(--bll);color:var(--blue);padding:9px 12px;text-align:left;font-weight:600;font-size:.86em;border-bottom:2px solid var(--blb)}
+td{padding:8px 12px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.72}
+tr:hover td{background:#FAFBFF}
+.xr{color:#C53030;font-weight:600}.ok{color:#276749;font-weight:600}
+.hl{background:var(--orl)!important}.ctr{text-align:center}
+.mn{font-family:monospace;font-size:.83em;color:var(--blue)}
+.cb{background:var(--prl);border:1px solid var(--prb);border-radius:10px;padding:15px 19px;margin:12px 0}
+.cb h3{color:var(--pur);margin-top:0;font-size:.95em}
+.cs{display:flex;align-items:baseline;gap:8px;margin:5px 0;padding:6px 10px;background:#fff;border-radius:6px;border:1px solid var(--prb)}
+.cn{background:var(--pur);color:#fff;padding:2px 7px;border-radius:10px;font-size:.78em;font-weight:700;flex-shrink:0}
+.cl{font-weight:600;color:#2D3748;flex:1;font-size:.89em}
+.cf{color:var(--pur);font-family:monospace;font-size:.88em}
+.cref{color:var(--txm);font-size:.78em;flex-shrink:0}
+.cres{background:var(--pur);color:#fff;padding:9px 14px;border-radius:8px;font-weight:700;margin-top:9px;text-align:center;font-size:.92em}
+.fc{display:flex;flex-direction:column;align-items:center;gap:3px;margin:14px 0}
+.fn{background:var(--blue);color:#fff;padding:8px 22px;border-radius:8px;font-size:.86em;font-weight:600;text-align:center;min-width:180px;max-width:420px;line-height:1.4}
+.fn.g{background:#276749}.fn.r{background:var(--red)}.fn.o{background:var(--org)}.fn.gy{background:#4A5568}
+.fd{background:var(--org);color:#fff;padding:7px 18px;border-radius:50px;font-size:.84em;font-weight:600;text-align:center;max-width:380px}
+.fa{font-size:1.2em;color:var(--txm);line-height:1}
+.fb{display:flex;gap:16px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.fbi{display:flex;flex-direction:column;align-items:center;gap:3px}
+.fbl{font-size:.78em;color:var(--txm);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.kn{display:inline-block;background:var(--blue);color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.bd2{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:600;margin:1px}
+.bdr{background:var(--rdl);color:var(--red);border:1px solid var(--rdb)}
+.bdg{background:var(--grl);color:#065F46;border:1px solid var(--grb)}
+.star{color:#D97706;font-size:.81em}
+.ti{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 12px;background:#fff;border-radius:8px;border:1px solid var(--rdb)}
+.tic{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;margin:12px 0}
+.case-card{border-radius:9px;overflow:hidden;border:1px solid var(--bd)}
+.case-head{padding:8px 13px;font-weight:700;font-size:.87em;color:#fff}
+.case-head.c1{background:#9B2335}.case-head.c2{background:#744210}.case-head.c3{background:#145C36}
+.case-head.c4{background:#2A4A8A}.case-head.c5{background:#5A2D82}
+.case-body{background:#fff;padding:10px 13px;font-size:.85em;color:var(--tx);line-height:1.72}
+.case-note{margin-top:6px;padding:5px 9px;background:#F8FAFE;border-radius:5px;font-size:.83em;color:var(--blm)}
+.case-exc{margin-top:6px;padding:5px 9px;background:var(--grl);border-radius:5px;font-size:.83em;color:#276749}
+.order-strip{display:flex;align-items:stretch;margin:12px 0;border-radius:10px;overflow:hidden;border:2px solid var(--blue)}
+.os-item{flex:1;padding:10px 4px;text-align:center;font-size:.82em;font-weight:700;color:#fff;background:var(--blue)}
+.os-item.s1{background:#276749}.os-item.s2{background:#2C7A7B}.os-item.s3{background:#5A2D82}
+.os-item.s4{background:#744210}.os-item.s5{background:#9B2335}
+.os-arrow{font-size:1em;color:#fff;background:rgba(0,0,0,.2);padding:10px 5px;display:flex;align-items:center;font-weight:700}
+.footnote{color:var(--txm);font-size:.82em;margin-top:8px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="sbadge">소득세법 §41~§46의2</div>
+  <h1>소득금액계산의 특례</h1>
+  <div class="meta">
+    세무사 1차 예습자료 | 소득세법 §41·§43~§47·§46의2 / 시행령 §98·§100 (2026.04.21 / 2026.05.22)
+    <span class="fbadge">🔴 2021년 51·52번 · 2025년 56번 기출 전 선지 반영</span>
+  </div>
+</div>
+
+<div class="section hbox">
+  <h2>🔥 최빈출 포인트</h2>
+  <ol>
+    <li><strong>부당행위계산 적용 소득 — 배당(§17①8호)·사업·기타</strong> <span class="star">★★★</span> — 양도소득은 §101 별도 — 2021년 52번·2025년 56번①</li>
+    <li><strong>직계존비속 주택 무상 사용 + 실거주 → 부당행위 제외</strong> <span class="star">★★★</span> — 시행령 §98②2호단서 — 2021년 52번④</li>
+    <li><strong>부당행위 5%·3억원 기준 (1·2·3·5호)</strong> <span class="star">★★★</span> — 4호는 해당 없음</li>
+    <li><strong>결손금 공제 순서: 근로→연금→기타→이자→배당</strong> <span class="star">★★★</span> — 2021년 51번①</li>
+    <li><strong>당기 결손금 먼저, 이월결손금 나중 (§45⑥)</strong> <span class="star">★★★</span> — 2021년 51번⑤ 오답 포인트</li>
+    <li><strong>이월결손금 이월기간: 15년</strong> <span class="star">★★</span></li>
+    <li><strong>공동사업 합산과세 — 이자·배당소득은 합산 안 됨</strong> <span class="star">★★</span> — 2025년 56번②</li>
+    <li><strong>채권 보유기간이자 특례 · 중도해지 이자소득 특례</strong> <span class="star">★★</span> — §46·§46의2</li>
+  </ol>
+</div>
+
+<!-- ════ 1. 부당행위계산의 부인 ════ -->
+<div class="section">
+  <div class="bar b-red">1. 부당행위계산의 부인 (§41 / 시행령 §98)</div>
+
+  <div class="sub">
+    <h3>1-1. 의의 및 적용 요건</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 가족·특수관계인과 세금 줄이기 위해 시가보다 싸게 팔거나 비싸게 사면, 세무서가 "시가대로 거래한 것처럼" 소득금액을 다시 계산합니다.</div>
+    <div class="lb"><span class="lr">§41①</span>
+      납세지 관할 세무서장 또는 지방국세청장은 <strong>배당소득(§17①8호)·사업소득·기타소득</strong>이 있는 거주자의 행위·계산이 그 거주자와 <strong>특수관계인과의 거래</strong>로 인하여 조세 부담을 <strong>부당하게 감소</strong>시킨 것으로 인정되는 경우<br>→ 그 행위·계산과 관계없이 해당 과세기간의 소득금액 재계산 가능
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>적용 여부</th><th>소득 종류</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><span class="ok">✓ 적용</span></td><td><strong>§17①8호 출자공동사업자 배당소득</strong></td><td>손익분배비율 조작 가능</td></tr>
+          <tr class="hl"><td><span class="ok">✓ 적용</span></td><td><strong>사업소득</strong></td><td>필요경비 크기 조작 가능</td></tr>
+          <tr class="hl"><td><span class="ok">✓ 적용</span></td><td><strong>기타소득</strong></td><td>필요경비 인정, 조작 가능</td></tr>
+          <tr><td><span class="xr">✗ 제외</span></td><td>근로소득</td><td>필요경비 입증 요구 없음</td></tr>
+          <tr><td><span class="xr">✗ 제외</span></td><td>연금소득</td><td>필요경비 입증 요구 없음</td></tr>
+          <tr><td><span class="xr">✗ 제외</span></td><td>이자소득·일반 배당소득</td><td>필요경비 개념 없음</td></tr>
+          <tr><td><span class="xr">✗ 제외</span></td><td>퇴직소득</td><td>세법에 따라 과세표준 계산</td></tr>
+          <tr><td><span class="ok">✓ §101 별도</span></td><td><strong>양도소득</strong></td><td>§101에 별도 규정 (§41 비적용)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rb">🚨 <strong>2025년 56번 ①번 — 옳지 않은 것!</strong><br>"부당행위계산 부인 대상: 출자공동사업자 배당소득·사업소득·기타소득·<span class="xr">양도소득</span>"<br>→ 양도소득은 §41 아닌 §101에 별도 규정</div>
+    <div class="rb">🚨 <strong>2021년 52번 ②번 — 옳지 않은 것!</strong><br>"배당소득과 이자소득 전체는 부당행위 대상이 아니다"<br>→ §17①8호(출자공동사업자) 배당소득은 §41 적용 대상. "전체가 아니다"는 오답!</div>
+  </div>
+
+  <div class="sub">
+    <h3>1-2. 부당행위 사유 5가지 (시행령 §98②) <span class="bd2 bdr">5%·3억 기준 주의</span></h3>
+    <div class="wb">⚠ 1·2·3·5호: 시가와 차액이 <strong>3억원 이상</strong>이거나 시가의 <strong>5% 이상</strong>인 경우만 적용 / 4호는 기준 없음</div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-head c1">1호 — 저가 양도·고가 매입</div>
+        <div class="case-body">
+          특수관계인으로부터 시가보다 <strong>높은 가격으로 자산 매입</strong><br>
+          특수관계인에게 시가보다 <strong>낮은 가격으로 자산 양도</strong>
+          <div class="case-note">5%·3억 기준 적용</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-head c2">2호 — 무상·저율 대부·제공</div>
+        <div class="case-body">
+          특수관계인에게 금전·자산·용역을 <strong>무상 또는 낮은 이율로 대부·제공</strong>
+          <div class="case-exc">✅ 제외 (단서): 직계존비속에게 주택 무상 사용 + 직계존비속이 <strong>실제 거주</strong>하는 경우<br>(2021년 52번 ④번 옳은 것)</div>
+          <div class="case-note">5%·3억 기준 적용</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-head c2">3호 — 고율 차용·제공받음</div>
+        <div class="case-body">
+          특수관계인으로부터 금전·자산·용역을 <strong>높은 이율로 차용하거나 제공받는</strong> 경우
+          <div class="case-note">5%·3억 기준 적용 / 이자 과다 필요경비 → 조세 감소</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-head c3">4호 — 무수익자산 매입</div>
+        <div class="case-body">
+          특수관계인으로부터 <strong>무수익자산을 매입</strong>하여 그 자산의 비용을 부담
+          <div class="case-note">5%·3억 기준 적용 안 됨</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-head c5">5호 — 기타 부당행위</div>
+        <div class="case-body">
+          총수입금액 또는 필요경비 계산 시 조세 부담을 <strong>부당하게 감소</strong>시킨 것으로 인정되는 경우
+          <div class="case-note">5%·3억 기준 (1~3호 준하는 행위만) / 포괄 조항</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>1-3. 주요 사례 분석 (2021년 52번 기출 직접 반영)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>사례</th><th>부당행위?</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>사업자가 여유자금을 부친에게 무상 대여</td><td><span class="ok">해당 없음</span></td><td>부친에게 사업자가 손해 → 조세 감소 없음 (52번 ⑤번 전단)</td></tr>
+          <tr class="hl"><td>부친으로부터 시가 2배 이율로 차입 → 이자 필요경비 산입</td><td><span class="xr">해당 있음 (3호)</span></td><td>고율 차용 → 필요경비 과다 → 조세 감소 (52번 ⑤번 후단)</td></tr>
+          <tr><td>직계존비속에게 주택 무상 사용 + 실제 거주</td><td><span class="ok">해당 없음 (2호단서)</span></td><td>시행령 §98②2호단서 (52번 ④번 옳은 것)</td></tr>
+          <tr><td>근로소득자가 특수관계인과 저가 거래</td><td><span class="ok">§41 해당 없음</span></td><td>근로소득은 §41 적용 제외 (52번 ①번)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>1-4. 양도소득 부당행위계산 (§101) — §41과 구별</h3>
+    <div class="lb"><span class="lr">§101②  — 증여 후 10년 내 재양도</span>
+      특수관계인(배우자·직계존비속 §97의2 이월과세 적용자 제외)에게 자산 증여 후<br>
+      수증자가 <strong>증여일부터 10년 이내</strong>에 타인에게 재양도한 경우로서<br>
+      수증자 세액(증여세+양도세) &lt; 증여자 직접 양도세액<br>
+      → <strong>증여자가 직접 양도한 것으로 봄</strong> / 당초 증여세 부과 안 함 (§101③)
+    </div>
+    <div class="wb">⚠ §101② 취득가액 = 증여자의 당초 취득가액 (증여 시 시가 아님)<br>단, 양도소득이 수증자에게 실질 귀속된 경우 → 적용 제외 (§101②단서)</div>
+  </div>
+</div>
+
+
+<!-- ════ 2. 공동사업의 소득금액 계산 특례 ════ -->
+<div class="section">
+  <div class="bar b-blue">2. 공동사업의 소득금액 계산 특례 (§43 / 시행령 §100)</div>
+
+  <div class="sub">
+    <h3>2-1. 원칙 — 1거주자 계산 후 분배 (§43①②)</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 둘이 함께 운영하는 가게는 전체를 1거주자로 보고 소득 계산 후 지분에 따라 나눠 각자 신고합니다.</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>단계</th><th>내용</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Step 1: 1거주자 계산</td><td>공동사업장을 <strong>1거주자</strong>로 보아 공동사업장별로 소득금액 계산</td><td class="mn">§43①</td></tr>
+          <tr class="hl"><td>Step 2: 분배</td><td>약정된 <strong>손익분배비율</strong>에 따라 분배 (약정 없으면 지분비율)</td><td class="mn">§43②</td></tr>
+          <tr><td>Step 3: 각자 신고</td><td>분배받은 소득금액을 각자의 종합소득에 합산</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rb">🚨 <strong>공동사업 소득 = 사업소득만!</strong><br>§43①: "사업소득이 발생하는 사업을 공동으로 경영"<br>→ 공동사업장에서 이자·배당소득이 발생해도 합산과세 대상 아님 (2025년 56번 ②번 정답)</div>
+  </div>
+
+  <div class="sub">
+    <h3>2-2. 출자공동사업자 (시행령 §100①)</h3>
+    <div class="lb"><span class="lr">시행령 §100①</span>
+      다음에 해당하지 않는 자로서 공동사업 경영에 참여하지 않고 <strong>출자만 하는 자</strong>:<br>
+      1호. 공동사업에 성명·상호를 사용하게 한 자<br>
+      2호. 채무에 대해 무한책임을 부담하기로 약정한 자
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>소득 분류</th><th>수입시기</th><th>Gross-up</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>출자공동사업자 분배소득</td><td>배당소득 (§17①8호)</td><td>과세기간 종료일 (12.31)</td><td><span class="xr">적용 제외</span></td></tr>
+          <tr><td>일반 공동사업자 분배소득</td><td>사업소득</td><td>권리의무확정주의</td><td>해당 없음</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>2-3. 특례 — 합산과세 (§43③ / 시행령 §100②④)</h3>
+    <div class="lb"><span class="lr">§43③</span>
+      거주자 1인 + 그의 특수관계인(시행령 §100②: 생계를 같이 하는 자)이 공동사업자에 포함 + 합산과세 사유 해당<br>
+      → 특수관계인의 소득금액을 <strong>주된 공동사업자(손익분배비율이 큰 자)</strong>의 소득금액으로 봄
+    </div>
+
+    <div class="fc">
+      <div class="fn">거주자 1인 + 특수관계인이 공동사업자에 포함</div>
+      <div class="fa">↓</div>
+      <div class="fd">합산과세 사유 있나? (시행령 §100④)</div>
+      <div class="fb">
+        <div class="fbi"><span class="fbl">Yes</span><div class="fa">↓</div><div class="fn r">특수관계인 소득 → 주된 공동사업자에 합산</div></div>
+        <div class="fbi"><span class="fbl">No</span><div class="fa">↓</div><div class="fn g">각자 손익분배비율로 정상 과세</div></div>
+      </div>
+    </div>
+
+    <h4>▶ 합산과세 사유 2가지 (시행령 §100④)</h4>
+    <div class="tw">
+      <table>
+        <thead><tr><th>호</th><th>사유</th></tr></thead>
+        <tbody>
+          <tr><td>1호</td><td>신고서에 기재한 사업 종류·소득금액·지분비율·손익분배비율·관계 등이 <strong>사실과 현저하게 다른 경우</strong></td></tr>
+          <tr><td>2호</td><td>경영참가·거래관계·손익분배비율·재무상태 등으로 보아 <strong>조세 회피를 위해 공동으로 사업을 경영하는 것이 확인</strong>되는 경우</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gb">✅ <strong>연대납세의무 (§2의2①단서):</strong><br>
+      합산과세되는 소득금액에 대해 특수관계인은 <strong>손익분배비율에 해당하는 소득금액에 대한 소득세를 한도</strong>로 주된 공동사업자와 연대납세의무 (2025년 56번 ③번 정답)
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 3. 결손금·이월결손금 ════ -->
+<div class="section">
+  <div class="bar b-green">3. 사업소득 결손금·이월결손금 공제 (§45)</div>
+
+  <div class="sub">
+    <h3>3-1. 결손금 공제 원칙 (§45①)</h3>
+    <div class="lb"><span class="lr">§45① — 전제:</span> 사업자가 <strong>비치·기록한 장부</strong>에 의하여 해당 과세기간의 사업소득금액을 계산할 때 발생한 결손금</div>
+    <h4>▶ 공제 순서 (근로→연금→기타→이자→배당)</h4>
+    <div class="order-strip">
+      <div class="os-item s1">근로<br>소득금액</div>
+      <div class="os-arrow">→</div>
+      <div class="os-item s2">연금<br>소득금액</div>
+      <div class="os-arrow">→</div>
+      <div class="os-item s3">기타<br>소득금액</div>
+      <div class="os-arrow">→</div>
+      <div class="os-item s4">이자<br>소득금액</div>
+      <div class="os-arrow">→</div>
+      <div class="os-item s5">배당<br>소득금액</div>
+    </div>
+    <div class="wb">⚠ <strong>2021년 51번 ①번 오답:</strong> "이자→배당→근로→연금→기타 순"<br>→ 정답: <span class="kn">근로→연금→기타→이자→배당</span></div>
+  </div>
+
+  <div class="sub">
+    <h3>3-2. 예외 — 부동산임대업 결손금 (§45②)</h3>
+    <div class="rb">🚨 다음 부동산임대업 결손금은 종합소득 과세표준 계산 시 <strong>공제 불가</strong>:<br>
+      1호. 부동산 또는 부동산상의 권리를 대여하는 사업<br>
+      2호. 공장재단·광업재단을 대여하는 사업<br>
+      3호. 채굴에 관한 권리를 대여하는 사업 (대통령령)
+    </div>
+    <div class="gb">✅ <strong>단서 예외 (§45②단서):</strong> <span class="kn">주거용 건물 임대업</span>은 §45① 일반 결손금 공제 적용!</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>당기 결손금 처리</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>일반 사업소득 결손금</td><td><span class="ok">근로→연금→기타→이자→배당 공제 가능 (부동산임대업 소득에서도 공제 가능)</span></td></tr>
+          <tr class="hl"><td>부동산임대업(비주거) 결손금</td><td><span class="xr">다른 소득 공제 불가 → 이월결손금으로만 처리</span></td></tr>
+          <tr><td>주거용 건물 임대업 결손금</td><td><span class="ok">§45①단서: 일반 공제 가능</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wb">⚠ <strong>2021년 51번 ②번 오답:</strong> "주거용 건물임대업 포함 부동산임대업 결손금 공제 불가"<br>→ 주거용 건물 임대업은 공제 가능 (§45②단서)</div>
+    <div class="wb">⚠ <strong>2021년 51번 ③번 오답:</strong> "일반 결손금은 부동산임대업 소득에서 공제 불가"<br>→ 일반 사업소득 결손금은 부동산임대업 소득에서도 공제 가능 (§45①)</div>
+  </div>
+
+  <div class="sub">
+    <h3>3-3. 이월결손금 공제 (§45③)</h3>
+    <div class="lb"><span class="lr">§45③</span>
+      이월결손금 = 부동산임대업 결손금 + §45①②단서에 따라 공제하고 남은 결손금<br>
+      → 발생 과세기간 종료일부터 <strong>15년</strong> 이내에 끝나는 과세기간의 소득금액에서 공제<br>
+      → <strong>먼저 발생한 과세기간의 이월결손금부터</strong> 순서대로 공제
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>이월결손금 유형</th><th>공제 대상 소득</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>일반 사업소득 이월결손금 (§45③1호)</td><td>사업소득금액 → 근로 → 연금 → 기타 → 이자 → 배당 순</td></tr>
+          <tr class="hl"><td>부동산임대업 이월결손금 (§45③2호)</td><td><strong>부동산임대업 소득금액에서만</strong> 공제</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wb">⚠ <strong>제척기간 도과 후 확인된 이월결손금 (§45③단서):</strong> 공제 불가</div>
+    <div class="wb">⚠ <strong>2025년 56번 ④번 정답:</strong> "주거용 건물임대업을 포함한 부동산임대업에서 발생한 이월결손금은 소급공제가 적용되지 아니한다" → 옳은 것 (이월결손금 소급공제는 중소기업 사업소득에만 적용)</div>
+  </div>
+
+  <div class="sub">
+    <h3>3-4. 기타 규정 (§45④⑤⑥)</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>조항</th><th>내용</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td><strong>§45⑥ — 당기 결손금 먼저</strong></td><td>해당 과세기간에 결손금 발생 + 이월결손금 있으면 → <span class="kn">당기 결손금을 먼저</span> 공제<br><span style="color:#9B2335;font-size:.85em">→ 2021년 51번 ⑤번 오답: "이월결손금 먼저"는 틀림!</span></td></tr>
+          <tr class="hl"><td><strong>§45④ — 추계신고 이월결손금 불가</strong></td><td>추계신고·추계조사결정 시 이월결손금 공제 불가<br>단서: 천재지변·불가항력 장부 멸실 → 공제 가능<br><span style="color:#276749;font-size:.85em">→ 2021년 51번 ④번 정답</span></td></tr>
+          <tr><td>§45⑤ — 금융소득 비교과세</td><td>§62 비교과세 시 원천징수세율 적용 부분 → 공제 대상 제외<br>기본세율 적용 부분 → 사업자가 공제 여부·금액 결정 가능</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>3-5. 결손금 계산 예제 (2021년 51번 종합)</h3>
+    <div class="cb">
+      <h3>📐 종합소득과세표준 계산</h3>
+      <div class="lb" style="margin-bottom:8px;font-size:.85em">
+        甲: 일반사업소득 △5,000만원 / 부동산임대업(비주거) △2,000만원 / 근로소득금액 4,000만원 / 이자소득 1,000만원 / 이월결손금(2024년 일반사업) 500만원
+      </div>
+      <div class="cs"><span class="cn">①</span><span class="cl">부동산임대업 결손금 처리</span><span class="cf">△2,000만원 → 이월결손금으로 이월 (§45②)</span><span class="cref"></span></div>
+      <div class="cs"><span class="cn">②</span><span class="cl">당기 결손금 먼저 (§45⑥)</span><span class="cf">△5,000만원 → 근로소득 4,000만원 공제 후 잔여 △1,000만원 → 이자소득 1,000만원 공제</span><span class="cref">§45①</span></div>
+      <div class="cs"><span class="cn">③</span><span class="cl">이월결손금 공제</span><span class="cf">500만원 → 남은 소득 없음 → 차기 이월</span><span class="cref">§45③</span></div>
+      <div class="cres">종합소득과세표준 = 0 / 이월결손금 합계 = 2,500만원 차기 이월</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════ 4. 기타의 소득금액계산 특례 ════ -->
+<div class="section">
+  <div class="bar b-purple">4. 기타의 소득금액계산 특례 (§44·§46·§46의2)</div>
+
+  <div class="sub">
+    <h3>4-1. 채권 등에 대한 소득금액 계산 특례 (§46)</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 채권을 사고팔 때 이자는 내가 보유한 기간만큼만 내 소득. A가 6개월·B가 6개월 보유했으면 각자 6개월치 이자만 신고.</div>
+    <div class="lb"><span class="lr">§46①</span>
+      대상: §16①1·2·5·6호의 채권·증권과 양도 가능한 증권(대통령령)<br>
+      발행법인으로부터 <strong>이자를 지급받거나 채권을 매도</strong>하는 경우<br>
+      → 거주자에게 <strong>보유기간별로 귀속되는 이자 상당액</strong>을 이자소득으로 계산
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>소득금액 계산</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>보유기간 입증 가능</td><td>보유기간별로 귀속되는 이자 상당액을 이자소득으로 계산</td><td class="mn">§46①</td></tr>
+          <tr class="hl"><td>보유기간 입증 불가</td><td>§133의2①에 따른 <strong>원천징수기간의 이자 상당액</strong>이 해당 거주자에게 귀속</td><td class="mn">§46②</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cb">
+      <h3>📐 채권 보유기간 이자소득 계산</h3>
+      <div class="cs"><span class="cn">상황</span><span class="cl">甲: 1.1 취득 → 6.30 乙에게 매도 / 연이자율 4%, 액면 1억원</span><span class="cf"></span></div>
+      <div class="cs"><span class="cn">甲</span><span class="cl">1.1~6.30 (181일) 보유기간 이자소득</span><span class="cf">= 1억 × 4% × (181/365) ≈ 1,983,562원 / 수입시기: 매도일 (령§45 10호)</span></div>
+      <div class="cs"><span class="cn">乙</span><span class="cl">7.1~12.31 (184일) 보유기간 이자소득</span><span class="cf">= 1억 × 4% × (184/365) ≈ 2,016,438원 / 수입시기: 이자 지급일</span></div>
+      <div class="cres">각자 보유기간에 귀속되는 이자 상당액만 이자소득으로 신고</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>4-2. 상속의 경우 소득금액 구분 계산 (§44)</h3>
+    <div class="lb"><span class="lr">§44①</span>
+      피상속인의 소득금액에 대한 소득세(상속인에게 과세할 것)와 상속인의 소득금액에 대한 소득세 → <strong>구분하여 계산</strong> (합산 금지)
+    </div>
+    <div class="lb"><span class="lr">§44② — 예외: 배우자 연금계좌 승계</span>
+      가입자 사망 + 배우자가 <strong>연금외수령 없이</strong> 해당 연금계좌를 상속 승계하는 경우<br>
+      → 피상속인 소득금액을 <strong>상속인 소득금액으로 보아</strong> 소득세 계산
+    </div>
+    <div class="gb">✅ <strong>2025년 56번 ⑤번 — 옳은 것:</strong> "피상속인의 소득금액에 대한 소득세와 상속인의 소득금액에 대한 소득세는 구분하여 계산하여야 한다" → §44① 정확히 반영</div>
+  </div>
+
+  <div class="sub">
+    <h3>4-3. 중도 해지로 인한 이자소득금액 계산 특례 (§46의2)</h3>
+    <div class="an">💡 <strong>쉬운 비유:</strong> 1년짜리 예금에서 이미 이자소득세를 냈는데 6개월 후 해지해서 이자가 줄었다면, 줄어든 이자를 당해연도 이자소득에서 빼줍니다.</div>
+    <div class="lb"><span class="lr">§46의2</span>
+      종합소득과세표준 <strong>확정신고 후</strong> 예금·신탁계약의 <strong>중도 해지</strong>로<br>
+      이미 지난 과세기간의 이자소득금액이 <strong>감액</strong>된 경우<br>
+      → <strong>중도 해지일이 속하는 과세기간</strong>의 이자소득금액에서 감액된 금액을 <strong>뺄 수 있다</strong><br>
+      단서: <strong>경정청구를 한 경우</strong> → §46의2 적용 불가 (중복 불가)
+    </div>
+    <div class="cb">
+      <h3>📐 중도해지 이자소득 처리</h3>
+      <div class="cs"><span class="cn">2024년</span><span class="cl">정기예금 이자 100만원 종합소득에 포함·신고 완료</span><span class="cf"></span></div>
+      <div class="cs"><span class="cn">2025년</span><span class="cl">중도 해지 → 이자 30만원 반환 (감액)</span><span class="cf">§46의2: 2025년 이자소득 △30만원 차감 가능<br>OR 경정청구: 2024년 소득세 환급 가능 (중복 불가)</span></div>
+      <div class="cres">선택: §46의2 (당해연도 차감) OR 경정청구 (전년도 환급) — 중복 적용 불가</div>
+    </div>
+  </div>
+
+  <div class="sub">
+    <h3>4-4. 비거주자·외국법인과의 거래에 대한 소득금액 계산</h3>
+    <div class="tw">
+      <table>
+        <thead><tr><th>구분</th><th>내용</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>국제거래 이전가격</td><td>거주자와 국외특수관계인 간 거래가격이 정상가격과 다른 경우 → 정상가격으로 과세표준 계산</td><td class="mn">국조법 §4</td></tr>
+          <tr class="hl"><td>비거주자 배당·이자 지급 시</td><td>국내원천 배당·이자를 비거주자에게 지급 시 → 원천징수의무</td><td class="mn">§156</td></tr>
+          <tr><td>사업소득 관련 부당행위</td><td>비거주자와의 특수관계인 거래에도 §41 부당행위 계산 적용 가능</td><td class="mn">§41</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pb">📌 <strong>국조법(국제조세조정에 관한 법률):</strong><br>
+      거주자와 국외특수관계인 간 거래에서 조세 회피 방지를 위해 정상가격 원칙 적용.<br>
+      세무사 1차에서는 소득세법 §41 국내 부당행위와의 차이점을 묻는 방식으로 출제됩니다.
+    </div>
+  </div>
+</div>
+
+
+<!-- 종합 비교표 -->
+<div class="section cmpbox">
+  <h2>⚖️ 결손금 공제 종합 비교</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>구분</th><th>원칙</th><th>예외</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>일반 사업소득 결손금</td><td>근로→연금→기타→이자→배당</td><td>금융소득 비교과세 시 원천징수세율 부분 제외</td><td class="mn">§45①⑤</td></tr>
+        <tr><td>부동산임대업(비주거) 결손금</td><td>다른 소득 공제 불가</td><td>주거용 건물임대업은 공제 가능 (§45②단서)</td><td class="mn">§45②</td></tr>
+        <tr class="hl"><td>이월결손금 이월기간</td><td>15년</td><td>제척기간 도과 이월결손금 → 불가</td><td class="mn">§45③</td></tr>
+        <tr><td>당기결손금 vs 이월결손금</td><td>당기 결손금 먼저</td><td>—</td><td class="mn">§45⑥</td></tr>
+        <tr class="hl"><td>추계신고 시 이월결손금</td><td>공제 불가</td><td>천재지변 장부 멸실 시 가능</td><td class="mn">§45④</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- 오답 함정 -->
+<div class="section trapbox">
+  <h2>⚠️ 오답 함정 — 기출 기반 11선</h2>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"부당행위계산 부인 대상에 양도소득이 포함된다" (2025년 56번 ①번)</strong><p>→ §41 = 배당(§17①8호)·사업·기타소득. 양도소득은 §101에 별도 규정</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"공동사업장 이자·배당소득도 합산과세한다" (2025년 56번 ②번)</strong><p>→ §43①: 공동사업 특례는 사업소득만. 이자·배당소득은 합산과세 안 됨</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"배당소득과 이자소득 전체가 부당행위 대상이 아니다" (2021년 52번 ②번 — 옳지 않은 것)</strong><p>→ §17①8호 출자공동사업자 배당소득은 §41 대상. "전체가 아니다"는 오답!</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"결손금 공제 순서: 이자→배당→근로→연금→기타" (2021년 51번 ①번)</strong><p>→ 정답 순서: <span class="kn">근로→연금→기타→이자→배당</span> (§45①)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"주거용 건물임대업 포함 부동산임대업 결손금 모두 공제 불가" (2021년 51번 ②번)</strong><p>→ §45②단서: 주거용 건물 임대업 결손금은 §45① 적용으로 공제 가능</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"일반 사업소득 결손금은 부동산임대업 소득에서 공제 불가" (2021년 51번 ③번)</strong><p>→ §45①: 일반 사업소득 결손금은 부동산임대업 소득에서도 공제 가능</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"이월결손금이 있으면 이월결손금 먼저 공제" (2021년 51번 ⑤번)</strong><p>→ §45⑥: 해당 과세기간 결손금을 먼저, 이월결손금은 나중</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"직계존비속 주택 무상 사용 → 부당행위 해당" (2021년 52번 ④번)</strong><p>→ 직계존비속이 실제 거주하는 경우 → 제외 (시행령 §98②2호단서)</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"중도해지 감액 이자소득에 경정청구와 §46의2 동시 적용 가능"</strong><p>→ §46의2 단서: 경정청구를 한 경우 §46의2 적용 불가. 중복 적용 불가</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"채권 보유기간 입증 불가 시 이자소득 과세 안 됨"</strong><p>→ §46②: 원천징수기간의 이자 상당액이 해당 거주자에게 귀속된 것으로 보아 과세</p></div></div>
+
+  <div class="ti"><span class="tic">❌</span><div><strong>"피상속인과 상속인 소득금액을 합산하여 소득세 계산" (2025년 56번 ⑤번)</strong><p>→ §44①: 구분하여 계산. 단, 배우자가 연금계좌를 연금외수령 없이 승계하는 경우는 예외</p></div></div>
+</div>
+
+
+<!-- 법조항 색인 -->
+<div class="section" style="background:#F8FAFF">
+  <h2>📚 법조항 근거 색인</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>조항</th><th>내용</th></tr></thead>
+      <tbody>
+        <tr><td class="mn">§41①②</td><td>부당행위계산 부인 (배당§17①8·사업·기타소득 / 특수관계인·대통령령)</td></tr>
+        <tr><td class="mn">령§98①②③④</td><td>특수관계인 범위 / 부당행위 5가지 사유 (5%·3억원 기준) / 직계존비속 주택 제외 단서</td></tr>
+        <tr><td class="mn">§43①②③</td><td>공동사업 (1거주자·손익분배비율·합산과세)</td></tr>
+        <tr><td class="mn">령§100①②④⑤</td><td>출자공동사업자 / 합산과세 특수관계인(생계 같이) / 합산과세 사유 2가지 / 주된 공동사업자 기준</td></tr>
+        <tr><td class="mn">§44①②</td><td>상속 소득금액 구분 계산 / 배우자 연금계좌 승계 예외</td></tr>
+        <tr><td class="mn">§45①~⑥</td><td>결손금(근로→연금→기타→이자→배당) / 부동산임대업예외(주거용 예외) / 이월15년 / 추계신고불가(천재지변예외) / 금융소득비교과세 / 당기결손금먼저</td></tr>
+        <tr><td class="mn">§46①②</td><td>채권 보유기간이자소득 특례 (입증가능·불가 구분)</td></tr>
+        <tr><td class="mn">§46의2</td><td>중도해지 이자소득 감액 특례 (당해연도 차감 / 경정청구 중복 불가)</td></tr>
+        <tr><td class="mn">§101①②③</td><td>양도소득 부당행위 (§41과 별도) / 증여 후 10년 내 재양도 세액 비교</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="footnote" style="margin-top:10px">
+    ※ 소득세법 (2026.04.21 시행) / 소득세법 시행령 (2026.05.22 시행) MCP 직접 조회 기준<br>
+    ※ 2021년 51번 ①②③④⑤ · 52번 ①②③④⑤ · 2025년 56번 ①②③④⑤ 전 선지 반영
+  </p>
+</div>
+
+</body>
+</html>
