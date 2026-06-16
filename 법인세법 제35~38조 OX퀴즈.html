@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제35~38조 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;
+  --acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;
+  --danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;
+  --ok:#1C5030;--ng:#7F1910;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}
+.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}
+.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}
+.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}
+.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}
+.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}
+.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#EEF3FF;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}
+.kbox strong{color:var(--acc)}
+.ct{width:100%;border-collapse:collapse;font-size:.75rem;margin:.38rem 0}
+.ct th{background:var(--surf2);padding:.28rem .5rem;text-align:center;border:1px solid var(--bdr);font-weight:600;color:var(--acc)}
+.ct td{padding:.24rem .5rem;border:1px solid var(--bdr);text-align:center}
+.ct td:first-child{text-align:left}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}
+.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}
+.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hdi">
+    <div>
+      <div class="hbg">세무사 1차 · 세법학개론</div>
+      <div class="htl">법인세법 제35~38조<br><span>구상채권상각충당금 · 국고보조금 · 공사부담금 · 보험차익 손금산입</span></div>
+      <div class="hsb">법인세법 §35~§38 + 시행령 §64 | 일시상각충당금·압축기장충당금 | 1년/2년 유예기간 비교 | 2024년 기출 연계</div>
+    </div>
+    <div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div>
+  </div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<div style="background:#EBF0FF;border:1.5px solid #1B3D6B;border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:#1B3D6B;line-height:1.9">
+  <strong style="font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase">📌 핵심 비교표</strong><br>
+  <table style="width:100%;font-size:.77rem;border-collapse:collapse;margin-top:.4rem">
+    <tr style="background:rgba(27,61,107,.1)"><th style="padding:.25rem .5rem;text-align:left;border:1px solid #c5d8ee">구분</th><th style="padding:.25rem .5rem;border:1px solid #c5d8ee">§36 국고보조금</th><th style="padding:.25rem .5rem;border:1px solid #c5d8ee">§37 공사부담금</th><th style="padding:.25rem .5rem;border:1px solid #c5d8ee">§38 보험차익</th></tr>
+    <tr><td style="padding:.2rem .5rem;border:1px solid #c5d8ee">적용 대상</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">모든 내국법인</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">전기·가스·LPG·집단에너지 등 특정 사업자</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">모든 내국법인</td></tr>
+    <tr><td style="padding:.2rem .5rem;border:1px solid #c5d8ee">대상 자산</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">유형·무형자산(사업용)</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">유형·무형자산(사업용)</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center"><strong>유형자산만</strong></td></tr>
+    <tr><td style="padding:.2rem .5rem;border:1px solid #c5d8ee">당기 미취득 유예</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center"><strong>1년</strong></td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center"><strong>1년</strong>(§36②③ 준용)</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center"><strong>2년</strong>(1년→2년 대체)</td></tr>
+    <tr><td style="padding:.2rem .5rem;border:1px solid #c5d8ee">임의·의무</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">임의("할 수 있다")</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">임의</td><td style="padding:.2rem .5rem;border:1px solid #c5d8ee;text-align:center">임의</td></tr>
+  </table>
+  <br>
+  <strong>일시상각충당금 vs 압축기장충당금 (시행령 §64③)</strong><br>
+  감가상각자산(건물·기계 등) → <strong>일시상각충당금</strong> → 감가상각비와 상계, 처분 시 잔액 전액 익금환원<br>
+  비감가상각자산(토지 등) → <strong>압축기장충당금</strong> → 처분 사업연도에 전액 익금환원
+</div>
+
+<!-- ═══ Part 1: §35 구상채권상각충당금 ═══ -->
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제35조 구상채권상각충당금의 손금산입</span><span class="scn" id="c1">0/4</span></div>
+<hr class="shr">
+
+<!-- Q1 -->
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§35①</span>구상채권상각충당금은 법률에 따라 신용보증사업을 하는 내국법인이라면 모두 손금에 산입할 수 있다.<span class="tb thot">🔴 대통령령 정하는 법인 한정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">법인세법 제35조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>구상채권상각충당금은 "법률에 따라 신용보증사업을 하는 내국법인 <b>중 대통령령으로 정하는 법인</b>"에 한정됩니다. 신용보증사업 법인이라도 모두 해당하는 것이 아니라 대통령령이 별도로 지정하는 법인만 적용됩니다.</p>
+<p class="trap">⚠ "신용보증사업 법인 모두" → "대통령령으로 정하는 법인"만</p></div></div>
+
+<!-- Q2 -->
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§35②</span>한국채택국제회계기준(IFRS)을 적용하는 법인 중 대통령령으로 정하는 법인이 구상채권상각충당금을 세무조정계산서에 계상하고 이익처분 시 적립하면 결산 손비로 계상한 것으로 본다.<span class="tb thot">IFRS 법인 신고조정 특례</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">법인세법 제35조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>구상채권상각충당금의 IFRS 법인 특례: 세무조정계산서 계상 + 이익처분 적립 → 결산조정 의제. 비상위험준비금(§31②)과 동일한 신고조정 특례 구조입니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q3 -->
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§35③</span>구상채권상각충당금을 손금에 산입한 내국법인에서 신용보증사업으로 인한 구상채권 중 대손금이 발생한 경우, 그 대손금을 손금에 직접 산입한 후 나중에 충당금과 상계할 수 있다.<span class="tb thot">🔴 먼저 상계 의무 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">법인세법 제35조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>대손금 발생 시 <b>구상채권상각충당금과 먼저 상계</b>하여야 합니다(의무). 상계 후 남은 충당금은 다음 사업연도 익금환원. 대손충당금(§34③)과 동일한 처리 원칙입니다.</p>
+<p class="trap">⚠ "나중에 상계" → "먼저 상계하여야 함(의무)"</p></div></div>
+
+<!-- Q4 -->
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§35①③</span>구상채권상각충당금은 결산 시 손비로 계상(또는 IFRS 법인의 경우 세무조정계산서 계상)하여야 손금산입이 가능하며, 상계 후 남은 잔액은 다음 사업연도 익금에 산입한다.<span class="tb tup">결산조정·잔액 처리</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">법인세법 제35조 제1항·제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>결산조정(IFRS 특례 포함) 후 손금산입, 충당금 잔액은 다음 사업연도 익금환원. 조문 그대로 정확합니다. 대손충당금(§34)과 동일한 구조입니다.</p></div></div>
+
+<!-- ═══ Part 2: §36 국고보조금 ═══ -->
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제36조 국고보조금의 손금산입 (법 + 시행령 §64)</span><span class="scn" id="c2">0/9</span></div>
+<hr class="shr">
+
+<!-- Q5 -->
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§36①</span>내국법인이 국고보조금을 지급받아 사업용자산 취득에 사용한 경우, 그 상당액을 반드시 손금에 산입하여야 한다.<span class="tb thot">🔴 임의/의무 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">법인세법 제36조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>국고보조금 손금산입은 <b>"산입할 수 있다"(임의)</b>입니다. "반드시"(의무)가 아닙니다. 공사부담금(§37), 보험차익(§38)도 모두 임의 규정입니다.</p>
+<p class="trap">⚠ "반드시 하여야 한다" → "할 수 있다(임의)"</p></div></div>
+
+<!-- Q6 -->
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§36①</span>내국법인이 국고보조금을 지급받은 날이 속하는 사업연도의 종료일까지 사업용자산을 취득하거나 개량하는 데에 사용한 경우 또는 사업용자산 취득·개량 후 국고보조금을 사후에 지급받은 경우에도 손금에 산입할 수 있다.<span class="tb tup">사후 지급 포함</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">법인세법 제36조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>국고보조금은 ①사전 지급 후 자산 취득, ②자산 취득 후 사후 지급 모두 손금산입 가능합니다. 사후 지급의 경우도 포함됩니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q7 -->
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§36②</span>국고보조금을 받은 날이 속하는 사업연도 종료일까지 사업용자산을 취득하지 못한 내국법인은 그 다음 사업연도 개시일부터 2년 이내에 취득하려는 경우 손금에 산입할 수 있다.<span class="tb thot">🔴 1년/2년 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">법인세법 제36조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<div class="kbox"><strong>당기 미취득 시 유예기간 비교</strong><br>
+국고보조금(§36②): 다음 사업연도 개시일부터 <strong>1년</strong><br>
+공사부담금(§37②): §36②③ 준용 → <strong>1년</strong><br>
+보험차익(§38②): §36② 준용, "1년"을 <strong>"2년"으로</strong> 대체 → <strong>2년</strong></div>
+<p>"2년"이 오류입니다. 국고보조금의 유예기간은 <b>1년</b>입니다.</p>
+<p class="trap">⚠ "2년" → "1년"</p></div></div>
+
+<!-- Q8 -->
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§36③</span>국고보조금 상당액을 손금산입한 후 기한 내에 사업용자산 취득에 사용하지 않거나 폐업·해산한 경우, 그 미사용 금액은 다음 사업연도 소득금액 계산 시 익금에 산입한다.<span class="tb thot">🔴 익금산입 사업연도 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">법인세법 제36조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"다음 사업연도"가 오류입니다. 미사용·폐업·해산 시 <b>해당 사유가 발생한 날이 속하는 사업연도</b>의 소득금액 계산 시 익금에 산입합니다.</p>
+<p class="trap">⚠ "다음 사업연도" → "사유 발생일이 속하는 사업연도"</p></div></div>
+
+<!-- Q9 -->
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§36③ 단서</span>국고보조금 상당액을 손금산입한 법인이 합병하는 경우로서 합병법인등이 그 금액을 승계한 경우에는 익금산입 대상에서 제외된다.<span class="tb tup">합병 승계 특례</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">법인세법 제36조 제3항 단서</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>합병·분할 시 합병법인등이 금액을 승계한 경우 익금산입 제외. 이 경우 합병법인등이 §36② 따라 손금산입한 것으로 봅니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q10 -->
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§36④</span>내국법인이 국고보조금을 금전 외의 자산으로 받아 사업에 사용한 경우에는 사업용자산의 취득 또는 개량에 사용된 것으로 본다.<span class="tb tup">현물 보조금 의제</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">법인세법 제36조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>현물(기계, 차량 등)로 국고보조금을 받아 사업에 사용하면 사업용자산 취득·개량에 사용된 것으로 의제합니다. 금전 보조금과 동일하게 처리됩니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q11 -->
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">시행령§64③</span>국고보조금으로 사업용자산을 취득할 때, 건물·기계 등 감가상각자산에 대해서는 압축기장충당금으로 계상하고, 토지 등 비감가상각자산에 대해서는 일시상각충당금으로 계상한다.<span class="tb thot">🔴 충당금 명칭 역전 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">법인세법 시행령 제64조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<div class="kbox"><strong>충당금 구분 (시행령 §64③) — 반드시 암기!</strong><br>
+감가상각자산(건물·기계·차량 등) → <strong>일시상각충당금</strong><br>
+감가상각자산 외(토지 등 비감가상각자산) → <strong>압축기장충당금</strong></div>
+<p>명칭이 완전히 역전되어 있습니다. 2024년 기출 68번에서도 이 구분이 핵심 출제 포인트였습니다.</p>
+<p class="trap">⚠ 감가상각자산=일시상각충당금 | 비감가상각자산=압축기장충당금</p></div></div>
+
+<!-- Q12 -->
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">시행령§64④</span>일시상각충당금은 해당 사업용자산을 처분하는 사업연도에 전액 익금에 산입한다.<span class="tb thot">🔴 일시상각충당금 익금환원 방법</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">법인세법 시행령 제64조 제4항 제1호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<div class="kbox"><strong>충당금 익금환원 방법 비교 (시행령 §64④)</strong><br>
+일시상각충당금: 매년 <strong>감가상각비와 상계</strong> (처분 시 잔액 전액 익금환원)<br>
+압축기장충당금: <strong>처분 사업연도에 전액</strong> 익금환원</div>
+<p>"처분 사업연도에 전액"은 <b>압축기장충당금</b>의 처리 방법입니다. 일시상각충당금은 매년 감가상각비와 상계합니다.</p></div></div>
+
+<!-- Q13 -->
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">시행령§64①</span>국고보조금으로 취득할 수 있는 사업용자산에는 사업용 유형자산과 무형자산뿐만 아니라 석유류도 포함된다.<span class="tb thot">석유류 포함 여부</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">법인세법 시행령 제64조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>시행령 §64①: 사업용자산 = 사업용 유형자산 및 무형자산 + <b>석유류</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- ═══ Part 3: §37 공사부담금 ═══ -->
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제37조 공사부담금의 손금산입</span><span class="scn" id="c3">0/5</span></div>
+<hr class="shr">
+
+<!-- Q14 -->
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">§37①</span>공사부담금은 전기사업·도시가스사업·LPG사업·집단에너지공급사업 등 대통령령으로 정하는 특정 사업을 하는 내국법인이 해당 시설의 수요자 또는 편익을 받는 자로부터 제공받은 경우에 적용된다.<span class="tb thot">특정 사업자 한정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">법인세법 제37조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>공사부담금 적용 대상: 전기사업·도시가스사업·LPG사업·집단에너지공급사업 등 특정 사업자. "편익을 받는 자"로부터 제공받은 유형·무형자산 또는 금전 등. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q15 -->
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">§37①</span>공사부담금 규정은 모든 내국법인에 적용되며, 국고보조금과 달리 특정 사업을 영위하지 않아도 시설 수요자로부터 금전 등을 제공받으면 적용된다.<span class="tb thot">🔴 적용 대상 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">법인세법 제37조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>공사부담금은 <b>특정 사업(전기·도시가스·LPG·집단에너지 등)</b>을 하는 법인에만 적용됩니다. 국고보조금(모든 내국법인 적용)과 달리 사업 종류가 제한됩니다.</p></div></div>
+
+<!-- Q16 -->
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">§37②</span>공사부담금으로 사업용자산을 취득하는 경우의 손금산입 등에 관하여는 제36조 제2항 및 제3항을 준용한다. 따라서 당기 미취득 시 유예기간은 1년이다.<span class="tb tup">준용 → 1년</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">법인세법 제37조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>공사부담금은 §36②③ 준용 → 유예기간 <b>1년</b>. 보험차익(§38②)이 "1년"을 "2년"으로 대체하는 것과 달리, 공사부담금은 별도 대체 없이 그대로 1년입니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q17 -->
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">§37①</span>공사부담금에 해당하는 자산의 범위는 해당 시설을 구성하는 토지 등 유형자산에 한정된다. 무형자산은 포함되지 않는다.<span class="tb thot">🔴 무형자산 포함 여부</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">법인세법 제37조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§37①은 "해당 시설을 구성하는 토지 등 <b>유형자산 및 무형자산</b>"이라고 명시합니다. 무형자산도 포함됩니다. 보험차익(§38)이 유형자산만 대상인 것과 구별되는 중요한 차이점입니다.</p></div></div>
+
+<!-- Q18 -->
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">§37①②</span>공사부담금을 금전으로 제공받지 않고 자산으로 직접 제공받은 경우에는 손금산입 대상이 되지 않는다.<span class="tb thot">🔴 현물 공사부담금</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">법인세법 제37조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§37①은 수요자로부터 "그 시설을 구성하는 <b>토지 등 유형자산 및 무형자산을 제공받은 경우 또는 금전 등</b>(공사부담금)을 제공받아..."라고 규정합니다. 즉 자산 자체를 직접 제공받은 경우도 손금산입 대상입니다.</p></div></div>
+
+<!-- ═══ Part 4: §38 보험차익 ═══ -->
+<div class="sh"><span class="stg">Part 4</span><span class="stl">제38조 보험차익의 손금산입</span><span class="scn" id="c4">0/4</span></div>
+<hr class="shr">
+
+<!-- Q19 -->
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">§38①</span>보험차익 손금산입은 내국법인이 보유하는 유형자산 또는 무형자산의 멸실이나 손괴로 인하여 보험금을 지급받은 경우에 적용된다.<span class="tb thot">🔴 유형자산만·무형자산 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">법인세법 제38조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"무형자산"이 포함된 것이 오류입니다. §38①은 <b>"유형자산(이하 이 조에서 '보험대상자산'이라 한다)"</b>만을 대상으로 합니다. 무형자산은 보험차익 손금산입 대상이 아닙니다. 국고보조금(유형·무형 모두), 공사부담금(유형·무형 모두)과 구별되는 핵심 차이입니다.</p>
+<p class="trap">⚠ "유형자산 또는 무형자산" → "유형자산만"</p></div></div>
+
+<!-- Q20 -->
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§38①</span>보험차익으로 취득한 자산은 멸실된 보험대상자산과 같은 종류의 자산을 대체 취득한 경우에만 손금산입이 가능하며, 손괴된 자산을 개량하는 경우에는 적용되지 않는다.<span class="tb thot">🔴 손괴 시 개량 포함 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">법인세법 제38조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<div class="kbox"><strong>보험차익 손금산입 적용 요건</strong><br>
+멸실: 보험대상자산과 <strong>같은 종류의 자산을 대체 취득</strong><br>
+손괴: <strong>손괴된 보험대상자산을 개량</strong>(취득한 자산의 개량 포함)</div>
+<p>"손괴 시 개량은 적용 안 됨"이 오류입니다. 손괴 시 개량도 명시적으로 포함됩니다.</p></div></div>
+
+<!-- Q21 -->
+<div class="qc"><div class="qh"><span class="qn">21</span>
+  <div class="qt"><span class="jb">§38②</span>보험차익으로 자산을 취득하거나 개량하는 경우의 손금산입에 관하여는 제36조 제2항 및 제3항을 준용하되, 제36조 제2항 중 "1년"은 "2년"으로 본다.<span class="tb thot">🔴 2년 대체 핵심</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(21,'O')">O</button><button class="oxb" onclick="so(21,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(21)">정답 확인</button><span class="rb" id="r21"></span></div>
+<div class="ex" id="e21"><div class="eh">해설</div><div class="lr">법인세법 제38조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>보험차익의 당기 미취득 유예기간: §36②를 준용하되 "1년"을 <b>"2년"으로 대체</b>. 즉 다음 사업연도 개시일부터 <b>2년</b> 이내. 국고보조금·공사부담금(1년)보다 1년 더 긴 이유는 같은 종류 자산 대체 취득에 더 오랜 시간이 필요할 수 있기 때문입니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q22 -->
+<div class="qc"><div class="qh"><span class="qn">22</span>
+  <div class="qt"><span class="jb">§35~38 종합</span>국고보조금(§36)과 보험차익(§38)은 모든 내국법인이 적용받을 수 있지만, 공사부담금(§37)은 전기사업·도시가스사업 등 특정 사업자만 적용받을 수 있다. 또한 보험차익은 유형자산의 멸실·손괴에만 적용되는 반면, 국고보조금과 공사부담금은 유형자산과 무형자산 모두에 적용된다.<span class="tb thot">🔴 종합 비교</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(22,'O')">O</button><button class="oxb" onclick="so(22,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(22)">정답 확인</button><span class="rb" id="r22"></span></div>
+<div class="ex" id="e22"><div class="eh">해설</div><div class="lr">법인세법 제36조·제37조·제38조 종합</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>전체 내용이 정확합니다. 적용 대상(국고보조금·보험차익=모든 법인, 공사부담금=특정 사업자)과 자산 범위(보험차익=유형만, 국고보조금·공사부담금=유형+무형) 모두 옳습니다.</p></div></div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">22</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제35~38조 / 시행령 제64조 (현행법령, 시행령 2026.02.27 기준)<br>
+  2024년 기출 68번 연계 | 일시상각충당금·압축기장충당금 구분 핵심<br>
+  [2026-06-16] &nbsp;&nbsp; #법인세법 #구상채권상각충당금 #국고보조금 #공사부담금 #보험차익 #세무사1차
+</p>
+</div>
+
+<script>
+const ANS={1:'X',2:'O',3:'X',4:'O',5:'X',6:'O',7:'X',8:'X',9:'O',10:'O',11:'X',12:'X',13:'O',14:'O',15:'X',16:'O',17:'X',18:'X',19:'X',20:'X',21:'O',22:'O'};
+const SECS={1:[1,2,3,4],2:[5,6,7,8,9,10,11,12,13],3:[14,15,16,17,18],4:[19,20,21,22]};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=22;
+
+function so(n,v){
+  if(done[n])return; sel[n]=v;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});
+}
+function co(n){
+  if(done[n])return;
+  const v=sel[n],a=ANS[n];
+  if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}
+  done[n]=true;
+  const ok=v===a;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim(); b.classList.remove('so','sx');
+    if(bv===a)b.classList.add('c'+a.toLowerCase());
+    else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());
+  });
+  const badge=document.getElementById('r'+n);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';
+  badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+n).classList.add('show');
+  card.querySelector('.bck').disabled=true;
+  if(ok)correct++; answered++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('pf').style.width=(answered/TOT*100)+'%';
+  Object.entries(SECS).forEach(([k,arr])=>{
+    document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;
+  });
+}
+function checkAll(){
+  for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/TOT*100);
+  document.getElementById('gdT').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=TOT-correct;
+  document.getElementById('smP').classList.add('show');
+  document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>
