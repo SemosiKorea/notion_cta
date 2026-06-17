@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제55~59조 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#EEF3FF;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.kbox strong{color:var(--acc)}
+.ct{width:100%;border-collapse:collapse;font-size:.74rem;margin:.38rem 0}
+.ct th{background:var(--surf2);padding:.25rem .45rem;text-align:center;border:1px solid var(--bdr);font-weight:600;color:var(--acc)}
+.ct td{padding:.22rem .45rem;border:1px solid var(--bdr);text-align:center}
+.ct td:first-child{text-align:left}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">법인세법 제55~59조<br><span>세율 · 토지양도소득 과세특례 · 외국납부세액공제 · 재해손실공제 · 감면·공제 순위</span></div>
+  <div class="hsb">법인세법 §55~§59 | 세율 4단계 10/20/22/25% · 외국납부세액 이월 10년 · 손금산입 특례 · 공제 순위 집중</div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+<div style="background:#EBF0FF;border:1.5px solid #1B3D6B;border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:#1B3D6B;line-height:1.9">
+<strong style="font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase">📌 핵심 암기</strong><br>
+<strong>세율(§55①)</strong>: 2억 이하 <strong>10%</strong> / 2억~200억 <strong>20%</strong> / 200억~3천억 <strong>22%</strong> / 3천억 초과 <strong>25%</strong><br>
+<strong>토지등 양도소득(§55의2)</strong>: 주택·별장 <strong>20%</strong>(미등기 40%) / 비사업용 토지 <strong>10%</strong>(미등기 40%) / 분양권·입주권 <strong>20%</strong> | 양도소득 = 양도금액 − <strong>장부가액</strong> | 중복 시 <strong>높은 세율</strong><br>
+파산선고 양도소득 → §55의2 <strong>미적용</strong> (단, 미등기는 적용!) | 토지 가액 재해손실 공제에서 <strong>제외</strong><br>
+<strong>외국납부세액공제(§57)</strong>: 공제한도 내 <strong>임의</strong>("할 수 있다") | 초과분 <strong>10년</strong> 이월 | 미공제시 <strong>손금산입</strong>(§21①에도 불구하고) | 익금불산입 수입배당금 <strong>적용 제외</strong><br>
+간접외국납부: 외국자회사 출자비율 <strong>10%</strong>(해외자원 <strong>5%</strong>) | 간주외국납부: 감면세액도 포함<br>
+<strong>감면·공제 순위(§59①)</strong>: ①감면 → ②이월불인정 공제 → ③이월인정 공제(이월분 먼저) → ④§58의3
+</div>
+
+<!-- ═══ Part 1: §55 세율 ═══ -->
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제55조 세율</span><span class="scn" id="c1">0/4</span></div>
+<hr class="shr">
+
+<!-- Q1 -->
+<div class="qc"><div class="qh"><span class="qn">1</span>
+<div class="qt"><span class="jb">§55①</span>내국법인의 과세표준이 2억원 이하인 경우 세율은 100분의 10이고, 2억원 초과 200억원 이하인 경우 세율은 100분의 20이다.<span class="tb tup">세율 핵심</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">법인세법 제55조 제1항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<div class="kbox"><strong>법인세 세율 (§55①①)</strong>
+<table class="ct"><tr><th>과세표준</th><th>세율</th></tr>
+<tr><td>2억원 이하</td><td><strong>10%</strong></td></tr>
+<tr><td>2억원 초과 200억원 이하</td><td><strong>20%</strong></td></tr>
+<tr><td>200억원 초과 3천억원 이하</td><td><strong>22%</strong></td></tr>
+<tr><td>3천억원 초과</td><td><strong>25%</strong></td></tr></table></div></div></div>
+
+<!-- Q2 -->
+<div class="qc"><div class="qh"><span class="qn">2</span>
+<div class="qt"><span class="jb">§55①</span>내국법인의 과세표준이 300억원인 경우 적용 세율은 100분의 22이며, 과세표준이 5천억원인 경우 적용 세율은 100분의 25이다.<span class="tb thot">🔴 구간별 세율 확인</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">법인세법 제55조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>300억원 → 200억~3천억 구간 → <b>22%</b>. 5천억원 → 3천억 초과 구간 → <b>25%</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q3 -->
+<div class="qc"><div class="qh"><span class="qn">3</span>
+<div class="qt"><span class="jb">§55②</span>사업연도가 1년 미만인 내국법인의 경우, 그 사업연도 과세표준을 그 사업연도 월수로 나눈 금액에 12를 곱한 금액으로 세율을 적용한 후, 다시 그 사업연도 월수를 12로 나눈 수를 곱하여 세액을 산출한다.<span class="tb tup">월수 환산 방법</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">법인세법 제55조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>1년 미만 사업연도: 과세표준 ÷ 사업연도 월수 × 12 → 세율 적용 → 산출세액 × 사업연도 월수 ÷ 12. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q4 -->
+<div class="qc"><div class="qh"><span class="qn">4</span>
+<div class="qt"><span class="jb">§55①</span>제55조의2에 따른 토지등 양도소득에 대한 법인세액은 산출세액에 포함되지 않는다.<span class="tb thot">🔴 산출세액 포함 여부</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">법인세법 제55조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§55①은 "제55조의2에 따른 토지등 양도소득에 대한 법인세액이 있으면 <b>이를 합한 금액으로 한다</b>(이하 '산출세액'이라 한다)"라고 규정합니다. 토지양도소득 세액은 <b>산출세액에 포함</b>됩니다.</p>
+<p class="trap">⚠ "포함 안 됨" → "산출세액에 합산됨"</p></div></div>
+
+<!-- ═══ Part 2: §55의2 토지등 양도소득 ═══ -->
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제55조의2 토지등 양도소득에 대한 과세특례</span><span class="scn" id="c2">0/6</span></div>
+<hr class="shr">
+
+<!-- Q5 -->
+<div class="qc"><div class="qh"><span class="qn">5</span>
+<div class="qt"><span class="jb">§55의2①②</span>내국법인이 주택 및 별장을 양도하는 경우 토지등 양도소득에 대한 법인세로 100분의 20을 곱한 세액을 추가납부하여야 하며, 미등기 토지등의 경우에는 100분의 40을 적용한다.<span class="tb thot">🔴 주택·별장 20%(미등기 40%)</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">법인세법 제55조의2 제1항 제2호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<div class="kbox"><strong>토지등 양도소득 추가세율 (§55의2①)</strong>
+<table class="ct"><tr><th>구분</th><th>일반</th><th>미등기</th></tr>
+<tr><td>주택·별장</td><td><strong>20%</strong></td><td><strong>40%</strong></td></tr>
+<tr><td>비사업용 토지</td><td><strong>10%</strong></td><td><strong>40%</strong></td></tr>
+<tr><td>분양권·조합원입주권</td><td><strong>20%</strong></td><td>—</td></tr></table></div></div></div>
+
+<!-- Q6 -->
+<div class="qc"><div class="qh"><span class="qn">6</span>
+<div class="qt"><span class="jb">§55의2①③</span>내국법인이 비사업용 토지를 양도하는 경우 토지등 양도소득에 100분의 20을 곱하여 산출한 세액을 추가납부하여야 한다.<span class="tb thot">🔴 비사업용 토지 10% 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">법인세법 제55조의2 제1항 제3호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"20%"가 오류입니다. 비사업용 토지 양도소득 추가세율은 <b>10%</b>입니다. 주택·별장의 20%와 혼동 주의!</p>
+<p class="trap">⚠ "20%" → "10%" (비사업용 토지) / 미등기는 40%</p></div></div>
+
+<!-- Q7 -->
+<div class="qc"><div class="qh"><span class="qn">7</span>
+<div class="qt"><span class="jb">§55의2⑥</span>토지등 양도소득은 토지등의 양도금액에서 양도 당시의 장부가액을 뺀 금액으로 한다.<span class="tb tup">양도소득 계산</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">법인세법 제55조의2 제6항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>법인 토지등 양도소득 = 양도금액 − <b>장부가액</b>. 소득세의 취득가액(실지거래가액)과 달리 <b>장부가액</b>을 사용합니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q8 -->
+<div class="qc"><div class="qh"><span class="qn">8</span>
+<div class="qt"><span class="jb">§55의2④</span>파산선고에 의한 토지등의 처분으로 인하여 발생하는 소득에 대하여는 토지등 양도소득 과세특례가 적용되지 않는다. 단, 미등기 토지등에 대한 소득에 대해서는 예외 없이 과세특례가 적용된다.<span class="tb thot">🔴 파산선고 예외·미등기 예외의 예외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">법인세법 제55조의2 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>§55의2④: 파산선고 양도소득 → 과세특례 <b>미적용</b>. 단 단서에서 "<b>미등기 토지등에 대한 양도소득에 대하여는 그러하지 아니하다</b>" → 미등기는 파산 시에도 적용! 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q9 -->
+<div class="qc"><div class="qh"><span class="qn">9</span>
+<div class="qt"><span class="jb">§55의2①</span>하나의 자산이 주택과 비사업용 토지 요건을 동시에 충족하는 경우, 두 세율을 합산한 세율을 적용한다.<span class="tb thot">🔴 중복 적용 시 높은 세율</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">법인세법 제55조의2 제1항 후단</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"두 세율을 합산"이 오류입니다. §55의2① 후단: "하나의 자산이 다음 각 호의 규정 중 둘 이상에 해당할 때에는 <b>그 중 가장 높은 세액을 적용</b>한다"라고 규정합니다.</p>
+<p class="trap">⚠ "합산" → "가장 높은 세액"만 적용</p></div></div>
+
+<!-- Q10 -->
+<div class="qc"><div class="qh"><span class="qn">10</span>
+<div class="qt"><span class="jb">§55의2①④</span>「소득세법」에 따른 조합원입주권과 분양권을 양도하는 경우에도 토지등 양도소득에 대한 과세특례가 적용되어 100분의 20의 세율이 추가된다.<span class="tb tup">조합원입주권·분양권 포함</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">법인세법 제55조의2 제1항 제4호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>§55의2①④: 조합원입주권(소득세법 §88⑨) 및 분양권(소득세법 §88⑩) → <b>20% 추가</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- ═══ Part 3: §57 외국납부세액공제 ═══ -->
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제57조 외국납부세액공제</span><span class="scn" id="c3">0/6</span></div>
+<hr class="shr">
+
+<!-- Q11 -->
+<div class="qc"><div class="qh"><span class="qn">11</span>
+<div class="qt"><span class="jb">§57①</span>내국법인의 과세표준에 국외원천소득이 포함되어 외국법인세액을 납부한 경우, 공제한도금액 내에서 외국법인세액을 산출세액에서 반드시 공제하여야 한다.<span class="tb thot">🔴 임의/의무 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">법인세법 제57조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§57①은 "공제한도금액 내에서 외국법인세액을 해당 사업연도의 산출세액에서 <b>공제할 수 있다</b>"라고 규정합니다. <b>임의 규정</b>입니다. 손금산입과 세액공제 중 선택 가능합니다.</p>
+<p class="trap">⚠ "반드시 공제하여야" → "공제할 수 있다(임의)"</p></div></div>
+
+<!-- Q12 -->
+<div class="qc"><div class="qh"><span class="qn">12</span>
+<div class="qt"><span class="jb">§57②</span>외국법인세액이 공제한도금액을 초과하는 경우 그 초과금액은 해당 사업연도의 다음 사업연도 개시일부터 10년 이내에 끝나는 각 사업연도로 이월하여 공제할 수 있다.<span class="tb thot">🔴 10년 이월</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">법인세법 제57조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>외국납부세액 한도 초과분: 다음 사업연도 개시일부터 <b>10년</b> 이내 이월공제. 기부금 이월(10년)과 동일. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q13 -->
+<div class="qc"><div class="qh"><span class="qn">13</span>
+<div class="qt"><span class="jb">§57②단서</span>이월공제기간 내에 공제받지 못한 외국법인세액은 제21조 제1호에 따라 법인세이므로 손금에 산입할 수 없다.<span class="tb thot">🔴 §21①에도 불구하고 손금산입</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">법인세법 제57조 제2항 단서</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§57② 단서: 이월공제기간 내 미공제 외국법인세액은 "<b>제21조제1호에도 불구하고</b> 이월공제기간의 종료일 다음 날이 속하는 사업연도의 소득금액을 계산할 때 <b>손금에 산입할 수 있다</b>". 즉 특례로 손금산입이 가능합니다.</p>
+<p class="trap">⚠ "손금 불가" → §21①에도 불구하고 "손금산입 가능"</p></div></div>
+
+<!-- Q14 -->
+<div class="qc"><div class="qh"><span class="qn">14</span>
+<div class="qt"><span class="jb">§57③</span>조세조약의 상대국에서 국외원천소득에 대하여 법인세를 감면받은 세액 상당액은 그 조세조약으로 정하는 범위에서 세액공제의 대상이 되는 외국법인세액으로 본다(간주외국납부세액).<span class="tb tup">간주외국납부세액</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">법인세법 제57조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>간주외국납부세액: 조세조약에서 상대국이 감면한 세액도 <b>실제 납부한 것처럼 간주</b>하여 세액공제 대상으로 봅니다. 조세조약이 정하는 범위에서 적용됩니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q15 -->
+<div class="qc"><div class="qh"><span class="qn">15</span>
+<div class="qt"><span class="jb">§57⑤</span>간접외국납부세액공제에서 "외국자회사"란 내국법인이 의결권 있는 발행주식총수 또는 출자총액의 100분의 10 이상을 출자하고 있는 외국법인이며, 해외자원개발사업 외국법인의 경우에는 100분의 5 이상이다.<span class="tb thot">🔴 10%/5% 출자비율</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">법인세법 제57조 제5항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>외국자회사 기준: 일반 <b>10% 이상</b>, 해외자원개발사업 <b>5% 이상</b>. 외국자회사 수입배당 익금불산입(§18의4)과 동일한 출자비율입니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q16 -->
+<div class="qc"><div class="qh"><span class="qn">16</span>
+<div class="qt"><span class="jb">§57⑦</span>제18조의4에 따른 외국자회사 수입배당금액 익금불산입의 적용 대상이 되는 수입배당금액에 대해서는 외국납부세액공제(§57①~⑥)를 적용하지 아니한다.<span class="tb thot">🔴 이중혜택 방지</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">법인세법 제57조 제7항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>§18의4 외국자회사 수입배당금액을 <b>익금불산입</b>받으면서 동시에 <b>외국납부세액공제</b>도 받으면 이중혜택이 됩니다. §57⑦은 이를 방지하기 위해 익금불산입 대상 수입배당금액에는 외국납부세액공제 <b>미적용</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- ═══ Part 4: §58 재해손실 ═══ -->
+<div class="sh"><span class="stg">Part 4</span><span class="stl">제58조 재해손실에 대한 세액공제</span><span class="scn" id="c4">0/3</span></div>
+<hr class="shr">
+
+<!-- Q17 -->
+<div class="qc"><div class="qh"><span class="qn">17</span>
+<div class="qt"><span class="jb">§58①</span>내국법인이 천재지변이나 그 밖의 재해로 인하여 자산총액의 100분의 20 이상을 상실하여 납세가 곤란하다고 인정되는 경우에 세액공제를 적용한다. 이 경우 자산의 가액에는 토지의 가액을 포함하지 아니한다.<span class="tb thot">🔴 20% 이상·토지 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">법인세법 제58조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>재해손실세액공제 요건: 자산총액의 <b>20% 이상</b> 상실 + 납세 곤란. <b>토지의 가액은 자산총액에서 제외</b>하여 계산합니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q18 -->
+<div class="qc"><div class="qh"><span class="qn">18</span>
+<div class="qt"><span class="jb">§58②</span>재해손실 세액공제를 받으려는 내국법인은 납세지 관할 지방국세청장에게 신청하여야 한다.<span class="tb thot">🔴 신청 기관 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">법인세법 제58조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"지방국세청장"이 오류입니다. 재해손실 세액공제 신청은 <b>납세지 관할 세무서장</b>에게 하여야 합니다. 조문 제58조 제2항 그대로입니다.</p>
+<p class="trap">⚠ "지방국세청장" → "세무서장"</p></div></div>
+
+<!-- Q19 -->
+<div class="qc"><div class="qh"><span class="qn">19</span>
+<div class="qt"><span class="jb">§58①</span>재해손실 세액공제액은 재해 발생일 현재 부과된 법인세 중 미납된 세액과 해당 사업연도 소득에 대한 법인세에 상실비율을 곱한 금액이다. 단, 공제액의 한도는 상실된 자산의 가액이다.<span class="tb tup">세액공제 계산</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">법인세법 제58조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>공제 대상: ①부과됐으나 미납된 세액 + ②재해 발생 사업연도 소득세. 공제액 = 해당 세액 × 상실비율. <b>한도 = 상실된 자산 가액</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- ═══ Part 5: §59 감면·공제 적용 순위 ═══ -->
+<div class="sh"><span class="stg">Part 5</span><span class="stl">제59조 감면 및 세액공제액의 계산(적용 순위)</span><span class="scn" id="c5">0/3</span></div>
+<hr class="shr">
+
+<!-- Q20 -->
+<div class="qc"><div class="qh"><span class="qn">20</span>
+<div class="qt"><span class="jb">§59①</span>감면 및 세액공제의 적용 순위는 ①세액 감면 → ②이월공제 불인정 세액공제 → ③이월공제 인정 세액공제 → ④§58의3에 따른 세액공제 순이다.<span class="tb thot">🔴 순위 암기</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">법인세법 제59조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<div class="kbox"><strong>감면·공제 적용 순위 (§59①)</strong><br>
+①각 사업연도 소득에 대한 세액 <strong>감면</strong>(면제 포함)<br>
+②<strong>이월공제 불인정</strong> 세액공제<br>
+③<strong>이월공제 인정</strong> 세액공제 (이월된 미공제액 먼저)<br>
+④제58조의3에 따른 세액공제 (이월된 미공제액 먼저)</div></div></div>
+
+<!-- Q21 -->
+<div class="qc"><div class="qh"><span class="qn">21</span>
+<div class="qt"><span class="jb">§59①③</span>이월공제가 인정되는 세액공제를 적용할 때, 해당 사업연도에 발생한 세액공제액을 이월된 미공제액보다 먼저 공제한다.<span class="tb thot">🔴 이월분 먼저 공제 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(21,'O')">O</button><button class="oxb" onclick="so(21,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(21)">정답 확인</button><span class="rb" id="r21"></span></div>
+<div class="ex" id="e21"><div class="eh">해설</div><div class="lr">법인세법 제59조 제1항 제3호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§59①③: "해당 사업연도 중에 발생한 세액공제액과 이월된 미공제액이 함께 있을 때에는 <b>이월된 미공제액을 먼저 공제</b>한다". 이월분 먼저 공제합니다.</p>
+<p class="trap">⚠ "당기 발생분 먼저" → "이월된 미공제액 먼저"</p></div></div>
+
+<!-- Q22 -->
+<div class="qc"><div class="qh"><span class="qn">22</span>
+<div class="qt"><span class="jb">§59①</span>제1호와 제2호의 감면 및 세액공제 합계액이 법인이 납부할 법인세액(토지등 양도소득 법인세액 및 가산세는 제외)을 초과하는 경우 그 초과하는 금액은 이월하여 공제한다.<span class="tb thot">🔴 초과분 이월 vs 없는 것으로 봄</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(22,'O')">O</button><button class="oxb" onclick="so(22,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(22)">정답 확인</button><span class="rb" id="r22"></span></div>
+<div class="ex" id="e22"><div class="eh">해설</div><div class="lr">법인세법 제59조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§59① 본문: 제1호와 제2호의 합계가 납부할 법인세액을 초과하는 경우 <b>"그 초과하는 금액은 없는 것으로 본다"</b>. 이월하는 것이 아닙니다. 이월은 제3호(이월공제 인정 세액공제)에서만 가능합니다.</p>
+<p class="trap">⚠ "이월 공제" → "없는 것으로 본다" (제1호+제2호 초과분은 소멸)</p></div></div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP">
+  <h2>채점 결과</h2><div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">22</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제55조~제59조 (법제처 현행법령, 시행일 2026.01.02)<br>
+  세율·토지양도소득·외국납부세액·재해손실·감면공제 순위 | [2026-06-17] #법인세법 #세율 #외국납부세액공제 #감면공제순위 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'O',3:'O',4:'X',5:'O',6:'X',7:'O',8:'O',9:'X',10:'O',11:'X',12:'O',13:'X',14:'O',15:'O',16:'O',17:'O',18:'X',19:'O',20:'O',21:'X',22:'X'};
+const SECS={1:[1,2,3,4],2:[5,6,7,8,9,10],3:[11,12,13,14,15,16],4:[17,18,19],5:[20,21,22]};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=22;
+function so(n,v){if(done[n])return;sel[n]=v;const card=document.getElementById('e'+n).closest('.qc');card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));card.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const card=document.getElementById('e'+n).closest('.qc');card.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');card.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';Object.entries(SECS).forEach(([k,arr])=>{document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const pct=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=pct+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>

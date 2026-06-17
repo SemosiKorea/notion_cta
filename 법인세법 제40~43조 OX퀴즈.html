@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제40~43조 | O/X 판단 퀴즈 (2026)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}
+.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}
+.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}
+.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}
+.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}
+.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#EEF3FF;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}
+.kbox strong{color:var(--acc)}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}
+.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}
+.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">법인세법 제40~43조<br><span>손익귀속사업연도 · 자산취득가액 · 자산부채평가 · 기업회계기준 적용</span></div>
+  <div class="hsb">법인세법 §40~§43 + 시행령 §68·§72 | 2025년 62회 65번 취득가액 5선지 직접 기출 | 권리확정주의·귀속시기 핵심</div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+<div style="background:#EBF0FF;border:1.5px solid #1B3D6B;border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:#1B3D6B;line-height:1.9">
+<strong style="font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase">📌 손익귀속일 핵심 암기표 (시행령 §68①)</strong><br>
+상품·제품 판매 = <strong>인도일</strong> | 조건부·기한부 판매 = <strong>조건 성취일</strong> | 시용판매 = <strong>구입의사 표시일</strong>(특약 시 기간 만료일)<br>
+부동산 등 상품 외 자산 양도 = <strong>대금청산일</strong>(등기·인도·사용수익 중 빠른 날) | 위탁매매 = <strong>수탁자 매매일</strong> | 증권시장 유가증권(보통거래) = <strong>매매계약 체결일</strong><br>
+장기할부: 인도일 다음날~최종 할부금 <strong>1년 이상</strong>·2회 이상 | <strong>비중소: 의무</strong> | <strong>중소: 임의</strong> | 폐업 시 전액 즉시 익금·손금 산입<br>
+취득가액 <strong>포함</strong>: 건설자금이자·국공채 현가차액·특수관계개인 저가매입 익금산입액 | <strong>제외</strong>: 현재가치할인차금·부당행위 시가초과액<br>
+무상배출권·대기오염 배출허용총량 취득가액 = <strong>0원</strong>
+</div>
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제40조 손익의 귀속사업연도 (법 + 시행령 §68)</span><span class="scn" id="c1">0/8</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span><div class="qt"><span class="jb">§40①</span>내국법인의 각 사업연도 익금과 손금의 귀속사업연도는 현금을 수취하거나 지급한 날이 속하는 사업연도로 한다.<span class="tb thot">🔴 현금주의 vs 권리확정주의</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div><div class="ex" id="e1"><div class="eh">해설</div><div class="lr">법인세법 제40조 제1항</div><div class="al ng-al">정답: X (틀리다)</div><p>법인세법은 <b>권리확정주의(발생주의)</b>를 채택합니다. "그 익금과 손금이 <b>확정된 날</b>"이 속하는 사업연도입니다.</p><p class="trap">⚠ "현금 수취·지급한 날" → "확정된 날"</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span><div class="qt"><span class="jb">시행령§68①①</span>상품·제품 등을 판매한 경우 수익 귀속사업연도는 그 상품등을 인도한 날이 속하는 사업연도이다. 조건부 판매의 경우에는 그 조건이 성취된 날이 속하는 사업연도로 한다.<span class="tb tup">판매 귀속일</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div><div class="ex" id="e2"><div class="eh">해설</div><div class="lr">법인세법 시행령 제68조 제1항 제1호</div><div class="al ok-al">정답: O (맞다)</div><p>상품·제품 판매: <b>인도일</b>. 조건부(반환·동의·기타 조건부·기한부) 판매: <b>조건 성취일 또는 기한 경과일</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span><div class="qt"><span class="jb">시행령§68①②</span>시용판매의 경우 수익의 귀속사업연도는 상품등을 인도한 날이 속하는 사업연도이다.<span class="tb thot">🔴 시용판매 귀속일 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div><div class="ex" id="e3"><div class="eh">해설</div><div class="lr">법인세법 시행령 제68조 제1항 제2호</div><div class="al ng-al">정답: X (틀리다)</div><p>시용판매 귀속일은 <b>"상대방이 구입의 의사를 표시한 날"</b>입니다(특약 시 기간 만료일). 인도일이 아닙니다.</p><p class="trap">⚠ "인도일" → "구입의사 표시일"</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">4</span><div class="qt"><span class="jb">시행령§68①③</span>부동산(상품 외 자산)을 양도하는 경우, 대금을 청산한 날이 원칙이다. 단, 대금 청산 전에 소유권 이전등기를 하거나 인도·사용수익이 이루어진 경우에는 등기일·인도일·사용수익일 중 가장 빠른 날로 한다.<span class="tb thot">🔴 부동산 귀속일</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div><div class="ex" id="e4"><div class="eh">해설</div><div class="lr">법인세법 시행령 제68조 제1항 제3호</div><div class="al ok-al">정답: O (맞다)</div><p>상품 외 자산(부동산 등): 원칙 = <b>대금청산일</b>. 단서 = ①등기·②인도·③사용수익 중 빠른 날. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span><div class="qt"><span class="jb">시행령§68①④⑤</span>자산의 위탁매매는 수탁자가 위탁자산을 매매한 날이 수익 귀속일이고, 증권시장에서 보통거래방식으로 한 유가증권 매매는 결제일이 귀속일이다.<span class="tb thot">🔴 유가증권 귀속일 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div><div class="ex" id="e5"><div class="eh">해설</div><div class="lr">법인세법 시행령 제68조 제1항 제4호·제5호</div><div class="al ng-al">정답: X (틀리다)</div><p>위탁매매(수탁자 매매일)는 정확. 그러나 증권시장 보통거래방식 유가증권 매매 귀속일은 <b>"결제일"이 아닌 "매매계약 체결일"</b>입니다.</p><p class="trap">⚠ "결제일" → "매매계약 체결일"</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">6</span><div class="qt"><span class="jb">시행령§68②④</span>장기할부조건이란 자산 판매 시 2회 이상 분할하여 수취하는 것 중 인도일 다음날부터 최종 할부금 지급기일까지 기간이 1년 이상인 것을 말한다.<span class="tb tup">장기할부 요건</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div><div class="ex" id="e6"><div class="eh">해설</div><div class="lr">법인세법 시행령 제68조 제2항·제4항</div><div class="al ok-al">정답: O (맞다)</div><p>장기할부 요건: ①2회 이상 분할 + ②<b>인도일 다음날부터 최종 할부금 지급기일까지 1년 이상</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span><div class="qt"><span class="jb">시행령§68②</span>비중소기업 법인이 장기할부조건으로 자산을 판매할 때 결산 시 회수할 금액을 수익 계상하면 장기할부기준을 적용할 수 있다. 중소기업은 이를 반드시 적용하여야 한다.<span class="tb thot">🔴 비중소 의무·중소 임의 역전 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div><div class="ex" id="e7"><div class="eh">해설</div><div class="lr">법인세법 시행령 제68조 제2항</div><div class="al ng-al">정답: X (틀리다)</div><div class="kbox"><strong>장기할부 의무·임의</strong><br>비중소기업: 결산 시 회수금액 계상 → <strong>의무</strong> 적용(결산조정)<br>중소기업: <strong>임의</strong> 적용("할 수 있다")</div><p>"중소기업이 반드시"가 정반대 오류입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">8</span><div class="qt"><span class="jb">시행령§68③</span>법인이 장기할부기간 중에 폐업한 경우에는 폐업일이 속하는 사업연도에 익금에 산입하지 아니한 금액과 이에 대응하는 비용을 폐업일이 속하는 사업연도의 익금과 손금에 각각 산입한다.<span class="tb tup">폐업 시 즉시 귀속</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div><div class="ex" id="e8"><div class="eh">해설</div><div class="lr">법인세법 시행령 제68조 제3항</div><div class="al ok-al">정답: O (맞다)</div><p>폐업 시 미산입 금액 전액을 폐업일 속하는 사업연도에 즉시 익금·손금 산입. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="sh" style="margin-top:2rem"><span class="stg">Part 2</span><span class="stl">제41조 자산의 취득가액 (법 + 시행령 §72)</span><span class="scn" id="c2">0/8</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">9</span><div class="qt"><span class="jb">§41①① / 시행령§72②①</span>타인으로부터 매입한 자산의 취득가액은 매입가액에 취득세(농어촌특별세·지방교육세 포함), 등록면허세, 그 밖의 부대비용을 가산한 금액이다.<span class="tb tup">취득세 포함</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div><div class="ex" id="e9"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 제2항 제1호</div><div class="al ok-al">정답: O (맞다)</div><p>취득가액 = 매입가액 + <b>취득세(농어촌특별세·지방교육세 포함) + 등록면허세 + 기타 부대비용</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">10</span><div class="qt"><span class="jb">§41①② / 시행령§72②②</span>자기가 제조·생산·건설 등으로 취득한 자산의 취득가액은 제작원가에 부대비용을 더한 금액이며, 제작원가에는 원재료비·노무비·운임·보험료·공과금·설치비 등이 포함된다.<span class="tb tup">자가제작 취득가액</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div><div class="ex" id="e10"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 제2항 제2호</div><div class="al ok-al">정답: O (맞다)</div><p>자가제작 취득가액 = <b>제작원가</b>(원재료비·노무비·운임·하역비·보험료·수수료·공과금·설치비 등) + 부대비용. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">11</span><div class="qt"><span class="jb">시행령§72②③</span>적격합병으로 합병법인이 취득한 자산의 취득가액은 피합병법인의 장부가액이며, 비적격합병의 경우에는 시가이다.<span class="tb thot">🔴 2025 기출 65번 ①선지</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div><div class="ex" id="e11"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 제2항 제3호</div><div class="al ok-al">정답: O (맞다)</div><p>2025년 기출 65번 ①선지 정답 내용. 적격합병 = <b>장부가액</b>(과세이연), 비적격합병 = <b>시가</b>.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">12</span><div class="qt"><span class="jb">시행령§72②⑥</span>정부로부터 무상으로 할당받은 온실가스 배출권의 취득가액은 취득 당시의 시가로 한다.<span class="tb thot">🔴 2025 기출 65번 ④선지 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div><div class="ex" id="e12"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 제2항 제6호</div><div class="al ng-al">정답: X (틀리다)</div><p>정부로부터 무상 할당 배출권의 취득가액은 <b>0원</b>입니다. 2025년 기출 65번 ④선지 정답 내용.</p><p class="trap">⚠ "시가" → "영(0)원"</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">13</span><div class="qt"><span class="jb">시행령§72③③</span>유형자산의 취득과 함께 국·공채를 매입하는 경우, 기업회계기준에 따라 그 국·공채의 매입가액과 현재가치의 차액을 해당 유형자산의 취득가액으로 계상한 금액은 자산의 취득가액에 포함한다.<span class="tb thot">🔴 2025 기출 65번 ②선지</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div><div class="ex" id="e13"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 제3항 제3호</div><div class="al ok-al">정답: O (맞다)</div><p>2025년 기출 65번 ②선지 정답 내용. 국공채 강제 매입 시 매입가액 - 현재가치 차액 → 유형자산 취득가액에 <b>포함</b>.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span><div class="qt"><span class="jb">시행령§72④③</span>부당행위계산 부인(§88①①·§88①⑧나목)에 따른 시가초과액은 자산의 취득가액에 포함하지 아니한다.<span class="tb thot">시가초과액 제외</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div><div class="ex" id="e14"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 제4항 제3호</div><div class="al ok-al">정답: O (맞다)</div><p>특수관계인 고가 매입 시 부당행위계산 부인 <b>시가초과액은 취득가액에서 제외</b>. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">15</span><div class="qt"><span class="jb">시행령§72②④가</span>현물출자로 피출자법인을 새로 설립하면서 주식등만 대가로 취득하는 경우, 그 주식등의 취득가액은 현물출자한 순자산의 시가로 한다.<span class="tb thot">🔴 2025 기출 65번 ③선지</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div><div class="ex" id="e15"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 제2항 제4호 가목</div><div class="al ok-al">정답: O (맞다)</div><p>2025년 기출 65번 ③선지 정답 내용. 현물출자 신설(주식만 대가) → 주식 취득가액 = <b>현물출자한 순자산의 시가</b>.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span><div class="qt"><span class="jb">시행령§72 관련</span>동종자산과 교환으로 취득하는 유형자산의 취득가액은 교환으로 취득한 자산의 시가로 한다.<span class="tb thot">🔴 2025 기출 65번 ⑤선지 정답</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div><div class="ex" id="e16"><div class="eh">해설</div><div class="lr">법인세법 시행령 제72조 관련</div><div class="al ng-al">정답: X (틀리다)</div><p>2025년 기출 65번 ⑤선지 정답 내용. 동종자산 교환 취득가액 = <b>교환으로 제공한 자산의 장부가액</b>. "취득한 자산의 시가"가 오류.</p><p class="trap">⚠ "취득한 자산의 시가" → "제공한 자산의 장부가액"</p></div></div>
+
+<div class="sh" style="margin-top:2rem"><span class="stg">Part 3</span><span class="stl">제42조 자산·부채의 평가</span><span class="scn" id="c3">0/4</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">17</span><div class="qt"><span class="jb">§42①</span>내국법인이 보유하는 자산과 부채의 장부가액을 증액 또는 감액(감가상각 제외)한 경우에는 평가일이 속하는 사업연도와 그 후의 각 사업연도의 소득금액 계산 시 그 자산과 부채의 장부가액은 평가 전의 가액으로 한다.<span class="tb tup">평가 원칙</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div><div class="ex" id="e17"><div class="eh">해설</div><div class="lr">법인세법 제42조 제1항</div><div class="al ok-al">정답: O (맞다)</div><p>자산·부채 평가 원칙: <b>평가 전 가액 유지</b>. 평가이익 익금불산입(§18①)·평가손실 손금불산입(§22)의 근거. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">18</span><div class="qt"><span class="jb">§42①①</span>보험업법에 따른 유형자산 및 무형자산의 평가로 장부가액이 감소한 경우에는 그 감소액을 손금에 산입할 수 있다.<span class="tb thot">🔴 증액만 예외 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div><div class="ex" id="e18"><div class="eh">해설</div><div class="lr">법인세법 제42조 제1항 제1호</div><div class="al ng-al">정답: X (틀리다)</div><p>보험업법 등에 따른 유형자산·무형자산 평가 예외는 <b>"장부가액을 증액한 경우만 해당"</b>합니다. 감액은 예외가 아닙니다.</p><p class="trap">⚠ "감액도 예외" → 보험업법 예외는 "증액한 경우만"</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span><div class="qt"><span class="jb">§42③</span>재고자산이 파손·부패 등의 사유로 정상가격으로 판매할 수 없는 경우 또는 유형자산이 천재지변·화재 등으로 파손·멸실된 경우에는 장부가액을 감액할 수 있다. 또한 발행법인이 부도 발생한 경우 해당 주식도 감액 가능하다.<span class="tb tup">감액 허용 사유</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div><div class="ex" id="e19"><div class="eh">해설</div><div class="lr">법인세법 제42조 제3항</div><div class="al ok-al">정답: O (맞다)</div><p>감액 허용 3가지: ①파손·부패 재고자산, ②천재지변·화재 유형자산, ③부도·회생계획인가·부실징후·파산 주식. 조문 그대로 정확합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span><div class="qt"><span class="jb">§42④</span>법 제42조 제2항 및 제3항에 따라 자산과 부채를 평가한 내국법인은 그 자산과 부채의 평가에 관한 명세서를 납세지 관할 지방국세청장에게 제출하여야 한다.<span class="tb thot">🔴 제출 기관 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div><div class="ex" id="e20"><div class="eh">해설</div><div class="lr">법인세법 제42조 제4항</div><div class="al ng-al">정답: X (틀리다)</div><p>"지방국세청장"이 오류입니다. 평가 명세서는 <b>납세지 관할 세무서장</b>에게 제출합니다.</p><p class="trap">⚠ "지방국세청장" → "세무서장"</p></div></div>
+
+<div class="sh" style="margin-top:2rem"><span class="stg">Part 4</span><span class="stl">제43조 기업회계기준과 관행의 적용</span><span class="scn" id="c4">0/2</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">21</span><div class="qt"><span class="jb">§43</span>내국법인이 기업회계기준을 적용하거나 관행을 계속 적용해 온 경우, 이 법에서 달리 규정하고 있는 경우를 제외하고 기업회계기준 또는 관행에 따른다. 단, 조세특례제한법에서 달리 규정하는 경우에는 기업회계기준이 우선 적용된다.<span class="tb thot">🔴 조특법도 우선 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(21,'O')">O</button><button class="oxb" onclick="so(21,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(21)">정답 확인</button><span class="rb" id="r21"></span></div><div class="ex" id="e21"><div class="eh">해설</div><div class="lr">법인세법 제43조</div><div class="al ng-al">정답: X (틀리다)</div><p>§43은 "<b>이 법 및 조세특례제한법</b>에서 달리 규정하고 있는 경우를 제외하고"라고 명시합니다. <b>조세특례제한법도 기업회계기준보다 우선</b>합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">22</span><div class="qt"><span class="jb">§43</span>내국법인이 법인세법·조세특례제한법에 규정이 없는 사항에 대하여 일반적으로 공정·타당하다고 인정되는 기업회계기준을 계속 적용하지 않더라도 매 사업연도마다 다른 기업회계기준을 선택 적용할 수 있다.<span class="tb thot">🔴 계속 적용 요건 함정</span></div></div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(22,'O')">O</button><button class="oxb" onclick="so(22,'X')">X</button></div></div><div class="qa"><button class="bck" onclick="co(22)">정답 확인</button><span class="rb" id="r22"></span></div><div class="ex" id="e22"><div class="eh">해설</div><div class="lr">법인세법 제43조</div><div class="al ng-al">정답: X (틀리다)</div><p>§43은 "기업회계기준을 <b>적용하거나 관행(慣行)을 계속 적용하여 온 경우</b>"라고 규정합니다. 관행은 반드시 <b>계속 적용</b>되어야 합니다. 매 사업연도 임의 변경은 인정되지 않습니다.</p></div></div>
+
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">22</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제40~43조 / 시행령 제68·72조 (현행법령, 시행령 2026.02.27 기준)<br>
+  2025년 62회 65번 취득가액 5개 선지 전체 연계 | [2026-06-16] #법인세법 #손익귀속사업연도 #자산취득가액 #자산평가 #기업회계기준 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'X',2:'O',3:'X',4:'O',5:'X',6:'O',7:'X',8:'O',9:'O',10:'O',11:'O',12:'X',13:'O',14:'O',15:'O',16:'X',17:'O',18:'X',19:'O',20:'X',21:'X',22:'X'};
+const SECS={1:[1,2,3,4,5,6,7,8],2:[9,10,11,12,13,14,15,16],3:[17,18,19,20],4:[21,22]};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=22;
+function so(n,v){if(done[n])return;sel[n]=v;const card=document.getElementById('e'+n).closest('.qc');card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));card.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const card=document.getElementById('e'+n).closest('.qc');card.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');card.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';Object.entries(SECS).forEach(([k,arr])=>{document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const pct=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=pct+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>

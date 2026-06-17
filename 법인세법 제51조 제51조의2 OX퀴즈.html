@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법인세법 제51조·제51조의2 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}
+.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}
+.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}
+.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}
+.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}
+.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#EEF3FF;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}
+.kbox strong{color:var(--acc)}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}
+.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}
+.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hdi">
+    <div>
+      <div class="hbg">세무사 1차 · 세법학개론</div>
+      <div class="htl">법인세법 제51조 · 제51조의2<br><span>비과세소득 · 유동화전문회사 등에 대한 소득공제</span></div>
+      <div class="hsb">법인세법 §51·§51의2 + 시행령 §86의3 | 2025년 62회 69번 직접 기출 | 90% 배당·5년 이월·이월 선입선출·적용 제외 집중</div>
+    </div>
+    <div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div>
+  </div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<div style="background:#EBF0FF;border:1.5px solid #1B3D6B;border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:#1B3D6B;line-height:1.9">
+  <strong style="font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase">📌 §51의2 유동화전문회사 소득공제 핵심 구조</strong><br>
+  <strong>요건</strong>: 적용 법인(유동화전문회사·투자회사·기업구조조정투자회사·부동산투자회사·선박투자회사 등 9종) + 배당가능이익의 <strong>90% 이상</strong> 배당<br>
+  <strong>공제 기준</strong>: 배당을 결의한 잉여금 처분의 대상이 되는 <strong>사업연도 소득금액</strong>에서 공제 (다음 연도 아님!)<br>
+  <strong>이월</strong>: 소득금액 - 이월결손금 초과 시 → 다음 사업연도 개시일부터 <strong>5년</strong> 이내 이월 가능 | 이월 연도에도 <strong>90% 이상</strong> 배당 조건<br>
+  <strong>이월 공제 순서</strong>: ①이월분 먼저 → ②당기 배당금액 | 이월분이 둘 이상이면 <strong>먼저 발생한 것부터(선입선출)</strong><br>
+  <strong>적용 제외</strong>: 수령인에게 비과세 적용(단, 동업기업·소기업 일부는 제외) | 사모방식 + 개인 2인 이하 95% 보유 법인<br>
+  <strong>배당가능이익(시행령§86의3)</strong>: 법인세비용 차감 후 당기순이익 + 이월이익잉여금 - 이월결손금 - 이익준비금 | <strong>기관전용 사모집합투자기구 제외</strong>
+</div>
+
+<!-- ═══ Part 1: §51 비과세소득 ═══ -->
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제51조 비과세소득</span><span class="scn" id="c1">0/2</span></div>
+<hr class="shr">
+
+<!-- Q1 -->
+<div class="qc"><div class="qh"><span class="qn">1</span>
+<div class="qt"><span class="jb">§51</span>「공익신탁법」에 따른 공익신탁의 신탁재산에서 생기는 소득에 대하여는 각 사업연도의 소득에 대한 법인세를 과세하지 아니한다.<span class="tb tup">법인세법 유일한 비과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">법인세법 제51조</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>법인세법상 비과세 소득은 공익신탁의 신탁재산에서 생기는 소득 <b>하나뿐</b>입니다. 다른 비과세 소득은 조세특례제한법 등 별도 법률에서 규정합니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q2 -->
+<div class="qc"><div class="qh"><span class="qn">2</span>
+<div class="qt"><span class="jb">§51</span>「공익신탁법」에 따른 공익신탁뿐만 아니라, 신탁업법에 따른 일반 신탁의 신탁재산에서 생기는 소득도 법인세가 비과세된다.<span class="tb thot">🔴 공익신탁만 해당</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">법인세법 제51조</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§51은 <b>「공익신탁법」에 따른 공익신탁</b>의 신탁재산 소득만 비과세합니다. 일반 신탁 신탁재산 소득은 비과세 대상이 아닙니다.</p>
+<p class="trap">⚠ "일반 신탁도 포함" → "공익신탁만"</p></div></div>
+
+<!-- ═══ Part 2: §51의2 적용 법인 ═══ -->
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제51조의2 제1항 — 적용 법인 및 90% 배당 요건</span><span class="scn" id="c2">0/5</span></div>
+<hr class="shr">
+
+<!-- Q3 -->
+<div class="qc"><div class="qh"><span class="qn">3</span>
+<div class="qt"><span class="jb">§51의2①</span>유동화전문회사 등에 대한 소득공제는 배당가능이익의 100분의 90 이상을 배당한 경우에 적용된다.<span class="tb thot">🔴 90% 핵심 수치</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>배당가능이익의 <b>90% 이상</b> 배당 시 그 배당금액을 소득금액에서 공제합니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q4 -->
+<div class="qc"><div class="qh"><span class="qn">4</span>
+<div class="qt"><span class="jb">§51의2①①②</span>「자산유동화에 관한 법률」에 따른 유동화전문회사와 「자본시장과 금융투자업에 관한 법률」에 따른 모든 투자회사 등이 소득공제 대상이다.<span class="tb thot">🔴 기관전용 사모집합투자기구 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제1항 제2호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"모든 투자회사"가 오류입니다. §51의2①② 괄호에서 <b>"「자본시장과 금융투자업에 관한 법률」 제9조 제19항 제1호의 기관전용 사모집합투자기구는 제외"</b>합니다. 2025년 기출 69번에서 직접 출제된 내용입니다.</p>
+<p class="trap">⚠ "모든 투자회사" → 기관전용 사모집합투자기구 제외</p></div></div>
+
+<!-- Q5 -->
+<div class="qc"><div class="qh"><span class="qn">5</span>
+<div class="qt"><span class="jb">§51의2①</span>소득공제 배당금액은 배당을 지급한 사업연도의 소득금액에서 공제한다.<span class="tb thot">🔴 배당 결의 연도 공제 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"배당을 지급한 사업연도"가 오류입니다. 배당금액은 <b>"해당 배당을 결의한 잉여금 처분의 대상이 되는 사업연도"</b>의 소득금액에서 공제합니다. 배당 지급일이 아닌 <b>배당 결의의 대상인 사업연도</b>가 기준입니다.</p>
+<p class="trap">⚠ "지급한 사업연도" → "배당을 결의한 잉여금 처분 대상 사업연도"</p></div></div>
+
+<!-- Q6 -->
+<div class="qc"><div class="qh"><span class="qn">6</span>
+<div class="qt"><span class="jb">§51의2③</span>소득공제를 적용받으려는 법인은 별도의 신청 없이도 요건만 충족하면 자동으로 공제된다.<span class="tb thot">🔴 신청 의무 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§51의2③은 "제1항을 적용받으려는 자는 대통령령으로 정하는 바에 따라 <b>소득공제신청을 하여야 한다</b>"라고 규정합니다. 신청 의무가 있습니다. "자동 공제"가 아닙니다.</p>
+<p class="trap">⚠ "자동 공제" → "소득공제신청을 하여야 한다"(의무)</p></div></div>
+
+<!-- Q7 -->
+<div class="qc"><div class="qh"><span class="qn">7</span>
+<div class="qt"><span class="jb">§51의2①</span>「부동산투자회사법」에 따른 기업구조조정 부동산투자회사 및 위탁관리 부동산투자회사는 소득공제 대상 법인에 해당한다.<span class="tb tup">부동산투자회사</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제1항 제4호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>§51의2①④는 기업구조조정 부동산투자회사와 위탁관리 부동산투자회사를 명시합니다. 자기관리 부동산투자회사는 목록에 없음에 주의합니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- ═══ Part 3: §51의2 적용 제외 ═══ -->
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제51조의2 제2항 — 소득공제 적용 제외</span><span class="scn" id="c3">0/4</span></div>
+<hr class="shr">
+
+<!-- Q8 -->
+<div class="qc"><div class="qh"><span class="qn">8</span>
+<div class="qt"><span class="jb">§51의2②①</span>배당을 받은 주주등에 대하여 법인세 또는 소득세가 비과세되는 경우에는 소득공제를 적용하지 아니한다. 이 경우 예외 없이 적용이 배제된다.<span class="tb thot">🔴 동업기업 예외 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제2항 제1호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>"예외 없이"가 오류입니다. 비과세 수령인이라도 <b>가목(동업기업과세특례 적용 동업기업으로서 동업자들에게 전부 과세되는 경우)</b>과 <b>나목(조특법 §13④⑤·§14② 비과세)</b>에 해당하면 소득공제를 적용합니다.</p>
+<p class="trap">⚠ "예외 없이 배제" → 동업기업 등 예외 있음</p></div></div>
+
+<!-- Q9 -->
+<div class="qc"><div class="qh"><span class="qn">9</span>
+<div class="qt"><span class="jb">§51의2②②·시행령§86의3⑩</span>사모방식으로 설립되었고, 개인 2인 이하(또는 개인 1인 및 그 친족)가 발행주식총수 또는 출자총액의 100분의 95 이상을 보유하는 법인에 대해서는 소득공제를 적용하지 않는다.<span class="tb thot">🔴 소수특정인 지배법인 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제2항 제2호 / 시행령 제86조의3 제10항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>사모방식 + 개인 2인 이하(또는 1인+친족)이 <b>95% 이상</b> 소유 → 소득공제 미적용. 소수 특정인이 지배하는 실질적 사유화 법인에 대한 혜택 방지. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q10 -->
+<div class="qc"><div class="qh"><span class="qn">10</span>
+<div class="qt"><span class="jb">§51의2②②·시행령§86의3⑩</span>소득공제 적용 제외 요건(소수특정인 지배)에서 개인등에게 배당 및 잔여재산의 분배에 관한 청구권이 없는 경우에는 제외 요건을 충족하더라도 소득공제 배제가 적용되지 않는다.<span class="tb thot">🔴 청구권 없는 경우 예외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">법인세법 시행령 제86조의3 제10항 제2호 단서</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>시행령 §86의3⑩②: 개인등에게 <b>"배당 및 잔여재산의 분배에 관한 청구권이 없는 경우는 제외"</b>합니다. 실질적 수익권이 없으면 소득공제 배제 요건에서 제외합니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q11 -->
+<div class="qc"><div class="qh"><span class="qn">11</span>
+<div class="qt"><span class="jb">§51의2②①나</span>「조세특례제한법」 제13조 제4항·제5항 및 제14조 제2항에 따라 배당에 대한 소득세 또는 법인세가 비과세되는 경우에는 소득공제를 적용하지 아니한다.<span class="tb thot">🔴 나목 예외 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제2항 제1호 나목</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§51의2②① 나목은 <b>"소득공제를 적용하지 아니한다"의 예외</b>에 해당합니다. 즉 조특법 §13④⑤·§14②에 따른 비과세 경우에는 <b>소득공제를 적용합니다</b>. 나목은 "제외(적용 배제)" 조문의 예외, 즉 "이 경우는 소득공제 적용 O"입니다.</p>
+<p class="trap">⚠ 나목 = 적용 배제의 예외 → "소득공제 적용"함</p></div></div>
+
+<!-- ═══ Part 4: §51의2 이월공제 ═══ -->
+<div class="sh"><span class="stg">Part 4</span><span class="stl">제51조의2 제4~6항 — 초과 배당금액의 이월공제</span><span class="scn" id="c4">0/5</span></div>
+<hr class="shr">
+
+<!-- Q12 -->
+<div class="qc"><div class="qh"><span class="qn">12</span>
+<div class="qt"><span class="jb">§51의2④</span>배당금액이 해당 사업연도의 소득금액에서 이월결손금을 뺀 금액을 최초로 초과하는 경우에는 그 초과하는 금액을 해당 사업연도의 다음 사업연도 개시일부터 5년 이내에 끝나는 각 사업연도로 이월하여 공제할 수 있다.<span class="tb thot">🔴 2025 기출 69번 연계</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>이월 요건: 배당금액 > 소득금액 - 이월결손금 → 초과분을 <b>다음 사업연도 개시일부터 5년 이내</b> 이월 가능. 2025년 기출 69번 ③선지에서 직접 출제되었습니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q13 -->
+<div class="qc"><div class="qh"><span class="qn">13</span>
+<div class="qt"><span class="jb">§51의2④단서</span>이월된 금액은 이월된 사업연도에 배당가능이익의 100분의 90 이상을 배당하지 아니하더라도 공제할 수 있다.<span class="tb thot">🔴 이월 연도 배당 조건</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제4항 단서</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>§51의2④ 단서: <b>"내국법인이 이월된 사업연도에 배당가능이익의 100분의 90 이상을 배당하지 아니하는 경우에는 그 이월된 금액을 공제하지 아니한다"</b>. 이월 연도에도 <b>90% 이상 배당 조건</b>을 유지해야 합니다.</p>
+<p class="trap">⚠ "배당 안 해도 공제" → 이월 연도에도 90% 이상 배당해야 공제</p></div></div>
+
+<!-- Q14 -->
+<div class="qc"><div class="qh"><span class="qn">14</span>
+<div class="qt"><span class="jb">§51의2⑥①②</span>이월공제배당금액과 당기 배당금액이 모두 있는 경우, 이월공제배당금액을 당기 배당금액보다 먼저 공제하고, 이월공제배당금액이 둘 이상인 경우에는 먼저 발생한 것부터 공제한다.<span class="tb thot">🔴 2025 기출 69번 ③선지</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제6항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<div class="kbox"><strong>이월공제 순서 (§51의2⑥)</strong><br>
+①이월공제배당금액 먼저 → ②당기 배당금액<br>
+이월분이 복수이면 → <strong>먼저 발생한 것부터(선입선출)</strong></div>
+<p>2025년 기출 69번 ①선지가 이 내용을 정확하게 출제했습니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q15 -->
+<div class="qc"><div class="qh"><span class="qn">15</span>
+<div class="qt"><span class="jb">§51의2⑤</span>최초 이월 이후 사업연도에서 배당금액이 다시 소득한도를 초과하는 경우, 그 초과금액을 다시 5년 이내 이월할 수 있다. 이 경우에도 이월 연도에 90% 이상 배당해야 공제 가능하다.<span class="tb tup">2차 이월 가능</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제5항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>§51의2⑤는 최초 이월 이후 사업연도에서도 배당금액이 (소득금액 - 이월결손금 - 이월된 금액)을 초과하는 경우 <b>다시 5년 이내 이월</b>을 허용합니다. 이월 연도 90% 배당 조건(§51의2⑤ 단서)도 동일하게 적용됩니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q16 -->
+<div class="qc"><div class="qh"><span class="qn">16</span>
+<div class="qt"><span class="jb">§51의2④</span>배당금액 이월 시 초과 판단 기준은 소득금액과 배당금액만의 비교이며, 이월결손금은 고려하지 않는다.<span class="tb thot">🔴 이월결손금 공제 후 비교</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제4항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>초과 판단 기준: 배당금액이 <b>"해당 사업연도의 소득금액에서 이월결손금을 뺀 금액"</b>을 초과하는지 여부입니다. <b>이월결손금을 차감한 후의 소득금액</b>과 비교합니다.</p>
+<p class="trap">⚠ "이월결손금 무관" → "소득금액에서 이월결손금을 뺀 금액"과 비교</p></div></div>
+
+<!-- ═══ Part 5: 시행령 §86의3 배당가능이익 ═══ -->
+<div class="sh"><span class="stg">Part 5</span><span class="stl">시행령 제86조의3 — 배당가능이익 및 절차</span><span class="scn" id="c5">0/4</span></div>
+<hr class="shr">
+
+<!-- Q17 -->
+<div class="qc"><div class="qh"><span class="qn">17</span>
+<div class="qt"><span class="jb">시행령§86의3①</span>배당가능이익은 기업회계기준에 따라 작성한 재무제표상 법인세비용 차감 후 당기순이익에 이월이익잉여금을 가산하거나 이월결손금을 공제하고, 「상법」 제458조에 따라 적립한 이익준비금을 차감한 금액이다.<span class="tb thot">🔴 배당가능이익 공식</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">법인세법 시행령 제86조의3 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<div class="kbox"><strong>배당가능이익 계산 (시행령 §86의3①)</strong><br>
+= 법인세비용 차감 후 당기순이익<br>
+± 이월이익잉여금(가산) 또는 이월결손금(공제)<br>
+− 이익준비금(상법 §458에 따라 적립한 것)</div></div></div>
+
+<!-- Q18 -->
+<div class="qc"><div class="qh"><span class="qn">18</span>
+<div class="qt"><span class="jb">시행령§86의3①</span>자산의 평가손익은 배당가능이익 계산에 포함하는 것이 원칙이지만, 시가법으로 평가한 투자회사등의 집합투자재산 평가손익은 배당가능이익에서 제외된다.<span class="tb thot">🔴 자산 평가손익 처리</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</what></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">법인세법 시행령 제86조의3 제1항 제2호 가목 단서</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p>원칙적으로 시행령 §86의3①② 자산의 평가손익은 배당가능이익에서 <b>제외</b>됩니다. 그러나 단서에서 <b>"제75조 제3항에 따라 시가법으로 평가한 투자회사등의 집합투자재산 평가손익은 배당가능이익에 포함"</b>합니다. 즉 시가법 평가 집합투자재산 평가손익은 <b>포함(제외의 예외)</b>입니다.</p>
+<p class="trap">⚠ "시가법 집합투자재산 평가손익 = 제외" → 단서로 "포함"</p></div></div>
+
+<!-- Q19 -->
+<div class="qc"><div class="qh"><span class="qn">19</span>
+<div class="qt"><span class="jb">시행령§86의3⑨</span>소득공제신청서는 과세표준신고와 함께 납세지 관할 세무서장에게 제출하여야 한다.<span class="tb tup">신청서 제출 기한·기관</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">법인세법 시행령 제86조의3 제9항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득공제신청서는 <b>법 §60에 따른 과세표준신고와 함께</b> <b>납세지 관할 세무서장</b>에게 제출합니다. 조문 그대로 정확합니다.</p></div></div>
+
+<!-- Q20 -->
+<div class="qc"><div class="qh"><span class="qn">20</span>
+<div class="qt"><span class="jb">§51의2④·2025 기출</span>유동화전문회사가 배당가능이익의 100분의 90 이상을 배당하더라도, 그 배당소득의 수령자에게 법인세나 소득세가 비과세되는 경우에는 소득공제 규정을 적용하지 아니한다. 다만, 동업기업과세특례에 따라 동업자들에게 전부 과세되는 경우에는 소득공제를 적용할 수 있다.<span class="tb thot">🔴 2025 기출 69번 ②·④선지 통합</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">법인세법 제51조의2 제2항 제1호 본문·가목</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>비과세 수령인 → 소득공제 불적용(원칙). 단, 동업기업과세특례 적용 동업기업으로서 <b>동업자들에게 전부 과세되는 경우</b>에는 소득공제 적용(§51의2②①가목 예외). 2025년 기출 69번 ②·④선지를 통합한 내용으로 정확합니다.</p></div></div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 법인세법 제51조·제51조의2 / 시행령 제86조의3 (법제처 현행법령, 시행일 2026.01.02·2026.02.27)<br>
+  2025년 62회 69번 직접 기출 | [2026-06-17] #법인세법 #유동화전문회사 #소득공제 #배당가능이익 #이월공제 #세무사1차
+</p>
+</div>
+
+<script>
+const ANS={1:'O',2:'X',3:'O',4:'X',5:'X',6:'X',7:'O',8:'X',9:'O',10:'O',11:'X',12:'O',13:'X',14:'O',15:'O',16:'X',17:'O',18:'X',19:'O',20:'O'};
+const SECS={1:[1,2],2:[3,4,5,6,7],3:[8,9,10,11],4:[12,13,14,15,16],5:[17,18,19,20]};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const card=document.getElementById('e'+n).closest('.qc');card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));card.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const card=document.getElementById('e'+n).closest('.qc');card.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');card.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';Object.entries(SECS).forEach(([k,arr])=>{document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const pct=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=pct+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>
