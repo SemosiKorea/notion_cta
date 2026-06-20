@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 제20조의3 | O/X 판단 퀴즈 — 연금소득</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F0F4EC;--surf:#FFF;--surf2:#E4EDE0;--bdr:#B8CEB0;
+  --acc:#2E5C1A;--acc2:#C0392B;--acc3:#3A7A22;--danger:#7F1910;
+  --txt:#0A1E06;--txt2:#1A3012;--txt3:#4A6A40;
+  --ok:#1A6B3A;--ng:#7F1910;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(46,92,26,.38)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#C8F0B0}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#C8F0B0;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#D0EAC0;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#D0EAC0;color:var(--acc);border:1px solid #9AC87A}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#D0EAC0;color:#2E5C1A}.twrn{background:#FEF9E7;color:#796000}.tsrl{background:#EAE4F5;color:#4A235A}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#D0EAC0}
+.oxb.so{border-color:var(--acc3);background:#D0EAC0;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#D5F5E3;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#D5F5E3;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#F0F8EC;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#D0EAC0;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .lrsrl{font-family:var(--mono);font-size:.69rem;color:#4A235A;background:#EAE4F5;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem;margin-left:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#D0EAC0;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.kbox strong{color:var(--acc)}
+.srlbox{background:#EAE4F5;border:1.5px solid #4A235A;border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.srlbox strong{color:#4A235A}
+.okbox{background:#D5F5E3;border:1.5px solid var(--ok);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.okbox strong{color:var(--ok)}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s}
+.brs:hover{background:var(--acc);color:#fff}
+.intro{background:#D0EAC0;border:1.5px solid var(--acc);border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:var(--acc);line-height:2}
+.intro strong{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hdi"><div>
+    <div class="hbg">세무사 1차 · 소득세법 연금소득</div>
+    <div class="htl">소득세법 제20조의3<br><span>연금소득 3가지 · 공적연금소득 과세기준 · 연금소득금액(총연금액) · 연금계좌</span></div>
+    <div class="hsb">§20의3①~④ 공적연금·연금계좌·유사연금 + §20의3② 2002.1.1 과세기준 + §20의3③ 총연금액·연금소득공제 | 시행령 §40 과세기준금액 계산·과세제외기여금·지연지급이자</div>
+  </div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<div class="intro">
+  <strong>📌 §20조의3 핵심 정리</strong><br>
+  <strong>§20의3① 연금소득 3가지</strong>: ①1호 공적연금 관련법에 따른 각종 연금(공적연금소득) ②2호 <strong>연금계좌</strong>에서 연금수령하는 소득(가.원천징수 안 된 퇴직소득 나.세액공제 받은 납입액 다.운용실적 증가분 라.소득이연 소득) ③3호 2호 유사 연금형태 소득<br>
+  <strong>연금계좌 = 연금저축계좌 + 퇴직연금계좌</strong> | <strong>연금수령 ≠ 연금외수령</strong><br>
+  <strong>§20의3② 공적연금소득 과세기준</strong>: <strong>2002년 1월 1일 이후</strong> 납입 기여금·사용자 부담금 기초 or 2002.1.1 이후 근로 제공 기초<br>
+  <strong>§20의3③ 연금소득금액</strong> = <strong>총연금액</strong>(비과세·제외 소득 제외 합계) − 연금소득공제(§47의2)<br>
+  <strong>시행령 §40① 과세기준금액</strong>: 과세기준일(2002.1.1) 기준 비례 계산<br>
+  &nbsp;&nbsp;국민연금·연계노령연금: 연금수령액 × (과세기준일 이후 <strong>환산소득 누계액</strong> / 총 납입기간 환산소득 누계액)<br>
+  &nbsp;&nbsp;그 밖의 공적연금: 연금수령액 × (과세기준일 이후 <strong>기여금 납입월수</strong> / 총 기여금 납입월수)<br>
+  <strong>시행령 §40② 일시금 반납 과세기준일 특례</strong>: 재임용일 또는 재가입일을 과세기준일로 봄<br>
+  <strong>시행령 §40③ 과세제외기여금</strong>: 연금보험료공제 없이 납입한 기여금 → 과세기준금액에서 차감<br>
+  <strong>시행령 §40④ 지연지급이자</strong>: 공적연금소득 지연 지급 시 이자 → <strong>공적연금소득</strong>으로 봄
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 1: §20의3① 연금소득 3가지 열거 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제20조의3 제1항 — 연금소득 3가지 열거</span><span class="scn" id="c1">0/8</span></div>
+<hr class="shr">
+
+<!-- Q1 -->
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§20의3①1호</span>공적연금 관련법에 따라 받는 각종 연금을 "공적연금소득"이라 한다.<span class="tb tup">공적연금소득 정의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20의3①1호 공적연금소득</strong><br>
+    공적연금 관련법에 따라 받는 각종 연금 → <strong>공적연금소득</strong><br>
+    공적연금 관련법: 국민연금법·공무원연금법·사립학교교직원연금법·군인연금법 등</div>
+  <p>조문 그대로 정확합니다.</p>
+  <div class="kbox"><strong>🏛️ 쉬운 비유</strong>: 나라가 운영하는 국민연금에서 받는 연금 → 공적연금소득!</div>
+</div></div>
+
+<!-- Q2 -->
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§20의3①2호</span>연금계좌에서 "연금수령"하는 방식으로 인출하는 경우에만 연금소득이 되며, "연금외수령"은 연금소득이 아니다.<span class="tb tup">연금수령 vs. 연금외수령 구분</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20의3①2호 — 연금수령 vs. 연금외수령</strong><br>
+    <strong>연금수령</strong>: 연금계좌에서 대통령령으로 정하는 연금형태 등으로 인출<br>
+    → §20의3①2호의 <strong>연금소득</strong><br>
+    <strong>연금외수령</strong>: 연금수령 외의 인출<br>
+    → 연금소득 아님 (기타소득 등으로 처리)</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q3 -->
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§20의3①2호</span>연금계좌는 연금저축계좌와 퇴직연금계좌로 구성된다.<span class="tb tup">연금계좌 = 연금저축계좌 + 퇴직연금계좌</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20의3①2호 연금계좌 구성</strong><br>
+    <strong>연금저축계좌</strong>: "연금저축"의 명칭으로 설정하는 대통령령으로 정하는 계좌<br>
+    <strong>퇴직연금계좌</strong>: 퇴직연금을 지급받기 위하여 설정하는 대통령령으로 정하는 계좌<br>
+    → <strong>연금계좌 = 연금저축계좌 + 퇴직연금계좌</strong></div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q4 -->
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§20의3①2호 나목</span>제59조의3에 따라 세액공제를 받은 연금계좌 납입액을 연금수령하면 연금소득이 된다.<span class="tb tup">세액공제 받은 납입액 연금수령 → 연금소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제2호 나목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20의3①2호 연금계좌 연금수령 → 연금소득 4가지</strong><br>
+    가목: §146②에 따라 <strong>원천징수되지 아니한 퇴직소득</strong><br>
+    <strong>나목: §59의3에 따라 세액공제를 받은 연금계좌 납입액</strong><br>
+    다목: 연금계좌의 <strong>운용실적에 따라 증가된 금액</strong><br>
+    라목: 연금계좌에 이체·입금되어 <strong>소득세가 이연(移延)된 소득</strong>(대통령령)</div>
+  <p>조문 그대로 정확합니다. 세액공제를 받은 납입액은 납입 시 과세 혜택을 받았으므로, 수령 시 연금소득으로 과세합니다.</p>
+</div></div>
+
+<!-- Q5 -->
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§20의3①2호 가목</span>제146조 제2항에 따라 원천징수된 퇴직소득을 연금계좌에서 연금수령하면 연금소득이 된다.<span class="tb thot">🔴 원천징수 여부 역전 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제2호 가목</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§20의3①2호 가목: 연금계좌 연금수령 시 연금소득이 되는 것은 <b>§146②에 따라 원천징수되지 아니한 퇴직소득</b>입니다. 원천징수된 퇴직소득은 이미 퇴직소득세가 과세되었으므로 연금소득에 해당하지 않습니다.</p>
+  <p class="trap">⚠ "원천징수된 퇴직소득 → 연금소득" → "원천징수되지 아니한 퇴직소득 → 연금소득"</p>
+</div></div>
+
+<!-- Q6 -->
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§20의3①2호 다목</span>연금계좌의 운용실적에 따라 증가된 금액을 연금수령하면 그 소득의 성격에도 불구하고 연금소득으로 한다.<span class="tb tup">운용실적 증가분 연금수령 → 연금소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제2호 다목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20의3①2호 다목: 연금계좌 운용실적에 따른 증가분(예: 채권이자, 배당 등 성격이어도)은 <b>그 소득의 성격에도 불구하고</b> 연금수령 시 연금소득으로 처리됩니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q7 -->
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§20의3①</span>연금소득은 공적연금소득과 연금계좌 연금수령 소득으로만 구성되며, 이와 유사한 연금형태 소득은 포함되지 않는다.<span class="tb thot">🔴 제3호(유사 연금) 누락 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제3호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§20의3① 연금소득 3가지</strong><br>
+    <strong>1호</strong>: 공적연금 관련법에 따른 각종 연금(공적연금소득)<br>
+    <strong>2호</strong>: 연금계좌에서 연금수령하는 소득<br>
+    <strong>3호</strong>: 2호 소득과 <strong>유사하고 연금 형태로 받는 것</strong>으로서 대통령령으로 정하는 소득</div>
+  <p>§20의3①3호: 유사한 연금형태 소득도 연금소득에 포함됩니다. "2가지만"이 오류입니다.</p>
+  <p class="trap">⚠ "2가지만 포함" → "3가지 (유사 연금형태 소득도 포함)"</p>
+</div></div>
+
+<!-- Q8 -->
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§20의3①2호</span>연금계좌에 이체 또는 입금되어 소득세가 이연(移延)된 소득을 연금형태로 인출하면 연금소득이 된다.<span class="tb tup">소득이연 후 연금수령 → 연금소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제2호 라목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20의3①2호 라목: 연금계좌에 이체·입금되어 해당 금액에 대한 소득세가 이연된 소득(대통령령)을 연금수령하면 연금소득입니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 2: §20의3② 공적연금소득 과세기준 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제20조의3 제2항 — 공적연금소득 과세기준(2002.1.1)</span><span class="scn" id="c2">0/5</span></div>
+<hr class="shr">
+
+<!-- Q9 -->
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§20의3②</span>공적연금소득은 2002년 1월 1일 이후에 납입된 연금 기여금 및 사용자 부담금을 기초로 하거나 2002년 1월 1일 이후 근로의 제공을 기초로 하여 받는 연금소득으로 한다.<span class="tb tup">공적연금 과세기준 — 2002.1.1</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20의3② 공적연금소득 과세기준일</strong><br>
+    기준일: <strong>2002년 1월 1일</strong><br>
+    과세 대상: ① 2002.1.1 이후 납입 기여금·사용자 부담금 기초분<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(국가·지방자치단체 부담금 포함)<br>
+    또는: ② 2002.1.1 이후 근로의 제공 기초분</div>
+  <p>조문 그대로 정확합니다. 2002.1.1 이전 기여금·근로 기초분은 과세하지 않습니다.</p>
+</div></div>
+
+<!-- Q10 -->
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§20의3②</span>공적연금소득은 2001년 12월 31일 이전에 납입된 기여금을 기초로 하는 연금도 포함한다.<span class="tb thot">🔴 과세기준일 전 기여금 포함 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§20의3②: 공적연금소득은 <b>2002년 1월 1일 이후에 납입된 기여금 및 사용자 부담금</b>을 기초로 하거나 2002.1.1 이후 근로 제공을 기초로 한 부분만 해당합니다. 2001.12.31 이전 기여금 기초분은 과세 제외입니다.</p>
+  <p class="trap">⚠ "2001.12.31 이전 기여금도 포함" → "2002.1.1 이후 기여금만 과세"</p>
+</div></div>
+
+<!-- Q11 -->
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§20의3②</span>공적연금소득의 과세기준에서 사용자 부담금에는 국가 또는 지방자치단체의 부담금도 포함된다.<span class="tb tup">사용자 부담금 — 국가·지방자치단체 포함</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20의3②: "사용자 부담금(국가 또는 지방자치단체의 부담금을 포함한다)"로 명시. 공무원연금 등에서 국가가 부담하는 부담금도 과세 대상 사용자 부담금에 포함됩니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q12 -->
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§20의3② 종합</span>공무원이 2002년 이전부터 재직하여 납입해온 기여금으로 받는 공무원연금은 전액 공적연금소득으로 과세된다.<span class="tb thot">🔴 2002.1.1 이전 기여금 과세 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§20의3②: 공적연금소득은 <b>2002.1.1 이후</b> 납입 기여금·근로 기초분만 과세 대상입니다. 2002.1.1 이전 기여금을 기초로 한 연금은 과세에서 제외됩니다. 따라서 전액 과세가 아닌 <b>비례 계산</b>으로 일부만 과세됩니다(시행령 §40① 계산식 참조).</p>
+  <p class="trap">⚠ "전액 과세" → "2002.1.1 이후 기여금 기초분만 비례 과세"</p>
+</div></div>
+
+<!-- Q13 -->
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§20의3③</span>연금소득금액은 총연금액에서 제47조의2에 따른 연금소득공제를 적용한 금액으로 한다. 총연금액에는 비과세소득과 공적연금소득에서 제외되는 소득이 포함되지 않는다.<span class="tb tup">연금소득금액 = 총연금액 − 연금소득공제</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제3항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20의3③ 연금소득금액 계산</strong><br>
+    <strong>총연금액</strong> = §20의3① 소득 합계 − (§20의3②에 따라 연금소득에서 제외되는 소득 + 비과세소득)<br>
+    <strong>연금소득금액</strong> = 총연금액 − <strong>연금소득공제(§47의2)</strong></div>
+  <p>조문 그대로 정확합니다. 근로소득공제는 §47, 연금소득공제는 §47의2입니다.</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 3: 시행령 §40 과세기준금액 계산 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 3</span><span class="stl">시행령 §40 — 공적연금소득 과세기준금액 계산</span><span class="scn" id="c3">0/8</span></div>
+<hr class="shr">
+
+<!-- Q14 -->
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">시행령§40①</span>공적연금소득의 과세기준일은 2002년 1월 1일이다.<span class="tb tsrl">시행령 — 과세기준일 확인</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제1항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §40①: "2002년 1월 1일(이하 이 조와 §42의2①에서 '과세기준일'이라 한다)"로 명시. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q15 -->
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">시행령§40①1호</span>국민연금법에 따른 연금소득의 과세기준금액은 "과세기간 연금수령액 × (과세기준일 이후 납입기간의 환산소득 누계액 / 총 납입기간의 환산소득 누계액)"으로 계산한다.<span class="tb tsrl">시행령 — 국민연금 과세기준금액 계산식</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제1항 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §40①1호 — 국민연금·연계노령연금 과세기준금액</strong><br>
+    과세기준금액 = 과세기간 연금수령액<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; × (과세기준일 이후 납입기간의 <strong>환산소득 누계액</strong>)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ÷ (총 납입기간의 환산소득 누계액)</div>
+  <p>시행령 §40①1호 그대로 정확합니다. 환산소득 = 매년 기준소득월액을 현재가치로 환산한 금액.</p>
+</div></div>
+
+<!-- Q16 -->
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">시행령§40①2호</span>그 밖의 공적연금소득(국민연금·연계노령연금 제외)의 과세기준금액은 "과세기간 연금수령액 × (과세기준일 이후 기여금 납입월수 / 총 기여금 납입월수)"로 계산한다.<span class="tb tsrl">시행령 — 그 밖의 공적연금 과세기준금액</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제1항 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §40①2호 — 그 밖의 공적연금소득 과세기준금액</strong><br>
+    과세기준금액 = 과세기간 연금수령액<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; × (과세기준일 이후 <strong>기여금 납입월수</strong>)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ÷ (총 기여금 납입월수)</div>
+  <p>시행령 §40①2호 그대로 정확합니다. 1호와 달리 "납입월수" 비율 방식입니다.</p>
+</div></div>
+
+<!-- Q17 -->
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">시행령§40①2호</span>공무원연금의 과세기준금액을 계산할 때는 국민연금과 동일하게 환산소득 누계액 비율을 적용한다.<span class="tb thot">🔴 국민연금 vs. 그 밖의 공적연금 계산방법 혼동 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제1항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="srlbox"><strong>공적연금 종류별 과세기준금액 계산방법</strong><br>
+    <strong>1호(국민연금·연계노령연금)</strong>: 환산소득 누계액 비율<br>
+    <strong>2호(그 밖의 공적연금 — 공무원연금·사학연금·군인연금 등)</strong>: <strong>기여금 납입월수 비율</strong></div>
+  <p>공무원연금은 §40①2호에 따라 <b>기여금 납입월수 비율</b>로 계산합니다. 환산소득 누계액 비율은 국민연금에만 적용됩니다.</p>
+  <p class="trap">⚠ "공무원연금도 환산소득 비율" → "공무원연금 = 기여금 납입월수 비율"</p>
+</div></div>
+
+<!-- Q18 -->
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">시행령§40②</span>퇴직소득세가 과세된 일시금을 반납하고 재직기간을 합산한 경우에는 재임용일 또는 재가입일을 과세기준일로 보아 계산한다.<span class="tb tsrl">시행령 — 일시금 반납 시 과세기준일 특례</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §40② 과세기준일 특례 — 일시금 반납</strong><br>
+    §22①1호에 따른 일시금(<strong>퇴직소득세 과세 또는 비과세 소득인 경우 한정</strong>)을 반납하고<br>
+    공적연금 관련법에 따라 재직기간·복무기간·가입기간을 합산한 경우<br>
+    → <strong>재임용일 또는 재가입일</strong>을 과세기준일로 봄</div>
+  <p>시행령 §40② 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q19 -->
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">시행령§40②</span>일시금 반납 시 과세기준일 특례는 퇴직소득세가 과세된 일시금을 반납하는 경우에만 적용되며, 비과세 소득인 일시금을 반납하는 경우에는 적용되지 않는다.<span class="tb thot">🔴 비과세 일시금 반납 특례 적용 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §40②: 과세기준일 특례가 적용되는 일시금은 <b>퇴직소득세가 과세되었거나 비과세 소득인 경우 모두</b> 해당합니다. "비과세 제외"가 오류입니다.</p>
+  <p class="trap">⚠ "비과세 일시금 반납은 특례 제외" → "퇴직소득세 과세 또는 비과세 일시금 반납 모두 특례 적용"</p>
+</div></div>
+
+<!-- Q20 -->
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">시행령§40③</span>과세기준일 이후에 연금보험료공제를 받지 않고 납입한 기여금(과세제외기여금등)이 있는 경우에는 과세기준금액에서 이를 빼서 공적연금소득을 계산한다.<span class="tb tsrl">시행령 — 과세제외기여금 차감</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제3항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §40③ 과세제외기여금등</strong><br>
+    정의: 과세기준일 이후에 <strong>연금보험료공제(§51의3)를 받지 않고</strong> 납입한 기여금 또는 개인부담금<br>
+    (§201의10에 따라 확인되는 금액만 해당)<br>
+    처리: 과세기준금액에서 차감<br>
+    초과 시: 다음 과세기간부터 순차 차감</div>
+  <p>시행령 §40③ 그대로 정확합니다. 이미 과세된 소득으로 납입한 기여금을 이중과세 방지를 위해 차감합니다.</p>
+</div></div>
+
+<!-- Q21 -->
+<div class="qc"><div class="qh"><span class="qn">21</span>
+  <div class="qt"><span class="jb">시행령§40③</span>과세제외기여금등이 해당 과세기간의 과세기준금액을 초과하는 경우 그 초과분은 소멸된다.<span class="tb thot">🔴 초과분 처리 방법 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(21,'O')">O</button><button class="oxb" onclick="so(21,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(21)">정답 확인</button><span class="rb" id="r21"></span></div>
+<div class="ex" id="e21"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제3항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §40③: 과세제외기여금등이 해당 과세기간의 과세기준금액을 초과하는 경우 그 초과하는 금액은 <b>그 다음 과세기간부터 과세기준금액에서</b> 뺍니다. 소멸되지 않고 <b>이월 차감</b>됩니다.</p>
+  <p class="trap">⚠ "초과분 소멸" → "다음 과세기간부터 순차 이월 차감"</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 4: 시행령 §40④⑤ 지연이자·환산소득 / 종합 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 4</span><span class="stl">시행령 §40④⑤ 및 종합 판단</span><span class="scn" id="c4">0/7</span></div>
+<hr class="shr">
+
+<!-- Q22 -->
+<div class="qc"><div class="qh"><span class="qn">22</span>
+  <div class="qt"><span class="jb">시행령§40④</span>공적연금소득을 지급하는 자가 연금소득의 일부 또는 전부를 지연하여 지급하면서 지연지급에 따른 이자를 함께 지급하는 경우, 해당 이자는 이자소득으로 과세된다.<span class="tb thot">🔴 지연지급 이자 소득 분류 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(22,'O')">O</button><button class="oxb" onclick="so(22,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(22)">정답 확인</button><span class="rb" id="r22"></span></div>
+<div class="ex" id="e22"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제4항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="srlbox"><strong>시행령 §40④ 지연지급 이자 과세</strong><br>
+    공적연금소득을 지급하는 자가 일부 또는 전부를 <strong>지연 지급</strong>하면서<br>
+    지연지급에 따른 <strong>이자를 함께 지급</strong>하는 경우<br>
+    → 해당 이자는 <strong>공적연금소득</strong>으로 봄</div>
+  <p>"이자소득"이 오류입니다. 지연지급 이자는 이자소득이 아닌 <b>공적연금소득</b>으로 처리됩니다. 조문 그대로 정확합니다.</p>
+  <p class="trap">⚠ "이자소득" → "공적연금소득으로 봄"</p>
+</div></div>
+
+<!-- Q23 -->
+<div class="qc"><div class="qh"><span class="qn">23</span>
+  <div class="qt"><span class="jb">시행령§40⑤</span>시행령 §40①1호 계산식의 "환산소득"이란 「국민연금법」 §51①2호에 따라 가입자의 가입기간 중 매년의 기준소득월액을 보건복지부장관이 고시하는 연도별 재평가율에 따라 연금수급 개시 전년도의 현재가치로 환산한 금액을 말한다.<span class="tb tsrl">시행령 — 환산소득 정의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(23,'O')">O</button><button class="oxb" onclick="so(23,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(23)">정답 확인</button><span class="rb" id="r23"></span></div>
+<div class="ex" id="e23"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제5항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §40⑤ 환산소득 정의</strong><br>
+    「국민연금법」 §51①2호에 따라<br>
+    가입자의 가입기간 중 매년의 <strong>기준소득월액</strong>을<br>
+    <strong>보건복지부장관이 고시하는 연도별 재평가율</strong>에 따라<br>
+    <strong>연금수급 개시 전년도의 현재가치</strong>로 환산한 금액</div>
+  <p>시행령 §40⑤ 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q24 -->
+<div class="qc"><div class="qh"><span class="qn">24</span>
+  <div class="qt"><span class="jb">§20의3③</span>연금소득금액 계산에서 총연금액은 §20의3① 각 호에 따른 소득의 금액의 합계액에서 §20의3②에 따라 연금소득에서 제외되는 소득과 비과세소득을 제외한 금액이다.<span class="tb tup">총연금액 정의 종합</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(24,'O')">O</button><button class="oxb" onclick="so(24,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(24)">정답 확인</button><span class="rb" id="r24"></span></div>
+<div class="ex" id="e24"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제3항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>총연금액 = 비교표</strong><br>
+    총급여액(근로소득): §20① 소득 합계 − 비과세소득<br>
+    <strong>총연금액(연금소득)</strong>: §20의3① 소득 합계 − (§20의3② 제외 소득 + 비과세소득)</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q25 -->
+<div class="qc"><div class="qh"><span class="qn">25</span>
+  <div class="qt"><span class="jb">§20의3 종합</span>연금소득금액은 총연금액에서 근로소득공제(§47)를 차감하여 계산한다.<span class="tb thot">🔴 근로소득공제 vs. 연금소득공제 혼동 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(25,'O')">O</button><button class="oxb" onclick="so(25,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(25)">정답 확인</button><span class="rb" id="r25"></span></div>
+<div class="ex" id="e25"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제3항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>소득공제 적용 조항 비교</strong><br>
+    근로소득금액: 총급여액 − <strong>근로소득공제(§47)</strong><br>
+    <strong>연금소득금액: 총연금액 − 연금소득공제(§47의2)</strong></div>
+  <p>"근로소득공제(§47)"가 오류입니다. 연금소득금액 계산 시에는 <b>연금소득공제(§47의2)</b>를 차감합니다.</p>
+  <p class="trap">⚠ "근로소득공제(§47)" → "연금소득공제(§47의2)"</p>
+</div></div>
+
+<!-- Q26 -->
+<div class="qc"><div class="qh"><span class="qn">26</span>
+  <div class="qt"><span class="jb">§20의3 종합</span>연금계좌에서 연금외수령으로 인출한 금액은 연금소득이 아니며, 기타소득 등으로 과세될 수 있다.<span class="tb tup">연금외수령 — 연금소득 아님</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(26,'O')">O</button><button class="oxb" onclick="so(26,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(26)">정답 확인</button><span class="rb" id="r26"></span></div>
+<div class="ex" id="e26"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20의3①2호: 연금계좌에서 <b>연금수령</b>하는 경우만 연금소득이고, <b>연금외수령(연금수령 외의 인출)</b>은 연금소득이 아닙니다. 연금외수령은 기타소득(§21①12의2호) 등으로 처리됩니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q27 -->
+<div class="qc"><div class="qh"><span class="qn">27</span>
+  <div class="qt"><span class="jb">§20의3 종합</span>공적연금소득은 지급자별로 과세기준금액을 계산하며, 과세기준일 이후 납입분에 해당하는 부분만 과세 대상이 된다.<span class="tb tup">공적연금소득 지급자별 · 과세기준일 이후분 과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(27,'O')">O</button><button class="oxb" onclick="so(27,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(27)">정답 확인</button><span class="rb" id="r27"></span></div>
+<div class="ex" id="e27"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제40조 제1항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §40①: 공적연금소득은 <b>공적연금의 지급자별로</b> 2002년 1월 1일(과세기준일) 기준 비례 계산합니다. 과세기준일 이후분만 과세됩니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q28 -->
+<div class="qc"><div class="qh"><span class="qn">28</span>
+  <div class="qt"><span class="jb">§20의3 전체 종합</span>연금소득에는 ①공적연금 관련법에 따른 연금 ②연금계좌에서 연금수령하는 소득 ③이와 유사한 연금형태 소득이 있으며, 연금소득금액은 총연금액에서 연금소득공제(§47의2)를 차감한 금액이다.<span class="tb tup">§20조의3 전체 종합 확인</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(28,'O')">O</button><button class="oxb" onclick="so(28,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(28)">정답 확인</button><span class="rb" id="r28"></span></div>
+<div class="ex" id="e28"><div class="eh">해설</div><div class="lr">소득세법 제20조의3 제1항·제3항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>§20의3 전체 구조 최종 정리</strong><br>
+    <strong>연금소득 3가지 (§20의3①)</strong><br>
+    1호: 공적연금 관련법에 따른 연금(공적연금소득)<br>
+    2호: 연금계좌에서 연금수령하는 소득<br>
+    3호: 이와 유사하고 연금 형태로 받는 소득(대통령령)<br><br>
+    <strong>공적연금소득 과세기준 (§20의3②)</strong>: 2002.1.1 이후 기여금·근로 기초분<br><br>
+    <strong>연금소득금액 (§20의3③)</strong> = 총연금액 − 연금소득공제(§47의2)</div>
+  <p>모두 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">28</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제20조의3 제1항~4항, 소득세법 시행령 제40조 (법제처 현행법령, 소득세법 시행일 2026.04.21 / 시행령 2026.05.22)<br>
+  연금소득 3가지·공적연금 2002.1.1 기준·총연금액·연금소득공제·과세기준금액 계산 | [2026-06-19] #소득세법 #연금소득 #공적연금 #연금계좌 #과세기준일 #세무사1차
+</p>
+</div>
+
+<script>
+const ANS={
+  1:'O',2:'O',3:'O',4:'O',5:'X',6:'O',7:'X',8:'O',
+  9:'O',10:'X',11:'O',12:'X',13:'O',
+  14:'O',15:'O',16:'O',17:'X',18:'O',19:'X',20:'O',21:'X',
+  22:'X',23:'O',24:'O',25:'X',26:'O',27:'O',28:'O'
+};
+const SECS={
+  1:[1,2,3,4,5,6,7,8],
+  2:[9,10,11,12,13],
+  3:[14,15,16,17,18,19,20,21],
+  4:[22,23,24,25,26,27,28]
+};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=28;
+
+function so(n,v){
+  if(done[n])return;
+  sel[n]=v;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{
+    if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase());
+  });
+}
+function co(n){
+  if(done[n])return;
+  const v=sel[n],a=ANS[n];
+  if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}
+  done[n]=true;
+  const ok=v===a;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim();
+    b.classList.remove('so','sx');
+    if(bv===a)b.classList.add('c'+a.toLowerCase());
+    else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());
+  });
+  const badge=document.getElementById('r'+n);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';
+  badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+n).classList.add('show');
+  card.querySelector('.bck').disabled=true;
+  if(ok)correct++;
+  answered++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('pf').style.width=(answered/TOT*100)+'%';
+  Object.entries(SECS).forEach(([k,arr])=>{
+    document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;
+  });
+}
+function checkAll(){
+  for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/TOT*100);
+  document.getElementById('gdT').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=TOT-correct;
+  document.getElementById('smP').classList.add('show');
+  document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 제19조 | O/X 판단 퀴즈 — 사업소득</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F0EC;--surf:#FFF;--surf2:#EDE8E0;--bdr:#CFC8BC;
+  --acc:#5C3D11;--acc2:#1A6B3A;--acc3:#8B5E1A;--danger:#7F1910;
+  --txt:#1E1408;--txt2:#3A2A10;--txt3:#7A6444;
+  --ok:#1A6B3A;--ng:#7F1910;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(92,61,17,.4)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#F5DEB3}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#F5DEB3;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#F5E6CC;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#F5E6CC;color:var(--acc);border:1px solid #D4B87A}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#D5F5E3;color:#1A6B3A}.twrn{background:#FEF9E7;color:#796000}.tsrl{background:#EAE4F5;color:#4A235A}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#F5E6CC}
+.oxb.so{border-color:var(--acc3);background:#F5E6CC;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#D5F5E3;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#D5F5E3;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FBF6EF;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#F5E6CC;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .lrsrl{font-family:var(--mono);font-size:.69rem;color:#4A235A;background:#EAE4F5;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem;margin-left:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#F5E6CC;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.kbox strong{color:var(--acc)}
+.srlbox{background:#EAE4F5;border:1.5px solid #4A235A;border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.srlbox strong{color:#4A235A}
+.okbox{background:#D5F5E3;border:1.5px solid var(--ok);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.okbox strong{color:var(--ok)}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s}
+.brs:hover{background:var(--acc);color:#fff}
+.intro{background:#F5E6CC;border:1.5px solid var(--acc);border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:var(--acc);line-height:2}
+.intro strong{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hdi"><div>
+    <div class="hbg">세무사 1차 · 소득세법 사업소득</div>
+    <div class="htl">소득세법 제19조<br><span>사업소득 — 21가지 열거·제외업종·소득금액·사업범위 결정기준</span></div>
+    <div class="hsb">§19①~③ 사업소득 21호 + §19② 소득금액·결손금 | 시행령 §31 제조업 의제·§33 연구개발업·§35 교육기관·§36 사회복지·§37 전속계약금·연예인</div>
+  </div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<div class="intro">
+  <strong>📌 §19 핵심 정리</strong><br>
+  <strong>§19①</strong> 사업소득 = 해당 과세기간 발생 소득 (21가지 열거) | 단서: §21①8호의2 기타소득으로 원천징수·확정신고 시 사업소득 제외<br>
+  <strong>주요 제외업종</strong>: 작물재배업 중 <strong>곡물 및 기타 식량작물 재배업</strong> 제외(1호) | 공익사업 관련 지역권·지상권 설정·대여 소득 제외(12호) | <strong>계약 대가 받는 연구개발업</strong>은 과세(13호) / 계약 외 연구개발업은 비과세 | 유치원·초중고·대학교는 교육서비스업 사업소득 제외(15호) | 사회복지사업·장기요양사업은 제외(16호)<br>
+  <strong>§19②</strong> 사업소득금액 = 총수입금액 − 필요경비 | 필요경비 > 총수입금액 → <strong>결손금</strong><br>
+  <strong>§19③</strong> 사업 범위 → 이 법 특별규정 외에는 <strong>한국표준산업분류</strong> 기준<br>
+  <strong>§19①20호</strong> 복식부기의무자가 사업용 유형자산(차량·운반구 등) 양도 소득 → 사업소득 (단, 양도소득에 해당하는 경우 제외)<br>
+  <strong>§19①21호</strong> 유사 소득 = 영리목적 + 자기의 계산과 책임 + <strong>계속적·반복적</strong> 활동<br>
+  <strong>시행령 §31</strong> 제조업 의제 3요건: ①직접 기획 ②자기명의 제조 ③자기 책임하 직접 판매<br>
+  <strong>시행령 §37①</strong> 연예인·직업운동선수의 전속계약금 → <strong>사업소득</strong>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 1: §19① 사업소득 열거 — 포함·제외 구분 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제19조 제1항 — 사업소득 열거: 포함 vs. 제외 업종</span><span class="scn" id="c1">0/10</span></div>
+<hr class="shr">
+
+<!-- Q1 -->
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§19①1호</span>농업·임업 및 어업에서 발생하는 소득은 사업소득이다. 다만, 작물재배업 중 곡물 및 기타 식량작물 재배업에서 발생하는 소득은 사업소득에서 제외된다.<span class="tb tup">농업 사업소득 — 식량작물 재배업 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§19①1호 — 농업 사업소득 제외 범위</strong><br>
+    <strong>과세</strong>: 농업(채소재배·화훼 등)·임업·어업 소득<br>
+    <strong>제외</strong>: 작물재배업 중 <strong>곡물 및 기타 식량작물 재배업</strong><br>
+    (쌀·보리·밀·옥수수 등 식량작물 재배는 사업소득 아님)</div>
+  <p>조문 그대로 정확합니다.</p>
+  <div class="kbox"><strong>🌾 쉬운 비유</strong>: 쌀농사·밀농사(식량)는 세금 안 냄. 딸기·장미 재배(비식량)는 사업소득으로 세금 냄!</div>
+</div></div>
+
+<!-- Q2 -->
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§19①1호</span>작물재배업에서 발생하는 모든 소득은 사업소득에서 제외된다.<span class="tb thot">🔴 작물재배업 전부 제외 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제1호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§19①1호: 제외되는 것은 작물재배업 중 <b>곡물 및 기타 식량작물 재배업</b>에 한정됩니다. 화훼, 채소, 특용작물 등의 작물재배업 소득은 사업소득에 해당합니다. "모든 작물재배업"이 제외되는 것은 아닙니다.</p>
+  <p class="trap">⚠ "모든 작물재배업 제외" → "곡물 및 기타 식량작물 재배업만 제외"</p>
+</div></div>
+
+<!-- Q3 -->
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§19①12호</span>부동산업에서 발생하는 소득은 원칙적으로 사업소득이나, 공익사업과 관련하여 지역권·지상권(지하 또는 공중 설정 포함)을 설정하거나 대여함으로써 발생하는 소득은 사업소득에서 제외된다.<span class="tb tup">부동산업 — 공익사업 지역권·지상권 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제12호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§19①12호 단서 — 사업소득 제외 소득</strong><br>
+    「공익사업을 위한 토지 등의 취득 및 보상에 관한 법률」 §4의 공익사업과 관련하여<br>
+    <strong>지역권·지상권</strong>(지하 또는 공중에 설정된 권리 포함)을<br>
+    <strong>설정하거나 대여</strong>함으로써 발생하는 소득 → 사업소득 제외<br>
+    (기타소득으로 과세)</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q4 -->
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§19①15호</span>교육서비스업에서 발생하는 소득은 사업소득이나, 「유아교육법」에 따른 유치원과 「초·중등교육법」 및 「고등교육법」에 따른 학교에서 발생하는 소득은 제외된다.<span class="tb tup">교육서비스업 — 유치원·학교 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제15호</div><div class="lr lrsrl">시행령 제35조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §35 — 비사업소득 교육기관</strong><br>
+    ① 「유아교육법」에 따른 <strong>유치원</strong><br>
+    ② 「초·중등교육법」 및 「고등교육법」에 따른 <strong>학교</strong><br>
+    ③ 이와 유사한 것으로서 재정경제부령으로 정하는 것<br>
+    → 이들 기관의 소득은 사업소득 <strong>제외</strong></div>
+  <p>시행령 §35 그대로 정확합니다. 사립 유치원·학교는 비영리기관으로 사업소득 대상이 아닙니다.</p>
+</div></div>
+
+<!-- Q5 -->
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§19①16호 / 시행령§36</span>보건업 및 사회복지서비스업에서 발생하는 소득은 사업소득이나, 「사회복지사업법」 제2조제1호에 따른 사회복지사업 및 「노인장기요양보험법」 제2조제3호에 따른 장기요양사업에서 발생하는 소득은 사업소득에서 제외된다.<span class="tb tsrl">시행령 — 사회복지사업·장기요양사업 제외</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제16호</div><div class="lr lrsrl">시행령 제36조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §36 — 비사업소득 사회복지사업</strong><br>
+    ① 「사회복지사업법」 §2①의 <strong>사회복지사업</strong><br>
+    ② 「노인장기요양보험법」 §2③의 <strong>장기요양사업</strong><br>
+    → 사업소득 <strong>제외</strong></div>
+  <p>시행령 §36 그대로 정확합니다. 단, 일반 병원·의원 등 보건업 소득은 사업소득에 해당합니다.</p>
+</div></div>
+
+<!-- Q6 -->
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§19①13호 / 시행령§33</span>전문·과학 및 기술서비스업에서 발생하는 소득은 사업소득이나, 모든 연구개발업에서 발생하는 소득은 사업소득에서 제외된다.<span class="tb thot">🔴 연구개발업 전부 제외 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제13호</div><div class="lr lrsrl">시행령 제33조</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="srlbox"><strong>시행령 §33 — 연구개발업의 제외 범위</strong><br>
+    사업소득 <strong>제외</strong>(비과세): 계약 등에 따라 대가를 받고 연구·개발용역을 제공하는 것을 <strong>제외한</strong> 연구개발업<br>
+    ↕<br>
+    <strong>과세(사업소득)</strong>: <strong>계약 등에 따라 대가를 받고</strong> 연구·개발용역을 제공하는 것<br>
+    (즉, 수탁 연구개발업은 사업소득에 포함)</div>
+  <p>조문 구조 주의! "모든 연구개발업 제외"가 아닙니다. <b>대가 받는 수탁 연구는 사업소득에 포함</b>되고, 순수 자체 연구개발업만 제외됩니다.</p>
+  <p class="trap">⚠ "모든 연구개발업 제외" → "계약 대가를 받지 않는 연구개발업만 제외 / 대가 있는 연구는 사업소득"</p>
+</div></div>
+
+<!-- Q7 -->
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§19①20호</span>복식부기의무자가 차량 및 운반구 등 사업용 유형자산을 양도함으로써 발생하는 소득은 사업소득이다. 다만, 제94조제1항제1호에 따른 양도소득에 해당하는 경우는 제외한다.<span class="tb tup">복식부기의무자 사업용 유형자산 양도 — 사업소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제20호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§19①20호 — 복식부기의무자 유형자산 양도 사업소득</strong><br>
+    주체: §160③에 따른 <strong>복식부기의무자</strong><br>
+    대상: 차량·운반구 등 대통령령으로 정하는 <strong>사업용 유형자산</strong> 양도<br>
+    → 사업소득 (단, §94①1호 양도소득에 해당하면 제외)<br><br>
+    💡 <strong>간편장부 대상자</strong>의 사업용 유형자산 양도는 이 조항 미적용</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q8 -->
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§19①20호</span>간편장부 대상자(소규모 사업자)도 사업용 유형자산을 양도하면 제19조 제1항 제20호에 따라 사업소득으로 과세된다.<span class="tb thot">🔴 복식부기의무자 한정 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제20호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§19①20호는 <b>§160③에 따른 복식부기의무자</b>에게만 적용됩니다. 간편장부 대상자의 사업용 유형자산 양도는 이 규정의 적용 대상이 아닙니다.</p>
+  <p class="trap">⚠ "간편장부 대상자도 적용" → "복식부기의무자에게만 적용"</p>
+</div></div>
+
+<!-- Q9 -->
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§19①21호</span>제1호부터 제20호까지에 따른 소득과 유사한 소득으로서 영리를 목적으로 자기의 계산과 책임 하에 계속적·반복적으로 행하는 활동을 통하여 얻는 소득은 사업소득이다.<span class="tb tup">유사 사업소득 — 계속·반복적 활동</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제21호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§19①21호 — 유사 사업소득 3요건</strong><br>
+    ① 영리를 목적으로<br>
+    ② 자기의 계산과 책임 하에<br>
+    ③ <strong>계속적·반복적</strong>으로 행하는 활동을 통해 얻는 소득</div>
+  <p>조문 그대로 정확합니다. 일시적·우발적 소득은 기타소득, 계속·반복적이면 사업소득이 되는 핵심 기준입니다.</p>
+</div></div>
+
+<!-- Q10 -->
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§19①</span>사업소득은 해당 과세기간에 발생한 소득을 원칙으로 하되, 제21조제1항제8호의2에 따른 기타소득으로 원천징수하거나 과세표준확정신고를 한 경우에는 사업소득으로 보지 아니한다.<span class="tb tup">§19① 단서 — 기타소득 선택 허용</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 단서</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§19① 단서: §21①8호의2에 따른 기타소득으로 원천징수하거나 과세표준확정신고를 한 경우에는 사업소득으로 보지 않습니다. 이 규정은 특정 인적용역 소득에 대해 기타소득과 사업소득 처리를 탄력적으로 허용하는 취지입니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 2: §19② 사업소득금액·결손금 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제19조 제2항 — 사업소득금액·결손금</span><span class="scn" id="c2">0/5</span></div>
+<hr class="shr">
+
+<!-- Q11 -->
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§19②</span>사업소득금액은 해당 과세기간의 총수입금액에서 이에 사용된 필요경비를 공제한 금액으로 한다.<span class="tb tup">사업소득금액 = 총수입금액 − 필요경비</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 제19조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>소득 유형별 소득금액 계산 비교</strong><br>
+    이자소득금액 = 총수입금액 (필요경비 없음)<br>
+    배당소득금액 = 총수입금액 (필요경비 없음, Gross-up 가산)<br>
+    <strong>사업소득금액 = 총수입금액 − 필요경비</strong> ← 이것!</div>
+  <p>조문 그대로 정확합니다. 이자·배당소득과 달리 사업소득은 필요경비 공제가 있습니다.</p>
+</div></div>
+
+<!-- Q12 -->
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§19②</span>사업소득에서 필요경비가 총수입금액을 초과하는 경우 그 초과하는 금액을 "이월결손금"이라 한다.<span class="tb thot">🔴 결손금 / 이월결손금 명칭 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 제19조 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§19② — 결손금 정의</strong><br>
+    필요경비 > 총수입금액 → 초과분 = <strong>"결손금"</strong><br>
+    (이월결손금 ≠ 결손금. 결손금이 다음 연도로 넘어가면 "이월결손금")</div>
+  <p>"이월결손금"이 오류입니다. §19②에서 정의하는 것은 <b>"결손금"</b>입니다. 이월결손금은 해당 연도의 결손금이 이후 과세기간으로 넘어간 개념으로 별도의 규정에서 다룹니다.</p>
+  <p class="trap">⚠ "이월결손금" → "결손금"</p>
+</div></div>
+
+<!-- Q13 -->
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§19②</span>사업소득금액이 음수(-)가 되는 경우, 즉 필요경비가 총수입금액을 초과하는 경우 그 초과액은 결손금으로, 이를 다른 종합소득에서 공제할 수 있다.<span class="tb tup">결손금의 개념과 활용</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 제19조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§19②: 필요경비 > 총수입금액 = <b>결손금</b>. 이 결손금은 §45에 따라 다른 소득금액에서 공제(결손금 통산)할 수 있고, 공제 후 잔액은 이월됩니다. 조문 취지에 부합합니다.</p>
+</div></div>
+
+<!-- Q14 -->
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">§19③</span>사업의 범위는 이 법에 특별한 규정이 있는 경우 외에는 한국표준산업분류에 따른다. 한국표준산업분류는 국가데이터처장이 고시한다.<span class="tb tup">사업 범위 결정 — 한국표준산업분류</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 제19조 제3항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§19③: 사업 범위 결정 기준은 이 법에 특별 규정이 있는 경우 외에는 <b>「통계법」 §22에 따라 국가데이터처장이 고시하는 한국표준산업분류</b>에 따릅니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q15 -->
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">§19③</span>사업의 범위는 이 법에 특별한 규정이 있는 경우 외에는 통계청장이 고시하는 한국표준산업분류에 따른다.<span class="tb thot">🔴 고시권자 함정 — 통계청장 vs. 국가데이터처장</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 제19조 제3항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§19③: 한국표준산업분류는 <b>국가데이터처장</b>이 고시합니다(「통계법」 §22에 따름). 현행 조문상 "국가데이터처장"이 고시 주체입니다. "통계청장"으로 기억하고 있는 경우가 많으나, 현행 법령 조문 기준으로는 국가데이터처장이 정확합니다.</p>
+  <p class="trap">⚠ "통계청장" → "국가데이터처장"</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 3: 시행령 §31 제조업 의제 3요건 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 3</span><span class="stl">시행령 §31 — 제조업 의제 3요건</span><span class="scn" id="c3">0/6</span></div>
+<hr class="shr">
+
+<!-- Q16 -->
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">시행령§31</span>자기가 제품을 직접 제조하지 않고 제조업체에 의뢰하여 제조하더라도, 일정 요건을 갖추면 제조업으로 본다.<span class="tb tup">제조업 의제 — 외주 제조의 허용</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제31조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §31 — 제조업 의제 3요건 (모두 충족 필요)</strong><br>
+    1호: 생산할 제품을 <strong>직접 기획</strong>(고안·디자인·견본제작 등 포함)<br>
+    2호: 그 제품을 <strong>자기명의</strong>로 제조<br>
+    3호: 그 제품을 인수하여 <strong>자기 책임하에 직접 판매</strong></div>
+  <p>시행령 §31 그대로 정확합니다. OEM 방식의 위탁제조도 3가지 요건 모두 충족 시 제조업으로 봅니다.</p>
+</div></div>
+
+<!-- Q17 -->
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">시행령§31</span>외주 제조를 통한 제조업 의제에서 "직접 기획"에는 고안·디자인만 포함되며, 견본제작은 포함되지 않는다.<span class="tb thot">🔴 직접 기획 범위 — 견본제작 포함 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제31조 제1호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §31 1호: 직접 기획에는 <b>고안 및 디자인, 견본제작 등을 포함</b>한다고 명시되어 있습니다. 견본제작도 직접 기획에 해당합니다.</p>
+  <p class="trap">⚠ "견본제작 미포함" → "고안·디자인·견본제작 등 모두 포함"</p>
+</div></div>
+
+<!-- Q18 -->
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">시행령§31</span>외주 제조업 의제 요건 중 하나는 "제품을 인수하여 타인의 명의로 직접 판매"하는 것이다.<span class="tb thot">🔴 자기 책임하 판매 — 타인 명의 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제31조 제3호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §31 3호: 제품을 인수하여 <b>자기 책임하에 직접 판매</b>해야 합니다. "타인의 명의"가 아닌 <b>자기 명의</b>로 판매하는 것이 요건입니다.</p>
+  <p class="trap">⚠ "타인 명의로 판매" → "자기 책임하에 직접 판매"</p>
+</div></div>
+
+<!-- Q19 -->
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">시행령§31</span>외주 제조업 의제 요건은 ①직접 기획 ②자기명의 제조 ③자기 책임하 직접 판매의 3가지이며, 이 중 어느 하나만 충족해도 제조업으로 본다.<span class="tb thot">🔴 3요건 모두 vs. 어느 하나 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제31조</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §31: "다음 각 호의 요건을 <b>모두 충족</b>하는 경우"라고 명시합니다. 하나만으로는 제조업 의제가 불가합니다.</p>
+  <p class="trap">⚠ "어느 하나만 충족" → "3가지 요건을 모두 충족해야"</p>
+</div></div>
+
+<!-- Q20 -->
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">시행령§31</span>A사가 스포츠의류 제품을 직접 기획·디자인하고, 해외 공장에 제조를 의뢰하여 자기 명의로 생산한 후, 인수하여 자기 책임하에 직접 판매하는 경우 제조업으로 본다.<span class="tb tup">제조업 의제 3요건 충족 사례</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제31조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §31의 3요건 ①직접 기획(디자인) ②자기명의 제조(해외 공장 위탁이어도) ③자기 책임하 직접 판매를 모두 충족합니다. 조문 취지에 부합합니다.</p>
+</div></div>
+
+<!-- Q21 -->
+<div class="qc"><div class="qh"><span class="qn">21</span>
+  <div class="qt"><span class="jb">시행령§33</span>대가를 받고 연구개발 용역을 제공하는 연구개발업에서 발생하는 소득은 사업소득이다.<span class="tb tup">대가 받는 수탁 연구개발 — 사업소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(21,'O')">O</button><button class="oxb" onclick="so(21,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(21)">정답 확인</button><span class="rb" id="r21"></span></div>
+<div class="ex" id="e21"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제33조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §33 — 연구개발업 과세·비과세 구분</strong><br>
+    사업소득 <strong>제외</strong>: 계약 대가를 받고 용역 제공하는 것을 <strong>제외한</strong> 연구개발업<br>
+    (= 자체 연구개발 목적의 연구개발업)<br>
+    <strong>사업소득 포함</strong>: 계약 등에 따라 <strong>대가를 받고</strong> 연구·개발용역을 제공하는 것<br>
+    (= 수탁 연구개발업)</div>
+  <p>시행령 §33 그대로 정확합니다. 계약 대가를 받는 수탁 연구개발은 사업소득입니다.</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 4: 시행령 §37 전속계약금·연예인 등 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 4</span><span class="stl">시행령 §37 — 전속계약금·연예인·협회 및 단체</span><span class="scn" id="c4">0/6</span></div>
+<hr class="shr">
+
+<!-- Q22 -->
+<div class="qc"><div class="qh"><span class="qn">22</span>
+  <div class="qt"><span class="jb">시행령§37①</span>연예인 및 직업운동선수 등이 사업활동과 관련하여 받는 전속계약금은 사업소득으로 한다.<span class="tb tup">전속계약금 — 사업소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(22,'O')">O</button><button class="oxb" onclick="so(22,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(22)">정답 확인</button><span class="rb" id="r22"></span></div>
+<div class="ex" id="e22"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제37조 제1항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §37① 전속계약금의 소득 분류</strong><br>
+    연예인 및 직업운동선수 등이 사업활동과 관련하여 받는<br>
+    <strong>전속계약금 → 사업소득</strong></div>
+  <p>시행령 §37① 그대로 정확합니다.</p>
+  <div class="kbox"><strong>⚽ 쉬운 비유</strong>: 축구선수 A가 팀과 전속계약을 맺으면서 받는 계약금 → 사업소득!</div>
+</div></div>
+
+<!-- Q23 -->
+<div class="qc"><div class="qh"><span class="qn">23</span>
+  <div class="qt"><span class="jb">시행령§37①</span>연예인이 사업활동과 관련하여 받는 전속계약금은 기타소득이다.<span class="tb thot">🔴 전속계약금 소득 분류 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(23,'O')">O</button><button class="oxb" onclick="so(23,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(23)">정답 확인</button><span class="rb" id="r23"></span></div>
+<div class="ex" id="e23"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제37조 제1항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §37①: 연예인 및 직업운동선수 등이 <b>사업활동과 관련</b>하여 받는 전속계약금은 <b>사업소득</b>입니다. "기타소득"이 아닙니다.</p>
+  <p class="trap">⚠ "기타소득" → "사업소득"</p>
+</div></div>
+
+<!-- Q24 -->
+<div class="qc"><div class="qh"><span class="qn">24</span>
+  <div class="qt"><span class="jb">시행령§37②</span>법 제19조제1항제18호에서 비사업소득으로 제외되는 "대통령령으로 정하는 협회 및 단체"란 한국표준산업분류의 소분류에 따른 협회 및 단체를 말한다.<span class="tb thot">🔴 협회·단체 분류 기준 — 소분류 vs. 중분류 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(24,'O')">O</button><button class="oxb" onclick="so(24,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(24)">정답 확인</button><span class="rb" id="r24"></span></div>
+<div class="ex" id="e24"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제37조 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="srlbox"><strong>시행령 §37② 비사업소득 협회·단체 기준</strong><br>
+    한국표준산업분류의 <strong>중분류</strong>에 따른 협회 및 단체<br>
+    (소분류 ❌ → 중분류 ✅)<br>
+    단, 해당 협회·단체가 특정사업을 경영하는 경우에는 그 사업 내용에 따라 분류</div>
+  <p>"소분류"가 오류입니다. 시행령 §37②: <b>중분류</b>에 따른 협회·단체가 제외 대상입니다.</p>
+  <p class="trap">⚠ "소분류" → "중분류"</p>
+</div></div>
+
+<!-- Q25 -->
+<div class="qc"><div class="qh"><span class="qn">25</span>
+  <div class="qt"><span class="jb">시행령§37③</span>법 제19조제1항제18호의 수리 및 기타 개인서비스업은 「부가가치세법 시행령」 제42조제1호에 따른 인적용역을 포함한다.<span class="tb tsrl">시행령 — 인적용역의 포함</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(25,'O')">O</button><button class="oxb" onclick="so(25,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(25)">정답 확인</button><span class="rb" id="r25"></span></div>
+<div class="ex" id="e25"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제37조 제3항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §37③: 수리 및 기타 개인서비스업에는 「부가가치세법 시행령」 §42①의 인적용역도 포함됩니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q26 -->
+<div class="qc"><div class="qh"><span class="qn">26</span>
+  <div class="qt"><span class="jb">§19 종합</span>법원이 경매로 부동산을 처분하는 업무를 수행하는 것은 제19조 사업소득에 해당하지 않으며, 협회 및 단체에 해당하는 조직이라도 특정 사업을 경영하는 경우에는 그 사업 내용에 따라 소득을 분류한다.<span class="tb tup">협회 단체 특정사업 분류</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(26,'O')">O</button><button class="oxb" onclick="so(26,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(26)">정답 확인</button><span class="rb" id="r26"></span></div>
+<div class="ex" id="e26"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제37조 제2항 단서</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §37② 단서: 협회·단체가 특정사업을 경영하는 경우에는 <b>그 사업의 내용에 따라 분류</b>합니다. 즉, 협회·단체도 특정사업(예: 숙박업, 도소매업 등)을 영위하면 해당 사업소득으로 과세될 수 있습니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q27 -->
+<div class="qc"><div class="qh"><span class="qn">27</span>
+  <div class="qt"><span class="jb">§19①18호</span>협회 및 단체, 수리 및 기타 개인서비스업에서 발생하는 소득은 모두 사업소득으로 과세된다.<span class="tb thot">🔴 협회·단체 제외 규정 망각 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(27,'O')">O</button><button class="oxb" onclick="so(27,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(27)">정답 확인</button><span class="rb" id="r27"></span></div>
+<div class="ex" id="e27"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제18호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§19①18호: 협회 및 단체에서 발생하는 소득은 사업소득이나, <b>대통령령으로 정하는 협회 및 단체</b>(시행령 §37②의 한국표준산업분류 중분류상 협회·단체)는 제외됩니다. "모두 과세"가 오류입니다.</p>
+  <p class="trap">⚠ "모두 사업소득 과세" → "대통령령으로 정하는 협회·단체는 제외"</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 5: §19 종합 확인문제 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 5</span><span class="stl">제19조 종합 — 구분·판단 문제</span><span class="scn" id="c5">0/5</span></div>
+<hr class="shr">
+
+<!-- Q28 -->
+<div class="qc"><div class="qh"><span class="qn">28</span>
+  <div class="qt"><span class="jb">§19①12호</span>공익사업과 관련하여 지상권을 설정함으로써 발생하는 소득은 사업소득 중 부동산업 소득에 해당한다.<span class="tb thot">🔴 공익사업 지상권 설정 소득 — 사업소득 제외 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(28,'O')">O</button><button class="oxb" onclick="so(28,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(28)">정답 확인</button><span class="rb" id="r28"></span></div>
+<div class="ex" id="e28"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제12호 단서</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§19①12호 단서: 공익사업과 관련한 지역권·지상권(지하·공중 포함) 설정·대여 소득은 <b>사업소득에서 제외</b>됩니다. 이는 §21①7호에 따른 기타소득으로 과세됩니다.</p>
+  <p class="trap">⚠ "부동산업 사업소득" → "사업소득 제외 (기타소득으로 과세)"</p>
+</div></div>
+
+<!-- Q29 -->
+<div class="qc"><div class="qh"><span class="qn">29</span>
+  <div class="qt"><span class="jb">§19① 종합</span>금융 및 보험업에서 발생하는 소득, 정보통신업에서 발생하는 소득, 건설업에서 발생하는 소득은 모두 사업소득에 포함된다.<span class="tb tup">다양한 업종 사업소득 해당 여부</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(29,'O')">O</button><button class="oxb" onclick="so(29,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(29)">정답 확인</button><span class="rb" id="r29"></span></div>
+<div class="ex" id="e29"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제6호·제10호·제11호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§19① 사업소득에 포함되는 주요 업종</strong><br>
+    6호: 건설업 | 7호: 도매·소매업 | 8호: 운수·창고업<br>
+    9호: 숙박·음식점업 | <strong>10호: 정보통신업</strong> | <strong>11호: 금융·보험업</strong><br>
+    12호: 부동산업 | 13호: 전문·과학·기술서비스업(수탁 연구개발 포함)</div>
+  <p>금융·보험업, 정보통신업, 건설업 모두 §19①에 명시적으로 열거된 사업소득입니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q30 -->
+<div class="qc"><div class="qh"><span class="qn">30</span>
+  <div class="qt"><span class="jb">§19①21호</span>온라인 플랫폼을 통해 개인이 일회성으로 물건을 판매하여 얻는 소득은 계속적·반복적 활동이 아니므로 제21호에 따른 사업소득이 아니다.<span class="tb tup">일회성 판매 — 사업소득 비해당</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(30,'O')">O</button><button class="oxb" onclick="so(30,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(30)">정답 확인</button><span class="rb" id="r30"></span></div>
+<div class="ex" id="e30"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항 제21호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§19①21호: 유사 사업소득이 되려면 <b>계속적·반복적으로 행하는 활동</b>이어야 합니다. 일회성 거래는 이 요건을 충족하지 못해 사업소득이 아니라 기타소득(일시적 소득)에 해당할 수 있습니다. 조문 취지에 부합합니다.</p>
+</div></div>
+
+<!-- Q31 -->
+<div class="qc"><div class="qh"><span class="qn">31</span>
+  <div class="qt"><span class="jb">§19 종합</span>사업소득은 해당 과세기간에 발생한 소득을 기준으로 하며, 소득금액은 총수입금액에서 필요경비를 공제하되 필요경비 초과분은 결손금, 사업의 범위는 이 법 특별규정 외에는 한국표준산업분류에 따른다.<span class="tb tup">§19 전체 구조 종합 확인</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(31,'O')">O</button><button class="oxb" onclick="so(31,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(31)">정답 확인</button><span class="rb" id="r31"></span></div>
+<div class="ex" id="e31"><div class="eh">해설</div><div class="lr">소득세법 제19조 제1항·제2항·제3항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>§19 전체 구조 정리</strong><br>
+    <strong>§19①</strong>: 해당 과세기간 발생 소득 (21가지 열거)<br>
+    <strong>§19②</strong>: 소득금액 = 총수입금액 − 필요경비 | 초과분 = 결손금<br>
+    <strong>§19③</strong>: 사업 범위 = 이 법 특별규정 우선, 나머지 한국표준산업분류</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">31</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제19조 제1항~3항, 소득세법 시행령 제31조·제33조·제35조·제36조·제37조 (법제처 현행법령, 소득세법 시행일 2026.04.21 / 시행령 2026.05.22)<br>
+  사업소득 열거·제외·소득금액·결손금·제조업 의제·전속계약금 | [2026-06-19] #소득세법 #사업소득 #결손금 #제조업의제 #전속계약금 #세무사1차
+</p>
+</div>
+
+<script>
+const ANS={
+  1:'O',2:'X',3:'O',4:'O',5:'O',6:'X',7:'O',8:'X',9:'O',10:'O',
+  11:'O',12:'X',13:'O',14:'O',15:'X',
+  16:'O',17:'X',18:'X',19:'X',20:'O',21:'O',
+  22:'O',23:'X',24:'X',25:'O',26:'O',27:'X',
+  28:'X',29:'O',30:'O',31:'O'
+};
+const SECS={
+  1:[1,2,3,4,5,6,7,8,9,10],
+  2:[11,12,13,14,15],
+  3:[16,17,18,19,20,21],
+  4:[22,23,24,25,26,27],
+  5:[28,29,30,31]
+};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=31;
+
+function so(n,v){
+  if(done[n])return;
+  sel[n]=v;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{
+    if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase());
+  });
+}
+function co(n){
+  if(done[n])return;
+  const v=sel[n],a=ANS[n];
+  if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}
+  done[n]=true;
+  const ok=v===a;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim();
+    b.classList.remove('so','sx');
+    if(bv===a)b.classList.add('c'+a.toLowerCase());
+    else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());
+  });
+  const badge=document.getElementById('r'+n);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';
+  badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+n).classList.add('show');
+  card.querySelector('.bck').disabled=true;
+  if(ok)correct++;
+  answered++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('pf').style.width=(answered/TOT*100)+'%';
+  Object.entries(SECS).forEach(([k,arr])=>{
+    document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;
+  });
+}
+function checkAll(){
+  for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/TOT*100);
+  document.getElementById('gdT').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=TOT-correct;
+  document.getElementById('smP').classList.add('show');
+  document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>

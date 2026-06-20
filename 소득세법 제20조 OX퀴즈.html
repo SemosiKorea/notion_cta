@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 제20조 | O/X 판단 퀴즈 — 근로소득</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F7;--surf:#FFF;--surf2:#E4EAF2;--bdr:#B8C8DC;
+  --acc:#1B3A5C;--acc2:#C0392B;--acc3:#1A5276;--danger:#7F1910;
+  --txt:#0A1628;--txt2:#1A2E44;--txt3:#4A6480;
+  --ok:#1A6B3A;--ng:#7F1910;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,58,92,.38)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#AED6F1}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#AED6F1;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#D6EAF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#D6EAF8;color:var(--acc);border:1px solid #A9CCE3}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#D5F5E3;color:#1A6B3A}.twrn{background:#FEF9E7;color:#796000}.tsrl{background:#EAE4F5;color:#4A235A}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#D6EAF8}
+.oxb.so{border-color:var(--acc3);background:#D6EAF8;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#D5F5E3;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#D5F5E3;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#EBF5FB;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#D6EAF8;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .lrsrl{font-family:var(--mono);font-size:.69rem;color:#4A235A;background:#EAE4F5;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem;margin-left:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#D6EAF8;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.kbox strong{color:var(--acc)}
+.srlbox{background:#EAE4F5;border:1.5px solid #4A235A;border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.srlbox strong{color:#4A235A}
+.okbox{background:#D5F5E3;border:1.5px solid var(--ok);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.okbox strong{color:var(--ok)}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s}
+.brs:hover{background:var(--acc);color:#fff}
+.intro{background:#D6EAF8;border:1.5px solid var(--acc);border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:var(--acc);line-height:2}
+.intro strong{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hdi"><div>
+    <div class="hbg">세무사 1차 · 소득세법 근로소득</div>
+    <div class="htl">소득세법 제20조<br><span>근로소득 6가지 열거 · 근로소득금액(총급여액) · 시행령 §38 포함 20가지</span></div>
+    <div class="hsb">§20①~③ 근로소득 열거 + §20② 총급여액·근로소득공제 | 시행령 §38 포함소득 20가지·퇴직급여 적립 제외·임원 저가 재화·주식매수선택권</div>
+  </div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<div class="intro">
+  <strong>📌 §20 핵심 정리</strong><br>
+  <strong>§20① 근로소득 6가지</strong>: ①봉급·급료·보수·세비·임금·상여·수당 등 ②법인 의결기관 결의에 따라 상여로 받는 소득 ③법인세법에 따라 <strong>상여로 처분된 금액(인정상여)</strong> ④퇴직함으로써 받는 소득으로서 퇴직소득에 속하지 않는 것 ⑤종업원·대학 교직원의 <strong>직무발명보상금</strong>(§21①22호의2 기타소득 제외) ⑥임원이 받는 <strong>저가 재화·용역 이익</strong><br>
+  <strong>§20② 근로소득금액</strong> = <strong>총급여액</strong>(비과세 제외 총합) − 근로소득공제(§47)<br>
+  <strong>시행령 §38① 포함소득 20가지</strong>: 기밀비(업무사용 불분명) / 공로금·위로금·학자금 / 각종 수당(근로·가족·전시·물가 등) / 집금수당 / 급식·주택·피복수당 / 주택 제공이익 / 저리·무상 주택자금 대여이익 / 기술·보건·연구수당 / 시간외·통근·개근·특별공로금 / 여비명목 연액·월액급여 / 벽지·해외근무수당 / 사용자 부담 보험료 / 퇴직급여(손금불산입분) / 휴가비 / 단체환급부보장성보험 환급금 / <strong>주식매수선택권 행사이익</strong> / 직급보조비 / 공무수행 상금·부상<br>
+  <strong>시행령 §38② 제외</strong>: 퇴직급여로 지급되기 위해 적립되는 급여(근로자가 적립액 선택 불가 조건)<br>
+  <strong>시행령 §38③ 임원 저가 재화 지원 방식 4가지</strong>: ①자사제품 시가이하 판매 ②자사제품 구입 지원금 ③계열회사제품 구입 지원금 ④계열회사가 저가판매 후 차액 보전<br>
+  <strong>시행령 §38④ 시가</strong>: 법인세법 §52②에 따른 시가 (예외: 파손·변질 또는 사용기한 임박 시 실제 지급가격)
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 1: §20① 근로소득 6가지 열거 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제20조 제1항 — 근로소득 6가지 열거</span><span class="scn" id="c1">0/8</span></div>
+<hr class="shr">
+
+<!-- Q1 -->
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§20①1호</span>근로를 제공함으로써 받는 봉급·급료·보수·세비·임금·상여·수당과 이와 유사한 성질의 급여는 근로소득이다.<span class="tb tup">근로소득 ① — 봉급·상여·수당 등</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20①1호: 근로 제공 대가로 받는 봉급·급료·보수·세비·임금·상여·수당 및 유사한 성질의 급여는 근로소득입니다. 조문 그대로 정확합니다.</p>
+  <div class="kbox"><strong>💼 쉬운 비유</strong>: 회사에 출근해서 일한 대가로 받는 월급, 보너스, 각종 수당 → 모두 근로소득!</div>
+</div></div>
+
+<!-- Q2 -->
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§20①2호</span>법인의 주주총회·사원총회 또는 이에 준하는 의결기관의 결의에 따라 상여로 받는 소득은 근로소득이다.<span class="tb tup">근로소득 ② — 의결기관 결의 상여</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20①2호 — 의결기관 결의 상여 근로소득</strong><br>
+    주체: 법인의 <strong>주주총회·사원총회 또는 이에 준하는 의결기관</strong>의 결의<br>
+    내용: <strong>상여</strong>로 받는 소득<br>
+    → 근로소득</div>
+  <p>조문 그대로 정확합니다. 법인이 임원에게 결의를 통해 지급하는 상여금은 근로소득입니다.</p>
+</div></div>
+
+<!-- Q3 -->
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§20①3호</span>「법인세법」에 따라 배당으로 처분된 금액은 근로소득이다.<span class="tb thot">🔴 인정상여 vs. 인정배당 소득분류 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제3호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>소득처분 유형별 소득 분류</strong><br>
+    법인세법에 따라 <strong>상여</strong>로 처분된 금액 → <strong>근로소득</strong> (§20①3호)<br>
+    법인세법에 따라 <strong>배당</strong>으로 처분된 금액 → <strong>배당소득</strong> (§17①4호)<br>
+    법인세법에 따라 <strong>기타소득</strong>으로 처분된 금액 → <strong>기타소득</strong></div>
+  <p>"배당으로 처분된 금액 → 근로소득"이 오류입니다. §20①3호는 <b>"상여로 처분된 금액"</b>이 근로소득이고, 배당으로 처분된 금액은 배당소득(§17①4호)입니다.</p>
+  <p class="trap">⚠ "배당 처분 → 근로소득" → "상여 처분 → 근로소득 / 배당 처분 → 배당소득"</p>
+</div></div>
+
+<!-- Q4 -->
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§20①4호</span>퇴직함으로써 받는 소득으로서 퇴직소득에 속하지 아니하는 소득은 근로소득이다.<span class="tb tup">근로소득 ④ — 퇴직소득 비해당 퇴직 소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제4호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20①4호: 퇴직 시 받는 소득이라도 퇴직소득에 속하지 않는 것은 근로소득으로 처리합니다. 예: 퇴직 위로금·공로금 일부, 소득세법상 퇴직소득 요건 미충족분 등. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q5 -->
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§20①5호</span>종업원등 또는 대학의 교직원이 지급받는 직무발명보상금은 기타소득이다.<span class="tb thot">🔴 직무발명보상금 소득 분류 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제5호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§20①5호 직무발명보상금 소득 분류</strong><br>
+    <strong>종업원 또는 대학의 교직원</strong>이 지급받는 직무발명보상금<br>
+    → 원칙: <strong>근로소득</strong><br>
+    단, §21①22호의2에 따른 직무발명보상금은 <strong>기타소득</strong>(제외)<br>
+    (= 비과세 한도 500만원 초과분이 기타소득으로 처리되는 경우)</div>
+  <p>"기타소득"이 오류입니다. 종업원·대학 교직원의 직무발명보상금은 원칙적으로 <b>근로소득</b>입니다(다만 §21①22호의2 해당분 제외).</p>
+  <p class="trap">⚠ "기타소득" → "근로소득 (§21①22호의2 해당분 제외)"</p>
+</div></div>
+
+<!-- Q6 -->
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§20①6호</span>사업자나 법인이 생산·공급하는 재화 또는 용역을 그 사업자나 법인(계열회사 포함)의 임원등에게 시가보다 낮은 가격으로 제공하거나 구입할 수 있도록 지원함으로써 해당 임원등이 얻는 이익은 근로소득이다.<span class="tb tup">근로소득 ⑥ — 임원 저가 재화·용역 이익</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제6호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20①6호 — 임원 저가 재화 이익 근로소득</strong><br>
+    주체: 사업자나 법인 (<strong>계열회사 포함</strong>)<br>
+    대상: 그 <strong>임원등</strong>에게<br>
+    내용: 시가보다 낮은 가격으로 제공하거나 구입 지원<br>
+    → 임원등이 얻는 이익 = <strong>근로소득</strong></div>
+  <p>조문 그대로 정확합니다. 시행령 §38③에서 4가지 지원 방식을 규정합니다.</p>
+</div></div>
+
+<!-- Q7 -->
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§20①6호</span>§20①6호는 임원뿐 아니라 일반 종업원도 저가 재화·용역을 제공받아 얻는 이익에 대해 동일하게 적용된다.<span class="tb thot">🔴 임원등 한정 vs. 전체 종업원 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제6호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§20①6호: 이 조항은 <b>"임원등"</b>에게 적용됩니다. 일반 종업원이 자사 제품을 시가보다 낮게 구매하는 것은 이 조항이 아닌 §20①1호("이와 유사한 성질의 급여")나 다른 조항으로 처리될 수 있습니다. §20①6호는 임원등에 한정된 특별 규정입니다.</p>
+  <p class="trap">⚠ "일반 종업원도 동일 적용" → "임원등에게만 한정 적용"</p>
+</div></div>
+
+<!-- Q8 -->
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§20① 종합</span>근로소득에는 봉급·임금 등 근로 대가, 의결기관 결의 상여, 법인세법상 상여 처분금액, 퇴직소득 비해당 퇴직소득, 종업원의 직무발명보상금(기타소득 제외분), 임원의 저가 재화 이익이 포함된다.<span class="tb tup">§20① 6가지 근로소득 종합</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제1호~제6호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>§20① 근로소득 6가지 열거 (1호~6호)</strong><br>
+    1호: 봉급·급료·보수·세비·임금·상여·수당 등 근로 대가<br>
+    2호: 의결기관 결의에 따른 상여<br>
+    3호: 법인세법상 <strong>상여로 처분된 금액</strong><br>
+    4호: 퇴직소득에 속하지 않는 퇴직 소득<br>
+    5호: 종업원·대학 교직원의 <strong>직무발명보상금</strong>(기타소득 제외분)<br>
+    6호: 임원등의 <strong>저가 재화·용역 이익</strong></div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 2: §20② 근로소득금액 · 총급여액 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제20조 제2항 — 근로소득금액·총급여액</span><span class="scn" id="c2">0/5</span></div>
+<hr class="shr">
+
+<!-- Q9 -->
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§20②</span>근로소득금액은 총급여액에서 근로소득공제를 적용한 금액으로 한다.<span class="tb tup">근로소득금액 = 총급여액 − 근로소득공제</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제20조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§20② 근로소득금액 계산 구조</strong><br>
+    <strong>총급여액</strong> = §20①의 소득 합계액 − 비과세소득<br>
+    <strong>근로소득금액</strong> = 총급여액 − 근로소득공제(§47)<br><br>
+    ※ 이자·배당소득과 달리 필요경비는 없고 근로소득공제로 대신함</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q10 -->
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§20②</span>총급여액이란 §20① 각 호의 소득의 금액의 합계액으로서, 비과세소득의 금액을 포함한 전체 금액을 말한다.<span class="tb thot">🔴 총급여액에 비과세 포함 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제20조 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§20②: 총급여액 = §20① 각 호 소득 합계액에서 <b>비과세소득의 금액을 제외</b>한 금액입니다. 비과세소득을 포함한 전체가 아닙니다.</p>
+  <p class="trap">⚠ "비과세 포함한 전체" → "비과세소득 제외한 합계액"</p>
+</div></div>
+
+<!-- Q11 -->
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§20②</span>근로소득금액 계산 시 적용하는 근로소득공제는 제47조에 따른다.<span class="tb tup">근로소득공제 근거 조문</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 제20조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20②: 근로소득금액 = 총급여액 − <b>제47조에 따른 근로소득공제</b>. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q12 -->
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§20② 종합</span>근로소득금액은 사업소득금액과 달리 필요경비를 공제하지 않으며, 대신 근로소득공제를 적용하여 계산한다.<span class="tb tup">근로소득금액 vs. 사업소득금액 비교</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 제20조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>소득 유형별 소득금액 계산 비교</strong><br>
+    이자·배당소득금액: 총수입금액 (필요경비 없음)<br>
+    <strong>근로소득금액</strong>: 총급여액 − <strong>근로소득공제(§47)</strong><br>
+    사업소득금액: 총수입금액 − <strong>필요경비</strong></div>
+  <p>조문 그대로 정확합니다. 근로소득은 실제 필요경비 증명이 어렵기 때문에 정률의 근로소득공제를 적용합니다.</p>
+</div></div>
+
+<!-- Q13 -->
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§20②</span>일용근로자의 경우에는 총급여액에서 근로소득공제를 적용하여 근로소득금액을 계산한 후, 이를 종합소득과세표준에 합산하여 신고한다.<span class="tb thot">🔴 일용근로자 종합과세 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 제14조 제3항 제2호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>일용근로자의 근로소득은 §14③2호에 따라 <b>분리과세</b>되어 종합소득과세표준에 합산하지 않습니다. 원천징수로 납세가 종결됩니다. "종합과세표준 합산"이 오류입니다.</p>
+  <p class="trap">⚠ "종합소득 합산·신고" → "분리과세 (원천징수로 납세 종결)"</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 3: 시행령 §38① 근로소득 포함 소득 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 3</span><span class="stl">시행령 §38 제1항 — 근로소득 포함 소득 20가지</span><span class="scn" id="c3">0/8</span></div>
+<hr class="shr">
+
+<!-- Q14 -->
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">시행령§38①1호</span>기밀비·교제비(판공비 포함) 등 명목으로 받는 것으로서 업무를 위하여 사용된 것이 분명하지 아니한 급여는 근로소득에 포함된다.<span class="tb tsrl">시행령 — 기밀비·교제비 근로소득 포함</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §38①1호 — 기밀비 근로소득 포함 기준</strong><br>
+    기밀비(판공비 포함)·교제비 등 명목으로 받은 것<br>
+    + <strong>업무를 위하여 사용된 것이 분명하지 아니한</strong> 급여<br>
+    → 근로소득에 포함<br><br>
+    반대: 업무 사용이 분명히 증명되면 실비변상적 급여로 비과세 가능</div>
+  <p>시행령 §38①1호 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q15 -->
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">시행령§38①2호</span>종업원이 받는 공로금·위로금·개업축하금·학자금·장학금은 근로소득에 포함된다. 이때 종업원의 자녀가 사용자로부터 받는 학자금·장학금은 포함되지 않는다.<span class="tb thot">🔴 자녀 학자금 포함 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제2호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="srlbox"><strong>시행령 §38①2호 — 학자금·장학금 포함 범위</strong><br>
+    종업원이 받는 학자금·장학금<br>
+    + <strong>종업원의 수학중인 자녀</strong>가 사용자로부터 받는 학자금·장학금 <strong>포함</strong></div>
+  <p>"자녀 학자금 미포함"이 오류입니다. 시행령 §38①2호는 종업원 <b>자녀가 사용자로부터 받는 학자금·장학금도 포함</b>된다고 명시합니다.</p>
+  <p class="trap">⚠ "자녀 학자금 미포함" → "수학중인 자녀가 사용자로부터 받는 것도 포함"</p>
+</div></div>
+
+<!-- Q16 -->
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">시행령§38①6·7호</span>종업원이 사용자로부터 주택을 제공받는 이익과 종업원이 주택 구입·임차 자금을 저리 또는 무상으로 대여받는 이익은 근로소득이다.<span class="tb tsrl">시행령 — 주택 제공이익·저리 대여이익 근로소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제6호·제7호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §38①6·7호</strong><br>
+    6호: 주택을 <strong>제공받음으로써</strong> 얻는 이익 → 근로소득<br>
+    7호: 주택(부수 토지 포함) 구입·임차 자금을 <strong>저리 또는 무상으로 대여받는</strong> 이익 → 근로소득</div>
+  <p>시행령 §38①6·7호 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q17 -->
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">시행령§38①17호</span>법인의 임원등이 해당 법인 또는 특수관계 법인으로부터 부여받은 주식매수선택권을 근무 기간 중 행사함으로써 얻은 이익(행사 시 시가와 실제 매수가액의 차액)은 근로소득이다.<span class="tb tsrl">시행령 — 주식매수선택권 행사이익 근로소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제17호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §38①17호 — 주식매수선택권 행사이익</strong><br>
+    주체: 법인의 <strong>임원등</strong><br>
+    부여자: 해당 법인 또는 <strong>법인세법 시행령 §2⑧에 따른 특수관계 법인</strong><br>
+    시기: <strong>해당 법인등에서 근무하는 기간 중</strong> 행사<br>
+    금액: 행사 당시 <strong>시가 − 실제 매수가액</strong><br>
+    (주식에는 신주인수권 포함)<br>
+    → <strong>근로소득</strong></div>
+  <p>시행령 §38①17호 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q18 -->
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">시행령§38①19호</span>공무원에게 지급되는 직급보조비는 근로소득에 포함된다.<span class="tb tsrl">시행령 — 공무원 직급보조비 근로소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제19호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §38①19호: 「공무원 수당 등에 관한 규정」·「지방공무원 수당 등에 관한 규정」·「검사의 보수에 관한 법률 시행령」·대법원규칙·헌법재판소규칙 등에 따라 공무원에게 지급되는 <b>직급보조비 → 근로소득</b>. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q19 -->
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">시행령§38①20호</span>공무원이 국가 또는 지방자치단체로부터 공무 수행과 관련하여 받는 상금과 부상은 비과세소득이다.<span class="tb thot">🔴 공무원 상금·부상 비과세 vs. 근로소득 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제20호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §38①20호: 공무원이 국가·지방자치단체로부터 공무 수행과 관련하여 받는 상금과 부상은 <b>근로소득에 포함</b>됩니다. 비과세소득이 아닙니다.</p>
+  <p class="trap">⚠ "비과세소득" → "근로소득에 포함"</p>
+</div></div>
+
+<!-- Q20 -->
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">시행령§38①10호</span>여비의 명목으로 받는 연액 또는 월액의 급여는 실비변상적 급여이므로 비과세 근로소득이다.<span class="tb thot">🔴 여비 명목 연·월액 급여 — 근로소득 포함 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제10호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="srlbox"><strong>시행령 §38①10호 — 여비 명목 연·월액 급여</strong><br>
+    여비의 명목으로 받는 <strong>연액 또는 월액의 급여</strong><br>
+    → <strong>근로소득에 포함</strong> (과세)<br><br>
+    구별: 실제 지출한 여비를 실비정산 방식으로 받는 것 → 비과세</div>
+  <p>"비과세"가 오류입니다. <b>연액·월액</b>으로 정기적으로 지급되는 여비는 실비변상이 아닌 급여로 보아 <b>근로소득에 포함</b>됩니다. 실제 출장·여행 경비 정산은 비과세이지만, 정기적 여비수당은 과세됩니다.</p>
+  <p class="trap">⚠ "비과세 실비변상" → "연·월액 여비는 근로소득 포함(과세)"</p>
+</div></div>
+
+<!-- Q21 -->
+<div class="qc"><div class="qh"><span class="qn">21</span>
+  <div class="qt"><span class="jb">시행령§38①13호</span>「법인세법 시행령」 제44조 제4항에 따라 손금에 산입되지 아니하고 지급받는 퇴직급여는 근로소득에 포함된다.<span class="tb tsrl">시행령 — 손금불산입 퇴직급여 근로소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(21,'O')">O</button><button class="oxb" onclick="so(21,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(21)">정답 확인</button><span class="rb" id="r21"></span></div>
+<div class="ex" id="e21"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제13호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §38①13호: 법인세법 시행령 §44④에 따라 <b>손금에 산입되지 않고 지급받는 퇴직급여</b>는 근로소득에 포함됩니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 4: 시행령 §38②③④ 특수 규정 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 4</span><span class="stl">시행령 §38 제2·3·4항 — 퇴직급여 적립 제외·임원 저가 방식·시가</span><span class="scn" id="c4">0/7</span></div>
+<hr class="shr">
+
+<!-- Q22 -->
+<div class="qc"><div class="qh"><span class="qn">22</span>
+  <div class="qt"><span class="jb">시행령§38②</span>퇴직급여로 지급되기 위하여 적립되는 급여는 근로자가 적립금액 등을 선택할 수 없는 경우에 한하여 근로소득에 포함하지 않는다.<span class="tb tsrl">시행령 — 퇴직급여 적립금 근로소득 제외 요건</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(22,'O')">O</button><button class="oxb" onclick="so(22,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(22)">정답 확인</button><span class="rb" id="r22"></span></div>
+<div class="ex" id="e22"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §38② 퇴직급여 적립금 제외 요건</strong><br>
+    퇴직급여로 지급되기 위해 적립되는 급여<br>
+    단, <strong>근로자가 적립금액 등을 선택할 수 없는 것</strong>으로서<br>
+    재정경제부령으로 정하는 방법에 따라 적립되는 경우에 한정<br>
+    → 근로소득에 <strong>포함하지 아니함</strong></div>
+  <p>시행령 §38② 그대로 정확합니다. 근로자 선택 불가 조건이 핵심입니다.</p>
+</div></div>
+
+<!-- Q23 -->
+<div class="qc"><div class="qh"><span class="qn">23</span>
+  <div class="qt"><span class="jb">시행령§38②</span>퇴직급여로 지급되기 위해 적립되는 급여는 근로자가 적립금액을 선택할 수 있는 경우에도 근로소득에 포함하지 않는다.<span class="tb thot">🔴 근로자 선택권 유무에 따른 근로소득 포함 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(23,'O')">O</button><button class="oxb" onclick="so(23,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(23)">정답 확인</button><span class="rb" id="r23"></span></div>
+<div class="ex" id="e23"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §38②: 퇴직급여 적립금의 근로소득 제외는 <b>근로자가 적립금액을 선택할 수 없는 경우에 한정</b>됩니다. 근로자가 선택 가능하면 근로소득에 포함됩니다.</p>
+  <p class="trap">⚠ "선택 가능해도 제외" → "선택 불가인 경우에만 제외"</p>
+</div></div>
+
+<!-- Q24 -->
+<div class="qc"><div class="qh"><span class="qn">24</span>
+  <div class="qt"><span class="jb">시행령§38③</span>임원등에게 자사제품을 시가보다 낮은 가격으로 판매하는 것과 자사제품 구입에 사용하도록 지원금을 지급하는 것은 §20①6호의 지원 방식에 해당한다.<span class="tb tsrl">시행령 — 저가 지원 방식 ①②</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(24,'O')">O</button><button class="oxb" onclick="so(24,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(24)">정답 확인</button><span class="rb" id="r24"></span></div>
+<div class="ex" id="e24"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제3항 제1호·제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §38③ 임원 저가 지원 방식 4가지</strong><br>
+    <strong>1호</strong>: 자사제품등을 임원등에게 <strong>시가보다 낮은 가격으로 판매·제공</strong><br>
+    <strong>2호</strong>: 임원등에게 자사제품등 구입에 사용하도록 <strong>지원금 지급</strong><br>
+    <strong>3호</strong>: 임원등에게 계열회사제품등 구입에 사용하도록 <strong>지원금 지급</strong><br>
+    <strong>4호</strong>: 계열회사가 임원등에게 저가 판매 후 <strong>사업자·법인이 차액을 계열회사에 지급</strong></div>
+  <p>시행령 §38③1·2호 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q25 -->
+<div class="qc"><div class="qh"><span class="qn">25</span>
+  <div class="qt"><span class="jb">시행령§38③4호</span>사업자나 법인의 계열회사가 임원등에게 계열회사 제품을 시가보다 낮은 가격으로 판매하고, 계열회사 자신이 시가와의 차액을 부담하는 경우도 §20①6호의 지원 방식에 해당한다.<span class="tb thot">🔴 차액 부담 주체 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(25,'O')">O</button><button class="oxb" onclick="so(25,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(25)">정답 확인</button><span class="rb" id="r25"></span></div>
+<div class="ex" id="e25"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제3항 제4호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §38③4호: 계열회사가 저가 판매하고 <b>사업자나 법인</b>(임원등의 사용자)이 그 계열회사에 시가와의 차액을 지급하는 방식이어야 합니다. "계열회사 자신이 차액 부담"이 아닙니다.</p>
+  <p class="trap">⚠ "계열회사가 차액 부담" → "사업자·법인(임원의 사용자)이 계열회사에 차액 지급"</p>
+</div></div>
+
+<!-- Q26 -->
+<div class="qc"><div class="qh"><span class="qn">26</span>
+  <div class="qt"><span class="jb">시행령§38④</span>§20①6호에 따른 시가는 「법인세법」 제52조제2항에 따른 시가이나, 재화의 파손 또는 변질로 임원등이 아닌 자에게 판매할 수 없는 경우에는 임원등이 지급한 실제 가격을 시가로 한다.<span class="tb tsrl">시행령 — 파손·변질 시 시가 특례</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(26,'O')">O</button><button class="oxb" onclick="so(26,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(26)">정답 확인</button><span class="rb" id="r26"></span></div>
+<div class="ex" id="e26"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제4항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §38④ 시가 예외 — 실제 지급가격 시가 적용</strong><br>
+    원칙: 법인세법 §52②에 따른 <strong>시가</strong><br>
+    예외(실제 지급가격 적용):<br>
+    1호: 재화의 <strong>파손 또는 변질</strong>로 임원등 외 자에게 판매 불가<br>
+    2호: 탑승권·숙박권 등 <strong>사용기한 임박</strong>으로 임원등 외 자에게 판매·제공 현저히 곤란</div>
+  <p>시행령 §38④1호 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q27 -->
+<div class="qc"><div class="qh"><span class="qn">27</span>
+  <div class="qt"><span class="jb">시행령§38④2호</span>탑승권 및 숙박권 등 사용시기가 제한되는 재화 또는 용역의 사용 기한이 임박하여 임원등이 아닌 자에게 판매 또는 제공하는 것이 현저히 곤란한 경우에도 원칙적으로 법인세법 §52②의 시가를 적용한다.<span class="tb thot">🔴 사용기한 임박 시 시가 적용 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(27,'O')">O</button><button class="oxb" onclick="so(27,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(27)">정답 확인</button><span class="rb" id="r27"></span></div>
+<div class="ex" id="e27"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제4항 제2호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §38④2호: 탑승권·숙박권 등의 사용기한 임박으로 일반 판매가 곤란한 경우에는 <b>법인세법 §52②의 시가가 아닌, 임원등이 실제 지급한 가격을 시가로</b> 적용합니다.</p>
+  <p class="trap">⚠ "법인세법 시가 원칙 적용" → "임원등이 지급한 실제 가격을 시가로 적용"</p>
+</div></div>
+
+<!-- Q28 -->
+<div class="qc"><div class="qh"><span class="qn">28</span>
+  <div class="qt"><span class="jb">시행령§38①16호</span>계약기간 만료 전 또는 만기에 종업원에게 귀속되는 단체환급부보장성보험의 환급금은 근로소득이다.<span class="tb tsrl">시행령 — 단체환급부보장성보험 환급금</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(28,'O')">O</button><button class="oxb" onclick="so(28,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(28)">정답 확인</button><span class="rb" id="r28"></span></div>
+<div class="ex" id="e28"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제38조 제1항 제16호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>시행령 §38①16호: <b>계약기간 만료 전 또는 만기에 종업원에게 귀속되는 단체환급부보장성보험의 환급금 → 근로소득</b>. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- Part 5: §20 종합 판단 -->
+<!-- ══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 5</span><span class="stl">제20조 종합 — 구분·판단 문제</span><span class="scn" id="c5">0/6</span></div>
+<hr class="shr">
+
+<!-- Q29 -->
+<div class="qc"><div class="qh"><span class="qn">29</span>
+  <div class="qt"><span class="jb">§20①3호</span>법인세법에 따라 상여로 처분된 금액(인정상여)은 실제로 지급받은 여부와 관계없이 근로소득으로 과세된다.<span class="tb tup">인정상여 — 실제 수령 불문 근로소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(29,'O')">O</button><button class="oxb" onclick="so(29,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(29)">정답 확인</button><span class="rb" id="r29"></span></div>
+<div class="ex" id="e29"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제3호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20①3호: 법인세법에 따라 상여로 처분된 금액은 <b>실제 수령 여부와 무관하게</b> 근로소득으로 간주하여 과세합니다. 조세회피 방지를 위한 소득처분 과세 규정입니다.</p>
+</div></div>
+
+<!-- Q30 -->
+<div class="qc"><div class="qh"><span class="qn">30</span>
+  <div class="qt"><span class="jb">§20①5호</span>종업원이 사용자로부터 직무발명보상금으로 500만원을 받은 경우, 이 금액은 기타소득으로 비과세된다.<span class="tb thot">🔴 직무발명보상금 500만원 이하 비과세 근거 조문 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(30,'O')">O</button><button class="oxb" onclick="so(30,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(30)">정답 확인</button><span class="rb" id="r30"></span></div>
+<div class="ex" id="e30"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제5호 / 제12조 제3호 나목 / 제21조 제1항 제22호의2</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>직무발명보상금 과세 구조</strong><br>
+    종업원이 받는 직무발명보상금<br>
+    → 원칙: <strong>근로소득</strong>(§20①5호)<br>
+    단, §21①22호의2 해당(비과세 한도 500만원 초과분 기타소득)<br><br>
+    §12③나목: <strong>연 500만원 이하</strong>의 직무발명보상금 → <strong>비과세</strong><br>
+    초과분 → 기타소득</div>
+  <p>"기타소득으로 비과세"가 오류입니다. 500만원 이하분은 §12③나목에 따라 <b>비과세</b>이지만, 이것은 "근로소득으로 포함되나 비과세"입니다. 또한 초과분은 기타소득이 되는 구조입니다. 500만원을 받았다면 전액 비과세이나 "기타소득으로 비과세"라는 표현은 부정확합니다.</p>
+  <p class="trap">⚠ "기타소득으로 비과세" → "연 500만원 이하 비과세(§12③나목), 초과분은 기타소득"</p>
+</div></div>
+
+<!-- Q31 -->
+<div class="qc"><div class="qh"><span class="qn">31</span>
+  <div class="qt"><span class="jb">§20①</span>근로소득은 해당 과세기간에 발생한 소득을 기준으로 하되, 일용근로자의 근로소득은 분리과세로 종결되어 종합소득과세표준에 합산하지 않는다.<span class="tb tup">근로소득 발생주의 + 일용근로자 분리과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(31,'O')">O</button><button class="oxb" onclick="so(31,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(31)">정답 확인</button><span class="rb" id="r31"></span></div>
+<div class="ex" id="e31"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 / 제14조 제3항 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20①: 근로소득은 해당 과세기간에 발생한 소득 기준. §14③2호: 일용근로자 근로소득은 분리과세. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q32 -->
+<div class="qc"><div class="qh"><span class="qn">32</span>
+  <div class="qt"><span class="jb">§20 종합</span>근로소득금액은 총급여액(비과세 제외한 §20① 소득 합계액)에서 근로소득공제를 차감한 금액으로, 결손금이 발생하지 않는 구조이다.<span class="tb tup">근로소득금액 — 결손금 발생 불가 구조</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(32,'O')">O</button><button class="oxb" onclick="so(32,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(32)">정답 확인</button><span class="rb" id="r32"></span></div>
+<div class="ex" id="e32"><div class="eh">해설</div><div class="lr">소득세법 제20조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>근로소득 결손금 발생 불가 이유</strong><br>
+    사업소득: 총수입금액 − 필요경비 → 필요경비 초과 시 <strong>결손금</strong> 발생 가능<br>
+    <strong>근로소득: 총급여액 − 근로소득공제</strong><br>
+    → 근로소득공제는 총급여액의 일정 비율로 산정<br>
+    → 총급여액이 존재하면 공제액이 총급여액을 초과할 수 없음<br>
+    → <strong>결손금 구조 자체가 없음</strong></div>
+  <p>조문 구조에 부합합니다. 근로소득은 결손금 개념이 없습니다.</p>
+</div></div>
+
+<!-- Q33 -->
+<div class="qc"><div class="qh"><span class="qn">33</span>
+  <div class="qt"><span class="jb">§20·시행령§38 종합</span>근로소득에는 봉급·상여 등 근로 대가뿐 아니라 기밀비(업무사용 불분명), 학자금(종업원 자녀 포함), 여비 명목 연·월액 급여, 주식매수선택권 행사이익, 직급보조비, 단체환급부보장성보험 환급금 등 다양한 항목이 포함된다.<span class="tb tup">§20·시행령 §38 근로소득 포함 종합</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(33,'O')">O</button><button class="oxb" onclick="so(33,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(33)">정답 확인</button><span class="rb" id="r33"></span></div>
+<div class="ex" id="e33"><div class="eh">해설</div><div class="lr">소득세법 제20조 / 시행령 제38조 제1항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§20①과 시행령 §38①에 열거된 주요 항목들이 모두 정확하게 언급되어 있습니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q34 -->
+<div class="qc"><div class="qh"><span class="qn">34</span>
+  <div class="qt"><span class="jb">§20①4호</span>임원이 퇴직금을 받은 경우, 그 전액이 근로소득으로 과세된다.<span class="tb thot">🔴 퇴직소득 해당분 vs. 근로소득 처리 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(34,'O')">O</button><button class="oxb" onclick="so(34,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(34)">정답 확인</button><span class="rb" id="r34"></span></div>
+<div class="ex" id="e34"><div class="eh">해설</div><div class="lr">소득세법 제20조 제1항 제4호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§20①4호 퇴직소득 처리 구조</strong><br>
+    퇴직 시 받는 소득<br>
+    ↓<br>
+    <strong>퇴직소득에 해당하는 부분</strong> → <strong>퇴직소득</strong>(§22)으로 분류과세<br>
+    <strong>퇴직소득에 속하지 않는 부분</strong> → <strong>근로소득</strong>(§20①4호)<br>
+    (예: 법인세법상 한도 초과 퇴직급여 등)</div>
+  <p>"전액 근로소득"이 오류입니다. 퇴직소득에 해당하는 부분은 퇴직소득으로 분류과세되고, 퇴직소득에 해당하지 않는 부분만 근로소득으로 처리됩니다.</p>
+  <p class="trap">⚠ "전액 근로소득" → "퇴직소득 해당분은 퇴직소득, 비해당분만 근로소득"</p>
+</div></div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">34</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제20조 제1항~3항, 소득세법 시행령 제38조 (법제처 현행법령, 소득세법 시행일 2026.04.21 / 시행령 2026.05.22)<br>
+  근로소득 6가지·총급여액·근로소득공제·시행령 §38 포함소득 20가지 | [2026-06-19] #소득세법 #근로소득 #총급여액 #주식매수선택권 #인정상여 #세무사1차
+</p>
+</div>
+
+<script>
+const ANS={
+  1:'O',2:'O',3:'X',4:'O',5:'X',6:'O',7:'X',8:'O',
+  9:'O',10:'X',11:'O',12:'O',13:'X',
+  14:'O',15:'X',16:'O',17:'O',18:'O',19:'X',20:'X',21:'O',
+  22:'O',23:'X',24:'O',25:'X',26:'O',27:'X',28:'O',
+  29:'O',30:'X',31:'O',32:'O',33:'O',34:'X'
+};
+const SECS={
+  1:[1,2,3,4,5,6,7,8],
+  2:[9,10,11,12,13],
+  3:[14,15,16,17,18,19,20,21],
+  4:[22,23,24,25,26,27,28],
+  5:[29,30,31,32,33,34]
+};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=34;
+
+function so(n,v){
+  if(done[n])return;
+  sel[n]=v;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{
+    if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase());
+  });
+}
+function co(n){
+  if(done[n])return;
+  const v=sel[n],a=ANS[n];
+  if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}
+  done[n]=true;
+  const ok=v===a;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim();
+    b.classList.remove('so','sx');
+    if(bv===a)b.classList.add('c'+a.toLowerCase());
+    else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());
+  });
+  const badge=document.getElementById('r'+n);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';
+  badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+n).classList.add('show');
+  card.querySelector('.bck').disabled=true;
+  if(ok)correct++;
+  answered++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('pf').style.width=(answered/TOT*100)+'%';
+  Object.entries(SECS).forEach(([k,arr])=>{
+    document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;
+  });
+}
+function checkAll(){
+  for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/TOT*100);
+  document.getElementById('gdT').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=TOT-correct;
+  document.getElementById('smP').classList.add('show');
+  document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>

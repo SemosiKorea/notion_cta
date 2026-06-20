@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 제12조~15조 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;--surf:#FFF;--surf2:#EDE8DC;--bdr:#D0C8B4;
+  --acc:#7A3B00;--acc2:#1A6B3A;--acc3:#A05010;--danger:#7F1910;
+  --txt:#1E140A;--txt2:#3D2E1A;--txt3:#80684A;
+  --ok:#1A6B3A;--ng:#7F1910;
+  --serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+  --sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(122,59,0,.38)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#F0D8A8}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#F0D8A8;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}
+.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}
+.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#F0DEBC;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#F0DEBC;color:var(--acc);border:1px solid #D4B880}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E0F0E8;color:#1A6B3A}.twrn{background:#FFF8E1;color:#796000}.tsrl{background:#E8E4F4;color:#3A1F7A}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#F0DEBC}
+.oxb.so{border-color:var(--acc3);background:#F0DEBC;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E0F0E8;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E0F0E8;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FBF7F0;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}
+.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#F0DEBC;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .lrsrl{font-family:var(--mono);font-size:.69rem;color:#3A1F7A;background:#E8E4F4;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem;margin-left:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}
+.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.kbox{background:#FBF0DC;border:1.5px solid var(--acc);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.kbox strong{color:var(--acc)}
+.srlbox{background:#E8E4F4;border:1.5px solid #3A1F7A;border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.srlbox strong{color:#3A1F7A}
+.okbox{background:#E0F0E8;border:1.5px solid var(--ok);border-radius:6px;padding:.5rem .85rem;margin:.38rem 0;font-size:.79rem;line-height:1.82}.okbox strong{color:var(--ok)}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}
+.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s}
+.brs:hover{background:var(--acc);color:#fff}
+.intro{background:#FBF0DC;border:1.5px solid var(--acc);border-radius:8px;padding:.9rem 1.1rem;margin:1.2rem 0 1.8rem;font-size:.8rem;color:var(--acc);line-height:2}
+.intro strong{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hdi"><div>
+    <div class="hbg">세무사 1차 · 소득세법 총론</div>
+    <div class="htl">소득세법 제12조~제15조<br><span>비과세소득 · 과세표준 계산 · 세액 계산 순서</span></div>
+    <div class="hsb">§12 비과세 5호(사업·근로·연금·기타) + §14 종합과세표준·분리과세 · §15 세액계산순서 | 시행령 §9~§16 상세</div>
+  </div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div>
+</header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+
+<div class="wrap">
+
+<div class="intro">
+  <strong>📌 §12~§15 핵심 정리</strong><br>
+  <strong>§12 비과세 — 사업소득</strong>: ①논·밭 작물 생산 소득 ②1주택 소유자 주택임대소득(기준시가 12억 초과·국외 제외) ③농어가부업소득(부업규모 축산 또는 연 3천만원 이하) ④전통주 제조 ⑤조림기간 5년 이상 임목 벌채·양도 <strong>연 3천만원 이하</strong> ⑥작물재배업 ⑦어로·양식어업<br>
+  <strong>§12 비과세 — 근로·퇴직소득</strong>: 복무 중인 병(병장 이하 현역병·의무경찰 등) | 산재급여 | 실업급여·육아휴직급여 | 사망으로 받는 국민연금 반환일시금·사망일시금 | 학자금(업무관련+지급기준+6개월 이상 교육훈련 후 의무근무 반납조건) | 실비변상적 급여(자가운전보조금 월 20만원 이내·연구보조비 월 20만원 이내 등) | 외국정부 근무 <strong>대한민국 국민이 아닌 자</strong> | 국외근로 월 100만원 이내(원양·건설현장 월 500만원) | 식사대 월 20만원 이하 | 출산급여 전액·보육수당 6세 이하 월 20만원 이내<br>
+  <strong>§14 과세표준 계산</strong>: 종합소득과세표준 = 종합소득금액 − 종합소득공제 | 분리과세 제외 소득 10가지 | 이자·배당 <strong>2천만원</strong> 이하 + 원천징수 시 분리과세 | 분리과세 주택임대 총수입 <strong>2천만원</strong> 이하 | 기타소득금액 300만원 이하 원천징수 시 분리과세(선택 가능)<br>
+  <strong>§15 세액계산순서</strong>: ①과세표준×기본세율→산출세액 ②산출세액−세액공제→결정세액 ③결정세액+가산세→총결정세액
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- Part 1: 제12조 비과세 — 사업소득 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제12조 비과세소득 — 사업소득 (제2호)</span><span class="scn" id="c1">0/7</span></div>
+<hr class="shr">
+
+<!-- Q1 -->
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§12 2호 가목</span>논·밭을 작물 생산에 이용하게 함으로써 발생하는 소득은 소득세를 과세하지 아니한다.<span class="tb tup">논·밭 작물 생산 비과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제12조 제2호 가목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§12 제2호 가목: 논·밭을 작물 생산에 이용하게 함으로써 발생하는 소득은 비과세 사업소득입니다. 조문 그대로 정확합니다.</p>
+  <div class="kbox"><strong>🌾 쉬운 비유</strong>: 농부 아저씨가 논밭에 벼·채소를 심어서 번 돈은 세금을 안 냅니다. 농업을 보호하는 취지입니다!</div>
+</div></div>
+
+<!-- Q2 -->
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§12 2호 나목</span>1개의 주택을 소유하는 자의 주택임대소득은 기준시가가 12억원을 초과하는 주택이라도 국내에 소재하는 주택이라면 비과세한다.<span class="tb thot">🔴 12억 초과 국내주택 비과세 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제12조 제2호 나목</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§12 2호 나목 — 1주택 소유자 주택임대소득 비과세 범위</strong><br>
+    비과세 원칙: 1주택 소유자의 주택임대소득<br>
+    <strong>비과세 제외</strong>(과세 대상) ①:<br>
+    제99조 기준시가 <strong>12억원 초과</strong> 주택의 임대소득<br>
+    <strong>비과세 제외</strong>(과세 대상) ②:<br>
+    <strong>국외에 소재하는 주택</strong>의 임대소득</div>
+  <p>기준시가 12억원을 초과하는 주택의 임대소득은 1주택 소유자라도 과세합니다. "국내 소재이면 비과세"라는 주장은 오류입니다.</p>
+  <p class="trap">⚠ "12억 초과 국내주택 → 비과세" → "12억 초과 → 과세"</p>
+</div></div>
+
+<!-- Q3 -->
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§12 2호 마목</span>조림기간 5년 이상인 임지의 임목의 벌채 또는 양도로 발생하는 소득으로서 연 3천만원 이하의 금액은 비과세 사업소득이다.<span class="tb tup">조림임목 비과세 — 연 3천만원 이하</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 제12조 제2호 마목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§12 2호 마목 — 조림임목 비과세 요건</strong><br>
+    ① 조림기간: <strong>5년 이상</strong> 임지의 임목<br>
+    ② 행위: 벌채 또는 양도<br>
+    ③ 한도: 연 <strong>3천만원 이하</strong></div>
+  <p>조문 그대로 정확합니다. 5년 미만이거나 3천만원 초과분은 과세합니다.</p>
+</div></div>
+
+<!-- Q4 -->
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§12 2호 마목</span>조림기간 3년 이상인 임지의 임목의 벌채로 발생하는 소득으로서 연 3천만원 이하의 금액은 비과세 사업소득이다.<span class="tb thot">🔴 조림기간 3년→5년 변조 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 제12조 제2호 마목</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§12 2호 마목: 조림기간은 <b>5년 이상</b>이어야 합니다. 3년은 요건 미달입니다.</p>
+  <p class="trap">⚠ "조림기간 3년 이상" → "조림기간 5년 이상"</p>
+</div></div>
+
+<!-- Q5 (시행령 §9) -->
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">시행령§9①</span>농어가부업소득 중 농어가부업규모의 축산에서 발생하는 소득은 금액 한도 없이 전액 비과세한다.<span class="tb tsrl">시행령 — 농어가부업 축산 비과세 한도</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제9조 제1항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §9① 농어가부업소득 비과세 구분</strong><br>
+    <strong>1호</strong>: 별표 1의 농가부업규모의 축산에서 발생하는 소득 → <strong>금액 한도 없이 전액 비과세</strong><br>
+    <strong>2호</strong>: 1호 외의 소득(민박·음식물판매·특산물제조·전통차제조 등) → 소득금액 합계 <strong>연 3천만원 이하</strong>인 소득</div>
+  <p>시행령 §9①: 별표 1 농가부업규모 축산 → 한도 없이 전액 비과세. 그 외 부업소득 → 연 3천만원 이하만 비과세. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q6 (시행령 §9) -->
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">시행령§9②③</span>농어가부업소득에서 말하는 '민박'은 도시에서 운영하는 모든 숙박시설을 포함하며, '특산물'에는 식품산업진흥법에 따른 전통식품이 포함된다.<span class="tb thot">🔴 민박 범위 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제9조 제2항·제3항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="srlbox"><strong>시행령 §9②③ 민박·특산물 정의</strong><br>
+    <strong>민박</strong>: 「농어촌정비법」에 따른 <strong>농어촌민박사업</strong> (도시 일반 숙박 ❌)<br>
+    <strong>특산물</strong>: ①「식품산업진흥법」의 전통식품 ②「수산식품산업의 육성 및 지원에 관한 법률」의 수산전통식품 ③「농수산물 품질관리법」의 수산특산물</div>
+  <p>"도시의 모든 숙박시설"이 오류입니다. 민박은 <b>농어촌정비법상 농어촌민박사업</b>으로 한정됩니다. 특산물 포함 사항은 정확합니다.</p>
+  <p class="trap">⚠ "도시 모든 숙박시설" → "농어촌정비법상 농어촌민박사업"</p>
+</div></div>
+
+<!-- Q7 -->
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§12 2호 종합</span>비과세 사업소득에는 논·밭 작물 생산, 1주택 소유자 일정 주택임대, 농어가부업소득, 전통주 제조, 조림기간 5년 이상 임목 벌채·양도(연 3천만원 이하), 작물재배업, 어로·양식어업 소득이 포함된다.<span class="tb tup">비과세 사업소득 7가지 종합</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제12조 제2호 가~사목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§12 2호 비과세 사업소득 7가지 (가~사목)</strong><br>
+    가. 논·밭 작물 생산<br>
+    나. 1주택 소유자 주택임대소득(12억 초과·국외 제외)<br>
+    다. 농어가부업소득<br>
+    라. 전통주 제조 소득<br>
+    마. 조림기간 5년 이상 임목 벌채·양도 — 연 3천만원 이하<br>
+    바. 작물재배업 소득<br>
+    사. 어로어업 또는 양식어업 소득</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- Part 2: 제12조 비과세 — 근로·퇴직소득 (제3호) -->
+<!-- ═══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제12조 비과세소득 — 근로·퇴직소득 (제3호)</span><span class="scn" id="c2">0/10</span></div>
+<hr class="shr">
+
+<!-- Q8 -->
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§12 3호 가목 / 시행령§10</span>복무 중인 병에 해당하는 자는 병장 이하의 현역병(지원하지 아니하고 임용된 하사를 포함)과 의무경찰, 그 밖에 이에 준하는 사람으로서 병역의무 수행을 위해 징집·소집 또는 지원하여 복무 중인 사람이다.<span class="tb tsrl">시행령 — 복무 중인 병의 범위</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제10조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §10 — 복무 중인 병의 범위</strong><br>
+    병역의무 수행을 위해 징집·소집 또는 지원하여 복무 중인 사람으로서:<br>
+    ① <strong>병장 이하의 현역병</strong>(지원하지 않고 임용된 하사 포함)<br>
+    ② <strong>의무경찰</strong><br>
+    ③ 그 밖에 이에 준하는 사람</div>
+  <p>시행령 §10 그대로 정확합니다. 이들이 받는 급여는 비과세 근로소득입니다.</p>
+</div></div>
+
+<!-- Q9 -->
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§12 3호 바목</span>「국민연금법」에 따라 받는 반환일시금은 사망으로 받는 것뿐 아니라 본인이 살아서 받는 경우도 비과세한다.<span class="tb thot">🔴 반환일시금 사망 한정 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제12조 제3호 바목</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§12 3호 바목 국민연금 비과세 항목</strong><br>
+    ① 반환일시금: <strong>사망으로 받는 것만</strong> 해당<br>
+    ② 사망일시금: 비과세</div>
+  <p>반환일시금은 <b>사망으로 받는 것만</b> 비과세입니다. 본인이 살아서 국외이주 등의 이유로 받는 반환일시금은 비과세 대상이 아닙니다.</p>
+  <p class="trap">⚠ "사망 외 반환일시금도 비과세" → "사망으로 받는 반환일시금만 비과세"</p>
+</div></div>
+
+<!-- Q10 -->
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§12 3호 아목 / 시행령§11</span>비과세 학자금이 되려면, 해당 근로자가 종사하는 사업체의 업무와 관련 있는 교육이어야 하고, 사업체 규칙에 따른 지급기준에 따라 받아야 하며, 교육훈련기간이 6개월 이상인 경우 교육기간을 초과하여 근무하지 않으면 반납 조건이어야 한다.<span class="tb tsrl">시행령 — 비과세 학자금 3가지 요건</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제11조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §11 비과세 학자금 3요건</strong><br>
+    1호: 해당 근로자가 종사하는 사업체의 <strong>업무와 관련 있는</strong> 교육·훈련<br>
+    2호: 사업체의 <strong>규칙 등으로 정해진 지급기준</strong>에 따라 받을 것<br>
+    3호: 교육·훈련기간이 <strong>6개월 이상</strong>인 경우 → 교육기간을 초과하여 근무하지 않으면 <strong>반납 조건</strong></div>
+  <p>시행령 §11 그대로 정확합니다. 3호의 반납 조건은 6개월 이상의 장기교육에만 적용됩니다.</p>
+</div></div>
+
+<!-- Q11 -->
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">시행령§12 3호</span>실비변상적 급여 중 자가운전보조금(종업원 소유·임차 차량으로 업무 수행 후 실제 여비 대신 받는 것)은 월 20만원 이내의 금액이 비과세된다.<span class="tb tsrl">시행령 — 자가운전보조금 비과세 한도</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제12조 제3호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §12③ 자가운전보조금 비과세</strong><br>
+    요건: 종업원이 <strong>소유하거나 본인 명의로 임차</strong>한 차량을 직접 운전하여 사용자 업무수행에 이용하고, 시내출장 등 실제여비를 받는 대신 소요경비를 지급기준에 따라 받는 금액<br>
+    한도: <strong>월 20만원 이내</strong></div>
+  <p>시행령 §12③ 그대로 정확합니다. 본인 명의 차량 운전+업무사용+실여비 대체 조건 모두 충족 시 월 20만원 이내 비과세.</p>
+</div></div>
+
+<!-- Q12 -->
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">시행령§12 12호</span>교원·정부출연연구기관 연구원 등이 받는 연구보조비 또는 연구활동비는 월 30만원 이내의 금액이 비과세된다.<span class="tb thot">🔴 연구보조비 한도 변조 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제12조 제12호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>시행령 §12 12호: 교원, 정부출연연구기관 연구원 등이 받는 연구보조비·연구활동비는 <b>월 20만원 이내</b>가 비과세입니다. 30만원이 아닙니다.</p>
+  <p class="trap">⚠ "월 30만원 이내" → "월 20만원 이내"</p>
+</div></div>
+
+<!-- Q13 -->
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§12 3호 차목 / 시행령§14</span>외국정부 또는 국제기관(국제연합과 그 소속기구)에서 근무하는 대한민국 국민이 받는 급여는 상호면세 조건 없이 비과세한다.<span class="tb thot">🔴 외국정부 비과세 — 국적·상호면세 조건 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 제12조 제3호 차목</div><div class="lr lrsrl">시행령 제14조 제2항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§12 3호 차목 외국정부·국제기관 근무자 비과세 요건</strong><br>
+    ① 인적 요건 (시행령 §14②): <strong>대한민국 국민이 아닌 사람</strong>이 받는 급여<br>
+    ② 상호면세 조건: 그 외국정부가 <strong>그 나라에서 근무하는 우리나라 공무원의 급여에 대해 소득세를 과세하지 아니하는 경우만</strong> 해당</div>
+  <p>두 가지 오류: ①대한민국 국민은 해당하지 않고 <b>외국인만</b> 해당 ②상호면세 조건 필요. "국민도 비과세·상호면세 불필요"는 모두 틀립니다.</p>
+  <p class="trap">⚠ "대한민국 국민 포함·상호면세 불필요" → "외국인만 해당·상호면세 필요"</p>
+</div></div>
+
+<!-- Q14 -->
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">§12 3호 거목 / 시행령§16</span>국외에서 근로를 제공하고 받는 보수는 월 100만원 이내의 금액이 비과세되나, 원양어업 선박이나 국외 건설현장 등에서 근로를 제공하고 받는 보수는 월 500만원 이내의 금액이 비과세된다.<span class="tb tsrl">시행령 — 국외근로 비과세 한도 구분</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr lrsrl">소득세법 시행령 제16조 제1항 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="srlbox"><strong>시행령 §16①1호 국외근로 비과세 한도</strong><br>
+    일반 국외근로: 월 <strong>100만원</strong> 이내<br>
+    원양어업 선박, 국외(북한 포함) 항행 선박·항공기, <strong>국외 건설현장 등</strong>(설계·감리 포함): 월 <strong>500만원</strong> 이내</div>
+  <p>시행령 §16①1호 그대로 정확합니다. 국외 건설현장과 원양어업 승무원은 더 높은 한도를 적용받습니다.</p>
+</div></div>
+
+<!-- Q15 -->
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">§12 3호 러목</span>근로자가 사내급식이나 이와 유사한 방법으로 제공받는 식사는 금액에 관계없이 비과세하며, 식사를 제공받지 않는 근로자가 받는 식사대는 월 20만원 이하의 금액을 비과세한다.<span class="tb tup">식사·식사대 비과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 제12조 제3호 러목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§12 3호 러목 — 식사·식사대 비과세</strong><br>
+    ① 사내급식·유사 방법으로 제공받는 식사·음식물: <strong>금액 제한 없이 비과세</strong><br>
+    ② 식사를 제공받지 않는 근로자가 받는 식사대: <strong>월 20만원 이하 비과세</strong></div>
+  <p>조문 그대로 정확합니다. 현물 식사는 전액 비과세, 식사대는 월 20만원까지만 비과세입니다.</p>
+</div></div>
+
+<!-- Q16 -->
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">§12 3호 머목</span>근로자의 출산과 관련하여 자녀 출생일 이후 2년 이내에 사용자로부터 최대 두 차례에 걸쳐 지급받는 급여는 전액 비과세한다.<span class="tb tup">출산 관련 급여 비과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 제12조 제3호 머목 1)</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§12 3호 머목 — 출산·보육 비과세</strong><br>
+    <strong>1) 출산 급여</strong>: 자녀 출생일 이후 <strong>2년 이내</strong>, 최대 <strong>두 차례</strong> 지급 → <strong>전액 비과세</strong><br>
+    단, 사용자와 대통령령으로 정하는 특수관계에 있는 자는 제외<br>
+    <strong>2) 보육수당</strong>: 과세기간 개시일 기준 <strong>6세 이하</strong> 자녀 1명당 월 <strong>20만원 이내</strong> 비과세</div>
+  <p>조문 그대로 정확합니다. 출산 급여는 전액, 보육수당은 월 20만원까지 비과세입니다.</p>
+</div></div>
+
+<!-- Q17 -->
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">§12 3호 머목</span>보육수당은 자녀 나이가 과세기간 종료일 기준으로 6세 이하인 경우 자녀 1명당 월 20만원 이내의 금액을 비과세한다.<span class="tb thot">🔴 보육수당 나이 판정 기준일 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 제12조 제3호 머목 2)</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§12 3호 머목 2): 보육수당 비과세의 연령 판정 기준은 <b>해당 과세기간 개시일(1.1) 기준으로 6세 이하</b>입니다. "과세기간 종료일"이 아닙니다.</p>
+  <p class="trap">⚠ "과세기간 종료일(12.31) 기준" → "과세기간 개시일(1.1) 기준 6세 이하"</p>
+</div></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- Part 3: 제12조 비과세 — 연금소득·기타소득 (제4·5호) -->
+<!-- ═══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제12조 비과세 — 연금소득·기타소득 (제4·5호)</span><span class="scn" id="c3">0/4</span></div>
+<hr class="shr">
+
+<!-- Q18 -->
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">§12 4호 가목</span>공적연금 관련법에 따라 받는 유족연금, 장애연금, 상이연금 등은 비과세 연금소득이다.<span class="tb tup">비과세 연금소득 — 공적연금 유족·장애·상이연금</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 제12조 제4호 가목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§12 4호 비과세 연금소득</strong><br>
+    가목: 공적연금 관련법에 따른 유족연금·퇴직유족연금·장애연금·상이연금·순직유족연금 등<br>
+    다목: 「산업재해보상보험법」에 따른 각종 연금<br>
+    라목: 국군포로가 받는 연금</div>
+  <p>조문 그대로 정확합니다. 이 연금들은 사회보장적 성격으로 비과세합니다.</p>
+</div></div>
+
+<!-- Q19 -->
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">§12 5호 바목·사목</span>국가지정문화유산으로 지정된 서화·골동품의 양도 소득은 비과세이나, 박물관·미술관에 양도함으로써 발생하는 소득은 과세한다.<span class="tb thot">🔴 박물관·미술관 양도 비과세 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 제12조 제5호 바목·사목</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§12 5호 비과세 기타소득 — 서화·골동품 관련</strong><br>
+    바목: 「문화유산의 보존 및 활용에 관한 법률」에 따라 국가지정문화유산으로 지정된 서화·골동품 양도 소득 → <strong>비과세</strong><br>
+    사목: 서화·골동품을 <strong>박물관 또는 미술관에 양도</strong>함으로써 발생하는 소득 → <strong>비과세</strong></div>
+  <p>박물관·미술관 양도 소득도 §12 5호 사목에 의해 <b>비과세</b>입니다. "과세한다"는 오류입니다.</p>
+  <p class="trap">⚠ "박물관·미술관 양도 → 과세" → "박물관·미술관 양도 → 비과세"</p>
+</div></div>
+
+<!-- Q20 -->
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§12 5호 자목</span>법령·조례에 따른 위원회 등의 보수를 받지 아니하는 위원(학술원·예술원 회원 포함)이 받는 수당은 비과세 기타소득이다.<span class="tb tup">무보수 위원 수당 비과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 제12조 제5호 자목</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§12 5호 자목: <b>보수를 받지 아니하는</b> 위원 등이 받는 수당이 비과세입니다. 조문 그대로 정확합니다.</p>
+  <div class="kbox"><strong>💡 암기 팁</strong>: "보수 無(없는) 위원이 받는 수당 → 비과세"<br>보수를 받는 위원이라면 수당도 과세 대상!</div>
+</div></div>
+
+<!-- Q21 -->
+<div class="qc"><div class="qh"><span class="qn">21</span>
+  <div class="qt"><span class="jb">§12 1호</span>「공익신탁법」에 따른 공익신탁의 이익은 비과세소득이다.<span class="tb tup">공익신탁 이익 비과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(21,'O')">O</button><button class="oxb" onclick="so(21,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(21)">정답 확인</button><span class="rb" id="r21"></span></div>
+<div class="ex" id="e21"><div class="eh">해설</div><div class="lr">소득세법 제12조 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§12 제1호: 「공익신탁법」에 따른 공익신탁의 이익은 비과세소득입니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- Part 4: 제14조 과세표준의 계산 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 4</span><span class="stl">제14조 과세표준의 계산 — 종합·분리과세</span><span class="scn" id="c4">0/8</span></div>
+<hr class="shr">
+
+<!-- Q22 -->
+<div class="qc"><div class="qh"><span class="qn">22</span>
+  <div class="qt"><span class="jb">§14①</span>거주자의 종합소득과 퇴직소득에 대한 과세표준은 합산하여 계산한다.<span class="tb thot">🔴 종합·퇴직 합산 계산 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(22,'O')">O</button><button class="oxb" onclick="so(22,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(22)">정답 확인</button><span class="rb" id="r22"></span></div>
+<div class="ex" id="e22"><div class="eh">해설</div><div class="lr">소득세법 제14조 제1항</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§14①: 거주자의 종합소득 및 퇴직소득에 대한 과세표준은 <b>각각 구분하여</b> 계산합니다. 합산이 아닙니다.</p>
+  <p class="trap">⚠ "합산하여 계산" → "각각 구분하여 계산"</p>
+</div></div>
+
+<!-- Q23 -->
+<div class="qc"><div class="qh"><span class="qn">23</span>
+  <div class="qt"><span class="jb">§14②</span>종합소득과세표준은 종합소득금액에서 종합소득공제를 적용한 금액이다.<span class="tb tup">종합소득과세표준 계산</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(23,'O')">O</button><button class="oxb" onclick="so(23,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(23)">정답 확인</button><span class="rb" id="r23"></span></div>
+<div class="ex" id="e23"><div class="eh">해설</div><div class="lr">소득세법 제14조 제2항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§14② 종합소득과세표준 계산 구조</strong><br>
+    종합소득금액(이자+배당+사업+근로+연금+기타소득금액 합계)<br>
+    <strong>− 종합소득공제</strong>(인적공제·소득공제 등)<br>
+    = <strong>종합소득과세표준</strong></div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q24 -->
+<div class="qc"><div class="qh"><span class="qn">24</span>
+  <div class="qt"><span class="jb">§14③6호</span>이자소득과 배당소득의 합계액이 2천만원 이하이면서 원천징수된 경우에는 종합소득과세표준 계산 시 합산하지 아니한다(분리과세).<span class="tb tup">이자·배당 2천만원 이하 분리과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(24,'O')">O</button><button class="oxb" onclick="so(24,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(24)">정답 확인</button><span class="rb" id="r24"></span></div>
+<div class="ex" id="e24"><div class="eh">해설</div><div class="lr">소득세법 제14조 제3항 제6호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§14③6호 금융소득 분리과세 기준</strong><br>
+    이자소득+배당소득 합계액 ≤ <strong>2천만원</strong>(이자소득등의 종합과세기준금액)<br>
+    + §127에 따라 <strong>원천징수된 소득</strong><br>
+    → 종합소득 합산 제외 (분리과세)<br>
+    단, Gross-up 금액(§17③)은 2천만원 판단 시 포함하지 않음</div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q25 -->
+<div class="qc"><div class="qh"><span class="qn">25</span>
+  <div class="qt"><span class="jb">§14③7호</span>총수입금액 합계액이 2천만원 이하인 자의 주택임대소득은 분리과세 주택임대소득으로 종합소득과세표준 계산 시 합산하지 아니한다.<span class="tb tup">분리과세 주택임대소득</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(25,'O')">O</button><button class="oxb" onclick="so(25,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(25)">정답 확인</button><span class="rb" id="r25"></span></div>
+<div class="ex" id="e25"><div class="eh">해설</div><div class="lr">소득세법 제14조 제3항 제7호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§14③7호: 총수입금액 합계액 <b>2천만원 이하</b>인 주택임대소득 → <b>분리과세 주택임대소득</b>으로 종합과세표준 합산 제외. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q26 -->
+<div class="qc"><div class="qh"><span class="qn">26</span>
+  <div class="qt"><span class="jb">§14③8호 가목</span>기타소득금액이 300만원 이하이면서 원천징수된 기타소득은 무조건 종합소득과세표준에 합산하지 아니한다.<span class="tb thot">🔴 기타소득 분리과세 선택 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(26,'O')">O</button><button class="oxb" onclick="so(26,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(26)">정답 확인</button><span class="rb" id="r26"></span></div>
+<div class="ex" id="e26"><div class="eh">해설</div><div class="lr">소득세법 제14조 제3항 제8호 가목</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§14③8호 가목 — 기타소득 분리과세</strong><br>
+    요건: 기타소득금액 ≤ <strong>300만원</strong> + 원천징수된 소득<br>
+    → 원칙: 분리과세(합산 불필요)<br>
+    <strong>단, 해당 소득이 있는 거주자가 종합소득과세표준 계산 시 그 소득을 합산하려는 경우 → 분리과세 제외(종합과세 선택 가능)</strong></div>
+  <p>"무조건 합산하지 않는다"가 오류입니다. 거주자가 원하면 <b>종합과세를 선택</b>할 수 있습니다(합산 선택 가능). "무조건"이 아닙니다.</p>
+  <p class="trap">⚠ "무조건 분리과세" → "원칙적 분리과세 + 종합과세 선택 가능"</p>
+</div></div>
+
+<!-- Q27 -->
+<div class="qc"><div class="qh"><span class="qn">27</span>
+  <div class="qt"><span class="jb">§14③9호 다목</span>분리과세연금소득 중 가목·나목 외의 연금소득의 합계액이 연 1천500만원 이하인 경우, 해당 거주자가 종합소득과세표준 계산 시 이를 합산하려는 경우에도 분리과세로만 처리한다.<span class="tb thot">🔴 1,500만원 이하 연금소득 선택 여부 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(27,'O')">O</button><button class="oxb" onclick="so(27,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(27)">정답 확인</button><span class="rb" id="r27"></span></div>
+<div class="ex" id="e27"><div class="eh">해설</div><div class="lr">소득세법 제14조 제3항 제9호 다목</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <div class="kbox"><strong>§14③9호 다목 — 연금소득 분리과세 (1,500만원 이하)</strong><br>
+    연금소득(가·나목 제외) 합계 ≤ 연 <strong>1,500만원</strong><br>
+    → 원칙: 분리과세연금소득<br>
+    <strong>단, 거주자가 종합소득과세표준 계산 시 합산하려는 경우 → 종합과세 선택 가능</strong></div>
+  <p>§14③9호 다목 괄호: "다목의 소득이 있는 거주자가 종합소득과세표준을 계산할 때 이를 합산하려는 경우는 제외"라고 명시합니다. 즉 <b>종합과세 선택이 가능</b>합니다. "분리과세로만 처리"는 오류입니다.</p>
+  <p class="trap">⚠ "무조건 분리과세만" → "원칙 분리과세, 종합과세 선택 가능"</p>
+</div></div>
+
+<!-- Q28 -->
+<div class="qc"><div class="qh"><span class="qn">28</span>
+  <div class="qt"><span class="jb">§14⑥</span>퇴직소득과세표준은 퇴직소득금액에서 퇴직소득공제를 적용한 금액이다.<span class="tb tup">퇴직소득과세표준 계산</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(28,'O')">O</button><button class="oxb" onclick="so(28,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(28)">정답 확인</button><span class="rb" id="r28"></span></div>
+<div class="ex" id="e28"><div class="eh">해설</div><div class="lr">소득세법 제14조 제6항</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="kbox"><strong>§14⑥ 퇴직소득과세표준</strong><br>
+    퇴직소득금액(§22) <strong>− 퇴직소득공제(§48)</strong> = 퇴직소득과세표준</div>
+  <p>조문 그대로 정확합니다. 종합소득과세표준과 별도로 계산합니다.</p>
+</div></div>
+
+<!-- Q29 -->
+<div class="qc"><div class="qh"><span class="qn">29</span>
+  <div class="qt"><span class="jb">§14③2호</span>일용근로자의 근로소득은 종합소득과세표준 계산 시 합산하지 아니한다.<span class="tb tup">일용근로자 근로소득 — 분리과세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(29,'O')">O</button><button class="oxb" onclick="so(29,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(29)">정답 확인</button><span class="rb" id="r29"></span></div>
+<div class="ex" id="e29"><div class="eh">해설</div><div class="lr">소득세법 제14조 제3항 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§14③2호: 대통령령으로 정하는 <b>일용근로자의 근로소득</b>은 종합소득과세표준 합산 제외(분리과세). 일용근로자는 원천징수로 납세 종결됩니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- Part 5: 제15조 세액 계산의 순서 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="sh"><span class="stg">Part 5</span><span class="stl">제15조 세액 계산의 순서 — 3단계</span><span class="scn" id="c5">0/5</span></div>
+<hr class="shr">
+
+<!-- Q30 -->
+<div class="qc"><div class="qh"><span class="qn">30</span>
+  <div class="qt"><span class="jb">§15 1호</span>과세표준에 기본세율을 적용하여 산출세액을 계산하는 것이 세액계산의 첫 번째 단계이다.<span class="tb tup">세액계산 1단계 — 산출세액</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(30,'O')">O</button><button class="oxb" onclick="so(30,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(30)">정답 확인</button><span class="rb" id="r30"></span></div>
+<div class="ex" id="e30"><div class="eh">해설</div><div class="lr">소득세법 제15조 제1호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>§15 세액 계산 3단계</strong><br>
+    <strong>1단계</strong>: 과세표준 × 기본세율(§55①) → <strong>산출세액</strong><br>
+    <strong>2단계</strong>: 산출세액 − 세액공제(§56~§59의4) → <strong>결정세액</strong><br>
+    &nbsp;&nbsp;&nbsp; (배당세액공제 있으면 특별 계산 → §59의5 감면도 차감)<br>
+    <strong>3단계</strong>: 결정세액 + 가산세(§81·§81의2~13, 국기법 §47의2~4) → <strong>총결정세액</strong></div>
+  <p>조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q31 -->
+<div class="qc"><div class="qh"><span class="qn">31</span>
+  <div class="qt"><span class="jb">§15 2호</span>산출세액에서 세액공제를 적용하여 결정세액을 계산하며, 가산세도 이 단계에서 더하여 결정세액이 확정된다.<span class="tb thot">🔴 가산세 단계 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(31,'O')">O</button><button class="oxb" onclick="so(31,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(31)">정답 확인</button><span class="rb" id="r31"></span></div>
+<div class="ex" id="e31"><div class="eh">해설</div><div class="lr">소득세법 제15조 제2호·제3호</div>
+  <div class="al ng-al">정답: X (틀리다)</div>
+  <p>§15: 가산세를 더하는 것은 <b>3단계(결정세액+가산세=총결정세액)</b>입니다. 2단계에서는 세액공제만 차감하여 결정세액을 계산하고, 가산세는 그 이후에 더합니다.</p>
+  <p class="trap">⚠ "가산세 → 결정세액 계산 시 포함" → "가산세 → 결정세액에 더하여 총결정세액 계산"</p>
+</div></div>
+
+<!-- Q32 -->
+<div class="qc"><div class="qh"><span class="qn">32</span>
+  <div class="qt"><span class="jb">§15 3호</span>결정세액에 가산세를 더하여 계산한 세액을 총결정세액이라 한다.<span class="tb tup">총결정세액 = 결정세액 + 가산세</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(32,'O')">O</button><button class="oxb" onclick="so(32,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(32)">정답 확인</button><span class="rb" id="r32"></span></div>
+<div class="ex" id="e32"><div class="eh">해설</div><div class="lr">소득세법 제15조 제3호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§15 3호: <b>결정세액 + 가산세(소득세법 §81 등, 국세기본법 §47의2~4) = 총결정세액</b>. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q33 -->
+<div class="qc"><div class="qh"><span class="qn">33</span>
+  <div class="qt"><span class="jb">§15 2호</span>배당세액공제가 있을 때에는 산출세액에서 배당세액공제를 한 금액과 제62조제2호에 따른 금액을 비교하여 큰 금액에서 나머지 세액공제를 적용한다.<span class="tb tup">배당세액공제 비교과세 절차</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(33,'O')">O</button><button class="oxb" onclick="so(33,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(33)">정답 확인</button><span class="rb" id="r33"></span></div>
+<div class="ex" id="e33"><div class="eh">해설</div><div class="lr">소득세법 제15조 제2호</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <p>§15 2호: 배당세액공제 적용 시 → ① 산출세액−배당세액공제 와 ② §62②의 금액 중 <b>큰 금액</b>을 선택 → 그 금액에서 나머지 세액공제 차감. 금융소득 비교과세 구조를 반영합니다. 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- Q34 -->
+<div class="qc"><div class="qh"><span class="qn">34</span>
+  <div class="qt"><span class="jb">§14~§15 종합</span>세액계산은 ①과세표준×기본세율→산출세액, ②산출세액−세액공제→결정세액, ③결정세액+가산세→총결정세액 순서로 이루어지며, 과세표준 계산 시 일용근로자 근로소득과 2천만원 이하 금융소득(원천징수분)은 합산하지 않는다.<span class="tb tup">§14~15 종합 확인</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(34,'O')">O</button><button class="oxb" onclick="so(34,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(34)">정답 확인</button><span class="rb" id="r34"></span></div>
+<div class="ex" id="e34"><div class="eh">해설</div><div class="lr">소득세법 제14조·제15조</div>
+  <div class="al ok-al">정답: O (맞다)</div>
+  <div class="okbox"><strong>§14~§15 핵심 구조 최종 정리</strong><br>
+    종합소득과세표준: 종합소득금액 − 종합소득공제<br>
+    분리과세: 일용근로자 근로소득, 2천만원 이하 금융소득(원천징수), 분리과세 주택임대(2천만원 이하) 등<br>
+    세액계산: ①산출세액 ②결정세액 ③총결정세액 순서</div>
+  <p>모두 조문 그대로 정확합니다.</p>
+</div></div>
+
+<!-- 전체 버튼 -->
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP">
+  <h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">34</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제12조~제15조, 소득세법 시행령 제9조~제16조 (법제처 현행법령, 소득세법 시행일 2026.04.21 / 시행령 2026.05.22)<br>
+  비과세소득·과세표준·세액계산순서 | [2026-06-19] #소득세법 #비과세 #과세표준 #분리과세 #세액계산 #세무사1차
+</p>
+</div>
+
+<script>
+const ANS={
+  1:'O',2:'X',3:'O',4:'X',5:'O',6:'X',7:'O',
+  8:'O',9:'X',10:'O',11:'O',12:'X',13:'X',14:'O',15:'O',16:'O',17:'X',
+  18:'O',19:'X',20:'O',21:'O',
+  22:'X',23:'O',24:'O',25:'O',26:'X',27:'X',28:'O',29:'O',
+  30:'O',31:'X',32:'O',33:'O',34:'O'
+};
+const SECS={
+  1:[1,2,3,4,5,6,7],
+  2:[8,9,10,11,12,13,14,15,16,17],
+  3:[18,19,20,21],
+  4:[22,23,24,25,26,27,28,29],
+  5:[30,31,32,33,34]
+};
+const sel={},done={};
+let correct=0,answered=0;
+const TOT=34;
+
+function so(n,v){
+  if(done[n])return;
+  sel[n]=v;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));
+  card.querySelectorAll('.oxb').forEach(b=>{
+    if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase());
+  });
+}
+function co(n){
+  if(done[n])return;
+  const v=sel[n],a=ANS[n];
+  if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}
+  done[n]=true;
+  const ok=v===a;
+  const card=document.getElementById('e'+n).closest('.qc');
+  card.querySelectorAll('.oxb').forEach(b=>{
+    const bv=b.textContent.trim();
+    b.classList.remove('so','sx');
+    if(bv===a)b.classList.add('c'+a.toLowerCase());
+    else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());
+  });
+  const badge=document.getElementById('r'+n);
+  badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';
+  badge.className='rb show '+(ok?'ok':'ng');
+  document.getElementById('e'+n).classList.add('show');
+  card.querySelector('.bck').disabled=true;
+  if(ok)correct++;
+  answered++;
+  document.getElementById('sv').textContent=correct+'/'+answered;
+  document.getElementById('pf').style.width=(answered/TOT*100)+'%';
+  Object.entries(SECS).forEach(([k,arr])=>{
+    document.getElementById('c'+k).textContent=arr.filter(x=>done[x]).length+'/'+arr.length;
+  });
+}
+function checkAll(){
+  for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}
+  showSum();
+}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){
+  const pct=Math.round(correct/TOT*100);
+  document.getElementById('gdT').textContent=pct+'%';
+  document.getElementById('stC').textContent=correct;
+  document.getElementById('stW').textContent=TOT-correct;
+  document.getElementById('smP').classList.add('show');
+  document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){location.reload();}
+</script>
+</body>
+</html>
