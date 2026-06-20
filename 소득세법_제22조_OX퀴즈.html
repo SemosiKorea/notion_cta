@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 제22조 | O/X 판단 퀴즈 — 퇴직소득</title>
+<meta name="description" content="소득세법 제22조, 소득세법 시행령 제42조의2 및 제43조를 학습하는 대화형 O/X 퀴즈">
+<style>
+:root{
+  --bg:#f4f0e9;
+  --surface:#fffdf9;
+  --surface-2:#eee7dc;
+  --border:#d5cabc;
+  --brown:#563812;
+  --brown-2:#7b5421;
+  --green:#176a3a;
+  --green-soft:#dff3e6;
+  --red:#8a2018;
+  --red-soft:#fae8e5;
+  --purple:#593f77;
+  --purple-soft:#ece5f5;
+  --amber:#8a640c;
+  --amber-soft:#fff4ce;
+  --ink:#23180c;
+  --ink-2:#4d3920;
+  --muted:#7d6a50;
+  --shadow:0 3px 14px rgba(44,29,12,.08);
+  --shadow-lg:0 12px 34px rgba(44,29,12,.12);
+  --serif:"Noto Serif KR","Nanum Myeongjo","Apple SD Gothic Neo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.72;
+  min-height:100vh;
+}
+button,a{font:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #d5a836;outline-offset:3px}
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  color:#fff;
+  background:linear-gradient(135deg,#4d3010,#684719 65%,#745324);
+  box-shadow:0 5px 24px rgba(44,29,12,.3);
+}
+.header-inner{
+  max-width:1040px;
+  margin:0 auto;
+  padding:1.25rem 1.2rem .9rem;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:1rem;
+  align-items:end;
+}
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:.42rem;
+  font-family:var(--mono);
+  font-size:.66rem;
+  letter-spacing:.11em;
+  color:#f6ddb6;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.09);
+  padding:.22rem .52rem;
+  border-radius:5px;
+}
+h1{
+  margin:.48rem 0 .14rem;
+  font-family:var(--serif);
+  font-size:1.55rem;
+  line-height:1.25;
+  letter-spacing:-.025em;
+}
+.header-sub{
+  margin:0;
+  color:rgba(255,255,255,.72);
+  font-size:.76rem;
+}
+.score-box{text-align:right;min-width:98px}
+.score-label{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.1em;
+  color:rgba(255,255,255,.56)
+}
+.score-value{
+  font-family:var(--mono);
+  font-size:1.55rem;
+  font-weight:700;
+  color:#f6ddb6;
+  line-height:1.2
+}
+.progress-shell{
+  max-width:1040px;
+  margin:0 auto;
+  padding:0 1.2rem .72rem;
+}
+.progress-track{
+  height:5px;
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(255,255,255,.14);
+}
+.progress-bar{
+  width:0;
+  height:100%;
+  background:#58b87b;
+  border-radius:inherit;
+  transition:width .28s ease;
+}
+.main{
+  max-width:1040px;
+  margin:0 auto;
+  padding:1.45rem 1rem 4rem;
+}
+.notice,.summary-box,.source-box{
+  background:var(--surface);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  border-radius:12px;
+}
+.notice{
+  padding:1rem 1.08rem;
+  margin-bottom:1rem;
+}
+.notice-title{
+  font-family:var(--serif);
+  color:var(--brown);
+  font-weight:700;
+  margin-bottom:.45rem;
+}
+.notice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.62rem .85rem;
+  font-size:.8rem;
+  color:var(--ink-2);
+}
+.notice-item{
+  padding:.62rem .72rem;
+  border-radius:8px;
+  background:#f8f2e8;
+  border:1px solid #e7d9c5;
+}
+.notice-item strong{color:var(--brown)}
+.correction-note{
+  margin-top:.75rem;
+  padding:.65rem .75rem;
+  background:var(--purple-soft);
+  color:#49345e;
+  border-left:4px solid var(--purple);
+  border-radius:6px;
+  font-size:.78rem;
+}
+.formula{
+  margin-top:.7rem;
+  display:grid;
+  gap:.48rem;
+}
+.formula-row{
+  padding:.62rem .75rem;
+  border:1px solid #dbcaa8;
+  background:#fff9eb;
+  border-radius:8px;
+  font-size:.76rem;
+}
+.formula-row b{color:var(--brown)}
+.section{
+  margin-top:2.1rem;
+}
+.section-head{
+  display:flex;
+  align-items:center;
+  gap:.72rem;
+  flex-wrap:wrap;
+  margin-bottom:.75rem;
+}
+.part-badge{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.1em;
+  color:#fff;
+  background:var(--brown);
+  padding:.25rem .62rem;
+  border-radius:5px;
+}
+.section-title{
+  font-family:var(--serif);
+  font-size:1.03rem;
+  font-weight:700;
+  color:var(--ink);
+}
+.section-sub{
+  font-size:.68rem;
+  color:var(--muted);
+}
+.section-count{
+  margin-left:auto;
+  font-family:var(--mono);
+  font-size:.72rem;
+  color:var(--muted);
+}
+.section-rule{
+  border:0;
+  border-top:1.5px solid var(--border);
+  margin:0 0 1rem;
+}
+.question-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:1rem;
+  box-shadow:var(--shadow);
+  transition:box-shadow .18s ease,transform .18s ease;
+}
+.question-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-1px)}
+.question-card.checked{border-color:#b8aa96}
+.question-top{
+  display:flex;
+  gap:.82rem;
+  align-items:flex-start;
+  padding:1rem 1.05rem .78rem;
+  border-bottom:1px solid #eee7dc;
+}
+.number{
+  flex:0 0 30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  border-radius:7px;
+  font-family:var(--mono);
+  font-size:.72rem;
+  font-weight:700;
+  color:var(--brown);
+  background:#f4e3c5;
+}
+.question-copy{flex:1;min-width:0}
+.badge-row{display:flex;gap:.38rem;flex-wrap:wrap;margin-bottom:.42rem}
+.law-badge,.topic-badge{
+  display:inline-flex;
+  align-items:center;
+  border-radius:4px;
+  padding:.08rem .42rem;
+  font-size:.61rem;
+  line-height:1.5;
+}
+.law-badge{
+  font-family:var(--mono);
+  color:var(--brown);
+  background:#f6e8cf;
+  border:1px solid #d9bd89;
+}
+.topic-badge{
+  color:var(--purple);
+  background:var(--purple-soft);
+  border:1px solid #d7c5ea;
+}
+.question-text{
+  font-size:.9rem;
+  line-height:1.82;
+  color:var(--ink);
+}
+.answer-area{padding:.76rem 1.05rem .35rem}
+.ox-row{display:flex;gap:.55rem;flex-wrap:wrap}
+.ox-btn{
+  min-width:72px;
+  border:1.5px solid var(--border);
+  color:var(--muted);
+  background:#fff;
+  border-radius:8px;
+  padding:.48rem 1.3rem;
+  font-family:var(--mono);
+  font-size:1rem;
+  font-weight:800;
+  cursor:pointer;
+  transition:.14s ease;
+}
+.ox-btn:hover:not(:disabled){border-color:var(--brown);color:var(--brown);background:#fbf1df}
+.ox-btn.selected-o{border-color:var(--brown-2);color:var(--brown-2);background:#f7ead3}
+.ox-btn.selected-x{border-color:var(--red);color:var(--red);background:var(--red-soft)}
+.ox-btn.correct{border-color:var(--green);color:var(--green);background:var(--green-soft)}
+.ox-btn.wrong{border-color:var(--red);color:var(--red);background:var(--red-soft)}
+.ox-btn.dimmed{opacity:.48}
+.ox-btn:disabled{cursor:default}
+.action-row{
+  display:flex;
+  align-items:center;
+  gap:.58rem;
+  flex-wrap:wrap;
+  padding:.36rem 1.05rem .82rem;
+}
+.check-btn{
+  border:0;
+  border-radius:6px;
+  padding:.42rem .95rem;
+  color:#fff;
+  background:var(--brown);
+  font-size:.76rem;
+  font-weight:700;
+  cursor:pointer;
+}
+.check-btn:hover:not(:disabled){opacity:.84}
+.check-btn:disabled{opacity:.38;cursor:default}
+.result{
+  display:none;
+  align-items:center;
+  border-radius:999px;
+  padding:.24rem .64rem;
+  font-size:.73rem;
+  font-weight:700;
+}
+.result.show{display:inline-flex}
+.result.ok{color:var(--green);background:var(--green-soft)}
+.result.ng{color:var(--red);background:var(--red-soft)}
+.explanation{
+  display:none;
+  padding:.92rem 1.05rem 1rem;
+  background:#fcf7ef;
+  border-top:1px solid var(--border);
+  font-size:.8rem;
+  color:var(--ink-2);
+}
+.explanation.show{display:block}
+.ex-title{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.1em;
+  color:var(--muted);
+  margin-bottom:.42rem;
+}
+.answer-line{
+  font-size:.84rem;
+  font-weight:800;
+  margin-bottom:.42rem;
+}
+.answer-line.o{color:var(--green)}
+.answer-line.x{color:var(--red)}
+.ref-chip{
+  display:inline-block;
+  margin:0 .3rem .4rem 0;
+  padding:.1rem .42rem;
+  border-radius:4px;
+  font-family:var(--mono);
+  font-size:.66rem;
+  color:var(--brown);
+  background:#f4e3c5;
+}
+.explanation p{margin:.3rem 0}
+.correction-box,.practice-box{
+  margin-top:.55rem;
+  border-radius:8px;
+  padding:.62rem .72rem;
+}
+.correction-box{
+  color:#721a13;
+  background:var(--red-soft);
+  border:1px solid #edc4bf;
+}
+.practice-box{
+  color:#24553a;
+  background:var(--green-soft);
+  border:1px solid #bfe2ca;
+}
+.correction-box strong,.practice-box strong{display:block;margin-bottom:.18rem}
+.global-actions{
+  display:flex;
+  justify-content:center;
+  gap:.72rem;
+  flex-wrap:wrap;
+  margin:1.85rem 0;
+}
+.global-btn{
+  border-radius:8px;
+  padding:.62rem 1.35rem;
+  font-size:.79rem;
+  font-weight:800;
+  cursor:pointer;
+}
+.global-btn.primary{border:0;background:var(--green);color:#fff}
+.global-btn.secondary{border:2px solid var(--brown);background:transparent;color:var(--brown)}
+.global-btn:hover{opacity:.84}
+.status-message{
+  min-height:1.6rem;
+  text-align:center;
+  font-size:.76rem;
+  color:var(--muted);
+}
+.summary-box{
+  display:none;
+  text-align:center;
+  padding:1.5rem 1.15rem;
+  margin-top:1.2rem;
+}
+.summary-box.show{display:block}
+.summary-box h2{
+  margin:0;
+  font-family:var(--serif);
+  color:var(--brown);
+  font-size:1.2rem;
+}
+.rate{
+  margin:.55rem 0;
+  color:var(--green);
+  font-family:var(--mono);
+  font-size:2.65rem;
+  font-weight:800;
+  line-height:1;
+}
+.stats{
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+  flex-wrap:wrap;
+  margin:.9rem 0 1.15rem;
+}
+.stat strong{
+  display:block;
+  font-family:var(--mono);
+  font-size:1.25rem;
+}
+.stat span{font-size:.66rem;color:var(--muted)}
+.reset-btn{
+  border:2px solid var(--brown);
+  color:var(--brown);
+  background:transparent;
+  border-radius:8px;
+  padding:.52rem 1.4rem;
+  font-size:.79rem;
+  font-weight:800;
+  cursor:pointer;
+}
+.reset-btn:hover{background:var(--brown);color:#fff}
+.source-box{
+  margin-top:2rem;
+  padding:1rem 1.05rem;
+  font-size:.74rem;
+  color:var(--muted);
+}
+.source-box h3{
+  margin:0 0 .45rem;
+  font-family:var(--serif);
+  color:var(--brown);
+  font-size:.92rem;
+}
+.source-box ul{margin:.4rem 0;padding-left:1.15rem}
+.source-box a{color:var(--brown-2)}
+.source-note{
+  padding:.62rem .7rem;
+  border-radius:7px;
+  background:var(--amber-soft);
+  color:#6e510d;
+  border:1px solid #ecd88e;
+}
+.footer-time{
+  margin-top:1rem;
+  text-align:right;
+  font-family:var(--mono);
+  font-size:.64rem;
+  color:var(--muted);
+}
+@media(max-width:720px){
+  .header-inner{grid-template-columns:1fr auto;padding:1rem .78rem .72rem}
+  h1{font-size:1.18rem}
+  .header-sub{font-size:.68rem}
+  .score-value{font-size:1.25rem}
+  .progress-shell{padding:0 .78rem .62rem}
+  .main{padding:1rem .68rem 3rem}
+  .notice-grid{grid-template-columns:1fr}
+  .question-top{padding:.82rem .78rem .68rem;gap:.62rem}
+  .answer-area{padding:.65rem .78rem .3rem}
+  .action-row{padding:.34rem .78rem .72rem}
+  .explanation{padding:.8rem .78rem .88rem}
+  .question-text{font-size:.84rem}
+  .ox-btn{flex:1;min-width:92px}
+  .section-title{width:calc(100% - 80px)}
+  .section-sub{display:none}
+}
+@media print{
+  .header{position:static}
+  .ox-row,.action-row,.global-actions,.status-message,.reset-btn{display:none!important}
+  .explanation{display:block!important}
+  .question-card{break-inside:avoid;box-shadow:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div>
+      <div class="kicker">세무사 1차 · 소득세법 퇴직소득</div>
+      <h1>소득세법 제22조 O/X 판단 퀴즈</h1>
+      <p class="header-sub">퇴직소득의 범위 · 임원 한도 · 공적연금 일시금 · 퇴직판정 특례</p>
+    </div>
+    <div class="score-box" aria-live="polite">
+      <div class="score-label">SCORE</div>
+      <div class="score-value" id="score-value">0/0</div>
+    </div>
+  </div>
+  <div class="progress-shell">
+    <div class="progress-track" aria-label="전체 진행률">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <section class="notice" aria-labelledby="core-summary-title">
+    <div class="notice-title" id="core-summary-title">📌 핵심 정리</div>
+    <div class="notice-grid">
+      <div class="notice-item"><strong>법 §22①</strong><br>공적연금 관련법상 일시금, 사용자 부담금을 기초로 현실적인 퇴직을 원인으로 받는 소득, 대통령령상 유사소득</div>
+      <div class="notice-item"><strong>법 §22②</strong><br>공적연금 일시금은 2002년 1월 1일 이후 기여금·사용자 부담금 또는 근로 제공을 기초로 한 부분을 중심으로 과세</div>
+      <div class="notice-item"><strong>법 §22③·④</strong><br>비과세소득은 퇴직소득금액에서 제외. 임원 한도 초과액은 근로소득. 근무기간은 개월 수로 계산</div>
+      <div class="notice-item"><strong>영 §42의2·§43</strong><br>공적연금 일시금 산식, 유사 퇴직소득, 임원 범위, 해외파견 급여, 퇴직판정 및 중간지급 특례</div>
+    </div>
+    <div class="formula" aria-label="임원 퇴직소득 한도 요약">
+      <div class="formula-row"><b>2012~2019 근무분</b> = 2019.12.31.부터 소급한 3년의 총급여 연평균환산액 × 1/10 × 해당 근무월수/12 × 3</div>
+      <div class="formula-row"><b>2020년 이후 근무분</b> = 퇴직일부터 소급한 3년의 총급여 연평균환산액 × 1/10 × 해당 근무월수/12 × 2</div>
+    </div>
+    <div class="correction-note">
+      <strong>법령 연결 정정:</strong> 시행령 제40조의2는 연금계좌 규정으로 법 제20조의3과 연결된다. 법 제22조의 직접 관련 규정은 시행령 제42조의2와 제43조이며, 이 조문들에는 시행규칙으로 직접 재위임된 사항이 없다.
+    </div>
+  </section>
+
+  <div id="quiz-root"></div>
+
+  <div class="global-actions">
+    <button type="button" class="global-btn primary" id="check-all-btn">선택한 문제 전체 채점</button>
+    <button type="button" class="global-btn secondary" id="reveal-all-btn">해설 전체 보기</button>
+  </div>
+  <div class="status-message" id="status-message" aria-live="polite"></div>
+
+  <section class="summary-box" id="summary-box" aria-live="polite">
+    <h2>학습 결과</h2>
+    <div class="rate" id="summary-rate">0%</div>
+    <div class="stats">
+      <div class="stat"><strong id="summary-correct">0</strong><span>정답</span></div>
+      <div class="stat"><strong id="summary-wrong">0</strong><span>오답</span></div>
+      <div class="stat"><strong id="summary-unanswered">36</strong><span>미응답</span></div>
+    </div>
+    <button type="button" class="reset-btn" id="reset-btn">다시 풀기</button>
+  </section>
+
+  <section class="source-box">
+    <h3>검증 기준과 공식 근거</h3>
+    <div class="source-note">기준일: 2026년 6월 20일. 시행 중인 법령만 반영했으며 시행예정 규정은 출제하지 않았다.</div>
+    <ul>
+      <li><a href="https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsId=001565&lsJoLnkSeq=1001118592&print=print" target="_blank" rel="noopener">국가법령정보센터 — 소득세법 제22조</a></li>
+      <li><a href="https://law.go.kr/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1001059978" target="_blank" rel="noopener">국가법령정보센터 — 소득세법 시행령 제42조의2</a></li>
+      <li><a href="https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0043&lsiSeq=286211&urlMode=lsScJoRltInfoR" target="_blank" rel="noopener">국가법령정보센터 — 소득세법 시행령 제43조</a></li>
+      <li><a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7878&mi=6598" target="_blank" rel="noopener">국세청 — 퇴직소득 및 세법상 퇴직판정 안내</a></li>
+    </ul>
+    <div class="footer-time">2026-06-21 00:00 #소득세법 #제22조 #퇴직소득 #OX퀴즈</div>
+  </section>
+</main>
+
+<script>
+"use strict";
+
+const QUIZ = [{"id": 1, "part": 1, "answer": "O", "basis": "소득세법 제22조 제1항 제1호", "tag": "공적연금 일시금", "text": "공적연금 관련법에 따라 받는 일시금은 퇴직소득의 한 유형이다.", "explanation": "소득세법 제22조 제1항 제1호는 공적연금 관련법에 따라 받는 일시금을 퇴직소득으로 열거한다. 다만 실제 과세대상 범위는 같은 조 제2항과 시행령 제42조의2에 따라 2002년 1월 1일 이후의 기여금·사용자부담금 또는 근로 제공을 기초로 한 부분을 중심으로 계산한다.", "correction": "", "practice": "공적연금에서 연금 형태가 아니라 반환일시금 등을 받는 경우에도 퇴직소득 규정의 검토 대상이 된다."}, {"id": 2, "part": 1, "answer": "X", "basis": "소득세법 제22조 제1항 제2호", "tag": "사용자 부담금", "text": "근로자 본인의 부담금만을 기초로 하여 현실적인 퇴직을 원인으로 지급받는 소득은 제22조 제1항 제2호의 퇴직소득이다.", "explanation": "제22조 제1항 제2호는 ‘사용자 부담금’을 기초로 하여 현실적인 퇴직을 원인으로 지급받는 소득을 규정한다. 지문의 ‘근로자 본인의 부담금만’이라는 표현은 조문 요건과 다르다.", "correction": "“근로자 본인의 부담금만” → “사용자 부담금을 기초로 하여”", "practice": "회사가 부담한 퇴직급여 재원을 기초로 실제 퇴직 시 지급하는 퇴직금이 대표적인 사례다."}, {"id": 3, "part": 1, "answer": "X", "basis": "소득세법 제22조 제1항 제3호", "tag": "대통령령 위임", "text": "공적연금 일시금이나 사용자 부담 퇴직급여와 유사한 소득은 대통령령의 정함이 없어도 모두 퇴직소득으로 본다.", "explanation": "제22조 제1항 제3호는 제1호 및 제2호와 유사한 소득 중 ‘대통령령으로 정하는 소득’만을 퇴직소득으로 규정한다. 시행령 제42조의2 제4항에 구체적인 항목이 열거되어 있다.", "correction": "“대통령령의 정함이 없어도 모두” → “대통령령으로 정하는 소득에 한정”", "practice": "유사성이 있다는 이유만으로 임의로 퇴직소득에 포함할 수 없고 시행령 열거 여부를 확인해야 한다."}, {"id": 4, "part": 1, "answer": "O", "basis": "소득세법 제22조 제2항", "tag": "2002년 기준", "text": "공적연금 관련법에 따른 퇴직소득은 원칙적으로 2002년 1월 1일 이후에 납입된 연금 기여금·사용자 부담금 또는 그 이후 근로 제공을 기초로 받은 일시금으로 한다.", "explanation": "제22조 제2항은 공적연금 관련 일시금의 과세대상 범위를 2002년 1월 1일 이후의 기여금·사용자 부담금 또는 근로 제공을 기초로 한 부분으로 정한다.", "correction": "", "practice": "2002년 전후의 가입기간이 함께 있는 경우 전체 일시금이 곧바로 전액 과세되는 것으로 단정하지 않고 시행령 산식을 적용한다."}, {"id": 5, "part": 1, "answer": "X", "basis": "소득세법 제22조 제3항 본문", "tag": "비과세소득 제외", "text": "퇴직소득금액은 제22조 제1항 각 호의 소득 합계액으로 하며 비과세 퇴직소득도 포함한다.", "explanation": "제22조 제3항 본문은 제1항 각 호의 소득금액 합계액에서 ‘비과세소득의 금액은 제외’한다고 명시한다.", "correction": "“비과세 퇴직소득도 포함” → “비과세소득의 금액은 제외”", "practice": "지급총액과 과세대상 퇴직소득금액은 같지 않을 수 있으므로 비과세 항목을 먼저 구분한다."}, {"id": 6, "part": 1, "answer": "X", "basis": "소득세법 제22조 제3항 단서", "tag": "임원 한도초과", "text": "임원의 퇴직소득이 법정 한도를 초과하더라도 그 초과액은 계속 퇴직소득으로 과세한다.", "explanation": "제22조 제3항 단서는 대통령령으로 정하는 임원의 퇴직소득금액이 법정 산식의 금액을 초과하면 그 초과액을 근로소득으로 본다고 규정한다.", "correction": "“계속 퇴직소득” → “한도 초과액은 근로소득”", "practice": "법인에서 임원 퇴직금을 지급할 때에는 법인세법상 손금한도와 별도로 소득세법상 임원 퇴직소득 한도를 검토해야 한다."}, {"id": 7, "part": 2, "answer": "O", "basis": "소득세법 제22조 제3항 단서·시행령 제42조의2 제6항", "tag": "2011년 이전분", "text": "임원 퇴직소득 한도를 적용할 때 2011년 12월 31일에 퇴직하였다고 가정하여 계산한 대통령령상 퇴직소득금액이 있으면 그 금액을 먼저 빼고 한도와 비교한다.", "explanation": "제22조 제3항 단서는 한도 적용대상 임원 퇴직소득금액에서 2011년 12월 31일 가정퇴직금액을 빼도록 한다. 그 구체적 계산은 시행령 제42조의2 제6항에 규정되어 있다.", "correction": "", "practice": "장기근속 임원의 경우 2011년 이전 근무분과 이후 근무분을 구분하지 않으면 근로소득 전환액을 잘못 계산할 수 있다."}, {"id": 8, "part": 2, "answer": "X", "basis": "소득세법 제22조 제3항 단서", "tag": "공적연금 제외", "text": "임원 퇴직소득 한도 적용대상 금액에는 제22조 제1항 제1호의 공적연금 관련 일시금도 포함된다.", "explanation": "제22조 제3항 단서는 임원 퇴직소득금액을 정하면서 제1항 제1호의 금액을 제외한다고 명시한다.", "correction": "“공적연금 관련 일시금도 포함” → “제22조 제1항 제1호 금액은 제외”", "practice": "임원이라는 이유만으로 모든 퇴직 관련 소득을 한도 대상에 합산하는 것은 아니다."}, {"id": 9, "part": 2, "answer": "X", "basis": "소득세법 제22조 제4항 제1호", "tag": "근무기간 계산", "text": "임원 퇴직소득 한도 산식의 근무기간은 연수로 계산하고 1개월 미만은 버린다.", "explanation": "제22조 제4항 제1호는 근무기간을 개월 수로 계산하고, 1개월 미만의 기간이 있으면 이를 1개월로 본다고 규정한다.", "correction": "“연수로 계산하고 1개월 미만은 버림” → “개월 수로 계산하며 1개월 미만은 1개월로 봄”", "practice": "입사일과 퇴직일 사이의 잔여 일수가 있는 경우 월수 산정에서 절사하지 않는다."}, {"id": 10, "part": 2, "answer": "O", "basis": "소득세법 제22조 제4항 제2호", "tag": "총급여 범위", "text": "임원 퇴직소득 한도 산식의 총급여는 봉급·상여 등 제20조 제1항 제1호 및 제2호의 근로소득을 합산하되 비과세소득은 제외한다.", "explanation": "제22조 제4항 제2호의 문언과 같다. 시행령 제42조의2 제7항은 해외현지법인 파견 중 국외에서 지급받은 급여의 포함 여부를 추가로 정한다.", "correction": "", "practice": "급여대장 총액을 그대로 쓰지 말고 비과세 급여와 해외파견 급여 조정을 확인해야 한다."}, {"id": 11, "part": 2, "answer": "O", "basis": "소득세법 제22조 제3항 계산식", "tag": "3배·2배 구분", "text": "임원 퇴직소득 한도 산식은 2012년 1월 1일부터 2019년 12월 31일까지의 근무기간에는 3배, 2020년 1월 1일 이후 근무기간에는 2배를 적용한다.", "explanation": "현행 제22조 제3항 계산식은 2012년부터 2019년까지의 구간과 2020년 이후 구간을 나누어 각각 3배와 2배를 적용한다.", "correction": "", "practice": "두 기간에 걸쳐 근무한 임원은 구간별 한도를 각각 계산해 합산한다."}, {"id": 12, "part": 2, "answer": "X", "basis": "소득세법 제22조 제3항 계산식", "tag": "연평균환산액 기준일", "text": "2012년 이후 전 근무기간의 임원 퇴직소득 한도는 퇴직일부터 소급한 3년간 총급여의 연평균환산액 하나만으로 계산한다.", "explanation": "2012년~2019년 구간은 2019년 12월 31일부터 소급한 3년의 총급여 연평균환산액을, 2020년 이후 구간은 실제 퇴직일부터 소급한 3년의 총급여 연평균환산액을 사용한다. 각 구간의 근무기간이 3년 미만이면 해당 근무기간을 사용한다.", "correction": "“퇴직일부터 소급한 하나의 3년 평균만 사용” → “2012~2019 구간과 2020년 이후 구간의 기준시점을 나누어 계산”", "practice": "2018년부터 2024년까지 근무한 임원은 두 구간의 연평균환산액이 서로 달라질 수 있다."}, {"id": 13, "part": 3, "answer": "X", "basis": "소득세법 시행령 제42조의2 제1항 제1호", "tag": "적은 금액", "text": "국민연금법 또는 국민연금과 직역연금의 연계에 관한 법률에 따른 반환일시금의 과세기준금액은 시행령에 열거된 두 금액 중 큰 금액으로 한다.", "explanation": "시행령 제42조의2 제1항 제1호는 두 금액 중 ‘적은 금액’을 과세기준금액으로 한다.", "correction": "“큰 금액” → “적은 금액”", "practice": "① 2002년 이후 기여금 누계와 이자·가산이자, ② 실제 일시금에서 2002년 이전 기여금을 뺀 금액을 비교한다."}, {"id": 14, "part": 3, "answer": "X", "basis": "소득세법 시행령 제42조의2 제1항 제2호", "tag": "일시금 산식", "text": "국민연금 반환일시금 외의 공적연금 일시금은 과세기간 일시금 수령액에 ‘과세기준일 이후 기여금 납입월수 ÷ 과세기준일 이후 기여금 납입월수’를 곱하여 계산한다.", "explanation": "정확한 산식의 분모는 ‘총 기여금 납입월수’다. 즉 과세기간 일시금 수령액 × 과세기준일 이후 기여금 납입월수 ÷ 총 기여금 납입월수로 계산한다.", "correction": "분모의 “과세기준일 이후 납입월수” → “총 기여금 납입월수”", "practice": "2002년 전후 가입기간이 섞인 경우 전체 가입월수 중 2002년 이후 월수 비율을 적용하는 구조다."}, {"id": 15, "part": 3, "answer": "O", "basis": "소득세법 시행령 제42조의2 제2항·제40조 제2항", "tag": "재임용·재가입", "text": "재직기간·복무기간 또는 가입기간을 합산한 경우 시행령 제42조의2 제1항을 적용할 때 재임용일 또는 재가입일을 과세기준일로 보아 계산할 수 있다.", "explanation": "시행령 제42조의2 제2항은 제40조 제2항에 따라 기간을 합산한 경우 재임용일 또는 재가입일을 과세기준일로 보아 제1항 각 호를 적용하도록 한다.", "correction": "", "practice": "퇴직 후 재임용되어 종전 기간을 합산한 공적연금 일시금은 단순히 2002년만 기준으로 계산하지 않을 수 있다."}, {"id": 16, "part": 3, "answer": "O", "basis": "소득세법 시행령 제42조의2 제3항", "tag": "과세제외기여금", "text": "확인되는 과세제외기여금등이 있으면 과세기준금액에서 그 금액을 빼서 제22조 제1항 제1호의 일시금을 계산한다.", "explanation": "시행령 제42조의2 제3항의 내용이다. 다만 ‘과세제외기여금등’은 연금보험료공제를 받지 않고 납입한 기여금 또는 개인부담금 중 관련 규정에 따라 확인되는 금액을 전제로 한다.", "correction": "", "practice": "연금보험료공제를 받지 않은 개인부담금을 다시 과세하지 않도록 조정하는 취지다."}, {"id": 17, "part": 3, "answer": "X", "basis": "소득세법 시행령 제42조의2 제4항 제1호", "tag": "지연지급 이자", "text": "공적연금 관련 일시금을 지연 지급하면서 함께 지급한 지연이자는 언제나 이자소득으로만 과세되고 퇴직소득이 될 수 없다.", "explanation": "시행령 제42조의2 제4항 제1호는 제22조 제1항 제1호의 소득 지급자가 일시금의 일부 또는 전부를 지연 지급하면서 함께 지급한 이자를 유사 퇴직소득으로 열거한다.", "correction": "“언제나 이자소득” → “시행령 요건을 충족한 지연지급 이자는 퇴직소득”", "practice": "일반 금전대여 이자와 공적연금 일시금의 지연지급 이자를 구분해야 한다."}, {"id": 18, "part": 3, "answer": "O", "basis": "소득세법 시행령 제42조의2 제4항 제2호", "tag": "과학기술발전장려금", "text": "과학기술인공제회법 제16조 제1항 제3호에 따라 지급받는 과학기술발전장려금은 제22조 제1항 제3호의 유사 퇴직소득에 포함된다.", "explanation": "시행령 제42조의2 제4항 제2호가 과학기술발전장려금을 명시적으로 열거한다.", "correction": "", "practice": "명칭이 ‘장려금’이더라도 법령이 유사 퇴직소득으로 열거하면 퇴직소득 분류가 적용된다."}, {"id": 19, "part": 4, "answer": "O", "basis": "소득세법 시행령 제42조의2 제5항", "tag": "임원의 정의", "text": "제22조 제3항의 임원 퇴직소득 한도에서 ‘대통령령으로 정하는 임원’은 법인세법 시행령 제40조 제1항 각 호의 어느 하나의 직무에 종사하는 사람을 말한다.", "explanation": "시행령 제42조의2 제5항은 임원의 범위를 법인세법 시행령 제40조 제1항 각 호의 직무에 종사하는 사람으로 연결한다.", "correction": "", "practice": "회사 내부 직급 명칭만 보지 말고 법인세법 시행령상 직무 기준을 확인한다."}, {"id": 20, "part": 4, "answer": "X", "basis": "소득세법 시행령 제42조의2 제6항", "tag": "가정퇴직금 선택", "text": "2011년 12월 31일 가정퇴직금은 언제나 근무기간 안분방식으로만 계산하며, 당시 임원 퇴직급여지급규정에 따른 금액을 선택할 수 없다.", "explanation": "원칙적으로 퇴직소득금액에 2011년 12월 31일 이전 근무기간을 전체 근무기간으로 나눈 비율을 곱한다. 다만 2011년 12월 31일 당시 정관 또는 그 위임에 따른 임원 퇴직급여지급규정이 있었고 그 규정상 금액을 적용하기로 선택한 경우에는 해당 금액을 사용할 수 있다.", "correction": "“안분방식만 가능” → “요건을 충족하면 당시 지급규정상 금액 선택 가능”", "practice": "선택 적용 여부는 2011년 말 현재 유효한 정관·위임규정의 존재를 입증할 수 있어야 한다."}, {"id": 21, "part": 4, "answer": "O", "basis": "소득세법 시행령 제42조의2 제6항", "tag": "근무기간 안분", "text": "원칙적인 2011년 12월 31일 가정퇴직금은 퇴직소득금액에 ‘2011년 12월 31일 이전 근무기간 ÷ 전체 근무기간’의 비율을 곱하여 계산한다.", "explanation": "시행령 제42조의2 제6항의 원칙적 안분식과 같다.", "correction": "", "practice": "예를 들어 전체 120개월 중 2011년 말 이전 근무기간이 48개월이면 원칙적 안분비율은 48/120이다."}, {"id": 22, "part": 4, "answer": "X", "basis": "소득세법 시행령 제42조의2 제6항", "tag": "1개월 미만", "text": "2011년 12월 31일 이전 근무기간을 계산할 때 1개월 미만의 기간은 없는 것으로 본다.", "explanation": "시행령 제42조의2 제6항은 개월 수로 계산하며 1개월 미만의 기간이 있으면 1개월로 본다고 규정한다.", "correction": "“없는 것으로 봄” → “1개월로 봄”", "practice": "일 단위 잔여기간을 절사하면 가정퇴직금이 과소계산될 수 있다."}, {"id": 23, "part": 4, "answer": "O", "basis": "소득세법 시행령 제42조의2 제7항", "tag": "해외파견 급여", "text": "임원 퇴직소득 한도의 총급여에는 근무기간 중 해외현지법인에 파견되어 국외에서 지급받는 급여도 원칙적으로 포함된다.", "explanation": "시행령 제42조의2 제7항 본문은 해외현지법인 파견 중 국외에서 지급받는 급여를 총급여에 포함하도록 한다.", "correction": "", "practice": "국내법인이 직접 지급하지 않았다는 이유만으로 해외현지법인 급여를 모두 제외하면 안 된다."}, {"id": 24, "part": 4, "answer": "X", "basis": "소득세법 시행령 제42조의2 제7항 단서", "tag": "해외수당 제외", "text": "해외파견 임원이 받은 주거보조비·교육비수당·해외체재비 등은 국내 근무 시 지급액을 초과한 부분까지 모두 총급여에 포함된다.", "explanation": "정관 또는 그 위임에 따른 임원 급여지급규정이 있는 법인의 주거보조비, 교육비수당, 특수지수당, 의료보험료, 해외체재비, 자동차임차료, 실의료비 및 유사 급여 중 국내 근무 시 지급받는 금액을 초과한 부분은 총급여에서 제외한다.", "correction": "“초과부분까지 모두 포함” → “법정 요건을 충족한 국내 지급수준 초과분은 제외”", "practice": "해외수당 전액을 일률적으로 제외하는 것도, 전액을 포함하는 것도 정확하지 않다."}, {"id": 25, "part": 5, "answer": "O", "basis": "소득세법 시행령 제43조 제1항 제1호", "tag": "종업원→임원", "text": "종업원이 임원이 되었으나 퇴직급여를 실제로 받지 않은 경우에는 퇴직으로 보지 않을 수 있다.", "explanation": "시행령 제43조 제1항은 열거된 사유가 발생했으나 퇴직급여를 실제로 받지 않은 경우 퇴직으로 보지 않을 수 있다고 규정하며, 제1호가 종업원이 임원이 된 경우다.", "correction": "", "practice": "직책만 임원으로 바뀌고 근속과 퇴직급여가 계속 승계되는 경우에 적용 여부를 검토한다."}, {"id": 26, "part": 5, "answer": "X", "basis": "소득세법 시행령 제43조 제1항 제2호", "tag": "조직변경·전출", "text": "합병·분할 등 조직변경이나 출자관계 법인으로의 전출이 이루어지면 퇴직급여를 받지 않았더라도 반드시 퇴직으로 본다.", "explanation": "해당 사유가 발생했으나 퇴직급여를 실제로 받지 않은 경우에는 퇴직으로 보지 않을 수 있다. 지문의 ‘반드시’가 틀렸다.", "correction": "“반드시 퇴직으로 봄” → “퇴직급여를 받지 않은 경우 퇴직으로 보지 않을 수 있음”", "practice": "전출 과정에서 퇴직급여가 승계되는지 실제 지급되는지 확인해야 한다."}, {"id": 27, "part": 5, "answer": "O", "basis": "소득세법 시행령 제43조 제1항 제2호", "tag": "동일 사업자 사업장", "text": "동일한 사업자가 경영하는 다른 사업장으로 전출되고 퇴직급여를 실제로 받지 않은 경우도 퇴직으로 보지 않을 수 있는 사유에 포함된다.", "explanation": "시행령 제43조 제1항 제2호는 동일한 사업자가 경영하는 다른 사업장으로의 전출을 명시한다.", "correction": "", "practice": "같은 사업자 소속 사업장 간 이동인지, 별도 사용자에게 전직한 것인지 구분한다."}, {"id": 28, "part": 5, "answer": "O", "basis": "소득세법 시행령 제43조 제1항 제3호", "tag": "상근→비상근", "text": "법인의 상근임원이 비상근임원이 되었으나 퇴직급여를 실제로 받지 않은 경우에는 퇴직으로 보지 않을 수 있다.", "explanation": "시행령 제43조 제1항 제3호의 내용이다.", "correction": "", "practice": "상근성 변경만으로 자동 퇴직처리되는 것은 아니며 실제 퇴직급여 지급 여부를 함께 본다."}, {"id": 29, "part": 5, "answer": "X", "basis": "소득세법 시행령 제43조 제1항 제4호", "tag": "비정규직→정규직", "text": "기간제·단시간근로자가 정규직으로 전환되면 퇴직급여 지급 여부와 관계없이 반드시 퇴직한 것으로 본다.", "explanation": "비정규직 근로자가 정규직으로 전환되었으나 퇴직급여를 실제로 받지 않은 경우에는 퇴직으로 보지 않을 수 있다.", "correction": "“반드시 퇴직” → “퇴직급여 미수령 시 퇴직으로 보지 않을 수 있음”", "practice": "고용형태 전환과 동시에 퇴직금을 정산했는지, 계속근로로 승계했는지 확인한다."}, {"id": 30, "part": 5, "answer": "O", "basis": "소득세법 시행령 제43조 제2항", "tag": "중간지급", "text": "계속근로기간 중 법정 사유로 퇴직급여를 미리 지급받은 퇴직소득중간지급은 그 지급받은 날에 퇴직한 것으로 본다.", "explanation": "시행령 제43조 제2항은 계속근로 중 열거된 사유로 퇴직급여를 미리 지급받으면 그 지급일에 퇴직한 것으로 본다.", "correction": "", "practice": "세법상 퇴직시점은 실제 고용관계 종료일이 아니라 중간지급일이 될 수 있다."}, {"id": 31, "part": 6, "answer": "O", "basis": "소득세법 시행령 제42조의2 제4항 제3호", "tag": "건설근로자 퇴직공제금", "text": "건설근로자의 고용개선 등에 관한 법률 제14조에 따라 지급받는 퇴직공제금은 유사 퇴직소득에 포함된다.", "explanation": "시행령 제42조의2 제4항 제3호가 해당 퇴직공제금을 명시적으로 열거한다.", "correction": "", "practice": "일반적인 공제금이라는 명칭만으로 기타소득 등으로 분류하지 않는다."}, {"id": 32, "part": 6, "answer": "O", "basis": "소득세법 시행령 제42조의2 제4항 제4호", "tag": "종교관련종사자", "text": "종교관련종사자가 현실적인 퇴직을 원인으로 종교단체로부터 지급받는 소득은 유사 퇴직소득이다.", "explanation": "시행령 제42조의2 제4항 제4호의 문언과 같다. 핵심은 ‘현실적인 퇴직’과 ‘종교단체로부터 지급’이라는 요건이다.", "correction": "", "practice": "재직 중 정기적으로 받은 사례비와 실제 퇴직으로 받은 금액을 구분해야 한다."}, {"id": 33, "part": 6, "answer": "X", "basis": "소득세법 시행령 제43조 제2항", "tag": "임의 중간정산 함정", "text": "회사가 자금사정이나 내부 편의를 이유로 임원에게 퇴직급여를 임의 중간지급하면 법정 사유가 없어도 지급일에 퇴직한 것으로 본다.", "explanation": "시행령 제43조 제2항은 근로자퇴직급여 보장법 시행령 제3조 제1항 각 호의 사유 또는 퇴직연금제도 폐지 등 열거된 사유를 전제로 한다. 단순한 회사 내부 사정만으로 자동 적용되지 않는다.", "correction": "“임의 중간지급도 자동 인정” → “시행령에 열거된 법정 사유를 충족해야 함”", "practice": "임원 중간정산은 소득세법뿐 아니라 법인세법상 손금산입 요건도 별도로 검토해야 한다."}, {"id": 34, "part": 6, "answer": "O", "basis": "소득세법 시행령 제43조 제1항 제1호", "tag": "사례형", "text": "A회사의 직원이 임원으로 승진했지만 퇴직급여를 받지 않고 종전 근속기간과 퇴직급여가 계속 승계된 경우, 세법상 퇴직으로 보지 않을 수 있다.", "explanation": "종업원이 임원이 된 경우로서 퇴직급여를 실제로 받지 않은 때에는 시행령 제43조 제1항에 따라 퇴직으로 보지 않을 수 있다.", "correction": "", "practice": "인사발령서뿐 아니라 퇴직급여 지급·승계 자료를 함께 확인한다."}, {"id": 35, "part": 6, "answer": "X", "basis": "소득세법 제22조 제2항·시행령 제42조의2", "tag": "2002년 이전분", "text": "공적연금 관련 일시금이 전부 2002년 1월 1일 이전의 기여금 또는 근로 제공만을 기초로 하더라도 그 전액을 제22조의 과세대상 퇴직소득으로 본다.", "explanation": "제22조 제2항은 2002년 1월 1일 이후의 기여금·사용자 부담금 또는 근로 제공을 기초로 받은 일시금을 대상으로 한다. 전부가 그 이전분이라면 시행령 산식상 과세대상 부분이 발생하지 않는 구조다.", "correction": "“전액 과세대상” → “2002년 1월 1일 이후분을 기준으로 과세대상 계산”", "practice": "공적연금기관의 과세기초자료에서 2002년 전후 납입월수를 확인한다."}, {"id": 36, "part": 6, "answer": "O", "basis": "소득세법 제22조 제3항 계산식", "tag": "종합 사례", "text": "임원이 2018년부터 2024년까지 근무한 뒤 퇴직하였다면, 한도 계산 시 2018~2019년 근무분에는 3배 구간을, 2020년 이후 근무분에는 2배 구간을 각각 적용하여 합산한다.", "explanation": "현행 계산식은 2012년 1월 1일부터 2019년 12월 31일까지와 2020년 1월 1일 이후의 근무기간을 나누어 각각 3배와 2배를 적용한다.", "correction": "", "practice": "구간별 근무월수와 각 구간의 총급여 연평균환산액을 별도로 산정한 뒤 합산한다."}];
+const PARTS = {"1": {"title": "제22조 제1항·제2항 — 퇴직소득의 범위와 2002년 기준", "subtitle": "법률상 기본 구조"}, "2": {"title": "제22조 제3항·제4항 — 임원 퇴직소득 한도", "subtitle": "근로소득 전환과 산식"}, "3": {"title": "시행령 제42조의2 — 공적연금 일시금과 유사 퇴직소득", "subtitle": "과세기준금액·과세제외기여금"}, "4": {"title": "시행령 제42조의2 — 임원 범위·가정퇴직금·해외급여", "subtitle": "세부 계산요건"}, "5": {"title": "시행령 제43조 — 퇴직판정의 특례", "subtitle": "퇴직급여 미수령·중간지급"}, "6": {"title": "실무 사례 및 종합 함정", "subtitle": "분류·판정·구간별 계산"}};
+const TOTAL_QUESTIONS = QUIZ.length;
+const ANSWERS = Object.fromEntries(QUIZ.map(q => [q.id, q.answer]));
+const SECTIONS = Object.fromEntries(
+  Object.keys(PARTS).map(part => [part, QUIZ.filter(q => String(q.part) === String(part)).map(q => q.id)])
+);
+
+const state = {
+  selected: {},
+  checked: {},
+  correct: 0,
+  revealedAll: false
+};
+
+function escapeHtml(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function renderQuiz(){
+  const root = document.getElementById("quiz-root");
+  root.innerHTML = Object.keys(PARTS).map(partKey => {
+    const part = Number(partKey);
+    const questions = QUIZ.filter(q => q.part === part);
+    return `
+      <section class="section" id="section-${part}">
+        <div class="section-head">
+          <span class="part-badge">PART ${part}</span>
+          <span class="section-title">${escapeHtml(PARTS[part].title)}</span>
+          <span class="section-sub">${escapeHtml(PARTS[part].subtitle)}</span>
+          <span class="section-count" id="section-count-${part}">0/${questions.length}</span>
+        </div>
+        <hr class="section-rule">
+        ${questions.map(renderQuestion).join("")}
+      </section>
+    `;
+  }).join("");
+}
+
+function renderQuestion(q){
+  const correction = q.correction
+    ? `<div class="correction-box"><strong>⚠ 올바른 문장</strong>${escapeHtml(q.correction)}</div>`
+    : "";
+  const practice = q.practice
+    ? `<div class="practice-box"><strong>💼 실무 포인트</strong>${escapeHtml(q.practice)}</div>`
+    : "";
+
+  return `
+    <article class="question-card" id="question-${q.id}">
+      <div class="question-top">
+        <div class="number">${q.id}</div>
+        <div class="question-copy">
+          <div class="badge-row">
+            <span class="law-badge">${escapeHtml(q.basis)}</span>
+            <span class="topic-badge">${escapeHtml(q.tag)}</span>
+          </div>
+          <div class="question-text">${escapeHtml(q.text)}</div>
+        </div>
+      </div>
+      <div class="answer-area">
+        <div class="ox-row" role="group" aria-label="${q.id}번 답 선택">
+          <button type="button" class="ox-btn" id="answer-${q.id}-O" data-question="${q.id}" data-answer="O">O</button>
+          <button type="button" class="ox-btn" id="answer-${q.id}-X" data-question="${q.id}" data-answer="X">X</button>
+        </div>
+      </div>
+      <div class="action-row">
+        <button type="button" class="check-btn" id="check-${q.id}" data-check="${q.id}">정답 확인</button>
+        <span class="result" id="result-${q.id}"></span>
+      </div>
+      <div class="explanation" id="explanation-${q.id}">
+        <div class="ex-title">EXPLANATION</div>
+        <span class="ref-chip">${escapeHtml(q.basis)}</span>
+        <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer}</div>
+        <p>${escapeHtml(q.explanation)}</p>
+        ${correction}
+        ${practice}
+      </div>
+    </article>
+  `;
+}
+
+function selectAnswer(questionNumber, value){
+  if(state.checked[questionNumber]) return;
+  state.selected[questionNumber] = value;
+  const o = document.getElementById(`answer-${questionNumber}-O`);
+  const x = document.getElementById(`answer-${questionNumber}-X`);
+  o.classList.remove("selected-o","selected-x");
+  x.classList.remove("selected-o","selected-x");
+  if(value === "O") o.classList.add("selected-o");
+  if(value === "X") x.classList.add("selected-x");
+}
+
+function checkAnswer(questionNumber, silent = false){
+  if(state.checked[questionNumber]) return true;
+  const selected = state.selected[questionNumber];
+  if(!selected){
+    if(!silent){
+      document.getElementById("status-message").textContent = `${questionNumber}번 문제의 O 또는 X를 먼저 선택하세요.`;
+      document.getElementById(`question-${questionNumber}`).scrollIntoView({behavior:"smooth",block:"center"});
+    }
+    return false;
+  }
+
+  state.checked[questionNumber] = true;
+  const correctAnswer = ANSWERS[questionNumber];
+  const isCorrect = selected === correctAnswer;
+  if(isCorrect) state.correct += 1;
+
+  const o = document.getElementById(`answer-${questionNumber}-O`);
+  const x = document.getElementById(`answer-${questionNumber}-X`);
+  [o,x].forEach(btn => {
+    btn.disabled = true;
+    btn.classList.remove("selected-o","selected-x");
+    const value = btn.dataset.answer;
+    if(value === correctAnswer) btn.classList.add("correct");
+    else if(value === selected) btn.classList.add("wrong");
+    else btn.classList.add("dimmed");
+  });
+
+  const result = document.getElementById(`result-${questionNumber}`);
+  result.className = `result show ${isCorrect ? "ok" : "ng"}`;
+  result.textContent = isCorrect ? "✓ 정답" : `✗ 오답 · 정답 ${correctAnswer}`;
+
+  document.getElementById(`check-${questionNumber}`).disabled = true;
+  document.getElementById(`question-${questionNumber}`).classList.add("checked");
+  document.getElementById(`explanation-${questionNumber}`).classList.add("show");
+  document.getElementById("status-message").textContent = "";
+
+  updateProgress();
+  if(Object.keys(state.checked).length === TOTAL_QUESTIONS) showSummary();
+  return true;
+}
+
+function checkAllAnswers(){
+  let newlyChecked = 0;
+  let unanswered = 0;
+
+  QUIZ.forEach(q => {
+    if(state.checked[q.id]) return;
+    if(state.selected[q.id]){
+      if(checkAnswer(q.id, true)) newlyChecked += 1;
+    }else{
+      unanswered += 1;
+    }
+  });
+
+  const message = document.getElementById("status-message");
+  if(newlyChecked === 0 && unanswered === 0){
+    message.textContent = "모든 문항이 이미 채점되었습니다.";
+  }else if(unanswered > 0){
+    message.textContent = `선택한 ${newlyChecked}문항을 채점했습니다. 미응답 ${unanswered}문항은 채점하지 않았습니다.`;
+  }else{
+    message.textContent = `${newlyChecked}문항을 채점했습니다.`;
+  }
+  showSummary();
+}
+
+function revealAllExplanations(){
+  state.revealedAll = true;
+  QUIZ.forEach(q => document.getElementById(`explanation-${q.id}`).classList.add("show"));
+  document.getElementById("status-message").textContent =
+    "모든 해설을 공개했습니다. 미채점 문항의 점수와 진행률에는 반영되지 않습니다.";
+}
+
+function updateProgress(){
+  const checkedCount = Object.keys(state.checked).length;
+  document.getElementById("score-value").textContent = `${state.correct}/${checkedCount}`;
+  document.getElementById("progress-bar").style.width = `${(checkedCount / TOTAL_QUESTIONS) * 100}%`;
+
+  Object.entries(SECTIONS).forEach(([part, ids]) => {
+    const completed = ids.filter(id => state.checked[id]).length;
+    document.getElementById(`section-count-${part}`).textContent = `${completed}/${ids.length}`;
+  });
+}
+
+function showSummary(){
+  const checkedCount = Object.keys(state.checked).length;
+  const wrong = checkedCount - state.correct;
+  const unanswered = TOTAL_QUESTIONS - checkedCount;
+  const rate = checkedCount ? Math.round((state.correct / checkedCount) * 100) : 0;
+
+  document.getElementById("summary-rate").textContent = `${rate}%`;
+  document.getElementById("summary-correct").textContent = state.correct;
+  document.getElementById("summary-wrong").textContent = wrong;
+  document.getElementById("summary-unanswered").textContent = unanswered;
+  document.getElementById("summary-box").classList.add("show");
+}
+
+function resetQuiz(){
+  state.selected = {};
+  state.checked = {};
+  state.correct = 0;
+  state.revealedAll = false;
+
+  QUIZ.forEach(q => {
+    const card = document.getElementById(`question-${q.id}`);
+    card.classList.remove("checked");
+
+    ["O","X"].forEach(value => {
+      const btn = document.getElementById(`answer-${q.id}-${value}`);
+      btn.disabled = false;
+      btn.className = "ox-btn";
+    });
+
+    const check = document.getElementById(`check-${q.id}`);
+    check.disabled = false;
+
+    const result = document.getElementById(`result-${q.id}`);
+    result.className = "result";
+    result.textContent = "";
+
+    document.getElementById(`explanation-${q.id}`).classList.remove("show");
+  });
+
+  document.getElementById("summary-box").classList.remove("show");
+  document.getElementById("status-message").textContent = "";
+  updateProgress();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.addEventListener("click", event => {
+  const answerButton = event.target.closest("[data-question]");
+  if(answerButton){
+    selectAnswer(Number(answerButton.dataset.question), answerButton.dataset.answer);
+    return;
+  }
+  const checkButton = event.target.closest("[data-check]");
+  if(checkButton){
+    checkAnswer(Number(checkButton.dataset.check));
+  }
+});
+
+document.getElementById("check-all-btn").addEventListener("click", checkAllAnswers);
+document.getElementById("reveal-all-btn").addEventListener("click", revealAllExplanations);
+document.getElementById("reset-btn").addEventListener("click", resetQuiz);
+
+renderQuiz();
+updateProgress();
+</script>
+</body>
+</html>
