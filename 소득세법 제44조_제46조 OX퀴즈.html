@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">소득세법<br><span>제44조~제46조</span></div>
+  <div class="hsb"></div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제44조 상속의 경우의 소득금액의 구분 계산</span><span class="scn" id="c1">0/4</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§44①</span>피상속인의 소득금액에 대한 소득세로서 상속인에게 과세할 것과 상속인의 소득금액에 대한 소득세는 구분하여 계산하여야 한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제44조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제44조 제1항의 내용입니다. 상속이 발생하면 피상속인 귀속분과 상속인 귀속분을 각각 별도로 계산해야 합니다. 이를 혼합하여 계산하면 세액이 왜곡될 수 있기 때문입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§44②</span>연금계좌 가입자가 사망한 경우, 배우자가 연금외수령 없이 해당 연금계좌를 상속으로 승계하면 해당 연금계좌에 있는 피상속인의 소득금액은 상속인의 소득금액으로 보아 소득세를 계산한다.<span class="tb tup">기본</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제44조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제44조 제2항에 따라 배우자가 <strong>연금외수령 없이</strong> 연금계좌를 상속 승계하는 경우에는 §44①의 구분 계산 원칙에도 불구하고 피상속인의 소득금액을 상속인의 소득금액으로 봅니다. 배우자 간 연금계좌 승계를 원활히 하기 위한 특례 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§44②·令§100의2②</span>연금계좌를 상속으로 승계하려는 상속인은 피상속인이 사망한 날이 속하는 달의 말일부터 3개월 이내에 연금계좌취급자에게 승계신청을 하여야 한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 시행령 제100조의2 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '3개월 이내' → '6개월 이내'</p><p>소득세법 시행령 제100조의2 제2항에 따라 연금계좌 승계신청 기한은 피상속인이 사망한 날이 속하는 달의 말일부터 <strong>6개월 이내</strong>입니다. 3개월이 아닙니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">令§100의2②</span>연금계좌를 상속 승계하는 경우, 상속인은 피상속인이 사망한 날부터 연금계좌를 승계한 것으로 본다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 시행령 제100조의2 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제100조의2 제2항 후단에 따라 상속인은 <strong>피상속인이 사망한 날부터</strong> 연금계좌를 승계한 것으로 봅니다. 승계신청은 사망일이 속하는 달의 말일부터 6개월 이내에 하면 되지만, 승계 효력은 사망일로 소급됩니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제45조 결손금 및 이월결손금의 공제</span><span class="scn" id="c2">0/7</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§45①</span>사업자가 비치·기록한 장부에 의하여 해당 과세기간의 사업소득금액을 계산할 때 발생한 결손금은 그 과세기간의 종합소득과세표준을 계산할 때 근로소득금액·연금소득금액·기타소득금액·이자소득금액·배당소득금액에서 순서대로 공제한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 제45조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제45조 제1항에 따른 결손금 공제 순서입니다. 사업소득 결손금은 <strong>근로 → 연금 → 기타 → 이자 → 배당소득금액</strong> 순으로 공제합니다. 장부에 의한 경우에만 적용되며, 추계신고 시에는 적용되지 않습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§45②</span>부동산 또는 부동산상의 권리를 대여하는 사업(부동산임대업)에서 발생한 결손금은 종합소득 과세표준을 계산할 때 공제하지 않는다. 다만, 주거용 건물 임대업의 결손금은 공제할 수 있다.<span class="tb tup">기본</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 제45조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제45조 제2항에 따라 부동산임대업(부동산·권리 대여, 공장·광업재단 대여, 채굴권 대여) 결손금은 과세표준에서 공제하지 않습니다. 단, <strong>주거용 건물 임대업은 예외</strong>로 공제가 허용됩니다. 투기 목적의 비주거용 임대업에 대한 규제 성격의 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§45③</span>이월결손금은 해당 이월결손금이 발생한 과세기간의 종료일부터 15년 이내에 끝나는 과세기간의 소득금액을 계산할 때 공제하며, 나중에 발생한 이월결손금부터 순서대로 공제한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제45조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '나중에 발생한 것부터 공제' → '먼저 발생한 과세기간의 이월결손금부터 순서대로 공제'</p><p>소득세법 제45조 제3항에 따라 이월결손금은 <strong>먼저 발생한 과세기간의 것부터 순서대로</strong> 공제합니다. 이월결손금 공제 기간은 발생일로부터 15년입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§45④</span>해당 과세기간의 소득금액에 대해 추계신고를 하거나 추계조사결정을 하는 경우에는 이월결손금 공제 규정이 적용되지 않으나, 천재지변 등 불가항력으로 장부가 멸실되어 추계신고를 하는 경우에는 이월결손금 공제가 적용된다.<span class="tb tup">기본</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제45조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제45조 제4항에 따라 추계신고 또는 추계조사결정 시에는 이월결손금 공제(§45③)를 적용하지 않습니다. 단, <strong>천재지변 등 불가항력으로 장부가 멸실</strong>되어 추계한 경우에는 예외적으로 이월결손금 공제가 허용됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§45⑥</span>해당 과세기간에 결손금이 발생하고 이월결손금도 있는 경우에는 이월결손금을 먼저 소득금액에서 공제한 후 당해 연도 결손금을 공제한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 제45조 제6항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '이월결손금 먼저 공제' → '해당 과세기간의 결손금을 먼저 공제'</p><p>소득세법 제45조 제6항에 따라 당해 연도 결손금과 이월결손금이 함께 있을 때는 <strong>해당 과세기간의 결손금을 먼저</strong> 소득금액에서 공제합니다. 이월결손금은 그 다음에 공제합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">令§101②</span>채굴에 관한 권리를 대여하는 사업 중 광업권자등이 채굴 시설과 함께 광산을 대여하는 사업은 결손금 공제가 적용되지 않는 부동산임대업에 해당한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 시행령 제101조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제101조 제2항에 따라 '채굴에 관한 권리를 대여하는 사업'(§45②3호)의 범위는 광업권자등이 <strong>채굴 시설과 함께 광산을 대여하는 사업</strong>입니다. 단, 자본적·수익적 지출 일부를 제공하는 조건으로 채굴권을 대여하고 분철료를 받는 것은 제외합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">§45③</span>부동산임대업에서 발생한 이월결손금은 사업소득금액, 근로소득금액 등 다른 소득금액에서도 공제할 수 있다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 제45조 제3항 제2호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '다른 소득금액에서도 공제 가능' → '부동산임대업의 소득금액에서만 공제'</p><p>소득세법 제45조 제3항 제2호에 따라 부동산임대업에서 발생한 이월결손금은 <strong>부동산임대업의 소득금액에서만</strong> 공제합니다. 다른 소득금액(근로·연금·기타·이자·배당)에서는 공제할 수 없습니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제46조 채권 등에 대한 소득금액의 계산 특례</span><span class="scn" id="c3">0/2</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§46①</span>거주자가 채권등을 발행법인으로부터 이자를 지급받거나 해당 채권등을 매도하는 경우에는 거주자에게 그 보유기간별로 귀속되는 이자등 상당액을 해당 거주자의 이자소득으로 보아 소득금액을 계산한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제46조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제46조 제1항의 채권 보유기간이자 과세 특례입니다. 채권을 중도에 매도하더라도 <strong>보유 기간에 귀속되는 이자 상당액</strong>을 이자소득으로 과세합니다. 이를 통해 채권 매매를 이용한 이자소득 회피를 방지합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">令§102①④</span>환매조건부채권매매거래(RP)를 통해 채권을 매도한 경우에는 법 제46조의 보유기간이자 과세가 적용되지 않는다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 시행령 제102조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제102조 제4항에 따라 일정기간 후 일정가격으로 환매수할 것을 조건으로 채권을 매도하는 환매조건부채권매매거래(RP)는 법 제46조 적용에서 제외합니다. 이 경우 채권을 매도 후 환매수할 때까지 발생하는 이자는 매도자에게 귀속되는 것으로 봅니다(§102⑤).</p></div></div>
+
+<div class="sh"><span class="stg">Part 4</span><span class="stl">제46조의2 중도 해지로 인한 이자소득금액 계산의 특례</span><span class="scn" id="c4">0/2</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§46의2</span>종합소득과세표준 확정신고 후 예금 또는 신탁계약의 중도 해지로 이미 지난 과세기간에 속하는 이자소득금액이 감액된 경우, 그 감액된 금액을 중도 해지일이 속하는 과세기간의 이자소득금액에서 뺄 수 있다. 다만, 국세기본법에 따라 경정청구를 한 경우에는 그러하지 아니하다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제46조의2</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제46조의2에 따라 중도 해지로 과거 과세기간의 이자소득금액이 감액된 경우, 경정청구 대신 <strong>해지일이 속하는 과세기간의 이자소득에서 감액분을 차감</strong>하는 방식을 선택할 수 있습니다. 단, 이미 경정청구를 한 경우에는 이 특례를 적용할 수 없습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§46의2</span>중도 해지로 인한 이자소득금액 감액의 경우, 과세표준 확정신고 전에 예금을 중도 해지하여 이자소득금액이 감액된 경우에도 이 특례를 적용할 수 있다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 제46조의2</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '확정신고 전 해지도 적용 가능' → '종합소득과세표준 확정신고 후 중도 해지된 경우에만 적용'</p><p>소득세법 제46조의2는 <strong>종합소득과세표준 확정신고 후</strong> 중도 해지로 이미 지난 과세기간의 이자소득금액이 감액된 경우에 적용됩니다. 확정신고 전 해지라면 해당 과세기간 소득에 반영되므로 이 특례가 필요하지 않습니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 5</span><span class="stl">제40조의2 연금계좌 등</span><span class="scn" id="c5">0/3</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">令§40의2③</span>연금수령으로 인정되려면 가입자가 55세 이후 연금수령 개시를 신청하고, 연금계좌 가입일부터 5년이 경과된 후 인출해야 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 시행령 제40조의2 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제40조의2 제3항 제1호·제2호에 따라 연금수령 요건은 ① <strong>55세 이후</strong> 수령 개시 신청, ② <strong>가입일부터 5년 경과</strong> 후 인출입니다. 다만 이연퇴직소득이 연금계좌에 있는 경우 5년 경과 요건이 적용되지 않습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">令§40의2④</span>연금수령연차가 11년 이상인 경우에는 연금수령한도 계산식을 적용하지 않는다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 시행령 제40조의2 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제40조의2 제4항에 따라 연금수령한도는 '연금계좌 평가액 × 120% ÷ (11 - 연금수령연차)'로 계산하며, <strong>연금수령연차가 11년 이상이면 한도 계산식이 적용되지 않아</strong> 제한 없이 인출이 가능합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">令§40의2③2호</span>연금수령 요건 중 연금계좌 가입일부터 5년 경과 요건은 이연퇴직소득이 연금계좌에 있는 경우에도 동일하게 적용된다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 시행령 제40조의2 제3항 제2호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '이연퇴직소득이 있어도 5년 경과 요건 적용' → '이연퇴직소득이 있는 경우 5년 경과 요건 적용 제외'</p><p>소득세법 시행령 제40조의2 제3항 제2호 단서에 따라 퇴직소득이 연금계좌에 입금된 이연퇴직소득이 있는 경우에는 <strong>5년 경과 요건을 적용하지 않습니다.</strong></p></div></div>
+
+<div class="sh"><span class="stg">Part 6</span><span class="stl">제53조 총수입금액계산의 특례</span><span class="scn" id="c6">0/2</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">令§53③1호</span>주택 임대보증금에 대한 간주임대료 계산 시 주택 보증금 등에서 3억원을 공제하고, 공제 순서는 보증금등의 적수가 가장 작은 주택부터 순서대로 뺀다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 시행령 제53조 제3항 제1호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '적수가 가장 작은 주택부터' → '적수가 가장 큰 주택부터 순서대로'</p><p>소득세법 시행령 제53조 제3항 제1호에 따라 주택 간주임대료 계산 시 보증금 등에서 3억원을 공제할 때, 2주택 이상인 경우 <strong>보증금등의 적수가 가장 큰 주택부터 순서대로</strong> 3억원을 차감합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">規§23①</span>주택 임대보증금 등에 대한 간주임대료 계산 시 적용하는 정기예금이자율은 연 1,000분의 31이다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 시행규칙 제23조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행규칙 제23조 제1항에 따라 시행령 제53조 제3항 제1호 산식에서 적용하는 정기예금이자율은 <strong>연 1,000분의 31(3.1%)</strong>입니다. 이 이자율은 매년 개정될 수 있으므로 최신 법령 확인이 필요합니다.</p></div></div>
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP"><h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제44~46조 / 소득세법 시행령, 소득세법 시행규칙<br>[2026-06-23] &nbsp;&nbsp; #소득세법 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'O',3:'X',17:'O',4:'O',5:'O',6:'X',7:'O',8:'X',14:'O',18:'X',9:'O',15:'O',10:'O',20:'X',11:'O',12:'O',19:'X',13:'X',16:'O'};const SECS={1:[1,2,3,17],2:[4,5,6,7,8,14,18],3:[9,15],4:[10,20],5:[11,12,19],6:[13,16]};const sel={},done={};let correct=0,answered=0;const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));c.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');c.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';updateSecCounts();}
+function updateSecCounts(){Object.entries(SECS).forEach(([k,arr])=>{const dn=arr.filter(n=>done[n]).length;document.getElementById('c'+k).textContent=dn+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const p=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=p+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body></html>

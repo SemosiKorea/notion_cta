@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">소득세법<br><span>제24조~제26조</span></div>
+  <div class="hsb"></div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제24조 총수입금액의 계산</span><span class="scn" id="c1">0/6</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§24①</span>거주자의 각 소득에 대한 총수입금액은 해당 과세기간에 수입하였거나 수입할 금액의 합계액으로 하며, 총급여액과 총연금액도 총수입금액에 포함된다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제24조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제24조 제1항은 <strong>총수입금액(총급여액과 총연금액을 포함한다)</strong>을 해당 과세기간에 수입하였거나 수입할 금액의 합계액으로 정의합니다. 권리확정주의(발생주의)가 적용되어 아직 받지 않았더라도 받을 권리가 확정된 금액은 총수입금액에 포함됩니다. 쉽게 말해, 올해 벌기로 되어 있는 돈은 실제로 받지 못해도 올해 소득으로 봅니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§24②</span>금전 외의 것을 수입할 때에는 그 수입금액을 수입한 날의 다음 날 시가에 의하여 계산한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제24조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '수입한 날의 다음 날 시가' → '거래 당시의 가액'</p><p>소득세법 제24조 제2항은 금전 외의 것을 수입할 때에는 <strong>그 거래 당시의 가액</strong>에 의하여 계산한다고 규정합니다. '다음 날'이나 '수입한 날 이후'가 아니라 <strong>거래 당시</strong>가 기준입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§24③·令§51③1</span>부동산을 임대하고 받은 선세금(先貰金)에 대한 총수입금액은 그 선세금을 계약기간의 월수로 나눈 금액의 각 과세기간 합계액으로 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 시행령 제51조 제3항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제51조 제3항 제1호에 따라 부동산 임대·지역권·지상권 설정 대여 시 받은 <strong>선세금은 계약기간의 월수로 나눈 금액을 각 과세기간의 총수입금액으로 인식</strong>합니다. 이는 선세금을 한꺼번에 수익으로 처리하지 않고 계약기간에 걸쳐 안분하는 방식입니다. 쉽게 말해, 2년치 월세를 한 번에 받아도 매년 1년치씩만 소득으로 봅니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§24·令§51③1의2</span>환입된 물품의 가액과 매출에누리는 해당 과세기간의 총수입금액에 산입하지 아니한다. 단, 거래수량·거래금액에 따라 지급하는 장려금은 총수입금액에서 공제하지 않는다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 시행령 제51조 제3항 제1호의2</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제51조 제3항 제1호의2에 따르면 <strong>환입된 물품의 가액과 매출에누리는 총수입금액 불산입</strong>이지만, <strong>거래수량·거래금액에 따라 상대방에게 지급하는 장려금 및 이와 유사한 금액과 대손금은 총수입금액에서 차감하지 않습니다.</strong> 받는 장려금(거래처로부터 수령)은 총수입금액에 산입하고(제2호), 대손금은 별도의 필요경비로 처리합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§24·令§51③</span>외상매출금의 매출할인금액은 외상매출금이 발생한 날이 속하는 과세기간의 총수입금액에서 차감한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 시행령 제51조 제3항 제1호의3</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '외상매출금이 발생한 날' → '약정 지급기일(지급기일이 없으면 지급한 날)이 속하는 과세기간'</p><p>소득세법 시행령 제51조 제3항 제1호의3에 따르면 매출할인금액은 <strong>거래상대방과의 약정에 의한 지급기일(지급기일이 정해지지 않은 경우에는 지급한 날)이 속하는 과세기간</strong>의 총수입금액에서 차감합니다. 외상매출금 발생 시점이 아닙니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">§24·令§51⑤</span>제조업자로부터 그 제조하는 물품을 인도받은 경우, 금전 외 수입금액 계산 시 그 물품의 '시가'를 기준으로 한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 시행령 제51조 제5항 제1호, 제2호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '시가' → '제조업자·생산업자·판매업자의 판매가액'</p><p>소득세법 시행령 제51조 제5항 제1호에 따르면, <strong>제조업자·생산업자 또는 판매업자로부터 그 제조·생산·판매하는 물품을 인도받은 때</strong>에는 일반적인 시가가 아니라 <strong>그 제조업자·생산업자·판매업자의 판매가액</strong>을 수입금액으로 합니다. 시가를 적용하는 것은 '제조업자·생산업자·판매업자가 아닌 자'로부터 물품을 인도받을 때입니다(제2호).</p></div></div>
+
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제25조 총수입금액 계산의 특례</span><span class="scn" id="c2">0/6</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§25①</span>거주자가 3주택 이상을 소유하고 해당 주택의 보증금 등 합계액이 3억원을 초과하는 경우에는 간주임대료를 계산하여 사업소득금액 계산 시 총수입금액에 산입한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제25조 제1항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제25조 제1항 제1호에 따라 <strong>3주택 이상을 소유하고 보증금 등 합계액이 3억원을 초과하는 경우</strong>, 대통령령으로 정하는 방법으로 계산한 간주임대료(보증금에 대한 이자 상당액)를 총수입금액에 산입합니다. 단, 소형·저가 주택(40㎡ 이하 & 기준시가 2억 이하)은 2026년 12월 31일까지 주택 수에서 제외됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§25①2</span>2주택을 소유하고 해당 주택의 보증금 등 합계액이 3억원을 초과하는 경우에는 항상 간주임대료를 계산하여 총수입금액에 산입한다.<span class="tb thot">🔴 기한 함정</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제25조 제1항 제2호, 소득세법 시행령 제53조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '항상 3억원 초과 시' → '2주택의 경우 보증금 등의 합계액이 12억원(시행령 제53조 제1항)을 초과해야 함'</p><p>소득세법 제25조 제1항 제2호에 따르면 2주택의 경우 보증금 등의 합계액이 <strong>'대통령령으로 정하는 금액'을 초과</strong>해야 하는데, 소득세법 시행령 제53조 제1항(2025년 개정)에서 이를 <strong>12억원</strong>으로 정하고 있습니다. 또한 기준시가 12억원 이하인 주택은 주택 수에 포함하지 않습니다. 3주택의 '3억원 초과' 요건과 혼동하지 않도록 주의하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§25①·令§53③1</span>주택 간주임대료 계산(일반 장부 신고 시) 시 임대사업 부분에서 발생한 수입이자·할인료·배당금의 합계액을 차감하며, 이 금액은 반드시 장부나 증빙서류에 의해 해당 임대보증금으로 취득한 금융자산에서 발생한 것으로 확인되어야 한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 시행령 제53조 제3항 제1호, 제6항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제53조 제3항 제1호 산식 및 제6항에 따르면, 주택 간주임대료 산식은 '(보증금 등 - 3억원)의 적수 × 60/100 × 1/365 × 정기예금이자율 - <strong>해당 임대사업 부분의 수입이자·할인료·배당금 합계액</strong>'이며, 동조 제6항에서 이 차감액은 <strong>장부·증빙서류에 의해 해당 임대보증금 등으로 취득한 금융자산에서 발생한 것으로 확인되는 경우에 한정</strong>합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§25①·規§23①</span>주택 간주임대료 계산에 적용되는 정기예금이자율은 연 1천분의 31(3.1%)이다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 시행규칙 제23조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행규칙 제23조 제1항에 따르면 간주임대료 계산에 적용하는 정기예금이자율은 <strong>연 1천분의 31(3.1%)</strong>로 정하고 있습니다(2026년 현재 기준). 이 비율은 매년 시행규칙 개정을 통해 변경될 수 있으므로 시험 시점의 최신 규정 확인이 필요합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§25②</span>거주자가 재고자산을 가사용으로 소비하거나 종업원에게 지급한 경우, 그 소비하거나 지급하였을 때의 가액은 해당 과세기간의 사업소득금액 또는 기타소득금액을 계산할 때 총수입금액에 산입한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제25조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제25조 제2항에 따르면, 재고자산 또는 임목을 <strong>가사용 소비·종업원·타인에게 지급</strong>한 경우에도 그 가액은 총수입금액에 산입합니다. 마치 가게 사장님이 가게 물건을 자기 집에서 쓰더라도, 그 물건의 가치만큼은 소득으로 본다는 것입니다. 소비·지급한 날이 속하는 과세기간의 소득금액 계산 시 적용됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">§25①·令§53③1</span>주택 간주임대료를 추계신고하거나 추계조사결정하는 경우에도 임대사업 부분의 수입이자·할인료·배당금을 차감하여 계산한다.<span class="tb tnew">시행령</span><span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 시행령 제53조 제4항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '추계 시에도 수입이자 등 차감' → '추계 시에는 수입이자·할인료·배당금을 차감하지 않음'</p><p>소득세법 시행령 제53조 제4항에 따르면, <strong>추계신고 또는 추계조사결정</strong>의 경우에는 수입이자·할인료·배당금을 차감하지 않고, 단순히 '(보증금 등 - 3억원)의 적수 × 60/100 × 1/365 × 정기예금이자율'로만 계산합니다. 차감 항목이 빠지면 간주임대료가 더 커집니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제26조 총수입금액 불산입</span><span class="scn" id="c3">0/8</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§26①</span>거주자가 소득세 또는 개인지방소득세를 환급받은 경우, 환급금 및 다른 세액에 충당된 금액은 해당 과세기간의 총수입금액에 산입하지 아니한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 제26조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제26조 제1항에 따라 <strong>소득세·개인지방소득세의 환급금 및 다른 세액에 충당된 금액</strong>은 총수입금액 불산입입니다. 세금을 냈다가 돌려받는 돈은 새로운 소득이 아니므로 과세하지 않는다는 취지입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§26②</span>거주자가 무상으로 받은 자산의 가액 전부는 해당 과세기간의 총수입금액에 산입하지 아니한다.<span class="tb thot">🔴 기한 함정</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 제26조 제2항, 소득세법 시행령 제51조 제3항 제4호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '전부 불산입' → '이월결손금 보전에 충당된 금액만 불산입, 나머지는 원칙적으로 사업 관련 시 총수입금액 산입'</p><p>소득세법 제26조 제2항은 무상으로 받은 자산의 가액 중 <strong>제45조 제3항에 따른 이월결손금의 보전에 충당된 금액</strong>만 총수입금액에서 제외합니다. 또한 복식부기의무자가 국가·지자체·공공기관으로부터 무상 지급받은 국고보조금 등도 별도 요건 하에 제외됩니다. 반면, 시행령 제51조 제3항 제4호에 따르면 <strong>사업과 관련하여 무상으로 받은 자산의 가액</strong>은 원칙적으로 총수입금액에 산입합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§26③·令§54②</span>이전 과세기간으로부터 이월된 소득금액이란 각 과세기간의 소득으로 이미 과세된 소득을 다시 해당 과세기간의 소득에 산입한 금액을 말하며, 이는 총수입금액에 산입하지 않는다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 제26조 제3항, 소득세법 시행령 제54조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제26조 제3항 및 시행령 제54조 제2항에 따라, 이전 과세기간으로부터 이월된 소득금액은 <strong>이미 과세된 소득을 이중으로 산입하는 것을 방지</strong>하기 위해 총수입금액에 산입하지 않습니다. 예를 들어 작년에 이미 세금을 낸 소득이 올해 장부에 다시 포함되더라도, 그 부분을 빼줘서 이중과세를 막는다는 의미입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">§26④⑤</span>농업·임업·어업·광업 또는 제조업을 경영하는 거주자가 자기가 생산한 제품을 다른 제품의 원재료로 사용한 경우, 그 사용된 부분 상당액은 총수입금액에 산입하지 아니한다. 건설업자가 자기 생산 물품을 자기 건설공사의 자재로 사용한 경우도 마찬가지이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 제26조 제4항, 제5항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제26조 제4항(농업·임업·어업·광업·제조업)과 제5항(건설업)에 따라, <strong>자기 사업 내에서 생산물을 원재료·자재로 내부 사용</strong>하는 경우 그 상당액은 총수입금액에 산입하지 않습니다. 예를 들어 밀가루 공장이 자기가 만든 밀가루를 빵을 만드는 재료로 쓴다면, 그 밀가루 가치를 수입금액에 포함하지 않는다는 것입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">§26⑦</span>개별소비세 및 주세의 납세의무자인 거주자가 원재료를 매입·수입하면서 부담하는 개별소비세·주세도 총수입금액에 산입하지 아니한다.<span class="tb thot">🔴 기한 함정</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 제26조 제7항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '원재료 매입·수입 시 부담하는 세액도 불산입' → '이 경우는 총수입금액에 산입하지 않는 것에서 제외(즉, 산입함)'</p><p>소득세법 제26조 제7항 단서에 따르면, 개별소비세·주세 불산입 원칙에 대한 예외로 <strong>원재료·연료·그 밖의 물품을 매입·수입·사용함에 따라 부담하는 세액은 총수입금액 불산입 대상이 아닙니다</strong>(즉, 불산입 혜택 없음). 이 경우에는 총수입금액에 포함됩니다. 자기가 직접 판매하는 상품에서 납부하는 개별소비세·주세만 불산입 대상입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">§26⑧</span>「국세기본법」에 따른 국세환급가산금과 과오납금의 환급금에 대한 이자는 해당 과세기간의 총수입금액에 산입하지 아니한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 제26조 제8항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제26조 제8항에 따라 국세기본법 제52조에 따른 <strong>국세환급가산금</strong>, 지방세기본법 제62조에 따른 <strong>지방세환급가산금</strong>, 그 밖의 <strong>과오납금 환급금에 대한 이자</strong>는 총수입금액에 산입하지 않습니다. 잘못 낸 세금을 돌려받으면서 덤으로 받는 이자도 소득으로 보지 않는다는 의미입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">§26⑨</span>부가가치세의 매출세액은 해당 과세기간의 소득금액을 계산할 때 총수입금액에 산입하지 아니한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 제26조 제9항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제26조 제9항에 따라 <strong>부가가치세 매출세액</strong>은 총수입금액에서 제외됩니다. 부가가치세는 사업자가 소비자 대신 국가에 납부하는 세금(사업자는 통로 역할만 함)이므로, 사업자의 소득으로 볼 수 없기 때문입니다. 예를 들어 110만원을 받고 물건을 팔았다면, 부가가치세 10만원을 제외한 100만원만 수입금액으로 봅니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§26②·令§101③</span>법 제26조 제2항에 따라 무상으로 받은 자산의 가액이 이월결손금 보전에 충당된 경우, 그 충당된 이월결손금은 소득금액에서 공제하는 이월결손금에서 제외한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 시행령 제101조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제101조 제3항에 따라, 제26조 제2항에 의해 총수입금액 불산입(이월결손금 보전 충당)된 이월결손금은 <strong>소득금액 계산 시 다시 공제받을 수 없습니다</strong>. 이는 이중 혜택을 방지하기 위한 규정입니다. 이월결손금을 한 번은 총수입금액 불산입으로 활용하고, 또다시 소득공제로 사용하면 혜택이 두 번 적용되기 때문입니다.</p></div></div>
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP"><h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제24~26조 / 소득세법 시행령, 소득세법 시행규칙<br>[2026-06-23] &nbsp;&nbsp; #소득세법 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'X',3:'O',4:'O',5:'X',19:'X',6:'O',7:'X',8:'O',9:'O',10:'O',18:'X',11:'O',12:'X',13:'O',14:'O',15:'X',16:'O',17:'O',20:'O'};const SECS={1:[1,2,3,4,5,19],2:[6,7,8,9,10,18],3:[11,12,13,14,15,16,17,20]};const sel={},done={};let correct=0,answered=0;const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));c.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');c.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';updateSecCounts();}
+function updateSecCounts(){Object.entries(SECS).forEach(([k,arr])=>{const dn=arr.filter(n=>done[n]).length;document.getElementById('c'+k).textContent=dn+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const p=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=p+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body></html>

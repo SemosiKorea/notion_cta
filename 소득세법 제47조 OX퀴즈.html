@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">소득세법<br><span>제47조~제47조</span></div>
+  <div class="hsb"></div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제47조 근로소득공제</span><span class="scn" id="c1">0/12</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§47①</span>총급여액이 500만원 이하인 근로자의 근로소득공제액은 총급여액의 70%이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제47조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조 제1항 표에 따라 총급여액 500만원 이하 구간의 근로소득공제율은 <strong>총급여액의 100분의 70(70%)</strong>입니다. 예를 들어 총급여 300만원이면 210만원이 공제됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§47①</span>총급여액이 1억원을 초과하는 경우 근로소득공제액은 1,475만원 + (1억원 초과분 × 2%)이며, 공제한도는 3,000만원이다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제47조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '공제한도 3,000만원' → '공제한도 2,000만원'</p><p>소득세법 제47조 제1항 단서에 따라 근로소득공제액이 <strong>2,000만원을 초과하는 경우에는 2,000만원을 공제</strong>합니다. 공식 자체(1,475만원 + 초과분 × 2%)는 맞지만 한도가 틀렸습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§47①</span>총급여액이 4,500만원 초과 1억원 이하인 근로자의 근로소득공제액은 1,200만원 + (4,500만원 초과 금액 × 5%)이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 제47조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조 제1항 표에 따라 총급여액 4,500만원 초과 1억원 이하 구간의 공제액은 <strong>1,200만원 + (4,500만원을 초과하는 금액의 100분의 5)</strong>입니다. 예를 들어 총급여 6,500만원이면 1,200만원 + 100만원 = 1,300만원이 공제됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§47②</span>일용근로자에 대한 근로소득공제액은 1일 15만원으로 한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 제47조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조 제2항에 따라 일용근로자에 대한 근로소득공제액은 <strong>1일 15만원</strong>입니다. 일반 근로자와 달리 총급여액 구간별 공제율이 아닌 정액 공제 방식을 적용합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§47②</span>일용근로자에 대한 근로소득공제액은 1일 10만원으로 한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 제47조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '1일 10만원' → '1일 15만원'</p><p>소득세법 제47조 제2항에 따라 일용근로자의 1일 근로소득공제액은 <strong>15만원</strong>입니다. 10만원이 아닙니다. 일급여액에서 15만원을 공제한 후 6% 세율로 원천징수합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§47③</span>근로소득이 있는 거주자의 총급여액이 근로소득공제액에 미달하는 경우에는 그 총급여액을 공제액으로 한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제47조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조 제3항에 따라 총급여액이 공제액보다 작으면 <strong>총급여액 전액을 공제액</strong>으로 합니다. 즉 근로소득금액이 0원이 되어 소득세가 없게 됩니다. 공제액이 수입을 초과하는 경우의 처리 방식입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§47⑤</span>2인 이상으로부터 근로소득을 받는 사람(일용근로자 제외)은 그 근로소득의 합계액을 총급여액으로 하여 근로소득공제액을 계산한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제47조 제5항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조 제5항에 따라 2군데 이상에서 근로소득을 받는 경우(일용근로자 제외)에는 <strong>합계액을 총급여액</strong>으로 보아 공제액을 계산합니다. 즉 각각 따로 공제하는 것이 아니라 합산 후 단일 공제를 적용합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§47⑤</span>일용근로자가 2인 이상의 사용자로부터 근로소득을 받는 경우에도 그 합계액을 총급여액으로 하여 제47조 제1항에 따라 근로소득공제를 계산한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 제47조 제5항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '일용근로자도 합계액 적용' → '일용근로자는 §47⑤ 합산 규정에서 제외'</p><p>소득세법 제47조 제5항은 <strong>일용근로자를 명시적으로 제외</strong>합니다. 일용근로자는 각 지급일별 1일 급여에서 15만원(§47②)을 공제하는 방식을 적용합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">令§104③</span>일용근로자에 대한 근로소득공제액은 그 일용근로자가 근로를 제공한 날의 일급여액에서 공제한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 시행령 제104조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제104조 제3항에 따라 일용근로자의 근로소득공제는 <strong>근로를 제공한 날의 일급여액</strong>에서 공제합니다. 즉 1일 단위로 15만원을 공제한 후 남은 금액(일급여액 - 15만원)에 6% 세율로 원천징수합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">令§113①</span>특별소득공제 및 특별세액공제를 적용받으려는 근로소득자는 원칙적으로 해당 과세기간의 다음 연도 2월분의 급여를 받는 날까지 관련 서류를 제출해야 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 시행령 제113조 제1항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제113조 제1항 제1호에 따라 일반 근로소득자는 <strong>다음 연도 2월분 급여를 받는 날</strong>(퇴직 시 퇴직일 속하는 달의 급여를 받는 날)까지 특별공제 관련 서류를 제출해야 합니다. 연말정산 기한과 연계된 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">令§113①</span>법 제52조 제1항에 따른 보험료(건강보험료 등)는 특별소득공제 서류 제출 의무가 있어 원천징수의무자에게 별도로 서류를 제출해야 한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 시행령 제113조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '보험료도 서류 제출 의무 있음' → '법 §52①에 따른 보험료는 서류 제출 의무 제외'</p><p>소득세법 시행령 제113조 제1항 단서에 따라 <strong>법 제52조 제1항에 따른 보험료(건강보험료·고용보험료 등)</strong>와 원천징수의무자가 급여에서 일괄공제하는 기부금은 별도 서류 제출 의무가 없습니다. 급여에서 자동 공제되기 때문입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">§47①</span>총급여액이 1,500만원 초과 4,500만원 이하인 경우 근로소득공제액은 750만원 + (1,500만원 초과 금액 × 15%)이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 제47조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조 제1항 표에 따라 총급여액 1,500만원 초과 4,500만원 이하 구간의 공제액은 <strong>750만원 + (1,500만원을 초과하는 금액의 100분의 15)</strong>입니다. 예를 들어 총급여 3,000만원이면 750만원 + 225만원 = 975만원이 공제됩니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제47조의2 연금소득공제</span><span class="scn" id="c2">0/6</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§47의2①</span>총연금액이 350만원 이하인 경우 연금소득공제액은 총연금액 전액이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제47조의2 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조의2 제1항 표에 따라 총연금액 350만원 이하 구간의 공제액은 <strong>총연금액 전액</strong>입니다. 즉 연금소득금액이 0원이 됩니다. 단, 분리과세연금소득은 이 공제 계산에서 제외합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§47의2①</span>연금소득공제의 한도액은 연간 1,200만원이다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제47조의2 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '1,200만원' → '900만원'</p><p>소득세법 제47조의2 제1항 단서에 따라 연금소득공제의 한도는 <strong>900만원</strong>입니다. 1,200만원이 아닙니다. 참고로 근로소득공제 한도(2,000만원)와 혼동하지 않도록 주의하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§47의2①</span>총연금액이 700만원 초과 1,400만원 이하인 경우 연금소득공제액은 490만원 + (700만원 초과분 × 20%)이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 제47조의2 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조의2 제1항 표에 따라 700만원 초과 1,400만원 이하 구간의 공제액은 <strong>490만원 + (700만원을 초과하는 금액의 100분의 20)</strong>입니다. 예를 들어 총연금액 1,000만원이면 490만원 + 60만원 = 550만원이 공제됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§47의2①</span>연금소득공제는 분리과세연금소득을 포함한 총연금액을 기준으로 계산한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 제47조의2 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '분리과세연금소득 포함' → '분리과세연금소득은 제외'</p><p>소득세법 제47조의2 제1항 본문에 따라 연금소득공제는 <strong>분리과세연금소득을 제외한</strong> 총연금액을 기준으로 계산합니다. 분리과세연금소득은 별도로 세율을 적용하므로 이 공제 대상에 포함되지 않습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§47의2①</span>총연금액이 1,400만원을 초과하는 경우 연금소득공제액은 630만원 + (1,400만원 초과분 × 10%)이며, 최대 공제한도는 900만원이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 제47조의2 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조의2 제1항 표 및 단서에 따라 1,400만원 초과 구간의 공제액은 <strong>630만원 + (1,400만원 초과분 × 10%)</strong>이며, 공제액이 900만원을 초과하면 <strong>900만원을 한도</strong>로 합니다. 즉 총연금액 4,110만원 이상이면 공제액은 900만원으로 고정됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§47의2①</span>총연금액이 350만원 초과 700만원 이하인 경우 연금소득공제액은 350만원 + (350만원 초과 금액 × 40%)이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 제47조의2 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제47조의2 제1항 표에 따라 350만원 초과 700만원 이하 구간의 공제액은 <strong>350만원 + (350만원을 초과하는 금액의 100분의 40)</strong>입니다. 예를 들어 총연금액 550만원이면 350만원 + 80만원 = 430만원이 공제됩니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제151조 양도의 범위</span><span class="scn" id="c3">0/2</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">令§151①②</span>채무자가 채무의 변제를 담보하기 위하여 자산을 양도하는 계약을 체결한 경우, 일정 요건을 갖춘 계약서 사본을 양도소득 과세표준 확정신고서에 첨부하여 신고하면 이를 양도로 보지 않는다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 시행령 제151조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제151조 제1항에 따라 채무 담보 목적 양도는 ① 담보 양도 의사표시, ② 채무자 계속 사용·수익 의사표시, ③ 원금·이율·변제기한·방법 약정 — 3가지 요건을 모두 갖추고 계약서 사본을 확정신고서에 첨부하면 <strong>양도로 보지 않습니다.</strong> 단, 이후 채무불이행으로 자산을 변제에 충당하면 그때 양도한 것으로 봅니다(§151②).</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">令§151③</span>배우자 간 부담부증여로서 상속세 및 증여세법에 따라 수증자에게 인수되지 않은 것으로 추정되는 채무액은 양도소득 과세 대상인 채무인수액에서 제외한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 시행령 제151조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제151조 제3항 단서에 따라 <strong>배우자 간 또는 직계존비속 간 부담부증여</strong>에서 상증세법 제47조 제3항 본문에 따라 수증자에게 인수되지 않은 것으로 추정되는 채무액은 양도소득 과세 대상에서 제외합니다. 가족 간 거래의 특수성을 반영한 규정입니다.</p></div></div>
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP"><h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제47~47조 / 소득세법 시행령, 소득세법 시행규칙<br>[2026-06-23] &nbsp;&nbsp; #소득세법 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'X',3:'O',4:'O',5:'X',6:'O',7:'O',8:'X',14:'O',15:'O',16:'X',19:'O',9:'O',10:'X',11:'O',12:'X',13:'O',20:'O',17:'O',18:'O'};const SECS={1:[1,2,3,4,5,6,7,8,14,15,16,19],2:[9,10,11,12,13,20],3:[17,18]};const sel={},done={};let correct=0,answered=0;const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));c.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');c.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';updateSecCounts();}
+function updateSecCounts(){Object.entries(SECS).forEach(([k,arr])=>{const dn=arr.filter(n=>done[n]).length;document.getElementById('c'+k).textContent=dn+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const p=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=p+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body></html>

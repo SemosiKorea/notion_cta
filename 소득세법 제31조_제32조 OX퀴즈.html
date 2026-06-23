@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">소득세법<br><span>제31조~제32조</span></div>
+  <div class="hsb"></div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제31조 보험차익으로 취득한 자산가액의 필요경비 계산</span><span class="scn" id="c1">0/8</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§31①</span>사업자가 유형자산의 멸실로 인해 보험금을 지급받아 같은 종류의 자산을 대체 취득한 경우, 그 취득에 사용된 보험차익 상당액을 보험금을 받은 날이 속하는 과세기간의 필요경비에 산입할 수 있다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제31조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제31조 제1항의 내용입니다. 보험금으로 받은 차익(보험금 - 장부가액)을 바로 과세하지 않고, 같은 종류의 자산을 새로 사거나 고치는 데 쓴다면 <strong>필요경비로 산입</strong>할 수 있습니다. 마치 화재로 불에 탄 트럭 대신 보험금으로 새 트럭을 사면, 그 차익만큼은 당장 세금을 내지 않아도 된다는 뜻입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§31①·令§59②</span>보험차익 적용 대상인 '같은 종류의 자산'이란 멸실된 유형자산과 재질·형태가 동일한 것을 의미한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 시행령 제59조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '재질·형태가 동일한 것' → '용도 또는 목적이 멸실된 유형자산과 같은 것'</p><p>소득세법 시행령 제59조 제2항에 따르면 '같은 종류의 자산'이란 <strong>용도 또는 목적이 멸실된 유형자산과 같은 것</strong>을 말합니다. 재질이나 형태가 동일할 필요는 없고, 쓰임새(용도·목적)가 같으면 됩니다. 예를 들어 화물 운송용 트럭이 전소된 경우, 다른 메이커의 화물 트럭을 구입해도 '같은 종류'로 인정됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§31①·令§59①</span>법 제31조 제1항에 따라 필요경비에 산입하는 보험차익 상당액은 일시상각충당금으로 계상해야 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 시행령 제59조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제59조 제1항에 따라 보험차익 상당액을 필요경비에 산입할 때는 반드시 <strong>일시상각충당금</strong>으로 계상해야 합니다. 이 충당금은 이후 해당 자산의 감가상각비와 상계되어 처리됩니다. 즉, 당장 과세를 미루는 대신 나중에 감가상각비를 공제받지 못하는 방식으로 과세가 이루어집니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§31②</span>보험금을 받은 과세기간에 대체 자산을 취득할 수 없는 경우에는 그 과세기간의 다음 과세기간 개시일부터 2년 이내에 취득하는 것에 한하여 필요경비 산입 규정을 준용할 수 있다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 제31조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제31조 제2항의 내용입니다. 보험금을 받은 해에 바로 자산을 취득·개량할 수 없는 사정이 있다면, <strong>다음 과세기간 개시일부터 2년 이내</strong>에 취득·개량하는 경우에도 필요경비 산입 혜택을 받을 수 있습니다. 이 2년의 기산점은 '다음 과세기간 종료일'이 아니라 <strong>'개시일'</strong>임을 주의하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§31②③·令§59④</span>보험금을 받은 과세기간에 자산을 취득할 수 없어 다음 과세기간의 2년 특례를 적용받으려는 사업자는 과세표준확정신고서에 보험금사용계획서를 첨부하여 납세지 관할세무서장에게 제출하여야 한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 제31조 제3항, 시행령 제59조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제31조 제3항 및 시행령 제59조 제4항에 따라, 2년 이내 취득 특례를 적용받으려면 <strong>과세표준확정신고서에 보험금사용계획서를 첨부</strong>하여 납세지 관할세무서장에게 제출해야 합니다. 특례는 자동으로 적용되지 않고, 사용계획서를 제출해야 인정됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§31④</span>보험차익 상당액을 필요경비에 산입한 자가 기한까지 해당 자산의 취득·개량에 사용하지 않거나 사업을 폐업한 경우, 그 보험차익 상당액은 해당 사유가 발생한 과세기간의 총수입금액에 산입한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제31조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제31조 제4항에 따라, 필요경비로 앞당겨 공제받은 보험차익 상당액이 사후에 다음 두 사유 중 하나에 해당하면 총수입금액에 환입됩니다.<br>① 기한까지 자산 취득·개량에 미사용<br>② 제2항 기간 내 폐업<br>혜택을 사전에 받았다가 조건을 어기면 그 해에 다시 과세됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§31·令§59③</span>보험차익으로 취득한 유형자산의 감가상각비는 일시상각충당금과 상계하며, 해당 자산을 처분할 때 상계 후 남은 잔액은 처분한 날이 속하는 과세기간의 필요경비로 추가 인정한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 시행령 제59조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '처분 시 잔액을 필요경비로 추가 인정' → '처분한 날이 속하는 과세기간의 총수입금액에 산입'</p><p>소득세법 시행령 제59조 제3항 단서에 따르면, 자산을 처분하는 경우 일시상각충당금과 상계하고 남은 잔액은 <strong>필요경비가 아니라 총수입금액에 산입</strong>합니다. 아직 상각되지 않은 충당금 잔액은 처분 시점에 과세된다는 의미입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">§31②</span>보험금을 받은 날이 속하는 과세기간에 자산을 취득·개량할 수 없어서 유예 특례를 받더라도, 유예 기간 내에 해당 자산의 파손(멸실이 아닌 경우)에 대해서는 개량만 가능하고 대체 취득은 허용되지 않는다.<span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 제31조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '개량만 허용' → '법 제31조 제2항은 제1항을 준용하므로, 멸실에 따른 대체 취득과 파손에 따른 개량 모두 허용'</p><p>소득세법 제31조 제2항은 단순히 '제1항을 준용한다'고 규정하고 있어, <strong>대체 취득과 개량 모두</strong> 유예 기간 내에 인정됩니다. 멸실·파손 구분 없이 제1항 전체가 준용됩니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제32조 국고보조금으로 취득한 사업용 자산가액의 필요경비 계산</span><span class="scn" id="c2">0/10</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§32①</span>사업자가 사업용 자산을 취득할 목적으로 국고보조금을 받아 그 목적에 지출한 경우, 지출에 사용된 국고보조금 상당액을 국고보조금을 받은 날이 속하는 과세기간의 필요경비에 산입할 수 있다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 제32조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제32조 제1항의 내용입니다. 국가나 지자체에서 받은 국고보조금으로 사업용 자산을 취득하거나 개량한 경우, 그 사용금액을 <strong>받은 날이 속하는 과세기간의 필요경비</strong>로 인정합니다. 사후에 보조금을 받는 경우(자산 취득 후 보조금 수령)도 동일하게 적용됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§32②</span>국고보조금을 받은 과세기간에 사업용 자산을 취득할 수 없는 경우, 다음 과세기간 개시일부터 2년 이내에 취득하는 것에 한하여 필요경비 산입 특례를 적용받을 수 있다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제32조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '다음 과세기간 개시일부터 2년 이내' → '다음 과세기간 종료일까지'</p><p>소득세법 제32조 제2항에 따르면 국고보조금의 경우 자산을 취득할 수 없을 때의 유예 기간은 <strong>그 과세기간의 다음 과세기간 종료일까지</strong>입니다. 보험차익(§31②)이 '다음 과세기간 개시일부터 2년 이내'인 것과 다릅니다. 두 조문의 기간 기준이 다르다는 점이 핵심 함정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§32②</span>공사의 허가·인가 지연 등 부득이한 사유로 국고보조금을 기한까지 사용하지 못한 경우, 해당 사유가 없어진 날이 속하는 과세기간의 종료일을 사용 기한으로 본다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제32조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제32조 제2항 후단의 내용입니다. 부득이한 사유(공사 허가·인가 지연 등)로 기한 내 사용이 어려운 경우, <strong>그 사유가 해소된 날이 속하는 과세기간의 종료일</strong>까지 기한이 연장됩니다. 예를 들어 허가가 지연되어 공사를 못 하고 있다면, 허가가 난 날이 속하는 해의 12월 31일까지 기한이 늘어납니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§32②·令§60④</span>국고보조금 사용 기한 연장의 부득이한 사유에는 '용지의 보상 등에 관한 소송이 진행되는 경우'가 포함된다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 시행령 제60조 제4항 제3호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제60조 제4항에 따른 부득이한 사유는 다음 네 가지입니다.<br>① 공사의 허가 또는 인가 등이 지연되는 경우<br>② 공사 시행 장소의 미확정 등으로 공사기간이 연장되는 경우<br>③ <strong>용지의 보상 등에 관한 소송이 진행되는 경우</strong><br>④ 위 각호에 준하는 사유가 발생한 경우<br>세 번째 사유도 명시적으로 포함됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§32①·令§60①</span>국고보조금으로 취득한 사업용 자산이 감가상각자산인 경우에는 일시상각충당금으로, 그 밖의 자산인 경우에는 압축기장충당금으로 계상해야 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 시행령 제60조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제60조 제1항에 따라 국고보조금의 필요경비 산입 방식은 자산 종류에 따라 다릅니다.<br>• <strong>감가상각자산 → 일시상각충당금</strong><br>• <strong>그 밖의 자산(토지 등) → 압축기장충당금</strong><br>감가상각자산은 이후 감가상각비와 상계하고, 기타 자산은 처분 시 압축기장충당금 잔액을 환입합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§32①·令§60①</span>국고보조금으로 취득한 자산이 토지인 경우, 그 보조금 상당액은 일시상각충당금으로 계상한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 시행령 제60조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '일시상각충당금' → '압축기장충당금'</p><p>소득세법 시행령 제60조 제1항에 따르면, <strong>감가상각자산</strong>에만 일시상각충당금을 사용하고, 토지처럼 감가상각이 되지 않는 자산(그 밖의 자산)은 <strong>압축기장충당금</strong>으로 처리합니다. 두 충당금의 적용 대상 자산을 헷갈리지 않도록 주의하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">§32·令§60②</span>국고보조금으로 취득한 사업용 감가상각자산의 감가상각비는 일시상각충당금의 범위에서 상계하며, 처분 시 상계 후 잔액은 처분한 날이 속하는 과세기간의 총수입금액에 산입한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 시행령 제60조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제60조 제2항에 따라, 국고보조금으로 취득한 감가상각자산의 <strong>감가상각비는 일시상각충당금과 먼저 상계</strong>합니다. 이 방식으로 실질적으로 감가상각비 공제가 이루어지지 않는 효과가 생깁니다. 나중에 자산을 처분하면 남은 충당금 잔액은 <strong>총수입금액에 환입</strong>됩니다. 보험차익(§59③)과 동일한 구조입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">§32③·令§60③</span>국고보조금 유예 기간 특례(다음 과세기간 종료일까지)를 적용받으려는 사업자는 과세표준확정신고서에 국고보조금사용계획서를 첨부하여 납세지 관할세무서장에게 제출하여야 한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 제32조 제3항, 시행령 제60조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제32조 제3항 및 시행령 제60조 제3항에 따라, 유예 특례를 적용받으려면 <strong>과세표준확정신고서에 국고보조금사용계획서를 첨부</strong>하여 제출해야 합니다. 보험금사용계획서(§31 특례)와 동일한 방식의 절차 요건입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">§32④</span>국고보조금을 필요경비에 산입한 자가 기한까지 사업용 자산의 취득·개량에 사용하지 않은 경우, 그 국고보조금 상당액은 해당 사유가 발생한 다음 과세기간의 총수입금액에 산입한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 제32조 제4항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '다음 과세기간의 총수입금액에 산입' → '해당 사유가 발생한 과세기간의 총수입금액에 산입'</p><p>소득세법 제32조 제4항에 따르면 미사용이나 폐업 사유가 발생한 경우 국고보조금 상당액은 <strong>그 사유가 발생한 과세기간</strong>(당해 연도)의 총수입금액에 산입합니다. '다음 과세기간'이 아닙니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§32②·令§60④</span>국고보조금 기한 연장의 부득이한 사유 중 '공사를 시행할 장소의 미확정 등으로 공사기간이 연장되는 경우'가 명시적으로 열거되어 있다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 시행령 제60조 제4항 제2호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제60조 제4항 제2호에 '공사를 시행할 장소의 미확정 등으로 공사기간이 연장되는 경우'가 부득이한 사유로 명시되어 있습니다. 시행령에서 열거하는 4가지 사유를 모두 기억해 두세요.<br>① 공사 허가·인가 지연<br>② 장소 미확정으로 공사기간 연장<br>③ 용지 보상 관련 소송 진행<br>④ 위에 준하는 사유</p></div></div>
+
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제31·32조 비교</span><span class="scn" id="c3">0/2</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">§31②↔§32②</span>보험차익 취득 특례와 국고보조금 취득 특례 모두, 당해 과세기간에 자산을 취득·개량할 수 없는 경우의 유예 기간은 '다음 과세기간 개시일부터 2년 이내'로 동일하다.<span class="tb thot">🔴 기한 함정</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 제31조 제2항, 제32조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '둘 다 개시일부터 2년 이내' → '보험차익(§31②)은 개시일부터 2년 이내, 국고보조금(§32②)은 다음 과세기간 종료일까지'</p><p>두 조문의 유예 기간 기준이 다릅니다.<br>• <strong>보험차익(§31②)</strong>: 다음 과세기간 <strong>개시일</strong>부터 2년 이내<br>• <strong>국고보조금(§32②)</strong>: 다음 과세기간 <strong>종료일</strong>까지<br>국고보조금의 유예 기간이 보험차익보다 짧습니다. 이 차이가 시험 출제 핵심 포인트입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">§31④↔§32④</span>보험차익 필요경비 산입 후 해당 사업을 폐업한 경우에는 총수입금액에 환입하지만, 국고보조금 필요경비 산입 후 폐업한 경우에는 환입하지 않는다.<span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 제31조 제4항 제2호, 제32조 제4항 제2호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '국고보조금 폐업 시 환입 안 함' → '국고보조금도 유예 기한까지 폐업하면 총수입금액에 환입'</p><p>두 조문 모두 폐업 시 환입 규정이 있습니다.<br>• <strong>보험차익(§31④ 제2호)</strong>: 제2항의 기간에 폐업하면 총수입 환입<br>• <strong>국고보조금(§32④ 제2호)</strong>: 제2항의 기한까지 폐업하면 총수입 환입<br>둘 다 폐업하면 환입됩니다. 어느 한쪽만 환입한다는 것은 틀린 내용입니다.</p></div></div>
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP"><h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제31~32조 / 소득세법 시행령, 소득세법 시행규칙<br>[2026-06-23] &nbsp;&nbsp; #소득세법 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'X',3:'O',4:'O',5:'O',6:'O',7:'X',19:'X',8:'O',9:'X',10:'O',11:'O',12:'O',13:'X',14:'O',15:'O',16:'X',20:'O',17:'X',18:'X'};const SECS={1:[1,2,3,4,5,6,7,19],2:[8,9,10,11,12,13,14,15,16,20],3:[17,18]};const sel={},done={};let correct=0,answered=0;const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));c.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');c.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';updateSecCounts();}
+function updateSecCounts(){Object.entries(SECS).forEach(([k,arr])=>{const dn=arr.filter(n=>done[n]).length;document.getElementById('c'+k).textContent=dn+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const p=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=p+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body></html>

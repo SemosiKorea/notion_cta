@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">소득세법<br><span>제27조~제29조</span></div>
+  <div class="hsb"></div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제27조 사업소득의 필요경비의 계산</span><span class="scn" id="c1">0/4</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§27①</span>사업소득금액을 계산할 때 필요경비에 산입할 금액은 해당 과세기간의 총수입금액에 대응하는 비용으로서 일반적으로 용인되는 통상적인 것의 합계액으로 한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제27조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제27조 제1항 조문 그대로입니다. 필요경비 인정의 두 가지 요건은 ① <strong>해당 과세기간 총수입금액에 대응하는 비용</strong>일 것, ② <strong>일반적으로 용인되는 통상적인 비용</strong>일 것입니다. 마치 편의점에서 음료를 팔려면 음료를 사 오는 원가처럼, '팔기 위해 쓴 비용'만 경비로 인정됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§27②</span>해당 과세기간 전의 총수입금액에 대응하는 비용으로서 그 과세기간에 확정된 것은 그 과세기간 전에 필요경비로 계상하였는지와 관계없이 해당 과세기간의 필요경비로 인정한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제27조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '계상 여부와 관계없이 인정' → '이전 과세기간에 필요경비로 계상하지 아니한 것만 해당 과세기간의 필요경비로 인정'</p><p>소득세법 제27조 제2항에 따르면, 이전 과세기간 총수입금액에 대응하는 비용이 해당 과세기간에 확정된 경우, <strong>그 과세기간 전에 이미 필요경비로 계상한 경우에는 해당 과세기간의 필요경비로 볼 수 없습니다.</strong> 이중으로 경비를 공제받는 것을 방지하기 위한 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§27②</span>과거 과세기간의 수익에 대응하는 비용이 올해 확정되었는데 과거에 필요경비로 계상하지 않았다면, 해당 금액을 올해 필요경비로 처리할 수 있다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 제27조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제27조 제2항의 취지가 바로 이것입니다. 예를 들어 작년 매출에 대응하는 운반비가 올해 청구서가 도착해 확정되었고 작년에 경비로 잡지 않았다면, <strong>올해 필요경비로 처리</strong>할 수 있습니다. 단, 이미 이전 과세기간에 계상했다면 중복 공제가 되므로 올해 다시 처리할 수 없습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§27①②</span>사업소득의 필요경비는 권리확정주의에 따라 해당 과세기간의 총수입금액에 대응하는 비용을 기준으로 하되, 이전 과세기간의 총수입금액에 대응하는 비용이 해당 과세기간에 확정된 경우 이전에 계상하지 않은 것에 한하여 해당 과세기간의 필요경비로 인정한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 제27조 제1항, 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제27조 제1항·제2항을 종합한 내용입니다. 필요경비도 총수입금액처럼 <strong>권리·의무확정주의(발생주의)</strong>가 적용됩니다. 이전 과세기간 수익에 대응하는 비용이 올해 확정된 경우, 과거에 경비로 처리하지 않았다면 올해 처리할 수 있지만, 이미 과거에 처리했다면 중복 공제를 방지하기 위해 올해는 불가합니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제28조 대손충당금의 필요경비 계산</span><span class="scn" id="c2">0/8</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§28①·令§56①</span>대손충당금의 필요경비 산입 한도액은 채권잔액의 1%에 상당하는 금액과 채권잔액에 대손실적률을 곱한 금액 중 큰 금액이다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 시행령 제56조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제56조 제1항에 따르면 대손충당금 필요경비 산입 한도는 다음 두 금액 중 <strong>큰 금액</strong>입니다.<br>① 채권잔액 × 1/100 (1%)<br>② 채권잔액 × 대손실적률<br>두 가지를 계산해서 유리한(큰) 쪽을 택하는 방식입니다. 마치 두 가지 공식 중 더 많이 경비를 인정해 주는 쪽을 선택하는 것입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§28①·令§56③</span>대손실적률은 '해당 과세기간의 대손금 ÷ 해당 과세기간 종료일 현재의 채권잔액'으로 계산한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 시행령 제56조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '해당 과세기간 종료일 현재의 채권잔액' → '직전 과세기간 종료일 현재의 채권잔액'</p><p>소득세법 시행령 제56조 제3항에 따른 대손실적률 산식은 다음과 같습니다.<br><strong>대손실적률 = 해당 과세기간의 대손금 ÷ 직전 과세기간 종료일 현재의 채권잔액</strong><br>분모가 '해당(당해)' 과세기간이 아니라 <strong>'직전' 과세기간 종료일</strong> 기준임을 주의해야 합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§28②·令§56④</span>전기에 필요경비로 산입한 대손충당금의 잔액은 다음 과세기간의 총수입금액에 산입하며, 이 잔액은 각 과세기간에서 발생한 대손금과 상계하고 남은 금액을 의미한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제28조 제2항, 시행령 제56조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제28조 제2항 및 시행령 제56조 제4항에 따라, 대손충당금은 다음 해에 <strong>일단 총수입금액에 환입</strong>하되, 그 전에 <strong>당해 과세기간의 대손금과 먼저 상계</strong>하고 남은 잔액을 환입합니다. 작년에 '나쁜 빚이 생길 것 같아 미리 쌓아둔 돈(대손충당금)'을 올해 실제 나쁜 빚이 생기면 거기서 먼저 차감하고, 남은 게 있으면 수익으로 되돌린다는 개념입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§28·令§56⑤</span>필요경비로 산입하였거나 대손충당금과 상계한 대손금 중 회수된 금액은 그 회수한 날이 속하는 과세기간의 필요경비에서 차감한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 시행령 제56조 제5항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '필요경비에서 차감' → '총수입금액에 산입'</p><p>소득세법 시행령 제56조 제5항에 따르면, 이미 대손금으로 처리하였거나 대손충당금과 상계한 대손금 중 나중에 회수된 금액은 <strong>그 회수한 날이 속하는 과세기간의 총수입금액에 산입</strong>합니다. 필요경비에서 차감하는 것이 아닙니다. 한 번 '못 받을 돈'으로 처리했다가 나중에 받게 되면 그때 수입으로 잡는다는 의미입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§28·令§56⑥</span>법 제28조(대손충당금)를 적용받으려는 사업자는 과세표준확정신고서에 대손충당금 및 대손금 조정명세서를 첨부하여 납세지 관할세무서장에게 제출하여야 한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 시행령 제56조 제6항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제56조 제6항에 따라 대손충당금 적용을 받으려면 <strong>과세표준확정신고서에 대손충당금 및 대손금 조정명세서를 첨부</strong>하여 납세지 관할세무서장에게 제출해야 합니다. 신청서를 내야 혜택을 받을 수 있는 절차 요건입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§28·令§56②·規§26</span>특수관계인에게 시가보다 높은 가격으로 재화 또는 용역을 공급하는 경우의 시가초과액에 상당하는 채권도 대손충당금 설정의 대상이 되는 채권잔액에 포함된다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 시행규칙 제26조</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '채권잔액에 포함' → '채권잔액에서 제외'</p><p>소득세법 시행규칙 제26조 단서에 따르면, <strong>특수관계인에게 시가보다 높은 가격으로 재화·용역을 공급한 경우의 시가초과액에 상당하는 채권은 대손충당금 설정 대상 채권잔액에서 제외</strong>됩니다. 특수관계인과의 부당행위를 통해 채권을 부풀리고 대손충당금을 과도하게 계상하는 것을 방지하기 위한 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">§28①·令§56①</span>대손충당금 필요경비 산입 한도는 채권잔액의 1%와 대손실적률 적용액 중 작은 금액으로 한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 시행령 제56조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '작은 금액' → '큰 금액'</p><p>소득세법 시행령 제56조 제1항에 따라 대손충당금 필요경비 산입 한도는 ① 채권잔액의 1%와 ② 채권잔액 × 대손실적률 중 <strong>큰 금액</strong>입니다. 납세자에게 더 유리한(큰) 금액을 선택하는 방식입니다. '작은 금액'과 '큰 금액'을 뒤바꾸는 것이 전형적인 함정 유형입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">§28①·令§56②</span>대손충당금 설정 대상 채권잔액에는 상품·제품의 판매가액 미수액과 가공료·용역대가의 미수액이 포함된다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 시행령 제56조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제56조 제2항 제1호에 따라 채권잔액에는 <strong>상품·제품의 판매가액 미수액(외상매출금)</strong>과 <strong>가공료·용역대가의 미수액</strong>이 포함됩니다. 또한 제2호에 따라 정상적인 사업거래에서 발생하는 채권액 및 부가가치세 매출세액의 미수금도 포함됩니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제29조 퇴직급여충당금의 필요경비 계산</span><span class="scn" id="c3">0/8</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§29①·令§57①</span>퇴직급여충당금의 필요경비 산입 한도는 퇴직급여 지급대상 종업원에게 해당 과세기간에 지급한 총급여액의 100분의 5이다. 단, 퇴직연금계좌에 가입한 종업원은 지급대상에서 제외한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 시행령 제57조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제57조 제1항에 따르면 퇴직급여충당금의 과세기간별 필요경비 산입 한도는 <strong>퇴직연금계좌 미가입 종업원에게 지급한 총급여액의 5%</strong>입니다. 퇴직연금에 이미 가입된 직원은 별도의 퇴직연금 납부로 처리되므로 여기서 제외됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§29①·令§57②</span>2016년 1월 1일 이후 과세기간의 경우, 퇴직급여충당금 누적액의 한도는 전 직원이 퇴직할 경우 지급해야 할 퇴직급여 추계액의 100분의 5이다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 시행령 제57조 제2항 제7호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '100분의 5' → '100분의 0(한도 0원, 사실상 적립 불가)'</p><p>소득세법 시행령 제57조 제2항 제7호에 따르면, <strong>2016년 1월 1일 이후 과세기간의 퇴직급여충당금 누적액 한도는 100분의 0</strong>입니다. 즉, 2016년부터는 퇴직급여충당금을 사실상 새로 적립할 수 없습니다(한도가 0). 100분의 5는 2015년(제6호) 기준입니다. 단계적으로 한도가 줄어든 점을 기억하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§29·令§57②</span>퇴직급여충당금의 누적액 한도는 단계적으로 축소되어 왔으며, 2015년 과세기간의 한도는 전 직원 퇴직급여 추계액의 100분의 5였다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 시행령 제57조 제2항 제6호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제57조 제2항 단계별 한도를 보면, 2010년 30% → 2011년 25% → 2012년 20% → 2013년 15% → 2014년 10% → 2015년 5% → <strong>2016년 이후 0%</strong>로 단계 축소되었습니다. <strong>2015년 과세기간의 한도는 100분의 5(5%)</strong>가 맞습니다. 이 단계별 비율은 시험에서 숫자 바꿔치기 함정으로 자주 출제되므로 흐름을 기억해 두세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§29·令§57④</span>퇴직급여충당금을 필요경비로 계상한 사업자가 종업원에게 퇴직금을 지급할 때에는 퇴직급여충당금과 먼저 상계하여야 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 시행령 제57조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제57조 제4항에 따라, 종업원 퇴직 시 퇴직금을 지급할 때는 <strong>먼저 퇴직급여충당금과 상계</strong>해야 합니다. 즉, 미리 쌓아둔 퇴직급여충당금을 먼저 소진하고, 부족한 경우에만 추가로 지출 처리합니다. 순서가 중요한 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">§29·令§57⑤</span>한도 내에서 필요경비에 산입한 퇴직급여충당금 누적액이 다음 과세기간에 지급한 퇴직금을 뺀 후에도 한도를 초과하게 된 경우, 그 초과분은 총수입금액으로 환입하여야 한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 시행령 제57조 제5항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '총수입금액으로 환입하여야 한다' → '초과하더라도 환입하지 않는다'</p><p>소득세법 시행령 제57조 제5항은 한도를 초과하더라도 <strong>그 초과한 금액은 총수입금액으로 환입하지 않는다</strong>고 명시합니다. 이는 한도 내에서 이미 적법하게 적립된 누적액이 이후 한도 축소(0%)로 인해 형식적으로 초과가 되더라도 소급해서 과세하지 않는 취지의 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">§29·令§57⑥</span>퇴직급여충당금 필요경비 산입을 적용받으려는 사업자는 과세표준확정신고서에 퇴직급여충당금명세서를 첨부하여 납세지 관할세무서장에게 제출하여야 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 시행령 제57조 제6항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제57조 제6항에 따라 퇴직급여충당금 필요경비 산입을 위해서는 <strong>과세표준확정신고서에 퇴직급여충당금명세서를 첨부</strong>하여 납세지 관할세무서장에게 제출해야 합니다. 대손충당금과 동일하게 절차적 요건이 있습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">§29·規§26의2</span>확정기여형퇴직연금이 설정된 종업원에 대해서는 그 설정 전에 계상된 퇴직급여충당금을 퇴직급여충당금 누적액에서 차감하여야 한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 시행규칙 제26조의2</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행규칙 제26조의2에 따라, 확정기여형(DC형) 퇴직연금이 설정된 종업원에 대해서는 설정 전에 이미 쌓은 퇴직급여충당금 해당액을 <strong>누적액에서 차감</strong>합니다. 이는 DC형 연금이 설정된 이후부터는 회사가 직접 연금을 납부하므로, 이전에 쌓아둔 충당금도 정리해주는 조치입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">§29①·令§57①</span>퇴직급여충당금의 필요경비 산입 한도(과세기간별)를 계산할 때 퇴직연금계좌에 가입한 종업원에게 지급한 급여는 총급여액에 포함한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 시행령 제57조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '총급여액에 포함' → '퇴직연금계좌 가입자는 지급대상에서 제외되므로 해당 급여를 포함하지 않음'</p><p>소득세법 시행령 제57조 제1항에서 퇴직급여충당금의 한도를 계산하는 기준이 되는 종업원은 <strong>퇴직연금계좌에 가입하지 않은 종업원</strong>만 해당합니다. 따라서 퇴직연금계좌에 가입한 종업원에게 지급한 급여는 한도 계산의 기초 총급여액에 포함하지 않습니다.</p></div></div>
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP"><h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제27~29조 / 소득세법 시행령, 소득세법 시행규칙<br>[2026-06-23] &nbsp;&nbsp; #소득세법 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'X',3:'O',20:'O',4:'O',5:'X',6:'O',7:'X',8:'O',9:'X',17:'X',19:'O',10:'O',11:'X',12:'O',13:'O',14:'X',15:'O',16:'O',18:'X'};const SECS={1:[1,2,3,20],2:[4,5,6,7,8,9,17,19],3:[10,11,12,13,14,15,16,18]};const sel={},done={};let correct=0,answered=0;const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));c.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');c.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';updateSecCounts();}
+function updateSecCounts(){Object.entries(SECS).forEach(([k,arr])=>{const dn=arr.filter(n=>done[n]).length;document.getElementById('c'+k).textContent=dn+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const p=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=p+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body></html>

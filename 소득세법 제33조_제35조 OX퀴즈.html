@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">소득세법<br><span>제33조~제35조</span></div>
+  <div class="hsb"></div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제33조 필요경비 불산입</span><span class="scn" id="c1">0/8</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§33①1</span>소득세(외국소득세액 세액공제 적용분 포함)와 개인지방소득세는 사업소득금액 계산 시 필요경비에 산입하지 아니한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제33조 제1항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제33조 제1항 제1호에 따라 소득세(법 제57조 및 제57조의2에 따라 세액공제를 적용하는 경우의 외국소득세액 포함)와 개인지방소득세는 필요경비 불산입입니다. 내 소득에 매기는 세금은 사업 비용이 아니라는 원칙입니다. 단, 세액공제를 적용하지 않는 외국소득세액은 시행령 제55조 제1항 제8호에 따라 제세공과금으로 필요경비 산입이 가능합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§33①2</span>통고처분에 따른 벌금 또는 과료에 해당하는 금액은 벌금·과료에 포함되어 필요경비에 산입하지 아니한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제33조 제1항 제2호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제33조 제1항 제2호에서 벌금·과료에는 <strong>통고처분에 따른 벌금 또는 과료에 해당하는 금액도 포함</strong>됩니다. 세관에서 물건을 몰래 들여오다 적발되어 내는 통고처분 금액도 마찬가지입니다. 잘못을 해서 내는 벌칙성 금전은 사업 비용으로 인정받지 못합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§33①9</span>부가가치세의 매입세액은 원칙적으로 필요경비에 산입하지 아니하지만, 부가가치세 간이과세자가 납부한 부가가치세액은 필요경비에 산입할 수 있다.<span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 제33조 제1항 제9호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제33조 제1항 제9호에 따라 부가가치세 매입세액은 필요경비 불산입이 원칙이나, 단서에 따라 <strong>간이과세자가 납부한 부가가치세액은 예외적으로 필요경비 산입이 가능</strong>합니다. 간이과세자는 매입세액 공제를 받지 못하고 일정비율로 납부하기 때문에 그 세액만큼은 비용으로 인정해 줍니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§33①10·令§75</span>건설자금에 충당한 차입금의 이자는 준공일까지 자본적 지출로 원본에 가산하며, 해당 차입금의 일시예금에서 생기는 수입이자는 원본에 가산하는 자본적 지출금액에서 차감한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 시행령 제75조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제75조 제2항에 따라 건설자금 이자는 <strong>준공일까지 자본적 지출로 원본에 가산</strong>합니다. 단서로, 차입금을 일시 예금하여 발생한 <strong>수입이자는 가산액에서 차감</strong>합니다. 자산을 짓는 동안 빌린 돈의 이자는 자산 원가에 포함시키고, 그 돈을 잠깐 맡겨서 받은 이자는 빼준다는 의미입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§33①10·令§75③</span>차입한 건설자금의 일부를 운영자금에 전용한 경우, 그 전용한 부분에 상당하는 지급이자는 자본적 지출로 처리해야 한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 시행령 제75조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '자본적 지출로 처리' → '필요경비로 처리'</p><p>소득세법 시행령 제75조 제3항에 따르면, 건설자금 차입금 중 일부를 <strong>운영자금으로 전용</strong>한 경우 그 부분의 이자는 <strong>필요경비</strong>로 처리합니다. 건물 짓는 돈을 빌렸지만 그 중 일부를 사업 운영에 쓰면, 그 비율만큼의 이자는 당연히 당해 연도 비용으로 인정됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§33①11·令§76</span>채권자가 불분명한 차입금의 이자에 해당하는 경우, 지급일 현재 주민등록표등본으로 거주사실이 확인된 채권자가 차입금을 변제받은 후 소재불명이 된 경우에는 채권자 불분명 차입금 이자로 보지 않는다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 시행령 제76조 단서</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제76조 단서에 따라, <strong>지급일 현재 주민등록표등본에 의해 거주사실 등이 확인된 채권자</strong>가 나중에 소재불명이 된 경우는 채권자 불분명 차입금 이자의 필요경비 불산입 대상에서 제외됩니다. 돈을 빌려줄 때는 분명하게 확인된 사람이었다면, 나중에 그 사람이 사라져도 이자를 비용으로 인정해 준다는 취지입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§33②·令§78의2①</span>지급이자의 필요경비 불산입 규정이 동시에 적용되는 경우의 적용 순서는 ① 채권자 불분명 차입금 이자 → ② 건설자금 이자 → ③ 사업용 자산 미달 초과인출금 이자 → ④ 업무 무관 자산 취득 차입금 이자 순이다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 시행령 제78조의2 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제78조의2 제1항에 따른 지급이자 필요경비 불산입 적용 순서입니다.<br>① 채권자 불분명 차입금 이자(§76)<br>② 건설자금 차입금 이자(§75①)<br>③ 사업용 자산 미달 초과인출금 이자(§61①2)<br>④ 업무 무관 자산 취득 차입금 이자(§78③)<br>이 순서는 법 제33조 제2항의 위임을 받아 시행령에서 정한 것입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§33②·令§78의2②</span>지급이자 필요경비 불산입 규정 적용 시 서로 다른 이자율이 적용되는 이자가 함께 있는 경우에는 낮은 이자율이 적용되는 것부터 먼저 필요경비에 산입하지 아니한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 시행령 제78조의2 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '낮은 이자율부터 먼저 불산입' → '높은 이자율이 적용되는 것부터 먼저 불산입'</p><p>소득세법 시행령 제78조의2 제2항에 따르면, 서로 다른 이자율이 적용되는 이자가 함께 있을 때는 <strong>높은 이자율이 적용되는 것부터 먼저 필요경비에 산입하지 않습니다.</strong> 이자율이 높은 차입금이 사업과 덜 관련된 것이라고 보는 논리입니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제33조의2 업무용승용차 관련 비용 등의 필요경비 불산입 특례</span><span class="scn" id="c2">0/4</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§33의2①②</span>복식부기의무자가 업무용승용차의 감가상각비 또는 임차료 중 감가상각비 상당액이 연간 800만원을 초과하는 경우, 그 초과분은 해당 과세기간의 필요경비에 산입하지 않고 이월하여 필요경비에 산입한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 제33조의2 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제33조의2 제2항에 따라 업무사용금액 중 업무용승용차별 연간 감가상각비 또는 임차료 중 감가상각비 상당액이 <strong>800만원을 초과</strong>하면 그 초과분(감가상각비 한도초과액)은 당해 과세기간에 필요경비로 산입하지 못하고 <strong>이월</strong>하여 이후 연도에 공제합니다. 비싼 차를 한 번에 다 비용처리하지 못하게 연간 한도를 둔 것입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§33의2③</span>복식부기의무자가 업무용승용차를 처분하여 발생하는 손실 중 업무용승용차별로 800만원을 초과하는 금액은 해당 과세기간에 필요경비에 산입하지 아니하고 전액 손금불산입한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 제33조의2 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '전액 손금불산입' → '800만원 초과분을 이월하는 방법에 따라 필요경비에 산입'</p><p>소득세법 제33조의2 제3항에 따르면, 업무용승용차 처분손실 중 800만원 초과분은 전액 불산입이 아니라 <strong>대통령령으로 정하는 이월 등의 방법에 따라 필요경비에 산입</strong>합니다. 시행령 제78조의3 제10항에 따르면 다음 과세기간부터 800만원씩 균등하게 필요경비에 산입합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§33의2·令§78의3③</span>복식부기의무자가 업무용승용차의 감가상각비를 계산할 때는 정액법과 내용연수 5년을 적용하여야 한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 시행령 제78조의3 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제78조의3 제3항에 따라 복식부기의무자는 업무용승용차 감가상각 시 <strong>정액법, 내용연수 5년</strong>을 강제 적용합니다. 일반적인 감가상각 방법 선택권이 없습니다. 고가 업무용승용차의 과도한 감가상각비 계상을 방지하기 위한 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">§33의2·令§78의3⑦</span>업무용승용차에 대한 운행기록을 작성·비치하지 않은 경우, 해당 과세기간의 업무용승용차 관련비용이 1,500만원 이하이면 업무사용비율을 100%로 본다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 시행령 제78조의3 제7항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제78조의3 제7항 제1호에 따라, 운행기록을 작성·비치하지 않은 경우 업무사용비율을 실제 주행거리 비율로 계산하지 않고 다음과 같이 처리합니다.<br>• 관련비용 <strong>1,500만원 이하</strong>: 업무사용비율 <strong>100%</strong><br>• 관련비용 <strong>1,500만원 초과</strong>: 1,500만원 ÷ 관련비용<br>비용이 적을 경우는 사실상 전액 인정해 줍니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제34조 기부금의 필요경비 불산입</span><span class="scn" id="c3">0/5</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">§34②</span>특례기부금(법인세법 제24조 제2항 제1호 해당 기부금 및 특별재난지역 자원봉사 용역가액)의 필요경비 산입한도액은 기부금 필요경비 산입 전 소득금액에서 이월결손금을 차감한 금액 전액이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 제34조 제2항 제2호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제34조 제2항 제2호에 따른 특례기부금 필요경비 산입한도액 계산식은 <strong>A - B</strong>입니다.<br>• A: 기준소득금액(기부금 필요경비 산입 전 소득금액)<br>• B: 이월결손금<br>즉, 이월결손금을 공제한 소득금액 전체가 한도가 됩니다. 일반기부금(30% 한도)보다 훨씬 넉넉한 한도입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">§34③</span>일반기부금 중 종교단체에 기부한 금액이 없는 경우, 필요경비 산입한도는 기준소득금액에서 특례기부금 필요경비 산입액과 이월결손금을 차감한 금액의 30%이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 제34조 제3항 제2호 나목</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제34조 제3항 제2호 나목에 따라 종교단체 기부금이 없는 경우의 일반기부금 한도는 다음과 같습니다.<br><strong>(A - B - C) × 30%</strong><br>A: 기준소득금액, B: 특례기부금 필요경비 산입액, C: 이월결손금<br>종교단체가 있는 경우는 기준금액의 10%에 종교단체 외 기부금과 20% 중 적은 금액을 더하는 복잡한 구조가 적용됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">§34⑤</span>한도 초과로 필요경비에 산입하지 못한 특례기부금 및 일반기부금은 해당 과세기간 다음 과세기간 개시일부터 10년 이내에 이월하여 필요경비에 산입할 수 있다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 제34조 제5항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제34조 제5항에 따라 한도 초과 기부금은 <strong>다음 과세기간 개시일부터 10년 이내</strong>에 이월하여 필요경비에 산입할 수 있습니다. 단, 종합소득세 신고 시 기부금 세액공제를 적용받은 금액은 이월 대상에서 제외됩니다. 쉽게 말해 올해 다 못 쓴 기부금 한도는 최대 10년간 이월해서 경비로 처리할 수 있습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">§34·令§79④</span>이월된 기부금과 해당 과세기간에 지출한 기부금이 함께 있는 경우, 해당 과세기간에 발생한 기부금을 먼저 필요경비에 산입하고 이월된 기부금은 나중에 산입한다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 시행령 제79조 제4항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '당해 연도 기부금 먼저 산입' → '이월된 기부금을 먼저 산입'</p><p>소득세법 시행령 제79조 제4항에 따르면, 이월된 기부금과 당해 연도 기부금이 있는 경우 <strong>이전 과세기간에 발생하여 이월된 기부금의 금액부터 먼저 필요경비에 산입</strong>한 다음 해당 과세기간에 발생한 기부금을 산입합니다. 또한 이월된 기부금 중에서도 먼저 발생한 것부터 차례로 산입합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§34·令§81③</span>사업자가 기부금을 금전 외의 자산으로 제공한 경우 해당 자산의 가액은 그 제공 당시의 시가(시가가 장부가액보다 낮은 경우에는 장부가액)에 따른다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 시행령 제81조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제81조 제3항에 따라 기부금을 현금이 아닌 현물로 제공하는 경우 자산 가액은 <strong>제공 당시 시가(시가 < 장부가액이면 장부가액)</strong>로 평가합니다. 예를 들어 장부가 1억인 땅을 기부했는데 시가가 8천만원이라면 8천만원이 아닌 1억원으로 기부금을 계산합니다. 시가보다 낮게 신고하는 것을 방지하는 규정입니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 4</span><span class="stl">제35조 기업업무추진비의 필요경비 불산입</span><span class="scn" id="c4">0/3</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">§35②·令§83②</span>기업업무추진비 중 경조금의 경우 건당 20만원을 초과하는 금액은 신용카드 등 적격증명이 없으면 필요경비에 산입하지 아니한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 시행령 제83조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제83조 제2항에 따라 한 차례 접대에 지출한 기업업무추진비 중 적격증명 없이 필요경비에 산입할 수 있는 한도는 경조금의 경우 <strong>20만원</strong>, 그 외의 경우 <strong>3만원</strong>입니다. 20만원을 초과하는 경조금은 신용카드·계산서·세금계산서 등 적격증명을 갖추어야 경비로 인정됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">§35③1</span>기업업무추진비 기본한도를 계산할 때 중소기업의 기본한도 기준금액은 1,200만원이다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 제35조 제3항 제1호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '중소기업 기본한도 1,200만원' → '중소기업은 3,600만원, 일반기업이 1,200만원'</p><p>소득세법 제35조 제3항 제1호에 따라 기업업무추진비 기본한도 계산 시 A(기준금액)는 <strong>일반사업자 1,200만원, 조세특례제한법 제6조 제1항에 따른 중소기업은 3,600만원</strong>입니다. 중소기업에게 더 큰 기본한도를 부여하는 것입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">§35③2</span>특수관계인과의 거래에서 발생한 수입금액에 대해서는 기업업무추진비 수입금액별 한도 계산 시 해당 적용률을 적용하여 산출한 금액의 10%에 해당하는 금액만 한도로 인정한다.<span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 제35조 제3항 제2호 단서</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제35조 제3항 제2호 단서에 따라 특수관계인과의 거래에서 발생한 수입금액에 대해서는 수입금액별 적용률을 적용하여 산출한 금액의 <strong>100분의 10</strong>만 기업업무추진비 한도로 인정합니다. 특수관계인 거래는 진정한 영업 거래라고 보기 어려우므로 한도를 대폭 줄이는 것입니다.</p></div></div>
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP"><h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제33~35조 / 소득세법 시행령, 소득세법 시행규칙<br>[2026-06-23] &nbsp;&nbsp; #소득세법 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'O',3:'O',4:'O',5:'X',6:'O',7:'O',8:'X',9:'O',10:'X',11:'O',12:'O',13:'O',14:'O',15:'O',16:'X',20:'O',17:'O',18:'X',19:'O'};const SECS={1:[1,2,3,4,5,6,7,8],2:[9,10,11,12],3:[13,14,15,16,20],4:[17,18,19]};const sel={},done={};let correct=0,answered=0;const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));c.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');c.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';updateSecCounts();}
+function updateSecCounts(){Object.entries(SECS).forEach(([k,arr])=>{const dn=arr.filter(n=>done[n]).length;document.getElementById('c'+k).textContent=dn+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const p=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=p+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body></html>

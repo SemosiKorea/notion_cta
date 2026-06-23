@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소득세법 | O/X 판단 퀴즈</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F0EB;--surf:#FFF;--surf2:#EAEAE3;--bdr:#D5D0C7;--acc:#1B3D6B;--acc2:#9A4410;--acc3:#1C5030;--danger:#7F1910;--txt:#111010;--txt2:#373430;--txt3:#666260;--ok:#1C5030;--ng:#7F1910;--serif:'Noto Serif KR',serif;--sans:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;--sh:0 2px 10px rgba(0,0,0,.07);--shlg:0 8px 28px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.7;min-height:100vh}
+.hd{background:var(--acc);color:#fff;padding:1.7rem 1.4rem 1.3rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.hdi{max-width:960px;margin:0 auto;display:flex;align-items:flex-end;gap:1.1rem;flex-wrap:wrap}
+.hbg{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .52rem;color:#D4CBAA}
+.htl{font-family:var(--serif);font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.22}
+.htl span{font-weight:400;font-size:.9rem;color:rgba(255,255,255,.77)}
+.hsb{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.18rem;font-weight:300;letter-spacing:.03em}
+.hsc{margin-left:auto;text-align:right}.hsl{font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.08em}
+.hsv{font-family:var(--mono);font-size:1.45rem;font-weight:600;color:#D4CBAA;line-height:1}
+.pw{background:var(--acc);padding:0 1.4rem .7rem}.pt{max-width:960px;margin:0 auto;height:4px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pf{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s;width:0%}
+.wrap{max-width:960px;margin:0 auto;padding:1.7rem 1.1rem 4rem}
+.sh{display:flex;align-items:center;gap:.85rem;margin:2.4rem 0 1rem;flex-wrap:wrap}
+.stg{font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:.25rem .65rem;border-radius:3px;white-space:nowrap;background:var(--acc);color:#fff}
+.stl{font-family:var(--serif);font-size:1rem;font-weight:600}.scn{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--txt3)}
+.shr{border:none;border-top:1.5px solid var(--bdr);margin-bottom:1.3rem}
+.qc{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:var(--sh);transition:box-shadow .2s;animation:fu .3s ease both}
+.qc:hover{box-shadow:var(--shlg)}
+@keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.qh{padding:.88rem 1.15rem .65rem;border-bottom:1px solid var(--surf2);display:flex;align-items:flex-start;gap:.75rem}
+.qn{font-family:var(--mono);font-size:.68rem;font-weight:600;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0;margin-top:1px;background:#E4EEF8;color:var(--acc)}
+.qt{font-size:.875rem;color:var(--txt);line-height:1.82;flex:1}
+.jb{display:inline-block;font-family:var(--mono);font-size:.58rem;padding:.07rem .38rem;border-radius:3px;margin-right:.3rem;vertical-align:middle;background:#EAF0F7;color:var(--acc);border:1px solid #C5D8EE}
+.tb{display:inline-block;font-family:var(--mono);font-size:.57rem;padding:.07rem .34rem;border-radius:3px;margin-left:.25rem;vertical-align:middle}
+.thot{background:#FDECEA;color:#7F1910}.tup{background:#E4F2EA;color:#1C5030}.twrn{background:#FFF8E1;color:#796000}.tnew{background:#E8F0FB;color:#1B3D6B}
+.qbd{padding:.65rem 1.15rem .8rem}.oxs{display:flex;gap:.5rem}
+.oxb{border:1.5px solid var(--bdr);background:#fff;border-radius:7px;padding:.42rem 1.3rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;transition:all .13s;color:var(--txt3)}
+.oxb:hover{border-color:var(--acc);color:var(--acc);background:#EAF0F7}
+.oxb.so{border-color:var(--acc3);background:#E4F2EA;color:var(--acc3)}.oxb.sx{border-color:var(--danger);background:#FAF0EF;color:var(--danger)}
+.oxb.co,.oxb.cx{border-color:var(--ok);background:#E4F2EA;color:var(--ok)}.oxb.wo,.oxb.wx{border-color:var(--ng);background:#FAF0EF;color:var(--ng);opacity:.5}
+.qa{padding:0 1.15rem .82rem;display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+.bck{padding:.38rem 1rem;border:none;border-radius:5px;background:var(--acc);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:500;cursor:pointer;transition:opacity .13s;letter-spacing:.03em}
+.bck:hover{opacity:.82}.bck:disabled{opacity:.3;cursor:default}
+.rb{display:none;align-items:center;gap:.3rem;font-size:.75rem;font-weight:500;padding:.24rem .62rem;border-radius:20px}
+.rb.show{display:flex}.rb.ok{background:#E4F2EA;color:var(--ok)}.rb.ng{background:#FAF0EF;color:var(--ng)}
+.ex{display:none;background:#FAFAF7;border-top:1px solid var(--bdr);padding:.82rem 1.15rem;font-size:.79rem;color:var(--txt2);line-height:1.9}
+.ex.show{display:block}.ex .eh{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--txt3);margin-bottom:.38rem}
+.ex .lr{font-family:var(--mono);font-size:.69rem;color:var(--acc);background:#EAF0F7;padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.3rem}
+.ex .al{font-weight:700;font-size:.82rem;margin-bottom:.22rem}.ex .ok-al{color:var(--ok)}.ex .ng-al{color:var(--ng)}.ex .trap{color:var(--ng);font-style:italic;margin-top:.18rem}
+.ga{display:flex;justify-content:center;gap:.85rem;margin:1.9rem 0;flex-wrap:wrap}
+.bacl{padding:.55rem 1.7rem;background:var(--acc2);color:#fff;border:none;border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:opacity .13s}
+.bacl:hover{opacity:.84}.brev{padding:.55rem 1.7rem;background:transparent;color:var(--acc);border:2px solid var(--acc);border-radius:7px;font-family:var(--sans);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .13s}
+.brev:hover{background:var(--acc);color:#fff}
+.sum{display:none;background:var(--surf);border:1.5px solid var(--acc);border-radius:12px;padding:1.7rem 1.35rem;margin-top:2.3rem;text-align:center;box-shadow:var(--shlg)}
+.sum.show{display:block}.sum h2{font-family:var(--serif);font-size:1.15rem;color:var(--acc);margin-bottom:.3rem}
+.sum .gd{font-family:var(--mono);font-size:2.7rem;font-weight:700;color:var(--acc2);line-height:1;margin:.6rem 0}
+.sst{display:flex;justify-content:center;gap:1.7rem;margin:.95rem 0 1.3rem;flex-wrap:wrap}
+.ssi .sn{font-family:var(--mono);font-size:1.28rem;font-weight:600;color:var(--txt);display:block}.ssi .sd{font-size:.66rem;color:var(--txt3)}
+.brs{padding:.5rem 1.7rem;border:2px solid var(--acc);background:transparent;color:var(--acc);font-family:var(--sans);font-size:.8rem;font-weight:600;border-radius:7px;cursor:pointer;transition:all .18s;letter-spacing:.05em}
+.brs:hover{background:var(--acc);color:#fff}
+@media(max-width:600px){.htl{font-size:1.1rem}.wrap{padding:1rem .75rem 3rem}.qh{padding:.72rem .9rem .6rem}.qbd{padding:.6rem .9rem .72rem}.qa{padding:0 .9rem .72rem}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="hdi"><div>
+  <div class="hbg">세무사 1차 · 세법학개론</div>
+  <div class="htl">소득세법<br><span>제39조~제39조</span></div>
+  <div class="hsb"></div>
+</div><div class="hsc"><div class="hsl">SCORE</div><div class="hsv" id="sv">–</div></div></div></header>
+<div class="pw"><div class="pt"><div class="pf" id="pf"></div></div></div>
+<div class="wrap">
+
+
+<div class="sh"><span class="stg">Part 1</span><span class="stl">제39조 총수입금액 및 필요경비의 귀속연도 등</span><span class="scn" id="c1">0/14</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">1</span>
+  <div class="qt"><span class="jb">§39①</span>거주자의 각 과세기간 총수입금액 및 필요경비의 귀속연도는 총수입금액과 필요경비가 확정된 날이 속하는 과세기간으로 한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(1,'O')">O</button><button class="oxb" onclick="so(1,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(1)">정답 확인</button><span class="rb" id="r1"></span></div>
+<div class="ex" id="e1"><div class="eh">해설</div><div class="lr">소득세법 제39조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제39조 제1항의 내용입니다. 이를 <strong>권리·의무확정주의(발생주의)</strong>라 합니다. 실제로 현금을 받거나 지급했는지가 아니라, 받을 권리 또는 지급할 의무가 <strong>확정된 날이 속하는 과세기간</strong>에 귀속됩니다. 예를 들어 12월에 용역을 제공하고 대금을 다음 해 1월에 받더라도, 12월에 수입이 확정되었으므로 당해 연도 소득으로 봅니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">2</span>
+  <div class="qt"><span class="jb">§39①</span>거주자의 총수입금액 및 필요경비의 귀속연도는 실제로 현금을 수령하거나 지급한 날이 속하는 과세기간으로 한다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(2,'O')">O</button><button class="oxb" onclick="so(2,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(2)">정답 확인</button><span class="rb" id="r2"></span></div>
+<div class="ex" id="e2"><div class="eh">해설</div><div class="lr">소득세법 제39조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '실제 현금 수령·지급일' → '총수입금액과 필요경비가 확정된 날'</p><p>소득세법 제39조 제1항은 현금주의가 아닌 <strong>권리·의무확정주의(발생주의)</strong>를 채택합니다. 현금을 언제 받고 지급했는지가 아니라, <strong>수입이나 비용이 확정된 날</strong>이 속하는 과세기간에 귀속됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">3</span>
+  <div class="qt"><span class="jb">§39②·令§89①</span>타인으로부터 매입한 자산의 취득가액은 매입가액에 취득세·등록면허세 기타 부대비용을 가산한 금액이다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(3,'O')">O</button><button class="oxb" onclick="so(3,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(3)">정답 확인</button><span class="rb" id="r3"></span></div>
+<div class="ex" id="e3"><div class="eh">해설</div><div class="lr">소득세법 시행령 제89조 제1항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제89조 제1항 제1호에 따라 타인으로부터 매입한 자산의 취득가액은 <strong>매입가액 + 취득세 + 등록면허세 + 기타 부대비용</strong>입니다. 취득 관련 세금과 부대비용을 자산 원가에 포함시키는 원칙입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">4</span>
+  <div class="qt"><span class="jb">§39②·令§89①2호</span>자기가 직접 제조·생산 또는 건설하여 취득한 자산의 취득가액에는 원재료비·노무비·운임·하역비·보험료·수수료·공과금·설치비 등의 합계액으로 하며, 공과금에는 취득세와 등록면허세를 포함한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(4,'O')">O</button><button class="oxb" onclick="so(4,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(4)">정답 확인</button><span class="rb" id="r4"></span></div>
+<div class="ex" id="e4"><div class="eh">해설</div><div class="lr">소득세법 시행령 제89조 제1항 제2호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제89조 제1항 제2호에 따라 자가 제조·생산·건설 자산의 취득가액은 원재료비·노무비·운임·하역비·보험료·수수료·<strong>공과금(취득세와 등록면허세 포함)</strong>·설치비 기타 부대비용의 합계액입니다. 취득세·등록면허세가 공과금에 포함된다는 점을 기억하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">5</span>
+  <div class="qt"><span class="jb">§39②·令§89②</span>사업자가 자산을 장기할부조건으로 매입할 때 현재가치할인차금으로 계상한 금액은 자산의 취득가액에 포함하지 않는다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(5,'O')">O</button><button class="oxb" onclick="so(5,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(5)">정답 확인</button><span class="rb" id="r5"></span></div>
+<div class="ex" id="e5"><div class="eh">해설</div><div class="lr">소득세법 시행령 제89조 제2항 제1호</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제89조 제2항 제1호에 따라 장기할부조건 매입 시 채무를 현재가치로 평가하여 <strong>현재가치할인차금으로 계상한 금액은 취득가액에 포함하지 않습니다.</strong> 취득가액을 현재가치 기준으로 인식하고, 할인차금 상각액은 이후 이자비용으로 처리하는 구조입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">6</span>
+  <div class="qt"><span class="jb">§39③</span>거주자가 보유하는 자산 및 부채의 장부가액을 평가(감가상각 제외)한 경우 평가일이 속하는 과세기간 및 그 후의 과세기간의 소득금액 계산 시 해당 자산·부채의 장부가액은 평가 전의 가액으로 한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(6,'O')">O</button><button class="oxb" onclick="so(6,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(6)">정답 확인</button><span class="rb" id="r6"></span></div>
+<div class="ex" id="e6"><div class="eh">해설</div><div class="lr">소득세법 제39조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제39조 제3항의 내용입니다. 원칙적으로 자산·부채를 임의로 평가(증액 또는 감액)해도 세법상 장부가액은 <strong>평가 전 가액으로 환원</strong>합니다. 즉, 평가손익은 세법상 인정되지 않습니다. 예외적으로 재고자산과 대통령령이 정하는 유가증권은 별도 평가방법에 따릅니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">7</span>
+  <div class="qt"><span class="jb">§39③</span>감가상각도 소득세법 제39조 제3항의 '평가'에 해당하여 평가 규정의 적용을 받는다.<span class="tb thot">🔴 기한 함정</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(7,'O')">O</button><button class="oxb" onclick="so(7,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(7)">정답 확인</button><span class="rb" id="r7"></span></div>
+<div class="ex" id="e7"><div class="eh">해설</div><div class="lr">소득세법 제39조 제3항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '감가상각도 평가에 해당' → '감가상각은 평가에서 제외'</p><p>소득세법 제39조 제3항은 장부가액의 증액 또는 감액을 '평가'로 정의하면서 <strong>감가상각은 명시적으로 제외</strong>합니다. 감가상각은 별도의 규정(§33①6, 令§62)에 따라 처리됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">8</span>
+  <div class="qt"><span class="jb">§39④</span>파손·부패 등으로 정상가격에 판매할 수 없는 재고자산은 장부가액을 감액할 수 있으며, 이는 법 제39조 제3항의 원칙적 평가 불인정 규정의 예외이다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(8,'O')">O</button><button class="oxb" onclick="so(8,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(8)">정답 확인</button><span class="rb" id="r8"></span></div>
+<div class="ex" id="e8"><div class="eh">해설</div><div class="lr">소득세법 제39조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제39조 제4항에 따라 ① 파손·부패 등으로 정상가격에 판매할 수 없는 재고자산, ② 천재지변이나 그 밖의 대통령령으로 정하는 사유로 파손 또는 멸실된 유형자산은 <strong>예외적으로 장부가액의 감액이 허용</strong>됩니다. 제3항 원칙의 예외 규정입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">9</span>
+  <div class="qt"><span class="jb">§39④·令§96②</span>법 제39조 제4항 제2호에서 유형자산의 감액이 허용되는 '대통령령으로 정하는 사유'에는 화재, 법령에 따른 수용, 채굴 불능으로 인한 폐광이 포함된다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(9,'O')">O</button><button class="oxb" onclick="so(9,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(9)">정답 확인</button><span class="rb" id="r9"></span></div>
+<div class="ex" id="e9"><div class="eh">해설</div><div class="lr">소득세법 시행령 제96조 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제96조 제2항에 따른 감액 허용 사유(천재지변 외)는 다음 세 가지입니다.<br>① <strong>화재</strong><br>② <strong>법령에 따른 수용 등</strong><br>③ <strong>채굴 불능으로 인한 폐광</strong><br>이 세 가지를 암기해 두세요. 단순한 사업 부진이나 경기 침체는 해당하지 않습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">10</span>
+  <div class="qt"><span class="jb">§39④·令§96①</span>법 제39조 제4항의 감액 방법은 해당 자산의 장부가액을 감액사유가 발생한 과세기간 개시일 현재의 처분가능한 가액으로 감액하고, 그 감액한 금액을 해당 과세기간의 필요경비로 계상하는 방법이다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(10,'O')">O</button><button class="oxb" onclick="so(10,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(10)">정답 확인</button><span class="rb" id="r10"></span></div>
+<div class="ex" id="e10"><div class="eh">해설</div><div class="lr">소득세법 시행령 제96조 제1항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '과세기간 개시일 현재' → '과세기간 종료일 현재'</p><p>소득세법 시행령 제96조 제1항에 따르면 감액은 감액사유가 발생한 <strong>과세기간 종료일 현재</strong>의 처분가능한 가액으로 장부가액을 감액합니다. '개시일'이 아니라 <strong>'종료일'</strong>입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">11</span>
+  <div class="qt"><span class="jb">§39⑤</span>거주자가 소득금액 계산 시 일반적으로 공정·타당하다고 인정되는 기업회계의 기준을 적용하거나 관행을 계속 적용해온 경우, 이 법 및 조세특례제한법에서 달리 규정하는 경우를 제외하고 그 기업회계의 기준 또는 관행에 따른다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(11,'O')">O</button><button class="oxb" onclick="so(11,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(11)">정답 확인</button><span class="rb" id="r11"></span></div>
+<div class="ex" id="e11"><div class="eh">해설</div><div class="lr">소득세법 제39조 제5항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제39조 제5항의 내용입니다. 세법에 별도 규정이 없을 경우 <strong>기업회계기준 또는 관행을 존중</strong>하는 원칙입니다. 단, 이 법(소득세법) 또는 「조세특례제한법」에서 달리 정한 경우에는 세법이 우선합니다. 세법 우선 원칙에 주의하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">17</span>
+  <div class="qt"><span class="jb">§39④·令§96③</span>법 제39조 제4항 제2호에 따른 유형자산의 파손 또는 멸실은 해당 유형자산이 그 고유의 목적에 사용할 수 없게 되는 경우를 포함한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(17,'O')">O</button><button class="oxb" onclick="so(17,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(17)">정답 확인</button><span class="rb" id="r17"></span></div>
+<div class="ex" id="e17"><div class="eh">해설</div><div class="lr">소득세법 시행령 제96조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제96조 제3항에 따라 유형자산의 파손·멸실 범위는 물리적인 파손·멸실뿐만 아니라 <strong>해당 유형자산이 그 고유의 목적에 사용할 수 없게 되는 경우도 포함</strong>합니다. 예를 들어 공장 기계가 수해로 인해 작동은 가능하지만 생산 목적에 사용할 수 없게 된 경우도 포함됩니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">19</span>
+  <div class="qt"><span class="jb">令§89④</span>부가가치세법에 따라 공제받은 의제매입세액은 해당 원재료의 매입가액에서 이를 공제한다.<span class="tb tnew">시행령</span><span class="tb twrn">주의</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(19,'O')">O</button><button class="oxb" onclick="so(19,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(19)">정답 확인</button><span class="rb" id="r19"></span></div>
+<div class="ex" id="e19"><div class="eh">해설</div><div class="lr">소득세법 시행령 제89조 제4항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제89조 제4항에 따라 <strong>의제매입세액(부가가치세법 제42조)</strong>과 <strong>조세특례제한법 제108조 제1항에 따라 공제받은 매입세액</strong>은 해당 원재료의 매입가액에서 차감합니다. 의제매입세액을 공제받으면 그만큼 원재료 원가가 낮아지는 구조입니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">20</span>
+  <div class="qt"><span class="jb">§39③ 단서</span>재고자산과 대통령령으로 정하는 유가증권은 법 제39조 제3항 원칙(평가 전 가액 적용)의 예외로, 각 자산별로 대통령령으로 정하는 방법에 따라 평가한 가액을 장부가액으로 한다.<span class="tb tup">기본</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(20,'O')">O</button><button class="oxb" onclick="so(20,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(20)">정답 확인</button><span class="rb" id="r20"></span></div>
+<div class="ex" id="e20"><div class="eh">해설</div><div class="lr">소득세법 제39조 제3항 단서</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 제39조 제3항 단서에 따라 <strong>재고자산</strong>과 <strong>대통령령으로 정하는 유가증권(매매·단기투자 목적 유가증권)</strong>은 원칙적 평가 불인정 규정의 예외입니다. 이들 자산은 시행령에서 정한 방법(재고자산: §91, 유가증권: §93)으로 평가한 가액을 장부가액으로 인정합니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 2</span><span class="stl">제91조 재고자산 평가방법</span><span class="scn" id="c2">0/3</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">12</span>
+  <div class="qt"><span class="jb">令§91①②</span>재고자산(유가증권 제외)의 평가방법은 원가법 또는 저가법 중 하나를 적용하며, 원가법 적용 시 개별법·선입선출법·후입선출법·총평균법·이동평균법·매출가격환원법 중 하나를 선택할 수 있다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(12,'O')">O</button><button class="oxb" onclick="so(12,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(12)">정답 확인</button><span class="rb" id="r12"></span></div>
+<div class="ex" id="e12"><div class="eh">해설</div><div class="lr">소득세법 시행령 제91조 제1항, 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제91조 제1항·제2항에 따른 재고자산 평가방법입니다.<br>대분류: ① 원가법, ② 저가법<br>원가법 세부: ① 개별법, ② 선입선출법, ③ 후입선출법, ④ 총평균법, ⑤ 이동평균법, ⑥ 매출가격환원법<br>총 6가지 원가법 방법 모두 암기가 필요합니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">13</span>
+  <div class="qt"><span class="jb">令§91③</span>재고자산을 종류별·사업장별로 각각 다른 방법으로 평가할 수 있으며, 종류 구분은 ① 제품과 상품, ② 반제품과 재공품, ③ 원재료, ④ 저장품의 4가지이다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(13,'O')">O</button><button class="oxb" onclick="so(13,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(13)">정답 확인</button><span class="rb" id="r13"></span></div>
+<div class="ex" id="e13"><div class="eh">해설</div><div class="lr">소득세법 시행령 제91조 제3항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제91조 제3항에 따라 재고자산은 다음 4가지 종류별·사업장별로 각각 다른 평가방법을 적용할 수 있습니다.<br>① 제품과 상품(매매목적 부동산 포함)<br>② 반제품과 재공품<br>③ 원재료<br>④ 저장품<br>예를 들어 제품은 선입선출법, 원재료는 총평균법으로 각각 달리 평가할 수 있습니다.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">14</span>
+  <div class="qt"><span class="jb">令§91②</span>재고자산 평가방법 중 원가법의 세부 방법으로 시가법도 포함된다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(14,'O')">O</button><button class="oxb" onclick="so(14,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(14)">정답 확인</button><span class="rb" id="r14"></span></div>
+<div class="ex" id="e14"><div class="eh">해설</div><div class="lr">소득세법 시행령 제91조 제2항</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '시가법도 원가법에 포함' → '시가법은 저가법 적용 시 사용하는 방법으로 원가법 세부 방법이 아님'</p><p>소득세법 시행령 제91조 제2항에서 원가법의 세부 방법은 개별법·선입선출법·후입선출법·총평균법·이동평균법·매출가격환원법의 6가지입니다. 시가법은 별도로 저가법 적용 시 사용되는 방법으로(시행규칙 §51②), 원가법 세부 방법이 아닙니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 3</span><span class="stl">제93조 매매 또는 단기투자를 목적으로 매입한 유가증권의 평가방법</span><span class="scn" id="c3">0/2</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">15</span>
+  <div class="qt"><span class="jb">令§93①②</span>매매 또는 단기투자를 목적으로 매입한 유가증권의 평가방법은 개별법(채권에 한함)·총평균법·이동평균법 중 사업자가 신고한 방법에 따른다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(15,'O')">O</button><button class="oxb" onclick="so(15,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(15)">정답 확인</button><span class="rb" id="r15"></span></div>
+<div class="ex" id="e15"><div class="eh">해설</div><div class="lr">소득세법 시행령 제93조 제1항, 제2항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제93조 제1항·제2항에 따라 매매·단기투자 목적 유가증권의 평가방법은 사업자가 신고한 방법으로 선택하되, 선택 가능한 방법은 3가지입니다.<br>① <strong>개별법</strong>(채권에 한정)<br>② <strong>총평균법</strong><br>③ <strong>이동평균법</strong><br>재고자산(6가지)과 달리 3가지만 허용됨을 주의하세요.</p></div></div>
+
+<div class="qc"><div class="qh"><span class="qn">16</span>
+  <div class="qt"><span class="jb">令§93②</span>매매 또는 단기투자를 목적으로 매입한 유가증권 평가 시 개별법은 모든 유가증권에 적용할 수 있다.<span class="tb thot">🔴 기한 함정</span><span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(16,'O')">O</button><button class="oxb" onclick="so(16,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(16)">정답 확인</button><span class="rb" id="r16"></span></div>
+<div class="ex" id="e16"><div class="eh">해설</div><div class="lr">소득세법 시행령 제93조 제2항 제1호</div>
+<div class="al ng-al">정답: X (틀리다)</div>
+<p class='trap'>⚠ '모든 유가증권에 적용 가능' → '채권에만 한정하여 적용 가능'</p><p>소득세법 시행령 제93조 제2항 제1호에 따라 개별법은 <strong>채권의 경우에 한정</strong>하여 적용할 수 있습니다. 주식 등 채권 이외의 유가증권에는 개별법을 사용할 수 없고, 총평균법 또는 이동평균법만 선택 가능합니다.</p></div></div>
+
+<div class="sh"><span class="stg">Part 4</span><span class="stl">제97조 외화자산·부채의 상환손익 등</span><span class="scn" id="c4">0/1</span></div>
+<hr class="shr">
+
+<div class="qc"><div class="qh"><span class="qn">18</span>
+  <div class="qt"><span class="jb">令§97①</span>사업자가 외화자산·부채를 상환받거나 상환하는 경우, 취득 또는 차입 당시 원화기장액과 상환 원화금액과의 차익·차손은 상환받거나 상환한 날이 속하는 과세기간의 총수입금액 또는 필요경비에 산입한다.<span class="tb tnew">시행령</span></div>
+</div><div class="qbd"><div class="oxs"><button class="oxb" onclick="so(18,'O')">O</button><button class="oxb" onclick="so(18,'X')">X</button></div></div>
+<div class="qa"><button class="bck" onclick="co(18)">정답 확인</button><span class="rb" id="r18"></span></div>
+<div class="ex" id="e18"><div class="eh">해설</div><div class="lr">소득세법 시행령 제97조 제1항</div>
+<div class="al ok-al">정답: O (맞다)</div>
+<p>소득세법 시행령 제97조 제1항에 따라 외화자산·부채의 상환 시 발생하는 환차익·환차손은 <strong>상환한 날이 속하는 과세기간</strong>의 총수입금액 또는 필요경비로 처리합니다. 취득·차입 시점이나 결산 시점이 아닌 <strong>실제 상환 시점</strong>이 기준입니다.</p></div></div>
+<div class="ga">
+  <button class="bacl" onclick="checkAll()">📝 전체 채점하기</button>
+  <button class="brev" onclick="revealAll()">📖 전체 해설 보기</button>
+</div>
+<div class="sum" id="smP"><h2>채점 결과</h2>
+  <div class="gd" id="gdT">–</div>
+  <div class="sst">
+    <div class="ssi"><span class="sn" id="stC">–</span><span class="sd">정답</span></div>
+    <div class="ssi"><span class="sn" id="stW">–</span><span class="sd">오답</span></div>
+    <div class="ssi"><span class="sn">20</span><span class="sd">전체</span></div>
+  </div>
+  <button class="brs" onclick="resetAll()">🔄 처음부터 다시 풀기</button>
+</div>
+<p style="margin-top:3rem;font-size:.68rem;color:var(--txt3);text-align:center;letter-spacing:.04em">
+  근거: 소득세법 제39~39조 / 소득세법 시행령, 소득세법 시행규칙<br>[2026-06-23] &nbsp;&nbsp; #소득세법 #세무사1차
+</p>
+</div>
+<script>
+const ANS={1:'O',2:'X',3:'O',4:'O',5:'O',6:'O',7:'X',8:'O',9:'O',10:'X',11:'O',17:'O',19:'O',20:'O',12:'O',13:'O',14:'X',15:'O',16:'X',18:'O'};const SECS={1:[1,2,3,4,5,6,7,8,9,10,11,17,19,20],2:[12,13,14],3:[15,16],4:[18]};const sel={},done={};let correct=0,answered=0;const TOT=20;
+function so(n,v){if(done[n])return;sel[n]=v;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>b.classList.remove('so','sx'));c.querySelectorAll('.oxb').forEach(b=>{if(b.textContent.trim()===v)b.classList.add('s'+v.toLowerCase())});}
+function co(n){if(done[n])return;const v=sel[n],a=ANS[n];if(!v){alert('O 또는 X를 먼저 선택해주세요.');return;}done[n]=true;const ok=v===a;const c=document.getElementById('e'+n).closest('.qc');c.querySelectorAll('.oxb').forEach(b=>{const bv=b.textContent.trim();b.classList.remove('so','sx');if(bv===a)b.classList.add('c'+a.toLowerCase());else if(bv===v&&!ok)b.classList.add('w'+v.toLowerCase());});const badge=document.getElementById('r'+n);badge.textContent=ok?'✓ 정답':'✗ 오답 (정답: '+a+')';badge.className='rb show '+(ok?'ok':'ng');document.getElementById('e'+n).classList.add('show');c.querySelector('.bck').disabled=true;if(ok)correct++;answered++;document.getElementById('sv').textContent=correct+'/'+answered;document.getElementById('pf').style.width=(answered/TOT*100)+'%';updateSecCounts();}
+function updateSecCounts(){Object.entries(SECS).forEach(([k,arr])=>{const dn=arr.filter(n=>done[n]).length;document.getElementById('c'+k).textContent=dn+'/'+arr.length;});}
+function checkAll(){for(let n=1;n<=TOT;n++){if(!done[n]){if(!sel[n])sel[n]='O';co(n);}}showSum();}
+function revealAll(){document.querySelectorAll('.ex').forEach(e=>e.classList.add('show'));}
+function showSum(){const p=Math.round(correct/TOT*100);document.getElementById('gdT').textContent=p+'%';document.getElementById('stC').textContent=correct;document.getElementById('stW').textContent=TOT-correct;document.getElementById('smP').classList.add('show');document.getElementById('smP').scrollIntoView({behavior:'smooth',block:'center'});}
+function resetAll(){location.reload();}
+</script>
+</body></html>
