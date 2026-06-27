@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제13조·제14조 — 재화의 수입·부수공급 | 세무사 1차 예습자료</title>
+<style>
+/* ──────────────────────────────────────────
+   BASE — 소득세법 총설 예습자료의 시각 체계 계승
+────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#FAFAFA;color:#1A1A2E;
+  font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  font-size:14px;line-height:1.85;
+  max-width:1060px;margin:0 auto;padding:24px
+}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px}
+h2{color:#1A3A6B;font-size:1.14em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+h3{color:#2C5282;font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}
+ul,ol{padding-left:20px;margin-bottom:8px}
+li{margin-bottom:4px;line-height:1.75}
+a{color:#1A56A8;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#1A1A2E}
+button{font:inherit}
+
+/* ──────────────────────────────────────────
+   HEADER
+────────────────────────────────────────── */
+.header{
+  background:linear-gradient(135deg,#0D1B4B,#1A3A6B);
+  color:#fff;padding:32px 40px;border-radius:14px;margin-bottom:16px;
+  box-shadow:0 10px 28px rgba(13,27,75,.15)
+}
+.subject-badge{
+  background:rgba(255,255,255,.2);color:#fff;
+  padding:4px 16px;border-radius:20px;
+  font-size:.82em;display:inline-block;margin-bottom:11px
+}
+.header h1{color:#fff;font-size:1.84em}
+.header .meta{font-size:.8em;opacity:.9;margin-top:7px;line-height:1.65}
+.freq-badge{
+  display:inline-block;font-size:.8em;font-weight:700;
+  padding:2px 10px;border-radius:12px;
+  background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px
+}
+
+/* ──────────────────────────────────────────
+   TOOLBAR / NAV
+────────────────────────────────────────── */
+.toolbar{
+  position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;
+  box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px
+}
+.toolbar a,.toolbar button{
+  border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;
+  padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer
+}
+.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}
+.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}
+.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+
+/* ──────────────────────────────────────────
+   SECTION WRAPPERS
+────────────────────────────────────────── */
+.section{
+  margin:20px 0;padding:24px 28px;
+  border-radius:12px;border:1px solid #E8ECF0;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)
+}
+.section-title-bar{
+  background:linear-gradient(90deg,#1A3A6B,#2C5282);
+  color:#fff;padding:9px 16px;border-radius:8px;
+  font-size:1.03em;font-weight:700;
+  margin:-24px -28px 18px;letter-spacing:.02em
+}
+.sub-block{
+  background:#F8FAFE;border:1px solid #DCE7F5;
+  border-radius:8px;padding:14px 18px;margin:12px 0
+}
+.sub-block h3{margin-top:0;color:#1A3A6B}
+
+/* ──────────────────────────────────────────
+   SPECIAL BOXES
+────────────────────────────────────────── */
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}
+.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}
+.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+.law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:0 8px 8px 0;padding:11px 15px;margin:9px 0;font-size:.88em;line-height:1.78}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.gray-box{background:#F8FAFC;border:1px solid #CBD5E1;border-left:4px solid #64748B;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.lr{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;font-weight:700;color:#1A3A6B;display:block;margin-bottom:3px}
+
+/* ──────────────────────────────────────────
+   TABLE
+────────────────────────────────────────── */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid #E2E8F0;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#EEF2FF;color:#1A3A6B;padding:10px 13px;text-align:left;font-weight:700;font-size:.87em;border-bottom:2px solid #C3D4F0;white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+tr:hover td{background:#FAFBFF}
+.diff{color:#C53030;font-weight:700}.ok-text{color:#276749;font-weight:700}
+.hl{background:#FFFBEB!important}.center{text-align:center}
+.tc{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.84em;color:#1A3A6B}
+.no-wrap{white-space:nowrap}
+
+/* ──────────────────────────────────────────
+   FLOWCHART
+────────────────────────────────────────── */
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:16px 0}
+.flow-node{background:#1A3A6B;color:#fff;padding:9px 24px;border-radius:8px;font-size:.87em;font-weight:700;text-align:center;min-width:210px;max-width:520px;line-height:1.45}
+.flow-node.g{background:#276749}.flow-node.r{background:#9B2335}.flow-node.o{background:#744210}.flow-node.gray{background:#4A5568}.flow-node.p{background:#5A2D82}
+.flow-diamond{background:#744210;color:#fff;padding:7px 20px;border-radius:50px;font-size:.84em;font-weight:700;text-align:center;max-width:420px}
+.flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+.flow-branch{display:flex;gap:20px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px;max-width:270px}
+.branch-label{font-size:.79em;color:#718096;font-weight:700}
+
+/* ──────────────────────────────────────────
+   CARDS / MISC
+────────────────────────────────────────── */
+.trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+.trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
+.col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+.col-box h4{margin-top:0;color:#1A3A6B}
+.key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.footnote{color:#718096;font-size:.82em;margin-top:8px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:11px;margin:13px 0}
+.feat-card{border-radius:9px;overflow:hidden;border:1px solid #E2E8F0;background:#fff}
+.feat-head{padding:8px 12px;font-weight:700;font-size:.86em;color:#fff}
+.feat-head.c1{background:#1A3A6B}.feat-head.c2{background:#276749}.feat-head.c3{background:#744210}.feat-head.c4{background:#5A2D82}.feat-head.c5{background:#9B2335}.feat-head.c6{background:#2C7A7B}.feat-head.c7{background:#2A4A8A}.feat-head.c8{background:#475569}
+.feat-body{background:#fff;padding:10px 12px;font-size:.84em;color:#374151;line-height:1.65}
+.pe-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:12px 0;border:2px solid #1A3A6B;border-radius:10px;overflow:hidden}
+.pe-p{background:#EEF2FF;padding:14px 16px;border-right:2px solid #1A3A6B}.pe-e{background:#FFF8E1;padding:14px 16px}
+.pe-title{font-weight:700;font-size:.9em;padding:5px 9px;border-radius:5px;margin-bottom:8px;display:inline-block}
+.pe-title.p{background:#1A3A6B;color:#fff}.pe-title.e{background:#744210;color:#fff}
+.b{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:700;margin:1px}
+.b-blue{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}.b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}.b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}.b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}.b-gray{background:#E2E8F0;color:#334155;border:1px solid #CBD5E1}.b-purple{background:#EDE9FE;color:#5B21B6;border:1px solid #DDD6FE}
+.star{color:#D97706;font-size:.82em}
+
+/* ──────────────────────────────────────────
+   QUIZ
+────────────────────────────────────────── */
+.quiz-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.quiz-score{background:#0D1B4B;color:#fff;padding:6px 12px;border-radius:20px;font-size:.82em;font-weight:700}
+.quiz-card{border:1px solid #DCE7F5;border-radius:10px;padding:15px 17px;margin:11px 0;background:#FBFDFF}
+.quiz-card.correct{border-color:#86D6A3;background:#F0FFF4}.quiz-card.wrong{border-color:#FEB2B2;background:#FFF5F5}
+.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px;flex-wrap:wrap}
+.quiz-options button{border:1px solid #B8C7DA;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 14px;font-weight:700;cursor:pointer}
+.quiz-options button:hover{background:#EEF2FF}.quiz-options button:disabled{cursor:default;opacity:.75}
+.quiz-answer{display:none;margin-top:10px;padding:9px 11px;border-radius:7px;background:#fff;border:1px dashed #CBD5E1;font-size:.88em}
+.quiz-answer.show{display:block}
+.reset-btn{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:7px 13px;cursor:pointer;font-weight:700}
+
+/* ──────────────────────────────────────────
+   DETAILS / SOURCES / PRINT
+────────────────────────────────────────── */
+details{border:1px solid #DCE7F5;border-radius:8px;background:#fff;margin:8px 0;overflow:hidden}
+summary{cursor:pointer;font-weight:700;color:#1A3A6B;padding:10px 13px;background:#F8FAFE}
+details>div{padding:11px 14px;font-size:.88em}
+.source-list{font-size:.84em;color:#475569}
+.source-list li{margin-bottom:7px}
+.footer-note{text-align:center;color:#64748B;font-size:.8em;margin:24px 0 8px}
+
+@media(max-width:700px){
+  body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.section{padding:21px 18px}.section-title-bar{margin:-21px -18px 16px}
+  .two-col,.three-col,.pe-wrap{grid-template-columns:1fr}.pe-p{border-right:none;border-bottom:2px solid #1A3A6B}.toolbar .progress-label,.progress-track{display:none}
+}
+@media print{
+  body{max-width:none;padding:0;background:#fff;font-size:11px}.toolbar,.quiz-options,.reset-btn{display:none!important}.section{break-inside:avoid;box-shadow:none}.header{background:#0D1B4B!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.quiz-answer{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <span class="subject-badge">세무사 1차 · 부가가치세법 예습</span>
+  <h1>재화의 수입 · 부수 재화 및 부수 용역</h1>
+  <p>부가가치세법 제13조·제14조 <span class="freq-badge">기출 핵심: 수입의 경계 · 부수공급의 귀속</span></p>
+  <div class="meta">법령 기준일 2026.06.26 · 법 §3·§4·§13·§14·§50·§58 · 시행령 §27<br>「소득세법 총설 예습」의 학습 흐름과 2021~2025 세무사 1차 기출분석 DB를 반영한 단일 HTML 자료</div>
+</header>
+
+<nav class="toolbar" aria-label="빠른 이동">
+  <a href="#must">먼저 외울 것</a><a href="#map">전체 구조</a><a href="#article13">제13조</a><a href="#article14">제14조</a><a href="#compare">핵심 비교</a><a href="#cases">실무 사례</a><a href="#past">기출 연결</a><a href="#traps">함정</a><a href="#quiz">O/X</a><a href="#sources">근거</a>
+  <button type="button" id="expandBtn">해설 모두 열기</button>
+  <span class="progress-label">읽기 진행</span><div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+</nav>
+
+<section class="highlight-box" id="must">
+  <h2>🔥 먼저 외울 8개 결론</h2>
+  <div class="feat-grid">
+    <article class="feat-card"><div class="feat-head c1">1. 수입은 독립 과세대상</div><div class="feat-body">사업자의 재화·용역 공급과 별도로 <strong>재화의 수입 자체</strong>가 과세대상이다. <span class="tc">법 §4.2</span></div></article>
+    <article class="feat-card"><div class="feat-head c2">2. 사업자일 필요 없음</div><div class="feat-body">재화를 수입하는 자는 개인적 소비자라도 납세의무자가 될 수 있다. <span class="tc">법 §3①.2</span></div></article>
+    <article class="feat-card"><div class="feat-head c3">3. 외국 도착물품</div><div class="feat-body">외국에서 국내에 도착한 물품 중 <strong>수입신고 수리 전 물품</strong>을 국내에 반입하면 수입이다.</div></article>
+    <article class="feat-card"><div class="feat-head c4">4. 보세구역 기준</div><div class="feat-body">보세구역을 거치면 ‘국내 도착’만으로 끝나지 않고 <strong>보세구역에서 국내로 반입</strong>하는 때를 본다.</div></article>
+    <article class="feat-card"><div class="feat-head c5">5. 수출신고 물품의 되돌림</div><div class="feat-body">수출신고가 수리된 물품의 국내 반입도 원칙적으로 수입. 다만 <strong>선적 전 보세구역에서 되돌리는 경우</strong>는 제외한다.</div></article>
+    <article class="feat-card"><div class="feat-head c6">6. 제14조 ① = 포함</div><div class="feat-body">주된 공급의 대가에 통상 포함되거나 거래관행상 부수되는 것은 <strong>주된 공급에 포함</strong>한다.</div></article>
+    <article class="feat-card"><div class="feat-head c7">7. 제14조 ② = 별도 공급</div><div class="feat-body">주된 사업과 관련한 일시적 공급·필연적 부산물은 <strong>별도의 공급</strong>이지만 과세·면세 성격은 주된 사업을 따른다.</div></article>
+    <article class="feat-card"><div class="feat-head c8">8. ‘부수’는 한 종류가 아님</div><div class="feat-body"><strong>주된 공급에 부수</strong>와 <strong>주된 사업에 부수</strong>를 구별해야 별도 공급 여부를 맞힐 수 있다.</div></article>
+  </div>
+</section>
+
+<section class="section" id="map">
+  <div class="section-title-bar">1. 전체 구조 — 제13조와 제14조는 무엇을 묻는가</div>
+  <div class="two-col">
+    <div class="col-box"><h4>제13조: 국경을 넘는 재화</h4><p><strong>질문:</strong> 어느 물품을 언제 국내에 ‘수입’한 것으로 볼 것인가?</p><p class="tc">외국 도착 → 보세구역 → 국내 반입</p></div>
+    <div class="col-box"><h4>제14조: 한 거래·사업에 딸린 공급</h4><p><strong>질문:</strong> 부수 재화·용역을 주된 공급에 합칠 것인가, 별도 공급으로 볼 것인가?</p><p class="tc">주된 공급 부수 ≠ 주된 사업 부수</p></div>
+  </div>
+  <div class="flowchart">
+    <div class="flow-node">부가가치세 과세대상 검토</div><div class="flow-arrow">↓</div>
+    <div class="flow-diamond">사업자의 공급인가, 재화의 수입인가?</div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label">재화의 수입</span><div class="flow-arrow">↓</div><div class="flow-node p">법 §13의 국내 반입 여부</div></div>
+      <div class="flow-branch-item"><span class="branch-label">재화·용역의 공급</span><div class="flow-arrow">↓</div><div class="flow-node g">법 §14의 부수성 판단</div></div>
+    </div>
+  </div>
+  <div class="analogy-box"><strong>직관:</strong> 제13조는 ‘세관 문을 넘어 국내 소비권으로 들어오는가’를 보고, 제14조는 ‘딸려 온 것을 본체와 묶을지 따로 셀지’를 본다.</div>
+</section>
+
+<section class="section" id="article13">
+  <div class="section-title-bar">2. 제13조 — 재화의 수입</div>
+  <div class="law-box"><span class="lr">부가가치세법 제13조</span>재화의 수입은 다음 물품을 국내에 반입하는 것이다. 보세구역을 거치는 경우에는 보세구역에서 국내로 반입하는 것을 말한다.<br>① 외국으로부터 국내에 도착한 물품으로서 수입신고가 수리되기 전의 것<br>② 수출신고가 수리된 물품. 다만 선적되지 않은 물품을 보세구역에서 국내로 되돌리는 경우는 제외</div>
+
+  <h3>2-1. 첫 번째 유형 — 외국에서 도착한 수입신고 수리 전 물품</h3>
+  <div class="pe-wrap"><div class="pe-p"><span class="pe-title p">원칙</span><p>외국으로부터 국내에 도착한 물품 중 아직 수입신고가 수리되지 않은 물품을 국내로 반입한다.</p></div><div class="pe-e"><span class="pe-title e">명시적 포함</span><p><strong>외국 선박</strong>이 공해에서 채집하거나 잡은 수산물도 이 범주에 포함한다.</p></div></div>
+  <div class="warn-box"><strong>시험 포인트:</strong> ‘수입신고가 수리되기 전’이라는 문구가 있다고 해서 그 물품이 곧바로 수입된 것은 아니다. 제13조의 행위요건은 <strong>국내 반입</strong>이다. 보세구역을 거치면 보세구역 밖 국내로 반입하는지를 본다.</div>
+
+  <h3>2-2. 두 번째 유형 — 이미 수출신고가 수리된 물품의 국내 반입</h3>
+  <p>수출절차에 들어간 물품이라도 다시 국내로 반입하면 원칙적으로 재화의 수입이다. 다만 아직 선적되지 않은 물품을 보세구역에서 국내로 되돌리는 경우는 수입에서 제외한다.</p>
+  <div class="tw"><table><thead><tr><th>상황</th><th>제13조 판단</th><th>이유</th></tr></thead><tbody>
+    <tr><td>수출신고 수리 후 실제 선적·반출된 물품이 다시 국내로 들어옴</td><td class="diff">원칙적으로 수입</td><td>수출신고 수리 물품의 국내 반입</td></tr>
+    <tr><td>수출신고 수리 후 아직 선적하지 않고 보세구역에서 국내로 되돌림</td><td class="ok-text">수입에서 제외</td><td>법 제13조 제2호 괄호의 명시적 예외</td></tr>
+  </tbody></table></div>
+
+  <h3>2-3. 보세구역은 어디까지인가</h3>
+  <div class="law-box"><span class="lr">부가가치세법 시행령 제27조</span>법 제13조의 보세구역은 ① 「관세법」에 따른 보세구역과 ② 「자유무역지역의 지정 및 운영에 관한 법률」에 따른 자유무역지역을 말한다.</div>
+  <div class="flowchart">
+    <div class="flow-node gray">외국 물품이 국내 항만·공항 도착</div><div class="flow-arrow">↓</div>
+    <div class="flow-node o">보세구역에 장치</div><div class="flow-arrow">↓</div>
+    <div class="flow-diamond">보세구역 밖 국내로 반입하는가?</div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label">예</span><div class="flow-arrow">↓</div><div class="flow-node r">제13조상 수입</div></div>
+      <div class="flow-branch-item"><span class="branch-label">아니오</span><div class="flow-arrow">↓</div><div class="flow-node g">아직 국내 반입 아님</div></div>
+    </div>
+  </div>
+
+  <h3>2-4. 공급과 달리 사업성·독립성이 필요하지 않다</h3>
+  <div class="two-col"><div class="col-box"><h4>국내 공급</h4><p>원칙적으로 사업자가 사업상 독립적으로 공급해야 한다.</p><p class="tc">법 §3①.1, §4.1</p></div><div class="col-box"><h4>재화의 수입</h4><p>‘재화를 수입하는 자’가 납세의무자이므로 개인적 사용 목적의 수입도 과세대상이 될 수 있다.</p><p class="tc">법 §3①.2, §4.2</p></div></div>
+  <div class="ok-box"><strong>실무:</strong> 관세를 세관장에게 신고·납부하는 경우 수입 부가가치세도 함께 신고·납부하며, 수입 부가가치세는 세관장이 「관세법」에 따라 징수한다. <span class="tc">법 §50, §58②</span></div>
+  <div class="gray-box"><strong>구분 주의:</strong> 제13조상 ‘수입에 해당하는가’와 수입면세 규정에 따라 ‘세액이 면제되는가’는 별개 단계다. 견본품 등 일부 수입재화는 별도의 면세 규정을 다시 확인한다.</div>
+</section>
+
+<section class="section" id="article14">
+  <div class="section-title-bar">3. 제14조 — 부수 재화 및 부수 용역의 공급</div>
+  <h3>3-1. 제1항 — 주된 재화·용역의 공급에 부수되는 경우</h3>
+  <div class="law-box"><span class="lr">부가가치세법 제14조 제1항</span>다음 중 하나에 해당하는 부수 재화·용역은 <strong>주된 재화 또는 용역의 공급에 포함</strong>한다.<br>① 그 대가가 주된 공급의 대가에 통상적으로 포함되는 것<br>② 거래 관행상 통상 주된 공급에 부수되는 것으로 인정되는 것</div>
+  <div class="three-col">
+    <div class="col-box"><h4>대가 포함형</h4><p>별도 가격을 받지 않고 주된 공급 가격에 비용이 녹아 있다.</p><p>예: 상품 가격에 포함된 통상 포장</p></div>
+    <div class="col-box"><h4>거래관행형</h4><p>가격표상 분리 여부보다 업계 관행상 본체에 통상 딸려 제공되는지를 본다.</p><p>예: 통상적 설치·안내</p></div>
+    <div class="col-box"><h4>법적 효과</h4><p><strong>독립된 별도 공급으로 세지 않고</strong> 주된 공급에 포함하여 판단한다.</p></div>
+  </div>
+  <div class="warn-box"><strong>사실판단 요소:</strong> 계약의 목적, 별도 선택 가능성, 별도 가격, 소비자가 독립적으로 효용을 얻는지, 업계 관행, 공급시기와 제공주체를 함께 본다. 단순히 한 계약서에 적혀 있다는 이유만으로 모두 부수공급이 되지는 않는다.</div>
+
+  <h3>3-2. 제2항 — 주된 사업에 부수되는 경우</h3>
+  <div class="law-box"><span class="lr">부가가치세법 제14조 제2항</span>다음 공급은 <strong>별도의 공급</strong>으로 보되, 과세 및 면세 여부 등은 주된 사업을 따른다.<br>① 주된 사업과 관련하여 우연히 또는 일시적으로 공급되는 재화·용역<br>② 주된 재화의 생산과정이나 용역 제공과정에서 필연적으로 생기는 재화</div>
+  <div class="two-col">
+    <div class="col-box"><h4>우연·일시적 공급</h4><p>주업 자체는 아니지만 주된 사업을 운영하는 과정에서 간헐적으로 생기는 매각·제공이다.</p><p>예: 사업용 중고 기계의 일시적 매각</p></div>
+    <div class="col-box"><h4>필연적 부산물</h4><p>주된 제품을 만들거나 용역을 수행하면서 불가피하게 생기는 부산물·폐품 등이다.</p><p>예: 제조 과정의 고철·스크랩</p></div>
+  </div>
+  <div class="red-box"><strong>가장 중요한 문장:</strong> 제2항은 ‘주된 사업에 포함되는 한 번의 공급’이 아니다. <strong>별도 공급으로 인식</strong>하되, 과세·면세 성격만 주된 사업을 따라간다.</div>
+
+  <h3>3-3. 과세사업·면세사업별 결과</h3>
+  <div class="tw"><table><thead><tr><th>주된 사업</th><th>일시적 자산매각·부산물</th><th>기본 결론</th><th>추가 확인</th></tr></thead><tbody>
+    <tr><td>과세 제조업</td><td>중고 기계, 고철, 불량품</td><td class="diff">별도 과세 공급</td><td>공급가액·공급시기·세금계산서</td></tr>
+    <tr><td>면세 교육·의료 등</td><td>사업에 사용한 자산의 일시적 처분</td><td class="ok-text">원칙적으로 주된 면세사업을 따름</td><td>해당 자산이 실제 면세사업 관련인지</td></tr>
+    <tr><td>과세·면세 겸영</td><td>공통사용 자산 처분</td><td>단순 일괄판단 금지</td><td>공급가액 안분 등 별도 규정</td></tr>
+    <tr><td>주된 사업과 무관한 반복적 거래</td><td>상시 중고매매 등</td><td>부수사업으로 보기 어려움</td><td>독립된 별도 사업인지</td></tr>
+  </tbody></table></div>
+  <div class="gray-box"><strong>하위법령 확인 결과:</strong> 제13조의 ‘보세구역’은 시행령 제27조가 직접 위임을 받아 정한다. 제14조는 법률 자체가 판단기준을 정하고 있으며, 제13조·제14조를 직접 구체화하는 시행규칙 조문은 확인되지 않았다.</div>
+</section>
+
+<section class="section compare-box" id="compare">
+  <div class="section-title-bar">4. 핵심 비교표</div>
+  <h2>⚖️ 제14조 제1항 vs 제2항</h2>
+  <div class="tw"><table><thead><tr><th>구분</th><th>제14조 제1항</th><th>제14조 제2항</th></tr></thead><tbody>
+    <tr><td><strong>기준 대상</strong></td><td>주된 <strong>재화·용역의 공급</strong></td><td>주된 <strong>사업</strong></td></tr>
+    <tr><td><strong>요건</strong></td><td>대가에 통상 포함 또는 거래관행상 부수</td><td>우연·일시적 공급 또는 필연적 부산물</td></tr>
+    <tr><td><strong>별도 공급 여부</strong></td><td class="ok-text">주된 공급에 포함</td><td class="diff">별도의 공급</td></tr>
+    <tr><td><strong>과세·면세</strong></td><td>주된 공급의 성격을 따름</td><td>주된 사업의 성격을 따름</td></tr>
+    <tr><td><strong>대표 예시</strong></td><td>상품 가격에 포함된 포장·통상 배송</td><td>중고 기계 일시 매각·생산 부산물</td></tr>
+  </tbody></table></div>
+
+  <h2>⚖️ 국내 공급 vs 재화의 수입</h2>
+  <div class="tw"><table><thead><tr><th>구분</th><th>국내 재화·용역 공급</th><th>재화의 수입</th></tr></thead><tbody>
+    <tr><td>과세대상 근거</td><td>법 §4.1</td><td>법 §4.2</td></tr>
+    <tr><td>납세의무자</td><td>사업자</td><td>재화를 수입하는 자</td></tr>
+    <tr><td>사업성 필요</td><td>원칙적으로 필요</td><td class="diff">불필요</td></tr>
+    <tr><td>핵심 시점·장소</td><td>재화·용역의 공급관계</td><td>국내 반입, 보세구역 경유 시 보세구역에서 반입</td></tr>
+    <tr><td>징수</td><td>신고납부·세무서</td><td>세관장이 관세법에 따라 징수</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="section" id="cases">
+  <div class="section-title-bar">5. 실무 적용 사례</div>
+  <details><summary>사례 1. 개인이 해외 쇼핑몰에서 노트북을 사서 국내로 들여왔다.</summary><div class="detail-body"><p><strong>결론:</strong> 사업자가 아니어도 재화를 수입하는 자가 될 수 있다. 제13조상 국내 반입과 수입면세·소액면세 등 별도 관세 규정을 순서대로 검토한다.</p><p class="tc">법 §3①.2, §4.2, §13</p></div></details>
+  <details><summary>사례 2. 외국 선박이 공해에서 잡은 수산물을 국내 항구로 가져왔다.</summary><div class="detail-body"><p><strong>결론:</strong> 법 제13조 제1호가 외국 선박에 의해 공해에서 채집·포획된 수산물을 명시적으로 포함한다. 보세구역에서 국내로 반입하면 수입으로 본다.</p></div></details>
+  <details><summary>사례 3. 수출신고가 수리됐지만 선적 전 주문이 취소되어 보세구역에서 공장으로 돌려보냈다.</summary><div class="detail-body"><p><strong>결론:</strong> 아직 선적되지 않은 수출신고 수리 물품을 보세구역에서 국내로 반입하는 경우이므로 제13조 제2호의 예외에 따라 수입에서 제외한다.</p></div></details>
+  <details><summary>사례 4. 과세 제조업체가 노후 기계 한 대를 일시적으로 매각했다.</summary><div class="detail-body"><p><strong>결론:</strong> 주된 제조업과 관련한 일시적 재화 공급이다. 제14조 제2항에 따라 별도 공급이며 주된 과세사업의 성격을 따라 과세한다.</p><p><strong>증빙:</strong> 자산대장, 매각계약, 공급시기, 세금계산서 발급 여부를 확인한다.</p></div></details>
+  <details><summary>사례 5. 과세 제조공정에서 고철과 스크랩이 필연적으로 발생하여 판매했다.</summary><div class="detail-body"><p><strong>결론:</strong> 생산과정에서 필연적으로 생기는 재화이므로 별도 공급으로 보고, 과세 제조업을 따라 과세한다.</p></div></details>
+  <details><summary>사례 6. 면세 교육사업자가 교육용 차량을 교체하며 기존 차량을 일시 매각했다.</summary><div class="detail-body"><p><strong>결론:</strong> 차량이 실제 면세 교육사업에 사용된 사업용 자산이고 처분이 일시적이라면 제14조 제2항상 주된 면세사업의 성격을 따르는지 검토한다. 차량이 과세사업에도 사용되었다면 겸영·안분 규정을 추가 확인한다.</p></div></details>
+  <details><summary>사례 7. 면세 도서를 판매하면서 통상적인 포장과 배송을 가격에 포함했다.</summary><div class="detail-body"><p><strong>결론:</strong> 포장·배송이 별도 선택 가능한 독립 용역이 아니라 도서 공급대가에 통상 포함되거나 거래관행상 부수된다면 제14조 제1항에 따라 도서 공급에 포함된다.</p><p><strong>반대사례:</strong> 고객이 별도 운송계약을 체결하고 독립된 운송대가를 지급하면 독립 용역인지 다시 판단한다.</p></div></details>
+  <details><summary>사례 8. 농민이 농지 개량 과정에서 생긴 토사석을 일시적으로 판매했다.</summary><div class="detail-body"><p><strong>결론:</strong> 기출에서는 주된 농업과 관련해 우연·일시적으로 발생한 공급으로 다루었다. 주된 면세사업을 따르는 부수공급인지 사실관계를 확인한다. 토사석 판매가 반복·상시화되어 독립 사업이 되면 결론이 달라질 수 있다.</p></div></details>
+  <div class="warn-box"><strong>실무 체크리스트:</strong> ① 물품이 어디에서 어디로 이동했는가 → ② 보세구역을 거쳤는가 → ③ 수출·수입신고 상태는 무엇인가 → ④ 부수공급이면 ‘주된 공급’에 부수인가 ‘주된 사업’에 부수인가 → ⑤ 일시성·필연성 증빙이 있는가 → ⑥ 주된 사업이 과세·면세·겸영 중 무엇인가.</div>
+</section>
+
+<section class="section" id="past">
+  <div class="section-title-bar">6. 기출분석 DB 연결 — 문제를 이렇게 읽기</div>
+  <p>업로드된 세무사 1차 기출분석 DB에서 제13조·제14조와 직접 또는 밀접하게 연결되는 문항을 재구성했다.</p>
+  <div class="tw"><table><thead><tr><th>연도·문항</th><th>출제 소재</th><th>이번 파트의 결론</th></tr></thead><tbody>
+    <tr><td>2021년 76번</td><td>재화 수입 시 관세와 수입 부가가치세 신고·납부</td><td>관세를 세관장에게 신고·납부하는 경우 수입 VAT도 함께 신고·납부 <span class="tc">법 §50</span></td></tr>
+    <tr><td>2022년 72번</td><td>외국에서 도착한 수입신고 수리 전 물품의 국내 반입</td><td class="diff">재화의 수입으로 과세대상</td></tr>
+    <tr><td>2022년 74번</td><td>수입 견본품·광고용 물품의 면세</td><td>먼저 §13상 수입 여부 판단 후, 별도 수입면세 규정을 적용</td></tr>
+    <tr><td>2023년 74번</td><td>농지 개량 과정에서 생긴 토사석의 일시적 판매</td><td>주된 농업에 부수된 일시적 공급의 과세·면세 귀속이 핵심</td></tr>
+    <tr><td>2023년 79번</td><td>수입신고 수리 전 보세물품의 외국 반출</td><td>보세구역 밖 국내 반입 전이므로 수입과 수출의 경계를 함께 판단</td></tr>
+  </tbody></table></div>
+  <div class="ok-box"><strong>기출 독해법:</strong> ‘과세대상인가?’를 묻는 문항은 먼저 공급과 수입을 나눈다. 부수공급 문항에서는 곧바로 과세·면세를 고르지 말고, <strong>① 별도 공급 여부 → ② 주된 공급·사업의 세법상 성격</strong> 순서로 푼다.</div>
+  <p class="footnote">※ 과거 기출은 당시 시행 법령을 전제로 한다. 본 자료는 2026.06.26 현재 확인한 법령 체계에 맞추어 학습용으로 정리했다.</p>
+</section>
+
+<section class="section trap-box" id="traps">
+  <div class="section-title-bar">7. 시험 직전 오답 함정 10선</div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“재화의 수입은 사업자가 사업상 수입한 경우에만 과세된다.”<br><strong>아니다.</strong> 개인적 소비를 위한 수입도 과세대상이 될 수 있다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“외국 물품이 국내 항만에 도착하면 즉시 제13조상 수입이 완성된다.”<br><strong>아니다.</strong> 보세구역을 거치면 보세구역에서 국내로 반입하는지를 본다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“수출신고가 수리된 물품은 다시 국내로 들어와도 수입이 아니다.”<br><strong>아니다.</strong> 원칙적으로 수입이며 선적 전 되돌림만 명시적 예외다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“외국 선박이 공해에서 잡은 수산물은 외국 영토에서 생산된 것이 아니므로 수입이 아니다.”<br><strong>아니다.</strong> 법 제13조 제1호가 명시적으로 포함한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“제14조의 모든 부수공급은 별도의 공급으로 보지 않는다.”<br><strong>아니다.</strong> 제2항의 주된 사업 부수공급은 별도 공급이다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“사업용 중고기계를 일시 매각하면 주된 제조제품 공급에 포함된다.”<br><strong>아니다.</strong> 주된 사업에 부수되는 별도 공급이다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“면세사업자가 사업용 자산을 팔면 자산 자체가 과세재화이므로 항상 과세된다.”<br><strong>아니다.</strong> 제14조 제2항의 부수공급에 해당하면 주된 면세사업을 따를 수 있다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“주된 공급과 같은 계약서에 적힌 모든 항목은 부수공급이다.”<br><strong>아니다.</strong> 대가 포함성·거래관행·독립 효용 등을 사실판단한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“부산물은 공급가액과 공급시기를 따로 검토할 필요가 없다.”<br><strong>아니다.</strong> 제14조 제2항은 별도 공급이므로 관련 규정을 별도로 적용한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“제13조상 수입이면 언제나 세액을 납부한다.”<br><strong>아니다.</strong> 수입에 해당한 뒤 별도의 수입면세 규정을 적용할 수 있다.</div></div>
+</section>
+
+<section class="section" id="quiz">
+  <div class="section-title-bar">8. 바로 확인하는 O/X 12문제</div>
+  <div class="quiz-head"><p>버튼을 누르면 즉시 정답과 법적 이유가 표시됩니다.</p><div class="quiz-score" id="quizScore">정답 0 / 풀이 0</div></div>
+  <div id="quizList"></div>
+  <button type="button" class="reset-btn" id="resetQuiz">다시 풀기</button>
+</section>
+
+<section class="section" id="sources">
+  <div class="section-title-bar">9. 법조항 근거 색인·자료 출처</div>
+  <div class="tw"><table><thead><tr><th>학습 논점</th><th>직접 근거</th></tr></thead><tbody>
+    <tr><td>재화를 수입하는 자의 납세의무</td><td>부가가치세법 제3조 제1항 제2호</td></tr>
+    <tr><td>재화의 수입이 독립 과세대상</td><td>부가가치세법 제4조 제2호</td></tr>
+    <tr><td>재화 수입의 범위</td><td>부가가치세법 제13조</td></tr>
+    <tr><td>보세구역의 범위</td><td>부가가치세법 시행령 제27조</td></tr>
+    <tr><td>주된 공급·주된 사업의 부수공급</td><td>부가가치세법 제14조</td></tr>
+    <tr><td>수입 부가가치세 신고·납부</td><td>부가가치세법 제50조</td></tr>
+    <tr><td>수입 부가가치세 징수권자</td><td>부가가치세법 제58조 제2항</td></tr>
+  </tbody></table></div>
+  <ul class="source-list">
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제13조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제13조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제14조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제14조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제27조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 시행령 제27조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제3조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제3조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제4조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제4조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제50조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제50조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제58조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제58조</a></li>
+    <li>업로드 자료: 「소득세법_총설_예습.html」 — 시각 체계·학습 순서·상호작용 형식 참고</li>
+    <li>업로드 자료: 「세무사1차 세법학개론 기출분석DB.md」 — 2021~2025 기출 소재와 함정 문장 참고</li>
+  </ul>
+  <div class="gray-box"><strong>해석 유의사항</strong><br>본 자료는 조문 구조와 시험 논점을 빠르게 익히기 위한 예습자료다. 실제 신고에서는 관세법상 통관상태, 수입면세, 보세거래, 겸영사업 안분, 공급시기와 증빙을 함께 확인해야 한다. 특히 ‘일시적’·‘부수적’ 판단에는 법정 횟수 기준이 없으므로 거래의 반복성, 독립성, 계약구조와 회계처리를 종합한다.</div>
+</section>
+
+<div class="footer-note">부가가치세법 제13조·제14조 「재화의 수입·부수공급」 예습자료<br>법령 기준일 2026.06.26 · 세무사 1차 기출분석 연계</div>
+
+<script>
+const quizData = [
+  {q:'1. 재화의 수입은 사업자가 사업상 독립적으로 수입한 경우에만 부가가치세 과세대상이 된다.', a:false, e:'X. 법 제3조 제1항 제2호와 제4조 제2호에 따라 재화를 수입하는 자가 납세의무자이며, 사업자일 필요는 없습니다.'},
+  {q:'2. 외국으로부터 국내에 도착한 수입신고 수리 전 물품을 보세구역에서 국내로 반입하면 재화의 수입이다.', a:true, e:'O. 법 제13조 제1호의 전형적인 재화 수입입니다.'},
+  {q:'3. 외국 선박이 공해에서 잡은 수산물은 재화의 수입 범위에서 제외된다.', a:false, e:'X. 법 제13조 제1호가 외국 선박에 의해 공해에서 채집되거나 잡힌 수산물을 명시적으로 포함합니다.'},
+  {q:'4. 수출신고가 수리된 물품은 어떤 경우에도 다시 수입으로 볼 수 없다.', a:false, e:'X. 국내로 반입하면 원칙적으로 수입입니다. 다만 선적되지 않은 물품을 보세구역에서 되돌리는 경우는 제외합니다.'},
+  {q:'5. 법 제13조의 보세구역에는 관세법상 보세구역과 자유무역지역이 포함된다.', a:true, e:'O. 부가가치세법 시행령 제27조가 두 구역을 규정합니다.'},
+  {q:'6. 개인이 개인적 사용 목적으로 과세물품을 수입하면 부가가치세 납세의무가 생길 수 있다.', a:true, e:'O. 수입의 납세의무는 사업자 여부와 별개입니다.'},
+  {q:'7. 주된 공급의 대가에 통상 포함되는 부수 용역은 주된 공급과 별개의 공급으로 본다.', a:false, e:'X. 법 제14조 제1항에 따라 주된 재화 또는 용역의 공급에 포함합니다.'},
+  {q:'8. 주된 사업과 관련하여 일시적으로 중고 기계를 매각하는 것은 별도의 공급으로 본다.', a:true, e:'O. 법 제14조 제2항 제1호에 따라 별도 공급으로 보되 과세·면세 여부 등은 주된 사업을 따릅니다.'},
+  {q:'9. 과세 제조과정에서 필연적으로 생긴 고철을 판매하면 주된 과세사업의 성격을 따른다.', a:true, e:'O. 법 제14조 제2항 제2호의 필연적 부산물에 해당하며 별도 과세 공급으로 봅니다.'},
+  {q:'10. 제14조 제1항과 제2항은 모두 부수 재화·용역을 주된 공급에 포함하므로 별도 공급이 아니다.', a:false, e:'X. 제1항은 주된 공급에 포함하지만, 제2항은 별도의 공급으로 봅니다.'},
+  {q:'11. 수입에 해당하면 수입면세 규정을 별도로 검토할 필요가 없다.', a:false, e:'X. 과세대상인 수입에 해당하는지와 면세 적용 여부는 별개의 판단 단계입니다.'},
+  {q:'12. 면세사업자가 면세사업에만 사용한 자산을 일시적으로 처분하는 경우 제14조 제2항상 주된 면세사업을 따르는지 검토해야 한다.', a:true, e:'O. 다만 과세사업과 공통사용한 자산이면 겸영사업 관련 안분규정을 추가로 확인해야 합니다.'}
+];
+
+const list = document.getElementById('quizList');
+let solved = 0, correct = 0;
+function renderQuiz(){
+  solved=0; correct=0; list.innerHTML=''; updateScore();
+  quizData.forEach((item)=>{
+    const card=document.createElement('div'); card.className='quiz-card';
+    card.innerHTML=`<div class="quiz-q">${item.q}</div><div class="quiz-options"><button type="button" data-v="true">O</button><button type="button" data-v="false">X</button></div><div class="quiz-answer"></div>`;
+    const ans=card.querySelector('.quiz-answer');
+    card.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+      if(card.dataset.done) return;
+      card.dataset.done='1'; solved++;
+      const chosen=btn.dataset.v==='true';
+      const ok=chosen===item.a; if(ok) correct++;
+      card.classList.add(ok?'correct':'wrong');
+      ans.textContent=(ok?'정답입니다. ':'오답입니다. ')+item.e; ans.classList.add('show');
+      card.querySelectorAll('button').forEach(b=>b.disabled=true); updateScore();
+    }));
+    list.appendChild(card);
+  });
+}
+function updateScore(){document.getElementById('quizScore').textContent=`정답 ${correct} / 풀이 ${solved}`}
+document.getElementById('resetQuiz').addEventListener('click',renderQuiz);
+renderQuiz();
+
+let allOpen=false;
+document.getElementById('expandBtn').addEventListener('click',e=>{
+  allOpen=!allOpen; document.querySelectorAll('details').forEach(d=>d.open=allOpen);
+  e.currentTarget.textContent=allOpen?'해설 모두 닫기':'해설 모두 열기';
+});
+
+const progressBar=document.getElementById('progressBar');
+function updateProgress(){
+  const doc=document.documentElement;
+  const max=doc.scrollHeight-doc.clientHeight;
+  const pct=max>0?(doc.scrollTop/max)*100:0;
+  progressBar.style.width=Math.min(100,Math.max(0,pct))+'%';
+}
+document.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
+</script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제11조·제12조 — 용역의 공급 | 세무사 1차 예습자료</title>
+<style>
+/* ──────────────────────────────────────────
+   BASE — 소득세법 총설 예습자료의 시각 체계 계승
+────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#FAFAFA;color:#1A1A2E;
+  font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  font-size:14px;line-height:1.85;
+  max-width:1060px;margin:0 auto;padding:24px
+}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px}
+h2{color:#1A3A6B;font-size:1.14em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+h3{color:#2C5282;font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}
+ul,ol{padding-left:20px;margin-bottom:8px}
+li{margin-bottom:4px;line-height:1.75}
+a{color:#1A56A8;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#1A1A2E}
+button{font:inherit}
+
+/* ──────────────────────────────────────────
+   HEADER
+────────────────────────────────────────── */
+.header{
+  background:linear-gradient(135deg,#0D1B4B,#1A3A6B);
+  color:#fff;padding:32px 40px;border-radius:14px;margin-bottom:16px;
+  box-shadow:0 10px 28px rgba(13,27,75,.15)
+}
+.subject-badge{
+  background:rgba(255,255,255,.2);color:#fff;
+  padding:4px 16px;border-radius:20px;
+  font-size:.82em;display:inline-block;margin-bottom:11px
+}
+.header h1{color:#fff;font-size:1.84em}
+.header .meta{font-size:.8em;opacity:.9;margin-top:7px;line-height:1.65}
+.freq-badge{
+  display:inline-block;font-size:.8em;font-weight:700;
+  padding:2px 10px;border-radius:12px;
+  background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px
+}
+
+/* ──────────────────────────────────────────
+   TOOLBAR / NAV
+────────────────────────────────────────── */
+.toolbar{
+  position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;
+  box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px
+}
+.toolbar a,.toolbar button{
+  border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;
+  padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer
+}
+.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}
+.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}
+.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+
+/* ──────────────────────────────────────────
+   SECTION WRAPPERS
+────────────────────────────────────────── */
+.section{
+  margin:20px 0;padding:24px 28px;
+  border-radius:12px;border:1px solid #E8ECF0;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)
+}
+.section-title-bar{
+  background:linear-gradient(90deg,#1A3A6B,#2C5282);
+  color:#fff;padding:9px 16px;border-radius:8px;
+  font-size:1.03em;font-weight:700;
+  margin:-24px -28px 18px;letter-spacing:.02em
+}
+.sub-block{
+  background:#F8FAFE;border:1px solid #DCE7F5;
+  border-radius:8px;padding:14px 18px;margin:12px 0
+}
+.sub-block h3{margin-top:0;color:#1A3A6B}
+
+/* ──────────────────────────────────────────
+   SPECIAL BOXES
+────────────────────────────────────────── */
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}
+.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}
+.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+.law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:0 8px 8px 0;padding:11px 15px;margin:9px 0;font-size:.88em;line-height:1.78}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.gray-box{background:#F8FAFC;border:1px solid #CBD5E1;border-left:4px solid #64748B;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.lr{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;font-weight:700;color:#1A3A6B;display:block;margin-bottom:3px}
+
+/* ──────────────────────────────────────────
+   TABLE
+────────────────────────────────────────── */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid #E2E8F0;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#EEF2FF;color:#1A3A6B;padding:10px 13px;text-align:left;font-weight:700;font-size:.87em;border-bottom:2px solid #C3D4F0;white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+tr:hover td{background:#FAFBFF}
+.diff{color:#C53030;font-weight:700}.ok-text{color:#276749;font-weight:700}
+.hl{background:#FFFBEB!important}.center{text-align:center}
+.tc{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.84em;color:#1A3A6B}
+.no-wrap{white-space:nowrap}
+
+/* ──────────────────────────────────────────
+   FLOWCHART
+────────────────────────────────────────── */
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:16px 0}
+.flow-node{background:#1A3A6B;color:#fff;padding:9px 24px;border-radius:8px;font-size:.87em;font-weight:700;text-align:center;min-width:210px;max-width:520px;line-height:1.45}
+.flow-node.g{background:#276749}.flow-node.r{background:#9B2335}.flow-node.o{background:#744210}.flow-node.gray{background:#4A5568}.flow-node.p{background:#5A2D82}
+.flow-diamond{background:#744210;color:#fff;padding:7px 20px;border-radius:50px;font-size:.84em;font-weight:700;text-align:center;max-width:420px}
+.flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+.flow-branch{display:flex;gap:20px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px;max-width:270px}
+.branch-label{font-size:.79em;color:#718096;font-weight:700}
+
+/* ──────────────────────────────────────────
+   CARDS / MISC
+────────────────────────────────────────── */
+.trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+.trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
+.col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+.col-box h4{margin-top:0;color:#1A3A6B}
+.key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.footnote{color:#718096;font-size:.82em;margin-top:8px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:11px;margin:13px 0}
+.feat-card{border-radius:9px;overflow:hidden;border:1px solid #E2E8F0;background:#fff}
+.feat-head{padding:8px 12px;font-weight:700;font-size:.86em;color:#fff}
+.feat-head.c1{background:#1A3A6B}.feat-head.c2{background:#276749}.feat-head.c3{background:#744210}.feat-head.c4{background:#5A2D82}.feat-head.c5{background:#9B2335}.feat-head.c6{background:#2C7A7B}.feat-head.c7{background:#2A4A8A}.feat-head.c8{background:#475569}
+.feat-body{background:#fff;padding:10px 12px;font-size:.84em;color:#374151;line-height:1.65}
+.pe-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:12px 0;border:2px solid #1A3A6B;border-radius:10px;overflow:hidden}
+.pe-p{background:#EEF2FF;padding:14px 16px;border-right:2px solid #1A3A6B}.pe-e{background:#FFF8E1;padding:14px 16px}
+.pe-title{font-weight:700;font-size:.9em;padding:5px 9px;border-radius:5px;margin-bottom:8px;display:inline-block}
+.pe-title.p{background:#1A3A6B;color:#fff}.pe-title.e{background:#744210;color:#fff}
+.b{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:700;margin:1px}
+.b-blue{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}.b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}.b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}.b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}.b-gray{background:#E2E8F0;color:#334155;border:1px solid #CBD5E1}.b-purple{background:#EDE9FE;color:#5B21B6;border:1px solid #DDD6FE}
+.star{color:#D97706;font-size:.82em}
+
+/* ──────────────────────────────────────────
+   QUIZ
+────────────────────────────────────────── */
+.quiz-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.quiz-score{background:#0D1B4B;color:#fff;padding:6px 12px;border-radius:20px;font-size:.82em;font-weight:700}
+.quiz-card{border:1px solid #DCE7F5;border-radius:10px;padding:15px 17px;margin:11px 0;background:#FBFDFF}
+.quiz-card.correct{border-color:#86D6A3;background:#F0FFF4}.quiz-card.wrong{border-color:#FEB2B2;background:#FFF5F5}
+.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px;flex-wrap:wrap}
+.quiz-options button{border:1px solid #B8C7DA;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 14px;font-weight:700;cursor:pointer}
+.quiz-options button:hover{background:#EEF2FF}.quiz-options button:disabled{cursor:default;opacity:.75}
+.quiz-answer{display:none;margin-top:10px;padding:9px 11px;border-radius:7px;background:#fff;border:1px dashed #CBD5E1;font-size:.88em}
+.quiz-answer.show{display:block}
+.reset-btn{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:7px 13px;cursor:pointer;font-weight:700}
+
+/* ──────────────────────────────────────────
+   DETAILS / SOURCES / PRINT
+────────────────────────────────────────── */
+details{border:1px solid #DCE7F5;border-radius:8px;background:#fff;margin:8px 0;overflow:hidden}
+summary{cursor:pointer;font-weight:700;color:#1A3A6B;padding:10px 13px;background:#F8FAFE}
+details>div{padding:11px 14px;font-size:.88em}
+.source-list{font-size:.84em;color:#475569}
+.source-list li{margin-bottom:7px}
+.footer-note{text-align:center;color:#64748B;font-size:.8em;margin:24px 0 8px}
+
+@media(max-width:700px){
+  body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.section{padding:21px 18px}.section-title-bar{margin:-21px -18px 16px}
+  .two-col,.three-col,.pe-wrap{grid-template-columns:1fr}.pe-p{border-right:none;border-bottom:2px solid #1A3A6B}.toolbar .progress-label,.progress-track{display:none}
+}
+@media print{
+  body{max-width:none;padding:0;background:#fff;font-size:11px}.toolbar,.quiz-options,.reset-btn{display:none!important}.section{break-inside:avoid;box-shadow:none}.header{background:#0D1B4B!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.quiz-answer{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<div class="header" id="top">
+  <div class="subject-badge">부가가치세법 — 과세거래</div>
+  <h1>용역의 공급</h1>
+  <div class="meta">
+    세무사 1차 예습자료 &nbsp;|&nbsp;
+    부가가치세법 §11·§12 / 시행령 §25·§26 / 과세표준 §29④<br>
+    자료 기준일: 2026.06.26 &nbsp;|&nbsp; 현행 법령과 2021~2025 세무사 1차 기출분석 DB 반영
+    <span class="freq-badge">🔴 ‘과세대상·공급’은 부가가치세법 최빈출 축</span>
+  </div>
+</div>
+
+<nav class="toolbar" aria-label="빠른 이동">
+  <a href="#map">판단지도</a><a href="#art11">§11</a><a href="#art12">§12</a><a href="#decree">시행령</a><a href="#compare">핵심비교</a><a href="#cases">실무사례</a><a href="#past">기출연결</a><a href="#traps">함정</a><a href="#quiz">O/X</a><a href="#sources">근거</a>
+  <button type="button" id="expandBtn">해설 모두 열기</button>
+  <span class="progress-label">읽기 진행률</span><div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+</nav>
+
+<!-- ════════════════ 최빈출 포인트 ════════════════ -->
+<section class="section highlight-box">
+  <h2>🔥 먼저 외울 8개 결론</h2>
+  <ol>
+    <li><strong>용역의 공급</strong>은 계약상·법률상 모든 원인에 따른 <strong>역무 제공</strong> 또는 <strong>시설물·권리 등 재화의 사용 허용</strong>이다(§11①).</li>
+    <li>건설사업자가 자재의 전부 또는 일부를 부담해도 <strong>건설용역</strong>이다. 자재가 들어갔다고 곧바로 재화 공급이 되지 않는다. <span class="star">★★★</span></li>
+    <li>주요자재를 전혀 부담하지 않고 상대방 재화를 단순 가공하는 것은 <strong>가공용역</strong>이다. <span class="star">★★★</span></li>
+    <li>산업상·상업상·과학상의 지식·경험·숙련 정보 제공은 <strong>용역의 공급</strong> 범위에 들어간다. 다만 <strong>무상공급인지</strong>는 §12에서 다시 판단한다. <span class="star">★★★</span></li>
+    <li><strong>용역의 자가공급</strong>은 법률상 과세 가능 조항이 있으나, 현행 시행령에 과세대상 범위가 별도로 정해져 있지 않아 실무상 과세하지 않는 것으로 정리한다. <span class="star">★★★</span></li>
+    <li><strong>타인에게 무상으로 제공한 용역</strong>은 원칙적으로 공급이 아니다. 예외는 특수관계인에게 제공한 <strong>사업용 부동산 무상임대</strong> 등 시행령상 용역이다. <span class="star">★★★</span></li>
+    <li><strong>특수관계인 저가임대</strong>는 무상공급 예외가 아니라 이미 대가가 있는 실제 공급이다. 조세부담을 부당하게 줄이면 <strong>시가가 공급가액</strong>이 될 수 있다. <span class="star">★★★</span></li>
+    <li><strong>고용관계에 따른 근로 제공</strong>은 용역의 공급이 아니다. 직원 급여에는 부가가치세를 붙이지 않는다(§12③).</li>
+  </ol>
+</section>
+
+<!-- ════════════════ 판단지도 ════════════════ -->
+<section class="section" id="map">
+  <div class="section-title-bar">1. 용역 거래 판단지도 — 5단계로 끝내기</div>
+  <div class="flowchart">
+    <div class="flow-node"><strong>① 경제적 행위 확인</strong><br>역무 제공인가, 시설물·권리 등을 사용하게 하는가?</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-diamond"><strong>고용관계에 따른 근로인가?</strong></div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label b-red">YES</span><br><strong>공급 아님</strong><br>§12③</div>
+      <div class="flow-branch-item"><span class="branch-label b-green">NO</span><br>다음 단계</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-diamond"><strong>대가를 받는가?</strong></div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label b-green">YES</span><br><strong>원칙: 실제 공급</strong><br>§11<br><small>특수관계인 저가거래는 §29④ 시가 검토</small></div>
+      <div class="flow-branch-item"><span class="branch-label b-orange">NO</span><br>자가공급인지, 타인 무상공급인지 구분</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label b-purple">자기 사업에 사용</span><br>§12①<br><strong>현행 시행령상 과세대상 범위 없음</strong></div>
+      <div class="flow-branch-item"><span class="branch-label b-blue">타인에게 제공</span><br>§12②<br>원칙: 공급 아님<br><strong>특수관계인 사업용 부동산 무상임대만 예외 검토</strong></div>
+    </div>
+  </div>
+  <div class="warn-box"><strong>시험 순서:</strong> 먼저 §11에서 ‘용역의 성질’을 확인하고, 그다음 §12에서 ‘무상·자가·고용’ 특례를 적용한다. <strong>시행령 §25에 들어간다고 무조건 과세되는 것은 아니다.</strong></div>
+</section>
+
+<!-- ════════════════ 제11조 ════════════════ -->
+<section class="section" id="art11">
+  <div class="section-title-bar">2. 부가가치세법 제11조 — 실제 용역의 공급</div>
+  <div class="law-box">
+    <strong>법 §11①의 구조</strong><br>
+    계약상 또는 법률상의 모든 원인에 따라<br>
+    ① <strong>역무를 제공</strong>하거나<br>
+    ② <strong>시설물·권리 등 재화를 사용하게 하는 것</strong>
+  </div>
+
+  <div class="two-col">
+    <div class="col-box">
+      <h3>① 역무 제공</h3>
+      <p>사람이나 조직이 일정한 일을 수행해 상대방에게 경제적 효용을 주는 경우다.</p>
+      <ul>
+        <li>운송·보관·수리·설계·광고·자문</li>
+        <li>건설·가공·교육·의료·숙박·음식</li>
+        <li>프로그램 개발·유지보수·중개</li>
+      </ul>
+    </div>
+    <div class="col-box">
+      <h3>② 사용하게 하는 것</h3>
+      <p>소유권은 넘기지 않고 일정 기간 이용·수익할 수 있게 하는 경우다.</p>
+      <ul>
+        <li>건물·기계·차량 임대</li>
+        <li>특허권·상표권·저작권 사용허락</li>
+        <li>시설 이용권 부여</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="compare-box">
+    <h3>재화와 용역의 경계: 권리의 ‘양도’와 ‘사용허락’</h3>
+    <div class="tw"><table>
+      <thead><tr><th>거래</th><th>분류</th><th>판단 이유</th></tr></thead>
+      <tbody>
+        <tr><td>특허권 자체를 영구 양도</td><td><span class="b-blue">재화의 공급</span></td><td>재산적 가치가 있는 권리의 소유권적 지위를 넘김</td></tr>
+        <tr><td>특허권을 2년간 사용하게 함</td><td><span class="b-green">용역의 공급</span></td><td>권리를 사용하게 하는 거래</td></tr>
+        <tr><td>기계장치를 매각</td><td><span class="b-blue">재화의 공급</span></td><td>재화의 인도·양도</td></tr>
+        <tr><td>기계장치를 월 임대료로 대여</td><td><span class="b-green">용역의 공급</span></td><td>시설물을 사용하게 함</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <details>
+    <summary>시험 확장: ‘대가의 명칭’보다 실제 반대급부를 본다</summary>
+    <div>
+      임대료, 수수료, 관리비, 사용료, 로열티처럼 이름이 달라도 실제로 역무나 사용권의 반대급부라면 용역 대가가 될 수 있다. 반대로 순수한 손해배상금이나 대가관계 없는 회비는 용역 대가가 아니다. 계약서 명칭만으로 결론내리지 말고 <strong>무엇을 해 주었고, 그 금액이 그 행위의 대가인지</strong>를 확인한다.
+    </div>
+  </details>
+</section>
+
+<!-- ════════════════ 시행령 25 ════════════════ -->
+<section class="section" id="decree">
+  <div class="section-title-bar">3. 시행령 제25조 — 반드시 용역으로 보는 3가지</div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-head">1. 자재 부담 건설</div><div class="feat-body">건설사업자가 건설자재의 <strong>전부 또는 일부</strong>를 부담해도 건설업 거래는 용역의 공급으로 본다.</div></div>
+    <div class="feat-card"><div class="feat-head">2. 단순 가공</div><div class="feat-body">가공업자가 <strong>주요자재를 전혀 부담하지 않고</strong> 상대방 재화를 단순 가공만 해 주면 가공용역이다.</div></div>
+    <div class="feat-card"><div class="feat-head">3. 노하우 정보</div><div class="feat-body">산업상·상업상·과학상의 <strong>지식·경험·숙련 정보</strong>를 제공하는 것은 용역의 공급이다.</div></div>
+  </div>
+
+  <div class="red-box">
+    <strong>중요한 2단계 판단</strong><br>
+    시행령 §25는 해당 행위가 ‘용역’이라는 점을 정한다. 그러나 실제 과세 여부는 <strong>대가 유무와 §12 특례</strong>를 다시 적용해야 한다.<br>
+    예: 특수관계인에게 노하우를 <strong>무상</strong> 제공 → 행위의 성질은 용역이지만, 사업용 부동산 임대가 아니므로 원칙적으로 공급으로 보지 않는다.
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>사례</th><th>결론</th><th>시험 포인트</th></tr></thead>
+    <tbody>
+      <tr><td>시공사가 시멘트와 철근 일부를 부담하여 건물 시공</td><td>건설용역</td><td>자재 포함을 이유로 재화 공급이라 하지 않음</td></tr>
+      <tr><td>발주자가 원단 전부 제공, 가공업자가 봉제만 수행</td><td>가공용역</td><td>주요자재를 전혀 부담하지 않는 단순 가공</td></tr>
+      <tr><td>제조기술·영업비법을 대가 받고 제공</td><td>용역 공급</td><td>무형 정보도 시행령상 명시</td></tr>
+      <tr><td>완성품을 자기 재료로 만들어 납품</td><td>거래 실질 검토</td><td>단순 가공과 달리 재화 공급 가능성이 큼</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ════════════════ 제12조 ════════════════ -->
+<section class="section" id="art12">
+  <div class="section-title-bar">4. 부가가치세법 제12조 — 자가·무상·고용 특례</div>
+
+  <h3>4-1. 용역의 자가공급 — 법률상 근거와 현행 실무</h3>
+  <div class="law-box">
+    사업자가 자신의 용역을 자기 사업을 위하여 무상 공급해 다른 사업자와의 과세형평이 침해되면 자기에게 공급한 것으로 본다. 다만 구체적 범위는 대통령령에 위임한다(§12①).
+  </div>
+  <div class="ok-box">
+    <strong>현행 정리:</strong> 시행령에 과세대상 자가공급의 구체적 범위가 별도로 정해져 있지 않으므로, 현재는 용역의 자가공급에 부가가치세를 과세하지 않는 것으로 학습한다.
+  </div>
+  <ul>
+    <li>사업장 내 사용인에게 음식용역을 무상 제공</li>
+    <li>본점의 인력이 같은 법인의 지점 업무를 지원</li>
+    <li>자체 수리팀이 자기 사업용 설비를 수리</li>
+  </ul>
+  <p class="footnote">※ ‘법에 자가공급 조항이 있으니 항상 과세’라고 답하면 틀리기 쉽다. 법률의 위임과 현행 시행령의 규정 유무를 함께 본다.</p>
+
+  <h3>4-2. 타인에 대한 무상공급 — 원칙과 유일한 핵심 예외</h3>
+  <div class="two-col">
+    <div class="col-box">
+      <h4>원칙</h4>
+      <p>사업자가 타인에게 용역을 대가 없이 제공하면 <strong>용역의 공급으로 보지 않는다</strong>(§12② 본문).</p>
+      <ul>
+        <li>무료 자문</li>
+        <li>무료 수리</li>
+        <li>무료 노하우 제공</li>
+      </ul>
+    </div>
+    <div class="col-box">
+      <h4>예외</h4>
+      <p>특수관계인에게 <strong>사업용 부동산 임대용역</strong>을 무상 제공하면 공급으로 본다(§12② 단서, 영 §26).</p>
+      <ul>
+        <li>대표자 지배 관계회사에 사무실 무상임대</li>
+        <li>특수관계 법인에 창고 무상사용 허용</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <strong>시행령 §26의 예외 제외:</strong> 산학협력단과 대학 사이의 사업용 부동산 임대, 그리고 법령이 정한 공공주택사업자와 일정 부동산투자회사 사이의 임대는 무상임대 공급의제 대상에서 제외된다. 실제 적용 시에는 당사자 자격과 법정 요건을 확인해야 한다.
+  </div>
+
+  <h3>4-3. 고용관계에 따른 근로 — 공급 아님</h3>
+  <div class="gray-box">
+    직원이 회사의 지휘·감독 아래 근로하고 급여를 받는 것은 부가가치세법상 용역의 공급이 아니다(§12③). 반면 독립된 사업자가 자기 책임으로 용역을 제공하면 §11의 용역 공급이 될 수 있다.
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>구분</th><th>근로자</th><th>독립 사업자·프리랜서</th></tr></thead>
+    <tbody>
+      <tr><td>관계</td><td>고용계약, 사용자 지휘·감독</td><td>도급·위임·용역계약, 독립 수행</td></tr>
+      <tr><td>부가가치세</td><td>용역 공급 아님</td><td>원칙적으로 용역 공급 검토</td></tr>
+      <tr><td>판단</td><td>계약 명칭보다 실질적 종속성</td><td>사업상 독립성·자기 책임·계속성 등 검토</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ════════════════ 비교 ════════════════ -->
+<section class="section" id="compare">
+  <div class="section-title-bar">5. 가장 많이 틀리는 비교표</div>
+
+  <h3>5-1. 특수관계인 부동산 임대: 정상가·저가·무상</h3>
+  <div class="tw"><table>
+    <thead><tr><th>거래 형태</th><th>공급 여부</th><th>공급가액 핵심</th></tr></thead>
+    <tbody>
+      <tr><td>정상가 임대</td><td>§11 실제 공급</td><td>받기로 한 임대료 등</td></tr>
+      <tr><td>부당하게 낮은 대가의 임대</td><td>§11 실제 공급</td><td>특수관계 + 부당한 세부담 감소이면 §29④에 따라 시가</td></tr>
+      <tr><td>특수관계인에게 무상임대</td><td>§12② 단서 공급의제</td><td>§29④에 따라 시가</td></tr>
+      <tr><td>비특수관계인에게 무상임대</td><td>원칙적으로 공급 아님</td><td>과세표준 없음</td></tr>
+      <tr><td>특수관계인에게 무료 컨설팅</td><td>원칙적으로 공급 아님</td><td>부동산 임대 예외에 해당하지 않음</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>5-2. 재화의 무상제공과 용역의 무상제공</h3>
+  <div class="pe-wrap">
+    <div class="pe-p">
+      <div class="pe-title">재화</div>
+      <p>사업상 증여·개인적 공급 등은 법 §10에 따라 공급의제될 수 있다.</p>
+      <p><strong>예:</strong> 고객 추첨 경품</p>
+    </div>
+    <div class="pe-e">
+      <div class="pe-title">용역</div>
+      <p>타인에 대한 무상공급은 원칙적으로 공급이 아니다.</p>
+      <p><strong>예외:</strong> 특수관계인 사업용 부동산 무상임대</p>
+    </div>
+  </div>
+
+  <h3>5-3. 대가 없는 금전 수령: 회비·손해배상금</h3>
+  <div class="tw"><table>
+    <thead><tr><th>금액</th><th>용역 대가 여부</th><th>판단</th></tr></thead>
+    <tbody>
+      <tr><td>대가관계 없는 협회비·찬조비</td><td>없음</td><td>과세대상 아님</td></tr>
+      <tr><td>재화·용역 공급 없이 받은 위약금·손해배상금</td><td>없음</td><td>과세대상 아님</td></tr>
+      <tr><td>실질적으로 계속 임대한 기간의 임대료 상당액</td><td>있음</td><td>용역 대가로 과세</td></tr>
+      <tr><td>면세재화 운송료</td><td>있음</td><td>운송용역 자체가 별도 면세가 아니면 과세</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ════════════════ 실무사례 ════════════════ -->
+<section class="section" id="cases">
+  <div class="section-title-bar">6. 세무 실무 적용 사례</div>
+
+  <div class="trap-item"><div class="trap-icon">1</div><div><strong>관계회사에 사무실 무상 제공</strong><br>특수관계인 여부와 사업용 부동산인지 확인한다. 해당하면 무상이라도 공급으로 보며, 시가를 과세표준으로 검토한다. 계약서가 없어도 실제 사용관계·등기·비용부담 자료를 확인한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">2</div><div><strong>시가 월 500만원 사무실을 관계회사에 월 50만원에 임대</strong><br>무상공급 특례가 아니라 대가 있는 실제 임대용역이다. 다만 특수관계 거래로 조세부담을 부당하게 감소시켰다면 공급가액을 시가로 재계산할 수 있다.</div></div>
+  <div class="trap-item"><div class="trap-icon">3</div><div><strong>모회사가 자회사에 제조 노하우를 무료 제공</strong><br>노하우 정보는 시행령 §25상 용역이지만, 무상 타인 공급이고 사업용 부동산 임대가 아니므로 원칙적으로 공급으로 보지 않는다. ‘특수관계인’이라는 이유만으로 모든 무료 용역이 과세되는 것은 아니다.</div></div>
+  <div class="trap-item"><div class="trap-icon">4</div><div><strong>원재료 전부를 고객이 제공하고 업체가 절단·도장만 수행</strong><br>주요자재를 부담하지 않는 단순 가공이므로 가공용역이다. 세금계산서는 가공료를 기준으로 검토한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">5</div><div><strong>특허권 매각과 라이선스 계약</strong><br>권리 자체를 넘기면 재화 공급, 일정 기간 사용하게 하면 용역 공급으로 분류한다. 계약서에서 양도 범위·기간·독점성·반환 여부를 확인한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">6</div><div><strong>직원 구내식당 무료 식사</strong><br>사업장 내 직원에게 제공하는 음식용역은 용역 자가공급 사례로 실무상 과세하지 않는다. 고객에게 유상 판매하는 식사는 별도의 음식용역 공급이다.</div></div>
+  <div class="trap-item"><div class="trap-icon">7</div><div><strong>임대차 종료 뒤 명도소송 중 계속 사용</strong><br>임차인이 실제로 계속 사용하고 임대인이 임대료 상당액을 받는다면 명칭이 손해금이어도 실질상 임대용역 대가인지 검토한다. 단순 손해배상과 구별한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">8</div><div><strong>계약 해제에 따른 위약금</strong><br>재화·용역의 공급 없이 계약 위반 자체로 받은 순수 위약금은 공급 대가가 아니다. 다만 이미 제공된 용역의 대금 정산인지 여부를 사실관계로 분리해야 한다.</div></div>
+
+  <div class="warn-box"><strong>실무 체크리스트:</strong> ① 누구에게 무엇을 제공했는가 → ② 소유권 이전인가 사용허락인가 → ③ 대가 또는 경제적 반대급부가 있는가 → ④ 특수관계인가 → ⑤ 사업용 부동산인가 → ⑥ 저가·무상에 따른 시가 과세가 필요한가.</div>
+</section>
+
+<!-- ════════════════ 기출 연결 ════════════════ -->
+<section class="section" id="past">
+  <div class="section-title-bar">7. 기출분석 DB 연결 — 문제를 이렇게 읽기</div>
+  <p>업로드된 2021~2025 세무사 1차 기출분석 DB에서 이번 범위와 직접 연결되는 문항을 추려 재구성했다.</p>
+  <div class="tw"><table>
+    <thead><tr><th>연도·문항</th><th>출제 소재</th><th>이번 파트의 결론</th></tr></thead>
+    <tbody>
+      <tr><td>2022년 72번</td><td>특수관계인 사업용 부동산 저가임대</td><td>대가가 있으므로 §11의 실제 공급. 필요하면 §29④ 시가 적용</td></tr>
+      <tr><td>2022년 73번</td><td>특수관계인에게 산업상 지식 정보 무상 제공</td><td>시행령 §25상 용역이지만 §12②에 따라 원칙적으로 공급 아님</td></tr>
+      <tr><td>2023년 71번</td><td>사업장 내 사용인에게 음식용역 무상 제공</td><td>용역 자가공급으로 현행 실무상 과세하지 않음</td></tr>
+      <tr><td>2023년 71번</td><td>공급 없이 받은 위약금·손해배상금</td><td>용역의 대가가 아니므로 과세대상 아님</td></tr>
+      <tr><td>2024년 71번</td><td>면세재화 운송용역</td><td>운송 대상 재화가 면세여도 운송용역 자체는 과세 가능</td></tr>
+      <tr><td>2024년 71번</td><td>계약 만료 후 실질적 임대 계속 및 임대료 상당액 수령</td><td>실제 사용관계가 지속되면 임대용역 공급</td></tr>
+      <tr><td>2024년 71번</td><td>대가관계 없는 협회비·찬조비</td><td>용역 대가가 아니므로 과세대상 아님</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok-box"><strong>기출 독해법:</strong> ‘용역인가?’와 ‘과세대상 공급인가?’를 분리한다. 2022년 73번의 무료 노하우 제공이 대표적이다. 노하우는 용역이지만 무상공급 특례 때문에 과세대상 공급은 아니다.</div>
+  <p class="footnote">※ 과거 기출은 당시 시행 법령을 전제로 한다. 본 자료의 해설은 2026.06.26 현재 법령과 대조하여 학습용으로 정리했다.</p>
+</section>
+
+<!-- ════════════════ 함정 ════════════════ -->
+<section class="section trap-box" id="traps">
+  <div class="section-title-bar">8. 시험 직전 함정 문장</div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“특수관계인에게 무상으로 제공한 모든 용역은 공급이다.”<br><strong>아니다.</strong> 핵심 예외는 시행령상 사업용 부동산 임대용역이다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“시행령 §25에 열거된 행위는 무상이더라도 항상 과세된다.”<br><strong>아니다.</strong> §12의 무상공급 특례를 다시 적용한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“특수관계인에게 시가보다 싸게 임대하면 용역 공급이 아니다.”<br><strong>아니다.</strong> 실제 공급이며, 시가 과세 문제다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“건설업자가 자재를 부담하면 재화 공급이다.”<br><strong>아니다.</strong> 시행령 §25는 건설용역으로 본다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“노하우는 형태가 없으므로 부가가치세법상 공급이 아니다.”<br><strong>아니다.</strong> 산업상·상업상·과학상 정보 제공은 용역이다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“법 §12①에 자가공급 규정이 있으므로 직원 무료식사는 과세된다.”<br><strong>아니다.</strong> 현행 시행령에 과세 범위가 정해져 있지 않다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“면세재화를 운송하면 운송용역도 자동으로 면세다.”<br><strong>아니다.</strong> 재화와 운송용역의 면세 여부를 각각 판단한다.</div></div>
+  <div class="trap-item"><div class="trap-icon">×</div><div>“계약서에 손해배상금이라고 쓰면 항상 과세되지 않는다.”<br><strong>아니다.</strong> 실제로 제공한 용역의 대가인지 순수 손해배상인지 본다.</div></div>
+</section>
+
+<!-- ════════════════ 퀴즈 ════════════════ -->
+<section class="section" id="quiz">
+  <div class="section-title-bar">9. 바로 확인하는 O/X 12문제</div>
+  <div class="quiz-head"><p>버튼을 누르면 즉시 정답과 법적 이유가 표시됩니다.</p><div class="quiz-score" id="quizScore">정답 0 / 풀이 0</div></div>
+  <div id="quizList"></div>
+  <button type="button" class="reset-btn" id="resetQuiz">다시 풀기</button>
+</section>
+
+<!-- ════════════════ 근거 ════════════════ -->
+<section class="section" id="sources">
+  <div class="section-title-bar">10. 법조항 근거 색인·자료 출처</div>
+  <div class="tw"><table>
+    <thead><tr><th>학습 논점</th><th>직접 근거</th></tr></thead>
+    <tbody>
+      <tr><td>역무 제공·시설물·권리 사용</td><td>부가가치세법 제11조</td></tr>
+      <tr><td>건설·단순 가공·노하우 정보</td><td>부가가치세법 시행령 제25조</td></tr>
+      <tr><td>용역 자가공급</td><td>부가가치세법 제12조 제1항</td></tr>
+      <tr><td>타인 무상공급·특수관계인 부동산 무상임대</td><td>부가가치세법 제12조 제2항, 시행령 제26조</td></tr>
+      <tr><td>고용관계 근로</td><td>부가가치세법 제12조 제3항</td></tr>
+      <tr><td>특수관계인 저가·무상용역의 시가</td><td>부가가치세법 제29조 제4항 제2호·제3호</td></tr>
+    </tbody>
+  </table></div>
+
+  <ul class="source-list">
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제11조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제11조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제12조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제12조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제25조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 시행령 제25조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제26조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 시행령 제26조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제29조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제29조</a></li>
+    <li>업로드 자료: 「소득세법_총설_예습.html」 — 레이아웃·상호작용·학습 순서 참고</li>
+    <li>업로드 자료: 「세무사1차 세법학개론 기출분석DB.md」 — 2021~2025 기출 소재·출제 태그 참고</li>
+  </ul>
+
+  <div class="gray-box">
+    <strong>해석 유의사항</strong><br>
+    본 자료는 세무사 시험 예습과 실무 판단의 출발점을 위한 요약이다. 실제 신고에서는 계약서, 대가관계, 특수관계 범위, 부동산의 사업용 여부, 면세 규정, 공급시기·세금계산서 규정을 추가 확인해야 한다. 경계 사례는 사실관계에 따라 결론이 달라질 수 있다.
+  </div>
+</section>
+
+<div class="footer-note">
+  부가가치세법 제11조·제12조 「용역의 공급」 예습자료<br>
+  법령 기준일 2026.06.26 · 세무사 1차 기출분석 연계
+</div>
+
+<script>
+const quizData = [
+  {q:'1. 용역의 공급에는 역무를 제공하는 것뿐 아니라 시설물이나 권리 등을 사용하게 하는 것도 포함된다.', a:true, e:'O. 법 제11조 제1항은 역무 제공과 시설물·권리 등 재화를 사용하게 하는 것을 모두 용역의 공급으로 규정합니다.'},
+  {q:'2. 건설사업자가 건설자재의 일부를 부담하면 해당 거래는 반드시 재화의 공급이다.', a:false, e:'X. 시행령 제25조 제1호에 따라 건설업자가 자재의 전부 또는 일부를 부담해도 용역의 공급으로 봅니다.'},
+  {q:'3. 주요자재를 전혀 부담하지 않고 상대방 재화를 단순 가공만 해 주는 것은 용역의 공급이다.', a:true, e:'O. 시행령 제25조 제2호의 가공용역입니다.'},
+  {q:'4. 산업상 지식 정보를 제공하는 행위는 부가가치세법상 용역에 해당하지 않는다.', a:false, e:'X. 시행령 제25조 제3호가 산업상·상업상·과학상의 지식·경험·숙련 정보 제공을 용역으로 명시합니다.'},
+  {q:'5. 특수관계인에게 산업상 지식 정보를 무상 제공하면 특수관계라는 이유만으로 항상 과세된다.', a:false, e:'X. 무상으로 타인에게 제공한 용역은 원칙적으로 공급이 아닙니다. 특수관계인 예외는 시행령상 사업용 부동산 임대용역입니다.'},
+  {q:'6. 특수관계인에게 사업용 창고를 무상으로 사용하게 하면 용역의 공급으로 볼 수 있다.', a:true, e:'O. 법 제12조 제2항 단서와 시행령 제26조의 사업용 부동산 무상임대 특례를 검토합니다.'},
+  {q:'7. 특수관계인에게 사업용 부동산을 시가보다 현저히 낮게 임대하면 용역의 공급 자체가 아니다.', a:false, e:'X. 대가가 있으므로 실제 용역 공급입니다. 조세부담을 부당하게 감소시키면 법 제29조 제4항에 따라 시가가 공급가액이 될 수 있습니다.'},
+  {q:'8. 직원이 고용관계에 따라 회사에 근로를 제공하는 것은 부가가치세법상 용역의 공급이다.', a:false, e:'X. 법 제12조 제3항은 고용관계에 따른 근로를 용역의 공급으로 보지 않습니다.'},
+  {q:'9. 사업장 내 사용인에게 음식용역을 무상 제공하는 것은 현행 실무상 용역 자가공급으로 과세하지 않는다.', a:true, e:'O. 법 제12조 제1항은 시행령에 범위를 위임하지만 현행 시행령에 과세대상 자가공급 범위가 정해져 있지 않습니다.'},
+  {q:'10. 대가관계 없이 받은 협회비와 찬조비는 용역 공급의 대가가 아니다.', a:true, e:'O. 반대급부 관계가 없다면 재화·용역의 공급대가가 아니므로 과세대상 거래가 아닙니다.'},
+  {q:'11. 면세재화를 유상으로 운송하면 운송용역도 언제나 면세된다.', a:false, e:'X. 운송 대상 재화의 면세와 운송용역의 면세는 별도로 판단합니다.'},
+  {q:'12. 임대차계약이 끝난 뒤에도 임차인이 부동산을 계속 사용하고 임대인이 임대료 상당액을 받았다면 실질적 임대용역 공급이 될 수 있다.', a:true, e:'O. 명칭보다 실제 사용과 대가관계를 보아 용역 공급 여부를 판단합니다.'}
+];
+
+const list = document.getElementById('quizList');
+let solved = 0, correct = 0;
+function renderQuiz(){
+  solved=0; correct=0; list.innerHTML=''; updateScore();
+  quizData.forEach((item,idx)=>{
+    const card=document.createElement('div'); card.className='quiz-card';
+    card.innerHTML=`<div class="quiz-q">${item.q}</div><div class="quiz-options"><button type="button" data-v="true">O</button><button type="button" data-v="false">X</button></div><div class="quiz-answer"></div>`;
+    const ans=card.querySelector('.quiz-answer');
+    card.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+      if(card.dataset.done) return;
+      card.dataset.done='1'; solved++;
+      const chosen=btn.dataset.v==='true';
+      const ok=chosen===item.a; if(ok) correct++;
+      card.classList.add(ok?'correct':'wrong');
+      ans.textContent=(ok?'정답입니다. ':'오답입니다. ')+item.e; ans.classList.add('show');
+      card.querySelectorAll('button').forEach(b=>b.disabled=true); updateScore();
+    }));
+    list.appendChild(card);
+  });
+}
+function updateScore(){document.getElementById('quizScore').textContent=`정답 ${correct} / 풀이 ${solved}`}
+document.getElementById('resetQuiz').addEventListener('click',renderQuiz);
+renderQuiz();
+
+let allOpen=false;
+document.getElementById('expandBtn').addEventListener('click',e=>{
+  allOpen=!allOpen; document.querySelectorAll('details').forEach(d=>d.open=allOpen);
+  e.currentTarget.textContent=allOpen?'해설 모두 닫기':'해설 모두 열기';
+});
+
+const progressBar=document.getElementById('progressBar');
+function updateProgress(){
+  const doc=document.documentElement;
+  const max=doc.scrollHeight-doc.clientHeight;
+  const pct=max>0?(doc.scrollTop/max)*100:0;
+  progressBar.style.width=Math.min(100,Math.max(0,pct))+'%';
+}
+document.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
+</script>
+</body>
+</html>

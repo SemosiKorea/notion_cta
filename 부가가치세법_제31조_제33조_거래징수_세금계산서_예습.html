@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부가가치세법 제31조~제33조 — 거래징수와 세금계산서 | 세무사 1차 예습자료</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.85;max-width:1060px;margin:0 auto;padding:24px}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px} h2{color:#1A3A6B;font-size:1.14em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B} h3{color:#2C5282;font-size:1em;margin:14px 0 7px} h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px} ul,ol{padding-left:20px;margin-bottom:8px} li{margin-bottom:4px;line-height:1.75} a{color:#1A56A8;text-decoration:none} a:hover{text-decoration:underline} strong{color:#1A1A2E} button,input{font:inherit}
+.header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B);color:#fff;padding:32px 40px;border-radius:14px;margin-bottom:16px;box-shadow:0 10px 28px rgba(13,27,75,.15)}
+.subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 16px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:11px}.header h1{color:#fff;font-size:1.84em}.header .meta{font-size:.8em;opacity:.9;margin-top:7px;line-height:1.65}.freq-badge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px}
+.toolbar{position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px}.toolbar a,.toolbar button{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer}.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+.section{margin:20px 0;padding:24px 28px;border-radius:12px;border:1px solid #E8ECF0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)}.section-title-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-24px -28px 18px;letter-spacing:.02em}.sub-block{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:14px 18px;margin:12px 0}.sub-block h3{margin-top:0;color:#1A3A6B}
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}.law-box{background:#F7FAFC;border-left:4px solid #2C5282;border-radius:5px;padding:13px 17px;margin:10px 0;font-size:.91em}.gray-box{background:#F1F5F9;border:1px solid #CBD5E1;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.91em}.warning{color:#9B2335;font-weight:700}.ok{color:#176B3A;font-weight:700}.muted{color:#64748B;font-size:.9em}.formula{background:#0F274A;color:#fff;border-radius:9px;padding:13px 16px;margin:10px 0;text-align:center;font-weight:700;letter-spacing:.01em;overflow-x:auto}.formula small{display:block;font-weight:400;opacity:.85;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.feature{border:1px solid #DCE7F5;border-radius:9px;padding:15px;background:#fff}.feature .num{display:inline-flex;width:25px;height:25px;border-radius:50%;align-items:center;justify-content:center;background:#1A3A6B;color:#fff;font-weight:700;font-size:.8em;margin-right:5px}.feature h3{display:inline;color:#1A3A6B}.feature p{font-size:.91em;margin:7px 0 0}
+.flow{display:flex;gap:8px;align-items:stretch;margin:14px 0}.flow-step{flex:1;position:relative;background:#F8FAFE;border:1px solid #C9D8EC;border-radius:9px;padding:13px;text-align:center}.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-11px;top:50%;transform:translateY(-50%);font-weight:900;color:#2C5282;background:#FAFAFA;border-radius:50%;z-index:2}.flow-step b{display:block;color:#1A3A6B;margin-bottom:3px}.flow-step span{font-size:.86em;color:#475569}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.89em}th{background:#E8EEF7;color:#1A3A6B;font-weight:700}th,td{border:1px solid #CBD5E1;padding:9px 10px;text-align:left;vertical-align:top}tr:nth-child(even) td{background:#FAFCFF}.table-wrap{overflow-x:auto;border-radius:8px}.tag{display:inline-block;border-radius:12px;padding:2px 8px;font-size:.78em;font-weight:700;margin:1px}.tag-blue{background:#DBEAFE;color:#1E40AF}.tag-green{background:#DCFCE7;color:#166534}.tag-red{background:#FEE2E2;color:#991B1B}.tag-yellow{background:#FEF3C7;color:#92400E}.tag-gray{background:#E2E8F0;color:#475569}
+details{border:1px solid #DCE7F5;border-radius:8px;margin:8px 0;background:#fff}summary{padding:10px 14px;cursor:pointer;font-weight:700;color:#1A3A6B;background:#F8FAFE;border-radius:8px}details[open] summary{border-bottom:1px solid #DCE7F5;border-radius:8px 8px 0 0}.detail-body{padding:12px 16px;font-size:.92em}
+.case{border-left:4px solid #38A169;background:#F0FFF4;border-radius:6px;padding:13px 16px;margin:10px 0}.case strong{color:#176B3A}.case.bad{border-left-color:#E53E3E;background:#FFF5F5}.case.bad strong{color:#9B2335}
+.calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}.calc-card{border:1px solid #C9D8EC;background:#F8FAFE;border-radius:10px;padding:14px}.calc-card h3{margin-top:0}.field{margin:8px 0}.field label{display:block;font-size:.82em;color:#475569;font-weight:700}.field input{width:100%;border:1px solid #B8C7DA;border-radius:6px;padding:7px 9px;background:#fff}.calc-card button{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:7px 11px;cursor:pointer;font-weight:700}.calc-result{margin-top:9px;background:#fff;border:1px solid #DCE7F5;border-radius:6px;padding:9px;font-weight:700;color:#1A3A6B;min-height:44px}
+.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.quiz-score{font-weight:700;background:#E8EEF7;color:#1A3A6B;border-radius:18px;padding:5px 12px}.quiz-card{border:1px solid #D9E2EF;border-radius:10px;padding:15px 17px;margin:10px 0;background:#fff}.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px}.quiz-options button{width:44px;border:1px solid #AFC2DA;background:#F8FAFE;border-radius:7px;padding:6px;cursor:pointer;font-weight:800;color:#1A3A6B}.quiz-options button:hover{background:#E8EEF7}.quiz-options button:disabled{cursor:default;opacity:.75}.quiz-answer{display:none;margin-top:9px;padding:10px 12px;border-radius:7px;font-size:.91em}.quiz-answer.show{display:block}.quiz-card.correct{border-color:#68D391}.quiz-card.correct .quiz-answer{background:#F0FFF4;color:#176B3A}.quiz-card.wrong{border-color:#FC8181}.quiz-card.wrong .quiz-answer{background:#FFF5F5;color:#9B2335}.btn-reset{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 10px;cursor:pointer;font-weight:700}
+.footer-note{text-align:center;color:#64748B;font-size:.8em;padding:14px 0 5px}
+@media(max-width:760px){body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.header h1{font-size:1.55em}.section{padding:20px 17px}.section-title-bar{margin:-20px -17px 15px}.grid,.grid.three,.calc-grid{grid-template-columns:1fr}.flow{flex-direction:column}.flow-step:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}.toolbar{top:3px}.toolbar .progress-label{display:none}th,td{min-width:130px;padding:8px}.quiz-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="header">
+  <span class="subject-badge">세무사 1차 · 부가가치세법 예습</span>
+  <h1>제31조~제33조 — 거래징수와 세금계산서</h1>
+  <p>거래징수 · 세금계산서 기재사항 · 전자세금계산서 · 위탁판매 · 수정세금계산서 · 발급의무 면제</p>
+  <div class="meta">현행 법률 2026-01-02 시행 · 시행령 관련 조문 제67조~제71조 2026-02-27 시행 · 시행규칙 관련 조문 제49조~제53조 2026-03-20 시행<br>기출분석 DB: 세금계산서 태그 2021~2025 총 15회 · 2022년 이후 매년 독립 판단형 출제 <span class="freq-badge">최상위 반복 파트</span></div>
+</header>
+<nav class="toolbar" aria-label="빠른 이동">
+  <a href="#memory">핵심결론</a><a href="#map">조문지도</a><a href="#collection">거래징수</a><a href="#invoice">세금계산서</a><a href="#electronic">전자발급</a><a href="#agency">위탁·대리</a><a href="#amend">수정발급</a><a href="#exempt">발급면제</a><a href="#cases">사례</a><a href="#tool">판단도구</a><a href="#quiz">O/X</a><button id="expandBtn" type="button">해설 모두 열기</button>
+  <span class="progress-label">읽기 진행</span><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+</nav>
+
+<section id="memory" class="highlight-box">
+<h2>먼저 외울 10개 결론</h2>
+<ol>
+<li><strong>거래징수</strong>는 공급가액 × 세율로 계산한 부가가치세를 공급받는 자에게서 받는 절차이다.</li>
+<li>세금을 따로 받지 못해도 공급자의 국가에 대한 <strong>신고·납부의무가 사라지는 것은 아니다.</strong></li>
+<li>면세공급에는 세금계산서를 발급하지 않는다. 다만 <strong>영세율은 과세거래</strong>이므로 별도 면제 규정이 없으면 세금계산서 대상이다.</li>
+<li>세금계산서의 핵심은 <strong>공급자·공급받는 자·공급가액과 세액·작성연월일</strong>이다.</li>
+<li><strong>작성연월일</strong>과 시행령상 추가기재사항인 <strong>공급연월일</strong>을 혼동하지 않는다.</li>
+<li>법인은 전자세금계산서 의무자이고, 개인은 사업장별 직전 연도 공급가액(면세 포함) <strong>8천만원 이상</strong>이면 의무자이다.</li>
+<li>전자세금계산서 발급명세 전송기한은 <strong>발급일의 다음 날</strong>이다.</li>
+<li>위탁판매는 원칙적으로 수탁자가 <strong>위탁자 명의</strong>로 발급하고 수탁자 등록번호를 덧붙인다.</li>
+<li>환입은 환입일, 계약해제는 해제일, 공급가액 증감은 증감사유 발생일을 수정세금계산서 작성일로 한다.</li>
+<li>발급면제와 신용카드매출전표 발급 후의 <strong>중복발급 금지</strong>는 법적 성격이 다르다.</li>
+</ol>
+</section>
+
+<section id="map" class="section">
+<div class="section-title-bar">1. 조문·위임관계 지도</div>
+<div class="flow"><div class="flow-step"><b>법 제31조</b><span>거래징수</span></div><div class="flow-step"><b>법 제32조</b><span>세금계산서·전자발급</span></div><div class="flow-step"><b>법 제33조</b><span>발급의무 면제·중복금지</span></div><div class="flow-step"><b>시행령 67~71</b><span>기재·전자·위탁·수정·면제</span></div><div class="flow-step"><b>시행규칙 49~53</b><span>서식·표준·특수면제</span></div></div>
+<div class="compare-box"><h2>이번 범위와 다음 범위를 구분</h2><p>제31조~제33조는 주로 <strong>누가, 어떤 문서를, 어떤 방식으로 발급하는가</strong>를 규정합니다. 일반적인 발급시기는 법 제34조에서 따로 정하므로, 이 자료에서는 제17조의 선발급 특례와 제34조의 일반 발급시기를 혼합하지 않습니다.</p></div>
+<div class="grid three">
+<div class="feature"><span class="num">31</span><h3>세액 징수</h3><p>공급자가 거래상대방에게 VAT를 받는 단계</p></div>
+<div class="feature"><span class="num">32</span><h3>거래 증명</h3><p>세금계산서의 기재사항·전자발급·특수발급·수정</p></div>
+<div class="feature"><span class="num">33</span><h3>예외</h3><p>발급 곤란·불필요 거래와 카드전표 중복발급 제한</p></div>
+</div>
+</section>
+
+<section id="collection" class="section">
+<div class="section-title-bar">2. 제31조 — 거래징수</div>
+<div class="law-box"><strong>법문 구조:</strong> 사업자가 재화 또는 용역을 공급하면 공급가액에 법정세율을 적용하여 계산한 부가가치세를 공급받는 자로부터 징수해야 합니다.</div>
+<div class="formula">거래징수할 세액 = 법 제29조의 공급가액 × 법 제30조의 세율</div>
+<div class="grid">
+<div class="feature"><h3>대외적 납세의무</h3><p>국가에 부가가치세를 신고·납부하는 자는 공급자입니다.</p></div>
+<div class="feature"><h3>거래상대방과의 징수</h3><p>공급자는 공급받는 자에게 세액을 전가·징수하는 구조입니다.</p></div>
+</div>
+<div class="case"><strong>실무 사례 — 부가세 별도 약정 누락</strong><br>계약서에 “부가세 별도”를 적지 않아 거래처에서 세액을 추가로 받지 못했더라도, 과세거래가 성립했다면 공급자는 총액에서 공급가액과 세액을 구분하여 신고해야 할 수 있습니다. 민사상 추가청구 가능성과 세법상 납세의무는 별개의 문제입니다.</div>
+<div class="trap-box"><h2>거래징수 ≠ 세금계산서 발급</h2><p>거래징수는 세액을 받는 의무이고, 세금계산서 발급은 거래증빙 의무입니다. 세금을 받았다고 적법한 세금계산서를 발급한 것이 아니며, 세금계산서를 발급했다고 실제 세액을 회수한 것도 아닙니다.</p></div>
+</section>
+
+<section id="invoice" class="section">
+<div class="section-title-bar">3. 제32조 — 세금계산서의 기본 구조</div>
+<h3>1) 발급대상</h3>
+<ul><li>사업자가 <strong>과세되는 재화 또는 용역</strong>을 공급하는 경우가 원칙입니다.</li><li>면세 재화·용역은 세금계산서가 아니라 소득세법·법인세법상 계산서 검토 대상입니다.</li><li>영세율은 면세가 아니므로 세금계산서 발급면제 규정에 해당하는지 별도로 확인합니다.</li></ul>
+<h3>2) 법 제32조 제1항의 기재사항</h3>
+<div class="table-wrap"><table><thead><tr><th>구분</th><th>기재내용</th><th>시험 포인트</th></tr></thead><tbody>
+<tr><td><span class="tag tag-red">핵심</span></td><td>공급자의 등록번호와 성명 또는 명칭</td><td>공급자 특정</td></tr>
+<tr><td><span class="tag tag-red">핵심</span></td><td>공급받는 자의 등록번호</td><td>비사업자·미등록자는 고유번호 또는 주민등록번호</td></tr>
+<tr><td><span class="tag tag-red">핵심</span></td><td>공급가액과 부가가치세액</td><td>구분 기재</td></tr>
+<tr><td><span class="tag tag-red">핵심</span></td><td>작성연월일</td><td>공급시기와 연결되는 중요사항</td></tr>
+<tr><td><span class="tag tag-blue">추가기재</span></td><td>시행령이 정하는 사항</td><td>주소·상호·업태·종목·품목·단가·수량·공급연월일·거래종류 등</td></tr>
+</tbody></table></div>
+<div class="compare-box"><h2>작성연월일과 공급연월일</h2><div class="grid"><div class="feature"><h3>작성연월일</h3><p>법률이 직접 규정한 핵심 기재사항입니다.</p></div><div class="feature"><h3>공급연월일</h3><p>시행령 제67조의 추가기재사항입니다. 두 표현을 바꿔 출제합니다.</p></div></div></div>
+<div class="gray-box"><strong>기출 연결:</strong> 공급자의 주소, 품목, 단가·수량이 빠졌다는 이유만으로 작성연월일까지 빠진 것과 동일하게 취급하면 안 됩니다. 다만 실제 매입세액 공제 여부는 법 제39조의 사실확인 요건까지 함께 판단합니다.</div>
+</section>
+
+<section id="electronic" class="section">
+<div class="section-title-bar">4. 전자세금계산서 의무자와 전송</div>
+<div class="table-wrap"><table><thead><tr><th>대상</th><th>전자발급 의무</th><th>적용시기</th></tr></thead><tbody>
+<tr><td>법인사업자</td><td>모든 법인사업자</td><td>법정 의무</td></tr>
+<tr><td>개인사업자</td><td>직전 연도 사업장별 재화·용역 공급가액 합계가 8천만원 이상<br><span class="muted">면세공급가액 포함</span></td><td>그 해의 다음 해 제2기 과세기간 시작일(7월 1일)부터</td></tr>
+<tr><td>수정신고·결정·경정으로 8천만원 이상</td><td>전자발급 의무</td><td>그 절차를 한 날이 속하는 과세기간의 다음 과세기간 시작일부터</td></tr>
+<tr><td>의무자 아닌 사업자</td><td>선택 발급 가능</td><td>자율적으로 전자발급·전송 가능</td></tr>
+</tbody></table></div>
+<div class="warning">한번 전자세금계산서 의무발급 개인사업자가 되면 이후 직전 연도 공급가액이 8천만원 미만이 되어도 시행령상 의무발급 개인사업자에 포함됩니다.</div>
+<h3>통지와 전송</h3>
+<ul><li>세무서장은 의무발급 시작일 <strong>1개월 전까지</strong> 개인사업자에게 통지해야 합니다.</li><li>기한 내 통지를 받지 못하면 통지서를 받은 달의 <strong>다음 다음 달 1일</strong>부터 의무가 시작됩니다.</li><li>전자세금계산서 발급명세는 <strong>발급일의 다음 날</strong>까지 국세청장에게 전송합니다.</li><li>전자세금계산서가 지정 수신함 또는 국세청 발급시스템에 입력된 때 수신한 것으로 봅니다.</li></ul>
+<div class="case"><strong>예시:</strong> 개인사업자의 2025년 사업장별 공급가액이 과세 7천만원, 면세 2천만원이면 합계 9천만원이므로 2026년 7월 1일부터 전자세금계산서 의무발급 대상입니다.</div>
+<div class="case bad"><strong>기출 함정:</strong> 전송기한을 “다음 달 10일” 또는 “다음 달 11일”로 외우면 오답입니다. 일반 전자세금계산서 발급명세 전송기한은 현행 시행령상 <strong>발급일의 다음 날</strong>입니다.</div>
+<details><summary>전자적 발급방법</summary><div class="detail-body"><ul><li>ERP 시스템</li><li>전자세금계산서 발급대행사업자의 시스템</li><li>국세청 전자세금계산서 발급시스템</li><li>전자세금계산서 발급이 가능한 현금영수증 장치 등 지정 시스템</li></ul><p>시행규칙 제50조는 표준에 따라 생성·발급·전송하도록 하고, 발급시스템의 표준인증·등록 요건을 정합니다.</p></div></details>
+</section>
+
+<section id="agency" class="section">
+<div class="section-title-bar">5. 위탁판매·대리·공동거래의 특수발급</div>
+<div class="table-wrap"><table><thead><tr><th>거래형태</th><th>세금계산서 발급방법</th></tr></thead><tbody>
+<tr><td>위탁판매·대리판매</td><td>수탁자·대리인이 위탁자·본인 명의로 발급하고 자신의 등록번호를 덧붙임</td></tr>
+<tr><td>위탁자가 직접 인도</td><td>위탁자·본인이 직접 발급 가능</td></tr>
+<tr><td>위탁매입·대리매입</td><td>공급자가 위탁자·본인을 공급받는 자로 하여 발급하고 수탁자·대리인 등록번호를 덧붙임</td></tr>
+<tr><td>용역의 주선·중개</td><td>위탁판매·매입 규정을 준용</td></tr>
+<tr><td>시설대여</td><td>납세의무자가 리스시설을 공급자·세관장에게 직접 인도받으면 공급자·세관장이 실제 이용사업자에게 직접 발급 가능</td></tr>
+<tr><td>조합·공동도급·명의자와 실제 소비자 상이</td><td>시행령 제69조의 특례에 따라 실제 부담자·소비자에게 연속 발급 가능</td></tr>
+</tbody></table></div>
+<div class="case"><strong>실무 사례 — 건물 관리단 공동전기료</strong><br>전기사업자가 명의자에게 세금계산서를 발급하고, 명의자가 그 범위 내에서 실제 입주 사업자에게 세금계산서를 발급하면 전기사업자가 실제 소비자에게 발급한 것으로 보는 특례가 적용될 수 있습니다.</div>
+<div class="trap-box"><h2>명의가 바뀌어도 공급관계가 바뀌는 것은 아니다</h2><p>시행령 제69조는 실제 공급구조상 문서 발급을 가능하게 하는 특례입니다. 세금계산서만 중간자 명의로 발급한다고 실질적인 재화·용역 공급자가 임의로 변경되는 것은 아닙니다.</p></div>
+</section>
+
+<section id="amend" class="section">
+<div class="section-title-bar">6. 수정세금계산서 — 사유별 작성일</div>
+<div class="table-wrap"><table><thead><tr><th>수정사유</th><th>작성일</th><th>발급방법 핵심</th></tr></thead><tbody>
+<tr><td>재화의 환입</td><td>환입일</td><td>처음 작성일을 비고란에 적고 음(-)의 금액</td></tr>
+<tr><td>계약해제</td><td>계약해제일</td><td>처음 작성일을 비고란에 적고 음(-)의 금액</td></tr>
+<tr><td>계약해지 등 공급가액 증감</td><td>증감사유 발생일</td><td>증가는 양(+), 감소는 음(-)</td></tr>
+<tr><td>과세기간 종료 후 25일 이내 내국신용장·구매확인서</td><td>처음 세금계산서 작성일</td><td>영세율 양(+) + 당초 과세분 음(-) 동시 발급</td></tr>
+<tr><td>필요적 사항의 착오</td><td>당초 거래를 바로잡는 방식</td><td>당초 음(-) + 수정 양(+), 경정 인지 전</td></tr>
+<tr><td>착오 외 사유로 잘못 기재</td><td>당초 거래를 바로잡는 방식</td><td>확정신고기한 다음 날부터 1년 이내</td></tr>
+<tr><td>전자세금계산서 이중발급</td><td>당초분 취소</td><td>동일 내용 음(-)</td></tr>
+<tr><td>면세 등 발급대상 아닌 거래</td><td>당초분 취소</td><td>동일 내용 음(-)</td></tr>
+<tr><td>세율 오적용</td><td>당초 거래 정정</td><td>당초 음(-) + 올바른 세율 양(+)</td></tr>
+</tbody></table></div>
+<div class="warning">세무조사 통지, 현지확인 착수, 과세자료 해명안내 등으로 경정될 것을 미리 안 경우에는 착오·오적용 수정발급이 제한될 수 있습니다.</div>
+<div class="compare-box"><h2>과세유형 전환 특례</h2><p>일반과세자↔간이과세자 전환 후 전환 전 거래에 환입·계약해제·공급가액 증감이 생기면, 일반 원칙과 달리 <strong>처음 세금계산서 작성일</strong>을 수정세금계산서 작성일로 적고 비고란에 사유 발생일을 덧붙입니다.</p></div>
+<div class="case bad"><strong>기출 함정:</strong> 환입의 일반 원칙은 “처음 작성일”이 아니라 <strong>환입일</strong>입니다. 다만 과세유형 전환 특례에서는 처음 작성일을 사용합니다.</div>
+</section>
+
+<section id="exempt" class="section">
+<div class="section-title-bar">7. 제33조 — 세금계산서 발급의무 면제</div>
+<h3>1) 시행령 제71조 제1항의 주요 면제</h3>
+<div class="table-wrap"><table><thead><tr><th>거래</th><th>면제 내용·예외</th></tr></thead><tbody>
+<tr><td>택시·노점·행상·무인자동판매기</td><td>세금계산서 발급 곤란 거래로 면제</td></tr>
+<tr><td>소매업</td><td>공급받는 자가 세금계산서를 요구하지 않는 경우 면제</td></tr>
+<tr><td>미용·욕탕 및 유사 서비스업</td><td>원칙적으로 면제</td></tr>
+<tr><td>도로 및 관련시설 운영용역</td><td>면제하되 공급받는 자가 요구하면 발급</td></tr>
+<tr><td>재화의 공급의제</td><td>자가공급·개인적 공급·사업상 증여·폐업재고 등 법정 범위</td></tr>
+<tr><td>수출·국외공급·외국항행 등</td><td>시행령이 열거한 범위에서 면제, 내국신용장 공급 등 일부는 제외</td></tr>
+<tr><td>부동산 임대 간주임대료 부분</td><td>보증금 간주임대료 등 시행령 제65조 제1·2항 적용분</td></tr>
+<tr><td>전자서명 인증서 발급</td><td>사업자가 세금계산서를 요구하면 제외</td></tr>
+<tr><td>간편사업자등록 국외사업자의 전자적 용역</td><td>국내 소비자 공급분 세금계산서 면제</td></tr>
+<tr><td>국내사업장 없는 비거주자·외국법인 대상 공급</td><td>원칙 면제. 외국 사업자 증명서류를 제시하고 요구하거나 외국법인 연락사무소에 공급하면 제외</td></tr>
+</tbody></table></div>
+<div class="gray-box"><strong>영세율 주의:</strong> 영세율 거래라고 모두 세금계산서가 면제되는 것은 아닙니다. 직접수출·국외용역 등 시행령이 열거한 면제 범위와 내국신용장·구매확인서 공급처럼 세금계산서를 발급해야 하는 거래를 구분합니다.</div>
+<h3>2) 신용카드매출전표 등을 발급한 경우</h3>
+<div class="law-box"><strong>법 제33조 제2항:</strong> 시행령 제88조 제5항이 정하는 사업자가 신용카드매출전표 등을 발급한 경우에는 세금계산서를 발급하지 않습니다. 이는 단순한 선택적 면제가 아니라 중복발급 방지 규정입니다.</div>
+<p>다만 목욕·이발·미용, 일반 여객운송, 입장권 사업, 과세 미용진료, 일정 동물진료, 무도학원·자동차운전학원 등 시행령상 제외업종과 간이과세자의 영수증 발급구조는 별도로 판단합니다.</p>
+<div class="trap-box"><h2>‘발급하지 아니할 수 있다’와 ‘발급하지 아니한다’</h2><ul><li>법 제33조 제1항: 요건을 충족하면 발급의무가 면제됩니다.</li><li>법 제33조 제2항: 해당 사업자가 카드전표 등을 발급한 경우 세금계산서를 중복 발급하지 않습니다.</li></ul></div>
+</section>
+
+<section id="cases" class="section">
+<div class="section-title-bar">8. 실무·기출 적용 사례</div>
+<div class="case"><strong>사례 1 — 과세 7천만원 + 면세 2천만원 개인사업자</strong><br>전자발급 기준은 면세공급가액을 포함하므로 합계 9천만원입니다. 다음 해 7월 1일부터 의무발급 대상입니다.</div>
+<div class="case bad"><strong>사례 2 — 전자발급 후 다음 달 10일 전송</strong><br>현행 일반 전송기한은 발급일 다음 날이므로 지연전송 문제가 발생할 수 있습니다.</div>
+<div class="case"><strong>사례 3 — 소매점의 사업자 고객</strong><br>소매업은 고객이 세금계산서를 요구하지 않을 때만 면제됩니다. 사업자등록번호를 제시하고 요구하면 발급 여부를 즉시 확인해야 합니다.</div>
+<div class="case"><strong>사례 4 — 고속도로 통행료</strong><br>도로 및 관련시설 운영용역은 원칙적으로 면제되지만, 공급받는 자가 세금계산서를 요구한 경우는 면제대상에서 제외됩니다.</div>
+<div class="case bad"><strong>사례 5 — 환입 수정일을 당초 공급일로 입력</strong><br>과세유형 전환 특례가 아니라면 환입일이 작성일입니다. ERP 수정사유 선택을 잘못하면 신고기간도 달라질 수 있습니다.</div>
+<div class="case"><strong>사례 6 — 공급받는 자 등록번호 오기</strong><br>착오인지 착오 외 사유인지, 세무조사·해명안내 등 경정 인지 사유가 있는지를 확인한 뒤 수정발급합니다.</div>
+<div class="case"><strong>사례 7 — 위탁판매 플랫폼</strong><br>단순 중개인지 위탁판매인지 계약서와 정산구조를 먼저 확인하고, 위탁자 명의·수탁자 등록번호 부기 방식으로 발급합니다.</div>
+<div class="case bad"><strong>사례 8 — 카드전표와 세금계산서 이중발급</strong><br>법 제33조 제2항 적용 사업자는 같은 거래에 중복 증빙을 발급하지 않도록 POS·전자세금계산서 시스템을 연동해야 합니다.</div>
+<div class="sub-block"><h3>세무사 사무실 체크리스트</h3><ul><li>거래가 과세·면세·영세율 중 어디에 속하는지</li><li>공급자·공급받는 자의 등록상태와 실제 거래당사자</li><li>개인사업자의 직전 연도 사업장별 과세·면세 공급가액</li><li>전자발급일과 국세청 전송일</li><li>위탁·대리·공동매입 계약서와 등록번호 부기 여부</li><li>수정사유 발생일, 당초 작성일, 과세유형 전환 여부</li><li>카드전표·현금영수증과 세금계산서의 중복발급 여부</li><li>발급면제 거래에서 고객의 발급요구 및 증명서류</li></ul></div>
+</section>
+
+<section id="tool" class="section">
+<div class="section-title-bar">9. 학습용 판단 도구</div>
+<div class="calc-grid">
+<div class="calc-card"><h3>전자발급 의무 판단</h3><div class="field"><label for="entityType">사업자 형태</label><select id="entityType" style="width:100%;border:1px solid #B8C7DA;border-radius:6px;padding:7px 9px;background:#fff"><option value="corp">법인사업자</option><option value="individual">개인사업자</option></select></div><div class="field"><label for="priorSupply">직전 연도 사업장별 공급가액(면세 포함)</label><input id="priorSupply" type="number" min="0" value="90000000"></div><button id="checkElectronic" type="button">판단</button><div class="calc-result" id="electronicResult"></div></div>
+<div class="calc-card"><h3>수정 작성일 판단</h3><div class="field"><label for="amendReason">수정사유</label><select id="amendReason" style="width:100%;border:1px solid #B8C7DA;border-radius:6px;padding:7px 9px;background:#fff"><option value="return">재화 환입</option><option value="cancel">계약해제</option><option value="change">공급가액 증감</option><option value="lc">내국신용장·구매확인서</option><option value="error">기재사항 착오</option><option value="other">착오 외 잘못 기재</option></select></div><button id="checkAmend" type="button">판단</button><div class="calc-result" id="amendResult"></div></div>
+<div class="calc-card"><h3>발급면제 1차 점검</h3><div class="field"><label for="exemptReason">거래유형</label><select id="exemptReason" style="width:100%;border:1px solid #B8C7DA;border-radius:6px;padding:7px 9px;background:#fff"><option value="retail">소매업</option><option value="road">도로 운영용역</option><option value="deemed">공급의제</option><option value="rent">간주임대료 부분</option><option value="normal">일반 과세용역</option></select></div><div class="field"><label><input id="requested" type="checkbox"> 공급받는 자가 세금계산서 요구</label></div><button id="checkExempt" type="button">판단</button><div class="calc-result" id="exemptResult"></div></div>
+</div>
+<p class="muted">학습용 1차 판단입니다. 실제 발급 여부는 공급시기, 사업자 유형, 영수증 규정, 신용카드매출전표 발급 여부와 최신 법령을 함께 확인해야 합니다.</p>
+</section>
+
+<section id="traps" class="trap-box">
+<h2>10. 기출분석 DB 기반 오답 함정 14개</h2>
+<div class="grid">
+<div class="feature"><h3>① 거래징수 실패</h3><p>세액을 못 받았다고 공급자의 납세의무가 없어지지 않는다.</p></div>
+<div class="feature"><h3>② 면세와 영세율</h3><p>영세율은 과세거래이므로 면세와 같은 문서처리가 아니다.</p></div>
+<div class="feature"><h3>③ 작성일 vs 공급일</h3><p>작성연월일은 법정 핵심사항, 공급연월일은 시행령상 추가사항이다.</p></div>
+<div class="feature"><h3>④ 개인 기준금액</h3><p>8천만원 판정에 면세공급가액도 포함하며 사업장별로 본다.</p></div>
+<div class="feature"><h3>⑤ 기준 미달 회귀</h3><p>의무자가 된 뒤 공급가액이 8천만원 미만이어도 자동 해제되지 않는다.</p></div>
+<div class="feature"><h3>⑥ 전송기한</h3><p>발급일 다음 날이지 다음 달 10일이 아니다.</p></div>
+<div class="feature"><h3>⑦ 비의무자</h3><p>전자세금계산서 의무자가 아니어도 자발적으로 발급·전송할 수 있다.</p></div>
+<div class="feature"><h3>⑧ 위탁판매 명의</h3><p>수탁자 자기 명의가 아니라 원칙적으로 위탁자 명의로 발급한다.</p></div>
+<div class="feature"><h3>⑨ 환입 작성일</h3><p>일반 원칙은 환입일이며 처음 작성일이 아니다.</p></div>
+<div class="feature"><h3>⑩ 착오 외 정정</h3><p>확정신고기한 다음 날부터 1년 이내 제한이 있다.</p></div>
+<div class="feature"><h3>⑪ 소매업</h3><p>고객이 요구하지 않을 때만 발급면제이다.</p></div>
+<div class="feature"><h3>⑫ 도로운영</h3><p>고객이 요구하면 발급면제 예외가 된다.</p></div>
+<div class="feature"><h3>⑬ 카드전표 중복</h3><p>법 제33조 제2항 대상은 세금계산서를 추가 발급하지 않는다.</p></div>
+<div class="feature"><h3>⑭ 과세유형 전환</h3><p>전환 전 거래의 환입 등은 처음 작성일을 쓰는 특례가 있다.</p></div>
+</div>
+<div class="gray-box"><strong>출제 흐름:</strong> 기출분석 DB는 세금계산서 태그를 15회로 집계하고, 2022년 이후 매년 전자발급 의무자·전송기한·수정발급·발급면제 선지를 독립 문제로 출제하고 있습니다.</div>
+</section>
+
+<section id="quiz" class="section">
+<div class="section-title-bar">11. O/X 실전 점검</div>
+<div class="quiz-head"><div><strong>16문항</strong> · 선택 즉시 해설 표시</div><div><span class="quiz-score" id="quizScore">정답 0 / 풀이 0</span> <button class="btn-reset" id="resetQuiz" type="button">다시 풀기</button></div></div>
+<div id="quizList"></div>
+</section>
+
+<section id="sources" class="section">
+<div class="section-title-bar">12. 법령 근거 색인</div>
+<ul>
+<li><a href="https://www.law.go.kr/법령/부가가치세법/제31조" target="_blank" rel="noopener">부가가치세법 제31조</a> — 거래징수</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법/제32조" target="_blank" rel="noopener">부가가치세법 제32조</a> — 세금계산서·전자발급·특수발급·수정</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법/제33조" target="_blank" rel="noopener">부가가치세법 제33조</a> — 발급의무 면제·카드전표 중복발급 제한</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제67조" target="_blank" rel="noopener">시행령 제67조</a> — 세금계산서 추가기재사항</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제68조" target="_blank" rel="noopener">시행령 제68조</a> — 전자세금계산서 의무자·발급·전송·수신</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제69조" target="_blank" rel="noopener">시행령 제69조</a> — 위탁판매·대리·공동거래 특수발급</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제70조" target="_blank" rel="noopener">시행령 제70조</a> — 수정세금계산서 사유와 절차</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제71조" target="_blank" rel="noopener">시행령 제71조</a>·제88조 제5항 — 발급면제와 카드전표 관련 사업자</li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행규칙/제49조" target="_blank" rel="noopener">시행규칙 제49조~제53조</a> — 서식·전자표준·공동매입·발급면제 사업자·소비자대상 업종</li>
+<li>업로드 자료: 「소득세법 총설 예습」 HTML의 시각·학습 구조, 「세무사 1차 세법학개론 기출분석 DB」의 2021~2025 세금계산서 출제논점</li>
+</ul>
+<div class="gray-box"><strong>법령 버전:</strong> 법률 제21065호 2026-01-02 시행본, 시행령 대통령령 제36133호 중 제67조~제71조·제88조 2026-02-27 시행본(제69조 일부는 2026-04-01 시행), 시행규칙 재정경제부령 제9호 중 제49조~제53조 2026-03-20 시행본을 국가법령정보센터 구조조회로 확인했습니다.</div>
+</section>
+<p class="footer-note">부가가치세법 제31조~제33조 예습자료 · 작성 2026-06-26 · #거래징수 #세금계산서 #전자세금계산서 #수정세금계산서 #발급면제</p>
+<script>
+const quizData=[
+{q:'1. 사업자가 거래처로부터 부가가치세를 실제로 징수하지 못하면 국가에 대한 납부의무도 소멸한다.',a:false,e:'X. 거래상대방에게서 세액을 회수하지 못한 문제와 공급자의 신고·납부의무는 구분합니다.'},
+{q:'2. 면세 재화 또는 용역의 공급은 법 제32조의 세금계산서 발급대상에서 제외된다.',a:true,e:'O. 면세거래는 세금계산서가 아니라 계산서 등 별도 증빙체계를 검토합니다.'},
+{q:'3. 영세율 거래는 면세거래이므로 언제나 세금계산서를 발급하지 않는다.',a:false,e:'X. 영세율은 과세거래이며 시행령 제71조의 구체적인 발급면제 범위에 해당하는지 판단해야 합니다.'},
+{q:'4. 공급자의 주소와 공급품목은 법 제32조 제1항이 직접 규정한 핵심 4개 기재사항에 해당한다.',a:false,e:'X. 주소·품목은 시행령 제67조의 추가기재사항이고, 법률상 핵심은 등록번호·명칭, 공급받는 자 등록번호, 공급가액·세액, 작성연월일입니다.'},
+{q:'5. 작성연월일은 세금계산서의 법정 핵심 기재사항이다.',a:true,e:'O. 공급연월일과 구분해야 합니다.'},
+{q:'6. 개인사업자의 전자세금계산서 의무기준 8천만원 판정에는 면세공급가액을 포함하지 않는다.',a:false,e:'X. 사업장별 재화·용역 공급가액에 면세공급가액도 포함합니다.'},
+{q:'7. 직전 연도 사업장별 공급가액이 8천만원 이상인 개인사업자는 다음 해 7월 1일부터 전자세금계산서를 발급해야 한다.',a:true,e:'O. 다음 해 제2기 과세기간 시작일부터 의무가 적용됩니다.'},
+{q:'8. 전자세금계산서 의무자가 된 개인사업자는 이후 직전 연도 공급가액이 8천만원 미만이면 자동으로 의무가 해제된다.',a:false,e:'X. 시행령은 이후 8천만원 미만이 된 개인사업자도 의무발급 개인사업자에 포함합니다.'},
+{q:'9. 전자세금계산서 발급명세는 원칙적으로 발급일의 다음 날까지 전송한다.',a:true,e:'O. 현행 시행령 제68조 제7항입니다.'},
+{q:'10. 전자세금계산서 의무자가 아닌 사업자는 전자세금계산서를 자발적으로 발급할 수 없다.',a:false,e:'X. 비의무자도 전자발급·전송할 수 있습니다.'},
+{q:'11. 위탁판매에서 수탁자가 재화를 인도하면 수탁자 자신의 명의로만 세금계산서를 발급한다.',a:false,e:'X. 원칙적으로 위탁자 명의로 발급하고 수탁자 등록번호를 덧붙입니다.'},
+{q:'12. 처음 공급한 재화가 환입된 경우 일반적인 수정세금계산서 작성일은 환입일이다.',a:true,e:'O. 비고란에는 처음 세금계산서 작성일을 덧붙입니다.'},
+{q:'13. 착오 외의 사유로 필요적 기재사항을 잘못 적은 경우 확정신고기한 다음 날부터 1년 이내에 수정발급할 수 있다.',a:true,e:'O. 경정될 것을 미리 안 경우 등의 제한도 확인해야 합니다.'},
+{q:'14. 소매업자는 공급받는 자가 세금계산서를 요구하더라도 언제나 발급의무가 면제된다.',a:false,e:'X. 소매업은 공급받는 자가 요구하지 않는 경우에만 면제됩니다.'},
+{q:'15. 도로 및 관련시설 운영용역은 공급받는 자가 세금계산서 발급을 요구하면 발급면제 대상에서 제외된다.',a:true,e:'O. 시행규칙 제52조 제3호 단서입니다.'},
+{q:'16. 법 제33조 제2항 적용 사업자가 같은 거래에 신용카드매출전표를 발급한 경우 세금계산서를 추가로 발급하지 않는다.',a:true,e:'O. 중복발급을 막는 규정입니다.'}
+];
+const list=document.getElementById('quizList');let solved=0,correct=0;
+function renderQuiz(){solved=0;correct=0;list.innerHTML='';updateScore();quizData.forEach(item=>{const card=document.createElement('div');card.className='quiz-card';card.innerHTML=`<div class="quiz-q">${item.q}</div><div class="quiz-options"><button type="button" data-v="true">O</button><button type="button" data-v="false">X</button></div><div class="quiz-answer"></div>`;const ans=card.querySelector('.quiz-answer');card.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{if(card.dataset.done)return;card.dataset.done='1';solved++;const chosen=btn.dataset.v==='true';const ok=chosen===item.a;if(ok)correct++;card.classList.add(ok?'correct':'wrong');ans.textContent=(ok?'정답입니다. ':'오답입니다. ')+item.e;ans.classList.add('show');card.querySelectorAll('button').forEach(b=>b.disabled=true);updateScore();}));list.appendChild(card);});}
+function updateScore(){document.getElementById('quizScore').textContent=`정답 ${correct} / 풀이 ${solved}`;}
+document.getElementById('resetQuiz').addEventListener('click',renderQuiz);renderQuiz();
+function won(v){return Number(v||0).toLocaleString('ko-KR')+'원';}
+document.getElementById('checkElectronic').addEventListener('click',()=>{const type=document.getElementById('entityType').value;const supply=Number(document.getElementById('priorSupply').value)||0;let text;if(type==='corp')text='법인사업자는 공급가액과 관계없이 전자세금계산서 의무발급 대상입니다.';else if(supply>=80000000)text=`개인사업자 기준 충족(${won(supply)}). 다음 해 7월 1일부터 의무발급 대상입니다.`;else text=`현재 입력액(${won(supply)})만 보면 신규 의무기준 미달입니다. 다만 과거 의무자였는지 확인해야 합니다.`;document.getElementById('electronicResult').textContent=text;});
+const amendMap={return:'환입일을 작성일로 하고 당초 작성일을 비고란에 적습니다.',cancel:'계약해제일을 작성일로 합니다.',change:'공급가액 증감사유 발생일을 작성일로 합니다.',lc:'처음 세금계산서 작성일로 과세분 음(-)과 영세율분 양(+)을 발급합니다.',error:'당초분 음(-)과 수정분 양(+)으로 정정하며 경정 인지 여부를 확인합니다.',other:'확정신고기한 다음 날부터 1년 이내 정정 여부를 확인합니다.'};
+document.getElementById('checkAmend').addEventListener('click',()=>{document.getElementById('amendResult').textContent=amendMap[document.getElementById('amendReason').value];});
+document.getElementById('checkExempt').addEventListener('click',()=>{const t=document.getElementById('exemptReason').value;const req=document.getElementById('requested').checked;let r;if(t==='retail')r=req?'요구가 있으므로 소매업 발급면제 요건에 해당하지 않습니다.':'요구가 없다면 발급면제 대상입니다.';else if(t==='road')r=req?'요구가 있으므로 시행규칙상 면제 예외입니다.':'요구가 없다면 발급면제 대상입니다.';else if(t==='deemed')r='법 제10조의 시행령상 공급의제 범위는 원칙적으로 발급면제입니다.';else if(t==='rent')r='시행령 제65조 제1·2항의 간주임대료 부분은 발급면제입니다.';else r='일반 과세거래로서 별도 면제사유가 없다면 세금계산서 발급대상입니다.';document.getElementById('exemptResult').textContent=r;});
+document.getElementById('checkElectronic').click();document.getElementById('checkAmend').click();document.getElementById('checkExempt').click();
+let allOpen=false;document.getElementById('expandBtn').addEventListener('click',e=>{allOpen=!allOpen;document.querySelectorAll('details').forEach(d=>d.open=allOpen);e.currentTarget.textContent=allOpen?'해설 모두 닫기':'해설 모두 열기';});
+const progressBar=document.getElementById('progressBar');function updateProgress(){const doc=document.documentElement;const max=doc.scrollHeight-doc.clientHeight;const pct=max>0?(doc.scrollTop/max)*100:0;progressBar.style.width=Math.min(100,Math.max(0,pct))+'%';}document.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+</script>
+</body></html>

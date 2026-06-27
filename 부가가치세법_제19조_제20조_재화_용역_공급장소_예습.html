@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부가가치세법 제19조·제20조 — 재화·용역의 공급장소 | 세무사 1차 예습자료</title>
+<style>
+/* ──────────────────────────────────────────
+   BASE — 소득세법 총설 예습자료의 시각 체계 계승
+────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#FAFAFA;color:#1A1A2E;
+  font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  font-size:14px;line-height:1.85;
+  max-width:1060px;margin:0 auto;padding:24px
+}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px}
+h2{color:#1A3A6B;font-size:1.14em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+h3{color:#2C5282;font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}
+ul,ol{padding-left:20px;margin-bottom:8px}
+li{margin-bottom:4px;line-height:1.75}
+a{color:#1A56A8;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#1A1A2E}
+button{font:inherit}
+
+/* ──────────────────────────────────────────
+   HEADER
+────────────────────────────────────────── */
+.header{
+  background:linear-gradient(135deg,#0D1B4B,#1A3A6B);
+  color:#fff;padding:32px 40px;border-radius:14px;margin-bottom:16px;
+  box-shadow:0 10px 28px rgba(13,27,75,.15)
+}
+.subject-badge{
+  background:rgba(255,255,255,.2);color:#fff;
+  padding:4px 16px;border-radius:20px;
+  font-size:.82em;display:inline-block;margin-bottom:11px
+}
+.header h1{color:#fff;font-size:1.84em}
+.header .meta{font-size:.8em;opacity:.9;margin-top:7px;line-height:1.65}
+.freq-badge{
+  display:inline-block;font-size:.8em;font-weight:700;
+  padding:2px 10px;border-radius:12px;
+  background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px
+}
+
+/* ──────────────────────────────────────────
+   TOOLBAR / NAV
+────────────────────────────────────────── */
+.toolbar{
+  position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;
+  box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px
+}
+.toolbar a,.toolbar button{
+  border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;
+  padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer
+}
+.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}
+.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}
+.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+
+/* ──────────────────────────────────────────
+   SECTION WRAPPERS
+────────────────────────────────────────── */
+.section{
+  margin:20px 0;padding:24px 28px;
+  border-radius:12px;border:1px solid #E8ECF0;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)
+}
+.section-title-bar{
+  background:linear-gradient(90deg,#1A3A6B,#2C5282);
+  color:#fff;padding:9px 16px;border-radius:8px;
+  font-size:1.03em;font-weight:700;
+  margin:-24px -28px 18px;letter-spacing:.02em
+}
+.sub-block{
+  background:#F8FAFE;border:1px solid #DCE7F5;
+  border-radius:8px;padding:14px 18px;margin:12px 0
+}
+.sub-block h3{margin-top:0;color:#1A3A6B}
+
+/* ──────────────────────────────────────────
+   SPECIAL BOXES
+────────────────────────────────────────── */
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}
+.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}
+.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+.law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:0 8px 8px 0;padding:11px 15px;margin:9px 0;font-size:.88em;line-height:1.78}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.gray-box{background:#F8FAFC;border:1px solid #CBD5E1;border-left:4px solid #64748B;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.lr{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;font-weight:700;color:#1A3A6B;display:block;margin-bottom:3px}
+
+/* ──────────────────────────────────────────
+   TABLE
+────────────────────────────────────────── */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid #E2E8F0;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#EEF2FF;color:#1A3A6B;padding:10px 13px;text-align:left;font-weight:700;font-size:.87em;border-bottom:2px solid #C3D4F0;white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+tr:hover td{background:#FAFBFF}
+.diff{color:#C53030;font-weight:700}.ok-text{color:#276749;font-weight:700}
+.hl{background:#FFFBEB!important}.center{text-align:center}
+.tc{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.84em;color:#1A3A6B}
+.no-wrap{white-space:nowrap}
+
+/* ──────────────────────────────────────────
+   FLOWCHART
+────────────────────────────────────────── */
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:16px 0}
+.flow-node{background:#1A3A6B;color:#fff;padding:9px 24px;border-radius:8px;font-size:.87em;font-weight:700;text-align:center;min-width:210px;max-width:520px;line-height:1.45}
+.flow-node.g{background:#276749}.flow-node.r{background:#9B2335}.flow-node.o{background:#744210}.flow-node.gray{background:#4A5568}.flow-node.p{background:#5A2D82}
+.flow-diamond{background:#744210;color:#fff;padding:7px 20px;border-radius:50px;font-size:.84em;font-weight:700;text-align:center;max-width:420px}
+.flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+.flow-branch{display:flex;gap:20px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px;max-width:270px}
+.branch-label{font-size:.79em;color:#718096;font-weight:700}
+
+/* ──────────────────────────────────────────
+   CARDS / MISC
+────────────────────────────────────────── */
+.trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+.trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
+.col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+.col-box h4{margin-top:0;color:#1A3A6B}
+.key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.footnote{color:#718096;font-size:.82em;margin-top:8px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:11px;margin:13px 0}
+.feat-card{border-radius:9px;overflow:hidden;border:1px solid #E2E8F0;background:#fff}
+.feat-head{padding:8px 12px;font-weight:700;font-size:.86em;color:#fff}
+.feat-head.c1{background:#1A3A6B}.feat-head.c2{background:#276749}.feat-head.c3{background:#744210}.feat-head.c4{background:#5A2D82}.feat-head.c5{background:#9B2335}.feat-head.c6{background:#2C7A7B}.feat-head.c7{background:#2A4A8A}.feat-head.c8{background:#475569}
+.feat-body{background:#fff;padding:10px 12px;font-size:.84em;color:#374151;line-height:1.65}
+.pe-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:12px 0;border:2px solid #1A3A6B;border-radius:10px;overflow:hidden}
+.pe-p{background:#EEF2FF;padding:14px 16px;border-right:2px solid #1A3A6B}.pe-e{background:#FFF8E1;padding:14px 16px}
+.pe-title{font-weight:700;font-size:.9em;padding:5px 9px;border-radius:5px;margin-bottom:8px;display:inline-block}
+.pe-title.p{background:#1A3A6B;color:#fff}.pe-title.e{background:#744210;color:#fff}
+.b{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:700;margin:1px}
+.b-blue{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}.b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}.b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}.b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}.b-gray{background:#E2E8F0;color:#334155;border:1px solid #CBD5E1}.b-purple{background:#EDE9FE;color:#5B21B6;border:1px solid #DDD6FE}
+.star{color:#D97706;font-size:.82em}
+
+/* ──────────────────────────────────────────
+   QUIZ
+────────────────────────────────────────── */
+.quiz-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.quiz-score{background:#0D1B4B;color:#fff;padding:6px 12px;border-radius:20px;font-size:.82em;font-weight:700}
+.quiz-card{border:1px solid #DCE7F5;border-radius:10px;padding:15px 17px;margin:11px 0;background:#FBFDFF}
+.quiz-card.correct{border-color:#86D6A3;background:#F0FFF4}.quiz-card.wrong{border-color:#FEB2B2;background:#FFF5F5}
+.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px;flex-wrap:wrap}
+.quiz-options button{border:1px solid #B8C7DA;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 14px;font-weight:700;cursor:pointer}
+.quiz-options button:hover{background:#EEF2FF}.quiz-options button:disabled{cursor:default;opacity:.75}
+.quiz-answer{display:none;margin-top:10px;padding:9px 11px;border-radius:7px;background:#fff;border:1px dashed #CBD5E1;font-size:.88em}
+.quiz-answer.show{display:block}
+.reset-btn{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:7px 13px;cursor:pointer;font-weight:700}
+
+/* ──────────────────────────────────────────
+   DETAILS / SOURCES / PRINT
+────────────────────────────────────────── */
+details{border:1px solid #DCE7F5;border-radius:8px;background:#fff;margin:8px 0;overflow:hidden}
+summary{cursor:pointer;font-weight:700;color:#1A3A6B;padding:10px 13px;background:#F8FAFE}
+details>div{padding:11px 14px;font-size:.88em}
+.source-list{font-size:.84em;color:#475569}
+.source-list li{margin-bottom:7px}
+.footer-note{text-align:center;color:#64748B;font-size:.8em;margin:24px 0 8px}
+
+@media(max-width:700px){
+  body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.section{padding:21px 18px}.section-title-bar{margin:-21px -18px 16px}
+  .two-col,.three-col,.pe-wrap{grid-template-columns:1fr}.pe-p{border-right:none;border-bottom:2px solid #1A3A6B}.toolbar .progress-label,.progress-track{display:none}
+}
+@media print{
+  body{max-width:none;padding:0;background:#fff;font-size:11px}.toolbar,.quiz-options,.reset-btn{display:none!important}.section{break-inside:avoid;box-shadow:none}.header{background:#0D1B4B!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.quiz-answer{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<div class="header" id="top">
+  <span class="subject-badge">세무사 1차 · 부가가치세법 예습자료</span>
+  <h1>재화·용역의 공급장소</h1>
+  <div class="meta">
+    부가가치세법 제19조·제20조 · 관련 법 제21조~제23조·제53조·제53조의2<br>
+    현행 법령 조회 기준: 2026-06-26 <span class="freq-badge">영세율의 선결 논점</span>
+  </div>
+</div>
+
+<nav class="toolbar" aria-label="학습자료 바로가기">
+  <a href="#memory">핵심결론</a><a href="#structure">법령구조</a><a href="#goods">재화</a><a href="#services">용역</a><a href="#digital">전자적용역</a><a href="#rate">영세율연결</a><a href="#case">실무사례</a><a href="#quiz">O/X</a><a href="#sources">근거</a>
+  <button type="button" id="expandBtn">해설 모두 열기</button>
+  <span class="progress-label">읽기 진행</span><span class="progress-track"><span class="progress-bar" id="progressBar"></span></span>
+</nav>
+
+<section class="highlight-box" id="memory">
+  <h2>🔥 먼저 외울 8개 결론</h2>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-head c1">이동하는 재화</div><div class="feat-body"><strong>이동이 시작되는 장소</strong></div></div>
+    <div class="feat-card"><div class="feat-head c2">이동 없는 재화</div><div class="feat-body">공급시기에 <strong>재화가 있는 장소</strong></div></div>
+    <div class="feat-card"><div class="feat-head c3">일반 용역</div><div class="feat-body"><strong>역무 제공지</strong> 또는 재화의 <strong>사용지</strong></div></div>
+    <div class="feat-card"><div class="feat-head c4">외국사업자 국제운송</div><div class="feat-body"><strong>탑승지·적재지</strong></div></div>
+    <div class="feat-card"><div class="feat-head c5">전자적 용역</div><div class="feat-body">공급받는 자의 <strong>사업장·주소·거소</strong></div></div>
+    <div class="feat-card"><div class="feat-head c6">계약·대금 장소</div><div class="feat-body">원칙적으로 공급장소의 직접 기준이 <strong>아님</strong></div></div>
+    <div class="feat-card"><div class="feat-head c7">수출재화</div><div class="feat-body">국내에서 이동 시작 → <strong>국내 공급 후 영세율</strong></div></div>
+    <div class="feat-card"><div class="feat-head c8">국외 용역</div><div class="feat-body">국외에서 역무 제공 → <strong>국외공급 영세율 검토</strong></div></div>
+  </div>
+  <div class="analogy-box"><strong>암기문장:</strong> 재화는 <strong>출발·현재</strong>, 용역은 <strong>실행·사용</strong>, 외국운송은 <strong>탑승·적재</strong>, 디지털은 <strong>소비자 위치</strong>.</div>
+</section>
+
+<section class="section" id="structure">
+  <div class="section-title-bar">1. 법령 구조와 판단 순서</div>
+  <div class="tw"><table>
+    <thead><tr><th>조문</th><th>판정대상</th><th>직접 기준</th><th>연결 규정</th></tr></thead>
+    <tbody>
+      <tr><td><strong>법 §19</strong></td><td>재화의 공급장소</td><td>이동 시작지 또는 공급시기 소재지</td><td>법 §21 수출, 법 §53② 국외사업자 권리공급 특례</td></tr>
+      <tr><td><strong>법 §20</strong></td><td>용역의 공급장소</td><td>역무 제공지·재화 사용지</td><td>법 §22 국외공급, 법 §23 외국항행</td></tr>
+      <tr><td><strong>법 §20①2</strong></td><td>비거주자·외국법인의 국제운송</td><td>여객 탑승지 또는 화물 적재지</td><td>외국항행 영세율과 구분</td></tr>
+      <tr><td><strong>법 §20①3</strong></td><td>전자적 용역</td><td>수령자의 사업장·주소·거소</td><td>법 §53의2, 영 §96의2</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok-box"><span class="lr">판단 순서</span>① 재화·용역 구분 → ② 이동·역무·사용의 실제 장소 확인 → ③ 국제운송·전자적 용역·국외사업자 권리 특례 확인 → ④ 국내·국외 공급 판정 → ⑤ 영세율·면세·일반세율을 별도로 판단합니다.</div>
+  <div class="gray-box"><span class="lr">하부 법령 확인 결과</span>현행 부가가치세법 시행령·시행규칙에는 제19조·제20조의 일반 공급장소를 직접 구체화하는 별도 본문 조문이 확인되지 않습니다. 다만 전자적 용역의 범위와 신고 특례는 시행령 제96조의2 등이 보충합니다.</div>
+</section>
+
+<section class="section" id="goods">
+  <div class="section-title-bar">2. 법 제19조 — 재화의 공급장소</div>
+  <div class="pe-wrap">
+    <div class="pe-p"><span class="pe-title p">이동 필요</span><p>재화의 <strong>이동이 시작되는 장소</strong></p><p class="footnote">도착지·검수지·대금수령지가 아님</p></div>
+    <div class="pe-e"><span class="pe-title e">이동 불필요</span><p>공급시기에 그 <strong>재화가 있는 장소</strong></p><p class="footnote">부동산·현지 고정설비·현지 재고 등</p></div>
+  </div>
+
+  <h3>2-1. 이동하는 재화</h3>
+  <div class="tw"><table>
+    <thead><tr><th>사례</th><th>이동 시작지</th><th>공급장소</th><th>후속 판단</th></tr></thead>
+    <tbody>
+      <tr><td>서울 창고 → 부산 거래처</td><td>서울</td><td>국내</td><td>일반 국내거래</td></tr>
+      <tr class="hl"><td>부산 공장 → 일본 수출</td><td>부산</td><td><strong>국내</strong></td><td>법 §21 수출 영세율</td></tr>
+      <tr><td>베트남 창고 → 태국 거래처</td><td>베트남</td><td>국외</td><td>중계무역·외국인도수출 특례 여부 추가 검토</td></tr>
+      <tr><td>해외 공장에서 국내로 반입</td><td>국외</td><td>재화 공급장소와 별도로 <strong>수입</strong> 판정</td><td>법 §13·§18·§50</td></tr>
+    </tbody>
+  </table></div>
+  <div class="red-box"><span class="lr">대표 함정</span>수출재화는 외국에 도착하므로 공급장소가 외국이라는 문장은 틀립니다. 국내에서 이동을 시작하면 공급장소는 국내이고, 수출이라는 이유로 <strong>0% 세율</strong>을 적용합니다.</div>
+
+  <h3>2-2. 이동하지 않는 재화</h3>
+  <div class="tw"><table>
+    <thead><tr><th>거래</th><th>공급장소 판단</th><th>실무 확인자료</th></tr></thead>
+    <tbody>
+      <tr><td>국내 토지·건물 양도</td><td>공급시기 국내 소재 → 국내</td><td>등기부, 인도·사용가능일</td></tr>
+      <tr><td>국외 부동산 양도</td><td>공급시기 국외 소재 → 국외</td><td>해외 등기자료</td></tr>
+      <tr><td>해외 공장에 설치된 기계를 현지에서 양도</td><td>공급시기 국외 소재 → 국외</td><td>자산대장, 설치장소, 현지 인수증</td></tr>
+      <tr><td>보세구역 내 재고 양도</td><td>이동·반입 형태와 수입 여부를 함께 검토</td><td>B/L, 창고증권, 수입신고필증</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box"><span class="lr">국외사업자의 권리공급 특례</span>법 제53조 제2항은 국외사업자로부터 권리를 공급받는 경우 제19조 제1항에도 불구하고 <strong>공급받는 자의 국내 사업장 소재지 또는 주소지</strong>를 공급장소로 보는 별도 특례를 둡니다.</div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-title-bar">3. 법 제20조 — 용역의 공급장소</div>
+  <h3>3-1. 일반용역: 실제 수행지·사용지</h3>
+  <div class="two-col">
+    <div class="col-box"><h4>역무 제공형</h4><p>건설·수리·가공·교육·자문 등은 <strong>역무가 실제 제공되는 장소</strong></p></div>
+    <div class="col-box"><h4>사용 허용형</h4><p>시설물·권리 등의 사용을 허용하는 경우 <strong>그 재화가 사용되는 장소</strong></p></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>사례</th><th>공급자·대금</th><th>실제 제공·사용 장소</th><th>공급장소</th></tr></thead>
+    <tbody>
+      <tr><td>국내 업체가 베트남 공사현장에서 시공</td><td>국내 업체·원화 수령</td><td>베트남</td><td><strong>국외</strong></td></tr>
+      <tr><td>외국 컨설턴트가 서울에서 현장자문</td><td>외국인·외화 지급</td><td>서울</td><td><strong>국내</strong></td></tr>
+      <tr><td>국내 호텔 객실 사용</td><td>예약은 해외 플랫폼</td><td>국내 호텔</td><td><strong>국내</strong></td></tr>
+      <tr><td>국외 설비를 현지에서 임대·사용</td><td>계약은 국내 체결</td><td>국외</td><td><strong>국외</strong></td></tr>
+    </tbody>
+  </table></div>
+  <div class="analogy-box"><strong>핵심:</strong> 사람·법인의 국적, 계약서 서명지, 청구서 발행지, 결제통화보다 <strong>용역이 실제로 행해진 곳 또는 사용된 곳</strong>을 먼저 봅니다.</div>
+
+  <h3>3-2. 비거주자·외국법인의 국제운송</h3>
+  <div class="law-box"><span class="lr">법 제20조 제1항 제2호</span>국내와 국외에 걸쳐 제공되는 국제운송에서 사업자가 비거주자 또는 외국법인이면 <strong>여객이 탑승하거나 화물이 적재되는 장소</strong>가 공급장소입니다.</div>
+  <div class="tw"><table>
+    <thead><tr><th>외국 운송사업자의 운송</th><th>탑승·적재지</th><th>공급장소</th></tr></thead>
+    <tbody>
+      <tr><td>인천 → 도쿄 여객</td><td>인천</td><td>국내</td></tr>
+      <tr><td>도쿄 → 인천 여객</td><td>도쿄</td><td>국외</td></tr>
+      <tr><td>부산항 → 싱가포르 화물</td><td>부산항</td><td>국내</td></tr>
+      <tr><td>싱가포르 → 부산항 화물</td><td>싱가포르</td><td>국외</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn-box"><span class="lr">구별</span>이 표는 <strong>외국 운송사업자의 공급장소</strong>를 판정하는 것입니다. 외국항행용역의 범위와 영세율은 법 제23조에서 별도로 판단합니다.</div>
+</section>
+
+<section class="section" id="digital">
+  <div class="section-title-bar">4. 전자적 용역 — 소비지 기준</div>
+  <div class="law-box"><span class="lr">법 제20조 제1항 제3호</span>법 제53조의2 제1항의 전자적 용역은 <strong>공급받는 자의 사업장 소재지, 주소지 또는 거소지</strong>가 공급장소입니다.</div>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-head c1">디지털 콘텐츠</div><div class="feat-body">게임·음성·동영상·전자문서·소프트웨어</div></div>
+    <div class="feat-card"><div class="feat-head c2">온라인 광고</div><div class="feat-body">정보통신망을 통한 광고 게재</div></div>
+    <div class="feat-card"><div class="feat-head c3">클라우드</div><div class="feat-body">클라우드컴퓨팅서비스</div></div>
+    <div class="feat-card"><div class="feat-head c4">플랫폼 중개</div><div class="feat-body">국내 물품·장소 대여 또는 재화·용역 거래 중개</div></div>
+  </div>
+  <div class="flowchart">
+    <div class="flow-node">국외사업자가 전자적 용역 공급</div><div class="flow-arrow">↓</div>
+    <div class="flow-diamond">공급받는 자의 위치는?</div><div class="flow-arrow">↓</div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label">국내 사업장·주소·거소</span><div class="flow-node g">국내 공급장소</div></div>
+      <div class="flow-branch-item"><span class="branch-label">국외</span><div class="flow-node gray">국외 공급장소</div></div>
+    </div>
+  </div>
+  <div class="ok-box"><span class="lr">실무 연결</span>국외사업자가 국내 소비자에게 전자적 용역을 제공하는 경우 법 제53조의2의 간편사업자등록과 신고·납부 특례를 검토합니다. 시행령 제96조의2는 전자적 용역의 범위와 공급시기 등을 구체화합니다.</div>
+  <div class="red-box"><span class="lr">주의</span>서버가 해외에 있거나 결제가 외화로 이루어진다는 사실만으로 국외 공급이 되는 것은 아닙니다. 전자적 용역은 공급받는 자의 위치를 중심으로 판정합니다.</div>
+</section>
+
+<section class="compare-box" id="rate">
+  <h2>⚖️ 공급장소와 세율은 별도 단계</h2>
+  <div class="tw"><table>
+    <thead><tr><th>거래</th><th>공급장소</th><th>세율·과세 연결</th></tr></thead>
+    <tbody>
+      <tr><td>국내에서 이동 시작한 수출재화</td><td>국내</td><td>법 §21에 따라 영세율 가능</td></tr>
+      <tr><td>국내 사업자가 국외에서 제공한 건설용역</td><td>국외</td><td>법 §22에 따라 영세율</td></tr>
+      <tr><td>선박·항공기에 의한 외국항행용역</td><td>공급자·탑승·적재 등에 따라 판정</td><td>법 §23의 영세율 별도 검토</td></tr>
+      <tr><td>국내에서 제공한 일반 자문용역</td><td>국내</td><td>원칙 10%, 다만 면세·기타 영세율 여부 검토</td></tr>
+      <tr><td>국외사업자의 국내 소비자 대상 전자적 용역</td><td>국내</td><td>간편사업자등록·납부 특례 검토</td></tr>
+    </tbody>
+  </table></div>
+  <div class="analogy-box"><strong>시험 풀이:</strong> “어디서 공급했는가?”를 먼저 풀고, 그 다음 “0%·면세·10% 중 무엇인가?”를 풉니다.</div>
+</section>
+
+<section class="section" id="case">
+  <div class="section-title-bar">5. 기출 연결·실무 사례</div>
+  <div class="trap-box">
+    <h2>기출 DB에서 확인되는 연결 논점</h2>
+    <p>공급장소는 독립 문항보다 영세율 문제의 선결요건으로 활용됩니다. 업로드된 DB에서는 국외 건설용역, 외국항행용역, 외국사업자·비거주자 대상 용역 등이 반복적으로 출제되었습니다.</p>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>기출 소재</th><th>먼저 할 공급장소 판단</th><th>다음 단계</th></tr></thead>
+    <tbody>
+      <tr><td>국외 건설공사 재도급</td><td>공사현장 국외 → 국외 공급</td><td>법 §22 영세율, 대금수령 방법은 원칙적 요건 아님</td></tr>
+      <tr><td>선박·항공기 외국항행</td><td>일반 규정과 외국사업자 탑승·적재지 특례 구분</td><td>법 §23 및 영 §32 범위</td></tr>
+      <tr><td>국내에서 외국법인에게 상품중개용역</td><td>역무가 국내 제공 → 국내 공급</td><td>법 §24·영 §33 외화획득 영세율 요건 검토</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>5-1. 실무 사례</h3>
+  <details><summary>사례 1 — 국내 제조업자가 부산항에서 미국으로 제품 수출</summary><div>재화 이동은 부산에서 시작하므로 공급장소는 국내입니다. 거래를 국외거래로 제외하지 않고 매출에 반영한 뒤 수출신고필증 등으로 법 제21조 영세율을 적용합니다.</div></details>
+  <details><summary>사례 2 — 국내 법인이 중국 현지 창고 재고를 중국 거래처에 인도</summary><div>재화 이동이 중국에서 시작되므로 제19조상 공급장소는 국외입니다. 다만 국내 사업장에서 계약·대가수령이 이루어진 중계무역·외국인도수출 등에 해당하는지 확인하여 영세율 신고 및 증빙을 별도로 검토합니다.</div></details>
+  <details><summary>사례 3 — 국내 건설사가 인도네시아 현장에서 시공</summary><div>역무 제공지는 인도네시아이므로 국외 공급입니다. 대금을 국내 원화계좌로 받았다는 사정은 공급장소를 바꾸지 않습니다. 법 제22조의 국외공급 용역으로 영세율을 검토합니다.</div></details>
+  <details><summary>사례 4 — 미국 컨설팅회사가 직원들을 서울로 보내 현장진단</summary><div>실제 자문역무가 서울에서 제공되므로 국내 공급장소입니다. 국내사업장 존재 여부, 대리납부 또는 국외사업자 특례 등 납세절차를 추가 확인해야 합니다.</div></details>
+  <details><summary>사례 5 — 해외 앱사업자가 국내 개인에게 유료 앱 제공</summary><div>국내 이용자의 주소지·거소지가 공급장소이므로 국내 공급입니다. 간편사업자등록, 플랫폼이 공급자로 의제되는지, 거래명세 보관 등을 확인합니다.</div></details>
+  <details><summary>사례 6 — 해외 특허권자로부터 국내 공장용 사용권 취득</summary><div>법 제53조 제2항의 특례에 따라 공급받는 자의 국내 사업장 소재지 또는 주소지가 권리 공급장소가 될 수 있습니다. 단순히 권리자의 소재지가 해외라는 이유로 국외거래로 처리하면 안 됩니다.</div></details>
+
+  <h3>5-2. 실무 증빙 체크리스트</h3>
+  <div class="three-col">
+    <div class="col-box"><h4>재화</h4><ul><li>출고지·창고 소재지</li><li>운송장·B/L</li><li>인도조건(Incoterms)</li><li>현지 재고·자산대장</li></ul></div>
+    <div class="col-box"><h4>용역</h4><ul><li>작업일지·출장기록</li><li>공사현장·수행장소</li><li>시설·권리 사용지</li><li>검수·성과물 전달자료</li></ul></div>
+    <div class="col-box"><h4>국제·디지털</h4><ul><li>여객 탑승·화물 적재지</li><li>이용자 주소·결제정보</li><li>IP·휴대전화 국가정보</li><li>수출·영세율 첨부서류</li></ul></div>
+  </div>
+</section>
+
+<section class="trap-box" id="traps">
+  <h2>🚨 자주 틀리는 함정 10개</h2>
+  <div class="trap-item"><span class="trap-icon">①</span><div><strong>이동재화는 도착지?</strong> 출발지입니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">②</span><div><strong>수출재화는 국외 공급?</strong> 국내에서 이동을 시작하면 국내 공급 후 영세율입니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">③</span><div><strong>계약 체결지·대금 수령지</strong>는 일반 공급장소의 직접 기준이 아닙니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">④</span><div><strong>공급자 본점 소재지</strong>가 아니라 용역의 실제 수행지·사용지입니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">⑤</span><div><strong>국외 용역을 원화로 받으면 국내?</strong> 결제통화는 공급장소를 바꾸지 않습니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">⑥</span><div><strong>외국사업자 국제운송</strong>은 도착지가 아니라 탑승지·적재지입니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">⑦</span><div><strong>전자적 용역은 서버 위치?</strong> 공급받는 자의 위치입니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">⑧</span><div><strong>국외사업자의 권리</strong>는 법 제53조 제2항 특례를 빠뜨리면 안 됩니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">⑨</span><div><strong>국내 공급 = 무조건 10%</strong>가 아닙니다. 영세율·면세를 다시 판단합니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">⑩</span><div><strong>국외 공급 = 신고 제외</strong>로 단정하면 안 됩니다. 국내 사업자의 국외 용역은 영세율 신고대상일 수 있습니다.</div></div>
+</section>
+
+<section class="section" id="quiz">
+  <div class="section-title-bar">6. 실전 O/X — 공급장소</div>
+  <div class="quiz-head"><p>문장을 읽고 O 또는 X를 선택하세요. 문항은 <strong>예상문제</strong>이며 현행 조문을 바탕으로 구성했습니다.</p><span class="quiz-score" id="quizScore">정답 0 / 풀이 0</span></div>
+  <div id="quizList"></div>
+  <button type="button" class="reset-btn" id="resetQuiz">퀴즈 초기화</button>
+</section>
+
+<section class="section" id="sources">
+  <div class="section-title-bar">7. 근거 법령·기출자료</div>
+  <ul class="source-list">
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제19조" target="_blank" rel="noopener">부가가치세법 제19조</a> — 재화의 공급장소</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제20조" target="_blank" rel="noopener">부가가치세법 제20조</a> — 용역의 공급장소</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제21조" target="_blank" rel="noopener">부가가치세법 제21조</a> — 재화의 수출</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제22조" target="_blank" rel="noopener">부가가치세법 제22조</a> — 용역의 국외공급</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제23조" target="_blank" rel="noopener">부가가치세법 제23조</a> — 외국항행용역</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제53조" target="_blank" rel="noopener">부가가치세법 제53조 제2항</a> — 국외사업자 권리 공급장소 특례</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제53조의2" target="_blank" rel="noopener">부가가치세법 제53조의2</a> — 전자적 용역 국외사업자 특례</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제96조의2" target="_blank" rel="noopener">부가가치세법 시행령 제96조의2</a> — 전자적 용역 범위·공급시기·간편등록</li>
+    <li>업로드 자료: 「소득세법 총설 예습」 HTML의 시각·학습 구조, 「세무사 1차 세법학개론 기출분석 DB」의 국외용역·외국항행·영세율 출제논점</li>
+  </ul>
+  <div class="gray-box"><strong>법령 버전:</strong> 법률은 2026-01-02 시행본, 시행령은 2026-02-27 시행본, 시행규칙은 2026-03-20 시행본을 조회했습니다. 제19조·제20조의 일반 공급장소를 직접 구체화하는 시행령·시행규칙 본문은 확인되지 않았고, 관련 특례 조문을 함께 반영했습니다. 실제 신고 시 거래일 당시 법령과 계약·수행 사실을 재확인해야 합니다.</div>
+</section>
+
+<p class="footer-note">부가가치세법 제19조·제20조 예습자료 · 작성 2026-06-26 · #재화공급장소 #용역공급장소 #국외공급 #전자적용역</p>
+
+
+<script>
+const quizData = [{"q": "1. 재화의 이동이 필요한 경우 공급장소는 재화가 최종적으로 도착하는 장소이다.", "a": false, "e": "X. 법 제19조 제1항 제1호에 따라 재화의 이동이 시작되는 장소입니다."}, {"q": "2. 국내 공장에서 출고되어 외국으로 반출되는 수출재화의 공급장소는 국내이다.", "a": true, "e": "O. 이동이 국내에서 시작되므로 공급장소는 국내입니다. 그 다음 단계에서 법 제21조의 수출 영세율을 검토합니다."}, {"q": "3. 재화의 이동이 필요하지 않은 경우에는 공급시기에 그 재화가 있는 장소가 공급장소이다.", "a": true, "e": "O. 법 제19조 제1항 제2호의 원칙입니다."}, {"q": "4. 국내 법인이 해외 창고에 있던 재화를 해외 거래처에 현지 인도한 경우, 계약과 대금수령이 국내에서 이루어졌다는 이유만으로 공급장소가 국내가 된다.", "a": false, "e": "X. 공급장소는 계약 체결지나 대금 수령지가 아니라 재화의 이동 시작지 또는 공급시기 소재지로 판정합니다. 다만 별도의 수출 특례 해당 여부는 추가 검토합니다."}, {"q": "5. 용역의 일반적 공급장소는 공급자의 본점 소재지이다.", "a": false, "e": "X. 법 제20조 제1항 제1호에 따라 역무가 실제 제공되거나 시설물·권리 등이 사용되는 장소입니다."}, {"q": "6. 국내 사업자가 국외 공사현장에서 건설용역을 제공한 경우 공급장소는 국외이다.", "a": true, "e": "O. 역무가 실제 제공된 국외 공사현장이 공급장소입니다. 국내 사업자의 국외공급 용역은 법 제22조의 영세율 검토대상입니다."}, {"q": "7. 국외에서 제공한 용역의 대가를 국내 은행계좌로 받으면 공급장소가 국내로 변경된다.", "a": false, "e": "X. 일반 용역의 공급장소는 역무 제공지 또는 재화 사용지이며 대금 수령지는 기준이 아닙니다."}, {"q": "8. 비거주자 또는 외국법인이 제공하는 국제운송은 여객 탑승지 또는 화물 적재지가 공급장소 판정기준이 될 수 있다.", "a": true, "e": "O. 법 제20조 제1항 제2호의 특례입니다."}, {"q": "9. 외국 항공사가 인천에서 승객을 태워 해외로 운송한 경우 공급장소는 승객이 내리는 외국 공항이다.", "a": false, "e": "X. 외국법인인 국제운송사업자는 여객 탑승지가 기준이므로 인천이 공급장소입니다."}, {"q": "10. 전자적 용역은 공급자의 서버 소재지만으로 공급장소를 판단한다.", "a": false, "e": "X. 법 제20조 제1항 제3호에 따라 공급받는 자의 사업장 소재지·주소지·거소지가 기준입니다."}, {"q": "11. 국외 플랫폼이 국내 소비자에게 온라인 게임·동영상·클라우드 서비스를 제공하면 국내 소비자의 주소지 등이 공급장소가 될 수 있다.", "a": true, "e": "O. 전자적 용역의 소비지 과세 원칙입니다. 실제 신고·납부는 법 제53조의2의 간편사업자등록 특례와 연결됩니다."}, {"q": "12. 국외사업자로부터 권리를 공급받는 경우에는 언제나 그 권리가 실제 사용되는 국외 장소만을 공급장소로 한다.", "a": false, "e": "X. 법 제53조 제2항은 제19조 제1항에도 불구하고 공급받는 자의 국내 사업장 소재지 또는 주소지를 권리의 공급장소로 보는 특례를 둡니다."}, {"q": "13. 공급장소가 국내라고 판정되면 반드시 10% 세율만 적용된다.", "a": false, "e": "X. 국내 공급이어도 수출·외국항행·외화획득 거래 등은 영세율이 적용될 수 있습니다. 공급장소와 세율은 별도 단계입니다."}, {"q": "14. 부가가치세법 제19조·제20조를 직접 구체화하는 별도의 현행 시행령·시행규칙 조문은 확인되지 않는다.", "a": true, "e": "O. 현행 시행령의 공급시기·공급장소 절은 제30조에서 끝나고 제31조부터 영세율 장으로 넘어갑니다. 다만 전자적 용역 등 관련 특례는 다른 조문에서 보충됩니다."}];
+const list = document.getElementById('quizList');
+let solved = 0, correct = 0;
+function renderQuiz(){
+  solved=0; correct=0; list.innerHTML=''; updateScore();
+  quizData.forEach((item)=>{
+    const card=document.createElement('div'); card.className='quiz-card';
+    card.innerHTML=`<div class="quiz-q">${item.q}</div><div class="quiz-options"><button type="button" data-v="true">O</button><button type="button" data-v="false">X</button></div><div class="quiz-answer"></div>`;
+    const ans=card.querySelector('.quiz-answer');
+    card.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+      if(card.dataset.done) return;
+      card.dataset.done='1'; solved++;
+      const chosen=btn.dataset.v==='true';
+      const ok=chosen===item.a; if(ok) correct++;
+      card.classList.add(ok?'correct':'wrong');
+      ans.textContent=(ok?'정답입니다. ':'오답입니다. ')+item.e; ans.classList.add('show');
+      card.querySelectorAll('button').forEach(b=>b.disabled=true); updateScore();
+    }));
+    list.appendChild(card);
+  });
+}
+function updateScore(){document.getElementById('quizScore').textContent=`정답 ${correct} / 풀이 ${solved}`}
+document.getElementById('resetQuiz').addEventListener('click',renderQuiz);
+renderQuiz();
+let allOpen=false;
+document.getElementById('expandBtn').addEventListener('click',e=>{
+  allOpen=!allOpen; document.querySelectorAll('details').forEach(d=>d.open=allOpen);
+  e.currentTarget.textContent=allOpen?'해설 모두 닫기':'해설 모두 열기';
+});
+const progressBar=document.getElementById('progressBar');
+function updateProgress(){
+  const doc=document.documentElement;
+  const max=doc.scrollHeight-doc.clientHeight;
+  const pct=max>0?(doc.scrollTop/max)*100:0;
+  progressBar.style.width=Math.min(100,Math.max(0,pct))+'%';
+}
+document.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
+</script>
+
+</body>
+</html>

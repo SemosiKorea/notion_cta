@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제9조·제10조 — 재화의 공급 | 세무사 1차 예습자료</title>
+<style>
+/* ──────────────────────────────────────────
+   BASE — 소득세법 총설 예습자료의 시각 체계 계승
+────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#FAFAFA;color:#1A1A2E;
+  font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  font-size:14px;line-height:1.85;
+  max-width:1060px;margin:0 auto;padding:24px
+}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px}
+h2{color:#1A3A6B;font-size:1.14em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}
+h3{color:#2C5282;font-size:1em;margin:14px 0 7px}
+h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}
+ul,ol{padding-left:20px;margin-bottom:8px}
+li{margin-bottom:4px;line-height:1.75}
+a{color:#1A56A8;text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:#1A1A2E}
+button{font:inherit}
+
+/* ──────────────────────────────────────────
+   HEADER
+────────────────────────────────────────── */
+.header{
+  background:linear-gradient(135deg,#0D1B4B,#1A3A6B);
+  color:#fff;padding:32px 40px;border-radius:14px;margin-bottom:16px;
+  box-shadow:0 10px 28px rgba(13,27,75,.15)
+}
+.subject-badge{
+  background:rgba(255,255,255,.2);color:#fff;
+  padding:4px 16px;border-radius:20px;
+  font-size:.82em;display:inline-block;margin-bottom:11px
+}
+.header h1{color:#fff;font-size:1.84em}
+.header .meta{font-size:.8em;opacity:.9;margin-top:7px;line-height:1.65}
+.freq-badge{
+  display:inline-block;font-size:.8em;font-weight:700;
+  padding:2px 10px;border-radius:12px;
+  background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px
+}
+
+/* ──────────────────────────────────────────
+   TOOLBAR / NAV
+────────────────────────────────────────── */
+.toolbar{
+  position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;
+  box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px
+}
+.toolbar a,.toolbar button{
+  border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;
+  padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer
+}
+.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}
+.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}
+.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+
+/* ──────────────────────────────────────────
+   SECTION WRAPPERS
+────────────────────────────────────────── */
+.section{
+  margin:20px 0;padding:24px 28px;
+  border-radius:12px;border:1px solid #E8ECF0;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)
+}
+.section-title-bar{
+  background:linear-gradient(90deg,#1A3A6B,#2C5282);
+  color:#fff;padding:9px 16px;border-radius:8px;
+  font-size:1.03em;font-weight:700;
+  margin:-24px -28px 18px;letter-spacing:.02em
+}
+.sub-block{
+  background:#F8FAFE;border:1px solid #DCE7F5;
+  border-radius:8px;padding:14px 18px;margin:12px 0
+}
+.sub-block h3{margin-top:0;color:#1A3A6B}
+
+/* ──────────────────────────────────────────
+   SPECIAL BOXES
+────────────────────────────────────────── */
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}
+.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}
+.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}
+.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}
+.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}
+.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}
+.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}
+.law-box{background:#EEF2FF;border:1px solid #C3D4F0;border-left:4px solid #1A3A6B;border-radius:0 8px 8px 0;padding:11px 15px;margin:9px 0;font-size:.88em;line-height:1.78}
+.warn-box{background:#FFFBEB;border:1px solid #F6E05E;border-left:4px solid #D69E2E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.ok-box{background:#F0FFF4;border:1px solid #9AE6B4;border-left:4px solid #38A169;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.red-box{background:#FFF3F3;border:1px solid #FED7D7;border-left:4px solid #E53E3E;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.gray-box{background:#F8FAFC;border:1px solid #CBD5E1;border-left:4px solid #64748B;border-radius:0 6px 6px 0;padding:11px 15px;margin:9px 0;font-size:.88em}
+.lr{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82em;font-weight:700;color:#1A3A6B;display:block;margin-bottom:3px}
+
+/* ──────────────────────────────────────────
+   TABLE
+────────────────────────────────────────── */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid #E2E8F0;margin:12px 0}
+table{width:100%;border-collapse:collapse;font-size:.88em}
+th{background:#EEF2FF;color:#1A3A6B;padding:10px 13px;text-align:left;font-weight:700;font-size:.87em;border-bottom:2px solid #C3D4F0;white-space:nowrap}
+td{padding:9px 13px;border-bottom:1px solid #F0F0F0;vertical-align:top;line-height:1.7}
+tr:hover td{background:#FAFBFF}
+.diff{color:#C53030;font-weight:700}.ok-text{color:#276749;font-weight:700}
+.hl{background:#FFFBEB!important}.center{text-align:center}
+.tc{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.84em;color:#1A3A6B}
+.no-wrap{white-space:nowrap}
+
+/* ──────────────────────────────────────────
+   FLOWCHART
+────────────────────────────────────────── */
+.flowchart{display:flex;flex-direction:column;align-items:center;gap:3px;margin:16px 0}
+.flow-node{background:#1A3A6B;color:#fff;padding:9px 24px;border-radius:8px;font-size:.87em;font-weight:700;text-align:center;min-width:210px;max-width:520px;line-height:1.45}
+.flow-node.g{background:#276749}.flow-node.r{background:#9B2335}.flow-node.o{background:#744210}.flow-node.gray{background:#4A5568}.flow-node.p{background:#5A2D82}
+.flow-diamond{background:#744210;color:#fff;padding:7px 20px;border-radius:50px;font-size:.84em;font-weight:700;text-align:center;max-width:420px}
+.flow-arrow{font-size:1.2em;color:#718096;line-height:1}
+.flow-branch{display:flex;gap:20px;align-items:flex-start;justify-content:center;width:100%;flex-wrap:wrap}
+.flow-branch-item{display:flex;flex-direction:column;align-items:center;gap:3px;max-width:270px}
+.branch-label{font-size:.79em;color:#718096;font-weight:700}
+
+/* ──────────────────────────────────────────
+   CARDS / MISC
+────────────────────────────────────────── */
+.trap-item{display:flex;gap:9px;align-items:flex-start;margin:9px 0;padding:9px 13px;background:#fff;border-radius:8px;border:1px solid #FED7D7}
+.trap-icon{font-size:1.1em;flex-shrink:0;margin-top:1px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
+.col-box{background:#F7FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:13px}
+.col-box h4{margin-top:0;color:#1A3A6B}
+.key-num{display:inline-block;background:#1A3A6B;color:#fff;padding:1px 9px;border-radius:5px;font-weight:700;font-size:.9em;margin:0 2px}
+.footnote{color:#718096;font-size:.82em;margin-top:8px}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:11px;margin:13px 0}
+.feat-card{border-radius:9px;overflow:hidden;border:1px solid #E2E8F0;background:#fff}
+.feat-head{padding:8px 12px;font-weight:700;font-size:.86em;color:#fff}
+.feat-head.c1{background:#1A3A6B}.feat-head.c2{background:#276749}.feat-head.c3{background:#744210}.feat-head.c4{background:#5A2D82}.feat-head.c5{background:#9B2335}.feat-head.c6{background:#2C7A7B}.feat-head.c7{background:#2A4A8A}.feat-head.c8{background:#475569}
+.feat-body{background:#fff;padding:10px 12px;font-size:.84em;color:#374151;line-height:1.65}
+.pe-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:12px 0;border:2px solid #1A3A6B;border-radius:10px;overflow:hidden}
+.pe-p{background:#EEF2FF;padding:14px 16px;border-right:2px solid #1A3A6B}.pe-e{background:#FFF8E1;padding:14px 16px}
+.pe-title{font-weight:700;font-size:.9em;padding:5px 9px;border-radius:5px;margin-bottom:8px;display:inline-block}
+.pe-title.p{background:#1A3A6B;color:#fff}.pe-title.e{background:#744210;color:#fff}
+.b{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.79em;font-weight:700;margin:1px}
+.b-blue{background:#CCE5FF;color:#004085;border:1px solid #B8DAFF}.b-red{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}.b-green{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0}.b-orange{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A}.b-gray{background:#E2E8F0;color:#334155;border:1px solid #CBD5E1}.b-purple{background:#EDE9FE;color:#5B21B6;border:1px solid #DDD6FE}
+.star{color:#D97706;font-size:.82em}
+
+/* ──────────────────────────────────────────
+   QUIZ
+────────────────────────────────────────── */
+.quiz-head{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.quiz-score{background:#0D1B4B;color:#fff;padding:6px 12px;border-radius:20px;font-size:.82em;font-weight:700}
+.quiz-card{border:1px solid #DCE7F5;border-radius:10px;padding:15px 17px;margin:11px 0;background:#FBFDFF}
+.quiz-card.correct{border-color:#86D6A3;background:#F0FFF4}.quiz-card.wrong{border-color:#FEB2B2;background:#FFF5F5}
+.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px;flex-wrap:wrap}
+.quiz-options button{border:1px solid #B8C7DA;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 14px;font-weight:700;cursor:pointer}
+.quiz-options button:hover{background:#EEF2FF}.quiz-options button:disabled{cursor:default;opacity:.75}
+.quiz-answer{display:none;margin-top:10px;padding:9px 11px;border-radius:7px;background:#fff;border:1px dashed #CBD5E1;font-size:.88em}
+.quiz-answer.show{display:block}
+.reset-btn{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:7px 13px;cursor:pointer;font-weight:700}
+
+/* ──────────────────────────────────────────
+   DETAILS / SOURCES / PRINT
+────────────────────────────────────────── */
+details{border:1px solid #DCE7F5;border-radius:8px;background:#fff;margin:8px 0;overflow:hidden}
+summary{cursor:pointer;font-weight:700;color:#1A3A6B;padding:10px 13px;background:#F8FAFE}
+details>div{padding:11px 14px;font-size:.88em}
+.source-list{font-size:.84em;color:#475569}
+.source-list li{margin-bottom:7px}
+.footer-note{text-align:center;color:#64748B;font-size:.8em;margin:24px 0 8px}
+
+@media(max-width:700px){
+  body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.section{padding:21px 18px}.section-title-bar{margin:-21px -18px 16px}
+  .two-col,.three-col,.pe-wrap{grid-template-columns:1fr}.pe-p{border-right:none;border-bottom:2px solid #1A3A6B}.toolbar .progress-label,.progress-track{display:none}
+}
+@media print{
+  body{max-width:none;padding:0;background:#fff;font-size:11px}.toolbar,.quiz-options,.reset-btn{display:none!important}.section{break-inside:avoid;box-shadow:none}.header{background:#0D1B4B!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.quiz-answer{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<div class="header" id="top">
+  <div class="subject-badge">부가가치세법 — 과세거래</div>
+  <h1>재화의 공급</h1>
+  <div class="meta">
+    세무사 1차 예습자료 &nbsp;|&nbsp;
+    부가가치세법 §9·§10 / 시행령 §18·§19의2·§20·§22·§23 등<br>
+    자료 기준일: 2026.06.25 &nbsp;|&nbsp; 법률 시행 2026.01.02 / 시행령 현행본 시행 2026.04.01
+    <span class="freq-badge">🔴 2021~2025 ‘과세대상·공급’ 32회 — 부가가치세법 최빈출 영역</span>
+  </div>
+</div>
+
+<nav class="toolbar" aria-label="빠른 이동">
+  <a href="#map">판단지도</a><a href="#art9">§9</a><a href="#art10">§10</a><a href="#nonsupply">공급 아님</a><a href="#compare">핵심비교</a><a href="#cases">실무사례</a><a href="#past">기출연결</a><a href="#quiz">O/X</a><a href="#sources">근거</a>
+  <button type="button" id="expandBtn">해설 모두 열기</button>
+  <span class="progress-label">읽기 진행률</span><div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+</nav>
+
+<!-- ════════════════ 최빈출 포인트 ════════════════ -->
+<section class="section highlight-box">
+  <h2>🔥 먼저 외울 8개 결론</h2>
+  <ol>
+    <li><strong>재화의 공급</strong> = 계약상·법률상 모든 원인에 따른 재화의 <strong>인도 또는 양도</strong> (§9①).</li>
+    <li><strong>현물출자·교환·가공계약</strong>도 공급이다. 현금 대가가 없다는 이유만으로 공급에서 빠지지 않는다. <span class="star">★★★</span></li>
+    <li>§10의 대표적 공급의제는 <strong>면세전용·비영업용 승용차 전용·판매목적 타사업장 반출·개인적 공급·사업상 증여·폐업시 잔존재화</strong>다. <span class="star">★★★</span></li>
+    <li><strong>양도담보·질권·저당권 설정</strong>은 담보 제공 단계에서는 공급이 아니다. <span class="star">★★★</span></li>
+    <li><strong>사업장별 권리·의무의 포괄승계</strong>인 사업양도는 원칙적으로 공급이 아니다. 계약서 제목보다 실질을 본다. <span class="star">★★★</span></li>
+    <li><strong>거래처 견본품</strong>은 사업을 위한 증여로 공급이 아니지만, <strong>고객 추첨 경품</strong>은 원칙적으로 사업상 증여로 공급이다. <span class="star">★★★</span></li>
+    <li>경매·수용·공매는 문구만 보고 일괄 판단하지 않는다. 시행령 §18③의 <strong>공매·민사집행 경매·공익수용·일정 매도청구</strong>는 공급이 아니다. <span class="star">★★</span></li>
+    <li>위탁매매는 원칙적으로 <strong>위탁자·본인</strong>이 직접 공급한 것으로 본다. 수탁자·대리인은 세금계산서 발급 실무를 대신할 수 있다. <span class="star">★★</span></li>
+  </ol>
+</section>
+
+<!-- ════════════════ 1. 판단지도 ════════════════ -->
+<section class="section" id="map">
+  <div class="section-title-bar">1. 재화 거래 판단지도 — 4단계로 끝내기</div>
+  <div class="analogy-box">💡 <strong>핵심 사고법:</strong> 먼저 “실제로 소유권·처분권이 넘어갔는가?”를 보고, 없다면 “법이 공급으로 의제하는가?”, 마지막으로 “공급 제외 규정이 있는가?”를 확인합니다.</div>
+
+  <div class="flowchart">
+    <div class="flow-node">① 재화인가? — 재산적 가치가 있는 물건·권리</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-diamond">② 계약상·법률상 원인으로 인도·양도되었는가?</div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label">YES</span><div class="flow-node g">§9 실제 공급<br>매매·가공·교환·현물출자 등</div></div>
+      <div class="flow-branch-item"><span class="branch-label">NO 또는 내부사용</span><div class="flow-node o">③ §10①~⑥ 공급의제 여부<br>면세전용·개인사용·폐업잔존 등</div></div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-diamond">④ 공급 제외 규정이 있는가?</div>
+    <div class="flow-branch">
+      <div class="flow-branch-item"><span class="branch-label">있음</span><div class="flow-node gray">§10⑨·령§18②③·§20 등<br>공급 아님</div></div>
+      <div class="flow-branch-item"><span class="branch-label">없음</span><div class="flow-node r">과세거래 검토<br>공급시기·과세표준·세금계산서로 이동</div></div>
+    </div>
+  </div>
+
+  <div class="warn-box"><strong>범위 경계:</strong> 이 자료는 “재화의 공급” 판단에 집중합니다. 실제 납부세액을 계산할 때는 별도로 영세율·면세, 공급시기, 과세표준, 세금계산서 규정을 연결해야 합니다.</div>
+</section>
+
+<!-- ════════════════ 2. 제9조 ════════════════ -->
+<section class="section" id="art9">
+  <div class="section-title-bar">2. 부가가치세법 제9조 — 실제 재화의 공급</div>
+
+  <div class="law-box">
+    <span class="lr">부가가치세법 §9①</span>
+    재화의 공급은 <strong>계약상 또는 법률상의 모든 원인</strong>에 따라 재화를 <strong>인도하거나 양도</strong>하는 것으로 한다.
+  </div>
+
+  <div class="two-col">
+    <div class="col-box"><h4>인도</h4><p>재화를 사실상 지배·사용할 수 있도록 넘기는 것. 물리적 이동이 전형적이지만 거래 구조 전체를 본다.</p></div>
+    <div class="col-box"><h4>양도</h4><p>소유권이나 재산적 권리의 귀속을 이전하는 것. 부동산·권리 등은 등기·등록과 계약관계를 함께 본다.</p></div>
+  </div>
+
+  <h3>2-1. 시행령 제18조가 열거한 공급 유형</h3>
+  <div class="tw"><table>
+    <thead><tr><th>유형</th><th>내용</th><th>시험 포인트</th></tr></thead>
+    <tbody>
+      <tr><td><strong>매매계약</strong></td><td>현금·외상·할부·장기할부·조건부·기한부·위탁판매 등</td><td>대금 회수 여부보다 인도·양도와 공급시기가 중요</td></tr>
+      <tr><td><strong>가공계약</strong></td><td>가공자가 주요자재 전부 또는 일부를 부담하여 새 재화를 만들어 인도</td><td>주요자재를 누가 부담하는지로 재화/용역 성격 구분</td></tr>
+      <tr><td><strong>교환계약</strong></td><td>재화의 대가로 다른 재화 또는 용역을 받고 재화를 인도·양도</td><td>현금이 없어도 양쪽 거래를 각각 검토</td></tr>
+      <tr class="hl"><td><strong>현물출자 등</strong></td><td>현물출자와 그 밖의 계약상·법률상 원인에 의한 인도·양도</td><td><span class="diff">현물출자 = 공급</span></td></tr>
+      <tr><td><strong>보세창고 재반입</strong></td><td>국내에서 일정 보세창고에 임치한 물품을 국내로 다시 반입</td><td>시행령의 지정 창고·창고증권 예외와 함께 암기</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>2-2. 경매·수용 문구의 현대적 해석</h3>
+  <div class="pe-wrap">
+    <div class="pe-p"><span class="pe-title p">시행령 §18①4 원칙 문구</span><p>경매·수용·현물출자 등 계약상 또는 법률상 원인으로 인도·양도하면 공급 유형에 들어간다.</p></div>
+    <div class="pe-e"><span class="pe-title e">시행령 §18③ 명시적 제외</span><p>국세징수법상 공매, 민사집행법상 경매, 공익사업 등의 수용, 일정한 매도청구는 공급으로 보지 않는다.</p></div>
+  </div>
+  <div class="red-box"><strong>오답 방지:</strong> “경매는 언제나 공급” 또는 “수용은 언제나 공급 아님”처럼 단정하지 말고, <strong>어떤 절차에 따른 경매·수용인지</strong>를 확인합니다.</div>
+
+  <details>
+    <summary>시험 확장: 소비대차와 출자지분 양도를 어떻게 구분할까?</summary>
+    <div>
+      <p><strong>상품의 소비대차</strong>는 빌린 재화를 소비하고 동종·이종 재화로 반환하는 구조이므로 차용·반환 각각에서 재화 이전을 검토합니다.</p>
+      <p>반면 <strong>출자지분 자체</strong>의 양도·상속·증여 또는 현금 반환은 “사업용 재화의 현물출자”와 다릅니다. 기출은 이 둘을 바꾸어 출제합니다.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ════════════════ 3. 제10조 ════════════════ -->
+<section class="section" id="art10">
+  <div class="section-title-bar">3. 부가가치세법 제10조 — 공급의제·공급자 특례·공급 제외</div>
+
+  <div class="analogy-box">💡 <strong>왜 내부사용에도 과세할까?</strong> 사업자가 매입할 때 공제받은 매입세액을 그대로 둔 채 최종소비자로 전환하면 과세형평이 깨집니다. 그래서 일정한 자가사용·무상제공을 “공급한 것”으로 보아 조정합니다.</div>
+
+  <h3>3-1. “자기생산·취득재화”의 의미 (§10①)</h3>
+  <div class="law-box">
+    과세사업과 관련하여 생산·취득한 재화 중 다음 어느 하나에 해당하는 재화입니다.<br>
+    ① 매입세액이 공제된 재화 &nbsp; ② 사업양도로 취득했고 양도자가 매입세액을 공제받은 재화 &nbsp; ③ 일정 수출로 영세율을 적용받은 재화
+  </div>
+  <div class="warn-box"><strong>중요:</strong> §10④ 개인적 공급, §10⑤ 사업상 증여, §10⑥ 폐업시 잔존재화의 문언도 이 “자기생산·취득재화”를 전제로 합니다. 단순히 회사가 보유한 모든 물품이 자동으로 공급의제가 되는 것은 아닙니다.</div>
+
+  <h3>3-2. 공급의제 6종</h3>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-head c1">① 면세사업등 전용</div><div class="feat-body">과세사업용 자기생산·취득재화를 면세사업 또는 비과세사업에 직접 사용·소비<br><strong>예:</strong> 과세사업 기계를 면세 교육사업에 전용</div></div>
+    <div class="feat-card"><div class="feat-head c2">② 비영업용 승용차 전용</div><div class="feat-body">공제배제 대상 자동차로 사용하거나 유지에 사용, 또는 자동차 관련 업종이 직접 영업 외 용도로 전용</div></div>
+    <div class="feat-card"><div class="feat-head c3">③ 판매목적 타사업장 반출</div><div class="feat-body">둘 이상 사업장 사이에서 판매 목적으로 재화를 반출<br>사업자단위과세·주사업장 총괄납부 예외 확인</div></div>
+    <div class="feat-card"><div class="feat-head c4">④ 개인적 공급</div><div class="feat-body">사업과 직접 관계없이 본인·사용인 등이 사용·소비하고 무상 또는 저가 제공<br>복리후생 예외 존재</div></div>
+    <div class="feat-card"><div class="feat-head c5">⑤ 사업상 증여</div><div class="feat-body">고객·불특정 다수에게 자기생산·취득재화를 증여<br>주된 거래대가 포함 및 견본품 등은 제외</div></div>
+    <div class="feat-card"><div class="feat-head c6">⑥ 폐업시 잔존재화</div><div class="feat-body">폐업 때 남은 자기생산·취득재화를 자기에게 공급한 것으로 의제<br>등록 후 사실상 미개업도 포함</div></div>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>구분</th><th>무엇을 확인?</th><th>대표 함정</th></tr></thead>
+    <tbody>
+      <tr><td>면세전용</td><td>과세사업 관련 취득 + 자기생산·취득재화 + 면세사업등 직접 사용</td><td>과세사업 내 사후서비스 사용은 보통 면세전용 아님</td></tr>
+      <tr><td>승용차 전용</td><td>공제배제 자동차 해당 여부, 자동차 관련 업종의 직접 영업사용 여부</td><td>운수업·판매업이라고 모든 사적 사용이 면제되는 것은 아님</td></tr>
+      <tr><td>타사업장 반출</td><td>판매 목적, 사업장 복수, 사업자단위과세 또는 총괄납부 여부</td><td>총괄납부라도 세금계산서 발급·신고를 선택하면 공급 취급</td></tr>
+      <tr><td>개인적 공급</td><td>사업 직접 관련성, 사용자, 대가 유무·시가 미달, 복리후생 예외</td><td>종업원 제공 = 무조건 공급 아님이 아님</td></tr>
+      <tr><td>사업상 증여</td><td>고객·불특정 다수, 증여, 주된 거래 대가 포함 여부, 시행령 예외</td><td>견본품과 추첨 경품을 혼동</td></tr>
+      <tr><td>폐업 잔존</td><td>폐업일 현재 잔존, 자기생산·취득재화 여부</td><td>사업 개시 전 등록 후 미개업도 포함</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>3-3. 종업원 복리후생 제공의 최신 범위</h3>
+  <div class="ok-box">
+    <strong>공급으로 보지 않는 대표 재화:</strong> 작업복·작업모·작업화, 직장체육·문화 관련 재화, 그리고 ① 경조사 ② 설날·추석 ③ 창립기념일·생일 등과 관련된 재화 중 <strong>각 범주별 사용인 1명당 연간 10만원 이하</strong>인 재화. 세 범주는 각각 별도 한도로 구분됩니다.
+  </div>
+  <p class="footnote">※ 2024.11.12.이 속하는 과세기간부터 창립기념일·생일 등이 설날·추석 범주와 분리되어 별도 한도로 확대된 개정사항을 반영했습니다.</p>
+
+  <h3>3-4. §10⑦·⑧ — 공급자를 누구로 볼 것인가</h3>
+  <div class="two-col">
+    <div class="col-box"><h4>위탁매매·대리매매 (§10⑦)</h4><p>원칙은 <strong>위탁자 또는 본인</strong>이 직접 공급하거나 공급받은 것으로 봅니다. 위탁자·본인을 알 수 없는 대통령령상 경우에는 수탁자·대리인을 거래 당사자로 봅니다.</p></div>
+    <div class="col-box"><h4>위탁자 지위 이전 (§10⑧)</h4><p>신탁법상 위탁자 지위가 이전되면 원칙적으로 기존 위탁자가 새 위탁자에게 신탁재산을 공급한 것으로 봅니다. 실질적 소유권 변동이 어렵다고 보는 시행령상 예외가 있습니다.</p></div>
+  </div>
+</section>
+
+<!-- ════════════════ 4. 공급 아님 ════════════════ -->
+<section class="section" id="nonsupply">
+  <div class="section-title-bar">4. 재화의 공급으로 보지 않는 거래</div>
+
+  <h3>4-1. 법 제10조 제9항</h3>
+  <div class="tw"><table>
+    <thead><tr><th>유형</th><th>공급 제외의 범위</th><th>실무 판정</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td><strong>담보 제공</strong></td><td>질권·저당권 설정, 양도담보 목적으로 동산·부동산·권리를 제공</td><td>담보 설정 단계는 소유권의 최종 처분이 아니라 채권 담보 목적</td></tr>
+      <tr class="hl"><td><strong>사업양도</strong></td><td>사업장별로 사업에 관한 모든 권리·의무를 포괄적으로 승계</td><td>매출채권·매입채무·사업무관 토지·건물 일부를 제외해도 포괄성 유지 가능</td></tr>
+      <tr><td><strong>조세 물납</strong></td><td>법률에 따라 조세를 재화로 납부하는 대통령령상 물납</td><td>단순 대물변제와 구별</td></tr>
+      <tr><td><strong>일정 신탁 이전</strong></td><td>위탁자→수탁자, 신탁 종료 시 수탁자→위탁자, 수탁자 변경에 따른 이전</td><td>신탁 명의이전 자체와 실질 소유권 이전을 구별</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>4-2. 사업양도 체크리스트</h3>
+  <div class="flowchart">
+    <div class="flow-node">사업장별 양도인가?</div><div class="flow-arrow">↓</div>
+    <div class="flow-node o">양수인이 사업의 인적·물적 조직과 권리·의무를 포괄승계했는가?</div><div class="flow-arrow">↓</div>
+    <div class="flow-node p">양도 후에도 사업의 동일성이 유지될 수 있는가?</div><div class="flow-arrow">↓</div>
+    <div class="flow-node g">YES → 원칙적으로 사업양도: 공급 아님</div>
+  </div>
+  <div class="warn-box"><strong>실무상 핵심:</strong> “포괄양수도 계약서”라는 명칭만으로 결정되지 않습니다. 재고·설비·영업권·거래관계·인력·채권채무 등 실제 승계 범위를 종합해 사업의 동일성 유지 여부를 판단합니다.</div>
+  <div class="red-box"><strong>예외:</strong> 사업양수인이 법 §52④에 따라 대가 지급 시 부가가치세를 징수·납부한 경우에는 법 §10⑨2 단서에 따라 공급 제외에서 빠집니다.</div>
+
+  <h3>4-3. 시행령상 추가 공급 제외</h3>
+  <ul>
+    <li>일정 보세창고의 <strong>창고증권 양도</strong>로서 임치물 반환이 수반되지 않는 경우</li>
+    <li>위탁가공을 위해 원자재를 국외 수탁가공자에게 <strong>무상 반출</strong>하는 경우(영세율 적용분 제외)</li>
+    <li>국세징수법상 공매, 민사집행법상 경매, 공익사업 등의 수용, 일정 매도청구</li>
+    <li>사업을 위해 다른 사업자에게 무상 제공하는 <strong>견본품</strong>, 특별재난지역 물품, 일정 자기적립마일리지 전액결제 재화</li>
+  </ul>
+</section>
+
+<!-- ════════════════ 5. 핵심 비교 ════════════════ -->
+<section class="section compare-box" id="compare">
+  <h2>5. 핵심 비교표 — 여기서 점수가 갈립니다</h2>
+
+  <h3>5-1. 무상제공 4종 비교</h3>
+  <div class="tw"><table>
+    <thead><tr><th>사례</th><th>판정</th><th>이유</th></tr></thead>
+    <tbody>
+      <tr><td>거래처에 시험용 소량 제품을 견본품으로 제공</td><td><span class="ok-text">공급 아님</span></td><td>사업을 위해 다른 사업자에게 무상 인도하는 견본품(령 §20①1)</td></tr>
+      <tr><td>고객 중 추첨 당첨자에게 TV 경품 제공</td><td><span class="diff">공급</span></td><td>고객에 대한 사업상 증여, 별도 예외 없음</td></tr>
+      <tr><td>제품 10개 가격에 “1개 더” 제공</td><td><span class="ok-text">별도 증여 아님</span></td><td>추가 재화의 대가가 주된 거래 대가에 포함된 경우</td></tr>
+      <tr><td>직원에게 업무복 지급</td><td><span class="ok-text">공급 아님</span></td><td>실비변상·복리후생 목적의 시행령상 제외</td></tr>
+      <tr><td>대표가 회사 재고를 가정에서 소비</td><td><span class="diff">공급의제</span></td><td>사업과 직접 관계없는 개인적 사용·소비</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>5-2. 현물출자 vs 양도담보 vs 사업양도</h3>
+  <div class="three-col">
+    <div class="col-box"><h4>현물출자</h4><p><span class="b b-red">공급</span></p><p>재화를 출자하고 주식·지분을 취득하는 소유권 이전. 시행령 §18①4.</p></div>
+    <div class="col-box"><h4>양도담보</h4><p><span class="b b-green">공급 아님</span></p><p>채권 담보 목적의 이전. 담보 제공 단계는 시행령 §22.</p></div>
+    <div class="col-box"><h4>사업양도</h4><p><span class="b b-green">원칙 공급 아님</span></p><p>사업장별 권리·의무 포괄승계. 자산 일부 매각과 구별.</p></div>
+  </div>
+
+  <h3>5-3. 타사업장 반출의 예외 비교</h3>
+  <div class="tw"><table>
+    <thead><tr><th>제도</th><th>판매목적 반출</th><th>주의</th></tr></thead>
+    <tbody>
+      <tr><td><strong>일반 사업장별 과세</strong></td><td>공급으로 봄</td><td>반출사업장 매출·반입사업장 매입 구조</td></tr>
+      <tr><td><strong>사업자단위과세</strong></td><td>공급으로 보지 않음</td><td>적용받는 과세기간인지 확인</td></tr>
+      <tr><td><strong>주사업장 총괄납부</strong></td><td>원칙 공급으로 보지 않음</td><td>세금계산서 발급 후 신고한 경우는 공급 취급</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ════════════════ 6. 실무사례 ════════════════ -->
+<section class="section" id="cases">
+  <div class="section-title-bar">6. 세무 실무 적용 사례</div>
+
+  <div class="sub-block">
+    <h3>사례 1. 과세사업 기계를 면세사업에 전환</h3>
+    <p><strong>사실:</strong> 제조업자가 매입세액을 공제받은 포장기계를 새로 시작한 면세사업에 전용했습니다.</p>
+    <p><strong>판정:</strong> 자기생산·취득재화를 면세사업에 직접 사용하므로 <span class="b b-red">재화의 공급으로 의제</span>됩니다.</p>
+    <p><strong>실무 확인:</strong> 전용 시점, 감가상각자산의 과세표준 계산, 세금계산서 발급 여부를 후속 규정과 연결합니다.</p>
+  </div>
+
+  <div class="sub-block">
+    <h3>사례 2. 본점 재고를 지방 판매장으로 이동</h3>
+    <p><strong>사실:</strong> 서울 본점이 부산 판매장에 판매용 상품을 반출했습니다.</p>
+    <p><strong>판정:</strong> 판매 목적 타사업장 반출이므로 원칙적으로 <span class="b b-red">공급의제</span>. 다만 사업자단위과세 또는 주사업장 총괄납부 적용 여부를 확인합니다.</p>
+    <p><strong>실무 확인:</strong> 단순 보관·가공 목적 이동인지 “판매 목적”인지 물류지시서와 재고수불부로 확인합니다.</p>
+  </div>
+
+  <div class="sub-block">
+    <h3>사례 3. 거래처 샘플과 소비자 경품</h3>
+    <p><strong>사실 A:</strong> 신제품 샘플을 도매상에게 무상 제공 → <span class="b b-green">공급 아님</span> (견본품).</p>
+    <p><strong>사실 B:</strong> 구매고객 추첨으로 가전제품 제공 → <span class="b b-red">사업상 증여로 공급</span>.</p>
+    <p><strong>실무 확인:</strong> 샘플 표시, 수량·단가, 제공 대상, 판촉행사 약관, 주된 거래가격 포함 여부를 보관합니다.</p>
+  </div>
+
+  <div class="sub-block">
+    <h3>사례 4. 부동산 양도담보 설정</h3>
+    <p><strong>사실:</strong> 차입금 담보를 위해 사업용 부동산 권리를 채권자에게 양도담보 형식으로 제공했습니다.</p>
+    <p><strong>판정:</strong> 담보 제공 단계는 <span class="b b-green">재화의 공급 아님</span>.</p>
+    <p><strong>주의:</strong> 채무불이행 후 재산이 채권자에게 확정 귀속되는 단계는 담보 설정과 별도의 실질 이전이므로 다시 검토해야 합니다.</p>
+  </div>
+
+  <div class="sub-block">
+    <h3>사례 5. 음식점 영업 전체 양도</h3>
+    <p><strong>사실:</strong> 임차권, 시설, 재고, 상호, 종업원, 거래처 계약을 함께 넘기고 양수인이 동일 장소에서 영업을 계속합니다.</p>
+    <p><strong>판정:</strong> 사업의 동일성을 유지하는 포괄승계라면 <span class="b b-green">사업양도 — 공급 아님</span>.</p>
+    <p><strong>반대 사례:</strong> 주방기기와 재고만 개별 매각하고 영업조직·계약은 승계하지 않으면 통상 개별 재화 공급으로 검토합니다.</p>
+  </div>
+
+  <div class="sub-block">
+    <h3>사례 6. 직원 명절·기념일 선물</h3>
+    <p><strong>사실:</strong> 회사가 직원에게 설날 선물과 창립기념일 선물을 제공합니다.</p>
+    <p><strong>판정:</strong> 현재 시행령은 경조사, 설날·추석, 창립기념일·생일 등의 범주를 각각 구분해 사용인 1명당 연간 10만원 이하 재화를 공급에서 제외합니다.</p>
+    <p><strong>실무 확인:</strong> 직원별·범주별 연간 지급대장을 따로 관리해야 한도 판정이 가능합니다.</p>
+  </div>
+</section>
+
+<!-- ════════════════ 7. 기출연결 ════════════════ -->
+<section class="section" id="past">
+  <div class="section-title-bar">7. 기출분석 DB 연결 — 문제를 이렇게 읽기</div>
+
+  <div class="highlight-box">
+    <h2>출제빈도 근거</h2>
+    <p>업로드된 기출분석 DB의 2021~2025 부가가치세법 37문항 중 <strong>‘과세대상·공급’ 태그가 32회</strong>로 집계되어 가장 빈도가 높았습니다. 따라서 조문 암기보다 <strong>사례 판정 속도</strong>를 먼저 끌어올리는 편이 효율적입니다.</p>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>연도·문항</th><th>기출 쟁점 요약</th><th>정답을 가르는 법령 연결</th></tr></thead>
+    <tbody>
+      <tr><td>2021년 72번</td><td>공동사업 자산 분할, 소비대차, 폐업잔존, 교환, 출자지분 거래 중 공급 아닌 것</td><td>교환·소비대차·폐업잔존과 “출자지분 자체”를 구별</td></tr>
+      <tr><td>2021년 73번</td><td>거래처에 무상 제공한 제품 견본품의 과세표준 포함 여부</td><td>령 §20①1: 사업을 위해 다른 사업자에게 제공한 견본품은 공급 아님</td></tr>
+      <tr class="hl"><td>2022년 72번</td><td>면세전용·수입·저가임대·양도담보·현물출자 중 과세대상 아닌 것</td><td><strong>양도담보는 공급 아님 / 현물출자는 공급</strong></td></tr>
+      <tr class="hl"><td>2023년 71번</td><td>직원 무상식사, 위약금, 체선료, 사후서비스, 고객 추첨 경품 중 과세대상</td><td><strong>추첨 경품은 사업상 증여로 공급</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn-box"><strong>기출 활용 원칙:</strong> 과거 문항의 법령 문구는 출제 당시 기준일 수 있습니다. 이 자료는 기출의 논점을 유지하되, 판정 규정은 2026.06.25 현재 법령으로 재검증했습니다.</div>
+</section>
+
+<!-- ════════════════ 8. 오답함정 ════════════════ -->
+<section class="section trap-box">
+  <h2>8. 오답 함정 — 틀린 문장을 바로잡기</h2>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“현금 대가가 없으면 재화의 공급이 아니다.”</strong><br>→ 교환·현물출자·일정 증여도 공급이 될 수 있습니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“현물출자와 양도담보는 모두 소유권 이전 형식이므로 공급이다.”</strong><br>→ 현물출자는 공급, 담보 제공은 공급 아님입니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“고객에게 무상으로 주는 물품은 모두 견본품이다.”</strong><br>→ 실제 시험·시용 목적의 견본품과 판촉 경품을 구분합니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“주사업장 총괄납부 사업자는 타사업장 반출이 언제나 공급이 아니다.”</strong><br>→ 세금계산서를 발급하고 신고한 경우는 공급 취급합니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“종업원에게 주는 선물은 복리후생이므로 모두 공급이 아니다.”</strong><br>→ 시행령이 정한 품목·목적·범주별 한도 내에서만 제외됩니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“폐업할 때 장부에 남은 모든 자산은 공급의제다.”</strong><br>→ 법 §10의 자기생산·취득재화 해당 여부부터 확인합니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“경매와 수용은 시행령 §18①4에 있으므로 모두 공급이다.”</strong><br>→ 시행령 §18③의 공매·민사집행 경매·공익수용 등은 제외됩니다.</div></div>
+  <div class="trap-item"><span class="trap-icon">❌</span><div><strong>“계약서에 포괄양수도라고 쓰면 무조건 사업양도다.”</strong><br>→ 실제 권리·의무 승계와 사업 동일성 유지가 핵심입니다.</div></div>
+</section>
+
+<!-- ════════════════ 9. QUIZ ════════════════ -->
+<section class="section" id="quiz">
+  <div class="section-title-bar">9. 바로 확인하는 O/X 12문제</div>
+  <div class="quiz-head"><p>버튼을 누르면 즉시 정답과 근거가 표시됩니다.</p><div class="quiz-score" id="quizScore">정답 0 / 풀이 0</div></div>
+  <div id="quizList"></div>
+  <button type="button" class="reset-btn" id="resetQuiz">다시 풀기</button>
+</section>
+
+<!-- ════════════════ 10. 법조항 근거 ════════════════ -->
+<section class="section" id="sources">
+  <div class="section-title-bar">10. 법조항 근거 색인·자료 출처</div>
+  <div class="tw"><table>
+    <thead><tr><th>쟁점</th><th>직접 근거</th></tr></thead>
+    <tbody>
+      <tr><td>재화의 공급 정의</td><td>부가가치세법 §9 / 시행령 §18</td></tr>
+      <tr><td>면세전용·승용차 전용·타사업장 반출·개인적 공급·사업상 증여·폐업잔존</td><td>부가가치세법 §10①~⑥ / 시행령 §19·§19의2·§20</td></tr>
+      <tr><td>위탁매매·대리매매, 위탁자 지위 이전</td><td>부가가치세법 §10⑦⑧ / 시행령 관련 규정 / 세금계산서 발급은 시행령 §69 연계</td></tr>
+      <tr><td>담보 제공·사업양도·물납·신탁 명의이전</td><td>부가가치세법 §10⑨ / 시행령 §22~§24</td></tr>
+      <tr><td>견본품 등 사업을 위한 증여</td><td>부가가치세법 §10⑤ 단서 / 시행령 §20</td></tr>
+      <tr><td>공매·경매·공익수용 제외</td><td>시행령 §18③</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>공식 법령 링크</h3>
+  <ul class="source-list">
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제9조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제9조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제10조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 제10조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제18조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 시행령 제18조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제20조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 시행령 제20조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제22조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 시행령 제22조</a></li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제23조" target="_blank" rel="noopener">국가법령정보센터 — 부가가치세법 시행령 제23조</a></li>
+  </ul>
+
+  <h3>제작 시 참조한 사용자 자료</h3>
+  <ul class="source-list">
+    <li><strong>소득세법_총설_예습.html</strong> — 색상·섹션·표·함정박스·법조항 색인의 학습 UI 구조 참조</li>
+    <li><strong>세무사1차 세법학개론 기출분석DB.md</strong> — 2021~2025 출제빈도 및 관련 기출 논점 추출</li>
+  </ul>
+
+  <div class="gray-box"><strong>중립적 해석 원칙:</strong> 이 범위는 법령 문언이 중심이어서 주요 학설 대립보다는 사실관계 판정이 중요합니다. 특히 “사업양도인지 개별자산 양도인지”, “견본품인지 경품인지”, “사업 직접 관련성이 있는지”는 계약서 명칭 하나가 아니라 거래의 실질과 증빙을 종합하여 판단합니다.</div>
+  <div class="warn-box"><strong>사용상 주의:</strong> 학습용 요약자료입니다. 실제 신고·조사·불복 사건은 거래 시점의 법령, 공급시기, 과세표준, 세금계산서, 유권해석과 판례를 추가 확인해야 합니다.</div>
+</section>
+
+<div class="footer-note">부가가치세법 제9조·제10조 재화의 공급 예습자료 · 기준일 2026.06.25</div>
+
+<script>
+const quizData = [
+  {q:'1. 현물출자에 따라 사업용 기계장치를 법인에 인도하는 것은 재화의 공급이다.', a:true, e:'O. 시행령 제18조 제1항 제4호는 현물출자를 재화의 공급 범위에 포함합니다.'},
+  {q:'2. 사업용 부동산상 권리를 양도담보 목적으로 제공하면 즉시 재화의 공급이 된다.', a:false, e:'X. 담보 제공 단계는 법 제10조 제9항 제1호 및 시행령 제22조에 따라 공급으로 보지 않습니다.'},
+  {q:'3. 매입세액을 공제받은 과세사업용 설비를 면세사업에 직접 전용하면 공급으로 본다.', a:true, e:'O. 법 제10조 제1항의 면세사업등 전용에 해당합니다.'},
+  {q:'4. 사업자단위과세 사업자가 판매용 재고를 다른 사업장으로 반출하면 재화의 공급으로 본다.', a:false, e:'X. 사업자단위과세 적용 과세기간의 타사업장 반출은 법 제10조 제3항 단서에 따라 공급으로 보지 않습니다.'},
+  {q:'5. 주사업장 총괄납부 사업자는 타사업장 반출에 세금계산서를 발급하고 신고하더라도 공급이 아니다.', a:false, e:'X. 세금계산서를 발급하고 신고한 경우에는 예외적으로 공급 취급합니다.'},
+  {q:'6. 거래처가 제품 성능을 시험하도록 사업상 소량의 견본품을 무상 제공한 것은 공급으로 보지 않는다.', a:true, e:'O. 시행령 제20조 제1호의 사업을 위한 견본품 예외입니다.'},
+  {q:'7. 구매고객 중 추첨 당첨자에게 자기생산 재화를 경품으로 주는 것은 원칙적으로 사업상 증여에 해당한다.', a:true, e:'O. 법 제10조 제5항의 사업상 증여입니다. 견본품 예외와 구별합니다.'},
+  {q:'8. 폐업할 때 남아 있는 모든 물품은 매입세액 공제 여부와 무관하게 공급의제된다.', a:false, e:'X. 법 제10조의 자기생산·취득재화 해당 여부를 먼저 확인해야 합니다.'},
+  {q:'9. 민사집행법에 따른 강제경매로 재화를 양도하는 것은 현행 시행령상 공급으로 보지 않는다.', a:true, e:'O. 시행령 제18조 제3항 제2호의 명시적 제외입니다.'},
+  {q:'10. 계약서 제목이 포괄양수도이면 실제 승계 범위와 무관하게 사업양도로 인정된다.', a:false, e:'X. 사업장별 권리·의무의 포괄승계와 사업 동일성 유지라는 실질이 핵심입니다.'},
+  {q:'11. 위탁매매는 원칙적으로 수탁자가 자기 명의로 직접 공급한 것으로 본다.', a:false, e:'X. 원칙적으로 위탁자 또는 본인이 직접 공급한 것으로 봅니다. 위탁자·본인을 알 수 없는 시행령상 경우만 예외입니다.'},
+  {q:'12. 직원에게 지급하는 창립기념일 재화와 설날 재화는 현행 시행령상 동일한 하나의 연간 10만원 한도를 공유한다.', a:false, e:'X. 현행 규정은 경조사, 설날·추석, 창립기념일·생일 등의 범주를 각각 구분하여 각 범주별 한도를 적용합니다.'}
+];
+
+const list = document.getElementById('quizList');
+let solved = 0, correct = 0;
+function renderQuiz(){
+  solved=0; correct=0; list.innerHTML=''; updateScore();
+  quizData.forEach((item,idx)=>{
+    const card=document.createElement('div'); card.className='quiz-card';
+    card.innerHTML=`<div class="quiz-q">${item.q}</div><div class="quiz-options"><button type="button" data-v="true">O</button><button type="button" data-v="false">X</button></div><div class="quiz-answer"></div>`;
+    const ans=card.querySelector('.quiz-answer');
+    card.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+      if(card.dataset.done) return;
+      card.dataset.done='1'; solved++;
+      const chosen=btn.dataset.v==='true';
+      const isCorrect=chosen===item.a; if(isCorrect) correct++;
+      card.classList.add(isCorrect?'correct':'wrong');
+      ans.textContent=(isCorrect?'정답! ':'오답. ')+item.e; ans.classList.add('show');
+      card.querySelectorAll('button').forEach(b=>b.disabled=true); updateScore();
+    }));
+    list.appendChild(card);
+  });
+}
+function updateScore(){document.getElementById('quizScore').textContent=`정답 ${correct} / 풀이 ${solved}`}
+document.getElementById('resetQuiz').addEventListener('click',renderQuiz);
+renderQuiz();
+
+const expandBtn=document.getElementById('expandBtn');
+let allOpen=false;
+expandBtn.addEventListener('click',()=>{
+  allOpen=!allOpen; document.querySelectorAll('details').forEach(d=>d.open=allOpen);
+  expandBtn.textContent=allOpen?'해설 모두 닫기':'해설 모두 열기';
+});
+
+const bar=document.getElementById('progressBar');
+function setProgress(){
+  const el=document.documentElement;
+  const max=el.scrollHeight-el.clientHeight;
+  bar.style.width=(max>0?Math.min(100,(el.scrollTop/max)*100):0)+'%';
+}
+addEventListener('scroll',setProgress,{passive:true}); setProgress();
+</script>
+</body>
+</html>
