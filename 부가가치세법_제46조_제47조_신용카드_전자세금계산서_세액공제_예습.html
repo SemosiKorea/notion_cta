@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부가가치세법 제46조~제47조 — 신용카드·전자세금계산서 세액공제</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.82;max-width:1060px;margin:0 auto;padding:24px}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px}h2{color:#1A3A6B;font-size:1.15em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}h3{color:#2C5282;font-size:1em;margin:14px 0 7px}h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:21px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.74}a{color:#1A56A8;text-decoration:none}a:hover{text-decoration:underline}strong{color:#172554}button,input,select{font:inherit}
+.header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B 58%,#276749);color:#fff;padding:33px 40px;border-radius:14px;margin-bottom:16px;box-shadow:0 10px 28px rgba(13,27,75,.16)}
+.subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 16px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:11px}.header h1{color:#fff;font-size:1.84em}.header .meta{font-size:.8em;opacity:.92;margin-top:7px;line-height:1.65}.freq-badge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px}
+.toolbar{position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px}.toolbar a,.toolbar button{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer}.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+.section{margin:20px 0;padding:24px 28px;border-radius:12px;border:1px solid #E8ECF0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)}.section-title-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-24px -28px 18px;letter-spacing:.02em}.sub-block{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:14px 18px;margin:12px 0}.sub-block h3{margin-top:0;color:#1A3A6B}
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}.law-box{background:#F7FAFC;border-left:4px solid #2C5282;border-radius:5px;padding:13px 17px;margin:10px 0;font-size:.91em}.gray-box{background:#F1F5F9;border:1px solid #CBD5E1;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.91em}.warning{color:#9B2335;font-weight:700}.ok{color:#176B3A;font-weight:700}.muted{color:#64748B;font-size:.9em}.formula{background:#0F274A;color:#fff;border-radius:9px;padding:13px 16px;margin:10px 0;text-align:center;font-weight:700;letter-spacing:.01em;overflow-x:auto}.formula small{display:block;font-weight:400;opacity:.86;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.feature{border:1px solid #DCE7F5;border-radius:9px;padding:15px;background:#fff}.feature .num{display:inline-flex;width:25px;height:25px;border-radius:50%;align-items:center;justify-content:center;background:#1A3A6B;color:#fff;font-weight:700;font-size:.8em;margin-right:5px}.feature h3{display:inline;color:#1A3A6B}.feature p{font-size:.91em;margin:7px 0 0}
+.flow{display:flex;gap:8px;align-items:stretch;margin:14px 0}.flow-step{flex:1;position:relative;background:#F8FAFE;border:1px solid #C9D8EC;border-radius:9px;padding:13px;text-align:center}.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-11px;top:50%;transform:translateY(-50%);font-weight:900;color:#2C5282;background:#FAFAFA;border-radius:50%;z-index:2}.flow-step b{display:block;color:#1A3A6B;margin-bottom:3px}.flow-step span{font-size:.86em;color:#475569}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.89em}th{background:#E8EEF7;color:#1A3A6B;font-weight:700}th,td{border:1px solid #CBD5E1;padding:9px 10px;text-align:left;vertical-align:top}tr:nth-child(even) td{background:#FAFCFF}.table-wrap{overflow-x:auto;border-radius:8px}.tag{display:inline-block;border-radius:12px;padding:2px 8px;font-size:.78em;font-weight:700;margin:1px}.tag-blue{background:#DBEAFE;color:#1E40AF}.tag-green{background:#DCFCE7;color:#166534}.tag-red{background:#FEE2E2;color:#991B1B}.tag-yellow{background:#FEF3C7;color:#92400E}.tag-gray{background:#E2E8F0;color:#475569}
+details{border:1px solid #DCE7F5;border-radius:8px;margin:8px 0;background:#fff}summary{padding:10px 14px;cursor:pointer;font-weight:700;color:#1A3A6B;background:#F8FAFE;border-radius:8px}details[open] summary{border-bottom:1px solid #DCE7F5;border-radius:8px 8px 0 0}.detail-body{padding:12px 16px;font-size:.92em}
+.case-card{border-left:4px solid #38A169;background:#F0FFF4;border-radius:7px;padding:14px 17px;margin:11px 0}.case-title{font-weight:800;color:#176B3A;margin-bottom:5px}.case-card.bad{border-left-color:#E53E3E;background:#FFF5F5}.case-card.bad .case-title{color:#9B2335}
+.calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.calc-card{border:1px solid #C9D8EC;background:#F8FAFE;border-radius:10px;padding:15px}.calc-card h3{margin-top:0}.field{margin:8px 0}.field label{display:block;font-size:.82em;color:#475569;font-weight:700}.field input,.field select{width:100%;border:1px solid #B8C7DA;border-radius:6px;padding:8px 9px;background:#fff}.calc-card button{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:8px 12px;cursor:pointer;font-weight:700}.calc-result{margin-top:10px;background:#fff;border:1px solid #DCE7F5;border-radius:7px;padding:10px;font-weight:700;color:#1A3A6B;min-height:52px}
+.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.quiz-score{font-weight:700;background:#E8EEF7;color:#1A3A6B;border-radius:18px;padding:5px 12px}.quiz-card{border:1px solid #D9E2EF;border-radius:10px;padding:15px 17px;margin:10px 0;background:#fff}.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px}.quiz-options button{width:44px;border:1px solid #AFC2DA;background:#F8FAFE;border-radius:7px;padding:6px;cursor:pointer;font-weight:800;color:#1A3A6B}.quiz-options button:hover{background:#E8EEF7}.quiz-options button:disabled{cursor:default;opacity:.75}.quiz-answer{display:none;margin-top:9px;padding:10px 12px;border-radius:7px;font-size:.91em}.quiz-answer.show{display:block}.quiz-card.correct{border-color:#68D391}.quiz-card.correct .quiz-answer{background:#F0FFF4;color:#176B3A}.quiz-card.wrong{border-color:#FC8181}.quiz-card.wrong .quiz-answer{background:#FFF5F5;color:#9B2335}.btn-reset{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 10px;cursor:pointer;font-weight:700}.footer-note{text-align:center;color:#64748B;font-size:.8em;padding:14px 0 5px}
+@media(max-width:760px){body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.header h1{font-size:1.55em}.section{padding:20px 17px}.section-title-bar{margin:-20px -17px 15px}.grid,.grid.three,.calc-grid{grid-template-columns:1fr}.flow{flex-direction:column}.flow-step:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}.toolbar{top:3px}.toolbar .progress-label{display:none}th,td{min-width:125px;padding:8px}.quiz-head{align-items:flex-start;flex-direction:column}
+@media print{body{max-width:none;background:#fff}.toolbar,.calc-grid,.quiz-options,.btn-reset{display:none}.section,.highlight-box,.trap-box,.compare-box{break-inside:avoid;box-shadow:none}
+</style>
+</head>
+<body>
+<header class="header" id="top">
+  <span class="subject-badge">부가가치세법 · 세무사 1차 예습</span>
+  <h1>제46조~제47조 — 신용카드·전자세금계산서 세액공제</h1>
+  <p>소비자 대상 사업자의 신용카드매출전표등 발행세액공제, 카드전표에 의한 매입세액공제, 전자세금계산서 발급·전송 세액공제를 계산 순서 중심으로 정리합니다.</p>
+  <div class="meta">기준: 법률 2026.1.2. 시행 · 시행령 제88조·제89조 2026.2.27. 시행 · 시행규칙 제61조 2026.3.20. 시행<br>2026년 한시율과 2027년 이후 현행법상 기준을 구분했습니다. <span class="freq-badge">최종 납부세액 계산 빈출</span></div>
+</header>
+<nav class="toolbar" aria-label="빠른 이동">
+  <a href="#core">핵심</a><a href="#delegation">법령구조</a><a href="#a46issue">제46조①</a><a href="#a46input">제46조③</a><a href="#a47">제47조</a><a href="#cases">사례</a><a href="#traps">함정</a><a href="#calc">계산기</a><a href="#quiz">O/X</a>
+  <button type="button" id="toggleDetails">해설 모두 열기</button>
+  <span class="progress-label">읽기 진도</span><span class="progress-track"><span class="progress-bar" id="progressBar"></span></span>
+</nav>
+
+<section class="highlight-box" id="core">
+  <h2>1. 시험 직전 핵심문장 14개</h2>
+  <ol>
+    <li>제46조 제1항은 일정한 소비자 대상 사업자의 <strong>신용카드매출전표등 발행금액 또는 전자적 결제금액</strong>을 기준으로 납부세액에서 공제하는 제도다.</li>
+    <li>법인사업자는 제46조 제1항의 발행세액공제 대상이 아니다.</li>
+    <li>소비자 대상 사업을 하는 개인사업자도 직전 연도 재화·용역 공급가액 합계액이 <strong>10억원을 초과</strong>하면 발행세액공제 대상에서 제외된다.</li>
+    <li>2026년 12월 31일까지 공제율은 1.3%, 연간 한도는 1천만원이다.</li>
+    <li>현행법상 2027년부터 공제율은 1%, 연간 한도는 500만원으로 돌아간다.</li>
+    <li>발행세액공제는 공제 전 납부할 세액을 초과할 수 없으므로 이 공제만으로 환급세액을 만들 수 없다.</li>
+    <li>신용카드매출전표뿐 아니라 현금영수증, 일정한 직불·선불카드 영수증 등도 법정 요건을 충족하면 포함된다.</li>
+    <li>제46조 제3항은 사업자가 공급받은 카드전표 등에 구분 표시된 부가가치세액을 일정 요건 아래 <strong>매입세액으로 보는 제도</strong>다.</li>
+    <li>카드전표 매입세액공제에는 부가가치세액 구분표시, 수령명세서 제출, 전표 또는 전자증빙 보관이 필요하다.</li>
+    <li>간이과세자가 영수증만 발급해야 하는 기간에 발급한 카드전표는 매입세액공제 대상이 아니다.</li>
+    <li>카드전표 요건을 충족해도 비영업용 승용차·기업업무추진비·면세사업 관련 매입 등 제39조 불공제 사유가 있으면 공제되지 않는다.</li>
+    <li>제47조는 직전 연도 사업장별 공급가액(면세 포함)이 <strong>3억원 미만</strong>인 개인사업자 또는 해당 연도 신규 개인사업자가 대상이다.</li>
+    <li>제47조 공제액은 전자세금계산서 발급 건수 × 200원이며 연간 한도는 100만원이다.</li>
+    <li>제47조는 2027년 12월 31일까지 적법하게 발급하고 법정기한 내 전송한 전자세금계산서에만 적용된다.</li>
+  </ol>
+</section>
+
+<section class="section" id="delegation">
+  <div class="section-title-bar">2. 법률·시행령·시행규칙 연결</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>법률</th><th>시행령</th><th>시행규칙</th><th>핵심 내용</th></tr></thead>
+    <tbody>
+      <tr><td>법 제46조①·②</td><td>영 제88조①~④</td><td>신고서식 관련 규정</td><td>발행세액공제 대상자·전자적 결제수단·증빙 범위·10억원 기준</td></tr>
+      <tr><td>법 제46조③</td><td>영 제88조⑤~⑦</td><td>규칙 제62조의 수령명세서 서식</td><td>카드전표에 의한 매입세액공제 대상 공급자·명세서·보관방법</td></tr>
+      <tr><td>법 제46조④·⑤</td><td>영 제88조⑧·⑨</td><td>—</td><td>신용카드·현금영수증 가맹점 가입 지도 및 납세보전</td></tr>
+      <tr><td>법 제47조</td><td>영 제89조</td><td>규칙 제61조</td><td>3억원 미만·신규 개인사업자, 건당 200원, 연 100만원, 신고서</td></tr>
+      <tr><td>전송기한 연결</td><td>영 제68조⑦</td><td>—</td><td>전자세금계산서 발급명세는 발급일의 다음 날까지 전송</td></tr>
+    </tbody>
+  </table></div>
+  <div class="law-box"><strong>시행일 주의:</strong> 시행령 전체 검색결과에는 일부 조문의 2026년 4월 1일 시행일이 표시되지만, 제88조·제89조 자체는 2026년 2월 27일 시행 조문입니다. 시행규칙 제61조는 2026년 3월 20일 시행 조문입니다.</div>
+</section>
+
+<section class="section" id="a46issue">
+  <div class="section-title-bar">3. 제46조 제1항·제2항 — 신용카드매출전표등 발행세액공제</div>
+  <h2>3-1. 적용 흐름</h2>
+  <div class="flow">
+    <div class="flow-step"><b>① 대상 사업자</b>소비자 대상 개인 또는 영수증 발급 간이과세자</div>
+    <div class="flow-step"><b>② 과세공급</b>면세공급은 제외</div>
+    <div class="flow-step"><b>③ 적격 증빙·결제</b>카드전표·현금영수증·법정 전자결제</div>
+    <div class="flow-step"><b>④ 한도 적용</b>율·연간한도·납부할 세액 한도</div>
+  </div>
+  <div class="analogy-box"><strong>제도의 성격:</strong> 매입세액공제가 아니라 소비자 거래를 투명하게 기록한 사업자에게 주는 <strong>납부세액 차감형 세액공제</strong>입니다. 따라서 공제액 산정 후 반드시 공제 전 납부할 세액과 비교합니다.</div>
+
+  <h2>3-2. 대상 사업자</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>구분</th><th>대상 여부</th><th>판정 포인트</th></tr></thead>
+    <tbody>
+      <tr><td>소매·음식점·숙박 등 소비자 대상 개인사업자</td><td class="ok">가능</td><td>영 제73조 제1항·제2항 업종이며 직전 연도 재화·용역 공급가액 합계액이 10억원을 초과하지 않아야 함</td></tr>
+      <tr><td>직전 연도 공급가액이 정확히 10억원인 개인</td><td class="ok">가능</td><td>법은 10억원을 <strong>초과</strong>하는 개인을 제외</td></tr>
+      <tr><td>직전 연도 공급가액이 10억원을 초과한 개인</td><td class="bad">불가</td><td>직전 연도 공급가액 합계액 기준 초과</td></tr>
+      <tr><td>법인사업자</td><td class="bad">불가</td><td>소비자 대상 업종이라도 법률에서 제외</td></tr>
+      <tr><td>법 제36조 제1항 제2호의 간이과세자</td><td class="ok">가능</td><td>공급대가 4,800만원 미만 또는 신규 최초 과세기간의 영수증 발급 간이과세자</td></tr>
+    </tbody>
+  </table></div>
+  <details><summary>소비자 대상 사업의 대표 범위</summary><div class="detail-body"><p>소매업, 음식점업, 숙박업, 미용·욕탕업, 여객운송업, 입장권 발행사업과 일정한 전문서비스·우편·의료·교육·통신·비산업용 전력·도시가스 공급 등이 시행령 제73조에 열거되어 있습니다. 시험에서는 업종 자체뿐 아니라 법인 여부와 직전 연도 공급가액 기준을 함께 확인해야 합니다.</p></div></details>
+
+  <h2>3-3. 적격 거래증빙과 전자적 결제수단</h2>
+  <div class="grid three">
+    <div class="feature"><span class="num">1</span><h3>카드·현금영수증</h3><p>신용카드매출전표, 현금영수증, 직불카드영수증, 적격 선불카드영수증 등이 포함됩니다.</p></div>
+    <div class="feature"><span class="num">2</span><h3>전자지급수단</h3><p>직불·선불전자지급수단 영수증과 전자지급결제대행업자를 통한 카드전표 등이 포함될 수 있습니다.</p></div>
+    <div class="feature"><span class="num">3</span><h3>전자적 결제</h3><p>가맹점별 결제명세가 관리되는 전자화폐 또는 월별 거래명세가 확인되는 통신판매 중개결제가 해당합니다.</p></div>
+  </div>
+  <p class="warning">단순 계좌이체나 임의의 간편결제라는 이유만으로 자동 적용되는 것은 아닙니다. 법·시행령이 정한 증빙 또는 전자적 결제수단에 해당하는지 확인해야 합니다.</p>
+
+  <h2>3-4. 2026년 공제율과 한도</h2>
+  <div class="formula">2026년 공제액 = 적격 발급금액·결제금액 × 1.3%</div>
+  <div class="formula">최종 공제액 = 위 계산액, 연간 잔여한도 1천만원, 공제 전 납부할 세액 중 가장 작은 금액</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>구분</th><th>2026년 12월 31일까지</th><th>현행법상 2027년 이후</th></tr></thead>
+    <tbody>
+      <tr><td>공제율</td><td><strong>1.3%</strong></td><td>1%</td></tr>
+      <tr><td>연간 한도</td><td><strong>1천만원</strong></td><td>500만원</td></tr>
+      <tr><td>납부세액 한도</td><td colspan="2">공제 전 납부할 세액을 초과하는 부분은 없는 것으로 봄</td></tr>
+    </tbody>
+  </table></div>
+  <div class="trap-box"><h2>공급가액이 아니라 발급금액</h2><p>신용카드매출전표·현금영수증에 적힌 발급금액은 일반적으로 부가가치세를 포함한 <strong>공급대가</strong>입니다. 계산문제에서 공급가액과 공급대가가 함께 제시되면 어느 금액이 적격 증빙 발급분인지 먼저 확인합니다.</p></div>
+</section>
+
+<section class="section" id="a46input">
+  <div class="section-title-bar">4. 제46조 제3항 — 신용카드매출전표등에 의한 매입세액공제</div>
+  <h2>4-1. 필수요건</h2>
+  <div class="flow">
+    <div class="flow-step"><b>① 적격 공급자</b>영 제88조⑤의 제외업종·영수증 전용 간이과세자가 아닐 것</div>
+    <div class="flow-step"><b>② 세액 구분</b>부가가치세액이 별도 표시될 것</div>
+    <div class="flow-step"><b>③ 명세서 제출</b>수령명세서 제출</div>
+    <div class="flow-step"><b>④ 증빙 보관</b>전표 또는 법정 전자증빙 보관</div>
+  </div>
+  <p>이 요건을 충족하면 카드전표 등에 구분 표시된 부가가치세액을 법 제38조의 매입세액 또는 간이과세자의 일정한 매입세액으로 볼 수 있습니다.</p>
+
+  <h2>4-2. 공급자 업종에 따른 제한</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>공급자의 거래 업종</th><th>카드전표 매입세액공제</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>일반적인 소매·음식점·숙박 등</td><td class="ok">요건 충족 시 가능</td><td>세액 구분표시·명세서·보관 및 법 제39조 확인</td></tr>
+      <tr><td>목욕·이발·미용업</td><td class="bad">제46조③ 적용 제외</td><td>영 제88조⑤의 제외업종</td></tr>
+      <tr><td>여객운송업</td><td class="bad">원칙적 제외</td><td>전세버스운송사업은 제외업종에서 빠져 적격 가능</td></tr>
+      <tr><td>입장권 발행사업</td><td class="bad">적용 제외</td><td>영 제88조⑤</td></tr>
+      <tr><td>일정한 과세 의료·수의·교육용역</td><td class="bad">적용 제외</td><td>시행령에서 열거한 거래</td></tr>
+      <tr><td>영수증 발급의무 간이과세자</td><td class="bad">적용 제외</td><td>법 제36조 제1항 제2호 및 제36조의2의 적용기간</td></tr>
+    </tbody>
+  </table></div>
+  <details><summary>카드전표가 있어도 법 제39조를 다시 확인하는 이유</summary><div class="detail-body"><p>제46조 제3항은 카드전표를 세금계산서에 준하는 적격증빙으로 인정하는 규정입니다. 그 지출 자체가 사업과 무관하거나 비영업용 승용차, 기업업무추진비, 면세사업 또는 토지 관련 매입이라면 법 제39조에 따라 여전히 불공제됩니다.</p></div></details>
+
+  <div class="compare-box"><h2>판매자 공제와 구매자 공제를 구별</h2>
+    <div class="table-wrap"><table><thead><tr><th>구분</th><th>제46조① 발행세액공제</th><th>제46조③ 매입세액공제</th></tr></thead><tbody>
+      <tr><td>누가 적용?</td><td>카드전표 등을 발급한 판매자</td><td>카드전표 등을 받은 사업자</td></tr>
+      <tr><td>계산기준</td><td>적격 발급·결제금액 × 공제율</td><td>전표에 별도 구분된 부가가치세액</td></tr>
+      <tr><td>세액 성격</td><td>납부세액에서 빼는 세액공제</td><td>매출세액에서 공제하는 매입세액</td></tr>
+      <tr><td>주요 제한</td><td>사업자 유형·10억원·연간한도·납부세액</td><td>공급자 업종·명세서·보관·법 제39조</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section class="section" id="a47">
+  <div class="section-title-bar">5. 제47조 — 전자세금계산서 발급·전송 세액공제</div>
+  <h2>5-1. 적용요건</h2>
+  <div class="grid three">
+    <div class="feature"><span class="num">1</span><h3>개인사업자</h3><p>법인은 적용되지 않습니다.</p></div>
+    <div class="feature"><span class="num">2</span><h3>규모·신규요건</h3><p>직전 연도 사업장별 공급가액(면세 포함) 3억원 미만 또는 해당 연도 신규 개업자입니다.</p></div>
+    <div class="feature"><span class="num">3</span><h3>발급·전송</h3><p>2027년 말까지 전자세금계산서를 발급하고 발급명세를 법정기한 내 전송해야 합니다.</p></div>
+  </div>
+  <div class="formula">공제액 = 적격 전자세금계산서 발급 건수 × 200원</div>
+  <div class="formula">최종 공제액 = 위 계산액, 연간 잔여한도 100만원, 공제 전 납부할 세액 중 가장 작은 금액</div>
+
+  <h2>5-2. 숫자 경계</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>직전 연도 사업장별 공급가액</th><th>제47조 대상 여부</th><th>이유</th></tr></thead>
+    <tbody>
+      <tr><td>299,999,999원</td><td class="ok">가능</td><td>3억원 미만</td></tr>
+      <tr><td>300,000,000원</td><td class="bad">불가</td><td>‘미만’이므로 정확히 3억원은 제외</td></tr>
+      <tr><td>해당 연도 신규 개업</td><td class="ok">가능</td><td>별도의 신규 개인사업자 요건</td></tr>
+      <tr><td>공급가액 2억원인 법인</td><td class="bad">불가</td><td>개인사업자만 대상</td></tr>
+    </tbody>
+  </table></div>
+  <p class="warning">공급가액 기준에는 부가가치세 면세공급가액도 포함합니다. 또한 전자세금계산서를 발급했더라도 발급명세를 발급일의 다음 날까지 전송하지 않으면 제47조 공제를 받을 수 없습니다.</p>
+
+  <h2>5-3. 신고와 일몰</h2>
+  <ul>
+    <li>예정신고 또는 확정신고 때 전자세금계산서 발급세액공제신고서를 제출</li>
+    <li>시행규칙 제61조의 별지 제20호서식 사용</li>
+    <li>현행법상 적용기한: 2027년 12월 31일까지 발급분</li>
+    <li>공제 전 납부할 세액을 초과하는 부분은 소멸하며 환급이나 이월공제가 되지 않음</li>
+  </ul>
+</section>
+
+<section class="compare-box" id="compare">
+  <h2>6. 제46조와 제47조 숫자 비교</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>구분</th><th>제46조① 카드·현금영수증 발행</th><th>제47조 전자세금계산서 발급</th></tr></thead>
+    <tbody>
+      <tr><td>대상</td><td>소비자 대상 개인사업자·일정 간이과세자</td><td>소규모 또는 신규 개인사업자</td></tr>
+      <tr><td>법인</td><td>불가</td><td>불가</td></tr>
+      <tr><td>규모기준</td><td>직전 연도 재화·용역 공급가액 합계액 10억원 <strong>초과 제외</strong></td><td>직전 연도 사업장별 공급가액(면세 포함) 3억원 <strong>미만</strong></td></tr>
+      <tr><td>2026년 공제액</td><td>적격 발급·결제금액 × 1.3%</td><td>발급 건수 × 200원</td></tr>
+      <tr><td>연간 한도</td><td>2026년 1천만원</td><td>100만원</td></tr>
+      <tr><td>일몰·한시</td><td>1.3%·1천만원은 2026년 말까지</td><td>제도 적용은 2027년 말까지</td></tr>
+      <tr><td>공통 제한</td><td colspan="2">공제 전 납부할 세액을 초과할 수 없음</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section" id="cases">
+  <div class="section-title-bar">7. 실무·기출 적용사례</div>
+  <div class="case-card"><div class="case-title">사례 1 · 음식점업 개인의 2026년 발행세액공제</div><p>적격 신용카드매출전표 132,000,000원과 현금영수증 1,650,000원을 발급했다.</p><div class="formula">(132,000,000 + 1,650,000) × 1.3% = 1,737,450원</div><p>연간 잔여한도와 공제 전 납부할 세액이 이보다 충분하다는 전제입니다.</p></div>
+  <div class="case-card bad"><div class="case-title">사례 2 · 법인 음식점</div><p>소비자에게 카드전표를 발급했더라도 법인사업자는 제46조 제1항 발행세액공제를 받을 수 없습니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 3 · 10억원 경계</div><p>직전 연도 재화·용역 공급가액 합계액이 정확히 10억원인 개인 소매업자는 다른 요건을 충족하면 대상입니다. 10억원을 <strong>초과</strong>해야 제외됩니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 4 · 납부세액 제한</div><p>2026년 산식상 발행세액공제가 700,000원이지만 공제 전 납부할 세액이 420,000원이라면 실제 공제액은 420,000원입니다. 나머지 280,000원은 환급되거나 이월되지 않습니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 5 · 식당에서 사업용 소모품 구입</div><p>적격 공급자로부터 사업용 물품을 사고 부가가치세액이 별도 표시된 카드전표를 받았으며 수령명세서 제출·보관요건을 갖췄다면 구분 표시된 세액을 매입세액으로 공제할 수 있습니다.</p></div>
+  <div class="case-card bad"><div class="case-title">사례 6 · 미용실 카드전표</div><p>미용업은 시행령 제88조 제5항의 제외업종입니다. 미용용역 카드전표에 세액이 표시되어 있어도 제46조 제3항에 따른 매입세액공제를 적용하지 않습니다.</p></div>
+  <div class="case-card bad"><div class="case-title">사례 7 · 비영업용 승용차</div><p>적격 카드전표와 명세서를 갖춰도 비영업용 승용차 구입·임차·유지 관련 매입세액이면 법 제39조에 따라 불공제됩니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 8 · 전자세금계산서 3,000건</div><p>직전 연도 사업장별 공급가액이 2억 5천만원인 개인사업자가 2026년에 3,000건을 적법하게 발급·전송했다.</p><div class="formula">3,000건 × 200원 = 600,000원</div><p>연간 한도와 공제 전 납부할 세액이 충분할 때 600,000원을 공제합니다.</p></div>
+  <div class="analogy-box"><strong>기출 연결:</strong> 2023년 간이과세 음식점업 계산문제와 2024년 일반과세 음식점업 계산문제에서 신용카드매출전표 발급분을 다른 매입세액·의제매입세액과 결합해 최종 납부세액을 묻는 형태가 출제되었습니다.</div>
+</section>
+
+<section class="trap-box" id="traps">
+  <h2>8. 자주 틀리는 함정 16개</h2>
+  <ol>
+    <li><strong>법인 음식점도 카드 발행세액공제</strong> → 법인은 제외된다.</li>
+    <li><strong>개인사업자는 규모와 무관</strong> → 직전 연도 재화·용역 공급가액 합계액 10억원 초과 개인은 제외된다.</li>
+    <li><strong>10억원 이상이면 제외</strong> → 법문은 10억원 <em>초과</em>이므로 정확히 10억원은 다른 요건 충족 시 가능하다.</li>
+    <li><strong>2026년 공제율은 1%</strong> → 2026년 말까지 1.3%다.</li>
+    <li><strong>2026년 연간한도는 500만원</strong> → 2026년 말까지 1천만원이다.</li>
+    <li><strong>공제액이 납부세액을 넘으면 환급</strong> → 초과분은 없는 것으로 본다.</li>
+    <li><strong>발행세액공제는 공급가액 기준</strong> → 적격 발급금액·결제금액, 통상 공급대가 기준이다.</li>
+    <li><strong>모든 간편결제가 적격</strong> → 법정 전자적 결제수단 요건을 충족해야 한다.</li>
+    <li><strong>카드전표만 있으면 구매자 매입세액공제</strong> → 세액 구분표시·명세서·보관 등 요건이 필요하다.</li>
+    <li><strong>카드전표 매입세액공제는 모든 공급자에게 적용</strong> → 미용·일정 여객운송·입장권 등 제외업종이 있다.</li>
+    <li><strong>영수증 발급 간이과세자의 카드전표도 공제</strong> → 해당 영수증 발급기간의 전표는 제외된다.</li>
+    <li><strong>카드전표 요건을 갖추면 법 제39조 불공제도 해제</strong> → 사업무관·승용차·업무추진비·면세 관련 등은 여전히 불공제다.</li>
+    <li><strong>제47조는 직전 연도 공급가액 3억원 이하</strong> → 3억원 <em>미만</em>이다.</li>
+    <li><strong>제47조 규모판정에서 면세매출 제외</strong> → 면세공급가액도 포함한다.</li>
+    <li><strong>전자세금계산서만 발급하면 제47조 공제</strong> → 법정기한 내 전송까지 해야 한다.</li>
+    <li><strong>제47조는 계속 적용되는 영구제도</strong> → 현행법상 2027년 12월 31일까지 발급분에 적용된다.</li>
+  </ol>
+</section>
+
+<section class="section" id="calc">
+  <div class="section-title-bar">9. 미니 계산기·판정도구</div>
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h3>제46조① 발행세액공제</h3>
+      <div class="field"><label for="issueYear">적용연도</label><select id="issueYear"><option value="2026">2026년</option><option value="2027">2027년 이후 현행 기준</option></select></div>
+      <div class="field"><label for="issueAmount">적격 발급·결제금액(원)</label><input id="issueAmount" type="number" min="0" value="133650000"></div>
+      <div class="field"><label for="issueUsed">해당 연도 이미 공제한 금액(원)</label><input id="issueUsed" type="number" min="0" value="0"></div>
+      <div class="field"><label for="issuePayable">공제 전 납부할 세액(원)</label><input id="issuePayable" type="number" min="0" value="3000000"></div>
+      <div class="field"><label for="issueEntity">사업자 유형</label><select id="issueEntity"><option value="individual">개인사업자</option><option value="corporation">법인사업자</option></select></div>
+      <div class="field"><label for="issuePrior">직전 연도 재화·용역 공급가액 합계액(원)</label><input id="issuePrior" type="number" min="0" value="300000000"></div>
+      <button type="button" id="calc46Btn">발행세액공제 계산</button>
+      <div class="calc-result" id="calc46Result">값을 입력하고 계산하세요.</div>
+    </div>
+    <div class="calc-card">
+      <h3>제47조 전자세금계산서 공제</h3>
+      <div class="field"><label for="eYear">발급연도</label><select id="eYear"><option value="2026">2026년</option><option value="2027">2027년</option><option value="2028">2028년 이후</option></select></div>
+      <div class="field"><label for="eCount">적법 발급·전송 건수</label><input id="eCount" type="number" min="0" step="1" value="3000"></div>
+      <div class="field"><label for="eUsed">해당 연도 이미 공제한 금액(원)</label><input id="eUsed" type="number" min="0" value="0"></div>
+      <div class="field"><label for="ePayable">공제 전 납부할 세액(원)</label><input id="ePayable" type="number" min="0" value="1000000"></div>
+      <div class="field"><label for="eStatus">개업 상태</label><select id="eStatus"><option value="existing">기존 개인사업자</option><option value="new">해당 연도 신규 개인사업자</option><option value="corp">법인사업자</option></select></div>
+      <div class="field"><label for="ePrior">직전 연도 사업장별 공급가액(면세 포함, 원)</label><input id="ePrior" type="number" min="0" value="250000000"></div>
+      <button type="button" id="calc47Btn">전자발급 공제 계산</button>
+      <div class="calc-result" id="calc47Result">값을 입력하고 계산하세요.</div>
+    </div>
+  </div>
+  <div class="calc-card" style="margin-top:16px">
+    <h3>제46조③ 카드전표 매입세액 1차 판정</h3>
+    <div class="field"><label><input id="cVat" type="checkbox" checked> 부가가치세액이 별도로 구분 표시됨</label></div>
+    <div class="field"><label><input id="cSupplier" type="checkbox" checked> 공급자가 시행령상 제외업종이 아님</label></div>
+    <div class="field"><label><input id="cSimple" type="checkbox" checked> 영수증 발급의무 간이과세자가 발급한 전표가 아님</label></div>
+    <div class="field"><label><input id="cStatement" type="checkbox" checked> 수령명세서 제출 및 전표·전자증빙 보관</label></div>
+    <div class="field"><label><input id="cArt39" type="checkbox" checked> 법 제39조의 불공제 사유가 없음</label></div>
+    <button type="button" id="checkCardBtn">매입세액공제 판정</button>
+    <div class="calc-result" id="cardResult">체크 후 판정하세요.</div>
+  </div>
+  <p class="muted">학습용 도구입니다. 제46조① 계산기는 소비자 대상 업종에 해당한다는 전제입니다. 실제 신고에서는 업종, 제46조의 직전 연도 공급가액 합계액, 제47조의 사업장별 공급가액, 간이과세 적용기간, 증빙·전송시각과 연간 누적한도를 확인해야 합니다.</p>
+</section>
+
+<section class="section" id="quiz">
+  <div class="section-title-bar">10. O/X 퀴즈 16문항</div>
+  <div class="quiz-head"><p>답을 선택하면 즉시 해설이 표시됩니다.</p><div><span class="quiz-score" id="quizScore">0 / 16</span> <button class="btn-reset" type="button" id="resetQuiz">초기화</button></div></div>
+  <div id="quizContainer"></div>
+</section>
+
+<section class="section" id="sources">
+  <div class="section-title-bar">11. 근거 법령·복습 순서</div>
+  <ol>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제46조" target="_blank" rel="noopener">부가가치세법 제46조</a> → 시행령 제88조 → 시행규칙상 수령명세서 서식</li>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제47조" target="_blank" rel="noopener">부가가치세법 제47조</a> → 시행령 제89조 → 시행규칙 제61조</li>
+    <li>전자세금계산서 전송기한은 법 제32조 제3항과 시행령 제68조 제7항까지 연결해 확인합니다.</li>
+    <li>복습 순서: 제46조① 대상자 → 적격 발급금액 → 율·연간한도 → 납부세액 한도, 제46조③ 공급자 → 세액표시 → 명세서·보관 → 제39조, 제47조 대상자 → 발급·전송 → 건수 → 한도 순서입니다.</li>
+  </ol>
+  <div class="law-box"><strong>한시규정 주의:</strong> 2026년 이후 법 개정으로 제46조의 우대율·한도나 제47조의 일몰기한이 연장될 수 있습니다. 실제 신고연도에는 해당 연도 시행 법령을 다시 확인해야 합니다.</div>
+</section>
+<footer class="footer-note">부가가치세법 제46조~제47조 예습자료 · 2026-06-27 기준</footer>
+
+<script>
+const quizData = [
+ {q:'법인사업자는 소비자 대상 음식점업을 하더라도 제46조 제1항의 발행세액공제를 받을 수 없다.',a:true,e:'제46조 제1항은 대상 소비자 업종 사업자 중 법인사업자를 제외합니다.'},
+ {q:'직전 연도 재화·용역 공급가액 합계액이 정확히 10억원인 개인 소매업자는 다른 요건을 충족해도 발행세액공제를 받을 수 없다.',a:false,e:'10억원을 초과하는 개인이 제외되므로 정확히 10억원은 다른 요건 충족 시 가능합니다.'},
+ {q:'2026년 신용카드매출전표등 발행세액공제율은 적격 발급금액의 1.3%이다.',a:true,e:'2026년 12월 31일까지 한시적으로 1.3%가 적용됩니다.'},
+ {q:'2026년 제46조 제1항의 연간 공제한도는 500만원이다.',a:false,e:'2026년 말까지는 1천만원이며, 현행법상 이후에는 500만원입니다.'},
+ {q:'발행세액공제가 공제 전 납부할 세액을 초과하면 초과액은 환급세액이 된다.',a:false,e:'초과하는 부분은 없는 것으로 보므로 환급이나 이월공제가 되지 않습니다.'},
+ {q:'현금영수증 발급금액도 제46조 제1항의 다른 요건을 충족하면 공제대상이 될 수 있다.',a:true,e:'현금영수증은 법이 열거한 신용카드매출전표등에 포함됩니다.'},
+ {q:'단순 계좌이체로 결제받은 금액은 언제나 법정 전자적 결제수단에 해당한다.',a:false,e:'시행령이 정한 전자화폐 또는 통신판매 중개결제 요건 등을 충족해야 합니다.'},
+ {q:'제46조 제3항의 카드전표 매입세액공제를 받으려면 부가가치세액이 별도로 구분되어야 한다.',a:true,e:'세액 구분표시는 명시적 요건입니다.'},
+ {q:'미용업자가 발급한 미용용역 카드전표는 제46조 제3항에 따라 매입세액으로 공제할 수 있다.',a:false,e:'목욕·이발·미용업은 시행령 제88조 제5항의 제외업종입니다.'},
+ {q:'영수증만 발급해야 하는 간이과세자가 그 기간에 발급한 카드전표의 세액은 매입세액으로 볼 수 없다.',a:true,e:'법 제46조 제3항 제3호가 이를 제외합니다.'},
+ {q:'카드전표에 세액이 구분 표시되면 비영업용 승용차 관련 세액도 공제된다.',a:false,e:'법 제39조의 비영업용 승용차 관련 불공제는 그대로 적용됩니다.'},
+ {q:'제46조 제1항은 판매자의 납부세액 공제이고 제46조 제3항은 구매자의 매입세액 공제이다.',a:true,e:'같은 조문 안에서도 적용주체와 세액 성격이 다릅니다.'},
+ {q:'직전 연도 사업장별 공급가액이 정확히 3억원인 개인사업자는 제47조 대상이다.',a:false,e:'제47조는 3억원 미만이므로 정확히 3억원은 제외됩니다.'},
+ {q:'제47조 규모기준을 계산할 때 면세공급가액도 포함한다.',a:true,e:'시행령 제89조가 면세공급가액을 포함한다고 명시합니다.'},
+ {q:'해당 연도에 신규로 사업을 개시한 개인사업자는 직전 연도 실적이 없어도 제47조 대상이 될 수 있다.',a:true,e:'신규 개인사업자는 별도의 대상 유형입니다.'},
+ {q:'제47조 공제는 전자세금계산서 1건당 200원, 연간 100만원 한도이며 법정기한 내 전송해야 한다.',a:true,e:'현행 시행령 제89조와 법 제47조의 요건입니다.'}
+];
+let answered=0,correct=0;
+const quizContainer=document.getElementById('quizContainer');
+function renderQuiz(){answered=0;correct=0;document.getElementById('quizScore').textContent='0 / '+quizData.length;quizContainer.innerHTML='';quizData.forEach((item,i)=>{const card=document.createElement('div');card.className='quiz-card';card.innerHTML=`<div class="quiz-q">${i+1}. ${item.q}</div><div class="quiz-options"><button type="button" data-v="true">O</button><button type="button" data-v="false">X</button></div><div class="quiz-answer"></div>`;card.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>answerQuiz(card,item,btn.dataset.v==='true')));quizContainer.appendChild(card);});}
+function answerQuiz(card,item,value){if(card.dataset.done)return;card.dataset.done='1';answered++;const ok=value===item.a;if(ok){correct++;card.classList.add('correct')}else{card.classList.add('wrong')}card.querySelectorAll('button').forEach(b=>b.disabled=true);const box=card.querySelector('.quiz-answer');box.classList.add('show');box.innerHTML=`<strong>${ok?'정답':'오답'} · 정답은 ${item.a?'O':'X'}</strong><br>${item.e}`;document.getElementById('quizScore').textContent=`${correct} / ${quizData.length} · 응답 ${answered}`;}
+document.getElementById('resetQuiz').addEventListener('click',renderQuiz);renderQuiz();
+
+function n(v){return Number(v)||0}
+function won(v){return Math.round(v).toLocaleString('ko-KR')+'원'}
+
+document.getElementById('calc46Btn').addEventListener('click',()=>{
+ const year=document.getElementById('issueYear').value;
+ const amount=Math.max(0,n(document.getElementById('issueAmount').value));
+ const used=Math.max(0,n(document.getElementById('issueUsed').value));
+ const payable=Math.max(0,n(document.getElementById('issuePayable').value));
+ const entity=document.getElementById('issueEntity').value;
+ const prior=Math.max(0,n(document.getElementById('issuePrior').value));
+ const rate=year==='2026'?.013:.01;
+ const annualCap=year==='2026'?10000000:5000000;
+ const eligible=entity==='individual' && prior<=1000000000;
+ const gross=amount*rate;
+ const remaining=Math.max(0,annualCap-used);
+ const credit=eligible?Math.min(gross,remaining,payable):0;
+ const reasons=[];
+ if(entity!=='individual') reasons.push('법인사업자 제외');
+ if(prior>1000000000) reasons.push('직전 연도 공급가액 합계액 10억원 초과');
+ document.getElementById('calc46Result').innerHTML=eligible
+  ? `산식상 ${won(gross)} · 연간 잔여한도 ${won(remaining)} · 납부세액 한도 ${won(payable)}<br><strong>공제 가능액 ${won(credit)}</strong>`
+  : `<strong>대상 아님</strong><br>${reasons.join(' · ')}<br><span class="muted">소비자 대상 업종 여부는 별도로 충족해야 합니다.</span>`;
+});
+
+document.getElementById('calc47Btn').addEventListener('click',()=>{
+ const year=Number(document.getElementById('eYear').value);
+ const count=Math.max(0,Math.floor(n(document.getElementById('eCount').value)));
+ const used=Math.max(0,n(document.getElementById('eUsed').value));
+ const payable=Math.max(0,n(document.getElementById('ePayable').value));
+ const status=document.getElementById('eStatus').value;
+ const prior=Math.max(0,n(document.getElementById('ePrior').value));
+ const withinSunset=year<=2027;
+ const individual=status!=='corp';
+ const scale=status==='new' || prior<300000000;
+ const eligible=withinSunset && individual && scale;
+ const gross=count*200;
+ const remaining=Math.max(0,1000000-used);
+ const credit=eligible?Math.min(gross,remaining,payable):0;
+ const reasons=[];
+ if(!withinSunset) reasons.push('현행법상 2027년 말 일몰');
+ if(!individual) reasons.push('개인사업자만 대상');
+ if(individual && !scale) reasons.push('직전 연도 사업장별 공급가액 3억원 미만 요건 미충족');
+ document.getElementById('calc47Result').innerHTML=eligible
+  ? `건수 산식 ${count.toLocaleString('ko-KR')}건 × 200원 = ${won(gross)}<br>연간 잔여한도 ${won(remaining)} · 납부세액 한도 ${won(payable)}<br><strong>공제 가능액 ${won(credit)}</strong>`
+  : `<strong>대상 아님</strong><br>${reasons.join(' · ')}`;
+});
+
+document.getElementById('checkCardBtn').addEventListener('click',()=>{
+ const checks=[
+  ['세액 구분표시',document.getElementById('cVat').checked],
+  ['적격 공급자',document.getElementById('cSupplier').checked],
+  ['영수증 전용 간이과세자 제외',document.getElementById('cSimple').checked],
+  ['명세서·보관',document.getElementById('cStatement').checked],
+  ['법 제39조 불공제 없음',document.getElementById('cArt39').checked]
+ ];
+ const failed=checks.filter(x=>!x[1]).map(x=>x[0]);
+ document.getElementById('cardResult').innerHTML=failed.length===0
+  ? '<strong>1차 판정: 공제 가능</strong><br>실제 거래의 사업 관련성과 신고서 반영 여부를 최종 확인하세요.'
+  : `<strong>1차 판정: 공제 곤란</strong><br>미충족: ${failed.join(' · ')}`;
+});
+
+const details=[...document.querySelectorAll('details')];let allOpen=false;
+document.getElementById('toggleDetails').addEventListener('click',e=>{allOpen=!allOpen;details.forEach(d=>d.open=allOpen);e.target.textContent=allOpen?'해설 모두 닫기':'해설 모두 열기'});
+function updateProgress(){const doc=document.documentElement;const max=doc.scrollHeight-doc.clientHeight;const pct=max>0?doc.scrollTop/max*100:0;document.getElementById('progressBar').style.width=Math.min(100,pct)+'%'}
+window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+</script>
+</body>
+</html>

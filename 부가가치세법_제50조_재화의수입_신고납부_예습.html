@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부가가치세법 제50조 — 재화의 수입에 대한 신고·납부</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.82;max-width:1060px;margin:0 auto;padding:24px}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px}h2{color:#1A3A6B;font-size:1.15em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B}h3{color:#2C5282;font-size:1em;margin:14px 0 7px}h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px}ul,ol{padding-left:21px;margin-bottom:8px}li{margin-bottom:4px;line-height:1.74}a{color:#1A56A8;text-decoration:none}a:hover{text-decoration:underline}strong{color:#172554}button,input,select{font:inherit}
+.header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B 58%,#276749);color:#fff;padding:33px 40px;border-radius:14px;margin-bottom:16px;box-shadow:0 10px 28px rgba(13,27,75,.16)}
+.subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 16px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:11px}.header h1{color:#fff;font-size:1.84em}.header .meta{font-size:.8em;opacity:.92;margin-top:7px;line-height:1.65}.freq-badge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px}
+.toolbar{position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px}.toolbar a,.toolbar button{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer}.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+.section{margin:20px 0;padding:24px 28px;border-radius:12px;border:1px solid #E8ECF0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)}.section-title-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-24px -28px 18px;letter-spacing:.02em}.sub-block{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:14px 18px;margin:12px 0}.sub-block h3{margin-top:0;color:#1A3A6B}
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}.law-box{background:#F7FAFC;border-left:4px solid #2C5282;border-radius:5px;padding:13px 17px;margin:10px 0;font-size:.91em}.gray-box{background:#F1F5F9;border:1px solid #CBD5E1;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.91em}.warning{color:#9B2335;font-weight:700}.ok{color:#176B3A;font-weight:700}.bad{color:#9B2335;font-weight:700}.muted{color:#64748B;font-size:.9em}.formula{background:#0F274A;color:#fff;border-radius:9px;padding:13px 16px;margin:10px 0;text-align:center;font-weight:700;letter-spacing:.01em;overflow-x:auto}.formula small{display:block;font-weight:400;opacity:.86;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.feature{border:1px solid #DCE7F5;border-radius:9px;padding:15px;background:#fff}.feature .num{display:inline-flex;width:25px;height:25px;border-radius:50%;align-items:center;justify-content:center;background:#1A3A6B;color:#fff;font-weight:700;font-size:.8em;margin-right:5px}.feature h3{display:inline;color:#1A3A6B}.feature p{font-size:.91em;margin:7px 0 0}
+.flow{display:flex;gap:8px;align-items:stretch;margin:14px 0}.flow-step{flex:1;position:relative;background:#F8FAFE;border:1px solid #C9D8EC;border-radius:9px;padding:13px;text-align:center}.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-11px;top:50%;transform:translateY(-50%);font-weight:900;color:#2C5282;background:#FAFAFA;border-radius:50%;z-index:2}.flow-step b{display:block;color:#1A3A6B;margin-bottom:3px}.flow-step span{font-size:.86em;color:#475569}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.89em}th{background:#E8EEF7;color:#1A3A6B;font-weight:700}th,td{border:1px solid #CBD5E1;padding:9px 10px;text-align:left;vertical-align:top}tr:nth-child(even) td{background:#FAFCFF}.table-wrap{overflow-x:auto;border-radius:8px}.tag{display:inline-block;border-radius:12px;padding:2px 8px;font-size:.78em;font-weight:700;margin:1px}.tag-blue{background:#DBEAFE;color:#1E40AF}.tag-green{background:#DCFCE7;color:#166534}.tag-red{background:#FEE2E2;color:#991B1B}.tag-yellow{background:#FEF3C7;color:#92400E}.tag-gray{background:#E2E8F0;color:#475569}
+details{border:1px solid #DCE7F5;border-radius:8px;margin:8px 0;background:#fff}summary{padding:10px 14px;cursor:pointer;font-weight:700;color:#1A3A6B;background:#F8FAFE;border-radius:8px}details[open] summary{border-bottom:1px solid #DCE7F5;border-radius:8px 8px 0 0}.detail-body{padding:12px 16px;font-size:.92em}
+.case-card{border-left:4px solid #38A169;background:#F0FFF4;border-radius:7px;padding:14px 17px;margin:11px 0}.case-title{font-weight:800;color:#176B3A;margin-bottom:5px}.case-card.badcase{border-left-color:#E53E3E;background:#FFF5F5}.case-card.badcase .case-title{color:#9B2335}
+.calc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.calc-card{border:1px solid #C9D8EC;background:#F8FAFE;border-radius:10px;padding:15px}.calc-card h3{margin-top:0}.field{margin:8px 0}.field label{display:block;font-size:.82em;color:#475569;font-weight:700}.field input,.field select{width:100%;border:1px solid #B8C7DA;border-radius:6px;padding:8px 9px;background:#fff}.checkline label{display:flex;gap:8px;align-items:flex-start;font-weight:600}.checkline input{width:auto;margin-top:5px}.calc-card button{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:8px 12px;cursor:pointer;font-weight:700}.calc-result{margin-top:10px;background:#fff;border:1px solid #DCE7F5;border-radius:7px;padding:10px;font-weight:700;color:#1A3A6B;min-height:52px}
+.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.quiz-score{font-weight:700;background:#E8EEF7;color:#1A3A6B;border-radius:18px;padding:5px 12px}.quiz-card{border:1px solid #D9E2EF;border-radius:10px;padding:15px 17px;margin:10px 0;background:#fff}.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px}.quiz-options button{width:44px;border:1px solid #AFC2DA;background:#F8FAFE;border-radius:7px;padding:6px;cursor:pointer;font-weight:800;color:#1A3A6B}.quiz-options button:hover{background:#E8EEF7}.quiz-options button:disabled{cursor:default;opacity:.75}.quiz-answer{display:none;margin-top:9px;padding:10px 12px;border-radius:7px;font-size:.91em}.quiz-answer.show{display:block}.quiz-card.correct{border-color:#68D391}.quiz-card.correct .quiz-answer{background:#F0FFF4;color:#176B3A}.quiz-card.wrong{border-color:#FC8181}.quiz-card.wrong .quiz-answer{background:#FFF5F5;color:#9B2335}.btn-reset{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 10px;cursor:pointer;font-weight:700}.footer-note{text-align:center;color:#64748B;font-size:.8em;padding:14px 0 5px}
+@media(max-width:760px){body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.header h1{font-size:1.55em}.section{padding:20px 17px}.section-title-bar{margin:-20px -17px 15px}.grid,.grid.three,.calc-grid{grid-template-columns:1fr}.flow{flex-direction:column}.flow-step:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}.toolbar{top:3px}.toolbar .progress-label{display:none}th,td{min-width:125px;padding:8px}.quiz-head{align-items:flex-start;flex-direction:column}}
+@media print{body{max-width:none;background:#fff}.toolbar,.calc-grid,.quiz-options,.btn-reset{display:none}.section,.highlight-box,.trap-box,.compare-box{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="header" id="top">
+  <span class="subject-badge">부가가치세법 · 제5장 신고와 납부</span>
+  <h1>제50조 재화의 수입에 대한 신고·납부</h1>
+  <p>수입 단계에서 세관장에게 신고·납부하고, 사업용 수입은 수입세금계산서를 바탕으로 매입세액을 공제하는 구조</p>
+  <div class="meta">기준: 부가가치세법 2026.1.2. 시행 · 관세법 2026.4.1. 현행 기준<br>연결조문: 법 제3조·제18조·제27조·제29조·제30조·제35조·제38조, 관세법 제9조·제38조·제38조의2·제38조의3·제241조</div>
+</header>
+
+<nav class="toolbar" aria-label="학습자료 이동">
+  <a href="#core">핵심</a><a href="#map">조문지도</a><a href="#rule">제50조</a><a href="#base">계산</a><a href="#procedure">절차</a><a href="#credit">공제</a><a href="#correction">정정</a><a href="#cases">사례</a><a href="#traps">함정</a><a href="#tools">판정도구</a><a href="#quiz">O/X</a><a href="#sources">근거</a>
+  <button type="button" onclick="window.print()">인쇄</button>
+  <span class="progress-label">읽기 진행</span><span class="progress-track"><span class="progress-bar" id="progressBar"></span></span>
+</nav>
+
+<section class="highlight-box" id="core">
+  <h2>1. 시험 직전 핵심 결론 12개</h2>
+  <ol>
+    <li>재화를 수입하는 자는 사업자인지와 관계없이 부가가치세 납세의무자가 될 수 있다.</li>
+    <li>수입 부가가치세는 국내 매출의 정기 부가가치세 신고서가 아니라 <strong>관세 신고와 함께 세관장에게</strong> 신고·납부한다.</li>
+    <li>제50조 자체에는 대통령령·부령 위임이 없고, 구체적인 신고·납부절차는 「관세법」을 직접 따른다.</li>
+    <li>재화의 수입시기는 선적일이나 국내 도착일이 아니라 <strong>수입신고가 수리된 때</strong>이다.</li>
+    <li>수입 부가가치세 과세표준은 관세의 과세가격만이 아니라 관세와 법정 내국세를 합한 금액이다.</li>
+    <li>관세율이 0%이거나 관세가 감면되었다고 하여 수입 부가가치세도 당연히 0원이 되는 것은 아니다.</li>
+    <li>수입 부가가치세 면제 여부는 법 제27조 등 별도의 면세규정으로 판단한다.</li>
+    <li>관세법상 일반적인 납세신고는 수입신고 때 하고, 원칙적 납부기한은 납세신고 수리일부터 15일 이내이다.</li>
+    <li>납세의무자는 수입신고 수리 전에도 해당 세액을 납부할 수 있다.</li>
+    <li>수입세금계산서는 외국 공급자가 아니라 <strong>세관장</strong>이 수입자에게 발급한다.</li>
+    <li>사업을 위하여 수입한 재화의 부가가치세는 법정요건을 충족하면 수입시기가 속하는 과세기간의 매입세액으로 공제한다.</li>
+    <li>수입 단계 납부와 부가가치세 신고 때의 매입세액공제는 중복과세가 아니라 선납 후 공제 구조이다.</li>
+  </ol>
+</section>
+
+<section class="section" id="map">
+  <div class="section-title-bar">2. 제50조를 이해하는 조문지도</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>단계</th><th>근거조문</th><th>핵심 내용</th><th>실무 문서·기관</th></tr></thead>
+    <tbody>
+      <tr><td>납세의무자</td><td>부가가치세법 제3조①2호</td><td>재화를 수입하는 자</td><td>화주 등 수입자</td></tr>
+      <tr><td>수입신고</td><td>관세법 제241조·제242조</td><td>물품의 품명·수량·가격 등을 세관장에게 신고</td><td>수입신고서, 세관장</td></tr>
+      <tr><td>납세신고</td><td>관세법 제38조①</td><td>수입신고 시 관세의 납부에 관한 신고</td><td>납세신고, 세관장</td></tr>
+      <tr><td>부가가치세 병행신고</td><td>부가가치세법 제50조</td><td>관세와 함께 수입 부가가치세 신고·납부</td><td>세관장</td></tr>
+      <tr><td>과세표준·세율</td><td>법 제29조②·제30조</td><td>관세과세가격과 법정 세금의 합계 × 10%</td><td>수입세액 계산</td></tr>
+      <tr><td>수입시기</td><td>법 제18조</td><td>수입신고 수리 시점</td><td>과세기간 귀속</td></tr>
+      <tr><td>증빙</td><td>법 제35조</td><td>세관장이 수입세금계산서 발급</td><td>수입세금계산서</td></tr>
+      <tr><td>매입세액공제</td><td>법 제38조①2호·③</td><td>사업용 수입재화의 수입세액을 수입시기 과세기간에 공제</td><td>부가가치세 신고서</td></tr>
+    </tbody>
+  </table></div>
+  <div class="law-box"><strong>위임관계:</strong> 제50조에는 “대통령령으로 정한다”는 문구가 없습니다. 따라서 시행령·시행규칙의 독립된 위임조문을 찾는 문제가 아니라, 제50조가 직접 인용한 「관세법」의 신고납부 규정을 추적해야 합니다.</div>
+</section>
+
+<section class="section" id="rule">
+  <div class="section-title-bar">3. 제50조 본문 해설</div>
+  <div class="law-box"><strong>법문:</strong> 제3조제1항제2호의 납세의무자가 재화의 수입에 대하여 「관세법」에 따라 관세를 세관장에게 신고하고 납부하는 경우에는 재화의 수입에 대한 부가가치세를 함께 신고하고 납부하여야 한다.</div>
+  <h2>3-1. 누가 납부하는가</h2>
+  <p>납세의무자는 <strong>재화를 수입하는 자</strong>입니다. 국내에서 사업을 하는지, 이윤을 목적으로 반복적으로 수입하는지와 무관하게 수입행위 자체로 납세의무가 생길 수 있습니다.</p>
+  <div class="grid">
+    <div class="feature"><span class="num">1</span><h3>사업자 수입</h3><p>법인·개인사업자가 원재료, 상품, 기계 등을 수입하는 경우입니다. 납부 후 사업 관련성과 증빙요건을 충족하면 매입세액공제를 검토합니다.</p></div>
+    <div class="feature"><span class="num">2</span><h3>비사업자 수입</h3><p>개인이 사적으로 물품을 수입하는 경우에도 과세대상 수입이면 수입 부가가치세를 부담할 수 있으나, 사업상 매입세액공제는 적용되지 않습니다.</p></div>
+  </div>
+  <h2>3-2. 어디에 신고하는가</h2>
+  <p>국내거래 부가가치세는 납세지 관할 세무서장에게 예정·확정신고하지만, 수입 부가가치세는 통관 단계에서 <strong>세관장</strong>에게 신고·납부합니다.</p>
+  <div class="compare-box">
+    <h2>국내매입과 수입의 차이</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>구분</th><th>국내에서 재화를 매입</th><th>외국에서 재화를 수입</th></tr></thead>
+      <tbody>
+        <tr><td>세액 징수·납부 구조</td><td>국내 공급자가 거래징수 후 신고·납부</td><td>수입자가 세관장에게 직접 신고·납부</td></tr>
+        <tr><td>증빙 발급자</td><td>국내 공급자</td><td>세관장</td></tr>
+        <tr><td>증빙</td><td>세금계산서</td><td>수입세금계산서</td></tr>
+        <tr><td>귀속시기</td><td>재화의 공급시기</td><td>수입신고 수리 시기</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section class="section" id="base">
+  <div class="section-title-bar">4. 수입 부가가치세 과세표준과 세액</div>
+  <h2>4-1. 기본 계산식</h2>
+  <div class="formula">수입 부가가치세 과세표준 = 관세의 과세가격 + 관세 + 개별소비세 + 주세 + 교육세 + 농어촌특별세 + 교통·에너지·환경세</div>
+  <div class="formula">수입 부가가치세 = 수입 부가가치세 과세표준 × 10%</div>
+  <p>관세의 과세가격에 실제로 부과되는 위 세금들을 더한 금액이 부가가치세 과세표준입니다. 모든 수입에 모든 세목이 붙는 것은 아니며, 해당 물품에 실제 부과되는 세액만 합산합니다.</p>
+  <h2>4-2. 관세율 0%와 부가가치세 면제는 다르다</h2>
+  <div class="case-card badcase"><div class="case-title">관세가 0원인 수입상품</div><p>관세과세가격이 1억원이고 관세율이 0%이며 다른 내국세가 없다면 수입 부가가치세 과세표준은 1억원, 부가가치세는 1천만원입니다. 관세 0원은 부가가치세 면제와 같은 뜻이 아닙니다.</p></div>
+  <div class="case-card"><div class="case-title">법 제27조의 면세수입</div><p>미가공 식료품, 일정한 도서, 일정한 소액물품 등 법 제27조가 정한 수입재화라면 별도의 면세요건에 따라 수입 부가가치세가 면제될 수 있습니다.</p></div>
+  <h2>4-3. 계산 예시</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>항목</th><th>금액</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td>관세의 과세가격</td><td>100,000,000원</td><td>관세법상 과세가격</td></tr>
+      <tr><td>관세</td><td>8,000,000원</td><td>예시 관세액</td></tr>
+      <tr><td>기타 포함세액</td><td>0원</td><td>개별소비세 등 없음</td></tr>
+      <tr><td>수입 부가가치세 과세표준</td><td>108,000,000원</td><td>1억원 + 800만원</td></tr>
+      <tr><td>수입 부가가치세</td><td>10,800,000원</td><td>108,000,000원 × 10%</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="section" id="procedure">
+  <div class="section-title-bar">5. 신고·납부 절차와 시기</div>
+  <div class="flow">
+    <div class="flow-step"><b>수입신고</b><span>품명·규격·수량·가격 등을 신고</span></div>
+    <div class="flow-step"><b>납세신고</b><span>수입신고 때 세액 신고</span></div>
+    <div class="flow-step"><b>신고수리</b><span>수입시기와 납부기한의 기준</span></div>
+    <div class="flow-step"><b>납부</b><span>원칙적으로 납세신고 수리일부터 15일 이내</span></div>
+    <div class="flow-step"><b>수입세금계산서</b><span>세관장이 수입자에게 발급</span></div>
+  </div>
+  <h2>5-1. 수입신고와 납세신고</h2>
+  <ul>
+    <li>관세법 제241조: 수입하려는 물품의 품명·규격·수량·가격 등을 세관장에게 신고합니다.</li>
+    <li>관세법 제38조: 원칙적으로 수입신고를 할 때 관세의 납부에 관한 납세신고를 합니다.</li>
+    <li>부가가치세법 제50조: 이 관세 신고·납부와 함께 수입 부가가치세도 신고·납부합니다.</li>
+  </ul>
+  <h2>5-2. 납부기한</h2>
+  <div class="formula">일반적인 신고납부: 납세신고 수리일부터 15일 이내</div>
+  <ul>
+    <li>수입신고가 수리되기 전에 세액을 미리 납부할 수도 있습니다.</li>
+    <li>세관장이 부과고지하는 예외적인 경우에는 납부고지를 받은 날부터 15일 이내가 원칙입니다.</li>
+    <li>요건을 갖춘 성실납세자는 같은 달에 납부기한이 도래하는 세액을 그 달 말일까지 일괄납부할 수 있는 제도가 있습니다.</li>
+  </ul>
+  <h2>5-3. 수입시기와 과세기간</h2>
+  <p>법 제18조에 따라 재화의 수입시기는 <strong>수입신고가 수리된 때</strong>입니다. 선적일, 국내 항구 도착일, 창고 반입일 또는 대금결제일이 아닙니다.</p>
+  <div class="case-card"><div class="case-title">과세기간 귀속 사례</div><p>물품이 6월 28일 국내에 도착했지만 수입신고가 7월 2일 수리되었다면 수입시기는 7월 2일이고, 사업용 수입 부가가치세는 제2기 과세기간의 매입세액공제 대상 여부를 검토합니다.</p></div>
+</section>
+
+<section class="section" id="credit">
+  <div class="section-title-bar">6. 수입세금계산서와 매입세액공제</div>
+  <h2>6-1. 수입세금계산서 발급</h2>
+  <p>세관장은 수입되는 재화에 대하여 부가가치세를 징수할 때 수입자에게 수입세금계산서를 발급합니다. 외국 판매자는 대한민국 부가가치세법상 수입세금계산서의 발급자가 아닙니다.</p>
+  <h2>6-2. 공제요건</h2>
+  <div class="grid three">
+    <div class="feature"><span class="num">1</span><h3>사업자</h3><p>수입자가 부가가치세 신고를 하는 사업자여야 합니다.</p></div>
+    <div class="feature"><span class="num">2</span><h3>사업 목적</h3><p>자기의 사업을 위하여 사용했거나 사용할 목적으로 수입해야 합니다.</p></div>
+    <div class="feature"><span class="num">3</span><h3>증빙·불공제 검토</h3><p>수입세금계산서와 법 제39조의 불공제 사유를 함께 확인합니다.</p></div>
+  </div>
+  <div class="formula">공제시기 = 재화의 수입시기, 즉 수입신고 수리일이 속하는 과세기간</div>
+  <h2>6-3. 전액 공제가 항상 되는 것은 아니다</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>수입 목적</th><th>처리 방향</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td>과세사업 또는 영세율사업 전용</td><td>원칙적으로 공제 가능</td><td>판매상품, 제조 원재료, 수출제품 생산설비</td></tr>
+      <tr><td>면세사업 전용</td><td>매입세액 불공제</td><td>면세 의료용역에만 사용하는 장비 등</td></tr>
+      <tr><td>과세·면세 공통사용</td><td>공통매입세액 안분</td><td>공통창고·공통설비</td></tr>
+      <tr><td>사업과 직접 관련 없음</td><td>불공제</td><td>대표자의 개인사용 물품</td></tr>
+      <tr><td>법 제39조 제한 대상</td><td>불공제 또는 일부 불공제</td><td>비영업용 승용차, 업무추진비 관련 등</td></tr>
+    </tbody>
+  </table></div>
+  <div class="analogy-box"><strong>현금흐름 관점:</strong> 통관 때 세관에 1,080만원을 납부했더라도 과세사업용이면 부가가치세 신고에서 매입세액으로 공제될 수 있습니다. 그러나 면세사업용·개인용이면 비용 또는 자산원가 문제가 될 뿐 부가가치세 공제는 되지 않습니다.</div>
+</section>
+
+<section class="section" id="correction">
+  <div class="section-title-bar">7. 신고세액 오류가 발견된 경우</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>발견 시점·상황</th><th>관세법상 절차</th><th>핵심 기한</th><th>수입세금계산서 연결</th></tr></thead>
+    <tbody>
+      <tr><td>납부 전 과부족 발견</td><td>납세신고 세액 정정</td><td>당초 납부기한 유지</td><td>정정된 신고내용 반영</td></tr>
+      <tr><td>신고납부 후 부족세액 발견</td><td>보정신청</td><td>신고납부일부터 6개월 이내, 신청 다음 날까지 납부</td><td>요건에 따라 수정수입세금계산서</td></tr>
+      <tr><td>보정기간 후 부족세액 발견</td><td>수정신고</td><td>법정기간 내, 수정신고 다음 날까지 납부</td><td>요건에 따라 수정수입세금계산서</td></tr>
+      <tr><td>과다납부 발견</td><td>경정청구</td><td>원칙적으로 최초 납세신고일부터 5년 이내</td><td>감액 수정수입세금계산서 검토</td></tr>
+    </tbody>
+  </table></div>
+  <p class="warning">관세를 추가 납부했다고 언제나 수정수입세금계산서가 발급되는 것은 아닙니다. 관세법 위반, 부정한 행위, 반복 오류 등 법 제35조가 정한 제한사유를 별도로 검토해야 합니다.</p>
+</section>
+
+<section class="compare-box" id="scope">
+  <h2>8. 제50조와 인접제도의 구분</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>구분</th><th>제50조</th><th>제50조의2</th><th>법 제52조 대리납부</th></tr></thead>
+    <tbody>
+      <tr><td>대상</td><td>재화의 수입</td><td>일정한 중소·중견 제조법인의 수입재화</td><td>국외사업자로부터 국내에서 공급받는 용역·권리</td></tr>
+      <tr><td>기본효과</td><td>통관 때 신고·납부</td><td>요건 충족 시 수입 부가가치세 납부 유예</td><td>대가 지급 시 공급받는 자가 징수·납부</td></tr>
+      <tr><td>기관</td><td>세관장</td><td>세무서장 확인 후 세관장 승인</td><td>납세지 관할 세무서장</td></tr>
+      <tr><td>이번 학습범위</td><td><strong>포함</strong></td><td>인접제도로만 구분</td><td>별도 조문</td></tr>
+    </tbody>
+  </table></div>
+  <div class="gray-box">소프트웨어 다운로드나 해외 플랫폼 이용은 물리적 재화의 수입이 아니라 용역·권리 또는 전자적 용역 문제일 수 있습니다. 모든 해외결제를 제50조의 재화 수입으로 처리하면 안 됩니다.</div>
+</section>
+
+<section class="section" id="cases">
+  <div class="section-title-bar">9. 실무·기출 적용사례</div>
+  <div class="case-card"><div class="case-title">사례 1 · 사업자가 아닌 개인의 수입</div><p>개인이 해외에서 고가 가방을 수입하더라도 과세대상 수입이면 재화를 수입하는 자로서 수입 부가가치세를 부담할 수 있습니다. 다만 사업상 매입세액공제는 없습니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 2 · 관세율 0%</div><p>FTA 등으로 관세가 0원이더라도 법 제27조 등에 따른 부가가치세 면제대상이 아니라면 관세과세가격을 기초로 수입 부가가치세가 계산됩니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 3 · 기계장치 수입</div><p>과세 제조업자가 생산설비를 수입하고 수입 부가가치세 2천만원을 세관에 납부했습니다. 수입세금계산서를 적법하게 발급받고 불공제사유가 없다면 수입신고 수리일이 속하는 과세기간에 매입세액공제를 검토합니다.</p></div>
+  <div class="case-card badcase"><div class="case-title">사례 4 · 면세병원 전용 장비</div><p>면세 의료용역에만 사용할 장비를 수입하면서 부가가치세를 납부했더라도 면세사업 관련 매입세액이므로 원칙적으로 공제되지 않습니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 5 · 도착일과 수리일이 다른 경우</div><p>6월에 도착하고 7월에 수입신고가 수리되었다면 수입시기는 7월입니다. 운송서류의 도착일을 기준으로 제1기 매입세액으로 신고하면 귀속시기 오류가 생깁니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 6 · 기타 세금이 붙는 물품</div><p>관세과세가격 1억원, 관세 800만원, 개별소비세 500만원, 교육세 150만원이라면 수입 부가가치세 과세표준은 1억1,450만원이고 부가가치세는 1,145만원입니다.</p></div>
+  <div class="case-card badcase"><div class="case-title">사례 7 · 외국 인보이스만 보관</div><p>외국 판매자의 상업송장만으로 대한민국 수입 부가가치세 매입세액을 공제하는 것이 아닙니다. 세관장이 발급한 수입세금계산서와 실제 수입·사업 관련성을 확인해야 합니다.</p></div>
+  <div class="case-card"><div class="case-title">사례 8 · 수입신고 세액 오류</div><p>납부 후 4개월 만에 과세가격 누락을 발견했다면 관세법상 보정신청 가능성을 검토하고, 추가 납부와 수정수입세금계산서 발급 여부를 함께 확인합니다.</p></div>
+</section>
+
+<section class="trap-box" id="traps">
+  <h2>10. 자주 틀리는 함정 16개</h2>
+  <ol>
+    <li>재화 수입의 납세의무자를 사업자로 한정하지 않는다.</li>
+    <li>수입 부가가치세 신고기관은 세무서장이 아니라 세관장이다.</li>
+    <li>수입 부가가치세를 예정·확정신고기한까지 미루어 납부하는 것이 아니다.</li>
+    <li>수입시기는 국내 도착일이 아니라 수입신고 수리일이다.</li>
+    <li>수입 과세표준은 해외 공급자에게 지급한 물품대금만으로 계산하지 않는다.</li>
+    <li>관세도 수입 부가가치세 과세표준에 포함된다.</li>
+    <li>개별소비세·주세 등 실제 부과되는 법정 세금도 과세표준에 포함될 수 있다.</li>
+    <li>관세 무세와 부가가치세 면세를 동일하게 보지 않는다.</li>
+    <li>수입 부가가치세 면제는 법 제27조의 요건을 별도로 확인한다.</li>
+    <li>수입세금계산서 발급자는 외국 공급자가 아니라 세관장이다.</li>
+    <li>수입 부가가치세를 납부했다는 사실만으로 매입세액이 자동 공제되지 않는다.</li>
+    <li>면세사업용 수입재화는 원칙적으로 매입세액이 공제되지 않는다.</li>
+    <li>과세·면세 공통사용 수입재화는 공통매입세액 안분을 검토한다.</li>
+    <li>납부 전 세액 정정과 납부 후 보정·수정신고를 구분한다.</li>
+    <li>추가 관세 납부가 언제나 수정수입세금계산서 발급으로 이어지는 것은 아니다.</li>
+    <li>제50조의 일반 신고납부와 제50조의2의 납부유예를 혼동하지 않는다.</li>
+  </ol>
+</section>
+
+<section class="section" id="tools">
+  <div class="section-title-bar">11. 계산·판정도구</div>
+  <div class="calc-grid">
+    <div class="calc-card">
+      <h3>도구 1 · 수입 부가가치세 계산</h3>
+      <div class="field"><label for="customsValue">관세의 과세가격(원)</label><input id="customsValue" type="number" min="0" value="100000000"></div>
+      <div class="field"><label for="customsDuty">관세(원)</label><input id="customsDuty" type="number" min="0" value="8000000"></div>
+      <div class="field"><label for="individualTax">개별소비세(원)</label><input id="individualTax" type="number" min="0" value="0"></div>
+      <div class="field"><label for="liquorTax">주세(원)</label><input id="liquorTax" type="number" min="0" value="0"></div>
+      <div class="field"><label for="educationTax">교육세(원)</label><input id="educationTax" type="number" min="0" value="0"></div>
+      <div class="field"><label for="ruralTax">농어촌특별세(원)</label><input id="ruralTax" type="number" min="0" value="0"></div>
+      <div class="field"><label for="transportTax">교통·에너지·환경세(원)</label><input id="transportTax" type="number" min="0" value="0"></div>
+      <button type="button" onclick="calcImportVat()">계산하기</button>
+      <div class="calc-result" id="importResult">과세가격과 세액을 입력하세요.</div>
+      <p class="muted">학습용 단순 계산입니다. 실제 신고는 관세평가, 세목별 계산 및 원단위 처리 등을 확인해야 합니다.</p>
+    </div>
+
+    <div class="calc-card">
+      <h3>도구 2 · 수입시기와 납부기한</h3>
+      <div class="field"><label for="importAcceptDate">수입신고 수리일</label><input id="importAcceptDate" type="date" value="2026-07-02"></div>
+      <div class="field"><label for="taxAcceptDate">납세신고 수리일</label><input id="taxAcceptDate" type="date" value="2026-07-02"></div>
+      <button type="button" onclick="calcTimeline()">판정하기</button>
+      <div class="calc-result" id="timelineResult">수입신고 수리일과 납세신고 수리일을 입력하세요.</div>
+      <p class="muted">표시되는 날짜는 일반적인 15일 계산입니다. 공휴일·특례·월별납부 등은 별도 확인합니다.</p>
+    </div>
+
+    <div class="calc-card">
+      <h3>도구 3 · 매입세액공제 1차 판정</h3>
+      <div class="field"><label for="businessStatus">수입자 구분</label><select id="businessStatus"><option value="business">부가가치세 신고 사업자</option><option value="nonbusiness">비사업자·개인사용자</option></select></div>
+      <div class="field"><label for="useType">사용 목적</label><select id="useType"><option value="taxable">과세·영세율사업 전용</option><option value="mixed">과세·면세 공통사용</option><option value="exempt">면세사업 전용</option><option value="personal">사업과 무관한 개인용</option></select></div>
+      <div class="field"><label for="invoiceStatus">수입세금계산서</label><select id="invoiceStatus"><option value="yes">세관장 발급분 확인</option><option value="no">없거나 확인되지 않음</option></select></div>
+      <div class="field"><label for="blockedStatus">법 제39조 불공제사유</label><select id="blockedStatus"><option value="no">특별한 불공제사유 없음</option><option value="yes">비영업용 승용차 등 불공제사유 있음</option></select></div>
+      <button type="button" onclick="judgeCredit()">판정하기</button>
+      <div class="calc-result" id="creditResult">수입자의 지위와 사용 목적을 선택하세요.</div>
+    </div>
+
+    <div class="calc-card">
+      <h3>도구 4 · 제50조 적용대상 구분</h3>
+      <div class="field"><label for="importType">해외에서 취득한 대상</label><select id="importType"><option value="goods">통관되는 물리적 재화</option><option value="software">다운로드 소프트웨어·전자적 용역</option><option value="service">해외 컨설팅·광고 등 용역</option><option value="right">라이선스·권리 사용</option></select></div>
+      <button type="button" onclick="judgeScope()">구분하기</button>
+      <div class="calc-result" id="scopeResult">대상을 선택하세요.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quiz">
+  <div class="section-title-bar">12. 실전 O/X 16문항</div>
+  <div class="quiz-head"><p>선택 즉시 정답과 근거를 확인할 수 있습니다.</p><span class="quiz-score" id="quizScore">0 / 16</span><button class="btn-reset" type="button" onclick="resetQuiz()">초기화</button></div>
+  <div id="quizContainer"></div>
+</section>
+
+<section class="section" id="sources">
+  <div class="section-title-bar">13. 근거법령·학습 범위</div>
+  <h2>직접 근거</h2>
+  <ul>
+    <li><a href="https://www.law.go.kr/법령/부가가치세법/제50조" target="_blank" rel="noopener">부가가치세법 제50조 — 재화의 수입에 대한 신고·납부</a></li>
+    <li><a href="https://www.law.go.kr/법령/관세법/제9조" target="_blank" rel="noopener">관세법 제9조 — 관세의 납부기한 등</a></li>
+    <li><a href="https://www.law.go.kr/법령/관세법/제38조" target="_blank" rel="noopener">관세법 제38조 — 신고납부</a></li>
+    <li><a href="https://www.law.go.kr/법령/관세법/제241조" target="_blank" rel="noopener">관세법 제241조 — 수출·수입 또는 반송의 신고</a></li>
+  </ul>
+  <h2>연결 근거</h2>
+  <ul>
+    <li>부가가치세법 제3조 제1항 제2호: 재화를 수입하는 자의 납세의무</li>
+    <li>부가가치세법 제18조: 수입신고 수리 시 수입시기</li>
+    <li>부가가치세법 제27조: 재화 수입의 면세</li>
+    <li>부가가치세법 제29조 제2항·제30조: 수입 과세표준과 10% 세율</li>
+    <li>부가가치세법 제35조·시행령 제72조: 수입세금계산서</li>
+    <li>부가가치세법 제38조 제1항 제2호·제3항: 수입 부가가치세의 매입세액공제</li>
+    <li>관세법 제38조의2·제38조의3: 보정·수정신고·경정청구</li>
+  </ul>
+  <div class="gray-box"><strong>범위 주의:</strong> 이 자료의 중심은 법 제50조입니다. 제50조의2 수입 부가가치세 납부유예는 인접제도와의 구분을 위해서만 간략히 표시했습니다.</div>
+  <div class="law-box"><strong>법령 기준일:</strong> 2026년 6월 29일 확인. 부가가치세법 제50조는 2026년 1월 2일 시행 현행조문, 연결 관세법은 2026년 4월 1일 현재 시행규정을 기준으로 작성했습니다.</div>
+</section>
+
+<footer class="footer-note">부가가치세법 제50조 예습자료 · 법령개정 시 최신 조문을 다시 확인하세요.</footer>
+
+<script>
+const quizzes = [
+  {q:'재화를 수입하는 자는 사업자에 해당해야만 부가가치세 납세의무를 진다.',a:false,e:'법 제3조 제1항 제2호는 사업자 여부와 별도로 재화를 수입하는 자를 납세의무자로 규정합니다.'},
+  {q:'수입 부가가치세는 관세와 함께 세관장에게 신고·납부한다.',a:true,e:'법 제50조의 직접적인 내용입니다.'},
+  {q:'제50조는 세부 신고절차를 대통령령에 위임하고 있다.',a:false,e:'제50조에는 위임문구가 없고 관세법에 따른 신고·납부를 직접 인용합니다.'},
+  {q:'재화의 수입시기는 수입물품이 국내 항구에 도착한 때이다.',a:false,e:'법 제18조에 따라 수입신고가 수리된 때가 수입시기입니다.'},
+  {q:'수입 부가가치세 과세표준에는 관세가 포함된다.',a:true,e:'법 제29조 제2항은 관세의 과세가격과 관세 및 열거된 내국세를 합산하도록 합니다.'},
+  {q:'관세율이 0%이면 수입 부가가치세도 언제나 0원이다.',a:false,e:'관세 0원이어도 관세과세가격을 기초로 부가가치세가 계산될 수 있습니다.'},
+  {q:'법 제27조가 정한 면세수입에 해당하면 수입 부가가치세가 면제될 수 있다.',a:true,e:'수입 부가가치세 면제는 관세율과 별개로 법 제27조의 요건을 검토합니다.'},
+  {q:'관세과세가격 1억원, 관세 800만원, 다른 세금이 없다면 수입 부가가치세는 1,080만원이다.',a:true,e:'과세표준 1억800만원에 10%를 적용합니다.'},
+  {q:'일반적인 신고납부 물품의 관세 납부기한은 납세신고 수리일부터 15일 이내이다.',a:true,e:'관세법 제9조 제1항 제1호의 원칙입니다.'},
+  {q:'납세의무자는 수입신고가 수리되기 전에는 세액을 납부할 수 없다.',a:false,e:'관세법 제9조 제2항에 따라 수입신고 수리 전에도 납부할 수 있습니다.'},
+  {q:'수입세금계산서는 외국 판매자가 대한민국 수입자에게 발급한다.',a:false,e:'법 제35조에 따라 세관장이 수입자에게 발급합니다.'},
+  {q:'과세사업을 위하여 수입한 재화의 수입 부가가치세는 법정요건을 충족하면 매입세액으로 공제할 수 있다.',a:true,e:'법 제38조 제1항 제2호의 공제대상입니다.'},
+  {q:'면세사업에만 사용할 수입재화의 부가가치세도 세관에 납부했다면 전액 공제된다.',a:false,e:'면세사업 관련 매입세액은 법 제39조에 따라 원칙적으로 공제되지 않습니다.'},
+  {q:'수입 부가가치세의 매입세액 귀속과세기간은 수입신고 수리일을 기준으로 판단한다.',a:true,e:'법 제18조와 제38조 제3항을 연결하여 판단합니다.'},
+  {q:'신고납부 후 부족세액을 발견한 경우 신고납부일부터 6개월 이내에는 보정신청을 검토할 수 있다.',a:true,e:'관세법 제38조의2의 보정기간은 신고납부일부터 6개월 이내입니다.'},
+  {q:'제50조와 제50조의2는 모두 모든 수입자에게 수입 부가가치세 납부유예를 허용하는 동일한 규정이다.',a:false,e:'제50조는 일반 신고납부이고, 제50조의2는 일정한 중소·중견사업자 등에 대한 별도 납부유예 제도입니다.'}
+];
+let answered = 0, correct = 0;
+function money(v){return new Intl.NumberFormat('ko-KR',{maximumFractionDigits:1}).format(v)+'원'}
+function num(id){const v=Number(document.getElementById(id).value);return Number.isFinite(v)&&v>0?v:0}
+function calcImportVat(){
+  const base=num('customsValue')+num('customsDuty')+num('individualTax')+num('liquorTax')+num('educationTax')+num('ruralTax')+num('transportTax');
+  const vat=base*.1;
+  document.getElementById('importResult').innerHTML='수입 부가가치세 과세표준: <strong>'+money(base)+'</strong><br>수입 부가가치세: <strong>'+money(vat)+'</strong>';
+}
+function dateText(d){return d.getFullYear()+'. '+(d.getMonth()+1)+'. '+d.getDate()+'.'}
+function calcTimeline(){
+  const i=document.getElementById('importAcceptDate').value, t=document.getElementById('taxAcceptDate').value;
+  if(!i||!t){document.getElementById('timelineResult').textContent='두 날짜를 모두 입력하세요.';return;}
+  const id=new Date(i+'T00:00:00'), td=new Date(t+'T00:00:00');
+  const m=id.getMonth()+1, period=m<=6?'제1기 과세기간':'제2기 과세기간';
+  let segment=m<=3?'제1기 예정구간':m<=6?'제1기 확정구간':m<=9?'제2기 예정구간':'제2기 확정구간';
+  const due=new Date(td); due.setDate(due.getDate()+15);
+  document.getElementById('timelineResult').innerHTML='수입시기: <strong>'+dateText(id)+'</strong><br>귀속: <strong>'+period+' · '+segment+'</strong><br>일반적 납부기한: <strong>'+dateText(due)+'</strong>까지';
+}
+function judgeCredit(){
+  const b=document.getElementById('businessStatus').value,u=document.getElementById('useType').value,i=document.getElementById('invoiceStatus').value,x=document.getElementById('blockedStatus').value;
+  let msg='';
+  if(b==='nonbusiness') msg='사업자 매입세액공제 대상이 아닙니다. 수입 단계의 납세의무와 매입세액공제는 별개입니다.';
+  else if(i==='no') msg='수입세금계산서 등 법정증빙과 실제 발급내역을 먼저 확인해야 합니다.';
+  else if(x==='yes') msg='법 제39조의 불공제사유가 있으므로 해당 부분은 공제할 수 없습니다.';
+  else if(u==='taxable') msg='원칙적으로 공제 가능성이 높습니다. 수입신고 수리일이 속하는 과세기간에 반영합니다.';
+  else if(u==='mixed') msg='과세·면세 공통매입세액으로 안분계산을 검토해야 합니다.';
+  else if(u==='exempt') msg='면세사업 관련 매입세액으로 원칙적으로 불공제입니다.';
+  else msg='사업과 직접 관련 없는 지출로 원칙적으로 불공제입니다.';
+  document.getElementById('creditResult').textContent=msg;
+}
+function judgeScope(){
+  const v=document.getElementById('importType').value; let msg='';
+  if(v==='goods') msg='통관되는 물리적 재화라면 제50조의 수입 신고·납부 구조를 우선 검토합니다.';
+  else if(v==='software') msg='물리적 재화의 수입이 아니라 전자적 용역 또는 권리 거래일 수 있으므로 제50조만으로 판단하지 않습니다.';
+  else if(v==='service') msg='국외사업자로부터 공급받는 용역은 제52조 대리납부 또는 전자적 용역 규정을 검토합니다.';
+  else msg='라이선스 등 권리는 제50조의 재화 수입보다 용역·권리의 국내공급 및 대리납부 규정을 검토합니다.';
+  document.getElementById('scopeResult').textContent=msg;
+}
+function renderQuiz(){
+  const c=document.getElementById('quizContainer');c.innerHTML='';
+  quizzes.forEach((z,n)=>{
+    const d=document.createElement('div');d.className='quiz-card';d.dataset.index=n;
+    d.innerHTML='<div class="quiz-q">'+(n+1)+'. '+z.q+'</div><div class="quiz-options"><button type="button" onclick="answerQuiz('+n+',true)">O</button><button type="button" onclick="answerQuiz('+n+',false)">X</button></div><div class="quiz-answer"></div>';
+    c.appendChild(d);
+  });
+}
+function answerQuiz(n,v){
+  const card=document.querySelector('.quiz-card[data-index="'+n+'"]');if(card.dataset.done)return;
+  card.dataset.done='1';answered++;const ok=quizzes[n].a===v;if(ok)correct++;
+  card.classList.add(ok?'correct':'wrong');card.querySelectorAll('button').forEach(b=>b.disabled=true);
+  const a=card.querySelector('.quiz-answer');a.classList.add('show');a.innerHTML=(ok?'정답입니다. ':'오답입니다. 정답은 '+(quizzes[n].a?'O':'X')+'입니다. ')+quizzes[n].e;
+  document.getElementById('quizScore').textContent=correct+' / '+quizzes.length+' · 응답 '+answered;
+}
+function resetQuiz(){answered=0;correct=0;document.getElementById('quizScore').textContent='0 / '+quizzes.length;renderQuiz()}
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;const p=max>0?(h.scrollTop/max*100):0;document.getElementById('progressBar').style.width=p+'%';
+});
+renderQuiz();calcImportVat();calcTimeline();
+</script>
+</body>
+</html>

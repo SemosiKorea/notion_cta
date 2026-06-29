@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부가가치세법 제37조~제39조 납부세액·매입세액 공제 예습</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#FAFAFA;color:#1A1A2E;font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:14px;line-height:1.85;max-width:1060px;margin:0 auto;padding:24px}
+h1{color:#0D1B4B;font-size:1.78em;margin-bottom:6px} h2{color:#1A3A6B;font-size:1.14em;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid #1A3A6B} h3{color:#2C5282;font-size:1em;margin:14px 0 7px} h4{color:#2D3748;font-size:.93em;margin:10px 0 5px}
+p{margin-bottom:8px} ul,ol{padding-left:20px;margin-bottom:8px} li{margin-bottom:4px;line-height:1.75} a{color:#1A56A8;text-decoration:none} a:hover{text-decoration:underline} strong{color:#1A1A2E} button,input,select{font:inherit}
+.header{background:linear-gradient(135deg,#0D1B4B,#1A3A6B);color:#fff;padding:32px 40px;border-radius:14px;margin-bottom:16px;box-shadow:0 10px 28px rgba(13,27,75,.15)}
+.subject-badge{background:rgba(255,255,255,.2);color:#fff;padding:4px 16px;border-radius:20px;font-size:.82em;display:inline-block;margin-bottom:11px}.header h1{color:#fff;font-size:1.84em}.header .meta{font-size:.8em;opacity:.9;margin-top:7px;line-height:1.65}.freq-badge{display:inline-block;font-size:.8em;font-weight:700;padding:2px 10px;border-radius:12px;background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;margin:5px 0 0 6px}
+.toolbar{position:sticky;top:8px;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border:1px solid #DCE7F5;border-radius:11px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 12px;box-shadow:0 4px 16px rgba(13,27,75,.08);margin-bottom:18px}.toolbar a,.toolbar button{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:18px;padding:5px 10px;font-size:.78em;font-weight:700;cursor:pointer}.toolbar a:hover,.toolbar button:hover{background:#EEF2FF;text-decoration:none}.toolbar .progress-label{margin-left:auto;font-size:.76em;color:#64748B;white-space:nowrap}.progress-track{width:110px;height:7px;background:#E2E8F0;border-radius:9px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#1A3A6B,#38A169);transition:width .2s}
+.section{margin:20px 0;padding:24px 28px;border-radius:12px;border:1px solid #E8ECF0;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)}.section-title-bar{background:linear-gradient(90deg,#1A3A6B,#2C5282);color:#fff;padding:9px 16px;border-radius:8px;font-size:1.03em;font-weight:700;margin:-24px -28px 18px;letter-spacing:.02em}.sub-block{background:#F8FAFE;border:1px solid #DCE7F5;border-radius:8px;padding:14px 18px;margin:12px 0}.sub-block h3{margin-top:0;color:#1A3A6B}
+.highlight-box{background:#FFF8E1;border:1px solid #F6CC3C;border-radius:10px;padding:16px 20px;margin:20px 0}.highlight-box h2{color:#744210;border-bottom-color:#F6CC3C}.trap-box{background:#FFF3F3;border:1px solid #FED7D7;border-radius:10px;padding:16px 20px;margin:20px 0}.trap-box h2{color:#9B2335;border-bottom-color:#FED7D7}.compare-box{background:#F0F7FF;border:1px solid #BEE3F8;border-radius:10px;padding:16px 20px;margin:20px 0}.compare-box h2{color:#2A4A8A;border-bottom-color:#BEE3F8}.analogy-box{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.92em}.law-box{background:#F7FAFC;border-left:4px solid #2C5282;border-radius:5px;padding:13px 17px;margin:10px 0;font-size:.91em}.gray-box{background:#F1F5F9;border:1px solid #CBD5E1;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.91em}.warning{color:#9B2335;font-weight:700}.ok{color:#176B3A;font-weight:700}.muted{color:#64748B;font-size:.9em}.formula{background:#0F274A;color:#fff;border-radius:9px;padding:13px 16px;margin:10px 0;text-align:center;font-weight:700;letter-spacing:.01em;overflow-x:auto}.formula small{display:block;font-weight:400;opacity:.85;margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.feature{border:1px solid #DCE7F5;border-radius:9px;padding:15px;background:#fff}.feature .num{display:inline-flex;width:25px;height:25px;border-radius:50%;align-items:center;justify-content:center;background:#1A3A6B;color:#fff;font-weight:700;font-size:.8em;margin-right:5px}.feature h3{display:inline;color:#1A3A6B}.feature p{font-size:.91em;margin:7px 0 0}
+.flow{display:flex;gap:8px;align-items:stretch;margin:14px 0}.flow-step{flex:1;position:relative;background:#F8FAFE;border:1px solid #C9D8EC;border-radius:9px;padding:13px;text-align:center}.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-11px;top:50%;transform:translateY(-50%);font-weight:900;color:#2C5282;background:#FAFAFA;border-radius:50%;z-index:2}.flow-step b{display:block;color:#1A3A6B;margin-bottom:3px}.flow-step span{font-size:.86em;color:#475569}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.89em}th{background:#E8EEF7;color:#1A3A6B;font-weight:700}th,td{border:1px solid #CBD5E1;padding:9px 10px;text-align:left;vertical-align:top}tr:nth-child(even) td{background:#FAFCFF}.table-wrap{overflow-x:auto;border-radius:8px}.tag{display:inline-block;border-radius:12px;padding:2px 8px;font-size:.78em;font-weight:700;margin:1px}.tag-blue{background:#DBEAFE;color:#1E40AF}.tag-green{background:#DCFCE7;color:#166534}.tag-red{background:#FEE2E2;color:#991B1B}.tag-yellow{background:#FEF3C7;color:#92400E}.tag-gray{background:#E2E8F0;color:#475569}
+details{border:1px solid #DCE7F5;border-radius:8px;margin:8px 0;background:#fff}summary{padding:10px 14px;cursor:pointer;font-weight:700;color:#1A3A6B;background:#F8FAFE;border-radius:8px}details[open] summary{border-bottom:1px solid #DCE7F5;border-radius:8px 8px 0 0}.detail-body{padding:12px 16px;font-size:.92em}
+.case{border-left:4px solid #38A169;background:#F0FFF4;border-radius:6px;padding:13px 16px;margin:10px 0}.case strong{color:#176B3A}.case.bad{border-left-color:#E53E3E;background:#FFF5F5}.case.bad strong{color:#9B2335}
+.calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}.calc-card{border:1px solid #C9D8EC;background:#F8FAFE;border-radius:10px;padding:14px}.calc-card h3{margin-top:0}.field{margin:8px 0}.field label{display:block;font-size:.82em;color:#475569;font-weight:700}.field input,.field select{width:100%;border:1px solid #B8C7DA;border-radius:6px;padding:7px 9px;background:#fff}.calc-card button{border:0;background:#1A3A6B;color:#fff;border-radius:7px;padding:7px 11px;cursor:pointer;font-weight:700}.calc-result{margin-top:9px;background:#fff;border:1px solid #DCE7F5;border-radius:6px;padding:9px;font-weight:700;color:#1A3A6B;min-height:44px}
+.quiz-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.quiz-score{font-weight:700;background:#E8EEF7;color:#1A3A6B;border-radius:18px;padding:5px 12px}.quiz-card{border:1px solid #D9E2EF;border-radius:10px;padding:15px 17px;margin:10px 0;background:#fff}.quiz-q{font-weight:700;margin-bottom:9px}.quiz-options{display:flex;gap:8px}.quiz-options button{width:44px;border:1px solid #AFC2DA;background:#F8FAFE;border-radius:7px;padding:6px;cursor:pointer;font-weight:800;color:#1A3A6B}.quiz-options button:hover{background:#E8EEF7}.quiz-options button:disabled{cursor:default;opacity:.75}.quiz-answer{display:none;margin-top:9px;padding:10px 12px;border-radius:7px;font-size:.91em}.quiz-answer.show{display:block}.quiz-card.correct{border-color:#68D391}.quiz-card.correct .quiz-answer{background:#F0FFF4;color:#176B3A}.quiz-card.wrong{border-color:#FC8181}.quiz-card.wrong .quiz-answer{background:#FFF5F5;color:#9B2335}.btn-reset{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:7px;padding:6px 10px;cursor:pointer;font-weight:700}
+.footer-note{text-align:center;color:#64748B;font-size:.8em;padding:14px 0 5px}
+@media(max-width:760px){body{padding:12px;font-size:13.5px}.header{padding:25px 22px}.header h1{font-size:1.55em}.section{padding:20px 17px}.section-title-bar{margin:-20px -17px 15px}.grid,.grid.three,.calc-grid{grid-template-columns:1fr}.flow{flex-direction:column}.flow-step:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}.toolbar{top:3px}.toolbar .progress-label{display:none}th,td{min-width:130px;padding:8px}.quiz-head{align-items:flex-start;flex-direction:column}}
+
+.calc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.calc-field{display:flex;flex-direction:column;gap:4px}.calc-field label{font-size:.78em;font-weight:700;color:#475569}.calc-field input,.calc-field select{border:1px solid #CBD5E1;border-radius:7px;padding:8px;background:#fff}.calc-result{margin-top:12px;padding:13px 15px;border-radius:9px;background:#F0FDF4;border:1px solid #BBF7D0;font-weight:700;color:#166534}.calc-result.refund{background:#EFF6FF;border-color:#BFDBFE;color:#1D4ED8}.decision-result{margin-top:12px;padding:13px 15px;border-radius:9px;background:#F8FAFC;border:1px solid #CBD5E1;white-space:pre-line}.tag-ok{color:#166534;font-weight:800}.tag-no{color:#B91C1C;font-weight:800}.mini-note{font-size:.82em;color:#64748B}.formula-card{padding:16px;border:1px solid #BFDBFE;background:#EFF6FF;border-radius:10px;text-align:center;font-weight:800;color:#1E3A8A;margin:10px 0}.gate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.gate{padding:14px;border:1px solid #DCE7F5;border-radius:10px;background:#F8FAFC}.gate b{display:block;color:#1A3A6B;margin-bottom:4px}.number-chip{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#1A3A6B;color:#fff;font-weight:800;margin-right:5px}@media(max-width:720px){.calc-grid,.gate-grid{grid-template-columns:1fr}}
+
+.action-btn{margin-top:10px;border:0;background:#1A3A6B;color:#fff;border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:700}.action-btn:hover{background:#2C5282}.callout{border-radius:9px;padding:12px 15px;margin:12px 0;font-size:.91em}.callout.info{background:#EFF6FF;border:1px solid #BFDBFE;color:#1E3A8A}.callout.warning{background:#FFF7ED;border:1px solid #FED7AA;color:#9A3412}.callout.success{background:#F0FDF4;border:1px solid #BBF7D0;color:#166534}.trap-list{padding-left:22px}.trap-list li{margin-bottom:7px}#resetQuiz{border:1px solid #CBD5E1;background:#fff;color:#1A3A6B;border-radius:7px;padding:5px 9px;cursor:pointer;font-weight:700}footer{text-align:center;color:#64748B;font-size:.8em;padding:16px 0 7px}
+</style>
+</head>
+<body>
+<header class="header">
+  <span class="subject-badge">부가가치세법 · 납부세액</span>
+  <h1>제37조~제39조 납부세액·매입세액 공제와 불공제</h1>
+  <p>매출세액에서 무엇을 빼고, 어떤 매입세액을 공제하며, 제39조의 불공제 사유와 예외를 어떻게 판정하는지 계산 순서로 정리합니다.</p>
+  <div class="meta">기준 법령: 2026. 6. 27. 현재 · 법 제37조~제39조 · 시행령 제19조·제74조·제75조·제77조~제80조 · 시행규칙 제62조</div>
+</header>
+
+<nav class="toolbar" aria-label="학습 목차">
+  <a href="#core">핵심결론</a><a href="#flow">판단순서</a><a href="#a37">제37조</a><a href="#a38">제38조</a><a href="#a39">제39조</a><a href="#timing">세금계산서 예외</a><a href="#cases">사례</a><a href="#tools">계산·판정</a><a href="#quiz">O/X</a>
+  <button id="expandBtn" type="button">해설 모두 열기</button>
+  <span class="progress-label">읽기 진행</span><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+</nav>
+
+<section class="highlight-box" id="core">
+<h2>먼저 외울 10개 결론</h2>
+<ol>
+  <li><strong>매출세액 = 과세표준 × 세율</strong>이다.</li>
+  <li>법 제37조 제2항의 납부세액은 매출세액에서 대손세액을 먼저 빼고 공제 가능한 매입세액을 차감하여 계산한다.</li>
+  <li>매입세액이 매출세액을 초과하는 부분은 <strong>환급세액</strong>이지만, 실제 환급시기와 절차는 신고·환급 규정을 별도로 확인한다.</li>
+  <li>매입세액은 이미 사용한 재화뿐 아니라 <strong>자기의 사업에 사용할 목적</strong>으로 공급받거나 수입한 재화에도 인정될 수 있다.</li>
+  <li>국내 매입은 공급받는 시기, 수입은 수입시기가 속하는 과세기간에서 공제한다.</li>
+  <li>세금계산서합계표를 누락했거나 필요적 기재사항이 잘못되면 원칙적으로 불공제지만, 시행령 제74조·제75조의 예외가 있다.</li>
+  <li>사업과 직접 관련 없는 지출, 기업업무추진비, 면세사업 관련 매입세액은 적격증빙이 있어도 불공제된다.</li>
+  <li>개별소비세 과세대상 자동차의 구입·임차·유지는 원칙적으로 불공제하되, 운수업·자동차판매업·임대업 등에서 직접 영업에 사용하면 예외가 될 수 있다.</li>
+  <li>토지 취득·형질변경·택지조성 등 토지의 가치를 현실적으로 증가시키는 자본적 지출의 매입세액은 불공제된다.</li>
+  <li>등록 전 매입세액도 일정한 기한 내 사업자등록을 신청하면 해당 과세기간 기산일까지 소급하여 공제될 수 있다.</li>
+</ol>
+</section>
+
+<section class="section" id="flow">
+<div class="section-title-bar">1. 전체 판단구조</div>
+<div class="flow">
+ <div class="flow-step"><b>① 매출세액 계산</b><span>과세표준 × 세율</span></div>
+ <div class="flow-step"><b>② 대손세액 차감</b><span>법 제45조 적용분</span></div>
+ <div class="flow-step"><b>③ 매입세액 후보</b><span>사업 목적의 국내매입·수입</span></div>
+ <div class="flow-step"><b>④ 불공제 필터</b><span>법 제39조 불공제 항목</span></div>
+ <div class="flow-step"><b>⑤ 공제세액·가산세</b><span>최종 납부·환급세액</span></div>
+</div>
+<div class="gate-grid">
+  <div class="gate"><b><span class="number-chip">1</span>사업 관련성</b>자기의 과세사업에 사용하거나 사용할 목적인가?</div>
+  <div class="gate"><b><span class="number-chip">2</span>증빙·귀속시기</b>적법한 세금계산서·수입세금계산서가 있고 어느 과세기간에 귀속되는가?</div>
+  <div class="gate"><b><span class="number-chip">3</span>불공제 사유</b>차량·업무추진비·면세·토지·등록 전 매입 등에 해당하는가?</div>
+</div>
+<div class="callout info"><strong>시험 순서:</strong> 세금계산서가 있다고 바로 공제하지 말고, ① 사업 관련성 → ② 적격증빙 → ③ 제39조 불공제 여부 순서로 판정합니다.</div>
+</section>
+
+<section class="section" id="delegation">
+<div class="section-title-bar">2. 법률·시행령·시행규칙 연결</div>
+<div class="table-wrap"><table>
+<thead><tr><th>법률</th><th>위임·관련 하부 규정</th><th>학습 포인트</th></tr></thead>
+<tbody>
+<tr><td>법 제37조</td><td>법 제45조·제46조·제47조·제60조 등 연결</td><td>납부·환급세액 계산의 큰 틀</td></tr>
+<tr><td>법 제38조</td><td>법 제52조 제4항 포함</td><td>사업 목적 국내매입·수입의 기본 공제</td></tr>
+<tr><td>법 제39조 제1·2호</td><td>영 제74조·제75조</td><td>합계표·세금계산서 하자의 공제 예외</td></tr>
+<tr><td>법 제39조 제4~7호</td><td>영 제77조~제80조, 영 제19조</td><td>비사업·승용차·업무추진비·면세·토지</td></tr>
+<tr><td>신고서류</td><td>규칙 제62조 제2항</td><td>공제받지 못할 매입세액 명세서</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="section" id="a37">
+<div class="section-title-bar">3. 제37조 — 납부세액 등의 계산</div>
+<h2>3단계 계산</h2>
+<div class="formula-card">매출세액 = 과세표준 × 세율</div>
+<div class="formula-card">납부세액(또는 환급세액) = [매출세액 − 대손세액] − 공제매입세액</div>
+<div class="formula-card">최종 납부·환급세액 = A − 공제세액 + 가산세</div>
+<div class="table-wrap"><table>
+<thead><tr><th>구분</th><th>내용</th><th>주의점</th></tr></thead>
+<tbody>
+<tr><td>매출세액</td><td>법 제29조 과세표준 × 법 제30조 세율</td><td>영세율 과세표준도 신고대상이지만 세율은 0%</td></tr>
+<tr><td>대손세액</td><td>대손금액 × 10/110</td><td>매입세액이 아니라 매출세액에서 차감</td></tr>
+<tr><td>매입세액</td><td>법 제38조의 후보 중 제39조 불공제분 제외</td><td>증빙만으로 공제가 확정되는 것은 아님</td></tr>
+<tr><td>공제세액</td><td>신용카드 발행세액공제, 전자세금계산서 공제 등</td><td>매입세액과 별도의 세액공제</td></tr>
+<tr><td>가산세</td><td>법 제60조 및 국세기본법상 가산세</td><td>최종 계산에서 가산</td></tr>
+</tbody></table></div>
+<details class="case"><summary>실무 계산 예시</summary><div class="case-body">
+<p>과세표준 1억원, 매출세액 1천만원, 대손세액 20만원, 공제 가능한 매입세액 700만원, 기타 공제세액 10만원, 가산세 5만원인 경우:</p>
+<p><strong>(1,000만원 − 20만원 − 700만원) − 10만원 + 5만원 = 275만원 납부</strong></p>
+<p>회계장부의 매입부가가치세 총액이 아니라 법 제39조 불공제분을 제외한 금액만 넣어야 합니다.</p>
+</div></details>
+<div class="callout warning"><strong>환급세액 주의:</strong> 법 제37조에서 환급세액이 계산되더라도 일반환급·조기환급 요건과 환급기한은 별도 조문에 따릅니다.</div>
+</section>
+
+<section class="section" id="a38">
+<div class="section-title-bar">4. 제38조 — 공제하는 매입세액</div>
+<h2>공제 후보가 되는 두 가지</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>구분</th><th>요건</th><th>공제 과세기간</th></tr></thead>
+<tbody>
+<tr><td>국내 매입</td><td>자기의 사업에 사용했거나 사용할 목적으로 공급받은 재화·용역의 부가가치세</td><td>재화·용역을 공급받는 시기가 속하는 과세기간</td></tr>
+<tr><td>수입</td><td>자기의 사업에 사용했거나 사용할 목적으로 수입한 재화의 부가가치세</td><td>재화의 수입시기가 속하는 과세기간</td></tr>
+<tr><td>사업양수자의 선택적 대리납부</td><td>법 제52조 제4항에 따라 납부한 부가가치세</td><td>법 제38조 제1항 제1호에 포함</td></tr>
+</tbody></table></div>
+<h3>‘사용하였거나 사용할 목적’의 의미</h3>
+<ul>
+<li>아직 생산설비를 가동하지 않았더라도 과세사업에 사용할 객관적인 계획과 증빙이 있으면 공제 후보가 될 수 있습니다.</li>
+<li>사업 관련성은 명칭보다 실제 용도, 계약서, 내부결재, 설치장소, 매출과의 연관성으로 판단합니다.</li>
+<li>후에 면세사업으로 전용하거나 사적으로 사용하면 공급의제·재계산 규정이 문제될 수 있습니다.</li>
+</ul>
+<details class="case"><summary>수입설비 사례</summary><div class="case-body">
+<p>제조업자가 해외에서 생산설비를 수입하고 세관장에게 수입 부가가치세를 납부한 경우, 과세사업용이고 수입세금계산서가 적법하면 수입시기가 속하는 과세기간에 매입세액 공제를 검토합니다.</p>
+<p>외국 공급자가 발행한 상업송장만으로 국내 매입세액을 공제하는 것이 아니라 <strong>세관장의 수입세금계산서</strong>가 핵심 증빙입니다.</p>
+</div></details>
+</section>
+
+<section class="section" id="a39">
+<div class="section-title-bar">5. 제39조 — 공제하지 아니하는 매입세액</div>
+<h2>1호~8호 구조 <span class="muted">(3호 삭제)</span></h2>
+<div class="table-wrap"><table>
+<thead><tr><th>호</th><th>불공제 대상</th><th>핵심 확인</th></tr></thead>
+<tbody>
+<tr><td>1호</td><td>매입처별 세금계산서합계표 미제출·부실기재</td><td>영 제74조 예외 여부</td></tr>
+<tr><td>2호</td><td>세금계산서 미수취 또는 필요적 기재사항 누락·허위</td><td>영 제75조 예외 여부</td></tr>
+<tr><td>3호</td><td>삭제</td><td>현행 조문 번호를 건너뛰어 암기</td></tr>
+<tr><td>4호</td><td>사업과 직접 관련 없는 지출</td><td>소득세법·법인세법상 업무무관 기준 연결</td></tr>
+<tr><td>5호</td><td>개별소비세 과세대상 자동차의 구입·임차·유지</td><td>직접 영업 사용 예외 업종</td></tr>
+<tr><td>6호</td><td>기업업무추진비 및 유사비용</td><td>거래처 접대·교제 목적</td></tr>
+<tr><td>7호</td><td>면세사업등 관련 및 토지 관련 매입세액</td><td>투자분 포함, 토지 자본적 지출</td></tr>
+<tr><td>8호</td><td>사업자등록 신청 전 매입세액</td><td>과세기간 종료 후 20일 특례</td></tr>
+</tbody></table></div>
+
+<h3>① 합계표와 세금계산서 하자</h3>
+<div class="compare-box">
+<div class="table-wrap"><table><thead><tr><th>구분</th><th>원칙</th><th>대표적 공제 예외</th></tr></thead><tbody>
+<tr><td>합계표 미제출·부실</td><td>해당 부분 불공제</td><td>수정신고·경정청구·기한후신고와 함께 제출, 착오이나 세금계산서로 거래 확인, 경정기관 확인</td></tr>
+<tr><td>세금계산서 미수취·부실</td><td>해당 부분 불공제</td><td>등록신청 후 등록증 발급일까지 대표자 주민등록번호로 발급, 일부 착오이나 거래 확인, 일정한 지연·선발급, 총괄납부·사업자단위과세 사업장 착오 등</td></tr>
+</tbody></table></div>
+</div>
+
+<h3>② 비영업용 승용차 관련 매입세액</h3>
+<p>정확한 법문은 <strong>개별소비세법 제1조 제2항 제3호에 따른 자동차</strong>입니다. 통상 수험상 ‘비영업용 소형승용자동차’라고 표현합니다.</p>
+<div class="table-wrap"><table><thead><tr><th>사업자·용도</th><th>판정</th><th>이유</th></tr></thead><tbody>
+<tr><td>세무법인이 대표 출퇴근용 승용차 구입</td><td class="tag-no">불공제</td><td>일반적인 업무용 사용만으로 직접 영업 사용 예외가 되지 않음</td></tr>
+<tr><td>자동차 임대업자가 고객 대여용 승용차 구입</td><td class="tag-ok">공제 가능</td><td>자동차 임대업에 직접 영업으로 사용</td></tr>
+<tr><td>자동차 판매업자의 판매용·시승용 차량</td><td class="tag-ok">용도별 검토</td><td>판매업에 직접 사용되는지 증빙 필요</td></tr>
+<tr><td>기계경비업자의 법정 출동차량</td><td class="tag-ok">예외 검토</td><td>영 제19조의 제한된 예외로 직접 영업 사용 여부 확인</td></tr>
+</tbody></table></div>
+<p class="mini-note">차종이 승합·화물 등으로 개별소비세 과세대상 자동차가 아닌지부터 차량등록증으로 확인해야 합니다.</p>
+
+<h3>③ 기업업무추진비</h3>
+<p>거래처 접대 식사, 선물, 골프 등 기업업무추진비와 유사한 비용은 세금계산서나 신용카드매출전표를 받아도 매입세액이 공제되지 않습니다. 반면 임직원에게 동일 기준으로 제공하는 복리후생비는 사실관계에 따라 구분합니다.</p>
+
+<h3>④ 면세사업과 토지 관련 매입세액</h3>
+<ul>
+<li>면세사업 전용 건물·설비의 취득, 면세사업을 위한 투자 관련 매입세액도 불공제됩니다.</li>
+<li>과세·면세사업에 공통 사용하면 법 제40조의 공통매입세액 안분계산으로 넘어갑니다.</li>
+<li>토지 취득·형질변경·공장부지 및 택지 조성, 토지 가치 증가비용은 불공제됩니다.</li>
+<li>건축물이 있는 토지를 사서 건축물을 철거하고 토지만 사용하는 경우 건물 취득·철거비의 매입세액도 토지 관련 불공제입니다.</li>
+</ul>
+
+<h3>⑤ 등록 전 매입세액</h3>
+<div class="callout success"><strong>예외:</strong> 공급시기가 속하는 과세기간 종료 후 20일 이내에 사업자등록을 신청하면, 등록신청일부터 그 과세기간 기산일까지 역산한 기간의 매입세액은 등록 전이라는 이유만으로 배제하지 않습니다.</div>
+<details class="case"><summary>개업 초기 비용 사례</summary><div class="case-body">
+<p>개인사업자가 2026년 3월 10일 점포 인테리어를 공급받고 2026년 7월 20일 사업자등록을 신청했다면, 2026년 제1기 과세기간 종료일인 6월 30일부터 20일 이내 신청한 경우입니다.</p>
+<p>적법한 증빙과 과세사업 관련성 등 다른 요건을 충족하면 1월 1일부터 등록신청일까지의 매입세액을 등록 전이라는 이유만으로 불공제하지 않습니다. 7월 21일 신청이라면 이 특례 적용이 어렵습니다.</p>
+</div></details>
+</section>
+
+<section class="section" id="timing">
+<div class="section-title-bar">6. 세금계산서 수취시기 예외 — 시행령 제75조</div>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>공제 가능성</th><th>추가 요건</th></tr></thead>
+<tbody>
+<tr><td>공급시기 후 확정신고기한까지 수취</td><td class="tag-ok">공제 가능</td><td>해당 거래와 세금계산서가 확인될 것</td></tr>
+<tr><td>확정신고기한 후 1년 이내 수취</td><td class="tag-ok">조건부 가능</td><td>수정신고·경정청구와 함께 제출하거나 세무서 결정·경정</td></tr>
+<tr><td>공급시기 전에 수취</td><td class="tag-ok">조건부 가능</td><td>발급일부터 6개월 이내 공급시기 도래 + 거래 확인 + 결정·경정</td></tr>
+<tr><td>필요적 기재사항 일부 착오</td><td class="tag-ok">조건부 가능</td><td>나머지 기재사항으로 거래사실 확인</td></tr>
+<tr><td>공급자가 전자세금계산서를 미전송</td><td class="tag-ok">공제 가능</td><td>실제 발급 사실 확인</td></tr>
+</tbody></table></div>
+<div class="callout warning"><strong>구분:</strong> 시행령 제75조의 매입세액 공제 예외가 세금계산서 발급 자체를 적법하게 만들거나 공급자의 가산세까지 없애는 것은 아닙니다.</div>
+</section>
+
+<section class="section" id="cases">
+<div class="section-title-bar">7. 실무·기출 적용사례</div>
+<details class="case"><summary>사례 1 — 법인카드로 결제한 거래처 접대 식사</summary><div class="case-body"><p>신용카드매출전표에 부가가치세가 구분되어도 기업업무추진비 성격이면 법 제39조 제1항 제6호에 따라 불공제합니다. 적격증빙 여부와 매입세액 공제 여부는 별개입니다.</p></div></details>
+<details class="case"><summary>사례 2 — 렌터카 회사의 고객 대여용 승용차</summary><div class="case-body"><p>자동차 임대업에 직접 영업으로 사용하는 차량이라면 시행령 제19조·제78조에 따른 예외를 검토할 수 있습니다. 임직원 전용 차량으로 전용하면 공급의제와 매입세액 문제가 다시 발생할 수 있습니다.</p></div></details>
+<details class="case"><summary>사례 3 — 상가 신축을 위한 토지 정지·성토비</summary><div class="case-body"><p>향후 과세 임대업에 사용하더라도 토지의 형질변경과 가치 증가를 위한 자본적 지출이라면 토지 관련 매입세액으로 불공제됩니다. 건물 자체의 설계·건축비와 구분해야 합니다.</p></div></details>
+<details class="case"><summary>사례 4 — 기존 건물 철거 후 토지만 주차장 부지로 사용</summary><div class="case-body"><p>건축물이 있는 토지를 취득하여 건축물을 철거하고 토지만 사용하는 경우, 철거한 건축물의 취득비와 철거비 관련 매입세액은 시행령 제80조 제2호에 따라 불공제됩니다.</p></div></details>
+<details class="case"><summary>사례 5 — 6월 거래 세금계산서를 7월 20일 수취</summary><div class="case-body"><p>일반적인 1기 거래라면 7월 25일 확정신고기한 전 수취한 것이므로 시행령 제75조 제3호에 따라 매입세액 공제를 검토할 수 있습니다. 공급자의 지연발급 가산세 여부는 별도입니다.</p></div></details>
+<details class="case"><summary>사례 6 — 면세 학원용 교육시설 취득</summary><div class="case-body"><p>교육용역이 면세라면 그 시설 투자 관련 매입세액도 법 제39조 제1항 제7호에 따라 불공제됩니다. 이후 과세사업에 전환하면 감가상각자산의 과세사업 전환 공제 규정을 별도로 검토합니다.</p></div></details>
+<details class="case"><summary>사례 7 — 합계표 누락 후 수정신고</summary><div class="case-body"><p>적법한 세금계산서를 수취했지만 합계표를 누락한 경우, 수정신고서와 합계표를 함께 제출하면 시행령 제74조 제1호의 공제 예외를 검토합니다. 관련 가산세는 별도로 계산할 수 있습니다.</p></div></details>
+<details class="case"><summary>사례 8 — 대표자 개인 여행비를 회사 명의로 수취</summary><div class="case-body"><p>회사 명의 세금계산서가 있더라도 사업과 직접 관련 없는 지출이면 법 제39조 제1항 제4호에 따라 불공제합니다. 법인세상 손금 인정 여부와 부가가치세 매입세액 공제는 각각 검토합니다.</p></div></details>
+</section>
+
+<section class="section" id="traps">
+<div class="section-title-bar">8. 자주 틀리는 함정 12개</div>
+<ol class="trap-list">
+<li><strong>세금계산서가 있으면 모두 공제</strong> → 사업 관련성과 제39조 불공제 사유를 먼저 확인한다.</li>
+<li><strong>대손세액은 매입세액</strong> → 공급자의 대손세액은 매출세액에서 뺀다.</li>
+<li><strong>환급세액이면 즉시 환급</strong> → 실제 환급은 신고·환급 절차를 따른다.</li>
+<li><strong>공급자 주소가 틀리면 필요적 기재사항 오류</strong> → 주소는 시행령상 임의적 기재사항이다.</li>
+<li><strong>세금계산서 지연수취는 전부 불공제</strong> → 확정신고기한·1년 예외를 확인한다.</li>
+<li><strong>전자세금계산서 미전송이면 매입자도 항상 불공제</strong> → 발급 사실이 확인되면 예외가 있다.</li>
+<li><strong>업무에 쓴 승용차는 전부 공제</strong> → 일반 업무용과 업종상 직접 영업 사용을 구분한다.</li>
+<li><strong>법인카드 접대비는 공제</strong> → 기업업무추진비 관련 매입세액은 불공제다.</li>
+<li><strong>과세 건물 신축을 위한 모든 공사비는 공제</strong> → 토지 조성·형질변경비는 불공제다.</li>
+<li><strong>면세사업 투자단계는 아직 면세매출이 없으므로 공제</strong> → 면세사업을 위한 투자도 불공제다.</li>
+<li><strong>등록 전 매입세액은 예외 없이 불공제</strong> → 과세기간 종료 후 20일 특례를 확인한다.</li>
+<li><strong>공제 예외가 있으면 가산세도 없다</strong> → 매입세액 공제와 발급·제출 가산세는 별개의 문제다.</li>
+</ol>
+</section>
+
+<section class="section" id="tools">
+<div class="section-title-bar">9. 미니 계산기·판정도구</div>
+<h2>납부·환급세액 계산기</h2>
+<div class="calc-grid">
+<div class="calc-field"><label for="taxBase">과세표준(원)</label><input id="taxBase" type="number" min="0" value="100000000"></div>
+<div class="calc-field"><label for="taxRate">세율(%)</label><input id="taxRate" type="number" min="0" step="0.1" value="10"></div>
+<div class="calc-field"><label for="badDebt">대손세액(원)</label><input id="badDebt" type="number" min="0" value="0"></div>
+<div class="calc-field"><label for="inputTax">공제 가능한 매입세액(원)</label><input id="inputTax" type="number" min="0" value="7000000"></div>
+<div class="calc-field"><label for="taxCredits">기타 공제세액(원)</label><input id="taxCredits" type="number" min="0" value="0"></div>
+<div class="calc-field"><label for="addTax">가산세(원)</label><input id="addTax" type="number" min="0" value="0"></div>
+</div>
+<button class="action-btn" id="calcBtn" type="button">계산하기</button>
+<div class="calc-result" id="calcResult">값을 입력하고 계산하세요.</div>
+
+<h2 style="margin-top:22px">매입세액 공제 1차 판정</h2>
+<div class="calc-field"><label for="scenario">상황 선택</label><select id="scenario">
+<option value="normal">과세사업용 재화·용역을 적법한 세금계산서로 매입</option>
+<option value="late1">공급시기 후 확정신고기한까지 세금계산서 수취</option>
+<option value="late2">확정신고기한 후 1년 이내 수취</option>
+<option value="early">공급시기 전 세금계산서 수취, 6개월 이내 공급</option>
+<option value="carNormal">일반 서비스업자의 임직원용 승용차</option>
+<option value="carRental">자동차 임대업자의 고객 대여용 승용차</option>
+<option value="entertain">거래처 접대비</option>
+<option value="land">토지 형질변경·택지조성 비용</option>
+<option value="preReg">과세기간 종료 후 20일 이내 등록 신청한 개업비</option>
+</select></div>
+<button class="action-btn" id="judgeBtn" type="button">판정 보기</button>
+<div class="decision-result" id="decisionResult">상황을 선택하세요.</div>
+</section>
+
+<section class="section" id="quiz">
+<div class="section-title-bar">10. 예상 O/X 16문제</div>
+<div class="quiz-score"><span id="scoreText">0 / 0</span><button type="button" id="resetQuiz">다시 풀기</button></div>
+<div id="quizList"></div>
+</section>
+
+<section class="section" id="sources">
+<div class="section-title-bar">11. 법령 근거와 학습 범위</div>
+<ul>
+<li><a href="https://www.law.go.kr/법령/부가가치세법/제37조" target="_blank" rel="noopener">부가가치세법 제37조 — 납부세액 등의 계산</a></li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법/제38조" target="_blank" rel="noopener">부가가치세법 제38조 — 공제하는 매입세액</a></li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법/제39조" target="_blank" rel="noopener">부가가치세법 제39조 — 공제하지 아니하는 매입세액</a></li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제74조" target="_blank" rel="noopener">시행령 제74조 — 합계표 미제출 등의 공제 예외</a></li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제75조" target="_blank" rel="noopener">시행령 제75조 — 세금계산서 하자의 공제 예외</a></li>
+<li><a href="https://www.law.go.kr/법령/부가가치세법시행령/제80조" target="_blank" rel="noopener">시행령 제80조 — 토지 관련 매입세액</a></li>
+</ul>
+<div class="callout info"><strong>자료의 성격:</strong> 이 범위는 법문과 위임규정에 따른 요건 판별을 중심으로 구성했습니다. 차량의 개별소비세 과세대상 여부, 업무추진비·복리후생비의 구분, 토지 자본적 지출 여부는 실제 계약과 사용형태에 따라 달라질 수 있습니다.</div>
+</section>
+
+<footer>부가가치세법 제37조~제39조 예습자료 · 법령 기준일 2026. 6. 27.</footer>
+<script>
+const details=[...document.querySelectorAll('details')];const expandBtn=document.getElementById('expandBtn');let expanded=false;
+expandBtn.addEventListener('click',()=>{expanded=!expanded;details.forEach(d=>d.open=expanded);expandBtn.textContent=expanded?'해설 모두 닫기':'해설 모두 열기';});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;document.getElementById('progressBar').style.width=Math.min(100,Math.max(0,p))+'%';});
+const won=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+document.getElementById('calcBtn').addEventListener('click',()=>{
+ const base=Number(document.getElementById('taxBase').value)||0, rate=Number(document.getElementById('taxRate').value)||0;
+ const bad=Number(document.getElementById('badDebt').value)||0, input=Number(document.getElementById('inputTax').value)||0;
+ const credits=Number(document.getElementById('taxCredits').value)||0, add=Number(document.getElementById('addTax').value)||0;
+ const output=base*rate/100, stage=output-bad-input, final=stage-credits+add;
+ const box=document.getElementById('calcResult');box.classList.toggle('refund',final<0);
+ box.textContent=`매출세액 ${won(output)} → 제37조 제2항 단계 ${stage<0?'환급세액 후보':'납부세액'} ${won(Math.abs(stage))} → 최종 ${final<0?'환급':'납부'} ${won(Math.abs(final))}`;
+});
+const decisions={
+ normal:`[공제 가능]
+과세사업 관련성, 적법한 증빙, 귀속시기를 충족하면 법 제38조의 매입세액입니다.`,
+ late1:`[공제 가능]
+공급시기 후라도 해당 과세기간 확정신고기한까지 발급받으면 시행령 제75조 제3호를 검토합니다. 공급자의 지연발급 가산세는 별도입니다.`,
+ late2:`[조건부 공제]
+확정신고기한 다음 날부터 1년 이내 발급 + 수정신고·경정청구와 함께 제출하거나 세무서 결정·경정이 필요합니다.`,
+ early:`[조건부 공제]
+발급일부터 6개월 이내 공급시기 도래, 거래사실 확인, 세무서 결정·경정 요건을 확인합니다.`,
+ carNormal:`[불공제]
+일반 서비스업자의 임직원용 개별소비세 과세대상 자동차는 통상 법 제39조 제1항 제5호에 해당합니다.`,
+ carRental:`[공제 가능]
+자동차 임대업에 직접 영업으로 사용하는 차량은 예외 업종에 해당할 수 있습니다.`,
+ entertain:`[불공제]
+기업업무추진비 및 유사비용 관련 매입세액은 적격증빙이 있어도 불공제됩니다.`,
+ land:`[불공제]
+토지 형질변경·택지조성 등 토지의 가치를 증가시키는 자본적 지출은 토지 관련 매입세액입니다.`,
+ preReg:`[조건부 공제]
+공급시기가 속하는 과세기간 종료 후 20일 이내 등록 신청, 적법한 증빙과 과세사업 관련성을 충족하면 등록 전이라는 이유만으로 배제하지 않습니다.`
+};
+document.getElementById('judgeBtn').addEventListener('click',()=>{document.getElementById('decisionResult').textContent=decisions[document.getElementById('scenario').value];});
+const quizData=[
+{q:'1. 매출세액은 과세표준에 세율을 적용하여 계산한다.',a:true,e:'O. 법 제37조 제1항입니다.'},
+{q:'2. 공급자의 대손세액은 공제매입세액에 가산하여 계산한다.',a:false,e:'X. 대손세액은 법 제37조 제2항에 따라 매출세액에서 뺍니다.'},
+{q:'3. 매입세액이 매출세액을 초과하면 그 초과분은 법 제37조상 환급세액이다.',a:true,e:'O. 실제 환급시기와 절차는 별도 규정을 적용합니다.'},
+{q:'4. 아직 사용하지 않은 설비는 과세사업에 사용할 목적이 명확해도 매입세액을 공제할 수 없다.',a:false,e:'X. 자기의 사업에 사용할 목적으로 공급받은 재화도 공제 후보입니다.'},
+{q:'5. 수입재화의 매입세액은 재화의 수입시기가 속하는 과세기간에서 공제한다.',a:true,e:'O. 법 제38조 제3항입니다.'},
+{q:'6. 매입처별 세금계산서합계표를 누락하면 어떠한 경우에도 매입세액을 공제할 수 없다.',a:false,e:'X. 수정신고·경정청구와 함께 제출하는 등 시행령 제74조의 예외가 있습니다.'},
+{q:'7. 공급자의 주소는 법 제32조 제1항상 필요적 기재사항이므로 틀리면 반드시 불공제된다.',a:false,e:'X. 법률상 필요적 기재사항은 공급자 등록번호·성명 또는 명칭, 공급받는 자 등록번호 등, 공급가액·세액, 작성연월일입니다.'},
+{q:'8. 공급시기 후 세금계산서를 받았더라도 해당 과세기간 확정신고기한까지 받으면 공제 예외가 적용될 수 있다.',a:true,e:'O. 시행령 제75조 제3호입니다.'},
+{q:'9. 확정신고기한 후 1년 이내 세금계산서를 받으면 별도 절차 없이 자동으로 공제된다.',a:false,e:'X. 수정신고·경정청구와 함께 제출하거나 세무서 결정·경정이 필요합니다.'},
+{q:'10. 세무사 사무실이 대표자 출퇴근용 승용차를 구입한 경우 그 매입세액은 원칙적으로 공제된다.',a:false,e:'X. 일반적인 업무용 사용은 직접 영업 사용 예외에 해당하지 않습니다.'},
+{q:'11. 자동차 임대업자가 고객에게 대여하기 위한 승용차를 구입하면 직접 영업 사용 예외를 검토할 수 있다.',a:true,e:'O. 시행령 제19조의 예외 업종입니다.'},
+{q:'12. 거래처 접대 식사비는 법인카드로 결제하고 부가가치세가 구분되어 있으면 공제된다.',a:false,e:'X. 기업업무추진비 관련 매입세액은 불공제됩니다.'},
+{q:'13. 면세사업을 위한 시설투자 관련 매입세액은 아직 면세매출이 발생하지 않았더라도 불공제될 수 있다.',a:true,e:'O. 법 제39조 제1항 제7호는 면세사업을 위한 투자도 포함합니다.'},
+{q:'14. 건물이 있는 토지를 매입하여 건물을 철거하고 토지만 사용하면 건물 취득·철거비 관련 매입세액은 토지 관련 매입세액이 될 수 있다.',a:true,e:'O. 시행령 제80조 제2호입니다.'},
+{q:'15. 사업자등록 신청 전의 매입세액은 예외 없이 불공제된다.',a:false,e:'X. 과세기간 종료 후 20일 이내 등록 신청 특례가 있습니다.'},
+{q:'16. 2026년 제1기 중 발생한 매입에 대하여 2026년 7월 20일 등록을 신청한 경우 등록 전 매입세액 특례를 검토할 수 있다.',a:true,e:'O. 제1기 종료일인 6월 30일 후 20일 이내 신청에 해당합니다.'}
+];
+const list=document.getElementById('quizList');let solved=0,correct=0;
+function renderQuiz(){solved=0;correct=0;list.innerHTML='';updateScore();quizData.forEach(item=>{const card=document.createElement('div');card.className='quiz-card';card.innerHTML=`<div class="quiz-q">${item.q}</div><div class="quiz-options"><button type="button" data-v="true">O</button><button type="button" data-v="false">X</button></div><div class="quiz-answer"></div>`;const ans=card.querySelector('.quiz-answer');card.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{if(card.dataset.done)return;card.dataset.done='1';solved++;const chosen=btn.dataset.v==='true';const ok=chosen===item.a;if(ok)correct++;card.classList.add(ok?'correct':'wrong');ans.textContent=(ok?'정답입니다. ':'오답입니다. ')+item.e;ans.classList.add('show');card.querySelectorAll('button').forEach(b=>b.disabled=true);updateScore();}));list.appendChild(card);});}
+function updateScore(){document.getElementById('scoreText').textContent=`${correct} / ${solved}`;}
+document.getElementById('resetQuiz').addEventListener('click',renderQuiz);renderQuiz();
+</script>
+</body>
+</html>
