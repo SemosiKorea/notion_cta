@@ -124,12 +124,22 @@ const $=id=>document.getElementById(id);
 const normalize=text=>(text||'').toLocaleLowerCase('ko-KR').replace(/[\s_-]+/g,' ');
 
 function parseFilename(name){
-  const base=name.replace(/\.html$/i,'').replace(/[_-]+/g,' ').trim();
-  const candidates=['소득세법','법인세법','부가가치세법','국세기본법','상속세및증여세법','조세특례제한법','국세징수법'];
-  const category=candidates.find(v=>base.startsWith(v))||base.split(' ')[0]||'기타';
-  let title=base.slice(category.length).trim();
-  if(!title) title=base;
-  return{category,title};
+  const base=name.replace(/\.html$/i,'').trim();
+  const parts=base.split('_').filter(Boolean);
+  const hasStandardName=parts.length>=5&&/^\d{8}$/.test(parts.at(-1));
+  if(!hasStandardName) return{category:'기타',title:base.replace(/[_-]+/g,' ')};
+
+  if(parts[0]==='세법개론'){
+    return{
+      category:parts[1],
+      title:[...parts.slice(2,-2),parts.at(-2)].join(' · ')
+    };
+  }
+
+  return{
+    category:parts[0],
+    title:parts.slice(1,-1).join(' · ')
+  };
 }
 
 function createCard(file){
