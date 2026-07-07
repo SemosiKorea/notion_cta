@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제11조~제12조 | O/X 판단 퀴즈</title>
+<style>
+:root{
+  --bg:#f2f0eb;--surface:#fff;--surface2:#ece9e2;--border:#d5d0c7;
+  --primary:#1b3d6b;--accent:#9a4410;--green:#1c5030;--red:#7f1910;
+  --text:#111010;--text2:#373430;--muted:#666260;--gold:#d4cbaa;
+  --shadow:0 2px 10px rgba(0,0,0,.07);--shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --serif:Georgia,'Noto Serif KR','Batang',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;min-height:100vh}
+button{font:inherit}
+.header{background:var(--primary);color:#fff;padding:1.5rem 1.2rem 1.15rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.header-inner{max-width:980px;margin:0 auto;display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.badge-top{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .5rem;color:var(--gold)}
+.title{font-family:var(--serif);font-size:1.48rem;font-weight:700;line-height:1.3;margin-top:.25rem}
+.title span{font-family:var(--sans);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.78)}
+.subtitle{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.25rem}
+.score-box{margin-left:auto;text-align:right;min-width:82px}.score-label{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.09em}.score-value{font-family:var(--mono);font-size:1.48rem;color:var(--gold);font-weight:700}
+.progress-wrap{background:var(--primary);padding:0 1.2rem .72rem}.progress-track{max-width:980px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .3s ease}
+.container{max-width:980px;margin:0 auto;padding:1.35rem 1rem 4rem}
+.notice{background:#eef3ff;border:1.5px solid var(--primary);border-radius:10px;padding:.85rem 1rem;font-size:.79rem;color:#173761;margin:0 0 1rem}.notice strong{color:var(--primary)}
+.toolbar{display:flex;gap:.48rem;flex-wrap:wrap;margin:.85rem 0 1.2rem}.tool-btn{border:1px solid var(--border);background:#fff;color:var(--text2);padding:.42rem .72rem;border-radius:7px;cursor:pointer;font-size:.74rem}.tool-btn:hover{border-color:var(--primary);color:var(--primary)}.tool-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.tool-btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem}.toc h2{font-family:var(--serif);font-size:.95rem;color:var(--primary);margin-bottom:.5rem}.toc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.toc-links.four{grid-template-columns:repeat(4,1fr)}.toc a{text-decoration:none;color:var(--text2);border:1px solid var(--border);border-radius:7px;padding:.52rem .65rem;font-size:.75rem;background:#faf9f6}.toc a:hover{border-color:var(--primary);color:var(--primary)}.toc a b{display:block;color:var(--primary);font-size:.78rem}
+details.study{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:1rem;box-shadow:var(--shadow)}details.study summary{cursor:pointer;padding:.76rem 1rem;font-weight:700;color:var(--primary);font-size:.82rem;list-style:none}details.study summary::-webkit-details-marker{display:none}details.study summary::after{content:'＋';float:right;font-family:var(--mono)}details.study[open] summary::after{content:'－'}details.study .inside{padding:0 1rem 1rem;font-size:.76rem;color:var(--text2)}
+.summary-table{width:100%;border-collapse:collapse;margin-top:.3rem;font-size:.73rem}.summary-table th,.summary-table td{border:1px solid #c8d6e8;padding:.35rem .44rem;text-align:center}.summary-table th{background:#e6eef9;color:var(--primary)}.summary-table td:first-child{text-align:left;font-weight:600}
+.section-header{display:flex;align-items:center;gap:.72rem;margin:2rem 0 .8rem;flex-wrap:wrap}.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:4px}.section-title{font-family:var(--serif);font-size:1.02rem;font-weight:700}.section-subtitle{font-size:.7rem;color:var(--muted)}.section-count{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}.section-rule{border:0;border-top:1.5px solid var(--border);margin-bottom:1rem}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.9rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,opacity .2s}.question-card:hover{box-shadow:var(--shadow-lg)}.question-card.hidden-filter{display:none}.question-head{padding:.84rem 1rem .65rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.7rem}.question-no{font-family:var(--mono);font-size:.68rem;font-weight:700;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#e4eef8;color:var(--primary);margin-top:1px}.question-text{font-size:.86rem;line-height:1.82;flex:1}.law-badge,.level-badge,.topic-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;padding:.08rem .35rem;border-radius:3px;vertical-align:middle;margin-right:.22rem}.law-badge{background:#eaf0f7;color:var(--primary);border:1px solid #c5d8ee}.level-badge{background:#fff3dc;color:#7a5700}.level-badge.a{background:#fdecea;color:var(--red)}.topic-badge{background:#e8f2eb;color:var(--green)}
+.question-body{padding:.62rem 1rem .75rem}.ox-row{display:flex;gap:.5rem}.ox-btn{border:1.5px solid var(--border);background:#fff;border-radius:7px;padding:.42rem 1.28rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .13s}.ox-btn:hover{border-color:var(--primary);color:var(--primary);background:#eaf0f7}.ox-btn.selected-o{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.selected-x{border-color:var(--red);background:#faf0ef;color:var(--red)}.ox-btn.correct{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.wrong{border-color:var(--red);background:#faf0ef;color:var(--red);opacity:.6}
+.answer-row{padding:0 1rem .78rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.check-btn{padding:.38rem .9rem;border:0;border-radius:5px;background:var(--primary);color:#fff;font-size:.74rem;font-weight:600;cursor:pointer}.check-btn:disabled{opacity:.35;cursor:default}.result-badge{display:none;font-size:.73rem;font-weight:600;padding:.24rem .58rem;border-radius:20px}.result-badge.show{display:inline-block}.result-badge.ok{background:#e4f2ea;color:var(--green)}.result-badge.ng{background:#faf0ef;color:var(--red)}
+.explanation{display:none;background:#fafaf7;border-top:1px solid var(--border);padding:.8rem 1rem;font-size:.78rem;color:var(--text2);line-height:1.9}.explanation.show{display:block}.ex-title{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem}.answer-line{font-weight:700;font-size:.81rem;margin-bottom:.22rem}.answer-line.o{color:var(--green)}.answer-line.x{color:var(--red)}.law-ref{display:inline-block;font-family:var(--mono);font-size:.67rem;color:var(--primary);background:#eaf0f7;padding:.1rem .38rem;border-radius:3px;margin-bottom:.35rem}.correction{background:#eef3ff;border-left:3px solid var(--primary);padding:.42rem .6rem;margin:.42rem 0}.trap{color:var(--red);font-style:italic;margin-top:.3rem}
+.global-actions{display:flex;justify-content:center;gap:.65rem;margin:1.6rem 0;flex-wrap:wrap}.action-btn{padding:.55rem 1.25rem;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer}.action-btn.primary{background:var(--accent);border:1px solid var(--accent);color:#fff}.action-btn.outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}.action-btn.outline:hover{background:var(--primary);color:#fff}
+.score-panel{display:none;background:#fff;border:1.5px solid var(--primary);border-radius:12px;padding:1.45rem 1.1rem;text-align:center;box-shadow:var(--shadow-lg);margin:1.6rem 0}.score-panel.show{display:block}.score-panel h2{font-family:var(--serif);font-size:1.1rem;color:var(--primary)}.grade{font-family:var(--mono);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;margin:.5rem 0}.score-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.7rem 0 1rem}.score-stats strong{display:block;font-family:var(--mono);font-size:1.25rem}.score-stats span{font-size:.65rem;color:var(--muted)}.feedback{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.source-box{margin-top:2rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;font-size:.72rem;color:var(--text2)}.source-box h3{font-family:var(--serif);color:var(--primary);font-size:.88rem;margin-bottom:.35rem}.source-box ul{padding-left:1.1rem}.source-box li{margin:.2rem 0}.caution{color:var(--red);margin-top:.45rem}
+.footer-note{text-align:center;font-size:.65rem;color:var(--muted);margin-top:1.4rem}
+@media(max-width:680px){.toc-links.four{grid-template-columns:1fr}.title{font-size:1.12rem}.score-box{margin-left:0}.container{padding:.9rem .68rem 3rem}.toc-links{grid-template-columns:1fr}.question-head{padding:.72rem .82rem .58rem}.question-body{padding:.58rem .82rem .68rem}.answer-row{padding:0 .82rem .7rem}.explanation{padding:.72rem .82rem}.summary-table{font-size:.65rem}.summary-table th,.summary-table td{padding:.28rem .22rem}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}.header{position:static;box-shadow:none;padding:.7cm .6cm;background:#fff;color:#000;border-bottom:2px solid #1b3d6b}.badge-top,.subtitle,.score-box,.progress-wrap,.toolbar,.global-actions,.check-btn,.ox-row,.result-badge{display:none!important}.title,.title span{color:#000}.container{max-width:none;padding:.4cm}.notice,.toc,details.study,.source-box{box-shadow:none}.question-card{box-shadow:none;break-inside:avoid;margin-bottom:.35cm}.explanation{display:block!important}.section-header{break-after:avoid}.score-panel{display:none!important}.question-head{padding:.3cm}.question-body,.answer-row{display:none}.source-box{break-inside:avoid}.law-badge,.level-badge,.topic-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div>
+      <span class="badge-top">세무사 1차 · 세법학개론 · 2027 대비</span>
+      <div class="title">부가가치세법 제11조~제12조<br><span>용역의 공급 · 용역 공급의 특례 O/X 퀴즈</span></div>
+      <div class="subtitle">현행 법률 시행 2026.1.2. · 관련 시행령 제25조~제26조 2026.2.27. 기준 · 총 40문항</div>
+    </div>
+    <div class="score-box"><div class="score-label">SCORE</div><div class="score-value" id="scoreValue">–</div></div>
+  </div>
+</header>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+
+<main class="container">
+  <div class="notice"><strong>판단 순서:</strong> ① 역무를 제공하거나 시설물·권리를 사용하게 했는가 → ② 건설업·가공·정보제공에 관한 시행령상 범위인가 → ③ 자기 사업을 위한 무상용역인지 타인에 대한 무상용역인지 → ④ 특수관계인 사업용 부동산 무상임대 또는 고용관계 예외가 있는가. 모든 문항은 현행 법령을 바탕으로 만든 자체 제작 문제이며 실제 기출문제가 아닙니다.</div>
+
+  <nav class="toc" aria-label="목차">
+    <h2>목차</h2>
+    <div class="toc-links four">
+      <a href="#part1"><b>Part 1 · 제11조</b>용역 공급의 기본 구조</a>
+      <a href="#part2"><b>Part 2 · 시행령 제25조</b>건설·가공·정보 제공</a>
+      <a href="#part3"><b>Part 3 · 제12조 제1항</b>용역의 자가공급</a>
+      <a href="#part4"><b>Part 4 · 제12조 제2·3항</b>무상공급·고용관계</a>
+    </div>
+  </nav>
+
+  <details class="study" open>
+    <summary>핵심 구조표 펼치기·접기</summary>
+    <div class="inside">
+      <table class="summary-table">
+        <thead><tr><th>구분</th><th>핵심 판단</th><th>대표 사례</th><th>시험상 함정</th></tr></thead>
+        <tbody>
+          <tr><td>일반 용역 공급</td><td>역무 제공 또는 시설물·권리 등의 사용 허용</td><td>수리·자문·임대·라이선스</td><td>권리 자체의 양도는 재화 공급 문제</td></tr>
+          <tr><td>건설·가공</td><td>건설은 자재 부담에도 용역, 일반 가공은 주요자재 부담으로 구분</td><td>건설공사, 임가공</td><td>건설업 특례를 일반 가공기준과 혼동</td></tr>
+          <tr><td>자가공급</td><td>법률상 요건은 있으나 대통령령상 범위 미규정</td><td>자기 사업을 위한 내부 무상용역</td><td>현재 현실적으로 과세되지 않음</td></tr>
+          <tr><td>타인 무상공급</td><td>원칙적으로 공급 아님</td><td>무상 자문·무상 사용 허용</td><td>특수관계인 사업용 부동산 무상임대는 예외</td></tr>
+          <tr><td>고용관계</td><td>고용관계에 따른 근로는 공급 아님</td><td>근로자의 근로 제공</td><td>독립사업자의 역무와 구분</td></tr>
+        </tbody>
+      </table>
+      <table class="summary-table" style="margin-top:.75rem">
+        <thead><tr><th>가공·건설 비교</th><th>자재 부담</th><th>공급 유형</th><th>근거</th></tr></thead>
+        <tbody>
+          <tr><td>일반 가공</td><td>주요자재 전부 또는 일부 부담 + 새로운 재화</td><td>재화의 공급</td><td>영 제18조 제1항 제2호</td></tr>
+          <tr><td>일반 단순가공</td><td>주요자재 전혀 부담하지 않음</td><td>용역의 공급</td><td>영 제25조 제2호</td></tr>
+          <tr><td>건설업</td><td>건설자재 전부 또는 일부 부담</td><td>용역의 공급</td><td>영 제25조 제1호</td></tr>
+        </tbody>
+      </table>
+      <table class="summary-table" style="margin-top:.75rem">
+        <thead><tr><th>특수관계인 사업용 부동산 무상임대</th><th>판단</th></tr></thead>
+        <tbody>
+          <tr><td>일반적인 특수관계인에게 무상 임대</td><td>용역의 공급으로 봄</td></tr>
+          <tr><td>법정 산학협력단과 해당 대학 간</td><td>공급 간주 범위에서 제외</td></tr>
+          <tr><td>법정 공공주택사업자와 부동산투자회사 간</td><td>공급 간주 범위에서 제외</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <div class="toolbar">
+    <button class="tool-btn primary" onclick="gradeAll()">전체 채점</button>
+    <button class="tool-btn" onclick="toggleAllExplanations()" id="toggleExplainBtn">해설 모두 보기</button>
+    <button class="tool-btn" onclick="toggleWrongOnly()" id="wrongOnlyBtn">틀린 문제만 보기</button>
+    <button class="tool-btn" onclick="window.print()">인쇄</button>
+    <button class="tool-btn accent" onclick="resetQuiz()">다시 풀기</button>
+  </div>
+
+  <div id="quizRoot"></div>
+
+  <div class="global-actions">
+    <button class="action-btn primary" onclick="gradeAll()">전체 채점 및 결과 보기</button>
+    <button class="action-btn outline" onclick="toggleAllExplanations()">전체 해설 펼치기</button>
+    <button class="action-btn outline" onclick="resetQuiz()">처음부터 다시 풀기</button>
+  </div>
+
+  <section class="score-panel" id="scorePanel" aria-live="polite">
+    <h2>학습 결과</h2>
+    <div class="grade" id="gradeText">0%</div>
+    <div class="score-stats">
+      <div><strong id="correctStat">0</strong><span>정답</span></div>
+      <div><strong id="wrongStat">0</strong><span>오답</span></div>
+      <div><strong id="unansweredStat">0</strong><span>미응답</span></div>
+    </div>
+    <div class="feedback" id="feedbackText"></div>
+    <button class="action-btn outline" onclick="toggleWrongOnly(true)">오답만 복습하기</button>
+  </section>
+
+  <section class="source-box">
+    <h3>근거 및 검증 기준</h3>
+    <ul>
+      <li>부가가치세법 제11조·제12조: 법률 제21065호, 2025.10.1. 타법개정, 2026.1.2. 시행본.</li>
+      <li>부가가치세법 시행령 제25조·제26조: 대통령령 제36133호, 2026.2.27. 공포·관련 조문 시행본.</li>
+      <li>부가가치세법 시행규칙에는 제11조·제12조 및 시행령 제25조·제26조에서 직접 위임한 별도 세부사항이 없음.</li>
+      <li>보조자료: 국세공무원교육원 「부가가치세법 2025」의 용역 공급·자가공급·무상공급 설명.</li>
+      <li>기출분석 반영: 2021~2025년 분석자료에서 ‘재화·용역의 공급’이 부가가치세법 반복 논점으로 분류됨.</li>
+      <li>화면·기능 참고: 제공된 법인세법 O/X 퀴즈와 앞서 제작한 부가가치세법 제9조~제10조 O/X 파일.</li>
+    </ul>
+    <p class="caution">※ 2027년 세무사 시험의 적용 법령 기준일은 향후 시험 시행계획과 출제기준을 별도로 확인해야 합니다. 이 파일은 2026년 7월 6일 현재 시행 중인 관련 법령을 기준으로 합니다.</p>
+  </section>
+  <div class="footer-note">부가가치세법 제11조~제12조 · 자체 제작 O/X 학습자료</div>
+</main>
+
+<script>
+const QUESTIONS = [{"id":1,"part":1,"law":"법 §11①","answer":"O","level":"A급","tag":"용역의 공급 정의","text":"용역의 공급은 계약상 또는 법률상의 모든 원인에 따라 이루어질 수 있다.","explanation":"법 제11조는 용역의 공급 원인을 <b>계약상 또는 법률상의 모든 원인</b>으로 규정합니다. 계약이라는 형식에만 한정되지 않습니다.","correction":"","trap":"‘계약상 원인에 한한다’는 축소 문구를 주의하세요."},{"id":2,"part":1,"law":"법 §11①1","answer":"O","level":"A급","tag":"역무 제공","text":"사업자가 수리·운송·자문 등 역무를 제공하는 것은 원칙적으로 용역의 공급에 해당한다.","explanation":"법 제11조 제1항 제1호는 <b>역무를 제공하는 것</b>을 용역의 공급으로 규정합니다. 구체적인 과세·면세 여부는 별도 규정을 추가로 확인합니다.","correction":"","trap":"용역의 공급 해당 여부와 면세 여부는 서로 다른 판단 단계입니다."},{"id":3,"part":1,"law":"법 §11①2","answer":"O","level":"A급","tag":"재화 사용 허용","text":"시설물이나 권리 등 재화를 타인이 사용하게 하는 것도 용역의 공급에 해당한다.","explanation":"소유권을 넘기는 것이 아니라 시설물·권리 등을 <b>사용하게 하는 것</b>은 법 제11조 제1항 제2호의 용역 공급입니다.","correction":"","trap":"재화라는 말이 등장해도 ‘사용하게 함’은 용역입니다."},{"id":4,"part":1,"law":"법 §11①","answer":"X","level":"A급","tag":"공급 원인","text":"용역의 공급은 당사자 사이의 계약에 따라 제공하는 경우에만 성립하고, 법률상의 원인에 따른 제공은 제외된다.","explanation":"법은 계약상 원인뿐 아니라 <b>법률상의 모든 원인</b>에 따른 역무 제공이나 재화 사용 허용도 포함합니다.","correction":"올바른 문장: 용역의 공급은 계약상 또는 법률상의 모든 원인에 따라 성립할 수 있다.","trap":"‘계약상 또는 법률상’의 ‘또는’을 놓치지 마세요."},{"id":5,"part":1,"law":"법 §11①","answer":"X","level":"A급","tag":"인도 요건","text":"용역의 공급이 성립하려면 재화의 공급과 마찬가지로 반드시 유형물의 인도나 소유권 이전이 있어야 한다.","explanation":"용역은 역무 제공 또는 시설물·권리 등의 사용 허용으로 성립하므로 유형물의 인도나 소유권 이전이 필수요건이 아닙니다.","correction":"올바른 문장: 용역의 공급은 역무 제공 또는 시설물·권리 등의 사용 허용으로 성립하며 유형물의 인도는 필수요건이 아니다.","trap":"재화의 공급 요건을 용역에 그대로 적용하지 마세요."},{"id":6,"part":1,"law":"법 §11①2","answer":"O","level":"A급","tag":"장비 임대","text":"사업자가 장비의 소유권은 유지하면서 임차인에게 사용하게 하고 임대료를 받는 것은 용역의 공급이다.","explanation":"장비의 소유권 이전이 아니라 사용권을 부여하는 거래이므로 재화를 사용하게 하는 용역의 공급입니다.","correction":"","trap":"장비 자체의 매매와 장비 사용권의 임대를 구분하세요."},{"id":7,"part":1,"law":"법 §11①2·법 §2①1","answer":"X","level":"A급","tag":"권리 사용과 양도","text":"특허권의 소유권을 완전히 이전하는 거래와 특허권을 일정 기간 사용하게 하는 거래는 모두 용역의 공급이다.","explanation":"권리 자체는 재화에 포함됩니다. 권리를 <b>양도</b>하면 재화의 공급 문제이고, 권리를 <b>사용하게</b> 하면 용역의 공급입니다.","correction":"올바른 문장: 특허권 자체를 양도하는 것은 재화의 공급이고, 특허권을 사용하게 하는 것은 용역의 공급이다.","trap":"‘권리의 양도’와 ‘권리의 사용 허용’을 구분하세요."},{"id":8,"part":1,"law":"법 §11①1","answer":"O","level":"B급","tag":"수리용역","text":"사업자가 고객 소유의 기계를 수리하고 수리대금을 받는 거래는 역무 제공에 따른 용역의 공급에 해당할 수 있다.","explanation":"고객 소유 기계에 수리행위를 제공하는 것은 전형적인 역무 제공입니다. 다만 부품 제공 등 구체적 거래내용에 따른 부수재화 판단은 별도입니다.","correction":"","trap":"수리 대상이 재화라는 이유만으로 거래 전체를 재화의 공급으로 단정하지 마세요."},{"id":9,"part":1,"law":"법 §11①","answer":"X","level":"B급","tag":"법률상 원인","text":"법률상의 의무에 따라 역무를 제공하는 경우에는 당사자의 자발적 계약이 없으므로 용역의 공급이 될 수 없다.","explanation":"법 제11조는 법률상의 원인에 따른 역무 제공도 용역의 공급 범위에 포함합니다.","correction":"올바른 문장: 법률상의 원인에 따라 역무를 제공하는 경우도 용역의 공급이 될 수 있다.","trap":"계약의 존재 여부만으로 공급을 판단하지 마세요."},{"id":10,"part":1,"law":"법 §11","answer":"X","level":"B급","tag":"거래 명칭","text":"당사자가 계약서에 거래 명칭을 ‘물품거래’라고 적었다면 실제 내용이 시설물 사용 허용이어도 재화의 공급으로 보아야 한다.","explanation":"공급 유형은 계약서 제목이 아니라 실제로 소유권을 넘겼는지, 사용하게 했는지 등 <b>거래의 실질</b>에 따라 판단합니다.","correction":"올바른 문장: 거래 명칭과 관계없이 실제 내용이 시설물의 사용 허용이면 용역의 공급으로 판단한다.","trap":"계약 명칭보다 권리·의무와 실제 이행내용을 보세요."},{"id":11,"part":2,"law":"영 §25 3","answer":"O","level":"A급","tag":"정보 제공","text":"산업상·상업상 또는 과학상의 지식·경험·숙련에 관한 정보를 제공하는 것은 용역의 공급으로 본다.","explanation":"시행령 제25조 제3호는 노하우 등 산업상·상업상·과학상의 지식·경험·숙련에 관한 정보 제공을 용역의 공급으로 명시합니다.","correction":"","trap":"유형물이 전달되지 않더라도 정보 제공은 용역이 될 수 있습니다."},{"id":12,"part":2,"law":"영 §25 3","answer":"X","level":"B급","tag":"정보 범위","text":"산업상·상업상 또는 과학상의 정보 제공이 용역의 공급이 되려면 반드시 특허권으로 등록된 기술이어야 한다.","explanation":"시행령은 특허 등록 여부를 요구하지 않고 지식·경험·숙련에 관한 정보 제공을 폭넓게 규정합니다.","correction":"올바른 문장: 특허 등록 여부와 관계없이 산업상·상업상 또는 과학상의 지식·경험·숙련에 관한 정보 제공은 용역의 공급으로 볼 수 있다.","trap":"‘특허 등록’이라는 법에 없는 요건을 추가하지 마세요."},{"id":13,"part":2,"law":"영 §25 1","answer":"O","level":"A급","tag":"건설업 특례","text":"건설업에서는 건설사업자가 건설자재의 전부 또는 일부를 부담하더라도 용역의 공급으로 본다.","explanation":"일반 가공계약과 달리 건설업은 건설사업자가 자재 전부 또는 일부를 부담해도 시행령 제25조 제1호에 따라 용역 공급으로 봅니다.","correction":"","trap":"건설업과 일반 제조·가공거래의 자재 부담 기준을 혼동하지 마세요."},{"id":14,"part":2,"law":"영 §25 1","answer":"X","level":"A급","tag":"건설자재 부담","text":"건설사업자가 철근·레미콘 등 건설자재를 일부라도 부담하면 건축물을 만들어 인도하므로 언제나 재화의 공급으로 본다.","explanation":"건설업에 관한 특별 규정은 건설사업자가 건설자재 전부 또는 일부를 부담하는 경우도 용역의 공급으로 봅니다.","correction":"올바른 문장: 건설업에서 건설사업자가 건설자재의 전부 또는 일부를 부담하는 것은 용역의 공급으로 본다.","trap":"일반 가공계약의 ‘주요자재 부담’ 기준을 건설업에 적용하지 마세요."},{"id":15,"part":2,"law":"영 §25 2","answer":"O","level":"A급","tag":"단순가공","text":"상대방에게서 받은 재화에 대하여 자기가 주요자재를 전혀 부담하지 않고 단순히 가공만 해 주는 것은 용역의 공급으로 본다.","explanation":"주요자재를 전혀 부담하지 않고 가공행위만 제공하면 역무 제공 성격이므로 시행령 제25조 제2호의 용역 공급입니다.","correction":"","trap":"가공 후 물건의 모양이 바뀌었다는 사실만으로 재화 공급이라고 하지 마세요."},{"id":16,"part":2,"law":"영 §25 2","answer":"X","level":"A급","tag":"부수자재","text":"가공자가 포장재나 접착제 같은 부수자재를 조금이라도 부담하면 주요자재를 부담한 것으로 보아 반드시 재화의 공급이 된다.","explanation":"핵심은 <b>주요자재</b> 부담 여부입니다. 주요자재를 전혀 부담하지 않고 부수자재만 부담한 단순가공은 용역 공급으로 볼 수 있습니다.","correction":"올바른 문장: 주요자재를 부담하지 않고 부수자재만 부담하여 단순가공하는 경우에는 용역의 공급으로 볼 수 있다.","trap":"‘모든 자재’가 아니라 ‘주요자재’가 판단기준입니다."},{"id":17,"part":2,"law":"영 §18①2·영 §25 2","answer":"O","level":"A급","tag":"가공거래 비교","text":"가공자가 주요자재의 일부를 부담하여 새로운 재화를 만들어 인도하면 재화의 공급으로, 주요자재를 전혀 부담하지 않고 단순가공만 하면 용역의 공급으로 구분한다.","explanation":"시행령 제18조와 제25조를 연결한 핵심 비교입니다. 일반 가공에서 주요자재 일부라도 부담해 새 재화를 만들면 재화 공급, 전혀 부담하지 않은 단순가공은 용역 공급입니다.","correction":"","trap":"건설업에는 별도의 용역 공급 규정이 있다는 점도 함께 기억하세요."},{"id":18,"part":2,"law":"영 §18①2·영 §25 2","answer":"X","level":"A급","tag":"가공거래 일률판단","text":"상대방에게서 재화를 받아 가공한 뒤 돌려주는 거래는 주요자재 부담 여부와 관계없이 모두 용역의 공급이다.","explanation":"가공자가 주요자재 전부 또는 일부를 부담하여 새로운 재화를 만들면 재화의 공급이 될 수 있으므로 일률적으로 용역이라고 할 수 없습니다.","correction":"올바른 문장: 일반 가공거래는 가공자의 주요자재 부담 여부에 따라 재화의 공급과 용역의 공급을 구분한다.","trap":"가공이라는 명칭보다 주요자재 부담과 새로운 재화의 생성 여부를 확인하세요."},{"id":19,"part":2,"law":"영 §25 1·2","answer":"X","level":"A급","tag":"건설과 가공 비교","text":"건설업과 일반 가공업은 모두 주요자재를 일부라도 사업자가 부담하면 재화의 공급으로 판단한다.","explanation":"일반 가공은 주요자재 부담 시 재화 공급이 될 수 있지만, 건설업은 건설사업자가 건설자재 전부 또는 일부를 부담해도 용역 공급으로 봅니다.","correction":"올바른 문장: 일반 가공과 달리 건설업은 건설사업자가 자재의 전부 또는 일부를 부담해도 용역의 공급으로 본다.","trap":"건설업의 별도 규정이 대표적인 비교형 함정입니다."},{"id":20,"part":2,"law":"법 §11①2","answer":"O","level":"B급","tag":"소프트웨어 사용권","text":"소프트웨어의 소유권을 넘기지 않고 일정 기간 사용할 권리만 허용하고 대가를 받는 거래는 용역의 공급에 해당할 수 있다.","explanation":"권리 등 재화를 사용하게 하는 거래는 법 제11조 제1항 제2호의 용역 공급입니다. 구체적인 전자적 용역·공급장소 등은 별도 규정을 확인합니다.","correction":"","trap":"권리 자체의 양도와 기간을 정한 사용 허락을 구분하세요."},{"id":21,"part":3,"law":"법 §12①","answer":"O","level":"A급","tag":"용역의 자가공급","text":"사업자가 자신의 용역을 자기 사업을 위하여 무상으로 공급하여 다른 사업자와의 과세형평이 침해되는 경우에는 법률상 자기에게 용역을 공급한 것으로 보는 규정이 있다.","explanation":"법 제12조 제1항은 자신의 용역, 자기 사업을 위한 사용, 무상 공급, 과세형평 침해를 전제로 하는 용역 자가공급 규정을 두고 있습니다.","correction":"","trap":"법률상 규정의 존재와 현재 실제 과세범위가 정해졌는지는 별도로 보세요."},{"id":22,"part":3,"law":"법 §12①","answer":"X","level":"A급","tag":"자가공급 요건","text":"사업자가 자신의 용역을 자기 사업에 사용하기만 하면 대가 수수 여부나 과세형평 침해 여부와 관계없이 자가공급으로 본다.","explanation":"법문상 대가를 받지 않고 공급하며 다른 사업자와의 과세형평이 침해되어야 합니다. 자기 사업 사용 사실만으로 충분하지 않습니다.","correction":"올바른 문장: 법문상 자신의 용역을 자기 사업을 위하여 무상 공급하고 그로 인해 과세형평이 침해되는 경우 자가공급으로 본다.","trap":"‘자기 사업 사용’ 하나만으로 결론 내리지 마세요."},{"id":23,"part":3,"law":"법 §12① 후단","answer":"O","level":"A급","tag":"시행령 위임","text":"용역의 자가공급으로 볼 구체적인 용역의 범위는 대통령령에 위임되어 있다.","explanation":"법 제12조 제1항 후단은 자가공급으로 보는 용역의 범위를 대통령령으로 정하도록 위임합니다.","correction":"","trap":"법률의 일반요건만 보고 곧바로 모든 자가용역을 과세하지 마세요."},{"id":24,"part":3,"law":"법 §12①·현행 영","answer":"O","level":"A급","tag":"현재 과세 여부","text":"현재 시행령에는 법 제12조 제1항의 용역 자가공급 범위가 별도로 정해져 있지 않으므로 현실적으로 용역의 자가공급은 과세되지 않는다.","explanation":"법률은 대통령령에 구체적 범위를 위임했지만 현행 시행령에는 그 범위를 정한 규정이 없습니다. 따라서 현재는 법 제12조 제1항에 따른 용역 자가공급이 현실적으로 과세되지 않습니다.","correction":"","trap":"법률상 근거가 있다는 이유만으로 현행 과세대상이 존재한다고 단정하지 마세요."},{"id":25,"part":3,"law":"법 §12①·현행 영","answer":"X","level":"A급","tag":"내부용역 일률과세","text":"사업자가 자기 사업장에서 종업원에게 음식용역을 무상 제공하면 현행법상 언제나 용역의 자가공급으로 과세된다.","explanation":"이와 같은 내부 무상용역은 자가공급의 전형적 사례로 설명될 수 있으나, 현재 시행령에 과세할 구체적 범위가 정해져 있지 않아 법 제12조 제1항에 따라 현실적으로 과세되지 않습니다.","correction":"올바른 문장: 현행 시행령에 용역 자가공급 범위가 정해져 있지 않으므로 사업장 내 종업원에 대한 무상 음식용역도 법 제12조 제1항에 따라 현실적으로 과세되지 않는다.","trap":"‘자가공급 사례’와 ‘현행 과세대상’을 구분하세요."},{"id":26,"part":3,"law":"법 §12① 후단","answer":"X","level":"A급","tag":"과세형평만으로 과세","text":"다른 사업자와의 과세형평이 침해된다고 판단되기만 하면 시행령에 구체적인 범위가 없어도 곧바로 용역 자가공급으로 과세할 수 있다.","explanation":"법이 구체적 용역 범위를 대통령령에 위임했으므로 현행 시행령에 범위가 정해지지 않은 상태에서 과세형평 침해만으로 과세할 수는 없습니다.","correction":"올바른 문장: 과세형평 침해 요건과 함께 대통령령으로 정한 용역 범위에 해당해야 하나, 현재 그 범위가 정해져 있지 않다.","trap":"위임입법이 필요한 사항을 행정청의 포괄적 판단으로 대체할 수 없습니다."},{"id":27,"part":3,"law":"법 §12①·②","answer":"O","level":"A급","tag":"자가공급과 무상공급","text":"자기 사업을 위하여 자신의 용역을 무상 사용하는 자가공급과 타인에게 용역을 무상 제공하는 무상공급은 서로 다른 항에서 규정한다.","explanation":"자가공급은 법 제12조 제1항, 타인에 대한 무상공급은 같은 조 제2항에서 별도로 규정합니다. 상대방과 판단구조가 다릅니다.","correction":"","trap":"‘무상’이라는 공통점만 보고 두 규정을 합치지 마세요."},{"id":28,"part":3,"law":"법 §12①·②","answer":"X","level":"B급","tag":"규정 혼동","text":"사업자가 타인에게 용역을 무상 제공하는 경우도 자기 사업을 위한 자가공급과 동일하게 법 제12조 제1항만 적용한다.","explanation":"타인에 대한 무상 용역은 법 제12조 제2항이 적용됩니다. 제1항의 자가공급은 사업자가 자신의 용역을 자기 사업을 위해 사용하는 내부거래입니다.","correction":"올바른 문장: 자기 사업을 위한 내부 무상용역에는 제12조 제1항을, 타인에 대한 무상용역에는 같은 조 제2항을 구분하여 적용한다.","trap":"누가 용역을 사용하는지를 먼저 확인하세요."},{"id":29,"part":4,"law":"법 §12② 본문","answer":"O","level":"A급","tag":"무상공급 원칙","text":"사업자가 타인에게 대가를 받지 않고 용역을 공급하는 것은 원칙적으로 용역의 공급으로 보지 않는다.","explanation":"법 제12조 제2항 본문은 타인에 대한 용역의 무상공급을 원칙적으로 공급으로 보지 않습니다. 특수관계인 사업용 부동산 임대 예외를 이어서 확인합니다.","correction":"","trap":"재화의 무상공급과 용역의 무상공급을 동일하게 처리하지 마세요."},{"id":30,"part":4,"law":"법 §12② 단서","answer":"X","level":"A급","tag":"무상공급 예외","text":"타인에게 대가 없이 공급하는 용역은 상대방과 용역 종류를 불문하고 예외 없이 용역의 공급으로 보지 않는다.","explanation":"특수관계인에게 사업용 부동산 임대용역을 무상 제공하는 등 법정 예외는 용역의 공급으로 봅니다.","correction":"올바른 문장: 타인에 대한 무상 용역은 원칙적으로 공급이 아니지만, 특수관계인에 대한 일정한 사업용 부동산 임대용역은 공급으로 본다.","trap":"‘예외 없이’라는 표현을 경계하세요."},{"id":31,"part":4,"law":"법 §12② 단서·영 §26","answer":"O","level":"A급","tag":"특수관계인 무상임대","text":"사업자가 특수관계인에게 대가 없이 사업용 부동산의 임대용역을 제공하면 시행령상 제외사례가 아닌 한 용역의 공급으로 본다.","explanation":"무상 용역의 원칙적 비공급에 대한 예외입니다. 특수관계인과 사업용 부동산 임대라는 요건을 모두 충족하고 시행령상 제외사례가 아니면 공급으로 봅니다.","correction":"","trap":"특수관계와 사업용 부동산 임대 요건을 모두 확인하세요."},{"id":32,"part":4,"law":"법 §12②","answer":"X","level":"A급","tag":"대가 요건","text":"특수관계인에게 사업용 부동산을 정상 임대료로 임대하는 경우에만 법 제12조 제2항 단서의 무상공급 특례가 적용된다.","explanation":"제12조 제2항 단서는 <b>대가를 받지 않는 무상공급</b>에 관한 예외입니다. 정상 임대료를 받는 거래는 제11조의 일반적인 유상 용역 공급으로 판단합니다.","correction":"올바른 문장: 법 제12조 제2항 단서는 특수관계인에게 사업용 부동산 임대용역을 무상 제공하는 경우에 적용된다.","trap":"유상 임대와 무상공급 간주규정을 구분하세요."},{"id":33,"part":4,"law":"법 §12②","answer":"O","level":"A급","tag":"비특수관계인 무상임대","text":"특수관계인이 아닌 타인에게 사업용 부동산을 무상 임대하는 경우에는 법 제12조 제2항 단서가 적용되지 않으므로 같은 항 기준으로는 용역의 공급으로 보지 않는다.","explanation":"단서의 상대방 요건은 대통령령으로 정한 특수관계인입니다. 비특수관계인에 대한 무상 용역은 본문의 원칙에 따라 공급으로 보지 않습니다.","correction":"","trap":"사업용 부동산이라는 사실만으로 부족하고 특수관계인 요건이 필요합니다."},{"id":34,"part":4,"law":"법 §12②·영 §26②","answer":"X","level":"A급","tag":"무상 자문용역","text":"사업자가 특수관계인에게 경영자문용역을 무상 제공하면 사업용 부동산 무상임대와 마찬가지로 용역의 공급으로 본다.","explanation":"현행 시행령이 정한 예외 용역은 사업용 부동산의 임대용역입니다. 특수관계인이라는 이유만으로 모든 종류의 무상 용역을 공급으로 보는 것은 아닙니다.","correction":"올바른 문장: 특수관계인에 대한 무상 경영자문용역은 사업용 부동산 임대용역 예외에 해당하지 않으므로 원칙적으로 용역의 공급으로 보지 않는다.","trap":"‘특수관계인’만 보고 모든 무상 용역을 과세하지 마세요."},{"id":35,"part":4,"law":"영 §26①","answer":"O","level":"B급","tag":"특수관계인 범위","text":"무상 사업용 부동산 임대 특례의 특수관계인은 소득세법 시행령 제98조 제1항 또는 법인세법 시행령 제2조 제8항 각 호에 따른 자를 말한다.","explanation":"시행령 제26조 제1항이 특수관계인의 범위를 해당 소득세법 시행령 또는 법인세법 시행령 규정에 연결합니다.","correction":"","trap":"국세기본법상 특수관계인 규정을 곧바로 적용한다고 바꾸는 문장을 주의하세요."},{"id":36,"part":4,"law":"영 §26②1","answer":"O","level":"B급","tag":"산학협력단 예외","text":"법정 산학협력단과 그 산학협력단이 설치된 대학 간의 사업용 부동산 임대용역은 특수관계인 무상임대 공급 간주 범위에서 제외된다.","explanation":"시행령 제26조 제2항 제1호는 산학협력단과 해당 대학 간 사업용 부동산 임대용역을 예외로 규정합니다.","correction":"","trap":"특수관계인 무상임대라도 시행령이 열거한 제외사례가 있습니다."},{"id":37,"part":4,"law":"영 §26②2","answer":"O","level":"B급","tag":"공공주택 예외","text":"공공주택 특별법상 일정한 공공주택사업자와 법정 부동산투자회사 간 사업용 부동산 임대용역은 특수관계인 무상임대 공급 간주 범위에서 제외된다.","explanation":"국가·지방자치단체, 한국토지주택공사, 일정 지방공사·공공기관 등과 법정 부동산투자회사 간 임대용역은 시행령 제26조 제2항 제2호의 제외사례입니다.","correction":"","trap":"모든 공공기관과 모든 부동산투자회사 사이의 거래로 넓히지 마세요."},{"id":38,"part":4,"law":"영 §26②","answer":"X","level":"A급","tag":"사업용 동산","text":"특수관계인에게 업무용 기계장치나 차량을 무상으로 빌려주는 경우도 사업용 부동산 임대와 동일하게 법 제12조 제2항 단서의 용역 공급으로 본다.","explanation":"현행 시행령 제26조 제2항이 정한 예외 용역은 <b>사업용 부동산의 임대용역</b>입니다. 사업용 동산의 무상대여까지 포함한다고 규정하지 않습니다.","correction":"올바른 문장: 특수관계인에 대한 사업용 기계장치·차량의 무상대여는 사업용 부동산 임대용역 특례의 대상이 아니다.","trap":"‘사업용’이라는 단어만 보고 부동산과 동산을 혼동하지 마세요."},{"id":39,"part":4,"law":"법 §12③","answer":"O","level":"A급","tag":"고용관계","text":"고용관계에 따라 근로자가 사용자에게 근로를 제공하는 것은 용역의 공급으로 보지 않는다.","explanation":"법 제12조 제3항은 고용관계에 따른 근로 제공을 명시적으로 용역의 공급에서 제외합니다. 임금의 명칭이나 지급방식보다 고용관계가 핵심입니다.","correction":"","trap":"경제적 가치가 있는 노동이라는 이유만으로 사업자의 용역 공급으로 보지 마세요."},{"id":40,"part":4,"law":"법 §11·§12③","answer":"O","level":"A급","tag":"독립된 역무","text":"고용관계가 없는 독립된 사업자가 대가를 받고 역무를 제공하면 고용관계에 따른 근로 제외가 적용되지 않아 용역의 공급이 될 수 있다.","explanation":"제12조 제3항은 고용관계에 따른 근로만 제외합니다. 독립된 자격으로 사업상 역무를 제공하고 대가를 받는 경우에는 제11조의 용역 공급으로 판단할 수 있습니다.","correction":"","trap":"근로자와 독립사업자의 사실관계를 먼저 구분하세요."}];
+const PARTS = {"1":{"title":"제11조 용역 공급의 기본","subtitle":"역무 제공·시설물 및 권리 사용 허용","range":"1~10"},"2":{"title":"시행령 제25조 공급 범위","subtitle":"건설업·단순가공·노하우 제공","range":"11~20"},"3":{"title":"제12조 제1항 자가공급","subtitle":"법률상 요건과 현행 시행령 미규정","range":"21~28"},"4":{"title":"제12조 제2항·제3항","subtitle":"무상공급·특수관계인 임대·고용관계","range":"29~40"}};
+const state = {selected:{}, done:{}, correct:0, answered:0, allExplanations:false, wrongOnly:false};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+function renderQuiz(){
+  const root = document.getElementById('quizRoot');
+  root.innerHTML = '';
+  Object.entries(PARTS).forEach(([partNo, meta]) => {
+    const section = document.createElement('section');
+    section.id = 'part' + partNo;
+    section.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">Part ${partNo}</span>
+        <span class="section-title">${escapeHTML(meta.title)}</span>
+        <span class="section-subtitle">${escapeHTML(meta.subtitle)}</span>
+        <span class="section-count" id="partCount${partNo}">0/${QUESTIONS.filter(q=>q.part===Number(partNo)).length}</span>
+      </div><hr class="section-rule">`;
+    QUESTIONS.filter(q=>q.part===Number(partNo)).forEach(q => section.appendChild(makeCard(q)));
+    root.appendChild(section);
+  });
+}
+
+function makeCard(q){
+  const card = document.createElement('article');
+  card.className = 'question-card';
+  card.id = 'card' + q.id;
+  const levelClass = q.level.startsWith('A') ? 'a' : '';
+  card.innerHTML = `
+    <div class="question-head">
+      <span class="question-no">${q.id}</span>
+      <div class="question-text">
+        <span class="law-badge">${escapeHTML(q.law)}</span>
+        <span class="level-badge ${levelClass}">${escapeHTML(q.level)}</span>
+        <span class="topic-badge">${escapeHTML(q.tag)}</span><br>
+        ${escapeHTML(q.text)}
+      </div>
+    </div>
+    <div class="question-body">
+      <div class="ox-row">
+        <button class="ox-btn" data-value="O" onclick="selectAnswer(${q.id},'O')" aria-label="${q.id}번 O 선택">O</button>
+        <button class="ox-btn" data-value="X" onclick="selectAnswer(${q.id},'X')" aria-label="${q.id}번 X 선택">X</button>
+      </div>
+    </div>
+    <div class="answer-row">
+      <button class="check-btn" onclick="checkAnswer(${q.id})">정답 확인</button>
+      <span class="result-badge" id="result${q.id}"></span>
+    </div>
+    <div class="explanation" id="explanation${q.id}">
+      <div class="ex-title">해설</div>
+      <div class="law-ref">${escapeHTML(q.law)}</div>
+      <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer} (${q.answer==='O'?'옳다':'틀리다'})</div>
+      <p>${q.explanation}</p>
+      ${q.correction ? `<div class="correction">${escapeHTML(q.correction)}</div>` : ''}
+      <p class="trap">⚠ ${escapeHTML(q.trap)}</p>
+    </div>`;
+  return card;
+}
+
+function selectAnswer(id, value){
+  if(state.done[id]) return;
+  state.selected[id] = value;
+  const card = document.getElementById('card'+id);
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === value) btn.classList.add(value==='O'?'selected-o':'selected-x');
+  });
+}
+
+function checkAnswer(id, silent=false){
+  if(state.done[id]) return;
+  const q = QUESTIONS.find(item=>item.id===id);
+  const selected = state.selected[id];
+  if(!selected){
+    if(!silent) alert('O 또는 X를 먼저 선택해주세요.');
+    return;
+  }
+  state.done[id] = true;
+  state.answered += 1;
+  const correct = selected === q.answer;
+  if(correct) state.correct += 1;
+  const card = document.getElementById('card'+id);
+  card.dataset.correct = correct ? 'true' : 'false';
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === q.answer) btn.classList.add('correct');
+    else if(btn.dataset.value === selected && !correct) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  card.querySelector('.check-btn').disabled = true;
+  const result = document.getElementById('result'+id);
+  result.textContent = correct ? '✓ 정답' : `✗ 오답 (정답: ${q.answer})`;
+  result.className = 'result-badge show ' + (correct ? 'ok' : 'ng');
+  document.getElementById('explanation'+id).classList.add('show');
+  updateStatus();
+}
+
+function updateStatus(){
+  document.getElementById('scoreValue').textContent = `${state.correct}/${state.answered}`;
+  document.getElementById('progressFill').style.width = `${state.answered/QUESTIONS.length*100}%`;
+  Object.keys(PARTS).forEach(partNo => {
+    const partQuestions = QUESTIONS.filter(q=>q.part===Number(partNo));
+    const count = partQuestions.filter(q=>state.done[q.id]).length;
+    document.getElementById('partCount'+partNo).textContent = `${count}/${partQuestions.length}`;
+  });
+}
+
+function gradeAll(){
+  QUESTIONS.forEach(q => {
+    if(!state.done[q.id] && state.selected[q.id]) checkAnswer(q.id,true);
+  });
+  showScore();
+}
+
+function showScore(){
+  const wrong = state.answered - state.correct;
+  const unanswered = QUESTIONS.length - state.answered;
+  const pct = Math.round(state.correct / QUESTIONS.length * 100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('correctStat').textContent = state.correct;
+  document.getElementById('wrongStat').textContent = wrong;
+  document.getElementById('unansweredStat').textContent = unanswered;
+  let feedback = '';
+  if(unanswered > 0) feedback = `미응답 ${unanswered}문항이 있습니다. 선택한 문항만 채점했으며, 총 문항 기준 점수입니다.`;
+  else if(pct >= 90) feedback = '용역 공급·가공 구분·무상공급 특례를 안정적으로 구분하고 있습니다.';
+  else if(pct >= 75) feedback = '기본 구조는 양호합니다. 건설업 특례와 특수관계인 무상임대 예외를 다시 확인하세요.';
+  else if(pct >= 60) feedback = '자가공급의 현행 미과세 이유와 타인 무상공급의 예외를 비교하여 복습하세요.';
+  else feedback = '법 제11조·제12조와 시행령 제25조·제26조를 일반공급 → 자가공급 → 무상공급 → 고용관계 순서로 다시 읽어보세요.';
+  document.getElementById('feedbackText').textContent = feedback;
+  const panel = document.getElementById('scorePanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleAllExplanations(){
+  state.allExplanations = !state.allExplanations;
+  document.querySelectorAll('.explanation').forEach(el => el.classList.toggle('show',state.allExplanations));
+  document.getElementById('toggleExplainBtn').textContent = state.allExplanations ? '해설 모두 숨기기' : '해설 모두 보기';
+}
+
+function toggleWrongOnly(force=false){
+  state.wrongOnly = force ? true : !state.wrongOnly;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById('card'+q.id);
+    const isWrong = state.done[q.id] && card.dataset.correct === 'false';
+    card.classList.toggle('hidden-filter', state.wrongOnly && !isWrong);
+  });
+  document.getElementById('wrongOnlyBtn').textContent = state.wrongOnly ? '전체 문제 보기' : '틀린 문제만 보기';
+  if(state.wrongOnly && !QUESTIONS.some(q=>state.done[q.id] && document.getElementById('card'+q.id).dataset.correct==='false')){
+    alert('현재 확인된 오답이 없습니다. 먼저 문항을 채점해주세요.');
+    state.wrongOnly = false;
+    QUESTIONS.forEach(q=>document.getElementById('card'+q.id).classList.remove('hidden-filter'));
+    document.getElementById('wrongOnlyBtn').textContent = '틀린 문제만 보기';
+  } else if(state.wrongOnly){
+    document.getElementById('quizRoot').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz(){
+  if(confirm('선택과 채점 결과를 모두 초기화할까요?')) location.reload();
+}
+
+renderQuiz();
+</script>
+</body>
+</html>
