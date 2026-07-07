@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제15조~제17조 | O/X 판단 퀴즈</title>
+<style>
+:root{
+  --bg:#f2f0eb;--surface:#fff;--surface2:#ece9e2;--border:#d5d0c7;
+  --primary:#1b3d6b;--accent:#9a4410;--green:#1c5030;--red:#7f1910;
+  --text:#111010;--text2:#373430;--muted:#666260;--gold:#d4cbaa;
+  --shadow:0 2px 10px rgba(0,0,0,.07);--shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --serif:Georgia,'Noto Serif KR','Batang',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;min-height:100vh}
+button{font:inherit}
+.header{background:var(--primary);color:#fff;padding:1.5rem 1.2rem 1.15rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.header-inner{max-width:980px;margin:0 auto;display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.badge-top{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .5rem;color:var(--gold)}
+.title{font-family:var(--serif);font-size:1.48rem;font-weight:700;line-height:1.3;margin-top:.25rem}
+.title span{font-family:var(--sans);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.78)}
+.subtitle{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.25rem}
+.score-box{margin-left:auto;text-align:right;min-width:82px}.score-label{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.09em}.score-value{font-family:var(--mono);font-size:1.48rem;color:var(--gold);font-weight:700}
+.progress-wrap{background:var(--primary);padding:0 1.2rem .72rem}.progress-track{max-width:980px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .3s ease}
+.container{max-width:980px;margin:0 auto;padding:1.35rem 1rem 4rem}
+.notice{background:#eef3ff;border:1.5px solid var(--primary);border-radius:10px;padding:.85rem 1rem;font-size:.79rem;color:#173761;margin:0 0 1rem}.notice strong{color:var(--primary)}
+.toolbar{display:flex;gap:.48rem;flex-wrap:wrap;margin:.85rem 0 1.2rem}.tool-btn{border:1px solid var(--border);background:#fff;color:var(--text2);padding:.42rem .72rem;border-radius:7px;cursor:pointer;font-size:.74rem}.tool-btn:hover{border-color:var(--primary);color:var(--primary)}.tool-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.tool-btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem}.toc h2{font-family:var(--serif);font-size:.95rem;color:var(--primary);margin-bottom:.5rem}.toc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.toc-links.four{grid-template-columns:repeat(4,1fr)}.toc a{text-decoration:none;color:var(--text2);border:1px solid var(--border);border-radius:7px;padding:.52rem .65rem;font-size:.75rem;background:#faf9f6}.toc a:hover{border-color:var(--primary);color:var(--primary)}.toc a b{display:block;color:var(--primary);font-size:.78rem}
+details.study{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:1rem;box-shadow:var(--shadow)}details.study summary{cursor:pointer;padding:.76rem 1rem;font-weight:700;color:var(--primary);font-size:.82rem;list-style:none}details.study summary::-webkit-details-marker{display:none}details.study summary::after{content:'＋';float:right;font-family:var(--mono)}details.study[open] summary::after{content:'－'}details.study .inside{padding:0 1rem 1rem;font-size:.76rem;color:var(--text2)}
+.summary-table{width:100%;border-collapse:collapse;margin-top:.3rem;font-size:.73rem}.summary-table th,.summary-table td{border:1px solid #c8d6e8;padding:.35rem .44rem;text-align:center}.summary-table th{background:#e6eef9;color:var(--primary)}.summary-table td:first-child{text-align:left;font-weight:600}
+.section-header{display:flex;align-items:center;gap:.72rem;margin:2rem 0 .8rem;flex-wrap:wrap}.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:4px}.section-title{font-family:var(--serif);font-size:1.02rem;font-weight:700}.section-subtitle{font-size:.7rem;color:var(--muted)}.section-count{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}.section-rule{border:0;border-top:1.5px solid var(--border);margin-bottom:1rem}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.9rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,opacity .2s}.question-card:hover{box-shadow:var(--shadow-lg)}.question-card.hidden-filter{display:none}.question-head{padding:.84rem 1rem .65rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.7rem}.question-no{font-family:var(--mono);font-size:.68rem;font-weight:700;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#e4eef8;color:var(--primary);margin-top:1px}.question-text{font-size:.86rem;line-height:1.82;flex:1}.law-badge,.level-badge,.topic-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;padding:.08rem .35rem;border-radius:3px;vertical-align:middle;margin-right:.22rem}.law-badge{background:#eaf0f7;color:var(--primary);border:1px solid #c5d8ee}.level-badge{background:#fff3dc;color:#7a5700}.level-badge.a{background:#fdecea;color:var(--red)}.topic-badge{background:#e8f2eb;color:var(--green)}
+.question-body{padding:.62rem 1rem .75rem}.ox-row{display:flex;gap:.5rem}.ox-btn{border:1.5px solid var(--border);background:#fff;border-radius:7px;padding:.42rem 1.28rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .13s}.ox-btn:hover{border-color:var(--primary);color:var(--primary);background:#eaf0f7}.ox-btn.selected-o{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.selected-x{border-color:var(--red);background:#faf0ef;color:var(--red)}.ox-btn.correct{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.wrong{border-color:var(--red);background:#faf0ef;color:var(--red);opacity:.6}
+.answer-row{padding:0 1rem .78rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.check-btn{padding:.38rem .9rem;border:0;border-radius:5px;background:var(--primary);color:#fff;font-size:.74rem;font-weight:600;cursor:pointer}.check-btn:disabled{opacity:.35;cursor:default}.result-badge{display:none;font-size:.73rem;font-weight:600;padding:.24rem .58rem;border-radius:20px}.result-badge.show{display:inline-block}.result-badge.ok{background:#e4f2ea;color:var(--green)}.result-badge.ng{background:#faf0ef;color:var(--red)}
+.explanation{display:none;background:#fafaf7;border-top:1px solid var(--border);padding:.8rem 1rem;font-size:.78rem;color:var(--text2);line-height:1.9}.explanation.show{display:block}.ex-title{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem}.answer-line{font-weight:700;font-size:.81rem;margin-bottom:.22rem}.answer-line.o{color:var(--green)}.answer-line.x{color:var(--red)}.law-ref{display:inline-block;font-family:var(--mono);font-size:.67rem;color:var(--primary);background:#eaf0f7;padding:.1rem .38rem;border-radius:3px;margin-bottom:.35rem}.correction{background:#eef3ff;border-left:3px solid var(--primary);padding:.42rem .6rem;margin:.42rem 0}.trap{color:var(--red);font-style:italic;margin-top:.3rem}
+.global-actions{display:flex;justify-content:center;gap:.65rem;margin:1.6rem 0;flex-wrap:wrap}.action-btn{padding:.55rem 1.25rem;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer}.action-btn.primary{background:var(--accent);border:1px solid var(--accent);color:#fff}.action-btn.outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}.action-btn.outline:hover{background:var(--primary);color:#fff}
+.score-panel{display:none;background:#fff;border:1.5px solid var(--primary);border-radius:12px;padding:1.45rem 1.1rem;text-align:center;box-shadow:var(--shadow-lg);margin:1.6rem 0}.score-panel.show{display:block}.score-panel h2{font-family:var(--serif);font-size:1.1rem;color:var(--primary)}.grade{font-family:var(--mono);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;margin:.5rem 0}.score-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.7rem 0 1rem}.score-stats strong{display:block;font-family:var(--mono);font-size:1.25rem}.score-stats span{font-size:.65rem;color:var(--muted)}.feedback{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.source-box{margin-top:2rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;font-size:.72rem;color:var(--text2)}.source-box h3{font-family:var(--serif);color:var(--primary);font-size:.88rem;margin-bottom:.35rem}.source-box ul{padding-left:1.1rem}.source-box li{margin:.2rem 0}.caution{color:var(--red);margin-top:.45rem}
+.footer-note{text-align:center;font-size:.65rem;color:var(--muted);margin-top:1.4rem}
+@media(max-width:680px){.toc-links.four{grid-template-columns:1fr}.title{font-size:1.12rem}.score-box{margin-left:0}.container{padding:.9rem .68rem 3rem}.toc-links{grid-template-columns:1fr}.question-head{padding:.72rem .82rem .58rem}.question-body{padding:.58rem .82rem .68rem}.answer-row{padding:0 .82rem .7rem}.explanation{padding:.72rem .82rem}.summary-table{font-size:.65rem}.summary-table th,.summary-table td{padding:.28rem .22rem}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}.header{position:static;box-shadow:none;padding:.7cm .6cm;background:#fff;color:#000;border-bottom:2px solid #1b3d6b}.badge-top,.subtitle,.score-box,.progress-wrap,.toolbar,.global-actions,.check-btn,.ox-row,.result-badge{display:none!important}.title,.title span{color:#000}.container{max-width:none;padding:.4cm}.notice,.toc,details.study,.source-box{box-shadow:none}.question-card{box-shadow:none;break-inside:avoid;margin-bottom:.35cm}.explanation{display:block!important}.section-header{break-after:avoid}.score-panel{display:none!important}.question-head{padding:.3cm}.question-body,.answer-row{display:none}.source-box{break-inside:avoid}.law-badge,.level-badge,.topic-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.toc-links.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:840px){.toc-links.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.toc-links.five{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div>
+      <span class="badge-top">세무사 1차 · 세법학개론 · 2027 대비</span>
+      <div class="title">부가가치세법 제15조~제17조<br><span>재화·용역의 공급시기 및 선발급 특례 O/X 퀴즈</span></div>
+      <div class="subtitle">법률 2026.1.2. · 시행령 2026.2.27. · 시행규칙 2026.3.20. 시행본 기준 · 총 50문항</div>
+    </div>
+    <div class="score-box"><div class="score-label">SCORE</div><div class="score-value" id="scoreValue">–</div></div>
+  </div>
+</header>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+<main class="container">
+  <div class="notice"><strong>판단 순서:</strong> ① 재화인가 용역인가 → ② 기본 공급시기(인도·이용가능·완료·사용)를 잡는다 → ③ 장기할부·완성도기준·중간지급·계속공급 등 거래유형별 특례를 적용한다 → ④ 정상 공급시기 전 세금계산서·영수증을 발급했다면 제17조의 대가 수령, 7일, 30일, 같은 과세기간 및 시행령 제30조 요건을 검토한다. 모든 문항은 현행 법령을 바탕으로 만든 자체 제작 문제이며 실제 기출문제가 아닙니다.</div>
+  <nav class="toc" aria-label="목차">
+    <h2>목차</h2>
+    <div class="toc-links five">
+      <a href="#part1"><b>Part 1</b>제15조 기본</a>
+      <a href="#part2"><b>Part 2</b>재화 특례</a>
+      <a href="#part3"><b>Part 3</b>제16조 용역</a>
+      <a href="#part4"><b>Part 4</b>숫자 요건</a>
+      <a href="#part5"><b>Part 5</b>제17조 특례</a>
+    </div>
+  </nav>
+  <details class="study" open>
+    <summary>핵심 구조표 펼치기·접기</summary>
+    <div class="inside">
+      <table class="summary-table">
+        <thead><tr><th>구분</th><th>원칙적 공급시기</th><th>시험 함정</th></tr></thead>
+        <tbody>
+          <tr><td>이동이 필요한 재화</td><td>인도되는 때</td><td>계약일·대금일과 구별</td></tr>
+          <tr><td>이동이 필요 없는 재화</td><td>이용가능하게 되는 때</td><td>등기일로 일률 판단 금지</td></tr>
+          <tr><td>일반 할부</td><td>인도·이용가능 시점</td><td>장기할부와 구별</td></tr>
+          <tr><td>장기할부</td><td>각 대가 부분을 받기로 한 때</td><td>인도·완료 후 지급분도 앞당기지 않음</td></tr>
+          <tr><td>완성도·중간지급</td><td>각 대가 부분을 받기로 한 때</td><td>인도·완료 후 지급분은 인도·완료일</td></tr>
+          <tr><td>용역 기본</td><td>역무 완료 또는 시설·권리 사용</td><td>분할·계속공급 특례 추가 검토</td></tr>
+        </tbody>
+      </table>
+      <br>
+      <table class="summary-table">
+        <thead><tr><th>제17조 유형</th><th>핵심 요건</th><th>발급일을 공급시기로 보는가</th></tr></thead>
+        <tbody>
+          <tr><td>제1항</td><td>정상 공급시기 전 대가 수령 + 그 대가에 증빙 발급</td><td>예</td></tr>
+          <tr><td>제2항</td><td>선발급 후 7일 이내 대가 수령</td><td>예</td></tr>
+          <tr><td>제3항 제1호</td><td>계약상 청구·지급시기 별도 기재 + 30일 이내</td><td>예</td></tr>
+          <tr><td>제3항 제2호</td><td>정상 공급시기가 같은 과세기간 내 도래</td><td>예</td></tr>
+          <tr><td>조기환급 예외</td><td>정상 공급시기가 선발급일부터 30일 이내 도래</td><td>예</td></tr>
+          <tr><td>제4항·영 제30조</td><td>장기할부·계속공급·일정 외국항행용역</td><td>예</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:.7rem"><b>기출 포인트:</b> 2025년 제62회 세무사 1차 세법학개론 77번은 장기할부조건부 용역의 완료 후 지급분을 완료일로 앞당긴다는 지문을 틀린 것으로 출제했고, 공식 최종정답은 ④였습니다. 완료 후 지급분을 앞당기는 단서는 완성도기준과 중간지급조건부에만 적용됩니다.</p>
+    </div>
+  </details>
+  <div class="toolbar">
+    <button class="tool-btn primary" onclick="gradeAll()">전체 채점</button>
+    <button class="tool-btn" onclick="toggleAllExplanations()" id="toggleExplainBtn">해설 모두 보기</button>
+    <button class="tool-btn" onclick="toggleWrongOnly()" id="wrongOnlyBtn">틀린 문제만 보기</button>
+    <button class="tool-btn" onclick="window.print()">인쇄</button>
+    <button class="tool-btn accent" onclick="resetQuiz()">다시 풀기</button>
+  </div>
+  <div id="quizRoot"></div>
+  <div class="global-actions">
+    <button class="action-btn primary" onclick="gradeAll()">전체 채점 및 결과 보기</button>
+    <button class="action-btn outline" onclick="toggleAllExplanations()">전체 해설 펼치기</button>
+    <button class="action-btn outline" onclick="resetQuiz()">처음부터 다시 풀기</button>
+  </div>
+  <section class="score-panel" id="scorePanel" aria-live="polite">
+    <h2>학습 결과</h2>
+    <div class="grade" id="gradeText">0%</div>
+    <div class="score-stats">
+      <div><strong id="correctStat">0</strong><span>정답</span></div>
+      <div><strong id="wrongStat">0</strong><span>오답</span></div>
+      <div><strong id="unansweredStat">0</strong><span>미응답</span></div>
+    </div>
+    <div class="feedback" id="feedbackText"></div>
+    <button class="action-btn outline" onclick="toggleWrongOnly(true)">오답만 복습하기</button>
+  </section>
+  <section class="source-box">
+    <h3>근거 및 검증 기준</h3>
+    <ul>
+      <li>부가가치세법 제15조~제17조: 법률 제21065호, 2026.1.2. 시행본.</li>
+      <li>부가가치세법 시행령 제28조~제30조: 대통령령 제36133호, 2026.2.27. 시행본.</li>
+      <li>부가가치세법 시행규칙 제17조~제20조: 재정경제부령 제9호, 2026.3.20. 시행본.</li>
+      <li>업로드된 2025년 제62회 세무사 1차 시험지 및 공식 최종정답의 세법학개론 77번을 기출 함정 분석에 반영함.</li>
+      <li>문항은 모두 자체 제작 문제이며 실제 기출문제를 그대로 수록한 것이 아님.</li>
+    </ul>
+    <p class="caution">※ 2027년 세무사 시험의 적용 법령 기준일은 향후 시험 시행계획과 출제기준을 별도로 확인해야 합니다. 이 파일은 2026년 7월 7일 현재 시행 중인 관련 법령을 기준으로 합니다.</p>
+  </section>
+  <div class="footer-note">부가가치세법 제15조~제17조 · 자체 제작 O/X 학습자료</div>
+</main>
+<script>
+const QUESTIONS = [{"id":1,"part":1,"law":"법 §15①1","answer":"O","level":"A급","tag":"이동 필요","text":"재화의 이동이 필요한 경우에는 재화가 인도되는 때가 공급시기이다.","explanation":"법 제15조 제1항 제1호의 원칙입니다. 재화를 옮겨야 하는 거래에서는 <b>인도되는 때</b>를 먼저 찾습니다.","correction":"","trap":"대금 수령일이나 계약일을 자동으로 공급시기로 잡지 마세요."},{"id":2,"part":1,"law":"법 §15①1","answer":"X","level":"A급","tag":"대금 수령","text":"재화의 이동이 필요한 모든 거래에서는 대금을 전부 받은 때가 공급시기이다.","explanation":"이동이 필요한 재화의 기본 공급시기는 대금 수령일이 아니라 재화가 인도되는 때입니다. 다만 법 제17조의 선발급 특례 등 별도 규정이 적용되는지는 추가로 확인합니다.","correction":"올바른 문장: 재화의 이동이 필요한 경우에는 원칙적으로 재화가 인도되는 때가 공급시기이다.","trap":"기본 원칙과 법 제17조 특례를 섞지 마세요."},{"id":3,"part":1,"law":"법 §15①2","answer":"O","level":"A급","tag":"이동 불필요","text":"재화의 이동이 필요하지 않은 경우에는 재화가 이용가능하게 되는 때가 공급시기이다.","explanation":"법 제15조 제1항 제2호는 이동이 필요하지 않은 재화의 공급시기를 <b>이용가능하게 되는 때</b>로 정합니다.","correction":"","trap":"등기일·계약일만 보고 판단하지 말고 실제 이용가능 시점을 확인하세요."},{"id":4,"part":1,"law":"법 §15①2","answer":"X","level":"A급","tag":"소유권 이전","text":"재화의 이동이 필요하지 않은 경우에는 언제나 소유권이전등기를 마친 때가 공급시기이다.","explanation":"법은 일률적으로 등기일을 공급시기로 정하지 않고, 재화가 <b>이용가능하게 되는 때</b>를 기준으로 합니다.","correction":"올바른 문장: 재화의 이동이 필요하지 않은 경우에는 재화가 이용가능하게 되는 때가 공급시기이다.","trap":"민법상 권리변동 시점과 부가가치세법상 공급시기를 동일시하지 마세요."},{"id":5,"part":1,"law":"법 §15①3","answer":"O","level":"A급","tag":"보충 기준","text":"인도시기나 이용가능 시기를 적용할 수 없는 경우에는 재화의 공급이 확정되는 때가 공급시기이다.","explanation":"제15조 제1항 제1호와 제2호를 적용할 수 없을 때 사용하는 보충 기준이 <b>공급이 확정되는 때</b>입니다.","correction":"","trap":"제3호는 제1호·제2호보다 먼저 적용하는 일반 기준이 아닙니다."},{"id":6,"part":1,"law":"영 §28①1","answer":"O","level":"A급","tag":"현금·외상·할부","text":"현금판매·외상판매 또는 일반적인 할부판매의 공급시기는 재화가 인도되거나 이용가능하게 되는 때이다.","explanation":"시행령 제28조 제1항 표 제1호의 내용입니다. 일반 할부판매는 장기할부판매와 달리 각 할부금 지급기일을 공급시기로 보지 않습니다.","correction":"","trap":"일반 할부와 장기할부를 반드시 구분하세요."},{"id":7,"part":1,"law":"영 §28①1","answer":"X","level":"A급","tag":"일반 할부","text":"일반적인 할부판매는 각 할부금을 받기로 한 때마다 재화가 공급된 것으로 본다.","explanation":"각 대가 부분을 받기로 한 때를 공급시기로 보는 것은 시행규칙상 요건을 갖춘 <b>장기할부판매</b> 등의 특례입니다. 일반 할부판매는 인도 또는 이용가능 시점입니다.","correction":"올바른 문장: 일반 할부판매의 공급시기는 재화가 인도되거나 이용가능하게 되는 때이다.","trap":"문제에서 ‘할부’인지 ‘장기할부’인지 먼저 표시하세요."},{"id":8,"part":1,"law":"영 §28①2","answer":"O","level":"B급","tag":"상품권","text":"상품권을 판매한 뒤 그 상품권이 현물과 교환되는 경우에는 재화가 실제로 인도되는 때가 공급시기이다.","explanation":"상품권 자체의 판매시점이 아니라 상품권과 현물이 교환되어 <b>재화가 실제 인도되는 때</b>가 공급시기입니다.","correction":"","trap":"상품권 발행·판매와 현물 재화의 공급을 구분하세요."},{"id":9,"part":1,"law":"영 §28①2","answer":"X","level":"B급","tag":"상품권 판매","text":"상품권을 현금으로 판매하면 아직 현물과 교환되지 않았더라도 상품권 판매일이 해당 재화의 공급시기이다.","explanation":"시행령은 상품권 등이 나중에 현물과 교환되는 거래에서 재화가 실제로 인도되는 때를 공급시기로 정합니다.","correction":"올바른 문장: 상품권 등이 현물과 교환되는 경우에는 재화가 실제로 인도되는 때가 공급시기이다.","trap":"상품권 판매대금 수령일을 현물 공급시기로 착각하지 마세요."},{"id":10,"part":1,"law":"영 §28②","answer":"O","level":"A급","tag":"조건부·기한부","text":"반환조건부·동의조건부 등 조건부 판매와 기한부 판매는 조건이 성취되거나 기한이 지나 판매가 확정되는 때가 공급시기이다.","explanation":"조건부·기한부 판매는 판매 확정 전에는 공급이 확정되지 않았으므로, 조건 성취 또는 기한 경과로 <b>판매가 확정되는 때</b>를 봅니다.","correction":"","trap":"물건을 먼저 넘겼다는 사실만으로 공급시기를 확정하지 마세요."},{"id":11,"part":2,"law":"영 §28③1","answer":"O","level":"A급","tag":"장기할부 재화","text":"장기할부판매로 재화를 공급하는 경우에는 원칙적으로 대가의 각 부분을 받기로 한 때가 공급시기이다.","explanation":"시행령 제28조 제3항 제1호의 원칙입니다. 실제 수령일이 아니라 계약상 <b>받기로 한 때</b>를 기준으로 합니다.","correction":"","trap":"‘받은 때’가 아니라 ‘받기로 한 때’입니다."},{"id":12,"part":2,"law":"영 §28③ 단서","answer":"X","level":"A급","tag":"장기할부 완료 후 지급","text":"장기할부판매에서는 인도일 이후 받기로 한 모든 할부금의 공급시기를 인도일로 앞당긴다.","explanation":"인도일 이후 지급분을 인도일로 앞당기는 단서는 완성도기준지급조건부와 중간지급조건부에만 적용됩니다. 장기할부판매는 계속 각 지급약정일이 공급시기입니다.","correction":"올바른 문장: 장기할부판매는 인도일 이후 지급분도 원칙적으로 각 대가 부분을 받기로 한 때가 공급시기이다.","trap":"2025년 기출과 동일한 핵심 함정입니다."},{"id":13,"part":2,"law":"영 §28③2·단서","answer":"O","level":"A급","tag":"완성도기준 재화","text":"완성도기준지급조건부 재화의 대가 중 인도일 이후 받기로 한 부분은 인도일을 공급시기로 본다.","explanation":"원칙은 각 대가 부분을 받기로 한 때이지만, 인도일 이후 지급약정분은 시행령 제28조 제3항 단서에 따라 <b>인도일</b>로 앞당겨집니다.","correction":"","trap":"단서 적용 대상은 제2호와 제3호입니다."},{"id":14,"part":2,"law":"영 §28③3·단서","answer":"O","level":"A급","tag":"중간지급 재화","text":"중간지급조건부 재화의 대가 중 재화가 이용가능하게 된 날 이후 받기로 한 부분은 그 이용가능하게 된 날을 공급시기로 본다.","explanation":"중간지급조건부는 제28조 제3항 제3호이므로 단서가 적용됩니다. 인도 또는 이용가능일 이후 지급약정분은 그 인도·이용가능일이 공급시기입니다.","correction":"","trap":"장기할부에는 같은 단서가 적용되지 않습니다."},{"id":15,"part":2,"law":"영 §28③4","answer":"O","level":"A급","tag":"계속 공급 재화","text":"전력처럼 공급단위를 구획할 수 없는 재화를 계속 공급하는 경우에는 대가의 각 부분을 받기로 한 때가 공급시기이다.","explanation":"시행령 제28조 제3항 제4호는 계속적으로 공급되는 구획 불가능 재화의 공급시기를 각 지급약정일로 정합니다.","correction":"","trap":"계량기 검침일 등 사실관계가 지급약정일을 정하는 자료가 될 수 있습니다."},{"id":16,"part":2,"law":"영 §28⑤","answer":"X","level":"B급","tag":"무인판매기","text":"무인판매기를 이용하여 재화를 공급하는 경우에는 소비자가 무인판매기에 현금을 넣는 때마다 공급시기가 성립한다.","explanation":"시행령 제28조 제5항은 소비자의 개별 투입 시점이 아니라 사업자가 무인판매기에서 현금을 꺼내는 때를 공급시기로 정합니다.","correction":"올바른 문장: 무인판매기를 이용한 재화 공급은 사업자가 무인판매기에서 현금을 꺼내는 때가 공급시기이다.","trap":"소비자의 현금 투입 시점과 사업자의 현금 인출 시점을 바꾸지 마세요."},{"id":17,"part":2,"law":"영 §28⑥1","answer":"X","level":"B급","tag":"직수출","text":"내국물품을 외국으로 반출하는 일반적인 수출재화의 공급시기는 수출신고가 수리된 날이다.","explanation":"시행령 제28조 제6항 표 제1호는 일반적인 수출재화의 공급시기를 수출신고 수리일이 아니라 <b>선적일 또는 기적일</b>로 정합니다.","correction":"올바른 문장: 일반적인 수출재화의 공급시기는 수출재화의 선적일 또는 기적일이다.","trap":"수출신고 수리일과 선적일을 혼동하지 마세요."},{"id":18,"part":2,"law":"영 §28⑥2","answer":"X","level":"B급","tag":"원양어업","text":"원양어업으로 공급하는 수출재화는 언제나 선적일이 공급시기이다.","explanation":"원양어업의 공급시기는 수출재화의 <b>공급가액이 확정되는 때</b>입니다.","correction":"올바른 문장: 원양어업의 경우 수출재화의 공급가액이 확정되는 때가 공급시기이다.","trap":"수출은 모두 선적일이라는 식의 일괄 암기를 피하세요."},{"id":19,"part":2,"law":"영 §28⑦","answer":"O","level":"B급","tag":"보세구역 공급","text":"보세구역 안에서 보세구역 밖의 국내로 재화를 공급하는 거래가 재화의 수입에 해당하면 수입신고 수리일이 공급시기이다.","explanation":"시행령 제28조 제7항은 보세구역 내 공급이 수입에 해당하는 경우의 공급시기를 <b>수입신고 수리일</b>로 정합니다.","correction":"","trap":"보세구역 거래에서는 국내 공급과 수입의 관계를 함께 보세요."},{"id":20,"part":2,"law":"영 §28⑨","answer":"O","level":"A급","tag":"폐업 전 공급","text":"폐업 전에 공급한 재화의 원래 공급시기가 폐업일 이후에 도래하면 폐업일을 공급시기로 본다.","explanation":"폐업 후까지 공급시기를 미루지 않도록 시행령 제28조 제9항이 폐업일로 앞당깁니다.","correction":"","trap":"폐업 시 잔존재화의 공급시기와 폐업 전 공급한 재화의 특례를 구별하세요."},{"id":21,"part":3,"law":"법 §16①1","answer":"X","level":"A급","tag":"역무 완료","text":"역무를 제공하는 용역은 역무 제공에 착수한 때가 기본 공급시기이다.","explanation":"법 제16조 제1항 제1호는 역무의 제공이 <b>완료되는 때</b>를 기본 공급시기로 정합니다.","correction":"올바른 문장: 역무를 제공하는 용역의 기본 공급시기는 역무의 제공이 완료되는 때이다.","trap":"착수일과 완료일을 바꾸는 지문을 주의하세요."},{"id":22,"part":3,"law":"법 §16①2","answer":"O","level":"A급","tag":"재화 사용","text":"시설물이나 권리 등 재화를 사용하게 하는 용역은 그 재화가 사용되는 때가 기본 공급시기이다.","explanation":"법 제16조 제1항 제2호는 시설물·권리 등의 사용용역을 실제 사용 시점에 연결합니다.","correction":"","trap":"재화의 소유권 이전이 아니라 사용하게 하는 용역입니다."},{"id":23,"part":3,"law":"영 §29①1","answer":"O","level":"A급","tag":"장기할부 용역","text":"장기할부조건부로 용역을 공급하면 원칙적으로 대가의 각 부분을 받기로 한 때가 공급시기이다.","explanation":"시행령 제29조 제1항 제1호의 원칙입니다. 시행규칙 제19조의 장기할부 요건을 충족해야 합니다.","correction":"","trap":"실제 받은 때와 받기로 한 때를 구분하세요."},{"id":24,"part":3,"law":"영 §29① 단서","answer":"X","level":"A급","tag":"장기할부 완료 후 지급","text":"장기할부조건부 용역은 용역 제공 완료일 이후 받기로 한 대가의 부분을 모두 용역 제공 완료일의 공급으로 본다.","explanation":"완료일 이후 지급약정분을 완료일로 앞당기는 단서는 완성도기준지급조건부와 중간지급조건부에만 적용됩니다. 장기할부조건부 용역은 해당하지 않습니다.","correction":"올바른 문장: 장기할부조건부 용역은 완료일 이후 지급분도 원칙적으로 각 대가 부분을 받기로 한 때가 공급시기이다.","trap":"2025년 제62회 세무사 1차 세법학개론 77번의 오답 지문 핵심입니다."},{"id":25,"part":3,"law":"영 §29①2·단서","answer":"O","level":"A급","tag":"완성도기준 용역","text":"완성도기준지급조건부 용역에서 역무 완료일 이후 받기로 한 대가의 부분은 역무 완료일을 공급시기로 본다.","explanation":"시행령 제29조 제1항 제2호에는 단서가 적용되므로 완료 후 지급분이 완료일로 앞당겨집니다.","correction":"","trap":"장기할부와 달리 완료 후 지급분을 완료일로 모읍니다."},{"id":26,"part":3,"law":"영 §29①3·단서","answer":"O","level":"A급","tag":"중간지급 용역","text":"중간지급조건부 용역에서 역무 완료일 이후 받기로 한 대가의 부분은 역무 완료일이 공급시기이다.","explanation":"중간지급조건부 용역은 제29조 제1항 제3호로서 단서의 적용 대상입니다.","correction":"","trap":"완료 전 지급분은 각 지급약정일, 완료 후 지급분은 완료일입니다."},{"id":27,"part":3,"law":"영 §29①4","answer":"O","level":"A급","tag":"계속 공급 용역","text":"공급단위를 구획할 수 없는 용역을 계속적으로 공급하는 경우에는 대가의 각 부분을 받기로 한 때가 공급시기이다.","explanation":"계속적이고 공급단위를 구획할 수 없는 용역은 시행령 제29조 제1항 제4호에 따라 지급약정일별로 공급시기가 성립합니다.","correction":"","trap":"모든 계속적 용역이 아니라 공급단위를 구획할 수 없는 용역입니다."},{"id":28,"part":3,"law":"영 §29②1","answer":"X","level":"B급","tag":"공급가액 확정","text":"역무 완료일이나 대가 지급약정일을 공급시기로 볼 수 없는 경우에는 역무 제공이 완료되기만 하면 공급가액이 확정되지 않아도 그 완료일이 공급시기이다.","explanation":"시행령 제29조 제2항 제1호는 역무 제공의 완료뿐 아니라 <b>공급가액의 확정</b>까지 요구합니다.","correction":"올바른 문장: 역무 제공이 완료되고 그 공급가액이 확정되는 때가 공급시기이다.","trap":"완료와 공급가액 확정은 누적 요건입니다."},{"id":29,"part":3,"law":"영 §29②2","answer":"O","level":"B급","tag":"부동산 임대 특례","text":"임대보증금 간주임대료 등 시행령이 정한 부동산 임대용역의 공급시기는 예정신고기간 또는 과세기간의 종료일이다.","explanation":"시행령 제29조 제2항 제2호의 특례입니다. 법 제29조 제10항 관련 임대용역 등은 기간 종료일별로 공급시기를 정합니다.","correction":"","trap":"일반 월세 지급약정일과 간주임대료 등 기간 안분 특례를 구분하세요."},{"id":30,"part":3,"law":"영 §29②3","answer":"O","level":"B급","tag":"선불 계속용역","text":"연회비를 미리 받고 둘 이상의 과세기간에 걸쳐 스포츠시설을 계속 이용하게 하는 경우에는 예정신고기간 또는 과세기간 종료일별로 공급시기가 성립한다.","explanation":"시행령 제29조 제2항 제3호 가목의 대표 사례입니다. 선불금 전액 수령일에 전 기간 용역이 한꺼번에 공급된 것으로 보지 않습니다.","correction":"","trap":"선불 수령과 기간별 공급시기를 구분하세요."},{"id":31,"part":4,"law":"규칙 §17 1","answer":"O","level":"A급","tag":"장기할부 횟수","text":"장기할부판매가 되려면 대가를 2회 이상으로 분할하여 받아야 한다.","explanation":"시행규칙 제17조 제1호의 요건입니다. 다른 기간 요건도 함께 충족해야 합니다.","correction":"","trap":"‘2회 초과’가 아니라 ‘2회 이상’입니다."},{"id":32,"part":4,"law":"규칙 §17 1","answer":"X","level":"A급","tag":"3회 이상","text":"대가를 3회 이상으로 분할하여야만 장기할부판매에 해당한다.","explanation":"법정 요건은 2회 이상 분할입니다.","correction":"올바른 문장: 장기할부판매는 대가를 2회 이상으로 분할하여 받는 요건을 갖추어야 한다.","trap":"이상·초과 숫자 표현을 정확히 보세요."},{"id":33,"part":4,"law":"규칙 §17 2","answer":"O","level":"A급","tag":"장기할부 기간","text":"장기할부판매는 재화 인도일의 다음 날부터 최종 할부금 지급기일까지의 기간이 1년 이상이어야 한다.","explanation":"기간의 기산점은 계약일이 아니라 <b>인도일의 다음 날</b>입니다.","correction":"","trap":"인도일까지 받은 계약금·중도금 때문에 총 계약기간만 보고 판단하지 마세요."},{"id":34,"part":4,"law":"규칙 §17 2","answer":"X","level":"A급","tag":"계약일부터 1년","text":"계약일부터 최종 할부금 지급기일까지 1년 이상이면 인도 후 기간과 관계없이 장기할부판매이다.","explanation":"법정 기간은 재화 인도일의 다음 날부터 최종 할부금 지급기일까지 계산합니다.","correction":"올바른 문장: 재화 인도일의 다음 날부터 최종 할부금 지급기일까지의 기간이 1년 이상이어야 한다.","trap":"계약일과 인도일을 바꾸는 숫자 함정입니다."},{"id":35,"part":4,"law":"규칙 §19","answer":"O","level":"A급","tag":"장기할부 용역 요건","text":"장기할부조건부 용역도 2회 이상 분할 지급과 용역 완료 다음 날부터 최종 할부금 지급기일까지 1년 이상이라는 요건을 모두 갖추어야 한다.","explanation":"시행규칙 제19조는 재화의 장기할부와 유사한 구조를 용역 완료일 기준으로 규정합니다.","correction":"","trap":"재화는 인도일, 용역은 제공 완료일을 기준으로 합니다."},{"id":36,"part":4,"law":"규칙 §18 1·§20 1","answer":"O","level":"A급","tag":"중간지급 6개월","text":"일반적인 중간지급조건부 거래는 계약금 지급약정일 다음 날부터 인도·이용가능일 또는 용역 완료일까지 6개월 이상이어야 한다.","explanation":"재화는 시행규칙 제18조, 용역은 제20조의 요건입니다. 그 기간 내에 계약금 외 대가를 분할하여 받는 요건도 필요합니다.","correction":"","trap":"6개월 계산의 출발점은 계약체결일이 아니라 계약금을 받기로 한 날의 다음 날입니다."},{"id":37,"part":4,"law":"규칙 §18 1·§20 1","answer":"X","level":"A급","tag":"6개월 초과","text":"중간지급조건부 거래는 해당 기간이 6개월을 초과해야 하므로 정확히 6개월인 거래는 제외된다.","explanation":"규정은 6개월 <b>이상</b>을 요구하므로 정확히 6개월인 경우도 기간 요건을 충족할 수 있습니다.","correction":"올바른 문장: 중간지급조건부 거래의 기간 요건은 6개월 이상이다.","trap":"‘이상’은 경계값을 포함합니다."},{"id":38,"part":4,"law":"규칙 §18 1·§20 1","answer":"O","level":"A급","tag":"계약금 외 분할","text":"일반적인 중간지급조건부 거래가 되려면 6개월 이상인 해당 기간 안에 계약금 외의 대가를 분할하여 받아야 한다.","explanation":"기간 요건만으로 충분하지 않고, 그 기간 내에 계약금 외 대가의 분할 지급이 있어야 합니다.","correction":"","trap":"계약금과 잔금만 있는 거래가 자동으로 중간지급조건부가 되는 것은 아닙니다."},{"id":39,"part":4,"law":"규칙 §18 1","answer":"X","level":"A급","tag":"계약금·잔금만","text":"계약금 지급약정일부터 인도일까지 6개월 이상이면 중간에 다른 지급액이 없어도 언제나 중간지급조건부 재화 공급이다.","explanation":"일반 유형은 그 기간 안에 <b>계약금 외의 대가를 분할</b>하여 받는 요건이 필요합니다.","correction":"올바른 문장: 일반적인 중간지급조건부 재화 공급은 6개월 이상 기간 요건과 그 기간 내 계약금 외 대가 분할 요건을 갖추어야 한다.","trap":"기간만 확인하고 지급 구조를 빠뜨리지 마세요."},{"id":40,"part":4,"law":"규칙 §18 2·3, §20 2·3","answer":"O","level":"B급","tag":"국고·지방 선금","text":"국고금 관리법에 따라 경비를 미리 지급받거나 지방회계법에 따라 선금급을 지급받는 경우도 시행규칙상 중간지급조건부 거래 유형에 포함된다.","explanation":"시행규칙 제18조와 제20조는 일반적인 6개월 유형 외에 국고금 경비 선지급과 지방회계 선금급을 별도 유형으로 열거합니다.","correction":"","trap":"중간지급조건부의 유형이 6개월 요건 하나뿐이라고 외우지 마세요."},{"id":41,"part":5,"law":"법 §17①","answer":"O","level":"A급","tag":"대가 선취+증빙","text":"정상 공급시기 전에 대가의 전부 또는 일부를 받고 그 받은 대가에 대해 세금계산서나 영수증을 발급하면 그 발급 때를 공급시기로 본다.","explanation":"법 제17조 제1항은 <b>대가 수령</b>과 <b>그 대가에 대한 세금계산서·영수증 발급</b>을 함께 요구합니다.","correction":"","trap":"대가 수령만 있거나 증빙 발급만 있는 경우와 구분하세요."},{"id":42,"part":5,"law":"법 §17①","answer":"X","level":"A급","tag":"증빙만 선발급","text":"정상 공급시기 전에 세금계산서를 발급하기만 하면 대가를 받지 않았더라도 언제나 그 발급일이 공급시기가 된다.","explanation":"제17조 제1항은 대가 수령을 요구합니다. 대가 없이 선발급한 경우에는 제2항·제3항·제4항의 별도 요건을 검토해야 합니다.","correction":"올바른 문장: 정상 공급시기 전에 대가를 받고 그 받은 대가에 대해 세금계산서 또는 영수증을 발급하면 그 발급 때를 공급시기로 본다.","trap":"제1항과 제2항 이하의 구조를 분리하세요."},{"id":43,"part":5,"law":"법 §17②","answer":"O","level":"A급","tag":"7일 이내","text":"정상 공급시기 전에 세금계산서를 발급하고 발급일부터 7일 이내에 대가를 받으면 세금계산서 발급 때를 공급시기로 본다.","explanation":"제17조 제2항의 기본 선발급 특례입니다. 여기서는 세금계산서 발급이 먼저이고 대가 수령이 뒤따릅니다.","correction":"","trap":"7일 이내에는 7일째도 포함됩니다."},{"id":44,"part":5,"law":"법 §17③","answer":"X","level":"A급","tag":"7일 경과","text":"세금계산서 발급일부터 7일이 지난 뒤 대가를 받으면 어떠한 경우에도 발급 때를 공급시기로 볼 수 없다.","explanation":"7일이 지나도 제17조 제3항 제1호 또는 제2호의 요건을 충족하면 발급 때를 공급시기로 봅니다.","correction":"올바른 문장: 7일이 지난 뒤 대가를 받더라도 법 제17조 제3항의 예외 요건을 충족하면 세금계산서 발급 때를 공급시기로 본다.","trap":"‘어떠한 경우에도’ 같은 절대 표현을 경계하세요."},{"id":45,"part":5,"law":"법 §17③1","answer":"O","level":"A급","tag":"30일 계약","text":"계약서 등에 대금 청구시기와 지급시기를 따로 적고 두 시기 사이가 30일 이내이면 7일 후 대가를 받아도 선발급 세금계산서 발급 때가 공급시기가 될 수 있다.","explanation":"제17조 제3항 제1호의 요건입니다. 대금 청구시기는 세금계산서 발급일을 뜻합니다.","correction":"","trap":"계약서·약정서 기재와 30일 이내 요건을 모두 확인하세요."},{"id":46,"part":5,"law":"법 §17③1","answer":"X","level":"A급","tag":"30일 미만","text":"청구시기와 지급시기 사이가 30일 미만이어야 하므로 정확히 30일이면 선발급 특례가 적용되지 않는다.","explanation":"법은 30일 <b>이내</b>라고 규정하므로 정확히 30일도 포함됩니다.","correction":"올바른 문장: 청구시기와 지급시기 사이의 기간이 30일 이내이면 제17조 제3항 제1호 요건을 충족할 수 있다.","trap":"‘이내’는 경계일을 포함합니다."},{"id":47,"part":5,"law":"법 §17③2","answer":"O","level":"A급","tag":"같은 과세기간","text":"정상 공급시기가 세금계산서 발급일이 속하는 과세기간 안에 도래하면, 원칙적으로 7일 후 대가를 받아도 발급 때를 공급시기로 볼 수 있다.","explanation":"제17조 제3항 제2호 본문의 요건입니다. 다만 공급받는 자가 조기환급을 받은 경우에는 별도의 30일 제한이 적용됩니다.","correction":"","trap":"일반 경우와 조기환급 경우를 분리하세요."},{"id":48,"part":5,"law":"법 §17③2","answer":"X","level":"A급","tag":"조기환급","text":"공급받는 자가 조기환급을 받은 경우에도 정상 공급시기가 같은 과세기간 안에만 도래하면 선발급일부터 몇 개월 뒤라도 제17조 제3항 제2호가 적용된다.","explanation":"조기환급을 받은 경우에는 정상 공급시기가 세금계산서 발급일부터 <b>30일 이내</b>에 도래해야 합니다.","correction":"올바른 문장: 조기환급을 받은 경우에는 정상 공급시기가 세금계산서 발급일부터 30일 이내에 도래해야 한다.","trap":"조기환급은 같은 과세기간 기준보다 엄격한 30일 기준입니다."},{"id":49,"part":5,"law":"법 §17④·영 §30","answer":"O","level":"B급","tag":"제4항 대상","text":"법 제17조 제4항의 시행령상 대상에는 장기할부 재화·용역, 구획할 수 없는 계속공급 재화·용역 및 일정한 외국항행용역이 포함된다.","explanation":"시행령 제30조는 네 유형을 열거합니다. 외국항행용역은 선하증권으로 거래가 확인되고 정상 공급시기가 선하증권 발행일부터 90일 이내인 경우로 한정됩니다.","correction":"","trap":"제4항은 모든 분할지급 거래를 포괄하지 않습니다."},{"id":50,"part":5,"law":"영 §30","answer":"X","level":"A급","tag":"완성도·중간지급","text":"완성도기준지급조건부와 중간지급조건부 거래도 시행령 제30조에 명시되어 있으므로 정상 공급시기 전에 세금계산서만 발급하면 언제나 발급일이 공급시기이다.","explanation":"시행령 제30조는 장기할부, 구획 불가능 계속공급, 일정한 외국항행용역을 열거하며 완성도기준·중간지급조건부를 포함하지 않습니다. 또한 법 제17조 다른 항의 요건이 충족되는지는 별도로 검토해야 합니다.","correction":"올바른 문장: 완성도기준지급조건부와 중간지급조건부는 시행령 제30조의 법 제17조 제4항 대상에 포함되지 않는다.","trap":"각 지급약정일 공급과 선발급 특례를 혼동하지 마세요."}];
+const PARTS = {"1":{"title":"제15조 기본 공급시기","subtitle":"인도·이용가능·공급 확정·일반 거래","range":"1~10"},"2":{"title":"재화의 특수 공급시기","subtitle":"장기할부·완성도·중간지급·수출·폐업","range":"11~20"},"3":{"title":"제16조 용역의 공급시기","subtitle":"역무 완료·사용·분할지급·기간 안분","range":"21~30"},"4":{"title":"시행규칙 숫자 요건","subtitle":"2회·1년·6개월·계약금 외 분할","range":"31~40"},"5":{"title":"제17조 선발급 특례","subtitle":"대가 수령·7일·30일·같은 과세기간·시행령 제30조","range":"41~50"}};
+const state = {selected:{}, done:{}, correct:0, answered:0, allExplanations:false, wrongOnly:false};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+function renderQuiz(){
+  const root = document.getElementById('quizRoot');
+  root.innerHTML = '';
+  Object.entries(PARTS).forEach(([partNo, meta]) => {
+    const section = document.createElement('section');
+    section.id = 'part' + partNo;
+    section.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">Part ${partNo}</span>
+        <span class="section-title">${escapeHTML(meta.title)}</span>
+        <span class="section-subtitle">${escapeHTML(meta.subtitle)}</span>
+        <span class="section-count" id="partCount${partNo}">0/${QUESTIONS.filter(q=>q.part===Number(partNo)).length}</span>
+      </div><hr class="section-rule">`;
+    QUESTIONS.filter(q=>q.part===Number(partNo)).forEach(q => section.appendChild(makeCard(q)));
+    root.appendChild(section);
+  });
+}
+
+function makeCard(q){
+  const card = document.createElement('article');
+  card.className = 'question-card';
+  card.id = 'card' + q.id;
+  const levelClass = q.level.startsWith('A') ? 'a' : '';
+  card.innerHTML = `
+    <div class="question-head">
+      <span class="question-no">${q.id}</span>
+      <div class="question-text">
+        <span class="law-badge">${escapeHTML(q.law)}</span>
+        <span class="level-badge ${levelClass}">${escapeHTML(q.level)}</span>
+        <span class="topic-badge">${escapeHTML(q.tag)}</span><br>
+        ${escapeHTML(q.text)}
+      </div>
+    </div>
+    <div class="question-body">
+      <div class="ox-row">
+        <button class="ox-btn" data-value="O" onclick="selectAnswer(${q.id},'O')" aria-label="${q.id}번 O 선택">O</button>
+        <button class="ox-btn" data-value="X" onclick="selectAnswer(${q.id},'X')" aria-label="${q.id}번 X 선택">X</button>
+      </div>
+    </div>
+    <div class="answer-row">
+      <button class="check-btn" onclick="checkAnswer(${q.id})">정답 확인</button>
+      <span class="result-badge" id="result${q.id}"></span>
+    </div>
+    <div class="explanation" id="explanation${q.id}">
+      <div class="ex-title">해설</div>
+      <div class="law-ref">${escapeHTML(q.law)}</div>
+      <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer} (${q.answer==='O'?'옳다':'틀리다'})</div>
+      <p>${q.explanation}</p>
+      ${q.correction ? `<div class="correction">${escapeHTML(q.correction)}</div>` : ''}
+      <p class="trap">⚠ ${escapeHTML(q.trap)}</p>
+    </div>`;
+  return card;
+}
+
+function selectAnswer(id, value){
+  if(state.done[id]) return;
+  state.selected[id] = value;
+  const card = document.getElementById('card'+id);
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === value) btn.classList.add(value==='O'?'selected-o':'selected-x');
+  });
+}
+
+function checkAnswer(id, silent=false){
+  if(state.done[id]) return;
+  const q = QUESTIONS.find(item=>item.id===id);
+  const selected = state.selected[id];
+  if(!selected){
+    if(!silent) alert('O 또는 X를 먼저 선택해주세요.');
+    return;
+  }
+  state.done[id] = true;
+  state.answered += 1;
+  const correct = selected === q.answer;
+  if(correct) state.correct += 1;
+  const card = document.getElementById('card'+id);
+  card.dataset.correct = correct ? 'true' : 'false';
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === q.answer) btn.classList.add('correct');
+    else if(btn.dataset.value === selected && !correct) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  card.querySelector('.check-btn').disabled = true;
+  const result = document.getElementById('result'+id);
+  result.textContent = correct ? '✓ 정답' : `✗ 오답 (정답: ${q.answer})`;
+  result.className = 'result-badge show ' + (correct ? 'ok' : 'ng');
+  document.getElementById('explanation'+id).classList.add('show');
+  updateStatus();
+}
+
+function updateStatus(){
+  document.getElementById('scoreValue').textContent = `${state.correct}/${state.answered}`;
+  document.getElementById('progressFill').style.width = `${state.answered/QUESTIONS.length*100}%`;
+  Object.keys(PARTS).forEach(partNo => {
+    const partQuestions = QUESTIONS.filter(q=>q.part===Number(partNo));
+    const count = partQuestions.filter(q=>state.done[q.id]).length;
+    document.getElementById('partCount'+partNo).textContent = `${count}/${partQuestions.length}`;
+  });
+}
+
+function gradeAll(){
+  QUESTIONS.forEach(q => {
+    if(!state.done[q.id] && state.selected[q.id]) checkAnswer(q.id,true);
+  });
+  showScore();
+}
+
+function showScore(){
+  const wrong = state.answered - state.correct;
+  const unanswered = QUESTIONS.length - state.answered;
+  const pct = Math.round(state.correct / QUESTIONS.length * 100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('correctStat').textContent = state.correct;
+  document.getElementById('wrongStat').textContent = wrong;
+  document.getElementById('unansweredStat').textContent = unanswered;
+  let feedback = '';
+  if(unanswered > 0) feedback = `미응답 ${unanswered}문항이 있습니다. 선택한 문항만 채점했으며, 총 문항 기준 점수입니다.`;
+  else if(pct >= 90) feedback = '재화·용역의 기본 공급시기와 분할지급·선발급 특례를 안정적으로 구분하고 있습니다.';
+  else if(pct >= 75) feedback = '기본 구조는 양호합니다. 장기할부와 완성도·중간지급조건부의 완료 후 지급분 차이를 다시 확인하세요.';
+  else if(pct >= 60) feedback = '일반 할부와 장기할부, 제17조의 7일·30일·같은 과세기간 요건을 비교하여 복습하세요.';
+  else feedback = '법 제15조~제17조와 시행령 제28조~제30조를 기본 공급시기 → 거래유형별 특례 → 선발급 특례 순서로 다시 읽어보세요.';
+  document.getElementById('feedbackText').textContent = feedback;
+  const panel = document.getElementById('scorePanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleAllExplanations(){
+  state.allExplanations = !state.allExplanations;
+  document.querySelectorAll('.explanation').forEach(el => el.classList.toggle('show',state.allExplanations));
+  document.getElementById('toggleExplainBtn').textContent = state.allExplanations ? '해설 모두 숨기기' : '해설 모두 보기';
+}
+
+function toggleWrongOnly(force=false){
+  state.wrongOnly = force ? true : !state.wrongOnly;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById('card'+q.id);
+    const isWrong = state.done[q.id] && card.dataset.correct === 'false';
+    card.classList.toggle('hidden-filter', state.wrongOnly && !isWrong);
+  });
+  document.getElementById('wrongOnlyBtn').textContent = state.wrongOnly ? '전체 문제 보기' : '틀린 문제만 보기';
+  if(state.wrongOnly && !QUESTIONS.some(q=>state.done[q.id] && document.getElementById('card'+q.id).dataset.correct==='false')){
+    alert('현재 확인된 오답이 없습니다. 먼저 문항을 채점해주세요.');
+    state.wrongOnly = false;
+    QUESTIONS.forEach(q=>document.getElementById('card'+q.id).classList.remove('hidden-filter'));
+    document.getElementById('wrongOnlyBtn').textContent = '틀린 문제만 보기';
+  } else if(state.wrongOnly){
+    document.getElementById('quizRoot').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz(){
+  if(confirm('선택과 채점 결과를 모두 초기화할까요?')) location.reload();
+}
+
+renderQuiz();
+
+</script>
+</body>
+</html>
