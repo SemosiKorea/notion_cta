@@ -35,6 +35,20 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
   }
 
+  function toDateKey(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  function addDays(date, days) {
+    const next = new Date(date);
+    next.setDate(next.getDate() + days);
+    next.setHours(0, 0, 0, 0);
+    return next;
+  }
+
   function padQuestionNo(value) {
     return String(value).padStart(3, '0');
   }
@@ -147,6 +161,28 @@
     return record.correct === false || record.confidence === 'unsure' || record.confidence === 'guess';
   }
 
+  function scheduleReview(record, previous) {
+    const previousStreak = previous && Number(previous.consecutiveConfident) || 0;
+    const consecutiveConfident = record.correct === true && record.confidence === 'confident'
+      ? previousStreak + 1
+      : 0;
+
+    let delayDays = 7;
+    if (record.correct === false) delayDays = 0;
+    else if (record.confidence === 'guess') delayDays = 1;
+    else if (record.confidence === 'unsure') delayDays = 3;
+    else if (consecutiveConfident >= 3) delayDays = 30;
+    else if (consecutiveConfident >= 2) delayDays = 14;
+
+    const dueDate = addDays(new Date(), delayDays);
+    record.consecutiveConfident = consecutiveConfident;
+    record.reviewDelayDays = delayDays;
+    record.nextReviewDate = toDateKey(dueDate);
+    record.nextReviewAt = dueDate.toISOString();
+    record.needsReview = delayDays === 0 || record.confidence === 'unsure' || record.confidence === 'guess' || record.correct === false;
+    return record;
+  }
+
   function updateCardStatus(card, record) {
     const status = card.querySelector('[data-semosi-status]');
     if (!status) return;
@@ -160,9 +196,10 @@
     const state = record.needsReview ? 'review' : 'done';
     const result = record.correct === true ? '정답' : record.correct === false ? '오답' : '기록';
     const confidence = confidenceLabel(record.confidence);
+    const nextReview = record.nextReviewDate ? ` · 다음 복습 ${record.nextReviewDate}` : '';
     status.textContent = record.needsReview
-      ? `저장됨 · ${result} · ${confidence} · 복습대상`
-      : `저장됨 · ${result} · ${confidence}`;
+      ? `저장됨 · ${result} · ${confidence} · 복습대상${nextReview}`
+      : `저장됨 · ${result} · ${confidence}${nextReview}`;
     status.className = `semosi-review-status ${state}`;
   }
 
@@ -198,9 +235,9 @@
     if (!record) return;
 
     const store = readStore();
-    store.items[record.id] = record;
+    store.items[record.id] = scheduleReview(record, store.items[record.id]);
     writeStore(store);
-    updateCardStatus(card, record);
+    updateCardStatus(card, store.items[record.id]);
   }
 
   function restoreCard(card) {
