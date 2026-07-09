@@ -131,8 +131,8 @@
   }
 
   function getConfidence(card) {
-    const select = card.querySelector('[data-semosi-confidence]');
-    return select ? select.value : '';
+    const checked = card.querySelector('[data-semosi-confidence]:checked');
+    return checked ? checked.value : '';
   }
 
   function confidenceLabel(value) {
@@ -206,8 +206,10 @@
   function restoreCard(card) {
     const store = readStore();
     const record = store.items[card.dataset.questionId];
-    const select = card.querySelector('[data-semosi-confidence]');
-    if (record && select) select.value = record.confidence || '';
+    if (record && record.confidence) {
+      const input = card.querySelector(`[data-semosi-confidence][value="${record.confidence}"]`);
+      if (input) input.checked = true;
+    }
     updateCardStatus(card, record || null);
   }
 
@@ -215,16 +217,14 @@
     const wrap = document.createElement('div');
     wrap.className = 'semosi-review';
     wrap.dataset.semosiReviewUi = '1';
+    const groupName = `semosi-confidence-${FILE_KEY}-${card.dataset.semosiQuestionNo}`;
     wrap.innerHTML = [
-      '<label class="semosi-review-label">',
-      '<span>확신도</span>',
-      '<select data-semosi-confidence aria-label="확신도 기록">',
-      '<option value="">선택</option>',
-      '<option value="confident">확실함</option>',
-      '<option value="unsure">애매함</option>',
-      '<option value="guess">추측</option>',
-      '</select>',
-      '</label>',
+      '<div class="semosi-review-label">확신도</div>',
+      '<div class="semosi-confidence-group" role="radiogroup" aria-label="확신도 기록">',
+      `<label><input type="radio" name="${groupName}" value="confident" data-semosi-confidence><span>확실함</span></label>`,
+      `<label><input type="radio" name="${groupName}" value="unsure" data-semosi-confidence><span>애매함</span></label>`,
+      `<label><input type="radio" name="${groupName}" value="guess" data-semosi-confidence><span>추측</span></label>`,
+      '</div>',
       '<span class="semosi-review-status" data-semosi-status>아직 저장된 학습기록이 없습니다.</span>'
     ].join('');
 
@@ -267,8 +267,12 @@
     style.id = 'semosi-review-style';
     style.textContent = `
       .semosi-review{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin:.55rem 1rem .75rem;padding:.55rem .65rem;border:1px solid rgba(92,61,17,.16);border-radius:8px;background:rgba(255,253,249,.88);font-size:.75rem;color:#6b5d4a}
-      .semosi-review-label{display:flex;align-items:center;gap:.35rem;font-weight:700}
-      .semosi-review select{border:1px solid rgba(92,61,17,.24);border-radius:6px;background:#fffdf9;color:#2b2115;padding:.25rem .45rem;font:inherit}
+      .semosi-review-label{font-weight:800;color:#4f402f}
+      .semosi-confidence-group{display:flex;align-items:center;gap:.3rem;flex-wrap:wrap}
+      .semosi-confidence-group label{display:inline-flex;align-items:center;gap:.24rem;border:1px solid rgba(92,61,17,.22);border-radius:999px;background:#fffdf9;color:#4f402f;padding:.22rem .52rem;cursor:pointer;line-height:1.2;transition:background .14s,border-color .14s,color .14s}
+      .semosi-confidence-group label:hover{border-color:rgba(92,61,17,.45);background:#fff8ed}
+      .semosi-confidence-group input{accent-color:#5c3d11;margin:0}
+      .semosi-confidence-group label:has(input:checked){border-color:#5c3d11;background:#efe5d6;color:#2b2115;font-weight:800}
       .semosi-review-status{color:#85745f}
       .semosi-review-status.done{color:#176b3a;font-weight:700}
       .semosi-review-status.review{color:#9b2335;font-weight:700}
