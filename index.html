@@ -44,6 +44,16 @@ main{max-width:1040px;margin:0 auto;padding:0 24px 72px}
 .clear-btn{position:absolute;right:8px;top:7px;width:32px;height:32px;border:0;border-radius:7px;background:transparent;color:var(--muted);cursor:pointer;display:none}
 .clear-btn:hover{background:var(--surface2)}
 .controls{display:flex;gap:8px}.select{height:46px;border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:0 34px 0 12px;color:var(--ink)}
+.review-dashboard{margin:26px 0 6px;padding:22px;background:linear-gradient(135deg,rgba(255,253,249,.94),rgba(239,229,214,.88));border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow)}
+.review-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.review-kicker{display:block;color:var(--accent);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.review-title{font-family:var(--serif);font-size:1.12rem;line-height:1.35}.review-summary{color:var(--muted);font-size:.8rem;margin-top:4px}
+.review-total{min-width:76px;text-align:center;background:#fffdf9;border:1px solid var(--border);border-radius:12px;padding:10px 12px}.review-total strong{display:block;font-family:var(--serif);font-size:1.6rem;line-height:1;color:var(--accent2)}.review-total span{font-size:.69rem;color:var(--muted)}
+.review-stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.review-stat{border:1px solid rgba(92,61,17,.18);background:rgba(255,253,249,.7);border-radius:999px;padding:5px 10px;font-size:.74rem;color:var(--muted)}.review-stat strong{color:var(--ink)}
+.review-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:14px}
+.review-item{display:flex;flex-direction:column;gap:7px;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:13px 14px;transition:.18s ease}.review-item:hover,.review-item:focus-visible{border-color:#bba98e;box-shadow:0 5px 16px rgba(55,36,18,.08);outline:none;transform:translateY(-1px)}
+.review-item-title{font-size:.82rem;font-weight:800;line-height:1.55}.review-item-text{font-size:.74rem;color:var(--muted);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.review-item-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:.66rem;color:var(--muted)}.review-badge{border-radius:999px;padding:2px 7px;background:#e4f2ea;color:var(--accent2);font-weight:800}.review-badge.warn{background:#faf0ef;color:var(--danger)}
 .summary{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:30px 0 18px}
 .section-title{font-family:var(--serif);font-size:1.05rem}.count{font-size:.78rem;color:var(--muted)}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:18px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
@@ -64,7 +74,7 @@ footer{border-top:1px solid var(--border);padding:28px 24px 42px;color:var(--mut
 .footer-inner{max-width:1040px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-family:var(--serif);font-weight:700;color:var(--accent)}
 .footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a{font-size:.76rem}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(max-width:680px){.site-header{padding-top:38px}.toolbar-inner{grid-template-columns:1fr}.controls{width:100%}.select{flex:1;min-width:0}.cards{grid-template-columns:1fr}.notice{font-size:.76rem}.footer-inner{display:block}.footer-links{margin-top:12px}}
+@media(max-width:680px){.site-header{padding-top:38px}.toolbar-inner{grid-template-columns:1fr}.controls{width:100%}.select{flex:1;min-width:0}.review-dashboard{padding:17px}.review-head{display:block}.review-total{margin-top:12px;text-align:left}.review-list,.cards{grid-template-columns:1fr}.notice{font-size:.76rem}.footer-inner{display:block}.footer-links{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -95,6 +105,22 @@ footer{border-top:1px solid var(--border);padding:28px 24px 42px;color:var(--mut
     </div>
   </section>
 
+  <section class="review-dashboard" id="reviewDashboard" aria-label="오늘 복습">
+    <div class="review-head">
+      <div>
+        <span class="review-kicker">Personal Review</span>
+        <h2 class="review-title">오늘 복습</h2>
+        <p class="review-summary" id="reviewSummary">저장된 학습기록을 확인하는 중입니다.</p>
+      </div>
+      <div class="review-total" aria-live="polite">
+        <strong id="reviewDueCount">0</strong>
+        <span>문제</span>
+      </div>
+    </div>
+    <div class="review-stats" id="reviewStats"></div>
+    <div class="review-list" id="reviewList"></div>
+  </section>
+
   <div class="summary">
     <h2 class="section-title">학습 자료</h2>
     <span class="count" id="count" aria-live="polite">불러오는 중…</span>
@@ -117,6 +143,7 @@ const REPO_OWNER='SemosiKorea';
 const REPO_NAME='notion_cta';
 const BRANCH='main';
 const API_URL=`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/?ref=${BRANCH}`;
+const REVIEW_STORAGE_KEY='semosikorea.review.v1';
 let allFiles=[];
 let activeCategory='전체';
 
@@ -140,6 +167,116 @@ function parseFilename(name){
     category:parts[0],
     title:parts.slice(1,-1).join(' · ')
   };
+}
+
+function todayKey(){
+  const now=new Date();
+  const year=now.getFullYear();
+  const month=String(now.getMonth()+1).padStart(2,'0');
+  const day=String(now.getDate()).padStart(2,'0');
+  return `${year}-${month}-${day}`;
+}
+
+function readReviewStore(){
+  try{
+    const parsed=JSON.parse(localStorage.getItem(REVIEW_STORAGE_KEY)||'{}');
+    return parsed.items&&typeof parsed.items==='object'?parsed.items:{};
+  }catch(error){
+    console.warn('학습기록을 읽지 못했습니다.',error);
+    return{};
+  }
+}
+
+function isReviewDue(record,today){
+  if(!record||!record.file) return false;
+  if(record.nextReviewDate) return record.nextReviewDate<=today;
+  return record.needsReview===true;
+}
+
+function reviewReason(record){
+  if(record.correct===false) return'오답';
+  if(record.confidence==='guess') return'추측';
+  if(record.confidence==='unsure') return'애매함';
+  return'복습';
+}
+
+function createReviewItem(record){
+  const info=parseFilename(record.file);
+  const link=document.createElement('a');
+  link.className='review-item';
+  link.href=encodeURI(record.file);
+  link.setAttribute('aria-label',`${info.category} ${record.questionNo||''}번 복습하기`);
+
+  const title=document.createElement('div');
+  title.className='review-item-title';
+  title.textContent=`${info.category} · ${record.questionNo||'?'}번`;
+
+  const text=document.createElement('div');
+  text.className='review-item-text';
+  text.textContent=record.text||info.title||record.file;
+
+  const meta=document.createElement('div');
+  meta.className='review-item-meta';
+
+  const reason=document.createElement('span');
+  reason.className='review-badge '+(record.correct===false?'warn':'');
+  reason.textContent=reviewReason(record);
+
+  const due=document.createElement('span');
+  due.textContent=record.nextReviewDate?`복습일 ${record.nextReviewDate}`:'복습일 미지정';
+
+  meta.append(reason,due);
+  link.append(title,text,meta);
+  return link;
+}
+
+function renderReviewDashboard(){
+  const items=Object.values(readReviewStore());
+  const today=todayKey();
+  const dueItems=items
+    .filter(record=>isReviewDue(record,today))
+    .sort((a,b)=>(a.nextReviewDate||'0000-00-00').localeCompare(b.nextReviewDate||'0000-00-00')||(b.answeredAt||'').localeCompare(a.answeredAt||''));
+  const total=dueItems.length;
+  const wrong=dueItems.filter(item=>item.correct===false).length;
+  const lowConfidence=dueItems.filter(item=>item.correct===true&&(item.confidence==='guess'||item.confidence==='unsure')).length;
+  const categories=new Map();
+  dueItems.forEach(item=>{
+    const category=parseFilename(item.file).category;
+    categories.set(category,(categories.get(category)||0)+1);
+  });
+
+  $('reviewDueCount').textContent=String(total);
+  $('reviewSummary').textContent=total
+    ? `오늘까지 다시 풀어볼 문제가 ${total}개 있습니다. 오답과 낮은 확신도 문제를 먼저 보여줍니다.`
+    : items.length
+      ? '오늘 도래한 복습 문제는 없습니다. 기록된 문제는 다음 복습일에 다시 표시됩니다.'
+      : '아직 저장된 학습기록이 없습니다. O/X 퀴즈에서 정답과 확신도를 기록하면 여기에 복습 문제가 모입니다.';
+
+  const stats=$('reviewStats');
+  stats.replaceChildren();
+  const statData=[
+    ['오답',wrong],
+    ['저확신 정답',lowConfidence],
+    ...[...categories.entries()].sort((a,b)=>b[1]-a[1]).slice(0,4)
+  ];
+  statData.forEach(([label,value])=>{
+    const chip=document.createElement('span');
+    chip.className='review-stat';
+    const strong=document.createElement('strong');
+    strong.textContent=String(value);
+    chip.append(document.createTextNode(`${label} `),strong);
+    stats.appendChild(chip);
+  });
+
+  const list=$('reviewList');
+  list.replaceChildren();
+  dueItems.slice(0,8).forEach(item=>list.appendChild(createReviewItem(item)));
+  if(total>8){
+    const more=document.createElement('span');
+    more.className='review-stat';
+    more.textContent=`그 외 ${total-8}문제는 추후 목록 확장 기능에서 이어서 표시됩니다.`;
+    list.appendChild(more);
+  }
 }
 
 function createCard(file){
@@ -216,7 +353,9 @@ $('search').addEventListener('input',event=>{$('clearSearch').style.display=even
 $('clearSearch').addEventListener('click',()=>{$('search').value='';$('clearSearch').style.display='none';$('search').focus();renderCards();});
 $('sort').addEventListener('change',renderCards);
 $('retry').addEventListener('click',loadFiles);
+window.addEventListener('storage',event=>{if(event.key===REVIEW_STORAGE_KEY) renderReviewDashboard();});
 $('year').textContent=new Date().getFullYear();
+renderReviewDashboard();
 loadFiles();
 </script>
 </body>
