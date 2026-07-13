@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제21조~제23조 | O/X 판단 퀴즈</title>
+<style>
+:root{
+  --bg:#f2f0eb;--surface:#fff;--surface2:#ece9e2;--border:#d5d0c7;
+  --primary:#1b3d6b;--accent:#9a4410;--green:#1c5030;--red:#7f1910;
+  --text:#111010;--text2:#373430;--muted:#666260;--gold:#d4cbaa;
+  --shadow:0 2px 10px rgba(0,0,0,.07);--shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --serif:Georgia,'Noto Serif KR','Batang',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;min-height:100vh}
+button{font:inherit}
+.header{background:var(--primary);color:#fff;padding:1.5rem 1.2rem 1.15rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.header-inner{max-width:980px;margin:0 auto;display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.badge-top{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .5rem;color:var(--gold)}
+.title{font-family:var(--serif);font-size:1.48rem;font-weight:700;line-height:1.3;margin-top:.25rem}
+.title span{font-family:var(--sans);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.78)}
+.subtitle{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.25rem}
+.score-box{margin-left:auto;text-align:right;min-width:82px}.score-label{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.09em}.score-value{font-family:var(--mono);font-size:1.48rem;color:var(--gold);font-weight:700}
+.progress-wrap{background:var(--primary);padding:0 1.2rem .72rem}.progress-track{max-width:980px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .3s ease}
+.container{max-width:980px;margin:0 auto;padding:1.35rem 1rem 4rem}
+.notice{background:#eef3ff;border:1.5px solid var(--primary);border-radius:10px;padding:.85rem 1rem;font-size:.79rem;color:#173761;margin:0 0 1rem}.notice strong{color:var(--primary)}
+.toolbar{display:flex;gap:.48rem;flex-wrap:wrap;margin:.85rem 0 1.2rem}.tool-btn{border:1px solid var(--border);background:#fff;color:var(--text2);padding:.42rem .72rem;border-radius:7px;cursor:pointer;font-size:.74rem}.tool-btn:hover{border-color:var(--primary);color:var(--primary)}.tool-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.tool-btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem}.toc h2{font-family:var(--serif);font-size:.95rem;color:var(--primary);margin-bottom:.5rem}.toc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.toc-links.four{grid-template-columns:repeat(4,1fr)}.toc a{text-decoration:none;color:var(--text2);border:1px solid var(--border);border-radius:7px;padding:.52rem .65rem;font-size:.75rem;background:#faf9f6}.toc a:hover{border-color:var(--primary);color:var(--primary)}.toc a b{display:block;color:var(--primary);font-size:.78rem}
+details.study{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:1rem;box-shadow:var(--shadow)}details.study summary{cursor:pointer;padding:.76rem 1rem;font-weight:700;color:var(--primary);font-size:.82rem;list-style:none}details.study summary::-webkit-details-marker{display:none}details.study summary::after{content:'＋';float:right;font-family:var(--mono)}details.study[open] summary::after{content:'－'}details.study .inside{padding:0 1rem 1rem;font-size:.76rem;color:var(--text2)}
+.summary-table{width:100%;border-collapse:collapse;margin-top:.3rem;font-size:.73rem}.summary-table th,.summary-table td{border:1px solid #c8d6e8;padding:.35rem .44rem;text-align:center}.summary-table th{background:#e6eef9;color:var(--primary)}.summary-table td:first-child{text-align:left;font-weight:600}
+.section-header{display:flex;align-items:center;gap:.72rem;margin:2rem 0 .8rem;flex-wrap:wrap}.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:4px}.section-title{font-family:var(--serif);font-size:1.02rem;font-weight:700}.section-subtitle{font-size:.7rem;color:var(--muted)}.section-count{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}.section-rule{border:0;border-top:1.5px solid var(--border);margin-bottom:1rem}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.9rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,opacity .2s}.question-card:hover{box-shadow:var(--shadow-lg)}.question-card.hidden-filter{display:none}.question-head{padding:.84rem 1rem .65rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.7rem}.question-no{font-family:var(--mono);font-size:.68rem;font-weight:700;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#e4eef8;color:var(--primary);margin-top:1px}.question-text{font-size:.86rem;line-height:1.82;flex:1}.law-badge,.level-badge,.topic-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;padding:.08rem .35rem;border-radius:3px;vertical-align:middle;margin-right:.22rem}.law-badge{background:#eaf0f7;color:var(--primary);border:1px solid #c5d8ee}.level-badge{background:#fff3dc;color:#7a5700}.level-badge.a{background:#fdecea;color:var(--red)}.topic-badge{background:#e8f2eb;color:var(--green)}
+.question-body{padding:.62rem 1rem .75rem}.ox-row{display:flex;gap:.5rem}.ox-btn{border:1.5px solid var(--border);background:#fff;border-radius:7px;padding:.42rem 1.28rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .13s}.ox-btn:hover{border-color:var(--primary);color:var(--primary);background:#eaf0f7}.ox-btn.selected-o{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.selected-x{border-color:var(--red);background:#faf0ef;color:var(--red)}.ox-btn.correct{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.wrong{border-color:var(--red);background:#faf0ef;color:var(--red);opacity:.6}
+.answer-row{padding:0 1rem .78rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.check-btn{padding:.38rem .9rem;border:0;border-radius:5px;background:var(--primary);color:#fff;font-size:.74rem;font-weight:600;cursor:pointer}.check-btn:disabled{opacity:.35;cursor:default}.result-badge{display:none;font-size:.73rem;font-weight:600;padding:.24rem .58rem;border-radius:20px}.result-badge.show{display:inline-block}.result-badge.ok{background:#e4f2ea;color:var(--green)}.result-badge.ng{background:#faf0ef;color:var(--red)}
+.explanation{display:none;background:#fafaf7;border-top:1px solid var(--border);padding:.8rem 1rem;font-size:.78rem;color:var(--text2);line-height:1.9}.explanation.show{display:block}.ex-title{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem}.answer-line{font-weight:700;font-size:.81rem;margin-bottom:.22rem}.answer-line.o{color:var(--green)}.answer-line.x{color:var(--red)}.law-ref{display:inline-block;font-family:var(--mono);font-size:.67rem;color:var(--primary);background:#eaf0f7;padding:.1rem .38rem;border-radius:3px;margin-bottom:.35rem}.correction{background:#eef3ff;border-left:3px solid var(--primary);padding:.42rem .6rem;margin:.42rem 0}.trap{color:var(--red);font-style:italic;margin-top:.3rem}
+.global-actions{display:flex;justify-content:center;gap:.65rem;margin:1.6rem 0;flex-wrap:wrap}.action-btn{padding:.55rem 1.25rem;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer}.action-btn.primary{background:var(--accent);border:1px solid var(--accent);color:#fff}.action-btn.outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}.action-btn.outline:hover{background:var(--primary);color:#fff}
+.score-panel{display:none;background:#fff;border:1.5px solid var(--primary);border-radius:12px;padding:1.45rem 1.1rem;text-align:center;box-shadow:var(--shadow-lg);margin:1.6rem 0}.score-panel.show{display:block}.score-panel h2{font-family:var(--serif);font-size:1.1rem;color:var(--primary)}.grade{font-family:var(--mono);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;margin:.5rem 0}.score-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.7rem 0 1rem}.score-stats strong{display:block;font-family:var(--mono);font-size:1.25rem}.score-stats span{font-size:.65rem;color:var(--muted)}.feedback{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.source-box{margin-top:2rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;font-size:.72rem;color:var(--text2)}.source-box h3{font-family:var(--serif);color:var(--primary);font-size:.88rem;margin-bottom:.35rem}.source-box ul{padding-left:1.1rem}.source-box li{margin:.2rem 0}.caution{color:var(--red);margin-top:.45rem}
+.footer-note{text-align:center;font-size:.65rem;color:var(--muted);margin-top:1.4rem}
+@media(max-width:680px){.toc-links.four{grid-template-columns:1fr}.title{font-size:1.12rem}.score-box{margin-left:0}.container{padding:.9rem .68rem 3rem}.toc-links{grid-template-columns:1fr}.question-head{padding:.72rem .82rem .58rem}.question-body{padding:.58rem .82rem .68rem}.answer-row{padding:0 .82rem .7rem}.explanation{padding:.72rem .82rem}.summary-table{font-size:.65rem}.summary-table th,.summary-table td{padding:.28rem .22rem}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}.header{position:static;box-shadow:none;padding:.7cm .6cm;background:#fff;color:#000;border-bottom:2px solid #1b3d6b}.badge-top,.subtitle,.score-box,.progress-wrap,.toolbar,.global-actions,.check-btn,.ox-row,.result-badge{display:none!important}.title,.title span{color:#000}.container{max-width:none;padding:.4cm}.notice,.toc,details.study,.source-box{box-shadow:none}.question-card{box-shadow:none;break-inside:avoid;margin-bottom:.35cm}.explanation{display:block!important}.section-header{break-after:avoid}.score-panel{display:none!important}.question-head{padding:.3cm}.question-body,.answer-row{display:none}.source-box{break-inside:avoid}.law-badge,.level-badge,.topic-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.toc-links.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:840px){.toc-links.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.toc-links.five{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div>
+      <span class="badge-top">세무사 1차 · 세법학개론 · 2027 대비</span>
+      <div class="title">부가가치세법 제21조~제23조<br><span>재화의 수출·용역의 국외공급·외국항행용역 O/X 퀴즈</span></div>
+      <div class="subtitle">법률 2026.1.2. · 시행령 제31·32조 2026.2.27. · 시행규칙 제21조 2026.3.20. 시행본 기준 · 총 40문항</div>
+    </div>
+    <div class="score-box"><div class="score-label">SCORE</div><div class="score-value" id="scoreValue">–</div></div>
+  </div>
+</header>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+<main class="container">
+  <div class="notice"><strong>판단 순서:</strong> ① 영세율인지 면세인지 구분한다 → ② 재화는 직접수출·특수무역·간접수출 중 어느 유형인지 찾는다 → ③ 용역은 실제 공급장소가 국외인지 확인한다 → ④ 외국항행은 운송구간과 부수용역의 전용 요건을 확인한다 → ⑤ 마지막으로 영세율 첨부서류를 검토한다. 모든 문항은 현행 법령을 바탕으로 만든 자체 제작 문제이며 실제 기출문제가 아닙니다.</div>
+  <nav class="toc" aria-label="목차">
+    <h2>목차</h2>
+    <div class="toc-links four">
+      <a href="#part1"><b>Part 1</b>제21조 수출 기본</a>
+      <a href="#part2"><b>Part 2</b>수출방식·간접수출</a>
+      <a href="#part3"><b>Part 3</b>제22조 국외용역</a>
+      <a href="#part4"><b>Part 4</b>제23조 외국항행</a>
+    </div>
+  </nav>
+  <details class="study" open>
+    <summary>핵심 구조표 펼치기·접기</summary>
+    <div class="inside">
+      <table class="summary-table">
+        <thead><tr><th>구분</th><th>핵심 요건</th><th>대표 함정</th></tr></thead>
+        <tbody>
+          <tr><td>직접수출</td><td>내국물품을 외국으로 반출</td><td>외화수령을 일반 요건으로 착각</td></tr>
+          <tr><td>특수무역 수출</td><td>시행령상 거래유형 + 국내 사업장에서 계약·대가수령 등</td><td>재화가 국내를 지나지 않으면 모두 수출이라고 단정</td></tr>
+          <tr><td>내국신용장·구매확인서</td><td>법정 문서에 의한 재화 공급, 금지금 제외</td><td>문서만 있으면 모든 재화·용역이 포함된다고 판단</td></tr>
+          <tr><td>용역의 국외공급</td><td>용역을 국외에서 공급</td><td>수령자 국적·외화수령을 필수요건으로 오인</td></tr>
+          <tr><td>외국항행용역</td><td>국내↔국외 또는 국외↔국외 여객·화물 운송</td><td>국내운송이나 단순 외국사업자 운송까지 포함</td></tr>
+          <tr><td>부수 외국항행용역</td><td>타사 탑승권·기내/선내 공급·승객전용 버스·호텔</td><td>버스·호텔의 자기 승객 전용 요건 누락</td></tr>
+        </tbody>
+      </table>
+      <br>
+      <table class="summary-table">
+        <thead><tr><th>시행령상 수출방식</th><th>핵심 모습</th></tr></thead>
+        <tbody>
+          <tr><td>중계무역</td><td>보세구역 등 외의 국내에 반입하지 않고 수출</td></tr>
+          <tr><td>위탁판매수출</td><td>무환 반출 후 실제 판매분만 정산</td></tr>
+          <tr><td>외국인도수출</td><td>대금은 국내 영수, 물품은 국외 인도</td></tr>
+          <tr><td>위탁가공무역</td><td>외국에서 가공 후 가공물품을 외국 인도</td></tr>
+          <tr><td>무상원료 반출</td><td>국외 수탁가공 후 가공재화를 양도하는 경우 원료 반출</td></tr>
+          <tr><td>보세물품 외국 반출</td><td>수입신고 수리 전 보세구역 물품의 외국 반출</td></tr>
+        </tbody>
+      </table>
+      <br>
+      <table class="summary-table">
+        <thead><tr><th>외국항행 관련 공급</th><th>포함 여부 판단</th></tr></thead>
+        <tbody>
+          <tr><td>다른 외국항행사업자의 탑승권 판매·화물운송계약</td><td>포함</td></tr>
+          <tr><td>외국항행 선박·항공기 안에서 승객에게 공급</td><td>포함</td></tr>
+          <tr><td>자기 승객만 전용하는 버스·호텔</td><td>포함</td></tr>
+          <tr><td>자기 책임·계산의 국제복합운송</td><td>포함</td></tr>
+          <tr><td>항공사업법상 상업서류 송달용역</td><td>포함</td></tr>
+          <tr><td>외국사업자의 국내 두 지점 간 운송</td><td>외국항행에서 제외</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:.7rem"><b>기출 포인트:</b> 2022년 제59회 74번(최종정답 ③)과 2025년 제62회 75번(최종정답 ④)은 외국인도수출을, 2023년 제60회 79번(최종정답 ③)은 보세물품 외국반출·국외 건설용역·상업서류 송달용역을, 2024년 제61회 73번(최종정답 ⑤)은 국외용역의 외화수령 함정과 승객전용 호텔 요건을 출제했습니다. 아래 문제는 이 논점을 변형한 자체 제작 문항입니다.</p>
+    </div>
+  </details>
+  <div class="toolbar">
+    <button class="tool-btn primary" onclick="gradeAll()">전체 채점</button>
+    <button class="tool-btn" onclick="toggleAllExplanations()" id="toggleExplainBtn">해설 모두 보기</button>
+    <button class="tool-btn" onclick="toggleWrongOnly()" id="wrongOnlyBtn">틀린 문제만 보기</button>
+    <button class="tool-btn" onclick="window.print()">인쇄</button>
+    <button class="tool-btn accent" onclick="resetQuiz()">다시 풀기</button>
+  </div>
+  <div id="quizRoot"></div>
+  <div class="global-actions">
+    <button class="action-btn primary" onclick="gradeAll()">전체 채점 및 결과 보기</button>
+    <button class="action-btn outline" onclick="toggleAllExplanations()">전체 해설 펼치기</button>
+    <button class="action-btn outline" onclick="resetQuiz()">처음부터 다시 풀기</button>
+  </div>
+  <section class="score-panel" id="scorePanel" aria-live="polite">
+    <h2>학습 결과</h2>
+    <div class="grade" id="gradeText">0%</div>
+    <div class="score-stats">
+      <div><strong id="correctStat">0</strong><span>정답</span></div>
+      <div><strong id="wrongStat">0</strong><span>오답</span></div>
+      <div><strong id="unansweredStat">0</strong><span>미응답</span></div>
+    </div>
+    <div class="feedback" id="feedbackText"></div>
+    <button class="action-btn outline" onclick="toggleWrongOnly(true)">오답만 복습하기</button>
+  </section>
+  <section class="source-box">
+    <h3>근거 및 검증 기준</h3>
+    <ul>
+      <li>부가가치세법 제21조~제23조: 법률 제21065호, 2026.1.2. 시행본.</li>
+      <li>부가가치세법 시행령 제31조·제32조 및 제101조: 대통령령 제36133호. 해당 조문 2026.2.27. 시행본.</li>
+      <li>부가가치세법 시행규칙 제21조·제69조: 재정경제부령 제9호, 2026.3.20. 시행본.</li>
+      <li>업로드된 2021~2025년 세무사 1차 시험지와 공식 최종정답 및 2025년 부가가치세법 기본서를 기출 난이도와 함정 검토에 활용함.</li>
+      <li>문항은 모두 자체 제작 문제이며 실제 기출문제를 그대로 수록한 것이 아님.</li>
+    </ul>
+    <p class="caution">※ 2027년 세무사 시험의 적용 법령 기준일은 향후 시험 시행계획과 출제기준을 별도로 확인해야 합니다. 이 파일은 2026년 7월 9일 현재 시행 중인 관련 법령을 기준으로 합니다.</p>
+  </section>
+  <div class="footer-note">부가가치세법 제21조~제23조 · 자체 제작 O/X 학습자료</div>
+</main>
+<script>
+const QUESTIONS = [{"id":1,"part":1,"law":"법 §21①","answer":"O","level":"A급","tag":"영세율 원칙","text":"재화의 공급이 수출에 해당하면 일반세율 10퍼센트에 관한 제30조에도 불구하고 영세율을 적용한다.","explanation":"법 제21조 제1항은 수출에 해당하는 재화의 공급에 <b>0퍼센트의 세율</b>을 적용하도록 규정합니다. 과세대상이지만 세율이 0퍼센트라는 점이 면세와 다릅니다.","correction":"","trap":"영세율을 비과세나 면세와 같은 것으로 보지 마세요."},{"id":2,"part":1,"law":"법 §21①","answer":"X","level":"A급","tag":"영세율·면세","text":"수출재화는 부가가치세가 면제되는 재화이므로 매입세액도 원칙적으로 공제되지 않는다.","explanation":"수출재화에는 면세가 아니라 영세율이 적용됩니다. 영세율 거래는 과세거래이므로 관련 매입세액은 일반적인 요건을 충족하면 공제·환급될 수 있습니다.","correction":"올바른 문장: 수출재화는 과세거래이지만 영세율이 적용되며, 관련 매입세액은 요건을 충족하면 공제·환급될 수 있다.","trap":"매출세액이 0이라는 결과만 보고 면세로 분류하지 마세요."},{"id":3,"part":1,"law":"법 §21②1","answer":"O","level":"A급","tag":"직접수출","text":"내국물품을 외국으로 반출하는 것은 법 제21조에 따른 수출에 해당한다.","explanation":"법 제21조 제2항 제1호의 기본적인 직접수출입니다. 내국물품이 국내에서 외국으로 반출되는지를 확인합니다.","correction":"","trap":"계약 상대방의 국적보다 실제 외국 반출 여부를 먼저 보세요."},{"id":4,"part":1,"law":"법 §21②1·법 §13","answer":"X","level":"A급","tag":"공해 수산물","text":"외국 선박이 공해에서 잡은 수산물은 법 제21조 제2항 제1호에서 명시한 내국물품에 당연히 포함된다.","explanation":"법 제21조 제2항 제1호는 <b>대한민국 선박</b>에 의하여 채집되거나 잡힌 수산물을 포함한다고 규정합니다. 외국 선박의 공해 수산물은 수입 관련 규정과 구별해야 합니다.","correction":"올바른 문장: 법 제21조 제2항 제1호는 대한민국 선박에 의하여 공해에서 채집되거나 잡힌 수산물을 내국물품에 포함한다.","trap":"대한민국 선박과 외국 선박을 바꾸는 지문을 주의하세요."},{"id":5,"part":1,"law":"법 §21②1","answer":"O","level":"A급","tag":"대한민국 선박","text":"대한민국 선박이 공해에서 채집하거나 잡은 수산물을 외국으로 반출하는 것은 수출의 범위에 포함될 수 있다.","explanation":"법 제21조 제2항 제1호는 대한민국 선박이 채집하거나 잡은 수산물을 내국물품에 포함하여 외국 반출 시 수출로 봅니다.","correction":"","trap":"공해라는 장소만 보고 내국물품이 아니라고 판단하지 마세요."},{"id":6,"part":1,"law":"법 §21②1","answer":"X","level":"A급","tag":"대금 수령","text":"내국물품의 직접수출은 반드시 수출대금을 외국환은행에서 외화로 받아야만 영세율이 적용된다.","explanation":"법 제21조 제2항 제1호의 직접수출 자체에는 외국환은행을 통한 외화 수령을 영세율 요건으로 규정하지 않습니다. 외국 반출이라는 수출 사실이 핵심입니다.","correction":"올바른 문장: 내국물품의 직접수출은 외국 반출 여부를 중심으로 판단하며, 외화 수령이 법 제21조 제2항 제1호의 일반적 요건은 아니다.","trap":"영세율 첨부서류와 실체적 영세율 요건을 혼동하지 마세요."},{"id":7,"part":1,"law":"법 §21②2","answer":"O","level":"A급","tag":"특수무역 공통","text":"중계무역 방식의 거래 등 시행령이 정하는 수출은 국내 사업장에서 계약과 대가 수령 등 거래가 이루어지는 것을 전제로 한다.","explanation":"법 제21조 제2항 제2호는 대통령령이 정하는 특수한 수출방식에 대하여 <b>국내 사업장에서 계약과 대가 수령 등 거래가 이루어질 것</b>을 요구합니다.","correction":"","trap":"재화가 국내를 통과하지 않는다는 사실만으로 끝내지 말고 국내 사업장 거래 요건도 확인하세요."},{"id":8,"part":1,"law":"영 §31①1","answer":"O","level":"A급","tag":"중계무역","text":"중계무역 방식의 수출은 수출할 목적으로 물품을 수입하되 보세구역·보세구역 외 장치허가 장소 또는 자유무역지역 외의 국내에 반입하지 않고 수출하는 방식이다.","explanation":"시행령 제31조 제1항 제1호의 정의입니다. 물품이 일반 국내지역으로 반입되지 않고 보세구역 등 허용된 구역을 거쳐 수출되는 구조입니다.","correction":"","trap":"중계무역을 국내 통관 후 재수출하는 거래와 동일시하지 마세요."},{"id":9,"part":1,"law":"영 §31①1","answer":"X","level":"A급","tag":"중계무역 통관","text":"중계무역 방식의 수출은 물품을 먼저 국내에서 수입통관한 후 국내 일반지역에 반입하여 다시 수출하는 거래를 말한다.","explanation":"중계무역 방식은 보세구역 등 외의 국내에 반입하지 않는 방식입니다. 국내 일반지역 반입과 수입통관을 전제로 하는 정의가 아닙니다.","correction":"올바른 문장: 중계무역 방식의 수출은 물품을 보세구역 등 외의 국내에 반입하지 않고 수출하는 방식이다.","trap":"‘국내 반입하지 않음’이 중계무역 정의의 핵심입니다."},{"id":10,"part":1,"law":"영 §31①6","answer":"O","level":"B급","tag":"보세물품 반출","text":"수입신고가 수리되기 전의 물품으로서 보세구역에 보관 중인 물품을 외국으로 반출하는 것은 시행령상 수출의 범위에 포함된다.","explanation":"시행령 제31조 제1항 제6호는 수입신고 수리 전 보세구역 보관물품의 외국 반출을 수출 범위에 포함합니다. 2023년 제60회 세무사 1차에서도 이 논점이 영세율 적용대상으로 출제되었습니다.","correction":"","trap":"수입신고 수리 전이라는 상태와 보세구역 보관이라는 요건을 함께 보세요."},{"id":11,"part":2,"law":"영 §31①2","answer":"O","level":"A급","tag":"위탁판매수출","text":"위탁판매수출은 물품을 무환으로 수출하고 그 물품이 판매된 범위에서 대금을 결제하는 계약에 의한 수출이다.","explanation":"시행령 제31조 제1항 제2호의 정의입니다. 먼저 무환으로 반출한 뒤 실제 판매된 범위에 따라 대금이 정산됩니다.","correction":"","trap":"선수금이나 확정대금을 받고 수출하는 일반 매매와 구별하세요."},{"id":12,"part":2,"law":"영 §31①2","answer":"X","level":"A급","tag":"위탁판매 정산","text":"위탁판매수출은 수출 전에 전체 판매대금이 확정되어 지급되는 거래만을 말한다.","explanation":"위탁판매수출은 물품을 무환으로 수출하고 해외에서 판매된 범위에 따라 대금을 결제하는 구조입니다. 수출 전에 전체 대금이 확정되는 거래로 한정되지 않습니다.","correction":"올바른 문장: 위탁판매수출은 물품을 무환으로 수출한 뒤 실제 판매된 범위에서 대금을 결제하는 계약에 의한 수출이다.","trap":"위탁판매의 ‘판매된 범위에서 결제’라는 표현을 기억하세요."},{"id":13,"part":2,"law":"영 §31①3","answer":"O","level":"A급","tag":"외국인도수출","text":"외국인도수출은 수출대금을 국내에서 영수하지만 국내에서 통관되지 않은 수출물품 등을 외국에서 인도하거나 제공하는 수출이다.","explanation":"시행령 제31조 제1항 제3호의 정의입니다. 재화가 국내에서 선적될 필요는 없으며, 국내 사업장에서 계약과 대가 수령 등 거래가 이루어지는 구조와 연결됩니다.","correction":"","trap":"대금은 국내에서 받지만 물품은 국외에서 인도될 수 있습니다."},{"id":14,"part":2,"law":"영 §31①3","answer":"X","level":"A급","tag":"외국인도 출발지","text":"외국인도수출이 되려면 해당 물품이 반드시 대한민국에서 선적되어 외국으로 반출되어야 한다.","explanation":"외국인도수출은 국내에서 통관되지 않은 수출물품 등을 외국으로 인도하거나 제공하는 거래입니다. 대한민국에서의 선적이 필수요건은 아닙니다.","correction":"올바른 문장: 외국인도수출은 국내에서 통관되지 않은 물품을 외국에서 인도하거나 제공하는 방식으로도 성립할 수 있다.","trap":"직접수출의 물리적 반출 구조를 외국인도수출에 그대로 적용하지 마세요."},{"id":15,"part":2,"law":"영 §31①4","answer":"O","level":"A급","tag":"위탁가공무역","text":"위탁가공무역 방식의 수출에는 외국에서 조달한 원료를 외국에서 가공한 후 그 가공물품을 외국으로 인도하는 방식이 포함된다.","explanation":"시행령은 국내 원료의 수출뿐 아니라 외국에서 원료를 조달하여 외국에서 가공한 뒤 가공물품을 외국으로 인도하는 방식도 포함합니다.","correction":"","trap":"원료가 반드시 국내에서 출발해야 한다고 단정하지 마세요."},{"id":16,"part":2,"law":"영 §31①5","answer":"O","level":"B급","tag":"무상원료 반출","text":"원료를 대가 없이 국외의 수탁가공 사업자에게 반출하여 가공한 재화를 양도하는 경우 그 원료의 반출도 시행령상 수출 범위에 포함된다.","explanation":"시행령 제31조 제1항 제5호의 별도 규정입니다. 원료 반출이 무상이더라도 가공재화의 양도와 연결되면 수출로 포함될 수 있습니다.","correction":"","trap":"무상반출이라는 이유만으로 수출에서 제외하지 마세요."},{"id":17,"part":2,"law":"법 §21②3·영 §31②1","answer":"X","level":"A급","tag":"금지금 제외","text":"내국신용장이나 구매확인서에 따라 공급한 금지금도 다른 재화와 동일하게 법 제21조 제2항 제3호의 수출로 본다.","explanation":"법과 시행령은 내국신용장·구매확인서에 따른 공급재화 중 <b>금지금</b>을 명시적으로 제외합니다.","correction":"올바른 문장: 내국신용장이나 구매확인서에 따라 공급한 재화는 원칙적으로 수출 범위에 포함되지만 금지금은 제외된다.","trap":"내국신용장이라는 형식만 보고 금지금 제외 규정을 놓치지 마세요."},{"id":18,"part":2,"law":"영 §31②2~4","answer":"O","level":"B급","tag":"공익기관 공급","text":"한국국제협력단·한국국제보건의료재단·대한적십자사에 공급하는 재화는 각 기관이 법정 사업을 위하여 외국에 무상으로 반출하는 재화로 한정하여 수출 범위에 포함된다.","explanation":"시행령 제31조 제2항 제2호부터 제4호까지는 기관에 공급했다는 사실만으로 충분하지 않고, 각 기관이 법정 사업을 위해 외국에 무상 반출하는 재화일 것을 요구합니다.","correction":"","trap":"공급받는 기관의 명칭뿐 아니라 최종 무상 국외반출 목적도 확인하세요."},{"id":19,"part":2,"law":"영 §31②5","answer":"O","level":"A급","tag":"국내 지정 인도","text":"국외 비거주자 또는 외국법인과 직접 계약하고 대금을 외국환은행에서 원화로 받으며, 그들이 지정한 국내 다른 사업자에게 재화를 인도하고 그 사업자가 이를 그대로 또는 제조·가공 후 반출하는 경우에는 수출 범위에 포함될 수 있다.","explanation":"시행령 제31조 제2항 제5호의 네 가지 요건을 모두 반영한 문장입니다. 직접계약, 외국환은행 원화수령, 국내 지정사업자 인도, 최종 국외반출이 필요합니다.","correction":"","trap":"요건 중 하나라도 빠진 지문은 그대로 옳다고 판단하지 마세요."},{"id":20,"part":2,"law":"영 §31②5","answer":"X","level":"A급","tag":"요건 누락","text":"국외사업자와 직접 계약하고 외국환은행에서 원화로 대금을 받기만 하면 재화를 국내 소비자에게 인도해도 수출로 본다.","explanation":"직접계약과 원화수령만으로는 부족합니다. 국외사업자가 지정한 국내 다른 사업자에게 인도하고, 그 사업자가 재화를 그대로 또는 제조·가공 후 국외로 반출해야 합니다.","correction":"올바른 문장: 국외사업자와의 직접계약 및 외국환은행 원화수령 외에 국내 지정사업자 인도와 그 사업자의 최종 국외반출 요건도 충족해야 한다.","trap":"국내에서 최종 소비되는 재화까지 간접수출로 확대하지 마세요."},{"id":21,"part":3,"law":"규칙 §21①","answer":"O","level":"A급","tag":"내국신용장 기한","text":"내국신용장은 원칙적으로 재화나 용역의 공급시기가 속하는 과세기간이 끝난 후 25일 이내에 외국환은행의 장이 개설한 것이어야 한다.","explanation":"시행규칙 제21조 제1호의 기준입니다. 그 날이 공휴일 또는 토요일이면 바로 다음 영업일까지 인정됩니다.","correction":"","trap":"‘공급일 후 25일’이 아니라 ‘과세기간 종료 후 25일’입니다."},{"id":22,"part":3,"law":"규칙 §21②","answer":"X","level":"A급","tag":"구매확인서 발급자","text":"구매확인서는 관할 세무서장만 발급할 수 있다.","explanation":"구매확인서는 대외무역법령에 따라 외국환은행의 장이나 전자무역기반사업자가 발급합니다.","correction":"올바른 문장: 구매확인서는 외국환은행의 장이나 전자무역기반사업자가 발급할 수 있다.","trap":"세무서가 아니라 무역·외환 관련 기관의 발급문서입니다."},{"id":23,"part":3,"law":"법 §22","answer":"O","level":"A급","tag":"국외공급 원칙","text":"국외에서 공급하는 용역에는 일반세율에 관한 제30조에도 불구하고 영세율을 적용한다.","explanation":"법 제22조는 용역의 공급장소가 국외인 경우 영세율을 적용하는 직접 규정입니다.","correction":"","trap":"공급자의 소재지가 아니라 용역이 실제로 국외에서 공급되었는지를 보세요."},{"id":24,"part":3,"law":"법 §22","answer":"X","level":"A급","tag":"외화수령 요건","text":"국외에서 제공한 용역이라도 대금을 외국환은행을 통하여 외화로 받지 않으면 법 제22조의 영세율을 적용할 수 없다.","explanation":"법 제22조는 국외에서 공급하는 용역이라는 사실을 실체적 요건으로 정하며, 외화수령을 일반적 적용요건으로 규정하지 않습니다. 2024년 제61회 세무사 1차에서도 이 함정이 출제되었습니다.","correction":"올바른 문장: 국외에서 공급한 용역은 대금 수령 통화나 경로와 관계없이 법 제22조의 요건을 충족하면 영세율이 적용된다.","trap":"첨부서류로 외화입금증명서가 제시될 수 있다는 점과 영세율 실체요건을 구별하세요."},{"id":25,"part":3,"law":"법 §22","answer":"O","level":"A급","tag":"국외 건설용역","text":"내국사업자가 국내 원도급자로부터 국외 건설공사를 재도급받아 국외에서 건설용역을 제공하고 원화로 대가를 받는 경우에도 법 제22조의 영세율이 적용될 수 있다.","explanation":"용역이 국외에서 공급되었다면 거래 상대방이 국내사업자이고 대가가 원화라는 이유만으로 영세율이 배제되지 않습니다. 2023년 제60회 세무사 1차에서 이와 같은 구조가 영세율 적용대상으로 확인되었습니다.","correction":"","trap":"수령자 국적·통화보다 용역의 국외 공급장소를 우선 확인하세요."},{"id":26,"part":3,"law":"법 §22","answer":"X","level":"A급","tag":"수령자 제한","text":"법 제22조의 영세율은 용역을 공급받는 자가 비거주자 또는 외국법인인 경우에만 적용된다.","explanation":"법 제22조는 공급받는 자의 지위를 제한하지 않습니다. 용역이 국외에서 공급되었는지가 핵심입니다.","correction":"올바른 문장: 법 제22조는 용역을 공급받는 자의 거주자 여부보다 용역이 국외에서 공급되었는지를 기준으로 한다.","trap":"국내에서 국외사업자에게 공급하는 용역과 국외공급 용역을 구별하세요."},{"id":27,"part":3,"law":"법 §20·§22","answer":"O","level":"A급","tag":"계약·지급 장소","text":"용역계약 체결과 대금 수령이 국내에서 이루어졌더라도 역무가 전부 국외에서 제공되면 법 제22조의 적용을 검토할 수 있다.","explanation":"용역의 공급장소는 실제 역무 제공 장소 등을 기준으로 판단합니다. 계약과 결제가 국내라는 사정만으로 국외공급이 국내공급으로 바뀌지 않습니다.","correction":"","trap":"계약지·지급지와 공급장소를 동일시하지 마세요."},{"id":28,"part":3,"law":"법 §22·법 §24","answer":"X","level":"A급","tag":"국내 제공 용역","text":"국내에서 외국법인에게 제공한 용역은 공급받는 자가 외국법인이라는 이유만으로 법 제22조의 국외공급 용역이 된다.","explanation":"법 제22조는 용역이 국외에서 공급되어야 합니다. 국내에서 제공한 용역의 영세율 여부는 법 제24조와 관련 시행령 등 별도의 요건을 검토해야 합니다.","correction":"올바른 문장: 국내에서 제공한 용역은 외국법인에게 공급했다는 사실만으로 법 제22조의 국외공급 용역이 되지 않는다.","trap":"‘국외의 자에게 공급’과 ‘국외에서 공급’을 구별하세요."},{"id":29,"part":3,"law":"영 §101①표8","answer":"O","level":"B급","tag":"국외용역 증빙","text":"법 제22조의 영세율 첨부서류로는 외국환은행이 발급하는 외화입금증명서 또는 국외에서 제공하는 용역에 관한 계약서를 사용할 수 있다.","explanation":"시행령 제101조 제1항 표 제8호가 정한 서류입니다. 외화입금증명서만이 유일한 서류가 아니라 국외용역 계약서도 가능합니다.","correction":"","trap":"‘또는’ 관계를 ‘모두 제출’로 바꾸지 마세요."},{"id":30,"part":3,"law":"법 §22","answer":"X","level":"A급","tag":"영세율·면세","text":"국외에서 공급한 용역은 면세용역이므로 관련 매입세액은 공제받을 수 없다.","explanation":"법 제22조는 국외공급 용역에 영세율을 적용합니다. 이는 면세가 아니라 과세거래에 0퍼센트 세율을 적용하는 구조입니다.","correction":"올바른 문장: 국외에서 공급한 용역은 법 제22조에 따라 영세율이 적용되는 과세거래이다.","trap":"제21조의 수출재화와 마찬가지로 영세율·면세 구분이 중요합니다."},{"id":31,"part":4,"law":"법 §23①","answer":"O","level":"A급","tag":"외국항행 원칙","text":"선박 또는 항공기에 의한 외국항행용역의 공급에는 일반세율에 관한 제30조에도 불구하고 영세율을 적용한다.","explanation":"법 제23조 제1항의 기본 원칙입니다. 외국항행의 구체적 범위는 같은 조 제2항과 시행령 제32조를 함께 확인합니다.","correction":"","trap":"국제운송이라고 해서 무조건 면세라고 표현하지 마세요."},{"id":32,"part":4,"law":"법 §23②","answer":"O","level":"A급","tag":"운송 구간","text":"외국항행용역에는 여객이나 화물을 국내에서 국외로, 국외에서 국내로 또는 국외에서 국외로 수송하는 것이 포함된다.","explanation":"법 제23조 제2항은 세 가지 국제운송 구간을 모두 열거합니다. 국외에서 국외로 운송하는 경우도 포함됩니다.","correction":"","trap":"대한민국을 출발하거나 도착해야만 한다고 제한하지 마세요."},{"id":33,"part":4,"law":"법 §23②","answer":"X","level":"A급","tag":"국내운송 제외","text":"외국 항공사가 국내 두 도시 사이에서만 여객을 운송하더라도 외국 항공사가 제공했으므로 외국항행용역에 해당한다.","explanation":"외국항행용역은 국내·국외 또는 국외·국외 간 운송을 의미합니다. 국내에서 국내로만 운송하는 것은 법 제23조 제2항의 외국항행에 포함되지 않습니다.","correction":"올바른 문장: 국내 두 지점 사이의 운송만으로는 외국항행용역에 해당하지 않는다.","trap":"사업자의 국적보다 운송구간을 먼저 확인하세요."},{"id":34,"part":4,"law":"영 §32①1","answer":"O","level":"A급","tag":"타사 탑승권","text":"외국항행사업자가 다른 외국항행사업자가 운용하는 선박 또는 항공기의 탑승권을 판매하거나 화물운송계약을 체결하는 것은 부수 외국항행용역에 포함된다.","explanation":"시행령 제32조 제1항 제1호는 다른 외국항행사업자의 탑승권 판매와 화물운송계약 체결을 자기 사업에 부수하는 공급으로 포함합니다.","correction":"","trap":"자기가 직접 운용하는 선박·항공기의 표만 포함된다고 좁게 보지 마세요."},{"id":35,"part":4,"law":"영 §32①2","answer":"X","level":"A급","tag":"기내·선내 공급","text":"외국항행사업자가 공항 대합실에서 일반인을 상대로 재화를 판매하면 그 장소만 공항이라는 이유로 외국항행용역에 당연히 포함된다.","explanation":"시행령이 포함하는 것은 외국을 항행하는 <b>선박 또는 항공기 내에서 승객에게</b> 공급하는 것입니다. 공항 대합실의 일반인 대상 판매까지 자동으로 포함하지 않습니다.","correction":"올바른 문장: 외국을 항행하는 선박 또는 항공기 안에서 승객에게 공급하는 재화 또는 용역은 부수 외국항행용역에 포함될 수 있다.","trap":"공항·항만이라는 장소와 실제 선내·기내 공급을 구별하세요."},{"id":36,"part":4,"law":"영 §32①3","answer":"O","level":"A급","tag":"승객전용 버스","text":"외국항행사업자가 자기 승객만이 전용하는 버스에 탑승하게 하는 것은 외국항행용역에 부수하여 공급하는 용역에 포함된다.","explanation":"시행령 제32조 제1항 제3호는 자기 승객만이 전용하는 버스 이용을 명시적으로 포함합니다.","correction":"","trap":"일반인도 함께 이용하는 버스와 승객전용 버스를 구별하세요."},{"id":37,"part":4,"law":"영 §32①4","answer":"X","level":"A급","tag":"승객전용 호텔","text":"외국항행사업자가 승객에게 호텔 숙박을 제공하면 그 호텔을 일반인도 함께 이용하는지와 관계없이 모두 외국항행용역에 포함된다.","explanation":"시행령은 <b>자기의 승객만이 전용하는 호텔</b>에 투숙하게 하는 경우로 한정합니다. 2024년 제61회 세무사 1차에서 승객전용 요건을 제거한 지문이 오답으로 출제되었습니다.","correction":"올바른 문장: 외국항행사업자가 자기 승객만이 전용하는 호텔에 투숙하게 하는 경우 외국항행용역에 포함된다.","trap":"버스와 호텔 모두 ‘자기 승객만 전용’이라는 제한을 확인하세요."},{"id":38,"part":4,"law":"영 §32②1","answer":"O","level":"A급","tag":"국제복합운송","text":"운송주선업자가 국제복합운송계약에 따라 화물을 인수하고 자기 책임과 계산으로 타인의 선박·항공기 등을 이용하여 국제운송한 뒤 운임을 받는 용역은 외국항행용역 범위에 포함된다.","explanation":"시행령 제32조 제2항 제1호의 요건을 반영한 문장입니다. 직접 운송수단을 소유하지 않더라도 자기 책임과 계산으로 운송하면 포함될 수 있습니다.","correction":"","trap":"단순 알선인지 자기 책임·계산의 국제복합운송인지 구별하세요."},{"id":39,"part":4,"law":"영 §32②2","answer":"O","level":"A급","tag":"상업서류 송달","text":"항공사업법에 따른 상업서류 송달용역은 시행령상 외국항행용역의 범위에 포함된다.","explanation":"시행령 제32조 제2항 제2호의 명문 규정입니다. 2023년 제60회 세무사 1차에서도 영세율 적용대상으로 출제되었습니다.","correction":"","trap":"일반 국내 택배용역과 법정 상업서류 송달용역을 구별하세요."},{"id":40,"part":4,"law":"영 §101①표9","answer":"X","level":"B급","tag":"외국항행 증빙","text":"법 제23조의 영세율을 신고할 때는 선박과 항공기 모두 반드시 수출신고필증만 첨부하여야 한다.","explanation":"시행령 제101조 제1항 표 제9호는 원칙적으로 외국환은행의 외화입금증명서를 정하고, 항공기의 외국항행용역은 공급가액확정명세서로 하도록 규정합니다.","correction":"올바른 문장: 법 제23조의 첨부서류는 원칙적으로 외화입금증명서이며, 항공기의 외국항행용역은 공급가액확정명세서를 사용한다.","trap":"재화 수출서류와 외국항행용역의 첨부서류를 바꾸지 마세요."}];
+const PARTS = {"1":{"title":"제21조 재화의 수출 기본","subtitle":"영세율·직접수출·중계무역·보세물품 반출","range":"1~10"},"2":{"title":"수출방식과 간접수출","subtitle":"위탁판매·외국인도·위탁가공·내국신용장 등","range":"11~20"},"3":{"title":"제22조 용역의 국외공급","subtitle":"공급장소·대금수령·국외 건설용역·첨부서류","range":"21~30"},"4":{"title":"제23조 외국항행용역","subtitle":"국제운송·부수용역·국제복합운송·상업서류 송달","range":"31~40"}};
+const state = {selected:{}, done:{}, correct:0, answered:0, allExplanations:false, wrongOnly:false};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+function renderQuiz(){
+  const root = document.getElementById('quizRoot');
+  root.innerHTML = '';
+  Object.entries(PARTS).forEach(([partNo, meta]) => {
+    const section = document.createElement('section');
+    section.id = 'part' + partNo;
+    section.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">Part ${partNo}</span>
+        <span class="section-title">${escapeHTML(meta.title)}</span>
+        <span class="section-subtitle">${escapeHTML(meta.subtitle)}</span>
+        <span class="section-count" id="partCount${partNo}">0/${QUESTIONS.filter(q=>q.part===Number(partNo)).length}</span>
+      </div><hr class="section-rule">`;
+    QUESTIONS.filter(q=>q.part===Number(partNo)).forEach(q => section.appendChild(makeCard(q)));
+    root.appendChild(section);
+  });
+}
+
+function makeCard(q){
+  const card = document.createElement('article');
+  card.className = 'question-card';
+  card.id = 'card' + q.id;
+  const levelClass = q.level.startsWith('A') ? 'a' : '';
+  card.innerHTML = `
+    <div class="question-head">
+      <span class="question-no">${q.id}</span>
+      <div class="question-text">
+        <span class="law-badge">${escapeHTML(q.law)}</span>
+        <span class="level-badge ${levelClass}">${escapeHTML(q.level)}</span>
+        <span class="topic-badge">${escapeHTML(q.tag)}</span><br>
+        ${escapeHTML(q.text)}
+      </div>
+    </div>
+    <div class="question-body">
+      <div class="ox-row">
+        <button class="ox-btn" data-value="O" onclick="selectAnswer(${q.id},'O')" aria-label="${q.id}번 O 선택">O</button>
+        <button class="ox-btn" data-value="X" onclick="selectAnswer(${q.id},'X')" aria-label="${q.id}번 X 선택">X</button>
+      </div>
+    </div>
+    <div class="answer-row">
+      <button class="check-btn" onclick="checkAnswer(${q.id})">정답 확인</button>
+      <span class="result-badge" id="result${q.id}"></span>
+    </div>
+    <div class="explanation" id="explanation${q.id}">
+      <div class="ex-title">해설</div>
+      <div class="law-ref">${escapeHTML(q.law)}</div>
+      <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer} (${q.answer==='O'?'옳다':'틀리다'})</div>
+      <p>${q.explanation}</p>
+      ${q.correction ? `<div class="correction">${escapeHTML(q.correction)}</div>` : ''}
+      <p class="trap">⚠ ${escapeHTML(q.trap)}</p>
+    </div>`;
+  return card;
+}
+
+function selectAnswer(id, value){
+  if(state.done[id]) return;
+  state.selected[id] = value;
+  const card = document.getElementById('card'+id);
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === value) btn.classList.add(value==='O'?'selected-o':'selected-x');
+  });
+}
+
+function checkAnswer(id, silent=false){
+  if(state.done[id]) return;
+  const q = QUESTIONS.find(item=>item.id===id);
+  const selected = state.selected[id];
+  if(!selected){
+    if(!silent) alert('O 또는 X를 먼저 선택해주세요.');
+    return;
+  }
+  state.done[id] = true;
+  state.answered += 1;
+  const correct = selected === q.answer;
+  if(correct) state.correct += 1;
+  const card = document.getElementById('card'+id);
+  card.dataset.correct = correct ? 'true' : 'false';
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === q.answer) btn.classList.add('correct');
+    else if(btn.dataset.value === selected && !correct) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  card.querySelector('.check-btn').disabled = true;
+  const result = document.getElementById('result'+id);
+  result.textContent = correct ? '✓ 정답' : `✗ 오답 (정답: ${q.answer})`;
+  result.className = 'result-badge show ' + (correct ? 'ok' : 'ng');
+  document.getElementById('explanation'+id).classList.add('show');
+  updateStatus();
+}
+
+function updateStatus(){
+  document.getElementById('scoreValue').textContent = `${state.correct}/${state.answered}`;
+  document.getElementById('progressFill').style.width = `${state.answered/QUESTIONS.length*100}%`;
+  Object.keys(PARTS).forEach(partNo => {
+    const partQuestions = QUESTIONS.filter(q=>q.part===Number(partNo));
+    const count = partQuestions.filter(q=>state.done[q.id]).length;
+    document.getElementById('partCount'+partNo).textContent = `${count}/${partQuestions.length}`;
+  });
+}
+
+function gradeAll(){
+  QUESTIONS.forEach(q => {
+    if(!state.done[q.id] && state.selected[q.id]) checkAnswer(q.id,true);
+  });
+  showScore();
+}
+
+function showScore(){
+  const wrong = state.answered - state.correct;
+  const unanswered = QUESTIONS.length - state.answered;
+  const pct = Math.round(state.correct / QUESTIONS.length * 100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('correctStat').textContent = state.correct;
+  document.getElementById('wrongStat').textContent = wrong;
+  document.getElementById('unansweredStat').textContent = unanswered;
+  let feedback = '';
+  if(unanswered > 0) feedback = `미응답 ${unanswered}문항이 있습니다. 선택한 문항만 채점했으며, 총 문항 기준 점수입니다.`;
+  else if(pct >= 90) feedback = '재화의 수출·용역의 국외공급·외국항행용역의 영세율 범위를 안정적으로 구분하고 있습니다.';
+  else if(pct >= 75) feedback = '기본 구조는 양호합니다. 특수무역 수출방식과 외국항행사업자의 부수용역 범위를 다시 확인하세요.';
+  else if(pct >= 60) feedback = '직접수출·간접수출·국외공급을 구분하고, 내국신용장 및 구매확인서의 발급기한을 비교하여 복습하세요.';
+  else feedback = '법 제21조~제23조와 시행령 제31조~제32조를 재화의 수출 → 용역의 국외공급 → 외국항행용역 순서로 다시 읽어보세요.';
+  document.getElementById('feedbackText').textContent = feedback;
+  const panel = document.getElementById('scorePanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleAllExplanations(){
+  state.allExplanations = !state.allExplanations;
+  document.querySelectorAll('.explanation').forEach(el => el.classList.toggle('show',state.allExplanations));
+  document.getElementById('toggleExplainBtn').textContent = state.allExplanations ? '해설 모두 숨기기' : '해설 모두 보기';
+}
+
+function toggleWrongOnly(force=false){
+  state.wrongOnly = force ? true : !state.wrongOnly;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById('card'+q.id);
+    const isWrong = state.done[q.id] && card.dataset.correct === 'false';
+    card.classList.toggle('hidden-filter', state.wrongOnly && !isWrong);
+  });
+  document.getElementById('wrongOnlyBtn').textContent = state.wrongOnly ? '전체 문제 보기' : '틀린 문제만 보기';
+  if(state.wrongOnly && !QUESTIONS.some(q=>state.done[q.id] && document.getElementById('card'+q.id).dataset.correct==='false')){
+    alert('현재 확인된 오답이 없습니다. 먼저 문항을 채점해주세요.');
+    state.wrongOnly = false;
+    QUESTIONS.forEach(q=>document.getElementById('card'+q.id).classList.remove('hidden-filter'));
+    document.getElementById('wrongOnlyBtn').textContent = '틀린 문제만 보기';
+  } else if(state.wrongOnly){
+    document.getElementById('quizRoot').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz(){
+  if(confirm('선택과 채점 결과를 모두 초기화할까요?')) location.reload();
+}
+
+renderQuiz();
+
+</script>
+<script src="semosi-review.js?v=20260710-schedule"></script>
+</body>
+</html>
