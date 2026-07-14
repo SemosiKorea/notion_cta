@@ -5,6 +5,11 @@
   const CARD_SELECTOR = '.question-card, .qc, .quiz-card';
   const FILE_NAME = decodeURIComponent((location.pathname.split('/').pop() || 'index.html'));
   const FILE_KEY = FILE_NAME.replace(/\.html$/i, '');
+  const REVIEW_PAGE = '복습관리_오답복습_오늘의복습_대시보드_20260714.html';
+  const SEARCH_PARAMS = new URLSearchParams(location.search);
+  const IS_DUE_REVIEW_MODE = SEARCH_PARAMS.get('semosiReview') === 'due';
+  const TARGET_QUESTION_NO = Number(SEARCH_PARAMS.get('semosiQuestion') || 0);
+  let reviewScrollDone = false;
 
   if (!/OX퀴즈/i.test(FILE_NAME) && !document.querySelector(CARD_SELECTOR)) return;
 
@@ -47,6 +52,13 @@
     next.setDate(next.getDate() + days);
     next.setHours(0, 0, 0, 0);
     return next;
+  }
+
+  function isDue(record) {
+    if (!record) return false;
+    const today = toDateKey(new Date());
+    if (record.nextReviewDate) return record.nextReviewDate <= today;
+    return record.needsReview === true;
   }
 
   function padQuestionNo(value) {
@@ -296,6 +308,8 @@
       makeReviewUI(card);
       restoreCard(card);
     });
+
+    if (IS_DUE_REVIEW_MODE) applyDueReviewMode(cards);
   }
 
   function injectStyles() {
@@ -313,9 +327,91 @@
       .semosi-review-status{color:#85745f}
       .semosi-review-status.done{color:#176b3a;font-weight:700}
       .semosi-review-status.review{color:#9b2335;font-weight:700}
-      @media print{.semosi-review{display:none!important}}
+      .semosi-review-hidden{display:none!important}
+      .semosi-due-review-banner{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin:1rem auto;padding:.8rem 1rem;max-width:1100px;border:1px solid rgba(92,61,17,.28);border-radius:10px;background:#fff8ed;color:#4f402f;font-size:.82rem;box-shadow:0 5px 18px rgba(55,36,18,.08)}
+      .semosi-due-review-banner strong{color:#7f1910}
+      .semosi-due-review-actions{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+      .semosi-due-review-actions a,.semosi-due-review-actions button{border:1px solid rgba(92,61,17,.3);border-radius:7px;background:#fffdf9;color:#4f402f;padding:.42rem .68rem;font:inherit;font-weight:700;text-decoration:none;cursor:pointer}
+      .semosi-due-review-actions a:hover,.semosi-due-review-actions button:hover{background:#efe5d6}
+      .semosi-review-target{outline:3px solid rgba(127,25,16,.28);outline-offset:3px;scroll-margin-top:1rem}
+      @media print{.semosi-review,.semosi-due-review-banner{display:none!important}.semosi-review-hidden{display:block!important}}
     `;
     document.head.appendChild(style);
+  }
+
+  function cleanReviewUrl() {
+    const url = new URL(location.href);
+    url.searchParams.delete('semosiReview');
+    url.searchParams.delete('semosiQuestion');
+    url.hash = '';
+    return url.href;
+  }
+
+  function ensureDueReviewBanner(dueCount) {
+    let banner = document.getElementById('semosi-due-review-banner');
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'semosi-due-review-banner';
+      banner.className = 'semosi-due-review-banner';
+
+      const message = document.createElement('span');
+      message.dataset.semosiDueMessage = '1';
+
+      const actions = document.createElement('div');
+      actions.className = 'semosi-due-review-actions';
+
+      const dashboardLink = document.createElement('a');
+      dashboardLink.href = encodeURI(REVIEW_PAGE);
+      dashboardLink.textContent = '복습페이지로 돌아가기';
+
+      const showAll = document.createElement('button');
+      showAll.type = 'button';
+      showAll.textContent = '전체 문제 보기';
+      showAll.addEventListener('click', () => { location.href = cleanReviewUrl(); });
+
+      actions.append(dashboardLink, showAll);
+      banner.append(message, actions);
+
+      const quizRoot = document.getElementById('quizRoot');
+      const firstCard = document.querySelector(CARD_SELECTOR);
+      const anchor = quizRoot || firstCard;
+      if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(banner, anchor);
+      else document.body.insertBefore(banner, document.body.firstChild);
+    }
+
+    const message = banner.querySelector('[data-semosi-due-message]');
+    const messageText = dueCount
+      ? `이 자료에서 오늘까지 복습할 문제 ${dueCount}개만 표시하고 있습니다.`
+      : '이 자료에는 오늘까지 복습할 문제가 없습니다.';
+    if (message.dataset.count !== String(dueCount)) {
+      message.dataset.count = String(dueCount);
+      message.replaceChildren();
+      const strong = document.createElement('strong');
+      strong.textContent = dueCount ? `${dueCount}개 복습 모드` : '복습 완료';
+      message.append(strong, document.createTextNode(` · ${messageText}`));
+    }
+  }
+
+  function applyDueReviewMode(cards) {
+    const enhancedCards = cards.filter(card => card.dataset.questionId);
+    if (!enhancedCards.length) return;
+
+    document.body.classList.add('semosi-due-review-mode');
+    const store = readStore();
+    const dueCards = enhancedCards.filter(card => isDue(store.items[card.dataset.questionId]));
+    enhancedCards.forEach(card => {
+      card.classList.toggle('semosi-review-hidden', !dueCards.includes(card));
+      card.classList.toggle('semosi-review-target', Number(card.dataset.semosiQuestionNo) === TARGET_QUESTION_NO);
+    });
+    ensureDueReviewBanner(dueCards.length);
+
+    if (!reviewScrollDone && TARGET_QUESTION_NO) {
+      const target = dueCards.find(card => Number(card.dataset.semosiQuestionNo) === TARGET_QUESTION_NO);
+      if (target) {
+        reviewScrollDone = true;
+        requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      }
+    }
   }
 
   function handleAnswerClick(button) {
