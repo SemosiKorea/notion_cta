@@ -66,7 +66,9 @@ main{max-width:1040px;margin:0 auto;padding:0 24px 72px}
 .card:hover,.card:focus-visible{transform:translateY(-3px);border-color:#bba98e;box-shadow:var(--shadow);outline:none}.card:hover::before,.card:focus-visible::before{transform:scaleY(1)}
 .card-category{font-size:.67rem;font-weight:700;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:9px}
 .card-title{font-family:var(--serif);font-size:1.04rem;font-weight:700;line-height:1.55;margin-bottom:14px}
+.card-study{display:flex;align-items:center;gap:6px;margin-top:auto;margin-bottom:9px;color:var(--muted);font-size:.7rem}.card-study::before{content:'';width:6px;height:6px;border-radius:50%;background:#b9ad9c}.card-study.has-history{color:var(--accent2);font-weight:700}.card-study.has-history::before{background:var(--accent2)}.card-study time{font-variant-numeric:tabular-nums}
 .card-meta{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:.69rem}
+.card-study+.card-meta{margin-top:0}
 .card-file{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.card-arrow{font-size:1rem;color:var(--accent2)}
 .state{display:none;margin:18px 0;padding:28px;border:1px dashed var(--border);border-radius:12px;text-align:center;background:rgba(255,255,255,.45);color:var(--muted)}
 .state.show{display:block}.state strong{display:block;color:var(--ink);margin-bottom:6px}.retry{margin-top:14px;border:0;border-radius:8px;background:var(--accent);color:#fff;padding:9px 14px;cursor:pointer}
@@ -190,6 +192,28 @@ function readReviewStore(){
   }
 }
 
+function normalizeReviewFileName(value){
+  try{return decodeURIComponent(value||'').normalize('NFC');}
+  catch(error){return String(value||'').normalize('NFC');}
+}
+
+function latestAnsweredByFile(){
+  const latest=new Map();
+  Object.values(readReviewStore()).forEach(record=>{
+    if(!record||!record.file||!record.answeredAt) return;
+    const timestamp=Date.parse(record.answeredAt);
+    if(!Number.isFinite(timestamp)) return;
+    const key=normalizeReviewFileName(record.file);
+    if(!latest.has(key)||timestamp>latest.get(key)) latest.set(key,timestamp);
+  });
+  return latest;
+}
+
+function formatAnsweredDate(timestamp){
+  const date=new Date(timestamp);
+  return `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,'0')}.${String(date.getDate()).padStart(2,'0')}`;
+}
+
 function isReviewDue(record,today){
   if(!record||!record.file) return false;
   if(record.nextReviewDate) return record.nextReviewDate<=today;
@@ -286,7 +310,7 @@ function renderReviewDashboard(){
   pageLink.textContent=total>8?`복습페이지에서 전체 ${total}문제 보기 →`:'복습페이지에서 전체 보기 →';
 }
 
-function createCard(file){
+function createCard(file,lastAnswered){
   const info=parseFilename(file.name);
   const a=document.createElement('a');
   a.className='card';
@@ -301,6 +325,19 @@ function createCard(file){
   title.className='card-title';
   title.textContent=info.title;
 
+  const isOxQuiz=/OX퀴즈/i.test(file.name);
+  const timestamp=lastAnswered.get(normalizeReviewFileName(file.name));
+  const study=document.createElement('div');
+  study.className='card-study'+(timestamp?' has-history':'');
+  if(timestamp){
+    const time=document.createElement('time');
+    time.dateTime=new Date(timestamp).toISOString();
+    time.textContent=formatAnsweredDate(timestamp);
+    study.append(document.createTextNode('최근 풀이 '),time);
+  }else{
+    study.textContent='풀이 기록 없음';
+  }
+
   const meta=document.createElement('div');
   meta.className='card-meta';
   const filename=document.createElement('span');
@@ -311,7 +348,9 @@ function createCard(file){
   arrow.setAttribute('aria-hidden','true');
   arrow.textContent='↗';
   meta.append(filename,arrow);
-  a.append(category,title,meta);
+  a.append(category,title);
+  if(isOxQuiz) a.append(study);
+  a.append(meta);
   return a;
 }
 
@@ -337,8 +376,9 @@ function renderCards(){
     return matchesCategory&&matchesQuery;
   });
   files=[...files].sort((a,b)=>sort==='newest'?(b.sha||'').localeCompare(a.sha||''):a.name.localeCompare(b.name,'ko'));
+  const lastAnswered=latestAnsweredByFile();
   const host=$('cards');host.replaceChildren();
-  files.forEach(file=>host.appendChild(createCard(file)));
+  files.forEach(file=>host.appendChild(createCard(file,lastAnswered)));
   $('count').textContent=`전체 ${allFiles.length}개 · 표시 ${files.length}개`;
   $('empty').classList.toggle('show',files.length===0&&allFiles.length>0);
 }
@@ -360,7 +400,8 @@ $('search').addEventListener('input',event=>{$('clearSearch').style.display=even
 $('clearSearch').addEventListener('click',()=>{$('search').value='';$('clearSearch').style.display='none';$('search').focus();renderCards();});
 $('sort').addEventListener('change',renderCards);
 $('retry').addEventListener('click',loadFiles);
-window.addEventListener('storage',event=>{if(event.key===REVIEW_STORAGE_KEY) renderReviewDashboard();});
+window.addEventListener('storage',event=>{if(event.key===REVIEW_STORAGE_KEY){renderReviewDashboard();renderCards();}});
+window.addEventListener('pageshow',()=>{renderReviewDashboard();if(allFiles.length) renderCards();});
 $('year').textContent=new Date().getFullYear();
 renderReviewDashboard();
 loadFiles();
