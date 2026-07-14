@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제40조~제41조 | O/X 판단 퀴즈</title>
+<style>
+:root{
+  --bg:#f2f0eb;--surface:#fff;--surface2:#ece9e2;--border:#d5d0c7;
+  --primary:#1b3d6b;--accent:#9a4410;--green:#1c5030;--red:#7f1910;
+  --text:#111010;--text2:#373430;--muted:#666260;--gold:#d4cbaa;
+  --shadow:0 2px 10px rgba(0,0,0,.07);--shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --serif:Georgia,'Noto Serif KR','Batang',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;min-height:100vh}
+button{font:inherit}
+.header{background:var(--primary);color:#fff;padding:1.5rem 1.2rem 1.15rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.header-inner{max-width:980px;margin:0 auto;display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.badge-top{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .5rem;color:var(--gold)}
+.title{font-family:var(--serif);font-size:1.48rem;font-weight:700;line-height:1.3;margin-top:.25rem}
+.title span{font-family:var(--sans);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.78)}
+.subtitle{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.25rem}
+.score-box{margin-left:auto;text-align:right;min-width:82px}.score-label{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.09em}.score-value{font-family:var(--mono);font-size:1.48rem;color:var(--gold);font-weight:700}
+.progress-wrap{background:var(--primary);padding:0 1.2rem .72rem}.progress-track{max-width:980px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .3s ease}
+.container{max-width:980px;margin:0 auto;padding:1.35rem 1rem 4rem}
+.notice{background:#eef3ff;border:1.5px solid var(--primary);border-radius:10px;padding:.85rem 1rem;font-size:.79rem;color:#173761;margin:0 0 1rem}.notice strong{color:var(--primary)}
+.toolbar{display:flex;gap:.48rem;flex-wrap:wrap;margin:.85rem 0 1.2rem}.tool-btn{border:1px solid var(--border);background:#fff;color:var(--text2);padding:.42rem .72rem;border-radius:7px;cursor:pointer;font-size:.74rem}.tool-btn:hover{border-color:var(--primary);color:var(--primary)}.tool-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.tool-btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem}.toc h2{font-family:var(--serif);font-size:.95rem;color:var(--primary);margin-bottom:.5rem}.toc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.toc-links.four{grid-template-columns:repeat(4,1fr)}.toc-links.five{grid-template-columns:repeat(5,1fr)}.toc a{text-decoration:none;color:var(--text2);border:1px solid var(--border);border-radius:7px;padding:.52rem .65rem;font-size:.75rem;background:#faf9f6}.toc a:hover{border-color:var(--primary);color:var(--primary)}.toc a b{display:block;color:var(--primary);font-size:.78rem}
+details.study{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:1rem;box-shadow:var(--shadow)}details.study summary{cursor:pointer;padding:.76rem 1rem;font-weight:700;color:var(--primary);font-size:.82rem;list-style:none}details.study summary::-webkit-details-marker{display:none}details.study summary::after{content:'＋';float:right;font-family:var(--mono)}details.study[open] summary::after{content:'－'}details.study .inside{padding:0 1rem 1rem;font-size:.76rem;color:var(--text2)}
+.summary-table{width:100%;border-collapse:collapse;margin-top:.3rem;font-size:.73rem}.summary-table th,.summary-table td{border:1px solid #c8d6e8;padding:.35rem .44rem;text-align:center}.summary-table th{background:#e6eef9;color:var(--primary)}.summary-table td:first-child{text-align:left;font-weight:600}
+.section-header{display:flex;align-items:center;gap:.72rem;margin:2rem 0 .8rem;flex-wrap:wrap}.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:4px}.section-title{font-family:var(--serif);font-size:1.02rem;font-weight:700}.section-subtitle{font-size:.7rem;color:var(--muted)}.section-count{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}.section-rule{border:0;border-top:1.5px solid var(--border);margin-bottom:1rem}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.9rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,opacity .2s}.question-card:hover{box-shadow:var(--shadow-lg)}.question-card.hidden-filter{display:none}.question-head{padding:.84rem 1rem .65rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.7rem}.question-no{font-family:var(--mono);font-size:.68rem;font-weight:700;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#e4eef8;color:var(--primary);margin-top:1px}.question-text{font-size:.86rem;line-height:1.82;flex:1}.law-badge,.level-badge,.topic-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;padding:.08rem .35rem;border-radius:3px;vertical-align:middle;margin-right:.22rem}.law-badge{background:#eaf0f7;color:var(--primary);border:1px solid #c5d8ee}.level-badge{background:#fff3dc;color:#7a5700}.level-badge.a{background:#fdecea;color:var(--red)}.topic-badge{background:#e8f2eb;color:var(--green)}
+.question-body{padding:.62rem 1rem .75rem}.ox-row{display:flex;gap:.5rem}.ox-btn{border:1.5px solid var(--border);background:#fff;border-radius:7px;padding:.42rem 1.28rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .13s}.ox-btn:hover{border-color:var(--primary);color:var(--primary);background:#eaf0f7}.ox-btn.selected-o{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.selected-x{border-color:var(--red);background:#faf0ef;color:var(--red)}.ox-btn.correct{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.wrong{border-color:var(--red);background:#faf0ef;color:var(--red);opacity:.6}
+.answer-row{padding:0 1rem .78rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.check-btn{padding:.38rem .9rem;border:0;border-radius:5px;background:var(--primary);color:#fff;font-size:.74rem;font-weight:600;cursor:pointer}.check-btn:disabled{opacity:.35;cursor:default}.result-badge{display:none;font-size:.73rem;font-weight:600;padding:.24rem .58rem;border-radius:20px}.result-badge.show{display:inline-block}.result-badge.ok{background:#e4f2ea;color:var(--green)}.result-badge.ng{background:#faf0ef;color:var(--red)}
+.explanation{display:none;background:#fafaf7;border-top:1px solid var(--border);padding:.8rem 1rem;font-size:.78rem;color:var(--text2);line-height:1.9}.explanation.show{display:block}.ex-title{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem}.answer-line{font-weight:700;font-size:.81rem;margin-bottom:.22rem}.answer-line.o{color:var(--green)}.answer-line.x{color:var(--red)}.law-ref{display:inline-block;font-family:var(--mono);font-size:.67rem;color:var(--primary);background:#eaf0f7;padding:.1rem .38rem;border-radius:3px;margin-bottom:.35rem}.correction{background:#eef3ff;border-left:3px solid var(--primary);padding:.42rem .6rem;margin:.42rem 0}.trap{color:var(--red);font-style:italic;margin-top:.3rem}
+.global-actions{display:flex;justify-content:center;gap:.65rem;margin:1.6rem 0;flex-wrap:wrap}.action-btn{padding:.55rem 1.25rem;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer}.action-btn.primary{background:var(--accent);border:1px solid var(--accent);color:#fff}.action-btn.outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}.action-btn.outline:hover{background:var(--primary);color:#fff}
+.score-panel{display:none;background:#fff;border:1.5px solid var(--primary);border-radius:12px;padding:1.45rem 1.1rem;text-align:center;box-shadow:var(--shadow-lg);margin:1.6rem 0}.score-panel.show{display:block}.score-panel h2{font-family:var(--serif);font-size:1.1rem;color:var(--primary)}.grade{font-family:var(--mono);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;margin:.5rem 0}.score-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.7rem 0 1rem}.score-stats strong{display:block;font-family:var(--mono);font-size:1.25rem}.score-stats span{font-size:.65rem;color:var(--muted)}.feedback{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.source-box{margin-top:2rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;font-size:.72rem;color:var(--text2)}.source-box h3{font-family:var(--serif);color:var(--primary);font-size:.88rem;margin-bottom:.35rem}.source-box ul{padding-left:1.1rem}.source-box li{margin:.2rem 0}.caution{color:var(--red);margin-top:.45rem}
+.footer-note{text-align:center;font-size:.65rem;color:var(--muted);margin-top:1.4rem}
+@media(max-width:680px){.toc-links.four{grid-template-columns:1fr}.title{font-size:1.12rem}.score-box{margin-left:0}.container{padding:.9rem .68rem 3rem}.toc-links{grid-template-columns:1fr}.question-head{padding:.72rem .82rem .58rem}.question-body{padding:.58rem .82rem .68rem}.answer-row{padding:0 .82rem .7rem}.explanation{padding:.72rem .82rem}.summary-table{font-size:.65rem}.summary-table th,.summary-table td{padding:.28rem .22rem}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}.header{position:static;box-shadow:none;padding:.7cm .6cm;background:#fff;color:#000;border-bottom:2px solid #1b3d6b}.badge-top,.subtitle,.score-box,.progress-wrap,.toolbar,.global-actions,.check-btn,.ox-row,.result-badge{display:none!important}.title,.title span{color:#000}.container{max-width:none;padding:.4cm}.notice,.toc,details.study,.source-box{box-shadow:none}.question-card{box-shadow:none;break-inside:avoid;margin-bottom:.35cm}.explanation{display:block!important}.section-header{break-after:avoid}.score-panel{display:none!important}.question-head{padding:.3cm}.question-body,.answer-row{display:none}.source-box{break-inside:avoid}.law-badge,.level-badge,.topic-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.toc-links.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:840px){.toc-links.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.toc-links.five{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header class="header"><div class="header-inner"><div>
+<span class="badge-top">세무사 1차 · 세법학개론 · 2027 대비</span>
+<div class="title">부가가치세법 제40조~제41조<br><span>공통매입세액 안분·정산·감가상각자산 재계산 O/X 퀴즈</span></div>
+<div class="subtitle">법률 2026.1.2. · 시행령 2026.2.27. · 시행규칙 2026.3.20. 시행본 기준 · 총 40문항</div>
+</div><div class="score-box"><div class="score-label">SCORE</div><div class="score-value" id="scoreValue">–</div></div></div></header>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+<main class="container">
+<div class="notice"><strong>판단 순서:</strong> ① 과세사업·면세사업의 실지귀속을 먼저 구분한다 → ② 구분할 수 없는 공통매입세액만 안분한다 → ③ 예정신고는 잠정 안분하고 확정신고에서 과세기간 전체로 정산한다 → ④ 공급가액이 없으면 법정 대체기준의 순서를 적용한다 → ⑤ 감가상각자산은 직전 기준비율과 5%p 이상 차이가 나는지 확인한 뒤 잔존비율을 곱해 재계산한다. 모든 문항은 현행 법령을 바탕으로 만든 자체 제작 문제입니다.</div>
+<nav class="toc" aria-label="목차"><h2>목차</h2><div class="toc-links five">
+<a href="#study"><b>핵심 정리</b>공식·경계값</a><a href="#part1"><b>Part 1</b>기본 안분</a><a href="#part2"><b>Part 2</b>예정·확정</a><a href="#part3"><b>Part 3</b>대체기준</a><a href="#part4"><b>Part 4</b>재계산</a>
+</div></nav>
+<details class="study" id="study" open><summary>한 줄 요약과 전체 판단 구조</summary><div class="inside">
+<p><strong>한 줄 요약:</strong> 먼저 실지귀속을 나누고, 남은 공통매입세액만 안분하며, 감가상각자산은 이후 면세비율 변화가 5%p 이상일 때 잔존가액 상당액을 다시 조정한다.</p>
+<table class="summary-table"><thead><tr><th>단계</th><th>판단·계산</th><th>대표 함정</th></tr></thead><tbody>
+<tr><td>1. 실지귀속</td><td>과세 전용·면세 전용·공통사용으로 분류</td><td>겸영 매입세액 전부 안분</td></tr>
+<tr><td>2. 기본 안분</td><td>불공제액 = 공통매입세액 × 면세공급가액 ÷ 총공급가액</td><td>공제액과 불공제액 반대로 계산</td></tr>
+<tr><td>3. 예정·확정</td><td>예정기간 잠정 안분 → 과세기간 전체로 정산</td><td>확정신고 최종 3개월 비율만 적용</td></tr>
+<tr><td>4. 대체기준</td><td>매입가액 → 예정공급가액 → 예정사용면적</td><td>건물 예정면적 우선 특례 누락</td></tr>
+<tr><td>5. 재계산</td><td>직전 기준과 5%p 이상 차이 × 잔존비율</td><td>최초 취득비율과 매번 비교</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>핵심 공식과 경계값 암기표</summary><div class="inside"><table class="summary-table"><thead><tr><th>논점</th><th>현행 기준</th><th>주의점</th></tr></thead><tbody>
+<tr><td>기본 불공제액</td><td>공통매입세액 × 면세공급가액 ÷ 총공급가액</td><td>나머지가 공제액</td></tr>
+<tr><td>면세비율 소액 특례</td><td>면세비율 5% 미만 + 공통매입세액 500만원 미만</td><td>정확히 5%·500만원은 제외</td></tr>
+<tr><td>공통매입 소액 특례</td><td>공통매입세액 5만원 미만</td><td>정확히 5만원은 제외</td></tr>
+<tr><td>재계산 기준</td><td>직전 적용비율과 5%p 이상 차이</td><td>4.9%p는 제외, 정확히 5%p 포함</td></tr>
+<tr><td>건물·구축물 잔존비율</td><td>1 - 5% × 경과 과세기간 수</td><td>중간 취득도 과세기간 개시일 취득 간주</td></tr>
+<tr><td>그 밖의 감가상각자산</td><td>1 - 25% × 경과 과세기간 수</td><td>건물과 비율 혼동 금지</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>계산 또는 판단 순서</summary><div class="inside">
+<table class="summary-table"><thead><tr><th>문제 유형</th><th>풀이 순서</th></tr></thead><tbody>
+<tr><td>일반 안분</td><td>직접귀속분 분리 → 공통매입세액 확정 → 면세비율 계산 → 특례 검토 → 공제·불공제액 계산</td></tr>
+<tr><td>확정신고 정산</td><td>예정+확정 공통매입세액 합계 → 과세기간 전체 비율 적용 → 이미 공제한 예정분 차감</td></tr>
+<tr><td>공급가액 없음</td><td>매입가액 비율 가능 여부 → 예정공급가액 → 예정사용면적 → 건물·구축물 면적 우선 여부</td></tr>
+<tr><td>재계산</td><td>감가상각자산 여부 → 비교기준 비율 확인 → 5%p 이상 여부 → 경과기간·잔존비율 → 증감 방향</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>기출 포인트와 공식 최종정답</summary><div class="inside"><table class="summary-table"><thead><tr><th>기출</th><th>공식답</th><th>반복 논점</th></tr></thead><tbody>
+<tr><td>2021년 제58회 78번</td><td>①</td><td>재계산 후에는 직전 재계산 과세기간의 비율과 비교, 해당 과세기간 조정액 없음</td></tr>
+<tr><td>2022년 제59회 75번</td><td>④</td><td>직접귀속분 제거 후 과세기간 전체 공급가액 비율로 공통매입세액 안분, 공제액 5,500,000원</td></tr>
+<tr><td>2024년 제61회 76번</td><td>③</td><td>실지귀속 우선 + 예정신고분을 포함한 확정신고 정산, 공제액 1,030,000원</td></tr>
+<tr><td>2025년 제62회 71번</td><td>③</td><td>건물 매입세액·직전 재계산 비율·경과기간을 결합, 가산액 2,059,020원</td></tr>
+</tbody></table><p style="margin-top:.5rem">기출문제의 문장과 수치는 그대로 전재하지 않았으며, 출제 구조와 공식 최종정답을 자체 제작 문항에 반영했습니다.</p></div></details>
+<div class="toolbar"><button class="tool-btn primary" onclick="gradeAll()">전체 채점</button><button class="tool-btn" onclick="toggleAllExplanations()" id="toggleExplainBtn">해설 모두 보기</button><button class="tool-btn" onclick="toggleWrongOnly()" id="wrongOnlyBtn">틀린 문제만 보기</button><button class="tool-btn" onclick="window.print()">인쇄</button><button class="tool-btn accent" onclick="resetQuiz()">다시 풀기</button></div>
+<div id="quizRoot"></div>
+<div class="global-actions"><button class="action-btn primary" onclick="gradeAll()">전체 채점 및 결과 보기</button><button class="action-btn outline" onclick="toggleAllExplanations()">전체 해설 펼치기</button><button class="action-btn outline" onclick="resetQuiz()">처음부터 다시 풀기</button></div>
+<section class="score-panel" id="scorePanel" aria-live="polite"><h2>학습 결과</h2><div class="grade" id="gradeText">0%</div><div class="score-stats"><div><strong id="correctStat">0</strong><span>정답</span></div><div><strong id="wrongStat">0</strong><span>오답</span></div><div><strong id="unansweredStat">0</strong><span>미응답</span></div></div><div class="feedback" id="feedbackText"></div><button class="action-btn outline" onclick="toggleWrongOnly(true)">오답만 복습하기</button></section>
+<section class="source-box"><h3>근거 및 검증 기준</h3><ul>
+<li>부가가치세법 제40조·제41조: 법률 제21065호, 2026.1.2. 시행본.</li>
+<li>부가가치세법 시행령 제81조·제82조·제83조: 대통령령 제36133호, 2026.2.27. 시행본.</li>
+<li>부가가치세법 시행규칙 제54조·제55조: 재정경제부령 제9호, 2026.3.20. 시행본.</li>
+<li>업로드된 2021·2022·2024·2025년 세무사 1차 시험지와 공식 최종정답에서 위 기출논점을 확인함.</li>
+<li>문항은 모두 자체 제작이며 실제 기출문제를 그대로 수록한 것이 아님.</li></ul>
+<p class="caution">※ 2027년 세무사 시험의 적용 법령 기준일은 향후 시행계획과 출제기준을 별도로 확인해야 합니다. 본 파일은 2026년 7월 13일 현재 시행 중인 법령을 기준으로 제작했습니다.</p></section>
+<div class="footer-note">부가가치세법 제40조~제41조 · 자체 제작 O/X 학습자료</div>
+</main>
+
+<script>
+const QUESTIONS = [{"id":1,"part":1,"law":"법 §40","answer":"O","level":"A급","tag":"실지귀속 우선","text":"과세사업과 면세사업등을 겸영하더라도 과세사업 또는 면세사업등에 실지귀속되는 매입세액은 먼저 그 귀속에 따라 처리한다.","explanation":"법 제40조는 실지귀속을 우선하도록 규정합니다. 과세사업에만 귀속되면 공제대상이고, 면세사업등에만 귀속되면 법 제39조에 따라 불공제하며, 실지귀속을 구분할 수 없는 부분만 공통매입세액으로 안분합니다.","correction":"","trap":"겸영사업자라는 이유만으로 모든 매입세액을 안분하지 않습니다."},{"id":2,"part":1,"law":"법 §40","answer":"X","level":"A급","tag":"안분대상","text":"과세사업과 면세사업을 함께 영위하는 사업자는 해당 과세기간의 모든 매입세액을 공급가액 비율로 안분하여야 한다.","explanation":"안분 대상은 실지귀속을 구분할 수 없는 공통매입세액뿐입니다. 과세사업 전용과 면세사업 전용 매입세액은 각각 실지귀속에 따라 처리합니다.","correction":"올바른 문장: 실지귀속을 구분할 수 없는 공통매입세액만 법정 기준으로 안분한다.","trap":"‘겸영’과 ‘공통사용’을 같은 뜻으로 보지 마세요."},{"id":3,"part":1,"law":"법 §39①7·§40","answer":"O","level":"A급","tag":"세 갈래 분류","text":"겸영사업자의 매입세액은 과세사업 전용, 면세사업등 전용, 공통사용의 세 갈래로 먼저 분류하는 것이 원칙이다.","explanation":"계산은 실지귀속 판정부터 시작합니다. 과세사업 전용은 공제, 면세사업등 전용은 불공제, 공통사용분만 안분하는 흐름입니다.","correction":"","trap":"공급가액 비율부터 곧바로 계산하면 직접귀속분을 잘못 안분할 수 있습니다."},{"id":4,"part":1,"law":"법 §40","answer":"X","level":"A급","tag":"공통매입 정의","text":"과세사업과 면세사업에 함께 사용되었더라도 사용횟수나 전용면적 등으로 실지귀속을 객관적으로 구분할 수 있는 매입세액은 공통매입세액에 해당한다.","explanation":"객관적 자료로 실지귀속을 구분할 수 있다면 그 구분에 따라 처리하고 공통매입세액으로 보지 않습니다.","correction":"올바른 문장: 함께 사용되었더라도 실지귀속을 구분할 수 있으면 그 귀속에 따라 처리한다.","trap":"물리적으로 함께 사용되었다는 사실보다 ‘실지귀속 구분 가능성’이 핵심입니다."},{"id":5,"part":1,"law":"영 §81①","answer":"O","level":"A급","tag":"기본 공식","text":"일반적인 공통매입세액 안분에서 면세사업등 관련 매입세액은 ‘공통매입세액 × 면세공급가액 ÷ 총공급가액’으로 계산한다.","explanation":"시행령 제81조 제1항의 기본식입니다. 계산된 면세사업등 관련 매입세액은 불공제하고, 나머지가 공제대상 공통매입세액입니다.","correction":"","trap":"공제액을 묻는지 불공제액을 묻는지 먼저 확인하세요."},{"id":6,"part":1,"law":"영 §81①","answer":"X","level":"A급","tag":"공제액 공식","text":"공제되는 공통매입세액은 ‘공통매입세액 × 면세공급가액 ÷ 총공급가액’으로 계산한다.","explanation":"그 식은 면세사업등 관련 불공제 매입세액을 구하는 식입니다. 공제액은 공통매입세액에 과세공급가액 비율을 곱하거나, 공통매입세액에서 불공제액을 차감하여 계산합니다.","correction":"올바른 문장: 공제되는 공통매입세액은 공통매입세액 × 과세공급가액 ÷ 총공급가액으로 계산할 수 있다.","trap":"분자에 면세공급가액이 있으면 원칙적으로 불공제액입니다."},{"id":7,"part":1,"law":"영 §81①","answer":"O","level":"A급","tag":"기본 계산","text":"공통매입세액이 4,000,000원이고 과세공급가액 700,000,000원, 면세공급가액 300,000,000원이라면 불공제액은 1,200,000원이고 공제액은 2,800,000원이다.","explanation":"불공제액은 4,000,000원 × 300,000,000원 ÷ 1,000,000,000원 = 1,200,000원입니다. 공제액은 4,000,000원 - 1,200,000원 = 2,800,000원입니다.","correction":"","trap":"총공급가액은 과세공급가액과 면세공급가액의 합계입니다."},{"id":8,"part":1,"law":"영 §81①","answer":"O","level":"A급","tag":"면세공급가액","text":"공통매입세액 안분에서 면세공급가액에는 면세사업등의 공급가액뿐 아니라 그 면세사업등과 관련하여 받은 과세표준 불산입 국고보조금·공공보조금 및 유사 금액도 포함될 수 있다.","explanation":"시행령 제81조 제1항은 면세공급가액의 범위에 해당 보조금 등을 포함하도록 정합니다.","correction":"","trap":"과세표준에 포함되지 않는 보조금이라도 안분비율의 면세공급가액에는 들어갈 수 있습니다."},{"id":9,"part":1,"law":"규칙 §54②","answer":"X","level":"B급","tag":"총공급가액 범위","text":"공통매입세액 안분의 총공급가액은 해당 사업자의 모든 사업에서 발생한 수입금액을 공통매입세액과의 관련성 여부와 관계없이 합산한 금액이다.","explanation":"시행규칙 제54조 제2항상 총공급가액은 공통매입세액과 관련된 해당 과세기간의 과세사업 공급가액과 면세공급가액의 합계입니다.","correction":"올바른 문장: 총공급가액은 해당 공통매입세액과 관련된 과세사업 공급가액과 면세공급가액의 합계로 본다.","trap":"사업자 전체 매출과 해당 공통매입세액 관련 매출을 구분하세요."},{"id":10,"part":1,"law":"규칙 §54①","answer":"O","level":"B급","tag":"도축업 특례","text":"도축업자가 공통매입세액을 과세·면세사업 등에 관련된 도축 두수에 따라 안분하는 경우에는 일반적인 공급가액 비율 대신 그 기준을 사용할 수 있다.","explanation":"시행규칙 제54조 제1항이 ‘인원 수 등에 따르는 등’의 구체적 사례로 도축 두수 기준을 규정합니다.","correction":"","trap":"모든 업종이 임의로 수량 기준을 선택할 수 있는 것은 아닙니다."},{"id":11,"part":2,"law":"영 §81① 단서","answer":"O","level":"A급","tag":"예정·확정","text":"예정신고에서는 예정신고기간의 공급가액 비율로 공통매입세액을 안분하고, 확정신고에서 해당 과세기간 전체 비율로 정산한다.","explanation":"예정신고는 잠정 계산이고 확정신고에서 과세기간 전체 자료를 반영합니다.","correction":"","trap":"확정신고에서도 최종 3개월 비율만 사용하는 것으로 착각하지 마세요."},{"id":12,"part":2,"law":"영 §81① 단서","answer":"X","level":"A급","tag":"확정신고 비율","text":"제1기 확정신고에서 공통매입세액을 정산할 때에는 4월부터 6월까지의 공급가액 비율만 적용한다.","explanation":"확정신고에서는 1월부터 6월까지 제1기 전체 공급가액 비율을 기준으로 예정신고분까지 정산합니다.","correction":"올바른 문장: 제1기 확정신고에서는 1월부터 6월까지의 전체 공급가액 비율로 정산한다.","trap":"‘확정신고기간 최종 3개월’이라는 표현과 ‘과세기간 전체 비율’을 구분하세요."},{"id":13,"part":2,"law":"법 §40·영 §81①","answer":"O","level":"A급","tag":"2022 기출형","text":"과세사업 전용 매입세액 2,000,000원, 면세사업 전용 매입세액 1,000,000원, 공통매입세액 5,000,000원이고 해당 과세기간의 과세공급가액 490,000,000원·면세공급가액 210,000,000원이라면 공제대상 매입세액은 5,500,000원이다.","explanation":"과세사업 전용 2,000,000원은 전액 공제하고 면세사업 전용 1,000,000원은 불공제합니다. 공통매입세액 공제액은 5,000,000원 × 490/700 = 3,500,000원이므로 합계는 5,500,000원입니다. 2022년 제59회 75번의 핵심 구조입니다.","correction":"","trap":"직접귀속분을 공통매입세액과 함께 안분하지 마세요."},{"id":14,"part":2,"law":"영 §81②1","answer":"O","level":"A급","tag":"5% 미만 특례","text":"면세공급가액 비율이 4.9%이고 공통매입세액이 4,990,000원이라면 다른 배제사유가 없는 한 해당 공통매입세액 전액을 공제할 수 있다.","explanation":"면세비율이 5% 미만이고 공통매입세액도 5,000,000원 미만이므로 시행령 제81조 제2항 제1호의 전액공제 특례가 적용됩니다.","correction":"","trap":"두 조건을 모두 충족해야 합니다."},{"id":15,"part":2,"law":"영 §81②1","answer":"X","level":"A급","tag":"5% 경계","text":"면세공급가액 비율이 정확히 5%이고 공통매입세액이 4,900,000원이면 공통매입세액 전액을 공제한다.","explanation":"전액공제 특례는 면세비율이 5% ‘미만’일 때 적용됩니다. 정확히 5%는 포함되지 않습니다.","correction":"올바른 문장: 면세비율이 정확히 5%이면 제81조 제2항 제1호의 전액공제 특례가 적용되지 않는다.","trap":"5% 이하가 아니라 5% 미만입니다."},{"id":16,"part":2,"law":"영 §81②1 단서","answer":"X","level":"A급","tag":"500만원 경계","text":"면세공급가액 비율이 3%이고 공통매입세액이 정확히 5,000,000원이면 면세비율이 5% 미만이므로 전액 공제한다.","explanation":"공통매입세액이 5,000,000원 이상이면 5% 미만 특례에서 제외됩니다. 정확히 5,000,000원도 제외입니다.","correction":"올바른 문장: 면세비율이 5% 미만이어도 공통매입세액이 500만원 이상이면 그 특례를 적용하지 않는다.","trap":"500만원 ‘미만’과 ‘이하’를 구분하세요."},{"id":17,"part":2,"law":"영 §81②2","answer":"O","level":"A급","tag":"5만원 미만","text":"해당 과세기간의 공통매입세액이 49,999원이라면 면세공급가액 비율이 높더라도 시행령상 소액 특례에 따라 그 매입세액을 공제할 수 있다.","explanation":"시행령 제81조 제2항 제2호는 해당 과세기간의 공통매입세액이 5만원 미만인 경우 공제되는 매입세액으로 봅니다.","correction":"","trap":"이 특례는 5% 비율 요건과 별개의 소액 기준입니다."},{"id":18,"part":2,"law":"영 §81②2","answer":"X","level":"A급","tag":"5만원 경계","text":"해당 과세기간의 공통매입세액이 정확히 50,000원이면 소액 공통매입세액 특례에 따라 전액 공제한다.","explanation":"특례는 5만원 ‘미만’이므로 정확히 50,000원은 포함되지 않습니다.","correction":"올바른 문장: 공통매입세액이 정확히 5만원이면 제81조 제2항 제2호의 소액 특례가 적용되지 않는다.","trap":"경계값은 시험에서 자주 바뀌어 제시됩니다."},{"id":19,"part":2,"law":"영 §81① 단서","answer":"O","level":"A급","tag":"예정분 정산","text":"예정신고에서 공통매입세액 1,000,000원 중 400,000원을 공제하였으나 과세기간 전체 확정비율에 따른 총 공제가능액이 660,000원이라면 확정신고에서 추가로 공제할 금액은 260,000원이다.","explanation":"확정신고 정산액은 과세기간 전체 기준 공제가능액 660,000원에서 예정신고 때 이미 공제한 400,000원을 뺀 260,000원입니다.","correction":"","trap":"확정신고 때 총 공제가능액 660,000원을 다시 전부 공제하지 않습니다."},{"id":20,"part":2,"law":"영 §81③","answer":"X","level":"B급","tag":"전 사업장 비율","text":"전기통신사업자와 한국철도공사는 매입세액의 실지귀속을 구분할 수 있는 경우에도 언제나 전 사업장의 면세공급가액 비율로 안분할 수 있다.","explanation":"전 사업장 비율을 사용할 수 있는 것은 실지귀속을 구분하기 어려운 재화 또는 용역에 한정됩니다.","correction":"올바른 문장: 전기통신사업자와 한국철도공사는 실지귀속을 구분하기 어려운 재화·용역에 대해서만 전 사업장 비율을 사용할 수 있다.","trap":"특례도 실지귀속 우선 원칙을 완전히 배제하지 않습니다."},{"id":21,"part":3,"law":"영 §81④","answer":"O","level":"A급","tag":"공급가액 없음","text":"해당 과세기간에 과세사업과 면세사업등의 공급가액이 없거나 어느 한 사업의 공급가액이 없으면 원칙적으로 ① 매입가액 비율 ② 예정공급가액 비율 ③ 예정사용면적 비율의 순서로 안분기준을 적용한다.","explanation":"시행령 제81조 제4항의 적용 순서입니다. 다만 건물 또는 구축물의 예정사용면적을 구분할 수 있는 경우에는 면적 기준이 우선할 수 있습니다.","correction":"","trap":"순서를 거꾸로 외우지 마세요: 매입가액 → 예정공급가액 → 예정사용면적입니다."},{"id":22,"part":3,"law":"영 §81④1","answer":"X","level":"A급","tag":"매입가액 비율","text":"공급가액이 없어 매입가액 비율을 적용할 때 총매입가액에는 공통매입가액도 포함한다.","explanation":"제1순위 기준의 총매입가액에서는 공통매입가액을 제외합니다. 직접귀속되는 과세·면세 관련 매입가액의 비율을 사용합니다.","correction":"올바른 문장: 매입가액 비율의 총매입가액에서는 공통매입가액을 제외한다.","trap":"분모에 공통매입가액을 넣으면 비율이 왜곡됩니다."},{"id":23,"part":3,"law":"영 §81④ 단서","answer":"O","level":"A급","tag":"건물 면적 우선","text":"토지를 제외한 건물 또는 구축물을 신축·취득하여 과세사업과 면세사업등에 제공할 예정면적을 구분할 수 있다면 예정사용면적 비율을 매입가액 비율과 예정공급가액 비율보다 우선 적용한다.","explanation":"시행령 제81조 제4항 단서의 건물·구축물 특례입니다.","correction":"","trap":"일반 순서의 제3순위가 건물·구축물에서는 우선순위로 올라갑니다."},{"id":24,"part":3,"law":"영 §81⑤","answer":"X","level":"B급","tag":"토지 제외","text":"토지와 건물을 함께 취득하여 예정사용면적을 구분할 수 있으면 토지와 건물 모두에 예정사용면적 우선기준을 적용한다.","explanation":"시행령 제81조 제5항은 토지를 제외한 건물 또는 구축물에 관한 규정입니다.","correction":"올바른 문장: 예정사용면적 우선기준은 토지를 제외한 건물 또는 구축물에 적용한다.","trap":"조문은 명시적으로 토지를 제외합니다."},{"id":25,"part":3,"law":"영 §81⑤","answer":"O","level":"A급","tag":"면적기준 계속","text":"건물에 예정사용면적 비율을 우선 적용한 경우 그 후 과세·면세 공급가액이 모두 발생하더라도 실제 사용면적이 확정되기 전까지는 예정사용면적 비율을 계속 적용한다.","explanation":"사용면적이 확정되는 과세기간에 실제 사용면적을 기준으로 정산합니다.","correction":"","trap":"매출이 발생했다는 이유만으로 즉시 공급가액 비율로 바꾸지 않습니다."},{"id":26,"part":3,"law":"영 §82","answer":"O","level":"A급","tag":"공통매입 정산","text":"공급가액이 없거나 한쪽 사업의 공급가액이 없어 대체기준으로 안분한 경우에는 공급가액 또는 사용면적이 확정되는 과세기간의 확정신고에서 공통매입세액을 정산한다.","explanation":"시행령 제82조는 대체기준에 따라 안분한 매입세액을 실제 공급가액 또는 실제 사용면적이 확정될 때 정산하도록 합니다.","correction":"","trap":"정산 시점은 자산 취득 즉시가 아니라 기준이 확정되는 과세기간입니다."},{"id":27,"part":3,"law":"영 §82","answer":"X","level":"A급","tag":"정산 공식","text":"공통매입세액 정산액은 ‘이미 공제한 세액 - 확정된 기준에 따른 공제가능 세액’으로 계산하며, 양수이면 추가 공제한다.","explanation":"정산액의 기본 방향은 ‘확정된 기준에 따른 공제가능 세액 - 이미 공제한 세액’입니다. 양수이면 추가 공제하고 음수이면 그 절댓값을 납부세액에 가산합니다.","correction":"올바른 문장: 정산액은 확정기준 공제가능액에서 이미 공제한 세액을 빼며, 양수이면 추가 공제한다.","trap":"공식의 뺄셈 순서와 가산·공제 방향을 함께 암기하세요."},{"id":28,"part":3,"law":"영 §82①","answer":"O","level":"A급","tag":"정산 계산","text":"총공통매입세액이 10,000,000원, 이미 공제한 세액이 6,000,000원이고 공급가액 확정 과세기간의 면세비율이 30%라면 1,000,000원을 추가 공제한다.","explanation":"확정기준 공제가능액은 10,000,000원 × (1 - 30%) = 7,000,000원입니다. 이미 공제한 6,000,000원을 빼면 1,000,000원 추가 공제입니다.","correction":"","trap":"면세비율 30%를 곱한 3,000,000원은 불공제액입니다."},{"id":29,"part":3,"law":"영 §82","answer":"X","level":"A급","tag":"정산 방향","text":"확정기준 공제가능액이 4,000,000원이고 이미 공제한 세액이 6,000,000원이면 2,000,000원을 추가 공제한다.","explanation":"이미 2,000,000원을 과다 공제했으므로 그 금액을 납부세액에 가산하거나 환급세액에서 차감해야 합니다.","correction":"올바른 문장: 확정기준 공제가능액이 이미 공제한 세액보다 200만원 적으면 200만원을 납부세액에 가산한다.","trap":"공제가능액이 줄면 납부세액이 증가합니다."},{"id":30,"part":3,"law":"영 §81·§82","answer":"O","level":"A급","tag":"2024 기출형","text":"과세사업 전용 매입세액 700,000원, 객관적으로 과세사업에 귀속되는 배송비 매입세액 70,000원, 과세기간 전체 공통매입세액 2,200,000원, 과세비율 30%, 예정신고 때 이미 공제한 공통매입세액 400,000원이라면 확정신고 최종 3개월의 공제액은 1,030,000원이다.","explanation":"공통매입세액의 과세기간 전체 공제가능액은 2,200,000원 × 30% = 660,000원이고, 이미 공제한 400,000원을 뺀 정산액은 260,000원입니다. 직접귀속 700,000원과 70,000원을 합하면 1,030,000원입니다. 2024년 제61회 76번의 핵심 구조입니다.","correction":"","trap":"최종 3개월 공통매입세액만 따로 안분하지 말고 예정신고분까지 합쳐 정산하세요."},{"id":31,"part":4,"law":"법 §41·영 §83①","answer":"O","level":"A급","tag":"재계산 대상","text":"공통매입세액 안분에 따라 매입세액이 공제된 감가상각자산은 이후 면세비율 또는 면세사용면적 비율이 일정 수준 변하면 납부세액 또는 환급세액을 재계산할 수 있다.","explanation":"법 제41조와 시행령 제83조는 감가상각자산의 사용구조 변화에 따른 공제액 조정을 규정합니다.","correction":"","trap":"공통매입세액의 최초 안분과 이후 과세기간의 재계산을 구분하세요."},{"id":32,"part":4,"law":"규칙 §55③","answer":"X","level":"B급","tag":"자산 공급 시","text":"공통사용하던 감가상각자산을 공급하는 날이 속하는 과세기간에는 그 공급과 별도로 해당 자산의 납부·환급세액 재계산도 반드시 한다.","explanation":"시행규칙 제55조 제3항에 따라 공통사용재화의 공급가액 계산 규정이 적용되어 자산을 공급하는 과세기간에는 그 자산에 대한 재계산을 하지 않습니다.","correction":"올바른 문장: 공통사용재화 공급 규정이 적용되는 자산을 공급하는 과세기간에는 그 자산의 재계산을 하지 않는다.","trap":"처분에 따른 공급가액 계산과 재계산을 중복 적용하지 않습니다."},{"id":33,"part":4,"law":"법 §41·영 §83①","answer":"O","level":"A급","tag":"5%p 기준","text":"재계산 기준비율의 차이가 정확히 5퍼센트포인트이면 ‘5퍼센트 이상’에 해당하여 재계산 요건을 충족한다.","explanation":"법과 시행령은 비율 차이가 5퍼센트 이상인 경우를 규정하므로 정확히 5퍼센트포인트도 포함됩니다.","correction":"","trap":"면세비율 자체가 5%인지가 아니라 비교대상 비율의 차이가 5%p 이상인지 봅니다."},{"id":34,"part":4,"law":"영 §83①","answer":"X","level":"A급","tag":"4.9%p 경계","text":"기준 면세비율이 40%이고 현재 면세비율이 44.9%이면 차이가 사실상 5%에 가까우므로 재계산한다.","explanation":"차이는 4.9퍼센트포인트이므로 5퍼센트 이상 요건을 충족하지 않습니다.","correction":"올바른 문장: 면세비율 차이가 4.9%p이면 재계산하지 않는다.","trap":"반올림하여 5%p로 처리하지 않습니다."},{"id":35,"part":4,"law":"법 §41·영 §83①","answer":"O","level":"A급","tag":"비교 기준","text":"과거에 이미 재계산한 적이 있다면 이후 비율 변화는 최초 취득 과세기간의 비율이 아니라 직전 재계산 과세기간에 적용한 비율과 비교한다.","explanation":"법 제41조는 취득 과세기간의 비율을 기본으로 하되, 그 후 재계산한 때에는 그 재계산 과세기간의 비율을 비교기준으로 삼습니다.","correction":"","trap":"매 과세기간마다 최초 취득비율로 되돌아가 비교하지 않습니다."},{"id":36,"part":4,"law":"영 §83②","answer":"O","level":"A급","tag":"잔존비율 공식","text":"재계산 시 건물·구축물은 경과 과세기간당 5%, 그 밖의 감가상각자산은 경과 과세기간당 25%씩 차감한 잔존비율을 적용한다.","explanation":"건물·구축물은 20개 과세기간, 그 밖의 감가상각자산은 4개 과세기간을 전제로 한 잔존비율 구조입니다.","correction":"","trap":"5%와 25%를 자산별로 바꾸어 외우지 마세요."},{"id":37,"part":4,"law":"영 §83②","answer":"X","level":"A급","tag":"증감 방향","text":"면세비율이 증가하면 공제 가능한 매입세액이 늘어나므로 재계산액을 납부세액에서 공제한다.","explanation":"면세비율이 증가하면 과거 공제액 중 면세사업 관련 부분이 커지므로 재계산액을 납부세액에 가산합니다. 면세비율이 감소하면 공제액이 늘어나므로 납부세액에서 공제합니다.","correction":"올바른 문장: 면세비율이 증가하면 재계산액을 납부세액에 가산하고, 감소하면 공제한다.","trap":"면세비율과 공제가능액은 반대 방향으로 움직입니다."},{"id":38,"part":4,"law":"영 §83⑤","answer":"O","level":"B급","tag":"경과기간 수","text":"과세기간 개시일 후에 감가상각자산을 취득했더라도 재계산의 경과 과세기간 수를 계산할 때에는 그 과세기간 개시일에 취득한 것으로 본다.","explanation":"시행령 제83조 제5항은 과세기간 중간 취득을 해당 과세기간 개시일 취득으로 간주합니다.","correction":"","trap":"월할계산이나 일할계산을 하지 않습니다."},{"id":39,"part":4,"law":"법 §41·영 §83①","answer":"O","level":"A급","tag":"2021 기출형","text":"건물 취득 과세기간의 면세비율이 40%이고 다음 과세기간 50%로 변해 재계산한 뒤, 이후 비율이 54%, 47%로 변했다면 47%가 된 과세기간에는 직전 재계산 기준 50%와의 차이가 3%p이므로 재계산하지 않는다.","explanation":"50%로 변한 때 최초 40%와 10%p 차이가 나 재계산했고, 그 뒤에는 50%가 새 비교기준입니다. 54%는 4%p, 47%는 3%p 차이이므로 추가 재계산이 없습니다. 2021년 제58회 78번의 공식답은 ① ‘없음’입니다.","correction":"","trap":"최초 취득비율 40%와 현재 47%를 비교해 7%p라고 판단하면 오답입니다."},{"id":40,"part":4,"law":"영 §83②1","answer":"O","level":"A급","tag":"2025 기출형","text":"건물 관련 공제대상 매입세액이 45,756,000원이고, 경과 과세기간 수가 5이며, 직전 재계산 기준보다 면세비율이 6%p 증가했다면 납부세액에 가산할 재계산액은 2,059,020원이다.","explanation":"45,756,000원 × (1 - 5% × 5) × 6% = 45,756,000원 × 75% × 6% = 2,059,020원입니다. 면세비율이 증가했으므로 납부세액에 가산합니다. 2025년 제62회 71번의 공식답은 ③입니다.","correction":"","trap":"건물은 25%가 아니라 경과 과세기간당 5%를 적용합니다."}];
+const PARTS = {"1":{"title":"실지귀속과 기본 안분","subtitle":"직접귀속 → 공통매입세액 → 면세비율","range":"1~10"},"2":{"title":"예정·확정과 소액 특례","subtitle":"5%·500만원·5만원 경계값","range":"11~20"},"3":{"title":"대체기준과 정산","subtitle":"매입가액·예정공급·예정면적 → 확정 정산","range":"21~30"},"4":{"title":"감가상각자산 재계산","subtitle":"5%p 기준·잔존비율·가산/공제 방향","range":"31~40"}};
+const state = {selected:{}, done:{}, correct:0, answered:0, allExplanations:false, wrongOnly:false};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+function renderQuiz(){
+  const root = document.getElementById('quizRoot');
+  root.innerHTML = '';
+  Object.entries(PARTS).forEach(([partNo, meta]) => {
+    const section = document.createElement('section');
+    section.id = 'part' + partNo;
+    section.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">Part ${partNo}</span>
+        <span class="section-title">${escapeHTML(meta.title)}</span>
+        <span class="section-subtitle">${escapeHTML(meta.subtitle)}</span>
+        <span class="section-count" id="partCount${partNo}">0/${QUESTIONS.filter(q=>q.part===Number(partNo)).length}</span>
+      </div><hr class="section-rule">`;
+    QUESTIONS.filter(q=>q.part===Number(partNo)).forEach(q => section.appendChild(makeCard(q)));
+    root.appendChild(section);
+  });
+}
+
+function makeCard(q){
+  const card = document.createElement('article');
+  card.className = 'question-card';
+  card.id = 'card' + q.id;
+  const levelClass = q.level.startsWith('A') ? 'a' : '';
+  card.innerHTML = `
+    <div class="question-head">
+      <span class="question-no">${q.id}</span>
+      <div class="question-text">
+        <span class="law-badge">${escapeHTML(q.law)}</span>
+        <span class="level-badge ${levelClass}">${escapeHTML(q.level)}</span>
+        <span class="topic-badge">${escapeHTML(q.tag)}</span><br>
+        ${escapeHTML(q.text)}
+      </div>
+    </div>
+    <div class="question-body">
+      <div class="ox-row">
+        <button class="ox-btn" data-value="O" onclick="selectAnswer(${q.id},'O')" aria-label="${q.id}번 O 선택">O</button>
+        <button class="ox-btn" data-value="X" onclick="selectAnswer(${q.id},'X')" aria-label="${q.id}번 X 선택">X</button>
+      </div>
+    </div>
+    <div class="answer-row">
+      <button class="check-btn" onclick="checkAnswer(${q.id})">정답 확인</button>
+      <span class="result-badge" id="result${q.id}"></span>
+    </div>
+    <div class="explanation" id="explanation${q.id}">
+      <div class="ex-title">해설</div>
+      <div class="law-ref">${escapeHTML(q.law)}</div>
+      <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer} (${q.answer==='O'?'옳다':'틀리다'})</div>
+      <p>${q.explanation}</p>
+      ${q.correction ? `<div class="correction">${escapeHTML(q.correction)}</div>` : ''}
+      <p class="trap">⚠ ${escapeHTML(q.trap)}</p>
+    </div>`;
+  return card;
+}
+
+function selectAnswer(id, value){
+  if(state.done[id]) return;
+  state.selected[id] = value;
+  const card = document.getElementById('card'+id);
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === value) btn.classList.add(value==='O'?'selected-o':'selected-x');
+  });
+}
+
+function checkAnswer(id, silent=false){
+  if(state.done[id]) return;
+  const q = QUESTIONS.find(item=>item.id===id);
+  const selected = state.selected[id];
+  if(!selected){
+    if(!silent) alert('O 또는 X를 먼저 선택해주세요.');
+    return;
+  }
+  state.done[id] = true;
+  state.answered += 1;
+  const correct = selected === q.answer;
+  if(correct) state.correct += 1;
+  const card = document.getElementById('card'+id);
+  card.dataset.correct = correct ? 'true' : 'false';
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === q.answer) btn.classList.add('correct');
+    else if(btn.dataset.value === selected && !correct) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  card.querySelector('.check-btn').disabled = true;
+  const result = document.getElementById('result'+id);
+  result.textContent = correct ? '✓ 정답' : `✗ 오답 (정답: ${q.answer})`;
+  result.className = 'result-badge show ' + (correct ? 'ok' : 'ng');
+  document.getElementById('explanation'+id).classList.add('show');
+  updateStatus();
+}
+
+function updateStatus(){
+  document.getElementById('scoreValue').textContent = `${state.correct}/${state.answered}`;
+  document.getElementById('progressFill').style.width = `${state.answered/QUESTIONS.length*100}%`;
+  Object.keys(PARTS).forEach(partNo => {
+    const partQuestions = QUESTIONS.filter(q=>q.part===Number(partNo));
+    const count = partQuestions.filter(q=>state.done[q.id]).length;
+    document.getElementById('partCount'+partNo).textContent = `${count}/${partQuestions.length}`;
+  });
+}
+
+function gradeAll(){
+  QUESTIONS.forEach(q => {
+    if(!state.done[q.id] && state.selected[q.id]) checkAnswer(q.id,true);
+  });
+  showScore();
+}
+
+function showScore(){
+  const wrong = state.answered - state.correct;
+  const unanswered = QUESTIONS.length - state.answered;
+  const pct = Math.round(state.correct / QUESTIONS.length * 100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('correctStat').textContent = state.correct;
+  document.getElementById('wrongStat').textContent = wrong;
+  document.getElementById('unansweredStat').textContent = unanswered;
+  let feedback = '';
+  if(unanswered > 0) feedback = `미응답 ${unanswered}문항이 있습니다. 선택한 문항만 채점했으며, 총 문항 기준 점수입니다.`;
+  else if(pct >= 90) feedback = '납부세액 계산, 공제시기, 증빙 예외와 불공제 항목의 경계가 안정적입니다.';
+  else if(pct >= 75) feedback = '기본 구조는 양호합니다. 등록 전 매입세액 20일과 세금계산서 수취기한 특례를 다시 확인하세요.';
+  else if(pct >= 60) feedback = '매입세액을 먼저 실지귀속한 뒤 증빙·사업관련성·자동차·기업업무추진비·면세·토지 순으로 제거하세요.';
+  else feedback = '법 제37조 계산식 → 제38조 공제대상과 귀속시기 → 제39조 불공제 체크리스트 순서로 다시 학습하세요.';
+  document.getElementById('feedbackText').textContent = feedback;
+  const panel = document.getElementById('scorePanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleAllExplanations(){
+  state.allExplanations = !state.allExplanations;
+  document.querySelectorAll('.explanation').forEach(el => el.classList.toggle('show',state.allExplanations));
+  document.getElementById('toggleExplainBtn').textContent = state.allExplanations ? '해설 모두 숨기기' : '해설 모두 보기';
+}
+
+function toggleWrongOnly(force=false){
+  state.wrongOnly = force ? true : !state.wrongOnly;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById('card'+q.id);
+    const isWrong = state.done[q.id] && card.dataset.correct === 'false';
+    card.classList.toggle('hidden-filter', state.wrongOnly && !isWrong);
+  });
+  document.getElementById('wrongOnlyBtn').textContent = state.wrongOnly ? '전체 문제 보기' : '틀린 문제만 보기';
+  if(state.wrongOnly && !QUESTIONS.some(q=>state.done[q.id] && document.getElementById('card'+q.id).dataset.correct==='false')){
+    alert('현재 확인된 오답이 없습니다. 먼저 문항을 채점해주세요.');
+    state.wrongOnly = false;
+    QUESTIONS.forEach(q=>document.getElementById('card'+q.id).classList.remove('hidden-filter'));
+    document.getElementById('wrongOnlyBtn').textContent = '틀린 문제만 보기';
+  } else if(state.wrongOnly){
+    document.getElementById('quizRoot').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz(){
+  if(confirm('선택과 채점 결과를 모두 초기화할까요?')) location.reload();
+}
+
+renderQuiz();
+
+
+
+
+</script>
+<script src="semosi-review.js?v=20260710-schedule"></script>
+</body>
+</html>

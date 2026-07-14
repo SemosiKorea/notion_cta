@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제34조~제36조 | O/X 판단 퀴즈</title>
+<style>
+:root{
+  --bg:#f2f0eb;--surface:#fff;--surface2:#ece9e2;--border:#d5d0c7;
+  --primary:#1b3d6b;--accent:#9a4410;--green:#1c5030;--red:#7f1910;
+  --text:#111010;--text2:#373430;--muted:#666260;--gold:#d4cbaa;
+  --shadow:0 2px 10px rgba(0,0,0,.07);--shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --serif:Georgia,'Noto Serif KR','Batang',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;min-height:100vh}
+button{font:inherit}
+.header{background:var(--primary);color:#fff;padding:1.5rem 1.2rem 1.15rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.header-inner{max-width:980px;margin:0 auto;display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.badge-top{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .5rem;color:var(--gold)}
+.title{font-family:var(--serif);font-size:1.48rem;font-weight:700;line-height:1.3;margin-top:.25rem}
+.title span{font-family:var(--sans);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.78)}
+.subtitle{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.25rem}
+.score-box{margin-left:auto;text-align:right;min-width:82px}.score-label{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.09em}.score-value{font-family:var(--mono);font-size:1.48rem;color:var(--gold);font-weight:700}
+.progress-wrap{background:var(--primary);padding:0 1.2rem .72rem}.progress-track{max-width:980px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .3s ease}
+.container{max-width:980px;margin:0 auto;padding:1.35rem 1rem 4rem}
+.notice{background:#eef3ff;border:1.5px solid var(--primary);border-radius:10px;padding:.85rem 1rem;font-size:.79rem;color:#173761;margin:0 0 1rem}.notice strong{color:var(--primary)}
+.toolbar{display:flex;gap:.48rem;flex-wrap:wrap;margin:.85rem 0 1.2rem}.tool-btn{border:1px solid var(--border);background:#fff;color:var(--text2);padding:.42rem .72rem;border-radius:7px;cursor:pointer;font-size:.74rem}.tool-btn:hover{border-color:var(--primary);color:var(--primary)}.tool-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.tool-btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem}.toc h2{font-family:var(--serif);font-size:.95rem;color:var(--primary);margin-bottom:.5rem}.toc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.toc-links.four{grid-template-columns:repeat(4,1fr)}.toc-links.five{grid-template-columns:repeat(5,1fr)}.toc a{text-decoration:none;color:var(--text2);border:1px solid var(--border);border-radius:7px;padding:.52rem .65rem;font-size:.75rem;background:#faf9f6}.toc a:hover{border-color:var(--primary);color:var(--primary)}.toc a b{display:block;color:var(--primary);font-size:.78rem}
+details.study{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:1rem;box-shadow:var(--shadow)}details.study summary{cursor:pointer;padding:.76rem 1rem;font-weight:700;color:var(--primary);font-size:.82rem;list-style:none}details.study summary::-webkit-details-marker{display:none}details.study summary::after{content:'＋';float:right;font-family:var(--mono)}details.study[open] summary::after{content:'－'}details.study .inside{padding:0 1rem 1rem;font-size:.76rem;color:var(--text2)}
+.summary-table{width:100%;border-collapse:collapse;margin-top:.3rem;font-size:.73rem}.summary-table th,.summary-table td{border:1px solid #c8d6e8;padding:.35rem .44rem;text-align:center}.summary-table th{background:#e6eef9;color:var(--primary)}.summary-table td:first-child{text-align:left;font-weight:600}
+.section-header{display:flex;align-items:center;gap:.72rem;margin:2rem 0 .8rem;flex-wrap:wrap}.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:4px}.section-title{font-family:var(--serif);font-size:1.02rem;font-weight:700}.section-subtitle{font-size:.7rem;color:var(--muted)}.section-count{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}.section-rule{border:0;border-top:1.5px solid var(--border);margin-bottom:1rem}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.9rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,opacity .2s}.question-card:hover{box-shadow:var(--shadow-lg)}.question-card.hidden-filter{display:none}.question-head{padding:.84rem 1rem .65rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.7rem}.question-no{font-family:var(--mono);font-size:.68rem;font-weight:700;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#e4eef8;color:var(--primary);margin-top:1px}.question-text{font-size:.86rem;line-height:1.82;flex:1}.law-badge,.level-badge,.topic-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;padding:.08rem .35rem;border-radius:3px;vertical-align:middle;margin-right:.22rem}.law-badge{background:#eaf0f7;color:var(--primary);border:1px solid #c5d8ee}.level-badge{background:#fff3dc;color:#7a5700}.level-badge.a{background:#fdecea;color:var(--red)}.topic-badge{background:#e8f2eb;color:var(--green)}
+.question-body{padding:.62rem 1rem .75rem}.ox-row{display:flex;gap:.5rem}.ox-btn{border:1.5px solid var(--border);background:#fff;border-radius:7px;padding:.42rem 1.28rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .13s}.ox-btn:hover{border-color:var(--primary);color:var(--primary);background:#eaf0f7}.ox-btn.selected-o{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.selected-x{border-color:var(--red);background:#faf0ef;color:var(--red)}.ox-btn.correct{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.wrong{border-color:var(--red);background:#faf0ef;color:var(--red);opacity:.6}
+.answer-row{padding:0 1rem .78rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.check-btn{padding:.38rem .9rem;border:0;border-radius:5px;background:var(--primary);color:#fff;font-size:.74rem;font-weight:600;cursor:pointer}.check-btn:disabled{opacity:.35;cursor:default}.result-badge{display:none;font-size:.73rem;font-weight:600;padding:.24rem .58rem;border-radius:20px}.result-badge.show{display:inline-block}.result-badge.ok{background:#e4f2ea;color:var(--green)}.result-badge.ng{background:#faf0ef;color:var(--red)}
+.explanation{display:none;background:#fafaf7;border-top:1px solid var(--border);padding:.8rem 1rem;font-size:.78rem;color:var(--text2);line-height:1.9}.explanation.show{display:block}.ex-title{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem}.answer-line{font-weight:700;font-size:.81rem;margin-bottom:.22rem}.answer-line.o{color:var(--green)}.answer-line.x{color:var(--red)}.law-ref{display:inline-block;font-family:var(--mono);font-size:.67rem;color:var(--primary);background:#eaf0f7;padding:.1rem .38rem;border-radius:3px;margin-bottom:.35rem}.correction{background:#eef3ff;border-left:3px solid var(--primary);padding:.42rem .6rem;margin:.42rem 0}.trap{color:var(--red);font-style:italic;margin-top:.3rem}
+.global-actions{display:flex;justify-content:center;gap:.65rem;margin:1.6rem 0;flex-wrap:wrap}.action-btn{padding:.55rem 1.25rem;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer}.action-btn.primary{background:var(--accent);border:1px solid var(--accent);color:#fff}.action-btn.outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}.action-btn.outline:hover{background:var(--primary);color:#fff}
+.score-panel{display:none;background:#fff;border:1.5px solid var(--primary);border-radius:12px;padding:1.45rem 1.1rem;text-align:center;box-shadow:var(--shadow-lg);margin:1.6rem 0}.score-panel.show{display:block}.score-panel h2{font-family:var(--serif);font-size:1.1rem;color:var(--primary)}.grade{font-family:var(--mono);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;margin:.5rem 0}.score-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.7rem 0 1rem}.score-stats strong{display:block;font-family:var(--mono);font-size:1.25rem}.score-stats span{font-size:.65rem;color:var(--muted)}.feedback{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.source-box{margin-top:2rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;font-size:.72rem;color:var(--text2)}.source-box h3{font-family:var(--serif);color:var(--primary);font-size:.88rem;margin-bottom:.35rem}.source-box ul{padding-left:1.1rem}.source-box li{margin:.2rem 0}.caution{color:var(--red);margin-top:.45rem}
+.footer-note{text-align:center;font-size:.65rem;color:var(--muted);margin-top:1.4rem}
+@media(max-width:680px){.toc-links.four{grid-template-columns:1fr}.title{font-size:1.12rem}.score-box{margin-left:0}.container{padding:.9rem .68rem 3rem}.toc-links{grid-template-columns:1fr}.question-head{padding:.72rem .82rem .58rem}.question-body{padding:.58rem .82rem .68rem}.answer-row{padding:0 .82rem .7rem}.explanation{padding:.72rem .82rem}.summary-table{font-size:.65rem}.summary-table th,.summary-table td{padding:.28rem .22rem}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}.header{position:static;box-shadow:none;padding:.7cm .6cm;background:#fff;color:#000;border-bottom:2px solid #1b3d6b}.badge-top,.subtitle,.score-box,.progress-wrap,.toolbar,.global-actions,.check-btn,.ox-row,.result-badge{display:none!important}.title,.title span{color:#000}.container{max-width:none;padding:.4cm}.notice,.toc,details.study,.source-box{box-shadow:none}.question-card{box-shadow:none;break-inside:avoid;margin-bottom:.35cm}.explanation{display:block!important}.section-header{break-after:avoid}.score-panel{display:none!important}.question-head{padding:.3cm}.question-body,.answer-row{display:none}.source-box{break-inside:avoid}.law-badge,.level-badge,.topic-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.toc-links.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:840px){.toc-links.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.toc-links.five{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header class="header"><div class="header-inner"><div>
+<span class="badge-top">세무사 1차 · 세법학개론 · 2027 대비</span>
+<div class="title">부가가치세법 제34조~제36조<br><span>발급시기·매입자발행·수입세금계산서·영수증 O/X 퀴즈</span></div>
+<div class="subtitle">법률 2026.1.2. · 시행령 제71조의2~제73조의2 2026.2.27. · 시행규칙 관련 규정 2026.3.20. 시행본 기준 · 총 40문항</div>
+</div><div class="score-box"><div class="score-label">SCORE</div><div class="score-value" id="scoreValue">–</div></div></div></header>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+<main class="container">
+<div class="notice"><strong>판단 순서:</strong> ① 공급시기를 정한다 → ② 공급시기 전 발급 또는 다음 달 10일 특례가 있는지 본다 → ③ 공급자가 미발급했다면 매입자발행 요건을 확인한다 → ④ 수입거래이면 세관장과 수정수입세금계산서 배제사유를 판단한다 → ⑤ 소비자 대상 업종·간이과세자 여부와 사업자의 발급요구 가능 범위를 확인한다. 제34조의2도 제34조와 제35조 사이의 가지조문이므로 학습범위에 포함했습니다. 모든 문항은 현행 법령을 바탕으로 만든 자체 제작 문제입니다.</div>
+<nav class="toc" aria-label="목차"><h2>목차</h2><div class="toc-links five">
+<a href="#study"><b>핵심 정리</b>발급 판단표</a><a href="#part1"><b>Part 1</b>발급시기</a><a href="#part2"><b>Part 2</b>매입자발행</a><a href="#part3"><b>Part 3</b>수입세금계산서</a><a href="#part4"><b>Part 4</b>영수증</a>
+</div></nav>
+<details class="study" id="study" open><summary>시험 직전 핵심 비교표</summary><div class="inside"><table class="summary-table"><thead><tr><th>구분</th><th>핵심</th><th>대표 함정</th></tr></thead><tbody>
+<tr><td>원칙적 발급</td><td>재화·용역의 공급시기</td><td>대금 회수일로 오인</td></tr>
+<tr><td>월합계 발급</td><td>다음 달 10일까지, 월합계는 월 말일 작성</td><td>전자세금계산서 전송기한과 혼동</td></tr>
+<tr><td>매입자발행 신청</td><td>과세기간 종료일부터 1년, 건당 공급대가 5만원 이상</td><td>공급가액·초과 기준으로 변경</td></tr>
+<tr><td>수입세금계산서</td><td>부가가치세를 징수하는 세관장이 수입자에게 발급</td><td>관할 세무서장이 발급한다고 오인</td></tr>
+<tr><td>수정수입세금계산서</td><td>부정행위·관세법 위반·중대한 잘못 등 배제사유 확인</td><td>추가세액 납부 시 무조건 발급</td></tr>
+<tr><td>간이과세자 영수증</td><td>직전연도 공급대가 4,800만원 미만 또는 신규 최초기간</td><td>공급가액 기준으로 오인</td></tr>
+<tr><td>요구발급</td><td>사업자등록증 제시 + 시행령이 정한 업종·거래</td><td>모든 영수증 업종에 일률 적용</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>숫자·기한 암기표</summary><div class="inside"><table class="summary-table"><thead><tr><th>논점</th><th>숫자·기한</th><th>암기 포인트</th></tr></thead><tbody>
+<tr><td>월합계 등 세금계산서</td><td>다음 달 10일</td><td>토요일·공휴일은 다음 영업일</td></tr>
+<tr><td>매입자발행 신청</td><td>과세기간 종료일부터 1년</td><td>공급일 기준 아님</td></tr>
+<tr><td>매입자발행 최저금액</td><td>거래건당 공급대가 5만원 이상</td><td>5만원 포함</td></tr>
+<tr><td>거래사실 확인</td><td>원칙: 신청일의 다음 달 말일까지</td><td>불가피하면 20일 범위 연장</td></tr>
+<tr><td>수정수입세금계산서 신청 처리</td><td>신청일부터 2개월 이내</td><td>발급 또는 이유 통지</td></tr>
+<tr><td>간이과세자 영수증 기준</td><td>직전연도 공급대가 4,800만원 미만</td><td>공급대가 기준</td></tr>
+</tbody></table></div></details>
+<div class="toolbar"><button class="tool-btn primary" onclick="gradeAll()">전체 채점</button><button class="tool-btn" onclick="toggleAllExplanations()" id="toggleExplainBtn">해설 모두 보기</button><button class="tool-btn" onclick="toggleWrongOnly()" id="wrongOnlyBtn">틀린 문제만 보기</button><button class="tool-btn" onclick="window.print()">인쇄</button><button class="tool-btn accent" onclick="resetQuiz()">다시 풀기</button></div>
+<div id="quizRoot"></div>
+<div class="global-actions"><button class="action-btn primary" onclick="gradeAll()">전체 채점 및 결과 보기</button><button class="action-btn outline" onclick="toggleAllExplanations()">전체 해설 펼치기</button><button class="action-btn outline" onclick="resetQuiz()">처음부터 다시 풀기</button></div>
+<section class="score-panel" id="scorePanel" aria-live="polite"><h2>학습 결과</h2><div class="grade" id="gradeText">0%</div><div class="score-stats"><div><strong id="correctStat">0</strong><span>정답</span></div><div><strong id="wrongStat">0</strong><span>오답</span></div><div><strong id="unansweredStat">0</strong><span>미응답</span></div></div><div class="feedback" id="feedbackText"></div><button class="action-btn outline" onclick="toggleWrongOnly(true)">오답만 복습하기</button></section>
+<section class="source-box"><h3>근거 및 검증 기준</h3><ul>
+<li>부가가치세법 제34조·제34조의2·제35조·제36조: 법률 제21065호, 2026.1.2. 시행본.</li>
+<li>부가가치세법 시행령 제71조의2·제72조·제73조·제73조의2: 대통령령 제36133호, 2026.2.27. 시행본.</li>
+<li>부가가치세법 시행규칙 제53조 등 관련 규정: 재정경제부령 제9호, 2026.3.20. 시행본.</li>
+<li>업로드된 2022년 제59회 78번(공식정답 ⑤), 2023년 제60회 72번(공식정답 ④), 2025년 제62회 72번(공식정답 ⑤)의 출제논점과 함정을 검토함.</li>
+<li>문항은 모두 자체 제작이며 실제 기출문제를 그대로 수록한 것이 아님.</li></ul>
+<p class="caution">※ 2027년 시험의 적용 법령 기준일은 향후 시행계획과 출제기준을 별도로 확인해야 합니다. 본 파일은 2026년 7월 13일 현재 시행 중인 법령 기준입니다.</p></section>
+<div class="footer-note">부가가치세법 제34조~제36조 · 자체 제작 O/X 학습자료</div>
+</main>
+<script>
+const QUESTIONS = [{"id":1,"part":1,"law":"법 §34①","answer":"O","level":"A급","tag":"원칙적 발급시기","text":"세금계산서는 원칙적으로 재화 또는 용역의 공급시기에 공급받는 자에게 발급하여야 한다.","explanation":"법 제34조 제1항은 법 제15조와 제16조에 따른 공급시기를 원칙적인 세금계산서 발급시기로 정합니다.","correction":"","trap":"대금의 실제 수령일이 아니라 공급시기를 기준으로 판단합니다."},{"id":2,"part":1,"law":"법 §34②·§17","answer":"X","level":"A급","tag":"선발급","text":"사업자는 재화 또는 용역의 공급시기 전이라면 대가의 수령 여부나 법정 요건과 관계없이 언제든 세금계산서를 미리 발급할 수 있다.","explanation":"공급시기 전 발급은 법 제17조에서 정한 때에만 허용됩니다. 단순히 공급시기 전이라는 이유만으로 자유롭게 선발급할 수 없습니다.","correction":"올바른 문장: 공급시기 전에는 법 제17조에서 정한 때에 세금계산서를 발급할 수 있다.","trap":"선발급 허용과 무제한 선발급을 구분하세요."},{"id":3,"part":1,"law":"법 §34②","answer":"O","level":"A급","tag":"선발급 가능","text":"법 제17조의 요건을 충족하면 재화 또는 용역의 공급시기가 되기 전에도 세금계산서를 발급할 수 있다.","explanation":"법 제34조 제2항은 공급시기 전 발급 특례를 인정합니다.","correction":"","trap":"선발급은 공급시기를 임의로 바꾸는 규정이 아니라 법정 특례입니다."},{"id":4,"part":1,"law":"법 §34③","answer":"O","level":"A급","tag":"발급기한","text":"월합계 발급 등 법 제34조 제3항의 요건을 충족하면 공급일이 속하는 달의 다음 달 10일까지 세금계산서를 발급할 수 있다.","explanation":"법 제34조 제3항의 합계발급 및 실제거래 확인 특례입니다.","correction":"","trap":"전자세금계산서 발급명세의 전송기한과 혼동하지 마세요."},{"id":5,"part":1,"law":"법 §34③","answer":"O","level":"A급","tag":"휴일 특례","text":"세금계산서 발급기한인 다음 달 10일이 토요일 또는 공휴일이면 바로 다음 영업일까지 발급할 수 있다.","explanation":"법 제34조 제3항 괄호에서 직접 정한 기한 특례입니다.","correction":"","trap":"기한이 자동으로 전월 말일이나 다음 달 말일까지 연장되는 것은 아닙니다."},{"id":6,"part":1,"law":"법 §34③1","answer":"O","level":"A급","tag":"월합계 발급","text":"거래처별로 한 달의 공급가액을 합하여 발급하는 경우에는 해당 달의 말일을 작성 연월일로 한다.","explanation":"달의 1일부터 말일까지 합계한 경우 그 달의 말일이 작성 연월일입니다.","correction":"","trap":"실제 발급일과 세금계산서의 작성 연월일을 구별하세요."},{"id":7,"part":1,"law":"법 §34③2","answer":"X","level":"A급","tag":"임의기간 합계","text":"사업자가 임의로 정한 합계기간은 두 달 이상에 걸쳐 정할 수도 있다.","explanation":"임의기간은 달의 1일부터 말일까지의 기간 이내에서만 정할 수 있습니다.","correction":"올바른 문장: 임의 합계기간은 하나의 달 안에서 정하여야 한다.","trap":"월을 넘는 임의기간과 한 달 안의 임의기간을 구분하세요."},{"id":8,"part":1,"law":"법 §34③2","answer":"O","level":"B급","tag":"기간 종료일","text":"한 달 안에서 사업자가 임의로 정한 기간의 공급가액을 합계하여 발급하는 경우에는 그 기간의 종료일을 작성 연월일로 한다.","explanation":"법 제34조 제3항 제2호의 규정입니다.","correction":"","trap":"항상 월 말일을 작성일로 하는 것은 아닙니다."},{"id":9,"part":1,"law":"법 §34③3","answer":"X","level":"A급","tag":"실제거래 확인","text":"관계 증명서류로 실제거래사실이 확인되는 경우에는 해당 달의 말일을 작성 연월일로 적어야 한다.","explanation":"제3호 특례는 해당 거래일을 작성 연월일로 적습니다.","correction":"올바른 문장: 실제거래사실이 확인되는 경우에는 해당 거래일을 작성 연월일로 한다.","trap":"월합계 발급의 작성일과 실제거래 확인 발급의 작성일을 바꾸지 마세요."},{"id":10,"part":1,"law":"법 §34③3","answer":"X","level":"A급","tag":"증빙 없는 지연발급","text":"실제거래사실을 확인할 관계 증명서류가 없어도 다음 달 10일까지 실제 거래일을 작성일로 하여 발급할 수 있다.","explanation":"제3호 특례는 관계 증명서류 등에 따라 실제거래사실이 확인되는 경우에 한정됩니다.","correction":"올바른 문장: 관계 증명서류 등에 따라 실제거래사실이 확인되어야 해당 거래일을 작성일로 하여 다음 달 10일까지 발급할 수 있다.","trap":"단순 지연발급과 법정 특례를 구분하세요."},{"id":11,"part":2,"law":"법 §34의2①","answer":"O","level":"A급","tag":"매입자발행","text":"공급자가 법정 발급시기에 세금계산서를 발급하지 않으면 일정한 요건 아래 공급받는 자가 관할 세무서장의 확인을 받아 매입자발행세금계산서를 발행할 수 있다.","explanation":"법 제34조의2 제1항의 제도 취지입니다.","correction":"","trap":"공급받는 자가 임의로 발행하는 것이 아니라 세무서장의 거래사실 확인이 필요합니다."},{"id":12,"part":2,"law":"영 §71의2①","answer":"O","level":"A급","tag":"대상 공급자","text":"매입자발행세금계산서의 대상 공급자는 세금계산서 발급의무가 있는 사업자이며, 영수증 발급업종 중 시행령 제73조 제3항·제4항에 따라 발급의무가 생기는 사업자도 포함된다.","explanation":"시행령 제71조의2 제1항의 범위입니다.","correction":"","trap":"모든 사업자가 대상이 되는 것은 아닙니다."},{"id":13,"part":2,"law":"법 §34의2·영 §71의2①","answer":"X","level":"A급","tag":"면세사업자","text":"면세재화를 공급한 면세사업자가 계산서를 발급하지 않은 경우에도 부가가치세법상 매입자발행세금계산서를 발행할 수 있다.","explanation":"이 제도는 부가가치세법상 세금계산서 발급의무가 있는 사업자의 미발급 거래를 전제로 합니다.","correction":"올바른 문장: 면세거래의 계산서 미발급은 부가가치세법 제34조의2의 매입자발행세금계산서 대상이 아니다.","trap":"세금계산서와 소득세·법인세법상 계산서를 구분하세요."},{"id":14,"part":2,"law":"영 §71의2③","answer":"O","level":"A급","tag":"신청기한","text":"거래사실 확인신청은 해당 공급시기가 속하는 과세기간 종료일부터 1년 이내에 하여야 한다.","explanation":"현행 시행령 제71조의2 제3항입니다. 2023년 제60회 72번에서 신청기한이 출제되었습니다.","correction":"","trap":"공급일 또는 확정신고기한부터 1년으로 바꾸어 외우지 마세요."},{"id":15,"part":2,"law":"영 §71의2④","answer":"O","level":"A급","tag":"최저거래금액","text":"거래사실 확인신청 대상은 거래건당 공급대가가 5만원 이상인 거래이다.","explanation":"시행령 제71조의2 제4항의 현행 기준입니다.","correction":"","trap":"공급가액이 아니라 공급대가 기준입니다."},{"id":16,"part":2,"law":"영 §71의2④","answer":"X","level":"A급","tag":"경계값","text":"거래건당 공급대가가 정확히 5만원인 거래는 5만원을 초과하지 않으므로 매입자발행세금계산서 신청대상에서 제외된다.","explanation":"법령은 5만원 이상이라고 규정하므로 정확히 5만원인 거래도 포함됩니다.","correction":"올바른 문장: 거래건당 공급대가가 5만원인 거래도 신청대상에 포함된다.","trap":"이상과 초과의 경계값을 확인하세요."},{"id":17,"part":2,"law":"영 §71의2⑥2","answer":"X","level":"A급","tag":"거래 당시 휴폐업","text":"거래 당시 공급자가 미등록사업자 또는 휴·폐업자였음이 명백해도 거래사실만 입증하면 매입자발행세금계산서를 발행할 수 있다.","explanation":"거래 당시 미등록사업자 또는 휴·폐업자와 거래한 것이 명백하면 관할 세무서장은 확인을 거부해야 합니다. 공급 후에 부도·폐업한 경우와 구분해야 합니다.","correction":"올바른 문장: 거래 당시 미등록사업자 또는 휴·폐업자와 거래한 것이 명백하면 거래사실 확인을 거부한다.","trap":"거래 당시 상태와 거래 후 발생한 폐업을 구분하세요."},{"id":18,"part":2,"law":"영 §71의2⑧","answer":"X","level":"A급","tag":"입증책임","text":"매입자발행세금계산서 거래사실의 존재와 내용에 대한 입증책임은 공급자 관할 세무서장에게 있다.","explanation":"입증책임은 신청인에게 있습니다.","correction":"올바른 문장: 거래사실의 존재와 내용에 대한 입증책임은 신청인에게 있다.","trap":"세무서가 조사한다고 해서 입증책임까지 세무서로 이전되는 것은 아닙니다."},{"id":19,"part":2,"law":"영 §71의2⑨","answer":"O","level":"B급","tag":"확인기한","text":"공급자 관할 세무서장은 원칙적으로 신청일의 다음 달 말일까지 거래사실 여부를 확인하여 통지하여야 한다.","explanation":"시행령 제71조의2 제9항의 처리기한입니다. 불가피한 사유가 있으면 20일 범위에서 연장할 수 있습니다.","correction":"","trap":"신청일부터 7일은 신청서 송부 관련 기한과 구분하세요."},{"id":20,"part":2,"law":"영 §71의2⑪~⑬","answer":"O","level":"A급","tag":"교부·공제","text":"거래사실 확인통지를 받은 신청인은 확인된 거래일자를 작성일로 매입자발행세금계산서를 발행하며, 합계표를 제출하면 해당 공급시기의 과세기간에서 매입세액공제를 받을 수 있다.","explanation":"시행령 제71조의2 제11항부터 제13항까지의 구조입니다. 신청인과 공급자가 통지를 받으면 교부한 것으로 보는 특례도 있습니다.","correction":"","trap":"확인통지일이 아니라 확인된 거래일자가 작성일입니다."},{"id":21,"part":3,"law":"법 §35①","answer":"O","level":"A급","tag":"수입세금계산서","text":"세관장은 수입재화에 대한 부가가치세를 징수할 때 수입하는 자에게 수입세금계산서를 발급하여야 한다.","explanation":"법 제35조 제1항의 원칙입니다.","correction":"","trap":"국내 거래 세금계산서의 발급자와 수입세금계산서의 발급자를 구분하세요."},{"id":22,"part":3,"law":"법 §35①","answer":"X","level":"A급","tag":"발급주체","text":"수입세금계산서는 수입자의 사업장 관할 세무서장이 발급한다.","explanation":"수입세금계산서의 발급자는 세관장입니다.","correction":"올바른 문장: 수입세금계산서는 부가가치세를 징수하는 세관장이 수입자에게 발급한다.","trap":"세무서장과 세관장을 혼동하지 마세요."},{"id":23,"part":3,"law":"법 §35②","answer":"X","level":"A급","tag":"수정수입세금계산서","text":"세관장이 수입재화의 과세표준이나 세액을 결정·경정하면 수입자의 귀책사유와 관계없이 언제나 수정수입세금계산서를 발급하여야 한다.","explanation":"결정·경정의 경우 관세법 위반, 부정한 행위, 중대한 잘못 등 법정 제외사유가 없어야 합니다.","correction":"올바른 문장: 세관장의 결정·경정 시에도 법 제35조 제2항 제2호 각 목의 제외사유가 없을 때 수정수입세금계산서를 발급한다.","trap":"결정·경정 사실만으로 자동 발급된다고 보지 마세요."},{"id":24,"part":3,"law":"법 §35②1","answer":"O","level":"A급","tag":"자진 수정신고","text":"세관장이 과세표준 또는 세액을 결정·경정하기 전에 수입자가 관세법에 따라 수정신고 등을 하는 경우에는 원칙적으로 수정수입세금계산서 발급대상이 된다.","explanation":"법 제35조 제2항 제1호의 원칙입니다. 다만 결정·경정을 미리 알고 한 수정신고는 제3호 구조를 따릅니다.","correction":"","trap":"자발적 수정과 조사 등을 미리 안 뒤의 수정신고를 구분하세요."},{"id":25,"part":3,"law":"법 §35②2","answer":"O","level":"A급","tag":"결정·경정","text":"세관장의 결정·경정이라도 관세법 위반 고발·통고처분, 부정한 행위 또는 대통령령상 중대한 잘못이 없다면 수정수입세금계산서를 발급하여야 한다.","explanation":"현행법은 법정 배제사유가 없는 결정·경정에 수정수입세금계산서 발급을 인정합니다.","correction":"","trap":"과거의 제한적인 제도와 현행 규정을 혼동하지 마세요."},{"id":26,"part":3,"law":"법 §35②2가","answer":"X","level":"A급","tag":"관세법 위반","text":"수입자가 관세법 위반으로 고발되거나 통고처분을 받은 경우에도 세액을 실제 납부했다면 수정수입세금계산서를 발급하여야 한다.","explanation":"법 제35조 제2항 제2호 가목의 배제사유에 해당합니다.","correction":"올바른 문장: 해당 수입과 관련하여 법정 관세법 위반으로 고발되거나 통고처분을 받은 경우에는 원칙적으로 수정수입세금계산서 발급이 배제된다.","trap":"추가세액 납부와 매입세액 증빙 발급은 별개의 문제입니다."},{"id":27,"part":3,"law":"법 §35③","answer":"O","level":"B급","tag":"사후 발견","text":"수정수입세금계산서를 발급한 뒤 수입자에게 법정 배제사유가 있었음을 알게 되면 세관장은 이미 발급한 내용을 수정 전으로 되돌리는 수정수입세금계산서를 발급하여야 한다.","explanation":"법 제35조 제3항의 사후 환원 규정입니다.","correction":"","trap":"한 번 발급되면 취소할 수 없다고 생각하지 마세요."},{"id":28,"part":3,"law":"법 §35④","answer":"O","level":"B급","tag":"무죄 취지","text":"관세법 위반을 이유로 수정수입세금계산서가 발급되지 않았더라도 이후 무죄 취지의 불기소처분이나 무죄 확정판결을 받으면 법정 내용으로 수정수입세금계산서를 발급하여야 한다.","explanation":"법 제35조 제4항의 회복 규정입니다.","correction":"","trap":"단순한 형 감경과 무죄 취지의 처분·판결을 동일시하지 마세요."},{"id":29,"part":3,"law":"법 §35⑤","answer":"O","level":"B급","tag":"발급신청","text":"세관장이 법정 발급사유에도 수정수입세금계산서를 발급하지 않으면 수입자는 국세기본법상 정해진 기간 내에 세관장에게 발급을 신청할 수 있다.","explanation":"법 제35조 제5항의 신청권입니다.","correction":"","trap":"관할 세무서장이 아니라 해당 부가가치세를 징수한 세관장에게 신청합니다."},{"id":30,"part":3,"law":"영 §72⑧","answer":"X","level":"A급","tag":"신청 후 작성일","text":"수입자의 발급신청을 받아 수정수입세금계산서를 발급하는 경우 작성일은 최초 수입세금계산서 발급일로 적는다.","explanation":"신청에 따른 발급은 발급결정일을 작성일로 적고 비고란에 최초 수입세금계산서 발급일 등을 적습니다.","correction":"올바른 문장: 발급신청에 따라 발급하는 수정수입세금계산서는 발급결정일을 작성일로 한다.","trap":"일반 수정발급의 작성일과 신청 후 발급결정일을 구분하세요."},{"id":31,"part":4,"law":"법 §36①","answer":"O","level":"A급","tag":"영수증 원칙","text":"주로 사업자가 아닌 소비자에게 공급하는 대통령령상 사업자는 과세 재화 또는 용역을 공급할 때 원칙적으로 세금계산서 대신 영수증을 발급한다.","explanation":"법 제36조 제1항과 시행령 제73조 제1항의 기본구조입니다.","correction":"","trap":"영수증 발급업종이라는 사실이 면세를 의미하지는 않습니다."},{"id":32,"part":4,"law":"법 §36①","answer":"X","level":"A급","tag":"면세공급","text":"영수증 발급사업자는 부가가치세가 면제되는 재화 또는 용역을 공급할 때에도 부가가치세법 제36조에 따른 영수증을 반드시 발급하여야 한다.","explanation":"법 제36조 제1항은 면세되는 재화 또는 용역의 공급을 제외합니다.","correction":"올바른 문장: 법 제36조의 영수증 발급규정은 부가가치세가 면제되는 공급을 제외한다.","trap":"과세거래 영수증과 면세거래 증빙을 구분하세요."},{"id":33,"part":4,"law":"법 §36①2가","answer":"O","level":"A급","tag":"간이과세자 4,800만원","text":"직전 연도의 공급대가 합계액이 4천800만원 미만인 간이과세자는 원칙적으로 세금계산서 대신 영수증을 발급한다.","explanation":"법 제36조 제1항 제2호 가목의 현행 기준입니다.","correction":"","trap":"공급가액 4천800만원이 아니라 공급대가 기준입니다."},{"id":34,"part":4,"law":"법 §36①2나","answer":"O","level":"A급","tag":"신규 간이과세자","text":"신규로 사업을 시작하여 최초 간이과세기간 중에 있는 개인사업자는 영수증 발급대상 간이과세자에 해당한다.","explanation":"법 제36조 제1항 제2호 나목의 규정입니다.","correction":"","trap":"신규 간이과세자가 처음부터 세금계산서를 발급하는 것으로 단정하지 마세요."},{"id":35,"part":4,"law":"법 §36②","answer":"O","level":"A급","tag":"선택적 영수증","text":"산업용이 아닌 전력 공급 등 대통령령상 거래는 영수증을 발급할 수 있고, 영수증을 발급하지 않으면 세금계산서를 발급하여야 한다.","explanation":"법 제36조 제2항의 선택구조입니다.","correction":"","trap":"제1항의 의무적 영수증과 제2항의 선택적 영수증을 구분하세요."},{"id":36,"part":4,"law":"법 §36③·영 §73③④","answer":"X","level":"A급","tag":"사업자 요구","text":"영수증 발급업종은 공급받는 자가 사업자등록증을 제시하고 세금계산서를 요구하면 업종이나 공급내용과 관계없이 모두 세금계산서를 발급하여야 한다.","explanation":"세금계산서 발급요구가 인정되는 업종과 거래는 시행령 제73조 제3항·제4항에 열거되어 있습니다.","correction":"올바른 문장: 사업자의 발급요구가 있더라도 시행령이 정한 업종과 거래에 해당할 때 세금계산서를 발급한다.","trap":"‘제1항 및 제2항에도 불구하고’ 뒤의 대통령령 위임을 확인하세요."},{"id":37,"part":4,"law":"영 §73①1~3·③","answer":"O","level":"A급","tag":"소매·음식·숙박","text":"소매업·음식점업·숙박업 사업자가 과세 재화 또는 용역을 공급하고 공급받는 사업자가 사업자등록증을 제시하여 세금계산서를 요구하면 세금계산서를 발급하여야 한다.","explanation":"시행령 제73조 제3항이 제1항 제1호부터 제3호까지의 업종을 포함합니다.","correction":"","trap":"이미 신용카드매출전표 등을 발급한 거래인지도 별도로 확인해야 합니다."},{"id":38,"part":4,"law":"영 §73①4·④","answer":"X","level":"A급","tag":"미용·욕탕","text":"미용업자가 통상적인 미용용역을 사업자에게 제공한 경우에는 사업자가 세금계산서를 요구하면 반드시 세금계산서를 발급하여야 한다.","explanation":"미용·욕탕업은 감가상각자산을 공급하거나 열거된 역무 외의 역무를 공급하는 경우에 한하여 제4항의 요구발급 규정이 적용됩니다.","correction":"올바른 문장: 미용업의 통상적인 미용용역은 사업자의 요구만으로 세금계산서 의무발급대상이 되지 않는다.","trap":"소매·음식·숙박업과 미용·욕탕업의 요구발급 범위가 다릅니다."},{"id":39,"part":4,"law":"법 §36⑤","answer":"O","level":"A급","tag":"신용카드매출전표","text":"신용카드매출전표등은 부가가치세법 제36조 제1항에 따른 영수증으로 본다.","explanation":"법 제36조 제5항의 간주규정입니다.","correction":"","trap":"신용카드매출전표가 언제나 세금계산서와 동일하다는 뜻은 아닙니다."},{"id":40,"part":4,"law":"영 §73⑦⑧","answer":"X","level":"A급","tag":"영수증 기재사항","text":"모든 영수증은 발급방법과 관계없이 반드시 공급가액과 부가가치세액을 별도로 구분하여 적어야 한다.","explanation":"일반 영수증의 기본 기재사항은 공급자 정보, 공급대가, 작성 연월일 등입니다. 다만 신용카드기·직불카드기 등 기계적 장치로 발급할 때에는 공급가액과 세액을 구분합니다.","correction":"올바른 문장: 기계적 장치로 영수증을 발급하는 경우에는 공급가액과 세액을 별도로 구분하여 적는다.","trap":"공급대가 기재 원칙과 기계 발급의 구분표시 특례를 구별하세요."}];
+const PARTS = {"1":{"title":"세금계산서 발급시기","subtitle":"공급시기·선발급·월합계·다음 달 10일","range":"1~10"},"2":{"title":"매입자발행세금계산서","subtitle":"대상·5만원·1년·확인·매입세액공제","range":"11~20"},"3":{"title":"수입·수정수입세금계산서","subtitle":"세관장·수정신고·배제사유·발급신청","range":"21~30"},"4":{"title":"영수증 등","subtitle":"소비자 업종·간이과세자·요구발급·기재사항","range":"31~40"}};
+const state = {selected:{}, done:{}, correct:0, answered:0, allExplanations:false, wrongOnly:false};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+function renderQuiz(){
+  const root = document.getElementById('quizRoot');
+  root.innerHTML = '';
+  Object.entries(PARTS).forEach(([partNo, meta]) => {
+    const section = document.createElement('section');
+    section.id = 'part' + partNo;
+    section.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">Part ${partNo}</span>
+        <span class="section-title">${escapeHTML(meta.title)}</span>
+        <span class="section-subtitle">${escapeHTML(meta.subtitle)}</span>
+        <span class="section-count" id="partCount${partNo}">0/${QUESTIONS.filter(q=>q.part===Number(partNo)).length}</span>
+      </div><hr class="section-rule">`;
+    QUESTIONS.filter(q=>q.part===Number(partNo)).forEach(q => section.appendChild(makeCard(q)));
+    root.appendChild(section);
+  });
+}
+
+function makeCard(q){
+  const card = document.createElement('article');
+  card.className = 'question-card';
+  card.id = 'card' + q.id;
+  const levelClass = q.level.startsWith('A') ? 'a' : '';
+  card.innerHTML = `
+    <div class="question-head">
+      <span class="question-no">${q.id}</span>
+      <div class="question-text">
+        <span class="law-badge">${escapeHTML(q.law)}</span>
+        <span class="level-badge ${levelClass}">${escapeHTML(q.level)}</span>
+        <span class="topic-badge">${escapeHTML(q.tag)}</span><br>
+        ${escapeHTML(q.text)}
+      </div>
+    </div>
+    <div class="question-body">
+      <div class="ox-row">
+        <button class="ox-btn" data-value="O" onclick="selectAnswer(${q.id},'O')" aria-label="${q.id}번 O 선택">O</button>
+        <button class="ox-btn" data-value="X" onclick="selectAnswer(${q.id},'X')" aria-label="${q.id}번 X 선택">X</button>
+      </div>
+    </div>
+    <div class="answer-row">
+      <button class="check-btn" onclick="checkAnswer(${q.id})">정답 확인</button>
+      <span class="result-badge" id="result${q.id}"></span>
+    </div>
+    <div class="explanation" id="explanation${q.id}">
+      <div class="ex-title">해설</div>
+      <div class="law-ref">${escapeHTML(q.law)}</div>
+      <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer} (${q.answer==='O'?'옳다':'틀리다'})</div>
+      <p>${q.explanation}</p>
+      ${q.correction ? `<div class="correction">${escapeHTML(q.correction)}</div>` : ''}
+      <p class="trap">⚠ ${escapeHTML(q.trap)}</p>
+    </div>`;
+  return card;
+}
+
+function selectAnswer(id, value){
+  if(state.done[id]) return;
+  state.selected[id] = value;
+  const card = document.getElementById('card'+id);
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === value) btn.classList.add(value==='O'?'selected-o':'selected-x');
+  });
+}
+
+function checkAnswer(id, silent=false){
+  if(state.done[id]) return;
+  const q = QUESTIONS.find(item=>item.id===id);
+  const selected = state.selected[id];
+  if(!selected){
+    if(!silent) alert('O 또는 X를 먼저 선택해주세요.');
+    return;
+  }
+  state.done[id] = true;
+  state.answered += 1;
+  const correct = selected === q.answer;
+  if(correct) state.correct += 1;
+  const card = document.getElementById('card'+id);
+  card.dataset.correct = correct ? 'true' : 'false';
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === q.answer) btn.classList.add('correct');
+    else if(btn.dataset.value === selected && !correct) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  card.querySelector('.check-btn').disabled = true;
+  const result = document.getElementById('result'+id);
+  result.textContent = correct ? '✓ 정답' : `✗ 오답 (정답: ${q.answer})`;
+  result.className = 'result-badge show ' + (correct ? 'ok' : 'ng');
+  document.getElementById('explanation'+id).classList.add('show');
+  updateStatus();
+}
+
+function updateStatus(){
+  document.getElementById('scoreValue').textContent = `${state.correct}/${state.answered}`;
+  document.getElementById('progressFill').style.width = `${state.answered/QUESTIONS.length*100}%`;
+  Object.keys(PARTS).forEach(partNo => {
+    const partQuestions = QUESTIONS.filter(q=>q.part===Number(partNo));
+    const count = partQuestions.filter(q=>state.done[q.id]).length;
+    document.getElementById('partCount'+partNo).textContent = `${count}/${partQuestions.length}`;
+  });
+}
+
+function gradeAll(){
+  QUESTIONS.forEach(q => {
+    if(!state.done[q.id] && state.selected[q.id]) checkAnswer(q.id,true);
+  });
+  showScore();
+}
+
+function showScore(){
+  const wrong = state.answered - state.correct;
+  const unanswered = QUESTIONS.length - state.answered;
+  const pct = Math.round(state.correct / QUESTIONS.length * 100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('correctStat').textContent = state.correct;
+  document.getElementById('wrongStat').textContent = wrong;
+  document.getElementById('unansweredStat').textContent = unanswered;
+  let feedback = '';
+  if(unanswered > 0) feedback = `미응답 ${unanswered}문항이 있습니다. 선택한 문항만 채점했으며, 총 문항 기준 점수입니다.`;
+  else if(pct >= 90) feedback = '필요적 기재사항, 전자발급 일정, 수정세금계산서와 발급면제를 안정적으로 구분하고 있습니다.';
+  else if(pct >= 75) feedback = '기본 구조는 양호합니다. 전자세금계산서 8천만원 기준·전송기한과 수정발급 작성일을 다시 확인하세요.';
+  else if(pct >= 60) feedback = '필요적 기재사항과 그 밖의 기재사항을 먼저 나눈 뒤 전자발급·위탁거래·수정발급·발급면제를 순서대로 복습하세요.';
+  else feedback = '법 제31조 거래징수 → 제32조 발급원칙 → 시행령 제68조 전자발급 → 제69조·제70조 → 제71조 발급면제 순서로 다시 학습하세요.';
+  document.getElementById('feedbackText').textContent = feedback;
+  const panel = document.getElementById('scorePanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleAllExplanations(){
+  state.allExplanations = !state.allExplanations;
+  document.querySelectorAll('.explanation').forEach(el => el.classList.toggle('show',state.allExplanations));
+  document.getElementById('toggleExplainBtn').textContent = state.allExplanations ? '해설 모두 숨기기' : '해설 모두 보기';
+}
+
+function toggleWrongOnly(force=false){
+  state.wrongOnly = force ? true : !state.wrongOnly;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById('card'+q.id);
+    const isWrong = state.done[q.id] && card.dataset.correct === 'false';
+    card.classList.toggle('hidden-filter', state.wrongOnly && !isWrong);
+  });
+  document.getElementById('wrongOnlyBtn').textContent = state.wrongOnly ? '전체 문제 보기' : '틀린 문제만 보기';
+  if(state.wrongOnly && !QUESTIONS.some(q=>state.done[q.id] && document.getElementById('card'+q.id).dataset.correct==='false')){
+    alert('현재 확인된 오답이 없습니다. 먼저 문항을 채점해주세요.');
+    state.wrongOnly = false;
+    QUESTIONS.forEach(q=>document.getElementById('card'+q.id).classList.remove('hidden-filter'));
+    document.getElementById('wrongOnlyBtn').textContent = '틀린 문제만 보기';
+  } else if(state.wrongOnly){
+    document.getElementById('quizRoot').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz(){
+  if(confirm('선택과 채점 결과를 모두 초기화할까요?')) location.reload();
+}
+
+renderQuiz();
+
+
+</script>
+<script src="semosi-review.js?v=20260710-schedule"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="color-scheme" content="light"><title>부가가치세법 제48조~제49조 | 예정신고·확정신고 O/X 퀴즈</title><style>
+:root{
+  --bg:#f2f0eb;--surface:#fff;--surface2:#ece9e2;--border:#d5d0c7;
+  --primary:#1b3d6b;--accent:#9a4410;--green:#1c5030;--red:#7f1910;
+  --text:#111010;--text2:#373430;--muted:#666260;--gold:#d4cbaa;
+  --shadow:0 2px 10px rgba(0,0,0,.07);--shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --serif:Georgia,'Noto Serif KR','Batang',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;min-height:100vh}
+button{font:inherit}
+.header{background:var(--primary);color:#fff;padding:1.5rem 1.2rem 1.15rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.header-inner{max-width:980px;margin:0 auto;display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.badge-top{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .5rem;color:var(--gold)}
+.title{font-family:var(--serif);font-size:1.48rem;font-weight:700;line-height:1.3;margin-top:.25rem}
+.title span{font-family:var(--sans);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.78)}
+.subtitle{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.25rem}
+.score-box{margin-left:auto;text-align:right;min-width:82px}.score-label{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.09em}.score-value{font-family:var(--mono);font-size:1.48rem;color:var(--gold);font-weight:700}
+.progress-wrap{background:var(--primary);padding:0 1.2rem .72rem}.progress-track{max-width:980px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .3s ease}
+.container{max-width:980px;margin:0 auto;padding:1.35rem 1rem 4rem}
+.notice{background:#eef3ff;border:1.5px solid var(--primary);border-radius:10px;padding:.85rem 1rem;font-size:.79rem;color:#173761;margin:0 0 1rem}.notice strong{color:var(--primary)}
+.toolbar{display:flex;gap:.48rem;flex-wrap:wrap;margin:.85rem 0 1.2rem}.tool-btn{border:1px solid var(--border);background:#fff;color:var(--text2);padding:.42rem .72rem;border-radius:7px;cursor:pointer;font-size:.74rem}.tool-btn:hover{border-color:var(--primary);color:var(--primary)}.tool-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.tool-btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem}.toc h2{font-family:var(--serif);font-size:.95rem;color:var(--primary);margin-bottom:.5rem}.toc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.toc-links.four{grid-template-columns:repeat(4,1fr)}.toc-links.five{grid-template-columns:repeat(5,1fr)}.toc a{text-decoration:none;color:var(--text2);border:1px solid var(--border);border-radius:7px;padding:.52rem .65rem;font-size:.75rem;background:#faf9f6}.toc a:hover{border-color:var(--primary);color:var(--primary)}.toc a b{display:block;color:var(--primary);font-size:.78rem}
+details.study{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:1rem;box-shadow:var(--shadow)}details.study summary{cursor:pointer;padding:.76rem 1rem;font-weight:700;color:var(--primary);font-size:.82rem;list-style:none}details.study summary::-webkit-details-marker{display:none}details.study summary::after{content:'＋';float:right;font-family:var(--mono)}details.study[open] summary::after{content:'－'}details.study .inside{padding:0 1rem 1rem;font-size:.76rem;color:var(--text2)}
+.summary-table{width:100%;border-collapse:collapse;margin-top:.3rem;font-size:.73rem}.summary-table th,.summary-table td{border:1px solid #c8d6e8;padding:.35rem .44rem;text-align:center}.summary-table th{background:#e6eef9;color:var(--primary)}.summary-table td:first-child{text-align:left;font-weight:600}
+.section-header{display:flex;align-items:center;gap:.72rem;margin:2rem 0 .8rem;flex-wrap:wrap}.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:4px}.section-title{font-family:var(--serif);font-size:1.02rem;font-weight:700}.section-subtitle{font-size:.7rem;color:var(--muted)}.section-count{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}.section-rule{border:0;border-top:1.5px solid var(--border);margin-bottom:1rem}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.9rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,opacity .2s}.question-card:hover{box-shadow:var(--shadow-lg)}.question-card.hidden-filter{display:none}.question-head{padding:.84rem 1rem .65rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.7rem}.question-no{font-family:var(--mono);font-size:.68rem;font-weight:700;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#e4eef8;color:var(--primary);margin-top:1px}.question-text{font-size:.86rem;line-height:1.82;flex:1}.law-badge,.level-badge,.topic-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;padding:.08rem .35rem;border-radius:3px;vertical-align:middle;margin-right:.22rem}.law-badge{background:#eaf0f7;color:var(--primary);border:1px solid #c5d8ee}.level-badge{background:#fff3dc;color:#7a5700}.level-badge.a{background:#fdecea;color:var(--red)}.topic-badge{background:#e8f2eb;color:var(--green)}
+.question-body{padding:.62rem 1rem .75rem}.ox-row{display:flex;gap:.5rem}.ox-btn{border:1.5px solid var(--border);background:#fff;border-radius:7px;padding:.42rem 1.28rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .13s}.ox-btn:hover{border-color:var(--primary);color:var(--primary);background:#eaf0f7}.ox-btn.selected-o{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.selected-x{border-color:var(--red);background:#faf0ef;color:var(--red)}.ox-btn.correct{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.wrong{border-color:var(--red);background:#faf0ef;color:var(--red);opacity:.6}
+.answer-row{padding:0 1rem .78rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.check-btn{padding:.38rem .9rem;border:0;border-radius:5px;background:var(--primary);color:#fff;font-size:.74rem;font-weight:600;cursor:pointer}.check-btn:disabled{opacity:.35;cursor:default}.result-badge{display:none;font-size:.73rem;font-weight:600;padding:.24rem .58rem;border-radius:20px}.result-badge.show{display:inline-block}.result-badge.ok{background:#e4f2ea;color:var(--green)}.result-badge.ng{background:#faf0ef;color:var(--red)}
+.explanation{display:none;background:#fafaf7;border-top:1px solid var(--border);padding:.8rem 1rem;font-size:.78rem;color:var(--text2);line-height:1.9}.explanation.show{display:block}.ex-title{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem}.answer-line{font-weight:700;font-size:.81rem;margin-bottom:.22rem}.answer-line.o{color:var(--green)}.answer-line.x{color:var(--red)}.law-ref{display:inline-block;font-family:var(--mono);font-size:.67rem;color:var(--primary);background:#eaf0f7;padding:.1rem .38rem;border-radius:3px;margin-bottom:.35rem}.correction{background:#eef3ff;border-left:3px solid var(--primary);padding:.42rem .6rem;margin:.42rem 0}.trap{color:var(--red);font-style:italic;margin-top:.3rem}
+.global-actions{display:flex;justify-content:center;gap:.65rem;margin:1.6rem 0;flex-wrap:wrap}.action-btn{padding:.55rem 1.25rem;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer}.action-btn.primary{background:var(--accent);border:1px solid var(--accent);color:#fff}.action-btn.outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}.action-btn.outline:hover{background:var(--primary);color:#fff}
+.score-panel{display:none;background:#fff;border:1.5px solid var(--primary);border-radius:12px;padding:1.45rem 1.1rem;text-align:center;box-shadow:var(--shadow-lg);margin:1.6rem 0}.score-panel.show{display:block}.score-panel h2{font-family:var(--serif);font-size:1.1rem;color:var(--primary)}.grade{font-family:var(--mono);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;margin:.5rem 0}.score-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.7rem 0 1rem}.score-stats strong{display:block;font-family:var(--mono);font-size:1.25rem}.score-stats span{font-size:.65rem;color:var(--muted)}.feedback{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.source-box{margin-top:2rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;font-size:.72rem;color:var(--text2)}.source-box h3{font-family:var(--serif);color:var(--primary);font-size:.88rem;margin-bottom:.35rem}.source-box ul{padding-left:1.1rem}.source-box li{margin:.2rem 0}.caution{color:var(--red);margin-top:.45rem}
+.footer-note{text-align:center;font-size:.65rem;color:var(--muted);margin-top:1.4rem}
+@media(max-width:680px){.toc-links.four{grid-template-columns:1fr}.title{font-size:1.12rem}.score-box{margin-left:0}.container{padding:.9rem .68rem 3rem}.toc-links{grid-template-columns:1fr}.question-head{padding:.72rem .82rem .58rem}.question-body{padding:.58rem .82rem .68rem}.answer-row{padding:0 .82rem .7rem}.explanation{padding:.72rem .82rem}.summary-table{font-size:.65rem}.summary-table th,.summary-table td{padding:.28rem .22rem}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}.header{position:static;box-shadow:none;padding:.7cm .6cm;background:#fff;color:#000;border-bottom:2px solid #1b3d6b}.badge-top,.subtitle,.score-box,.progress-wrap,.toolbar,.global-actions,.check-btn,.ox-row,.result-badge{display:none!important}.title,.title span{color:#000}.container{max-width:none;padding:.4cm}.notice,.toc,details.study,.source-box{box-shadow:none}.question-card{box-shadow:none;break-inside:avoid;margin-bottom:.35cm}.explanation{display:block!important}.section-header{break-after:avoid}.score-panel{display:none!important}.question-head{padding:.3cm}.question-body,.answer-row{display:none}.source-box{break-inside:avoid}.law-badge,.level-badge,.topic-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.toc-links.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:840px){.toc-links.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.toc-links.five{grid-template-columns:1fr}}</style></head>
+<body>
+<header class="header"><div class="header-inner"><div>
+<span class="badge-top">세무사 1차 · 세법학개론 · 2027 대비</span>
+<div class="title">부가가치세법 제48조~제49조<br><span>예정신고·확정신고 O/X 퀴즈</span></div>
+<div class="subtitle">법률 2026.1.2. · 시행령 제90조·제91조 2026.2.27. · 시행규칙 2026.3.20. 시행본 기준 · 총 40문항</div>
+</div><div class="score-box"><div class="score-label">SCORE</div><div class="score-value" id="scoreValue">–</div></div></div></header>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+<main class="container">
+<div class="notice"><strong>판단 순서:</strong> ① 예정신고 대상인지 예정고지 대상인지 구분한다 → ② 신고기간·고지서 발부기간·납부기한을 분리한다 → ③ 50%·1천원 미만 절사·50만원 미만 경계값을 적용한다 → ④ 실제 실적 신고 사유를 확인한다 → ⑤ 확정신고에서 예정신고분·조기환급분·예정고지·수시부과를 정산한다. 모든 문항은 현행 법령을 바탕으로 만든 자체 제작 문제입니다.</div>
+<nav class="toc" aria-label="목차"><h2>목차</h2><div class="toc-links five">
+<a href="#study"><b>핵심 정리</b>달력·공식</a><a href="#part1"><b>Part 1</b>예정신고</a><a href="#part2"><b>Part 2</b>예정고지</a><a href="#part3"><b>Part 3</b>실적신고</a><a href="#part4"><b>Part 4</b>확정신고</a>
+</div></nav>
+<details class="study" id="study" open><summary>한 줄 요약과 전체 구조</summary><div class="inside">
+<p><strong>한 줄 요약:</strong> 일반과세자는 반기별 과세기간 중 앞 3개월에 예정신고 또는 예정고지를 거치고, 반기 종료 후 확정신고에서 이미 신고·납부·부과된 금액을 정산합니다.</p>
+<table class="summary-table"><thead><tr><th>구분</th><th>기간</th><th>통상 신고·납부기한</th></tr></thead><tbody>
+<tr><td>제1기 예정신고</td><td>1월 1일~3월 31일</td><td>4월 25일</td></tr>
+<tr><td>제1기 확정신고</td><td>1월 1일~6월 30일 중 기신고분 제외</td><td>7월 25일</td></tr>
+<tr><td>제2기 예정신고</td><td>7월 1일~9월 30일</td><td>10월 25일</td></tr>
+<tr><td>제2기 확정신고</td><td>7월 1일~12월 31일 중 기신고분 제외</td><td>다음 해 1월 25일</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>예정고지 핵심 경계값</summary><div class="inside"><table class="summary-table"><thead><tr><th>항목</th><th>기준</th><th>경계값 함정</th></tr></thead><tbody>
+<tr><td>소규모 법인 대상</td><td>직전 과세기간 공급가액 1억 5천만원 미만</td><td>정확히 1억 5천만원은 제외</td></tr>
+<tr><td>예정고지 계산</td><td>조정된 직전 과세기간 납부세액 × 50%</td><td>1천원 미만 단수 절사</td></tr>
+<tr><td>소액 징수 제외</td><td>예정고지액 50만원 미만</td><td>정확히 50만원은 원칙적으로 징수</td></tr>
+<tr><td>사업부진 실적신고</td><td>공급가액 또는 납부세액이 비교기준의 1/3 미달</td><td>정확히 1/3은 사유 불충족</td></tr>
+<tr><td>고지서 발부</td><td>4월 1~10일·10월 1~10일</td><td>납부기한 25일과 구분</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>예정신고와 확정신고 비교</summary><div class="inside"><table class="summary-table"><thead><tr><th>구분</th><th>예정신고</th><th>확정신고</th></tr></thead><tbody>
+<tr><td>신고대상</td><td>원칙적 신고대상 사업자 또는 예정고지 대상 중 법정 사유자</td><td>각 과세기간 전체의 최종 신고</td></tr>
+<tr><td>가산세 계산</td><td>시행령 제90조상 관련 가산세 미적용</td><td>가산세액·공제세액 및 계산근거 기재</td></tr>
+<tr><td>기신고분</td><td>해당 예정신고기간 실적</td><td>이미 예정신고·조기환급 신고한 부분 제외</td></tr>
+<tr><td>최종 납부 정산</td><td>수시부과액 차감</td><td>미환급 조기환급액·예정고지액·수시부과액 차감</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>첨부서류와 신고효력</summary><div class="inside"><p>해당 사유가 있으면 공제받지 못할 매입세액 명세서, 신용카드매출전표등 발행금액 집계표·수령명세서, 부동산임대공급가액명세서, 현금매출명세서, 감가상각자산 취득명세서, 사업장별 신고명세서, 영세율 매출명세서 등을 제출합니다.</p>
+<p><strong>특별 주의:</strong> 영세율 적용분의 법정 첨부서류를 제출하지 않은 부분은 예정신고 또는 확정신고한 것으로 보지 않습니다.</p></div></details>
+<details class="study"><summary>기출 포인트</summary><div class="inside"><table class="summary-table"><thead><tr><th>기출</th><th>공식답</th><th>확인 논점</th></tr></thead><tbody>
+<tr><td>2021년 제58회 76번</td><td>③</td><td>제1기 예정고지 납부고지서 발부기간은 4월 1일~10일이며, 납부기한 25일과 다름</td></tr>
+<tr><td>2023년 제60회 77번</td><td>①</td><td>확정신고 납부세액 계산에서 공제·가산 항목을 결합</td></tr>
+<tr><td>2024년 제61회 77번</td><td>②</td><td>일반과세 음식점의 확정신고 납부세액 계산과 예정고지액 정산</td></tr>
+</tbody></table><p style="margin-top:.5rem">실제 기출문제는 그대로 복제하지 않았으며, 반복 논점을 바탕으로 문장을 새로 구성했습니다.</p></div></details>
+<div class="toolbar"><button class="tool-btn primary" onclick="gradeAll()">전체 채점</button><button class="tool-btn" onclick="toggleAllExplanations()" id="toggleExplainBtn">해설 모두 보기</button><button class="tool-btn" onclick="toggleWrongOnly()" id="wrongOnlyBtn">틀린 문제만 보기</button><button class="tool-btn" onclick="window.print()">인쇄</button><button class="tool-btn accent" onclick="resetQuiz()">다시 풀기</button></div>
+<div id="quizRoot"></div>
+<div class="global-actions"><button class="action-btn primary" onclick="gradeAll()">전체 채점 및 결과 보기</button><button class="action-btn outline" onclick="toggleAllExplanations()">전체 해설 펼치기</button><button class="action-btn outline" onclick="resetQuiz()">처음부터 다시 풀기</button></div>
+<section class="score-panel" id="scorePanel" aria-live="polite"><h2>학습 결과</h2><div class="grade" id="gradeText">0%</div><div class="score-stats"><div><strong id="correctStat">0</strong><span>정답</span></div><div><strong id="wrongStat">0</strong><span>오답</span></div><div><strong id="unansweredStat">0</strong><span>미응답</span></div></div><div class="feedback" id="feedbackText"></div><button class="action-btn outline" onclick="toggleWrongOnly(true)">오답만 복습하기</button></section>
+<section class="source-box"><h3>근거 및 검증 기준</h3><ul>
+<li>부가가치세법 제48조·제49조: 법률 제21065호, 2026.1.2. 시행본.</li>
+<li>부가가치세법 시행령 제90조·제91조: 대통령령 제36133호, 조문 시행일 2026.2.27. 기준.</li>
+<li>부가가치세법 시행규칙 제62조와 관련 별지서식: 재정경제부령 제9호, 2026.3.20. 시행본.</li>
+<li>업로드된 2021년 제58회, 2023년 제60회, 2024년 제61회 세무사 1차 시험지와 공식 최종정답을 대조함.</li>
+<li>문항은 모두 자체 제작이며 실제 기출문제를 그대로 수록한 것이 아님.</li></ul>
+<p class="caution">※ 본 파일은 2026년 7월 13일 현재 시행 중인 법령을 기준으로 제작했습니다. 실제 2027년 세무사 시험의 적용 법령 기준일과 후속 개정 여부는 반드시 다시 확인해야 합니다.</p></section>
+<div class="footer-note">부가가치세법 제48조~제49조 · 자체 제작 O/X 학습자료</div>
+</main>
+
+<script>
+const QUESTIONS = [{"id":1,"part":1,"law":"법 §48①","answer":"O","level":"A급","tag":"제1기 예정신고기간","text":"일반과세자의 제1기 예정신고기간은 1월 1일부터 3월 31일까지이다.","explanation":"부가가치세법 제48조 제1항의 표에서 제1기 예정신고기간을 1월 1일부터 3월 31일까지로 정합니다.","correction":"","trap":"일반과세자의 제1기 과세기간 전체인 1월 1일부터 6월 30일까지와 구분합니다."},{"id":2,"part":1,"law":"법 §48①","answer":"X","level":"A급","tag":"제2기 예정신고기간","text":"일반과세자의 제2기 예정신고기간은 4월 1일부터 6월 30일까지이다.","explanation":"제2기 예정신고기간은 7월 1일부터 9월 30일까지입니다. 4월부터 6월은 제1기 확정신고에서 정산되는 구간입니다.","correction":"올바른 문장: 일반과세자의 제2기 예정신고기간은 7월 1일부터 9월 30일까지이다.","trap":"예정신고는 각 반기의 앞 3개월만을 대상으로 합니다."},{"id":3,"part":1,"law":"법 §48①","answer":"O","level":"A급","tag":"25일 이내","text":"예정신고는 각 예정신고기간이 끝난 후 25일 이내에 하여야 한다.","explanation":"제1기 예정신고는 통상 4월 25일까지, 제2기 예정신고는 통상 10월 25일까지 합니다.","correction":"","trap":"세금계산서 발급기한인 다음 달 10일과 혼동하지 마세요."},{"id":4,"part":1,"law":"법 §48① 단서","answer":"X","level":"A급","tag":"신규사업자 기간","text":"신규로 사업을 시작한 자의 최초 예정신고기간은 언제 사업을 시작했는지와 관계없이 해당 연도 1월 1일부터 시작한다.","explanation":"신규사업자의 최초 예정신고기간은 사업개시일부터 해당 예정신고기간 종료일까지입니다. 사업개시 전 등록을 신청한 경우에는 그 신청일부터 시작합니다.","correction":"올바른 문장: 신규사업자의 최초 예정신고기간은 사업개시일 또는 사업개시 전 등록신청일부터 그 날이 속하는 예정신고기간의 종료일까지이다.","trap":"신규사업자의 최초 과세기간과 최초 예정신고기간을 모두 실제 개시·신청일에서 출발시킵니다."},{"id":5,"part":1,"law":"법 §48① 단서·§8① 단서","answer":"O","level":"A급","tag":"개업 전 등록","text":"사업개시일 전에 사업자등록을 신청한 신규사업자의 최초 예정신고기간은 그 등록신청일부터 시작한다.","explanation":"법 제48조 제1항 단서는 사업개시 전 등록신청이 있는 경우 등록신청일을 기준일로 사용합니다.","correction":"","trap":"사업자등록증 발급일이 아니라 등록신청일입니다."},{"id":6,"part":1,"law":"법 §48②","answer":"O","level":"A급","tag":"신고와 납부","text":"예정신고를 하는 사업자는 예정신고서와 함께 해당 예정신고기간의 납부세액을 납부하여야 한다.","explanation":"예정신고와 납부는 함께 이루어지며, 해당 예정신고기간에 수시부과한 세액이 있으면 이를 공제합니다.","correction":"","trap":"신고기한과 납부기한이 별개라고 보지 않습니다."},{"id":7,"part":1,"law":"법 §48①·§49①","answer":"X","level":"A급","tag":"4~6월 처리","text":"4월 1일부터 6월 30일까지의 거래는 제1기 예정신고 대상이다.","explanation":"4월부터 6월까지의 거래는 제1기 확정신고에서 반영됩니다. 제1기 예정신고기간은 1월부터 3월까지입니다.","correction":"올바른 문장: 4월 1일부터 6월 30일까지의 거래는 제1기 확정신고에서 반영한다.","trap":"예정신고기간과 과세기간 후반부를 바꾸어 출제하는 함정이 자주 나옵니다."},{"id":8,"part":1,"law":"법 §48①","answer":"O","level":"A급","tag":"환급세액 신고","text":"예정신고에서는 납부세액뿐 아니라 환급세액도 신고할 수 있다.","explanation":"법문은 예정신고기간의 과세표준과 납부세액 또는 환급세액을 신고하도록 규정합니다.","correction":"","trap":"예정신고가 항상 납부로 끝나는 것은 아닙니다."},{"id":9,"part":1,"law":"법 §48①","answer":"X","level":"B급","tag":"기한 계산","text":"제1기 예정신고의 법정 신고기한은 예정신고기간 종료일인 3월 31일이다.","explanation":"신고기한은 예정신고기간이 끝난 후 25일 이내입니다. 통상 4월 25일까지입니다.","correction":"올바른 문장: 제1기 예정신고는 3월 31일이 지난 후 25일 이내에 한다.","trap":"기간의 종료일과 신고기한을 구분하세요."},{"id":10,"part":1,"law":"법 §48①","answer":"O","level":"A급","tag":"신고 내용","text":"예정신고 시에는 예정신고기간의 과세표준과 납부세액 또는 환급세액을 신고한다.","explanation":"제48조 제1항의 기본 신고 내용입니다.","correction":"","trap":"예정신고는 단순히 납부액만 신고하는 제도가 아닙니다."},{"id":11,"part":2,"law":"법 §48③·영 §90④","answer":"O","level":"A급","tag":"예정고지 대상","text":"개인사업자와 직전 과세기간 공급가액 합계액이 1억 5천만원 미만인 법인사업자는 원칙적으로 예정고지 대상이 될 수 있다.","explanation":"법 제48조 제3항과 시행령 제90조 제4항에 따른 대상입니다.","correction":"","trap":"모든 법인사업자가 예정고지 대상인 것은 아닙니다."},{"id":12,"part":2,"law":"영 §90④","answer":"X","level":"A급","tag":"1억5천만원 경계","text":"직전 과세기간 공급가액 합계액이 정확히 1억 5천만원인 법인사업자도 소규모 법인사업자 예정고지 대상에 포함된다.","explanation":"시행령은 1억 5천만원 “미만”인 법인사업자를 대상으로 합니다. 정확히 1억 5천만원이면 포함되지 않습니다.","correction":"올바른 문장: 소규모 법인사업자 예정고지 대상은 직전 과세기간 공급가액 합계액이 1억 5천만원 미만인 법인사업자이다.","trap":"미만과 이하를 구분하세요."},{"id":13,"part":2,"law":"법 §48③","answer":"O","level":"A급","tag":"50% 계산","text":"예정고지세액은 원칙적으로 조정된 직전 과세기간 납부세액의 50%로 계산한다.","explanation":"직전 과세기간 납부세액에서 법정 공제·경감액과 수시부과액을 조정하고 결정·경정 등의 내용을 반영한 금액의 50%입니다.","correction":"","trap":"직전 과세기간의 매출세액 50%가 아닙니다."},{"id":14,"part":2,"law":"법 §48③","answer":"O","level":"A급","tag":"천원 미만 절사","text":"조정된 직전 과세기간 납부세액이 3,001,900원이라면 예정고지 계산액 1,500,950원에서 1천원 미만 단수를 버려 1,500,000원으로 한다.","explanation":"50%는 1,500,950원이고, 법은 1천원 미만 단수를 버리도록 합니다.","correction":"","trap":"직전 납부세액 단계에서 먼저 절사하지 않고 50% 계산 후 예정고지액의 1천원 미만 단수를 버립니다."},{"id":15,"part":2,"law":"법 §48③1","answer":"X","level":"A급","tag":"50만원 경계","text":"예정고지 계산액이 정확히 500,000원이면 50만원 미만이므로 징수하지 않는다.","explanation":"징수하지 않는 기준은 50만원 “미만”입니다. 정확히 500,000원은 미만이 아니므로 다른 제외사유가 없다면 징수합니다.","correction":"올바른 문장: 예정고지 계산액이 500,000원 미만이면 징수하지 않으며, 정확히 500,000원은 원칙적으로 징수한다.","trap":"50만원 이하가 아니라 50만원 미만입니다."},{"id":16,"part":2,"law":"법 §48③2","answer":"O","level":"A급","tag":"과세유형 전환","text":"간이과세자에서 해당 과세기간 개시일 현재 일반과세자로 변경된 경우에는 예정고지세액을 징수하지 않는다.","explanation":"직전 과세기간의 간이과세 방식 세액을 일반과세 예정고지의 기초로 삼는 부적절함을 방지하는 예외입니다.","correction":"","trap":"과세기간 중 임의의 날짜가 아니라 과세기간 개시일 현재 전환 여부입니다."},{"id":17,"part":2,"law":"법 §48③3","answer":"O","level":"B급","tag":"납부곤란 사유","text":"국세징수법상 사유로 사업자가 예정고지세액을 납부할 수 없다고 관할 세무서장이 인정하면 징수하지 않을 수 있다.","explanation":"법 제48조 제3항 제3호의 예정고지 제외사유입니다.","correction":"","trap":"사업자가 단순히 어렵다고 주장하는 것만으로 자동 제외되는 것은 아닙니다."},{"id":18,"part":2,"law":"영 §90⑤·2021 제58회 76번","answer":"X","level":"A급","tag":"고지서 발부기간","text":"제1기 예정신고기간분 예정고지 납부고지서는 4월 1일부터 4월 25일까지 발부하여야 한다.","explanation":"시행령 제90조 제5항은 제1기분 고지서 발부기간을 4월 1일부터 4월 10일까지로 정합니다. 2021년 제58회 76번에서 이 함정이 직접 출제되었고 공식답은 ③이었습니다.","correction":"올바른 문장: 제1기 예정신고기간분 예정고지 납부고지서는 4월 1일부터 4월 10일까지 발부한다.","trap":"납부기한 4월 25일과 고지서 발부기간 4월 1일~10일을 구분하세요."},{"id":19,"part":2,"law":"영 §90⑤","answer":"O","level":"A급","tag":"제2기 고지서","text":"제2기 예정신고기간분 예정고지 납부고지서는 10월 1일부터 10월 10일까지 발부한다.","explanation":"시행령 제90조 제5항의 규정입니다.","correction":"","trap":"제2기 예정신고·납부기한인 10월 25일과 구분합니다."},{"id":20,"part":2,"law":"법 §48③","answer":"X","level":"A급","tag":"고지기초 조정","text":"예정고지세액은 직전 과세기간에 신고한 납부세액을 아무 조정 없이 단순히 50%로 계산한다.","explanation":"제46조·제47조 등의 공제·경감세액과 수시부과액을 빼고, 결정·경정·수정신고·경정청구 결과를 반영한 금액을 기초로 합니다.","correction":"올바른 문장: 예정고지세액은 법정 공제·경감액과 수시부과액 등을 조정하고 결정·경정 등의 내용을 반영한 직전 과세기간 납부세액의 50%로 계산한다.","trap":"‘직전 납부세액의 절반’이라는 암기만으로는 조정항목 문제를 풀 수 없습니다."},{"id":21,"part":3,"law":"법 §48④·영 §90⑥1","answer":"O","level":"A급","tag":"1/3 미달","text":"예정신고기간의 공급가액 또는 납부세액이 각각 비교대상의 3분의 1에 미달하면 예정고지 대신 실제 실적으로 예정신고할 수 있다.","explanation":"공급가액은 직전 과세기간 공급가액과, 납부세액은 예정고지 기준 납부세액과 각각 비교합니다.","correction":"","trap":"공급가액과 납부세액을 서로 다른 기준과 비교하지 마세요."},{"id":22,"part":3,"law":"영 §90⑥1","answer":"X","level":"A급","tag":"1/3 경계","text":"예정신고기간의 납부세액이 예정고지 기준 납부세액의 정확히 3분의 1이면 사업부진에 따른 예정신고 사유가 된다.","explanation":"시행령은 3분의 1에 “미달”하는 경우를 규정합니다. 정확히 3분의 1은 미달이 아닙니다.","correction":"올바른 문장: 예정신고기간의 납부세액이 예정고지 기준 납부세액의 3분의 1에 미달해야 사업부진에 따른 예정신고 사유가 된다.","trap":"미달과 이하를 구분하세요."},{"id":23,"part":3,"law":"법 §48④·영 §90⑥2","answer":"O","level":"A급","tag":"조기환급 예정신고","text":"예정신고기간분에 대하여 조기환급을 받으려는 예정고지 대상자는 실제 실적으로 예정신고할 수 있다.","explanation":"시행령 제90조 제6항 제2호의 사유입니다.","correction":"","trap":"조기환급 대상 거래가 있다는 사실과 실제 조기환급 신고절차를 모두 확인합니다."},{"id":24,"part":3,"law":"법 §48④","answer":"O","level":"A급","tag":"고지결정 소멸","text":"예정고지 대상자가 적법하게 실제 실적에 따른 예정신고를 하면 기존 예정고지 결정은 없었던 것으로 본다.","explanation":"법 제48조 제4항 후단의 효과입니다.","correction":"","trap":"예정고지세액과 실제 신고세액을 둘 다 납부하는 것이 아닙니다."},{"id":25,"part":3,"law":"영 §90①","answer":"X","level":"A급","tag":"예정신고 가산세","text":"예정신고·납부를 계산할 때에는 부가가치세법 제60조와 국세기본법상 무신고·과소신고 등 가산세를 함께 적용한다.","explanation":"시행령 제90조 제1항은 예정신고와 납부 시 해당 가산세 규정을 적용하지 않는다고 규정합니다.","correction":"올바른 문장: 예정신고와 납부를 할 때에는 부가가치세법 제60조와 국세기본법 제47조의2부터 제47조의4까지의 가산세 규정을 적용하지 않는다.","trap":"가산세는 확정신고 단계에서 과세기간 전체를 기준으로 반영되는 구조를 이해하세요."},{"id":26,"part":3,"law":"영 §90①","answer":"O","level":"A급","tag":"예정신고 공제세액","text":"예정신고 시에도 신용카드매출전표등 발행세액공제와 전자세금계산서 발급세액공제를 적용할 수 있다.","explanation":"시행령 제90조 제1항은 법 제46조 제1항·제2항과 제47조 제1항의 공제세액 규정을 적용하도록 합니다.","correction":"","trap":"가산세 미적용과 공제세액 적용을 반대로 기억하지 마세요."},{"id":27,"part":3,"law":"법 §54③","answer":"O","level":"B급","tag":"합계표 후제출","text":"예정신고를 하는 사업자가 예정신고 때 매출·매입처별 세금계산서합계표를 제출하지 못한 경우에는 그 예정신고기간이 속하는 과세기간의 확정신고 때 제출할 수 있다.","explanation":"법 제54조 제3항의 연결규정입니다.","correction":"","trap":"제출 지연에 따른 가산세 문제는 별도로 검토해야 합니다."},{"id":28,"part":3,"law":"영 §90⑧·법 §56②","answer":"X","level":"A급","tag":"영세율 증빙","text":"영세율 적용분의 첨부서류를 예정신고서에 붙이지 않아도 해당 영세율 과세표준 부분은 적법하게 예정신고한 것으로 본다.","explanation":"영세율 첨부서류를 제출하지 않은 부분은 예정신고로 보지 않습니다.","correction":"올바른 문장: 영세율 적용분의 법정 첨부서류를 제출하지 않은 부분은 예정신고한 것으로 보지 않는다.","trap":"단순 서류누락이 아니라 신고 자체의 효력에 영향을 주는 특별한 규정입니다."},{"id":29,"part":3,"law":"영 §90③","answer":"O","level":"B급","tag":"예정신고 첨부서류","text":"신용카드매출전표등으로 매입세액을 공제받거나 건물·기계장치를 취득한 경우에는 예정신고 시 각각 수령명세서와 감가상각자산 취득명세서를 제출한다.","explanation":"시행령 제90조 제3항의 첨부서류 표에 포함됩니다.","correction":"","trap":"모든 사업자가 모든 명세서를 내는 것이 아니라 해당 사유가 있는 경우 제출합니다."},{"id":30,"part":3,"law":"법 §48③·④","answer":"X","level":"A급","tag":"소규모 법인 신고방식","text":"직전 과세기간 공급가액이 1억 5천만원 미만인 법인사업자는 반드시 실제 실적으로 예정신고하여야 하고 예정고지는 적용되지 않는다.","explanation":"해당 소규모 법인사업자는 원칙적으로 예정고지 대상입니다. 다만 사업부진·조기환급 사유가 있으면 실제 실적으로 예정신고할 수 있습니다.","correction":"올바른 문장: 직전 과세기간 공급가액이 1억 5천만원 미만인 법인사업자는 원칙적으로 예정고지 대상이며, 법정 사유가 있으면 실제 실적으로 예정신고할 수 있다.","trap":"‘법인=무조건 예정신고’라는 과거식 암기나 단순화를 피하세요."},{"id":31,"part":4,"law":"법 §49①","answer":"O","level":"A급","tag":"확정신고기한","text":"일반과세자는 각 과세기간이 끝난 후 25일 이내에 확정신고를 하여야 한다.","explanation":"제1기는 통상 7월 25일까지, 제2기는 다음 해 1월 25일까지입니다.","correction":"","trap":"간이과세자의 과세기간·신고와 구분하세요."},{"id":32,"part":4,"law":"법 §49①","answer":"X","level":"A급","tag":"제1기 확정기한","text":"일반과세자의 제1기 확정신고기한은 7월 31일이다.","explanation":"제1기 과세기간 종료일인 6월 30일 후 25일 이내이므로 통상 7월 25일까지입니다.","correction":"올바른 문장: 일반과세자의 제1기 확정신고기한은 통상 7월 25일이다.","trap":"월말 신고가 아니라 25일 기준입니다."},{"id":33,"part":4,"law":"법 §49①","answer":"O","level":"A급","tag":"폐업신고기한","text":"사업자가 폐업한 경우 확정신고기한은 폐업일이 속한 달의 다음 달 25일까지이다.","explanation":"법 제49조 제1항의 폐업 특례입니다.","correction":"","trap":"폐업일부터 25일 이내가 아니라 폐업월 다음 달 25일까지입니다."},{"id":34,"part":4,"law":"법 §49① 단서","answer":"O","level":"A급","tag":"기신고분 제외","text":"예정신고를 한 사업자는 이미 예정신고한 과세표준과 납부세액 또는 환급세액을 확정신고에서 다시 신고하지 않는다.","explanation":"중복 신고를 방지하는 법 제49조 제1항 단서입니다.","correction":"","trap":"확정신고에서 예정신고분을 무조건 다시 합산하는 방식으로 풀지 마세요."},{"id":35,"part":4,"law":"법 §49① 단서·§59②","answer":"X","level":"A급","tag":"조기환급분","text":"조기환급을 받기 위해 이미 신고한 과세표준과 환급세액은 확정신고 때 반드시 동일하게 다시 신고하여야 한다.","explanation":"조기환급을 위해 이미 신고한 과세표준과 환급세액도 확정신고에서 다시 신고하지 않습니다.","correction":"올바른 문장: 조기환급을 받기 위해 이미 신고한 과세표준과 환급세액은 확정신고에서 다시 신고하지 않는다.","trap":"예정신고분과 조기환급 신고분 모두 중복 제외 대상입니다."},{"id":36,"part":4,"law":"법 §49②","answer":"O","level":"A급","tag":"확정납부 공제항목","text":"확정신고 시 납부할 세액에서는 미환급 조기환급세액, 예정고지세액 및 수시부과세액을 뺀다.","explanation":"법 제49조 제2항의 세 가지 공제항목입니다.","correction":"","trap":"이미 납부·부과되었거나 환급될 금액을 이중으로 부담하지 않도록 조정합니다."},{"id":37,"part":4,"law":"법 §49②","answer":"O","level":"A급","tag":"확정납부 계산","text":"확정신고 시 납부세액이 8,000,000원이고 미환급 조기환급세액 300,000원, 예정고지세액 2,000,000원, 수시부과세액 500,000원이 있다면 최종 납부액은 5,200,000원이다.","explanation":"8,000,000-300,000-2,000,000-500,000=5,200,000원입니다.","correction":"","trap":"세 가지 공제항목을 더하는 것이 아니라 확정신고 시 납부세액에서 차감합니다."},{"id":38,"part":4,"law":"법 §49②2","answer":"X","level":"A급","tag":"예정고지 공제","text":"예정고지세액은 확정신고 시 납부할 세액에서 공제하지 않고 별도로 최종 부담한다.","explanation":"예정고지세액은 법 제49조 제2항 제2호에 따라 확정신고 시 납부세액에서 뺍니다.","correction":"올바른 문장: 예정고지세액은 확정신고 시 납부할 세액에서 공제한다.","trap":"예정고지는 선납 성격이므로 확정세액과 정산합니다."},{"id":39,"part":4,"law":"영 §90①·§91①","answer":"O","level":"B급","tag":"예정·확정 차이","text":"예정신고 계산에서는 법정 가산세를 적용하지 않지만, 확정신고서에는 가산세액과 공제세액 및 그 계산근거를 적는다.","explanation":"시행령 제90조 제1항과 제91조 제1항을 비교한 내용입니다.","correction":"","trap":"예정신고와 확정신고의 신고서 기재·계산범위를 동일하게 보지 마세요."},{"id":40,"part":4,"law":"영 §91③·법 §56②","answer":"X","level":"A급","tag":"확정 영세율 증빙","text":"확정신고 때 영세율 첨부서류를 누락해도 해당 영세율 과세표준 부분은 적법하게 확정신고한 것으로 본다.","explanation":"법정 영세율 첨부서류를 제출하지 않은 부분은 확정신고로 보지 않습니다.","correction":"올바른 문장: 확정신고 때 법정 영세율 첨부서류를 제출하지 않은 부분은 확정신고한 것으로 보지 않는다.","trap":"예정신고와 확정신고 모두 영세율 증빙 누락의 효력이 엄격합니다."}];
+const PARTS = {"1":{"title":"예정신고기간과 신고·납부","subtitle":"1~3월·7~9월·25일·신규사업자","range":"1~10"},"2":{"title":"예정고지 대상과 계산","subtitle":"소규모 법인·50%·50만원·고지서 발부기간","range":"11~20"},"3":{"title":"실적 예정신고와 첨부서류","subtitle":"1/3 미달·조기환급·가산세·영세율 증빙","range":"21~30"},"4":{"title":"확정신고와 최종 정산","subtitle":"25일·폐업·기신고분 제외·공제항목","range":"31~40"}};
+const state = {selected:{}, done:{}, correct:0, answered:0, allExplanations:false, wrongOnly:false};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+function renderQuiz(){
+  const root = document.getElementById('quizRoot');
+  root.innerHTML = '';
+  Object.entries(PARTS).forEach(([partNo, meta]) => {
+    const section = document.createElement('section');
+    section.id = 'part' + partNo;
+    section.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">Part ${partNo}</span>
+        <span class="section-title">${escapeHTML(meta.title)}</span>
+        <span class="section-subtitle">${escapeHTML(meta.subtitle)}</span>
+        <span class="section-count" id="partCount${partNo}">0/${QUESTIONS.filter(q=>q.part===Number(partNo)).length}</span>
+      </div><hr class="section-rule">`;
+    QUESTIONS.filter(q=>q.part===Number(partNo)).forEach(q => section.appendChild(makeCard(q)));
+    root.appendChild(section);
+  });
+}
+
+function makeCard(q){
+  const card = document.createElement('article');
+  card.className = 'question-card';
+  card.id = 'card' + q.id;
+  const levelClass = q.level.startsWith('A') ? 'a' : '';
+  card.innerHTML = `
+    <div class="question-head">
+      <span class="question-no">${q.id}</span>
+      <div class="question-text">
+        <span class="law-badge">${escapeHTML(q.law)}</span>
+        <span class="level-badge ${levelClass}">${escapeHTML(q.level)}</span>
+        <span class="topic-badge">${escapeHTML(q.tag)}</span><br>
+        ${escapeHTML(q.text)}
+      </div>
+    </div>
+    <div class="question-body">
+      <div class="ox-row">
+        <button class="ox-btn" data-value="O" onclick="selectAnswer(${q.id},'O')" aria-label="${q.id}번 O 선택">O</button>
+        <button class="ox-btn" data-value="X" onclick="selectAnswer(${q.id},'X')" aria-label="${q.id}번 X 선택">X</button>
+      </div>
+    </div>
+    <div class="answer-row">
+      <button class="check-btn" onclick="checkAnswer(${q.id})">정답 확인</button>
+      <span class="result-badge" id="result${q.id}"></span>
+    </div>
+    <div class="explanation" id="explanation${q.id}">
+      <div class="ex-title">해설</div>
+      <div class="law-ref">${escapeHTML(q.law)}</div>
+      <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer} (${q.answer==='O'?'옳다':'틀리다'})</div>
+      <p>${q.explanation}</p>
+      ${q.correction ? `<div class="correction">${escapeHTML(q.correction)}</div>` : ''}
+      <p class="trap">⚠ ${escapeHTML(q.trap)}</p>
+    </div>`;
+  return card;
+}
+
+function selectAnswer(id, value){
+  if(state.done[id]) return;
+  state.selected[id] = value;
+  const card = document.getElementById('card'+id);
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === value) btn.classList.add(value==='O'?'selected-o':'selected-x');
+  });
+}
+
+function checkAnswer(id, silent=false){
+  if(state.done[id]) return;
+  const q = QUESTIONS.find(item=>item.id===id);
+  const selected = state.selected[id];
+  if(!selected){
+    if(!silent) alert('O 또는 X를 먼저 선택해주세요.');
+    return;
+  }
+  state.done[id] = true;
+  state.answered += 1;
+  const correct = selected === q.answer;
+  if(correct) state.correct += 1;
+  const card = document.getElementById('card'+id);
+  card.dataset.correct = correct ? 'true' : 'false';
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === q.answer) btn.classList.add('correct');
+    else if(btn.dataset.value === selected && !correct) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  card.querySelector('.check-btn').disabled = true;
+  const result = document.getElementById('result'+id);
+  result.textContent = correct ? '✓ 정답' : `✗ 오답 (정답: ${q.answer})`;
+  result.className = 'result-badge show ' + (correct ? 'ok' : 'ng');
+  document.getElementById('explanation'+id).classList.add('show');
+  updateStatus();
+}
+
+function updateStatus(){
+  document.getElementById('scoreValue').textContent = `${state.correct}/${state.answered}`;
+  document.getElementById('progressFill').style.width = `${state.answered/QUESTIONS.length*100}%`;
+  Object.keys(PARTS).forEach(partNo => {
+    const partQuestions = QUESTIONS.filter(q=>q.part===Number(partNo));
+    const count = partQuestions.filter(q=>state.done[q.id]).length;
+    document.getElementById('partCount'+partNo).textContent = `${count}/${partQuestions.length}`;
+  });
+}
+
+function gradeAll(){
+  QUESTIONS.forEach(q => {
+    if(!state.done[q.id] && state.selected[q.id]) checkAnswer(q.id,true);
+  });
+  showScore();
+}
+
+function showScore(){
+  const wrong = state.answered - state.correct;
+  const unanswered = QUESTIONS.length - state.answered;
+  const pct = Math.round(state.correct / QUESTIONS.length * 100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('correctStat').textContent = state.correct;
+  document.getElementById('wrongStat').textContent = wrong;
+  document.getElementById('unansweredStat').textContent = unanswered;
+  let feedback = '';
+  if(unanswered > 0) feedback = `미응답 ${unanswered}문항이 있습니다. 선택한 문항만 채점했으며, 총 문항 기준 점수입니다.`;
+  else if(pct >= 90) feedback = '납부세액 계산, 공제시기, 증빙 예외와 불공제 항목의 경계가 안정적입니다.';
+  else if(pct >= 75) feedback = '기본 구조는 양호합니다. 등록 전 매입세액 20일과 세금계산서 수취기한 특례를 다시 확인하세요.';
+  else if(pct >= 60) feedback = '매입세액을 먼저 실지귀속한 뒤 증빙·사업관련성·자동차·기업업무추진비·면세·토지 순으로 제거하세요.';
+  else feedback = '법 제37조 계산식 → 제38조 공제대상과 귀속시기 → 제39조 불공제 체크리스트 순서로 다시 학습하세요.';
+  document.getElementById('feedbackText').textContent = feedback;
+  const panel = document.getElementById('scorePanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleAllExplanations(){
+  state.allExplanations = !state.allExplanations;
+  document.querySelectorAll('.explanation').forEach(el => el.classList.toggle('show',state.allExplanations));
+  document.getElementById('toggleExplainBtn').textContent = state.allExplanations ? '해설 모두 숨기기' : '해설 모두 보기';
+}
+
+function toggleWrongOnly(force=false){
+  state.wrongOnly = force ? true : !state.wrongOnly;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById('card'+q.id);
+    const isWrong = state.done[q.id] && card.dataset.correct === 'false';
+    card.classList.toggle('hidden-filter', state.wrongOnly && !isWrong);
+  });
+  document.getElementById('wrongOnlyBtn').textContent = state.wrongOnly ? '전체 문제 보기' : '틀린 문제만 보기';
+  if(state.wrongOnly && !QUESTIONS.some(q=>state.done[q.id] && document.getElementById('card'+q.id).dataset.correct==='false')){
+    alert('현재 확인된 오답이 없습니다. 먼저 문항을 채점해주세요.');
+    state.wrongOnly = false;
+    QUESTIONS.forEach(q=>document.getElementById('card'+q.id).classList.remove('hidden-filter'));
+    document.getElementById('wrongOnlyBtn').textContent = '틀린 문제만 보기';
+  } else if(state.wrongOnly){
+    document.getElementById('quizRoot').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz(){
+  if(confirm('선택과 채점 결과를 모두 초기화할까요?')) location.reload();
+}
+
+renderQuiz();
+
+
+
+
+
+
+
+
+  </script>
+<script src="semosi-review.js?v=20260710-schedule"></script>
+</body></html>
