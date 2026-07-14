@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>부가가치세법 제44조~제45조 | O/X 판단 퀴즈</title>
+<style>
+:root{
+  --bg:#f2f0eb;--surface:#fff;--surface2:#ece9e2;--border:#d5d0c7;
+  --primary:#1b3d6b;--accent:#9a4410;--green:#1c5030;--red:#7f1910;
+  --text:#111010;--text2:#373430;--muted:#666260;--gold:#d4cbaa;
+  --shadow:0 2px 10px rgba(0,0,0,.07);--shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --serif:Georgia,'Noto Serif KR','Batang',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --mono:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.72;min-height:100vh}
+button{font:inherit}
+.header{background:var(--primary);color:#fff;padding:1.5rem 1.2rem 1.15rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 18px rgba(27,61,107,.35)}
+.header-inner{max-width:980px;margin:0 auto;display:flex;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+.badge-top{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:.2rem .5rem;color:var(--gold)}
+.title{font-family:var(--serif);font-size:1.48rem;font-weight:700;line-height:1.3;margin-top:.25rem}
+.title span{font-family:var(--sans);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.78)}
+.subtitle{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:.25rem}
+.score-box{margin-left:auto;text-align:right;min-width:82px}.score-label{font-family:var(--mono);font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.09em}.score-value{font-family:var(--mono);font-size:1.48rem;color:var(--gold);font-weight:700}
+.progress-wrap{background:var(--primary);padding:0 1.2rem .72rem}.progress-track{max-width:980px;margin:0 auto;height:4px;background:rgba(255,255,255,.14);border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--accent);transition:width .3s ease}
+.container{max-width:980px;margin:0 auto;padding:1.35rem 1rem 4rem}
+.notice{background:#eef3ff;border:1.5px solid var(--primary);border-radius:10px;padding:.85rem 1rem;font-size:.79rem;color:#173761;margin:0 0 1rem}.notice strong{color:var(--primary)}
+.toolbar{display:flex;gap:.48rem;flex-wrap:wrap;margin:.85rem 0 1.2rem}.tool-btn{border:1px solid var(--border);background:#fff;color:var(--text2);padding:.42rem .72rem;border-radius:7px;cursor:pointer;font-size:.74rem}.tool-btn:hover{border-color:var(--primary);color:var(--primary)}.tool-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.tool-btn.accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;box-shadow:var(--shadow);margin-bottom:1rem}.toc h2{font-family:var(--serif);font-size:.95rem;color:var(--primary);margin-bottom:.5rem}.toc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}.toc-links.four{grid-template-columns:repeat(4,1fr)}.toc-links.five{grid-template-columns:repeat(5,1fr)}.toc a{text-decoration:none;color:var(--text2);border:1px solid var(--border);border-radius:7px;padding:.52rem .65rem;font-size:.75rem;background:#faf9f6}.toc a:hover{border-color:var(--primary);color:var(--primary)}.toc a b{display:block;color:var(--primary);font-size:.78rem}
+details.study{background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:1rem;box-shadow:var(--shadow)}details.study summary{cursor:pointer;padding:.76rem 1rem;font-weight:700;color:var(--primary);font-size:.82rem;list-style:none}details.study summary::-webkit-details-marker{display:none}details.study summary::after{content:'＋';float:right;font-family:var(--mono)}details.study[open] summary::after{content:'－'}details.study .inside{padding:0 1rem 1rem;font-size:.76rem;color:var(--text2)}
+.summary-table{width:100%;border-collapse:collapse;margin-top:.3rem;font-size:.73rem}.summary-table th,.summary-table td{border:1px solid #c8d6e8;padding:.35rem .44rem;text-align:center}.summary-table th{background:#e6eef9;color:var(--primary)}.summary-table td:first-child{text-align:left;font-weight:600}
+.section-header{display:flex;align-items:center;gap:.72rem;margin:2rem 0 .8rem;flex-wrap:wrap}.section-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;background:var(--primary);color:#fff;padding:.25rem .6rem;border-radius:4px}.section-title{font-family:var(--serif);font-size:1.02rem;font-weight:700}.section-subtitle{font-size:.7rem;color:var(--muted)}.section-count{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--muted)}.section-rule{border:0;border-top:1.5px solid var(--border);margin-bottom:1rem}
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:.9rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,opacity .2s}.question-card:hover{box-shadow:var(--shadow-lg)}.question-card.hidden-filter{display:none}.question-head{padding:.84rem 1rem .65rem;border-bottom:1px solid var(--surface2);display:flex;align-items:flex-start;gap:.7rem}.question-no{font-family:var(--mono);font-size:.68rem;font-weight:700;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:5px;background:#e4eef8;color:var(--primary);margin-top:1px}.question-text{font-size:.86rem;line-height:1.82;flex:1}.law-badge,.level-badge,.topic-badge{display:inline-block;font-family:var(--mono);font-size:.56rem;padding:.08rem .35rem;border-radius:3px;vertical-align:middle;margin-right:.22rem}.law-badge{background:#eaf0f7;color:var(--primary);border:1px solid #c5d8ee}.level-badge{background:#fff3dc;color:#7a5700}.level-badge.a{background:#fdecea;color:var(--red)}.topic-badge{background:#e8f2eb;color:var(--green)}
+.question-body{padding:.62rem 1rem .75rem}.ox-row{display:flex;gap:.5rem}.ox-btn{border:1.5px solid var(--border);background:#fff;border-radius:7px;padding:.42rem 1.28rem;font-family:var(--mono);font-size:1rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .13s}.ox-btn:hover{border-color:var(--primary);color:var(--primary);background:#eaf0f7}.ox-btn.selected-o{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.selected-x{border-color:var(--red);background:#faf0ef;color:var(--red)}.ox-btn.correct{border-color:var(--green);background:#e4f2ea;color:var(--green)}.ox-btn.wrong{border-color:var(--red);background:#faf0ef;color:var(--red);opacity:.6}
+.answer-row{padding:0 1rem .78rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.check-btn{padding:.38rem .9rem;border:0;border-radius:5px;background:var(--primary);color:#fff;font-size:.74rem;font-weight:600;cursor:pointer}.check-btn:disabled{opacity:.35;cursor:default}.result-badge{display:none;font-size:.73rem;font-weight:600;padding:.24rem .58rem;border-radius:20px}.result-badge.show{display:inline-block}.result-badge.ok{background:#e4f2ea;color:var(--green)}.result-badge.ng{background:#faf0ef;color:var(--red)}
+.explanation{display:none;background:#fafaf7;border-top:1px solid var(--border);padding:.8rem 1rem;font-size:.78rem;color:var(--text2);line-height:1.9}.explanation.show{display:block}.ex-title{font-family:var(--mono);font-size:.61rem;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem}.answer-line{font-weight:700;font-size:.81rem;margin-bottom:.22rem}.answer-line.o{color:var(--green)}.answer-line.x{color:var(--red)}.law-ref{display:inline-block;font-family:var(--mono);font-size:.67rem;color:var(--primary);background:#eaf0f7;padding:.1rem .38rem;border-radius:3px;margin-bottom:.35rem}.correction{background:#eef3ff;border-left:3px solid var(--primary);padding:.42rem .6rem;margin:.42rem 0}.trap{color:var(--red);font-style:italic;margin-top:.3rem}
+.global-actions{display:flex;justify-content:center;gap:.65rem;margin:1.6rem 0;flex-wrap:wrap}.action-btn{padding:.55rem 1.25rem;border-radius:7px;font-size:.78rem;font-weight:700;cursor:pointer}.action-btn.primary{background:var(--accent);border:1px solid var(--accent);color:#fff}.action-btn.outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}.action-btn.outline:hover{background:var(--primary);color:#fff}
+.score-panel{display:none;background:#fff;border:1.5px solid var(--primary);border-radius:12px;padding:1.45rem 1.1rem;text-align:center;box-shadow:var(--shadow-lg);margin:1.6rem 0}.score-panel.show{display:block}.score-panel h2{font-family:var(--serif);font-size:1.1rem;color:var(--primary)}.grade{font-family:var(--mono);font-size:2.6rem;font-weight:800;color:var(--accent);line-height:1.1;margin:.5rem 0}.score-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:.7rem 0 1rem}.score-stats strong{display:block;font-family:var(--mono);font-size:1.25rem}.score-stats span{font-size:.65rem;color:var(--muted)}.feedback{font-size:.78rem;color:var(--text2);margin-bottom:.8rem}
+.source-box{margin-top:2rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;font-size:.72rem;color:var(--text2)}.source-box h3{font-family:var(--serif);color:var(--primary);font-size:.88rem;margin-bottom:.35rem}.source-box ul{padding-left:1.1rem}.source-box li{margin:.2rem 0}.caution{color:var(--red);margin-top:.45rem}
+.footer-note{text-align:center;font-size:.65rem;color:var(--muted);margin-top:1.4rem}
+@media(max-width:680px){.toc-links.four{grid-template-columns:1fr}.title{font-size:1.12rem}.score-box{margin-left:0}.container{padding:.9rem .68rem 3rem}.toc-links{grid-template-columns:1fr}.question-head{padding:.72rem .82rem .58rem}.question-body{padding:.58rem .82rem .68rem}.answer-row{padding:0 .82rem .7rem}.explanation{padding:.72rem .82rem}.summary-table{font-size:.65rem}.summary-table th,.summary-table td{padding:.28rem .22rem}}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}.header{position:static;box-shadow:none;padding:.7cm .6cm;background:#fff;color:#000;border-bottom:2px solid #1b3d6b}.badge-top,.subtitle,.score-box,.progress-wrap,.toolbar,.global-actions,.check-btn,.ox-row,.result-badge{display:none!important}.title,.title span{color:#000}.container{max-width:none;padding:.4cm}.notice,.toc,details.study,.source-box{box-shadow:none}.question-card{box-shadow:none;break-inside:avoid;margin-bottom:.35cm}.explanation{display:block!important}.section-header{break-after:avoid}.score-panel{display:none!important}.question-head{padding:.3cm}.question-body,.answer-row{display:none}.source-box{break-inside:avoid}.law-badge,.level-badge,.topic-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.toc-links.five{grid-template-columns:repeat(5,1fr)}
+@media(max-width:840px){.toc-links.five{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.toc-links.five{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<header class="header"><div class="header-inner"><div>
+<span class="badge-top">세무사 1차 · 세법학개론 · 2027 대비</span>
+<div class="title">부가가치세법 제44조~제45조<br><span>일반과세 전환 재고매입세액·대손세액공제 O/X 퀴즈</span></div>
+<div class="subtitle">법률 2026.1.2. · 시행령 2026.2.27. · 시행규칙 2026.3.20. 시행본 기준 · 총 40문항</div>
+</div><div class="score-box"><div class="score-label">SCORE</div><div class="score-value" id="scoreValue">–</div></div></div></header>
+<div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+<main class="container">
+<div class="notice"><strong>판단 순서:</strong> ① 일반과세 전환일 현재 법정 재고품등인지 확인한다 → ② 부가가치세 포함 취득가액 또는 관련 매입세액 중 어느 금액에서 출발하는지 구분한다 → ③ 94.5% 조정과 감가상각자산 경과기간을 반영한다 → ④ 대손세액은 과세거래·법정 대손사유·기간요건을 확인한다 → ⑤ 공급자 매출세액과 공급받는 자 매입세액의 조정 방향을 대칭적으로 판단한다. 모든 문항은 현행 법령을 바탕으로 만든 자체 제작 문제입니다.</div>
+<nav class="toc" aria-label="목차"><h2>목차</h2><div class="toc-links five">
+<a href="#study"><b>핵심 정리</b>공식·흐름</a><a href="#part1"><b>Part 1</b>전환 요건</a><a href="#part2"><b>Part 2</b>전환 계산</a><a href="#part3"><b>Part 3</b>대손 공제</a><a href="#part4"><b>Part 4</b>매입자 조정</a>
+</div></nav>
+<details class="study" id="study" open><summary>한 줄 요약과 전체 구조</summary><div class="inside">
+<p><strong>한 줄 요약:</strong> 제44조는 간이과세 기간에 취득하여 남아 있는 공제대상 재고품등의 매입세액 일부를 일반과세 전환 후 회복하는 제도이고, 제45조는 과세 매출채권이 법정 사유로 회수불능이 된 경우 이미 납부한 매출세액을 조정하는 제도입니다.</p>
+<table class="summary-table"><thead><tr><th>구분</th><th>계산·처리</th><th>대표 함정</th></tr></thead><tbody>
+<tr><td>일반 재고품</td><td>부가세 포함 재고금액 × 10/110 × 94.5%</td><td>공급가액 기준으로 계산</td></tr>
+<tr><td>건설 중 자산</td><td>관련 공제대상 매입세액 × 94.5%</td><td>10/110을 다시 곱함</td></tr>
+<tr><td>매입 감가상각자산</td><td>부가세 포함 취득가액 × 잔존비율 × 10/110 × 94.5%</td><td>건물 10%, 기타 50% 차감률 혼동</td></tr>
+<tr><td>공급자 대손</td><td>대손금액 × 10/110을 대손확정 기간의 매출세액에서 차감</td><td>공급기간으로 소급</td></tr>
+<tr><td>매입자 조정</td><td>대손확정 시 매입세액 차감, 나중에 변제하면 매입세액 가산</td><td>조정 방향·귀속시기 반대</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>제44조 핵심 공식</summary><div class="inside"><table class="summary-table"><thead><tr><th>자산</th><th>재고매입세액 공식</th></tr></thead><tbody>
+<tr><td>상품·제품·재료</td><td>재고금액 × 10/110 × [1－0.5%×110/10] = 재고금액 × 10/110 × 94.5%</td></tr>
+<tr><td>건설 중인 자산</td><td>관련 공제대상 매입세액 × 94.5%</td></tr>
+<tr><td>매입 건물·구축물</td><td>취득가액 × [1－10%×경과 과세기간 수] × 10/110 × 94.5%</td></tr>
+<tr><td>매입 기타 감가상각자산</td><td>취득가액 × [1－50%×경과 과세기간 수] × 10/110 × 94.5%</td></tr>
+<tr><td>자가제작·신축 자산</td><td>관련 공제대상 매입세액 × 잔존비율 × 94.5%</td></tr>
+</tbody></table><p style="margin-top:.5rem"><strong>암기:</strong> 제44조 전환공제의 차감률은 건물 10%, 기타 50%입니다. 제41조·제43조의 건물 5%, 기타 25%와 구분해야 합니다.</p></div></details>
+<details class="study"><summary>제45조 대손세액의 판단 흐름</summary><div class="inside"><table class="summary-table"><thead><tr><th>단계</th><th>판단</th></tr></thead><tbody>
+<tr><td>1. 거래</td><td>부가가치세 과세 재화·용역의 공급인지 확인</td></tr>
+<tr><td>2. 채권</td><td>부가가치세를 포함한 외상매출금 등인지 확인</td></tr>
+<tr><td>3. 사유</td><td>소득세·법인세 시행령상 대손사유 또는 법정 출자전환 등인지 확인</td></tr>
+<tr><td>4. 기간</td><td>공급일부터 10년이 지난 날이 속하는 과세기간의 확정신고기한까지 확정</td></tr>
+<tr><td>5. 계산</td><td>대손금액 × 10/110</td></tr>
+<tr><td>6. 사후</td><td>공급자 회수 시 매출세액 가산, 공급받는 자 변제 시 매입세액 가산</td></tr>
+</tbody></table></div></details>
+<details class="study"><summary>기출 포인트와 공식 최종정답</summary><div class="inside"><table class="summary-table"><thead><tr><th>기출</th><th>공식답</th><th>반복 논점</th></tr></thead><tbody>
+<tr><td>2022년 제59회 76번</td><td>④</td><td>공급자의 대손세액공제 후 회수, 공급받는 자의 변제에 따른 매입세액 회복을 한 문제에서 결합</td></tr>
+</tbody></table><p style="margin-top:.5rem">제44조는 최근 5개년 직접 출제 빈도가 낮지만, 제41조·제43조·제64조의 감가상각자산 조정률과 결합해 숫자를 바꾸는 형태의 출제 가능성이 있어 계산문항을 강화했습니다. 출제 가능성 평가는 예측이며 실제 출제를 보장하지 않습니다.</p></div></details>
+<div class="toolbar"><button class="tool-btn primary" onclick="gradeAll()">전체 채점</button><button class="tool-btn" onclick="toggleAllExplanations()" id="toggleExplainBtn">해설 모두 보기</button><button class="tool-btn" onclick="toggleWrongOnly()" id="wrongOnlyBtn">틀린 문제만 보기</button><button class="tool-btn" onclick="window.print()">인쇄</button><button class="tool-btn accent" onclick="resetQuiz()">다시 풀기</button></div>
+<div id="quizRoot"></div>
+<div class="global-actions"><button class="action-btn primary" onclick="gradeAll()">전체 채점 및 결과 보기</button><button class="action-btn outline" onclick="toggleAllExplanations()">전체 해설 펼치기</button><button class="action-btn outline" onclick="resetQuiz()">처음부터 다시 풀기</button></div>
+<section class="score-panel" id="scorePanel" aria-live="polite"><h2>학습 결과</h2><div class="grade" id="gradeText">0%</div><div class="score-stats"><div><strong id="correctStat">0</strong><span>정답</span></div><div><strong id="wrongStat">0</strong><span>오답</span></div><div><strong id="unansweredStat">0</strong><span>미응답</span></div></div><div class="feedback" id="feedbackText"></div><button class="action-btn outline" onclick="toggleWrongOnly(true)">오답만 복습하기</button></section>
+<section class="source-box"><h3>근거 및 검증 기준</h3><ul>
+<li>부가가치세법 제44조·제45조: 법률 제21065호, 2026.1.2. 시행본.</li>
+<li>부가가치세법 시행령 제86조·제87조 및 제66조: 대통령령 제36133호, 2026.2.27. 시행본.</li>
+<li>부가가치세법 시행규칙 제59조·제60조: 재정경제부령 제9호, 2026.3.20. 시행본.</li>
+<li>업로드된 2022년 제59회 세무사 1차 시험지와 공식 최종정답에서 제45조 관련 기출논점을 확인함.</li>
+<li>문항은 모두 자체 제작이며 실제 기출문제를 그대로 수록한 것이 아님.</li></ul>
+<p class="caution">※ 2027년 세무사 시험의 적용 법령 기준일과 후속 개정 여부는 향후 시행계획을 기준으로 다시 확인해야 합니다. 특히 오래된 교재에 남아 있는 간이과세자 대손세액공제 특례와 현행법을 구분해야 합니다. 본 파일은 2026년 7월 13일 현재 시행 중인 법령을 기준으로 제작했습니다.</p></section>
+<div class="footer-note">부가가치세법 제44조~제45조 · 자체 제작 O/X 학습자료</div>
+</main>
+
+<script>
+const QUESTIONS = [{"id":1,"part":1,"law":"법 §44①·영 §86①","answer":"O","level":"A급","tag":"전환공제","text":"간이과세자가 일반과세자로 변경되는 경우에는 전환일 현재 보유한 법정 재고품등에 대하여 계산한 재고매입세액을 공제할 수 있다.","explanation":"일반과세자로 전환되면 이후 매출에는 일반과세 방식이 적용되므로, 간이과세 기간에 취득하여 전환일 현재 남아 있는 일정 재고품등의 매입세액 상당액을 회복시키는 특례입니다.","correction":"","trap":"일반과세자에서 간이과세자로 바뀌는 경우의 재고납부세액과 방향을 반대로 기억하지 마세요."},{"id":2,"part":1,"law":"영 §86①","answer":"X","level":"A급","tag":"공제대상","text":"전환일 현재 보유한 자산이라면 그 취득 당시 매입세액 공제대상이 아니었던 자산도 모두 재고매입세액 공제대상에 포함된다.","explanation":"재고품등은 법 제38조부터 제43조까지에 따른 매입세액 공제대상인 것만 포함합니다. 원래부터 불공제되는 자산을 전환 시 되살릴 수는 없습니다.","correction":"올바른 문장: 일반과세 전환 시 재고매입세액 공제대상은 법 제38조부터 제43조까지에 따른 매입세액 공제대상인 재고품등으로 한정된다.","trap":"‘전환일 현재 존재’와 ‘취득 당시 공제대상’ 두 요건을 모두 확인하세요."},{"id":3,"part":1,"law":"영 §86①1~4","answer":"O","level":"A급","tag":"재고품 범위","text":"재고매입세액 공제대상 재고품등에는 상품, 제품, 반제품, 재공품, 재료, 부재료 및 건설 중인 자산이 포함될 수 있다.","explanation":"시행령은 상품, 제품(반제품·재공품 포함), 재료(부재료 포함), 건설 중인 자산과 일정 감가상각자산을 열거합니다.","correction":"","trap":"완성된 상품만이 아니라 생산 중 자산과 부재료도 포함될 수 있습니다."},{"id":4,"part":1,"law":"영 §86①","answer":"X","level":"A급","tag":"토지 제외","text":"간이과세자가 일반과세자로 전환할 때 보유한 토지도 감가상각자산에 해당하므로 재고매입세액 공제대상이다.","explanation":"토지는 감가상각자산이 아니며, 토지 관련 매입세액은 원칙적으로 불공제 대상입니다.","correction":"올바른 문장: 토지는 일반과세 전환 시 재고매입세액 공제대상 감가상각자산에 포함되지 않는다.","trap":"부동산이라는 이유로 건물과 토지를 함께 처리하지 마세요."},{"id":5,"part":1,"law":"영 §86①5","answer":"O","level":"A급","tag":"보유기간 제한","text":"일반과세 전환 시 감가상각자산은 건물·구축물의 경우 취득·건설·신축 후 10년 이내, 그 밖의 감가상각자산은 취득·제작 후 2년 이내의 것만 대상이 된다.","explanation":"시행령 제86조 제1항 제5호의 기간 제한입니다. 대상 범위의 10년·2년과 계산식의 경과기간 차감률을 구분해야 합니다.","correction":"","trap":"10년·2년은 대상자산의 기간 제한이고, 계산식은 건물 10%, 기타 50%씩 차감합니다."},{"id":6,"part":1,"law":"영 §86①","answer":"X","level":"A급","tag":"신고 시기","text":"일반과세 전환 재고품등 신고서는 일반과세자로 전환된 후 최초 일반과세 확정신고와 함께 제출한다.","explanation":"전환일 현재 재고품등은 전환일의 직전 과세기간에 대한 신고와 함께 신고합니다.","correction":"올바른 문장: 일반과세 전환 시의 재고품등 신고서는 전환되는 날의 직전 과세기간에 대한 신고와 함께 제출한다.","trap":"공제시기와 신고서 제출시기를 분리해서 기억하세요."},{"id":7,"part":1,"law":"영 §86②","answer":"O","level":"A급","tag":"재고금액","text":"재고품등의 금액은 장부 또는 세금계산서로 확인되는 부가가치세 포함 취득가액을 기준으로 한다.","explanation":"시행령은 취득가액에 부가가치세를 포함하도록 명시합니다. 따라서 일반 재고 계산에서 10/110을 곱해 세액 상당액을 추출합니다.","correction":"","trap":"부가가치세 제외 공급가액을 바로 재고금액으로 쓰지 마세요."},{"id":8,"part":1,"law":"영 §86⑥","answer":"O","level":"B급","tag":"승인 간주","text":"관할 세무서장이 신고기한이 지난 후 1개월 이내에 재고매입세액을 통지하지 않으면 사업자가 신고한 재고금액을 승인한 것으로 본다.","explanation":"법정기한 내 통지가 없으면 신고한 재고금액을 승인한 것으로 보는 간주규정이 있습니다.","correction":"","trap":"전환일부터 1개월이 아니라 신고기한이 지난 후 1개월입니다."},{"id":9,"part":1,"law":"영 §86⑦","answer":"X","level":"A급","tag":"공제 귀속","text":"재고매입세액은 일반과세자로 전환되는 날이 속하는 과세기간에서 세무서의 승인 여부와 관계없이 즉시 공제한다.","explanation":"결정된 재고매입세액은 승인을 받은 날이 속하는 예정신고기간 또는 과세기간의 매출세액에서 공제합니다.","correction":"올바른 문장: 재고매입세액은 승인을 받은 날이 속하는 예정신고기간 또는 과세기간의 매출세액에서 공제한다.","trap":"전환일과 승인일을 혼동하지 마세요."},{"id":10,"part":1,"law":"영 §86⑧·법 §57","answer":"X","level":"B급","tag":"사후 경정","text":"재고매입세액이 승인되거나 승인된 것으로 간주되면 계산 오류나 누락이 발견되어도 더 이상 경정할 수 없다.","explanation":"승인 후에도 오류 또는 누락이 발견되면 법 제57조에 따라 조사하여 경정할 수 있습니다.","correction":"올바른 문장: 승인되거나 승인된 것으로 보는 재고매입세액에 오류 또는 누락이 있으면 법 제57조에 따라 경정할 수 있다.","trap":"승인 간주는 계산의 영구 확정을 의미하지 않습니다."},{"id":11,"part":2,"law":"영 §86③1","answer":"O","level":"A급","tag":"일반 재고 공식","text":"상품·제품·재료 등 일반 재고품의 재고매입세액은 ‘재고금액 × 10/110 × (1－0.5%×110/10)’으로 계산한다.","explanation":"부가가치세 포함 재고금액에서 10/110으로 세액을 추출한 뒤 간이과세 기간 중 이미 반영된 매입세액 상당분을 조정합니다. 괄호의 값은 94.5%입니다.","correction":"","trap":"마지막 조정률 94.5%를 빠뜨리지 마세요."},{"id":12,"part":2,"law":"영 §86②·③1","answer":"X","level":"A급","tag":"부가세 포함","text":"일반 재고품의 재고매입세액은 부가가치세를 제외한 공급가액에 10%와 94.5%를 곱하여 계산해야 하므로 부가가치세 포함 취득가액은 사용할 수 없다.","explanation":"법정 재고금액은 부가가치세 포함 취득가액입니다. 따라서 재고금액에 10/110을 곱합니다.","correction":"올바른 문장: 일반 재고품은 부가가치세 포함 취득가액에 10/110과 94.5%를 곱하여 계산한다.","trap":"공급가액 기준 계산으로 임의 변환하지 말고 법정 산식을 그대로 적용하세요."},{"id":13,"part":2,"law":"영 §86③1","answer":"O","level":"A급","tag":"94.5%","text":"재고매입세액 계산식의 ‘1－0.5%×110/10’은 94.5%와 같다.","explanation":"0.5%×11=5.5%이므로 1－5.5%=94.5%입니다.","correction":"","trap":"0.5%를 단순히 빼서 99.5%로 계산하지 마세요."},{"id":14,"part":2,"law":"영 §86③3가","answer":"X","level":"A급","tag":"건물 차감률","text":"다른 사람에게서 매입한 건물의 재고매입세액을 계산할 때 경과 과세기간마다 취득가액의 5%를 차감한다.","explanation":"일반과세 전환 재고매입세액에서는 건물·구축물에 경과 과세기간당 10%를 적용합니다. 제41조나 제43조의 5%와 구분해야 합니다.","correction":"올바른 문장: 매입한 건물·구축물의 일반과세 전환 재고매입세액은 경과 과세기간마다 10%를 차감한다.","trap":"같은 건물이라도 제41조·제43조는 5%, 제44조 전환공제는 10%입니다."},{"id":15,"part":2,"law":"영 §86③3나","answer":"O","level":"A급","tag":"기타 자산 차감률","text":"다른 사람에게서 매입한 기계장치 등 그 밖의 감가상각자산은 재고매입세액 계산 시 경과 과세기간마다 50%를 차감한다.","explanation":"그 밖의 감가상각자산은 ‘1－50%×경과 과세기간 수’를 적용합니다.","correction":"","trap":"제43조의 25%와 혼동하지 마세요."},{"id":16,"part":2,"law":"영 §86③2","answer":"X","level":"A급","tag":"건설 중 자산","text":"건설 중인 자산의 재고매입세액은 관련 공제대상 매입세액에 다시 10/110을 곱한 뒤 94.5%를 적용한다.","explanation":"건설 중인 자산은 이미 ‘관련 공제대상 매입세액’을 출발점으로 하므로 10/110을 다시 곱하지 않고 94.5% 조정만 합니다.","correction":"올바른 문장: 건설 중인 자산의 재고매입세액은 관련 공제대상 매입세액에 94.5%를 곱하여 계산한다.","trap":"취득가액에서 출발하는 공식과 매입세액에서 출발하는 공식을 구분하세요."},{"id":17,"part":2,"law":"영 §86③1","answer":"O","level":"A급","tag":"재고 계산","text":"부가가치세 포함 재고금액이 11,000,000원인 상품의 재고매입세액은 945,000원이다.","explanation":"11,000,000원×10/110×94.5%=945,000원입니다.","correction":"","trap":"1,000,000원을 그대로 공제하지 않고 94.5% 조정을 적용합니다."},{"id":18,"part":2,"law":"영 §86③3가","answer":"O","level":"A급","tag":"건물 계산","text":"부가가치세 포함 취득가액이 110,000,000원인 매입 건물의 경과 과세기간 수가 2라면 재고매입세액은 7,560,000원이다.","explanation":"110,000,000원×(1－10%×2)×10/110×94.5%=7,560,000원입니다.","correction":"","trap":"건물의 잔존비율 80%와 94.5% 조정을 모두 적용합니다."},{"id":19,"part":2,"law":"영 §86③3나·§66② 후단","answer":"X","level":"A급","tag":"기타 자산 계산","text":"부가가치세 포함 취득가액 110,000,000원인 기계장치의 경과 과세기간 수가 2이면 양수의 재고매입세액이 발생한다.","explanation":"그 밖의 감가상각자산은 과세기간당 50%를 차감하므로 경과기간 2이면 잔존비율이 0%이고 재고매입세액도 0원입니다.","correction":"올바른 문장: 그 밖의 감가상각자산은 경과 과세기간 수가 2이면 잔존비율이 0%이므로 재고매입세액이 없다.","trap":"대상자산의 ‘취득 후 2년 이내’와 계산상 ‘과세기간 2개 경과 시 0’은 서로 다른 기준입니다."},{"id":20,"part":2,"law":"영 §86③4","answer":"O","level":"B급","tag":"자가제작 자산","text":"사업자가 직접 신축한 건물의 재고매입세액은 취득가액이 아니라 신축과 관련된 공제대상 매입세액에 잔존비율과 94.5%를 곱하여 계산한다.","explanation":"직접 제작·건설·신축한 자산은 관련 공제대상 매입세액을 출발점으로 합니다. 매입 자산과 산식의 기초가 다릅니다.","correction":"","trap":"매입 자산은 부가가치세 포함 취득가액×10/110, 자가제작 자산은 관련 매입세액에서 출발합니다."},{"id":21,"part":3,"law":"법 §45①","answer":"O","level":"A급","tag":"과세거래 요건","text":"대손세액공제는 부가가치세가 과세되는 재화 또는 용역을 공급하고 발생한 매출채권이 법정 사유로 회수불능이 된 경우에 적용한다.","explanation":"면세거래에는 애초에 거래징수한 부가가치세가 없으므로 제45조의 대손세액공제 대상이 아닙니다.","correction":"","trap":"채권이 대손되었다는 사실만으로는 부족하고 과세공급과 관련되어야 합니다."},{"id":22,"part":3,"law":"법 §45①","answer":"X","level":"A급","tag":"면세거래","text":"면세재화를 공급하고 발생한 외상매출금이 파산으로 회수불능이 되면 그 대손금액의 10/110을 매출세액에서 공제한다.","explanation":"면세재화 공급분은 대손세액공제 대상이 아닙니다.","correction":"올바른 문장: 부가가치세가 과세되는 재화 또는 용역의 공급으로 발생한 매출채권이 법정 사유로 대손된 경우에 대손세액공제를 검토한다.","trap":"소득세·법인세상 대손금 인정과 부가가치세 대손세액공제는 적용대상이 다릅니다."},{"id":23,"part":3,"law":"법 §45①","answer":"O","level":"A급","tag":"대손금액","text":"대손세액 계산의 기초가 되는 외상매출금이나 그 밖의 매출채권은 부가가치세를 포함한 금액이다.","explanation":"법은 매출채권이 부가가치세를 포함한 것임을 명시하고, 포함금액에 10/110을 곱하도록 합니다.","correction":"","trap":"부가가치세 제외 공급가액에 다시 10/110을 곱하지 마세요."},{"id":24,"part":3,"law":"법 §45①","answer":"O","level":"A급","tag":"공제 공식","text":"일반과세자의 대손세액은 대손금액에 10/110을 곱하여 계산한다.","explanation":"부가가치세 포함 채권 중 세액 부분을 분리하는 공식입니다.","correction":"","trap":"10%가 아니라 10/110입니다."},{"id":25,"part":3,"law":"법 §45①","answer":"X","level":"A급","tag":"귀속시기","text":"대손세액은 당초 재화 또는 용역을 공급한 날이 속하는 과세기간의 매출세액에서 소급하여 차감한다.","explanation":"대손세액은 대손이 확정된 날이 속하는 과세기간의 매출세액에서 뺍니다.","correction":"올바른 문장: 대손세액은 대손이 확정된 날이 속하는 과세기간의 매출세액에서 차감한다.","trap":"공급시기와 대손확정시기를 구분하세요."},{"id":26,"part":3,"law":"법 §45① 단서","answer":"O","level":"A급","tag":"사후 회수","text":"대손세액을 공제받은 후 대손금액의 전부 또는 일부를 회수하면 회수액에 관련된 대손세액을 회수한 날이 속하는 과세기간의 매출세액에 더한다.","explanation":"대손공제 후 회수분은 공제를 되돌리는 방향으로 매출세액에 가산합니다.","correction":"","trap":"회수는 매입세액 조정이 아니라 공급자의 매출세액 가산입니다."},{"id":27,"part":3,"law":"영 §87②","answer":"O","level":"A급","tag":"10년 기준","text":"대손세액공제 대상은 공급일부터 10년이 지난 날이 속하는 과세기간의 확정신고기한까지 법정 사유로 확정된 대손세액이다.","explanation":"현행 시행령 제87조 제2항의 기간기준입니다. 공급일부터 10년이 되는 날에서 바로 끊는 것이 아니라 그 날이 속하는 과세기간의 확정신고기한까지입니다.","correction":"","trap":"‘공급일+10년’과 ‘그 날이 속하는 과세기간 확정신고기한’을 함께 기억하세요."},{"id":28,"part":3,"law":"영 §87②","answer":"X","level":"A급","tag":"기간 경계","text":"공급일부터 정확히 10년이 지난 날 이후에는 같은 과세기간의 확정신고기한 전이라도 대손세액공제를 받을 수 없다.","explanation":"공급일부터 10년이 지난 날이 속하는 과세기간의 확정신고기한까지 대손이 확정되면 기간요건을 충족할 수 있습니다.","correction":"올바른 문장: 공급일부터 10년이 지난 날이 속하는 과세기간의 확정신고기한까지 대손이 확정되면 기간요건을 충족할 수 있다.","trap":"10년이 되는 당일만 보지 말고 확정신고기한까지 확장된 범위를 확인하세요."},{"id":29,"part":3,"law":"법 §45②·영 §87④·규칙 §60","answer":"O","level":"A급","tag":"신고서류","text":"대손세액공제를 받으려는 사업자는 확정신고서에 대손세액 공제(변제)신고서와 대손사실을 증명하는 서류를 첨부하여 제출한다.","explanation":"시행령 제87조 제4항과 시행규칙 제60조에 따른 절차입니다.","correction":"","trap":"대손사유가 발생했다는 사실만으로 자동 공제되지 않습니다."},{"id":30,"part":3,"law":"영 §87①","answer":"O","level":"B급","tag":"대손사유","text":"대손세액공제의 법정 사유에는 소득세법 시행령 또는 법인세법 시행령에 따라 대손금으로 인정되는 경우와 법원의 회생계획인가에 따른 일정 출자전환이 포함될 수 있다.","explanation":"시행령 제87조 제1항은 관련 소득세·법인세 규정의 대손사유와 일정 출자전환을 규정합니다.","correction":"","trap":"회계상 손상차손을 인식했다는 사실만으로 법정 대손사유가 되는 것은 아닙니다."},{"id":31,"part":4,"law":"법 §45③","answer":"O","level":"A급","tag":"매입자 조정","text":"공급받는 사업자가 관련 매입세액을 이미 공제받았고 폐업하기 전에 공급자가 대손세액공제를 받으면, 공급받는 자는 관련 대손세액을 대손확정 과세기간의 매입세액에서 뺀다.","explanation":"공급자는 매출세액을 차감하고 공급받는 자는 이미 공제받은 매입세액을 감소시켜 세액의 대칭을 맞춥니다.","correction":"","trap":"공급자의 공제와 공급받는 자의 조정 방향은 서로 반대입니다."},{"id":32,"part":4,"law":"법 §45③","answer":"X","level":"A급","tag":"폐업 후","text":"공급받는 사업자가 이미 폐업한 뒤 공급자가 대손세액공제를 받은 경우에도 폐업한 사업자는 대손확정 과세기간의 매입세액을 수정하여 반드시 차감해야 한다.","explanation":"법 제45조 제3항은 공급받는 사업자가 폐업하기 전에 공급자가 공제받은 경우를 전제로 합니다.","correction":"올바른 문장: 공급받는 사업자의 매입세액 차감은 그 사업자가 폐업하기 전에 공급자가 대손세액공제를 받은 경우에 적용한다.","trap":"‘폐업하기 전에’라는 시간요건을 놓치지 마세요."},{"id":33,"part":4,"law":"법 §45④","answer":"O","level":"A급","tag":"변제 시 회복","text":"공급받는 자가 대손세액 상당액을 매입세액에서 뺀 후 채무의 전부 또는 일부를 변제하면 변제액 관련 대손세액을 변제한 날이 속하는 과세기간의 매입세액에 더한다.","explanation":"변제하면 공급받는 자는 과거 차감했던 매입세액 중 변제분을 회복합니다.","correction":"","trap":"공급자는 회수 시 매출세액 가산, 공급받는 자는 변제 시 매입세액 가산입니다."},{"id":34,"part":4,"law":"법 §45③","answer":"X","level":"A급","tag":"매입자 귀속시기","text":"공급받는 자는 실제로 채무를 변제한 과세기간에 처음으로 대손세액 상당액을 매입세액에서 뺀다.","explanation":"최초 차감은 공급자의 대손이 확정된 날이 속하는 과세기간에 합니다. 이후 실제 변제하면 그 변제기간에 다시 매입세액에 더합니다.","correction":"올바른 문장: 공급받는 자는 대손이 확정된 날이 속하는 과세기간에 관련 대손세액을 매입세액에서 빼고, 후일 변제하면 변제기간의 매입세액에 더한다.","trap":"대손확정 단계와 사후 변제 단계를 뒤바꾸지 마세요."},{"id":35,"part":4,"law":"법 §45③ 단서·영 §87③","answer":"O","level":"A급","tag":"직권 경정","text":"공급받는 자가 차감해야 할 대손세액을 매입세액에서 빼지 않으면 관할 세무서장이 그 매입세액을 결정 또는 경정할 수 있다.","explanation":"공급자의 관할 세무서장은 공제사실을 공급받는 자의 관할 세무서장에게 통지하고, 누락 시 결정·경정합니다.","correction":"","trap":"공급받는 자가 신고하지 않았다고 조정의무가 사라지는 것이 아닙니다."},{"id":36,"part":4,"law":"법 §§45·61·63","answer":"O","level":"B급","tag":"간이과세자","text":"현행 간이과세자의 세액계산 규정에는 제45조의 일반 대손세액공제를 준용하는 규정이 없으므로, 간이과세자에게 일반과세자의 10/110 공식을 그대로 적용하지 않는다.","explanation":"간이과세자는 제7장의 별도 세액계산 규정을 적용하고, 현행 제63조에는 제45조를 준용하는 대손세액공제 규정이 없습니다.","correction":"","trap":"과거 규정이나 오래된 교재의 간이과세자 대손공제율을 현행법에 그대로 적용하지 마세요."},{"id":37,"part":4,"law":"법 §§45·61·63","answer":"X","level":"B급","tag":"간이과세 함정","text":"간이과세자도 대손금액에 0.5%를 곱한 금액을 현행법상 대손세액으로 공제한다.","explanation":"현행 간이과세자의 세액계산 규정에는 해당 0.5% 대손세액공제 특례가 존재하지 않습니다.","correction":"올바른 문장: 현행법상 간이과세자에게 대손금액의 0.5%를 공제하는 별도 대손세액공제 특례는 적용되지 않는다.","trap":"개정 전 규정과 현행 규정을 반드시 구분하세요."},{"id":38,"part":4,"law":"법 §45①","answer":"O","level":"A급","tag":"기본 계산","text":"부가가치세 포함 대손금액이 22,000,000원이면 일반과세자의 대손세액은 2,000,000원이다.","explanation":"22,000,000원×10/110=2,000,000원입니다.","correction":"","trap":"22,000,000원의 10%인 2,200,000원으로 계산하지 마세요."},{"id":39,"part":4,"law":"법 §45①·④","answer":"O","level":"A급","tag":"2022 기출형","text":"공급자가 과거 33,000,000원의 채권에 대하여 대손세액공제를 받았고 공급받는 자가 나중에 전액을 변제했다면, 공급받는 자는 변제 과세기간의 매입세액에 3,000,000원을 더한다.","explanation":"33,000,000원×10/110=3,000,000원입니다. 2022년 제59회 76번은 대손공제 후 회수와 공급받는 자의 변제를 함께 묻는 구조로 출제되었고 공식답은 ④였습니다.","correction":"","trap":"변제액 전체를 매입세액에 더하는 것이 아니라 그 안의 부가가치세 상당액만 더합니다."},{"id":40,"part":4,"law":"영 §87②","answer":"X","level":"A급","tag":"기간 종합","text":"대손세액공제는 공급일부터 5년이 지난 날이 속하는 과세기간의 확정신고기한까지만 인정된다.","explanation":"현행 인정기간은 공급일부터 10년이 지난 날이 속하는 과세기간의 확정신고기한까지입니다.","correction":"올바른 문장: 대손세액공제는 공급일부터 10년이 지난 날이 속하는 과세기간의 확정신고기한까지 법정 사유로 확정된 대손세액을 대상으로 한다.","trap":"오래된 기간 기준을 현행 10년 기준과 혼동하지 마세요."}];
+const PARTS = {"1":{"title":"일반과세 전환 공제의 요건","subtitle":"대상 재고품등·신고·승인·공제시기","range":"1~10"},"2":{"title":"재고매입세액 계산","subtitle":"일반 재고·건설 중 자산·감가상각자산","range":"11~20"},"3":{"title":"공급자의 대손세액공제","subtitle":"과세거래·10/110·대손확정·사후 회수","range":"21~30"},"4":{"title":"공급받는 자의 조정과 종합계산","subtitle":"매입세액 차감·변제 회복·현행 간이과세 구분","range":"31~40"}};
+const state = {selected:{}, done:{}, correct:0, answered:0, allExplanations:false, wrongOnly:false};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+}
+
+function renderQuiz(){
+  const root = document.getElementById('quizRoot');
+  root.innerHTML = '';
+  Object.entries(PARTS).forEach(([partNo, meta]) => {
+    const section = document.createElement('section');
+    section.id = 'part' + partNo;
+    section.innerHTML = `
+      <div class="section-header">
+        <span class="section-tag">Part ${partNo}</span>
+        <span class="section-title">${escapeHTML(meta.title)}</span>
+        <span class="section-subtitle">${escapeHTML(meta.subtitle)}</span>
+        <span class="section-count" id="partCount${partNo}">0/${QUESTIONS.filter(q=>q.part===Number(partNo)).length}</span>
+      </div><hr class="section-rule">`;
+    QUESTIONS.filter(q=>q.part===Number(partNo)).forEach(q => section.appendChild(makeCard(q)));
+    root.appendChild(section);
+  });
+}
+
+function makeCard(q){
+  const card = document.createElement('article');
+  card.className = 'question-card';
+  card.id = 'card' + q.id;
+  const levelClass = q.level.startsWith('A') ? 'a' : '';
+  card.innerHTML = `
+    <div class="question-head">
+      <span class="question-no">${q.id}</span>
+      <div class="question-text">
+        <span class="law-badge">${escapeHTML(q.law)}</span>
+        <span class="level-badge ${levelClass}">${escapeHTML(q.level)}</span>
+        <span class="topic-badge">${escapeHTML(q.tag)}</span><br>
+        ${escapeHTML(q.text)}
+      </div>
+    </div>
+    <div class="question-body">
+      <div class="ox-row">
+        <button class="ox-btn" data-value="O" onclick="selectAnswer(${q.id},'O')" aria-label="${q.id}번 O 선택">O</button>
+        <button class="ox-btn" data-value="X" onclick="selectAnswer(${q.id},'X')" aria-label="${q.id}번 X 선택">X</button>
+      </div>
+    </div>
+    <div class="answer-row">
+      <button class="check-btn" onclick="checkAnswer(${q.id})">정답 확인</button>
+      <span class="result-badge" id="result${q.id}"></span>
+    </div>
+    <div class="explanation" id="explanation${q.id}">
+      <div class="ex-title">해설</div>
+      <div class="law-ref">${escapeHTML(q.law)}</div>
+      <div class="answer-line ${q.answer.toLowerCase()}">정답: ${q.answer} (${q.answer==='O'?'옳다':'틀리다'})</div>
+      <p>${q.explanation}</p>
+      ${q.correction ? `<div class="correction">${escapeHTML(q.correction)}</div>` : ''}
+      <p class="trap">⚠ ${escapeHTML(q.trap)}</p>
+    </div>`;
+  return card;
+}
+
+function selectAnswer(id, value){
+  if(state.done[id]) return;
+  state.selected[id] = value;
+  const card = document.getElementById('card'+id);
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === value) btn.classList.add(value==='O'?'selected-o':'selected-x');
+  });
+}
+
+function checkAnswer(id, silent=false){
+  if(state.done[id]) return;
+  const q = QUESTIONS.find(item=>item.id===id);
+  const selected = state.selected[id];
+  if(!selected){
+    if(!silent) alert('O 또는 X를 먼저 선택해주세요.');
+    return;
+  }
+  state.done[id] = true;
+  state.answered += 1;
+  const correct = selected === q.answer;
+  if(correct) state.correct += 1;
+  const card = document.getElementById('card'+id);
+  card.dataset.correct = correct ? 'true' : 'false';
+  card.querySelectorAll('.ox-btn').forEach(btn => {
+    btn.classList.remove('selected-o','selected-x');
+    if(btn.dataset.value === q.answer) btn.classList.add('correct');
+    else if(btn.dataset.value === selected && !correct) btn.classList.add('wrong');
+    btn.disabled = true;
+  });
+  card.querySelector('.check-btn').disabled = true;
+  const result = document.getElementById('result'+id);
+  result.textContent = correct ? '✓ 정답' : `✗ 오답 (정답: ${q.answer})`;
+  result.className = 'result-badge show ' + (correct ? 'ok' : 'ng');
+  document.getElementById('explanation'+id).classList.add('show');
+  updateStatus();
+}
+
+function updateStatus(){
+  document.getElementById('scoreValue').textContent = `${state.correct}/${state.answered}`;
+  document.getElementById('progressFill').style.width = `${state.answered/QUESTIONS.length*100}%`;
+  Object.keys(PARTS).forEach(partNo => {
+    const partQuestions = QUESTIONS.filter(q=>q.part===Number(partNo));
+    const count = partQuestions.filter(q=>state.done[q.id]).length;
+    document.getElementById('partCount'+partNo).textContent = `${count}/${partQuestions.length}`;
+  });
+}
+
+function gradeAll(){
+  QUESTIONS.forEach(q => {
+    if(!state.done[q.id] && state.selected[q.id]) checkAnswer(q.id,true);
+  });
+  showScore();
+}
+
+function showScore(){
+  const wrong = state.answered - state.correct;
+  const unanswered = QUESTIONS.length - state.answered;
+  const pct = Math.round(state.correct / QUESTIONS.length * 100);
+  document.getElementById('gradeText').textContent = pct + '%';
+  document.getElementById('correctStat').textContent = state.correct;
+  document.getElementById('wrongStat').textContent = wrong;
+  document.getElementById('unansweredStat').textContent = unanswered;
+  let feedback = '';
+  if(unanswered > 0) feedback = `미응답 ${unanswered}문항이 있습니다. 선택한 문항만 채점했으며, 총 문항 기준 점수입니다.`;
+  else if(pct >= 90) feedback = '납부세액 계산, 공제시기, 증빙 예외와 불공제 항목의 경계가 안정적입니다.';
+  else if(pct >= 75) feedback = '기본 구조는 양호합니다. 등록 전 매입세액 20일과 세금계산서 수취기한 특례를 다시 확인하세요.';
+  else if(pct >= 60) feedback = '매입세액을 먼저 실지귀속한 뒤 증빙·사업관련성·자동차·기업업무추진비·면세·토지 순으로 제거하세요.';
+  else feedback = '법 제37조 계산식 → 제38조 공제대상과 귀속시기 → 제39조 불공제 체크리스트 순서로 다시 학습하세요.';
+  document.getElementById('feedbackText').textContent = feedback;
+  const panel = document.getElementById('scorePanel');
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleAllExplanations(){
+  state.allExplanations = !state.allExplanations;
+  document.querySelectorAll('.explanation').forEach(el => el.classList.toggle('show',state.allExplanations));
+  document.getElementById('toggleExplainBtn').textContent = state.allExplanations ? '해설 모두 숨기기' : '해설 모두 보기';
+}
+
+function toggleWrongOnly(force=false){
+  state.wrongOnly = force ? true : !state.wrongOnly;
+  QUESTIONS.forEach(q => {
+    const card = document.getElementById('card'+q.id);
+    const isWrong = state.done[q.id] && card.dataset.correct === 'false';
+    card.classList.toggle('hidden-filter', state.wrongOnly && !isWrong);
+  });
+  document.getElementById('wrongOnlyBtn').textContent = state.wrongOnly ? '전체 문제 보기' : '틀린 문제만 보기';
+  if(state.wrongOnly && !QUESTIONS.some(q=>state.done[q.id] && document.getElementById('card'+q.id).dataset.correct==='false')){
+    alert('현재 확인된 오답이 없습니다. 먼저 문항을 채점해주세요.');
+    state.wrongOnly = false;
+    QUESTIONS.forEach(q=>document.getElementById('card'+q.id).classList.remove('hidden-filter'));
+    document.getElementById('wrongOnlyBtn').textContent = '틀린 문제만 보기';
+  } else if(state.wrongOnly){
+    document.getElementById('quizRoot').scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function resetQuiz(){
+  if(confirm('선택과 채점 결과를 모두 초기화할까요?')) location.reload();
+}
+
+renderQuiz();
+
+
+
+
+
+
+</script>
+<script src="semosi-review.js?v=20260710-schedule"></script>
+</body>
+</html>
