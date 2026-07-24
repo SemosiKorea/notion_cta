@@ -37,4 +37,11 @@ function toggleExplain(){state.showAll=!state.showAll;document.querySelectorAll(
 function toggleWrong(){state.wrongOnly=!state.wrongOnly;const list=QUESTIONS.filter(q=>state.graded[q.id]&&document.getElementById('card'+q.id).dataset.correct==='false');if(state.wrongOnly&&!list.length){alert('현재 채점된 오답이 없습니다.');state.wrongOnly=false;return;}QUESTIONS.forEach(q=>{const e=document.getElementById('card'+q.id),wrong=state.graded[q.id]&&e.dataset.correct==='false';e.classList.toggle('hidden',state.wrongOnly&&!wrong);});document.getElementById('wrongBtn').textContent=state.wrongOnly?'전체 문제 보기':'틀린 문제만 보기';}
 function resetQuiz(){if(confirm('모든 선택과 채점 결과를 초기화할까요?'))location.reload();}
 render();
+document.querySelectorAll('article.card[id^="card"]').forEach(card=>{
+  card.classList.add('question-card');
+  card.querySelector('.qtext')?.classList.add('question-text');
+  card.querySelector('.badge.law')?.classList.add('law-badge');
+  card.querySelector('.badge.tag')?.classList.add('topic-badge');
+  card.querySelector('.choice')?.classList.add('answer-row');
+});
 </script><script src="semosi-review.js?v=20260710-schedule"></script></body></html>
