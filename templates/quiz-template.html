@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>[법명] [조문] 기출형 O/X</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/quiz.css">
+  <script src="../assets/js/common.js" defer></script>
+  <script src="../assets/js/quiz.js" defer></script>
+</head>
+<body class="quiz-page">
+<header class="page-header">
+  <div class="header-inner">
+    <div>
+      <div class="kicker">CTA TAX LAW · PAST-EXAM STYLE O/X</div>
+      <h1 class="page-title">[법명 제00조] <small>기출형 O/X 퀴즈</small></h1>
+      <div class="subtitle">주체 · 기간 · 기산점 · 요건 · 예외 · 절차 · 법적 효과</div>
+    </div>
+    <div class="score-box"><span>CURRENT SCORE</span><b id="score">0/0</b></div>
+  </div>
+  <div class="progress-track"><i class="progress-bar" id="quiz-progress"></i></div>
+</header>
+
+<main class="page-main">
+  <aside class="notice"><b>기출형 출제:</b> 법조문을 복사하지 않고 핵심 요소 하나를 자연스럽게 변형합니다.</aside>
+  <aside class="warning"><b>법령 검증:</b> 법률·시행령·시행규칙과 공식 최종정답, 기준일을 표시합니다.</aside>
+
+  <div class="toolbar">
+    <button class="btn primary" onclick="gradeAll()">선택 문항 전체 채점</button>
+    <button class="btn" onclick="toggleAllExplanations()">해설 모두 보기</button>
+    <button class="btn" onclick="toggleWrongOnly()">틀린 문제만 보기</button>
+    <button class="btn" onclick="window.print()">인쇄</button>
+    <button class="btn accent" onclick="resetQuiz()">다시 풀기</button>
+  </div>
+
+  <nav class="panel"><h2 class="panel-title">목차</h2><div class="toc">
+    <a href="#quiz"><b>Part 1 · 문항 수</b>[논점]</a>
+  </div></nav>
+
+  <details class="panel" open>
+    <summary>판단 순서와 핵심 암기표</summary>
+    <div class="details-body">
+      <div class="flow">주체 → 대상 → 기간·기산점 → 요건·예외 → 절차 → 효과</div>
+      <table><thead><tr><th>논점</th><th>시험용 핵심</th><th>대표 함정</th></tr></thead>
+      <tbody><tr><td>[논점]</td><td>[핵심]</td><td>[함정]</td></tr></tbody></table>
+    </div>
+  </details>
+
+  <section id="quiz"></section>
+  <section class="score-panel" id="scorePanel"></section>
+
+  <section class="panel">
+    <h2 class="panel-title">반영 자료</h2>
+    <ul class="checklist">
+      <li>[현행 법률 제00조]</li><li>[시행령·시행규칙]</li><li>[공식 최종정답 및 기출분석]</li>
+    </ul>
+    <p class="danger">모든 문항은 자체 제작한 기출형 문제이며 실제 기출문제가 아닙니다.</p>
+  </section>
+  <footer>외부 연결 없이 작동 · 모바일 및 인쇄 지원</footer>
+</main>
+
+<script>
+const QUESTIONS = [
+  {
+    id:1, part:1, standard:"[법명 §00]", level:"A급", topic:"[함정유형]",
+    text:"[O/X 문장]", answer:"O",
+    explanation:"[해설]", correction:"", trap:"[대표 함정]",
+    source:"[근거 조문]"
+  }
+];
+document.addEventListener('DOMContentLoaded',()=>renderQuiz(QUESTIONS));
+</script>
+</body>
+</html>
