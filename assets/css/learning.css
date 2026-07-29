@@ -1,0 +1,12 @@
+/* 학습자료 전용 */
+.learning-page .concept-card{padding:.82rem .9rem;margin-bottom:.72rem}
+.learning-page .concept-card h3{margin:0 0 .35rem;color:var(--navy);font-family:var(--serif);font-size:.9rem}
+.learning-page .concept-card p{margin:.25rem 0;font-size:.76rem}
+.learning-page .question-box{background:#fff;border:1.5px solid var(--navy);border-radius:9px;padding:.72rem .8rem;margin:.65rem 0}
+.learning-page .question-box strong{color:var(--navy)}
+.learning-page .answer-toggle{margin-top:.45rem}
+.learning-page .answer-body{display:none;margin-top:.45rem;border-top:1px solid var(--line);padding-top:.5rem;font-size:.74rem}
+.learning-page .answer-body.show{display:block}
+.learning-page .review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+.learning-page .review-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:.65rem .72rem;font-size:.72rem}
+@media(max-width:650px){.learning-page .review-grid{grid-template-columns:1fr}}
