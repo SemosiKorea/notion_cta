@@ -1,0 +1,29 @@
+/* OX 퀴즈 전용 */
+.quiz-page .score-box{margin-left:auto;text-align:right}
+.quiz-page .score-box span{display:block;font:.57rem var(--mono);color:rgba(255,255,255,.55)}
+.quiz-page .score-box b{font:700 1.4rem var(--mono);color:var(--gold)}
+.question-card{margin-bottom:.76rem;overflow:hidden}
+.question-card.hidden{display:none}
+.question-head{display:flex;gap:.62rem;padding:.72rem .86rem .56rem;border-bottom:1px solid #eee9e1}
+.question-number{flex:0 0 28px;height:28px;border-radius:5px;background:var(--navy-2);color:var(--navy);display:flex;align-items:center;justify-content:center;font:bold .64rem var(--mono)}
+.question-text{font-size:.8rem;line-height:1.82;flex:1}
+.answer-row{display:flex;gap:.43rem;padding:.52rem .86rem}
+.ox-button{min-width:56px;border:1.5px solid var(--line);border-radius:7px;background:#fff;padding:.34rem .86rem;font:bold .93rem var(--mono);color:var(--muted);cursor:pointer}
+.ox-button:hover{border-color:var(--navy);color:var(--navy)}
+.ox-button.selected-o,.ox-button.correct{background:var(--green-bg);color:var(--green);border-color:var(--green)}
+.ox-button.selected-x,.ox-button.wrong{background:var(--red-bg);color:var(--red);border-color:var(--red)}
+.grade-row{display:flex;align-items:center;gap:.48rem;padding:0 .86rem .65rem}
+.grade-result{display:none;font-size:.68rem;font-weight:700;border-radius:20px;padding:.19rem .48rem}
+.grade-result.show{display:inline-block}.grade-result.ok{color:var(--green);background:var(--green-bg)}.grade-result.ng{color:var(--red);background:var(--red-bg)}
+.explanation{display:none;border-top:1px solid var(--line);background:var(--paper-soft);padding:.7rem .86rem;font-size:.72rem;color:#3f3a35;line-height:1.88}
+.explanation.show{display:block}
+.correction{border-left:3px solid var(--navy);background:#edf3fc;padding:.36rem .52rem;margin:.36rem 0}
+.trap{color:var(--red);font-style:italic;margin-top:.23rem}
+.score-panel{display:none;text-align:center;border:1.5px solid var(--navy);padding:1.15rem;border-radius:11px;background:#fff;box-shadow:var(--shadow);margin:1.15rem 0}
+.score-panel.show{display:block}
+@media(max-width:650px){
+  .quiz-page .score-box{margin-left:0;text-align:left}
+  .question-head{padding:.64rem .72rem .5rem}.answer-row{padding:.48rem .72rem}
+  .grade-row{padding:0 .72rem .6rem}.explanation{padding:.64rem .72rem}
+}
+@media print{.answer-row,.grade-row,.score-panel{display:none!important}.explanation{display:block!important}}
