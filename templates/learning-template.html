@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="세무사 1차 학습자료">
+  <title>[과목] [챕터명]</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/learning.css">
+  <script src="../assets/js/common.js" defer></script>
+</head>
+<body class="learning-page">
+<header class="page-header">
+  <div class="header-inner">
+    <div>
+      <div class="kicker">CTA STUDY NOTE · [SUBJECT]</div>
+      <h1 class="page-title">[챕터명] <small>[세부 주제]</small></h1>
+      <div class="subtitle">무엇을 · 언제 · 얼마로 인식하고 · 이후 어떻게 측정하며 · 어디에 표시하는가</div>
+    </div>
+    <div class="header-meta">최종 검토: YYYY-MM-DD<br>근거: [기준서/법령/기출]</div>
+  </div>
+  <div class="progress-track"><i class="progress-bar" data-scroll-progress></i></div>
+</header>
+
+<main class="page-main">
+  <aside class="notice"><b>학습목표:</b> [이 페이지를 본 뒤 스스로 재현해야 할 판단과 계산]</aside>
+
+  <nav class="panel" aria-label="목차">
+    <h2 class="panel-title">목차</h2>
+    <div class="toc">
+      <a href="#core"><b>01 · 핵심 개념</b>인식·측정 이유</a>
+      <a href="#procedure"><b>02 · 계산순서</b>문제 읽기부터 검산까지</a>
+      <a href="#entries"><b>03 · 분개</b>재무제표 영향</a>
+      <a href="#pitfalls"><b>04 · 시험 함정</b>오답 원인</a>
+      <a href="#recall"><b>05 · 능동회상</b>복습문제</a>
+    </div>
+  </nav>
+
+  <section id="core">
+    <div class="section-header"><span class="part-label">CONCEPT</span><h2 class="section-title">핵심 개념</h2></div>
+    <article class="card concept-card">
+      <span class="badge standard">[K-IFRS 기준서]</span><span class="badge topic">[논점]</span>
+      <h3>쉬운 설명</h3><p>[비유와 직관]</p>
+      <h3>시험용 정확한 표현</h3><p>[인식·측정·표시 기준]</p>
+      <div class="formula">[핵심 공식 또는 판단식]</div>
+    </article>
+  </section>
+
+  <section id="procedure">
+    <div class="section-header"><span class="part-label">PROCEDURE</span><h2 class="section-title">문제풀이 순서</h2></div>
+    <div class="steps">
+      <div class="step"><b>무엇을 묻는가</b><br>[취득원가·장부금액·손익·OCI 등]</div>
+      <div class="step"><b>무엇을 언제 인식하는가</b><br>[대상과 시점]</div>
+      <div class="step"><b>최초 금액을 어떻게 측정하는가</b><br>[원가·공정가치·현재가치]</div>
+      <div class="step"><b>기간 경과와 결산 재측정</b><br>[상각·이자·손상·평가]</div>
+      <div class="step"><b>차액을 어디에 표시하는가</b><br>[자산·부채·손익·OCI·자본]</div>
+      <div class="step"><b>분개와 기말 장부금액으로 검산</b></div>
+    </div>
+  </section>
+
+  <section id="entries">
+    <div class="section-header"><span class="part-label">ENTRY</span><h2 class="section-title">분개와 재무제표 영향</h2></div>
+    <pre class="journal">차) [계정과목]       금액
+    대) [계정과목]       금액</pre>
+    <table>
+      <thead><tr><th>항목</th><th>증감</th><th>표시 위치</th></tr></thead>
+      <tbody><tr><td>자산</td><td>[증가/감소]</td><td>재무상태표</td></tr></tbody>
+    </table>
+  </section>
+
+  <section id="pitfalls">
+    <div class="section-header"><span class="part-label">TRAP</span><h2 class="section-title">시험 함정</h2></div>
+    <div class="pitfall"><b>함정 1.</b> [포함·제외, 기간, 할인율, 잔존가치 등의 오류]</div>
+  </section>
+
+  <section id="recall">
+    <div class="section-header"><span class="part-label">RECALL</span><h2 class="section-title">능동회상</h2></div>
+    <article class="question-box">
+      <strong>Q1. [스스로 설명할 질문]</strong>
+      <button class="btn answer-toggle" data-toggle-target="#answer-1" aria-expanded="false">정답 보기</button>
+      <div class="answer-body" id="answer-1">[정답과 한 줄 근거]</div>
+    </article>
+  </section>
+
+  <footer>실제 기출문제와 자체 제작문제를 명확히 구분 · 모바일 및 인쇄 지원</footer>
+</main>
+</body>
+</html>
