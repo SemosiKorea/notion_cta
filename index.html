@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="세모시 코리아의 세무사 시험 및 세법 실무 학습용 O/X 퀴즈와 강의노트 모음입니다.">
+<meta name="description" content="세모시 코리아의 세무사 시험용 세법 O/X 퀴즈와 회계학 복습자료 모음입니다.">
 <meta name="theme-color" content="#5c3d11">
-<meta property="og:title" content="세모시 코리아 | 세법 O/X 퀴즈">
-<meta property="og:description" content="조문과 해설을 함께 학습하는 세법 O/X 퀴즈 모음">
+<meta property="og:title" content="세모시 코리아 | 세무사 학습 자료">
+<meta property="og:description" content="세법 문제와 회계학 복습자료를 한곳에서 확인하는 세무사 학습 모음">
 <meta property="og:type" content="website">
-<title>세모시 코리아 | 세법 O/X 퀴즈</title>
+<title>세모시 코리아 | 세무사 학습 자료</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -84,18 +84,18 @@ footer{border-top:1px solid var(--border);padding:28px 24px 42px;color:var(--mut
 <body>
 <a class="skip-link" href="#quiz-list">본문 바로가기</a>
 <header class="site-header">
-  <div class="eyebrow">Semosi Korea · Tax Study</div>
-  <h1>세법을 <em>판단형 문제</em>로<br>정확하게 익히세요</h1>
-  <p class="lead">세무사 시험과 국세 실무를 위한 O/X 퀴즈 모음입니다. 조문 근거, 시행령·시행규칙, 해설을 함께 확인할 수 있습니다.</p>
-  <div class="notice">자료는 학습 목적으로 제공됩니다. 실제 신고·불복 등 구체적 세무 판단에는 최신 법령과 개별 사실관계 검토가 필요합니다.</div>
+  <div class="eyebrow">Semosi Korea · Tax &amp; Accounting Study</div>
+  <h1>세법과 회계학을 <em>문제와 복습</em>으로<br>정확하게 익히세요</h1>
+  <p class="lead">세무사 시험을 위한 세법 O/X 퀴즈와 회계학 복습자료 모음입니다. 과목 필터와 검색으로 필요한 자료를 바로 확인할 수 있습니다.</p>
+  <div class="notice">자료는 학습 목적으로 제공됩니다. 세법은 최신 법령과 개별 사실관계를, 회계학은 적용 기준서와 문제의 조건을 함께 확인해 주세요.</div>
 </header>
 <main id="quiz-list">
-  <section class="toolbar" aria-label="퀴즈 검색 및 정렬">
+  <section class="toolbar" aria-label="학습 자료 검색 및 정렬">
     <div class="toolbar-inner">
       <div class="search-wrap">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        <label class="sr-only" for="search">퀴즈 검색</label>
-        <input id="search" type="search" placeholder="법령명·조문·주제로 검색" autocomplete="off">
+        <label class="sr-only" for="search">학습 자료 검색</label>
+        <input id="search" type="search" placeholder="과목·법령·주제로 검색" autocomplete="off">
         <button class="clear-btn" id="clearSearch" type="button" aria-label="검색어 지우기">×</button>
       </div>
       <div class="controls">
@@ -146,32 +146,53 @@ footer{border-top:1px solid var(--border);padding:28px 24px 42px;color:var(--mut
 const REPO_OWNER='SemosiKorea';
 const REPO_NAME='notion_cta';
 const BRANCH='main';
-const API_URL=`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/?ref=${BRANCH}`;
+const API_URL=`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${BRANCH}?recursive=1`;
 const REVIEW_STORAGE_KEY='semosikorea.review.v1';
 const REVIEW_PAGE='복습관리_오답복습_오늘의복습_대시보드_20260714.html';
+const DIRECTORY_INFO={
+  accounting:{
+    category:'회계학개론',
+    titles:{'inventory-review':'재고자산 복습'}
+  }
+};
 let allFiles=[];
 let activeCategory='전체';
 
 const $=id=>document.getElementById(id);
 const normalize=text=>(text||'').toLocaleLowerCase('ko-KR').replace(/[\s_-]+/g,' ');
 
-function parseFilename(name){
+function filePath(file){return file.path||file.name||'';}
+
+function parseFilename(value){
+  const fullPath=String(value||'').replace(/^\/+/, '').trim();
+  const pathParts=fullPath.split('/').filter(Boolean);
+  const name=pathParts.at(-1)||fullPath;
   const base=name.replace(/\.html$/i,'').trim();
   const parts=base.split('_').filter(Boolean);
   const hasStandardName=parts.length>=5&&/^\d{8}$/.test(parts.at(-1));
-  if(!hasStandardName) return{category:'기타',title:base.replace(/[_-]+/g,' ')};
+  if(hasStandardName){
+    if(parts[0]==='세법개론'){
+      return{
+        category:parts[1],
+        title:[...parts.slice(2,-2),parts.at(-2)].join(' · ')
+      };
+    }
 
-  if(parts[0]==='세법개론'){
     return{
-      category:parts[1],
-      title:[...parts.slice(2,-2),parts.at(-2)].join(' · ')
+      category:parts[0],
+      title:parts.slice(1,-1).join(' · ')
     };
   }
 
-  return{
-    category:parts[0],
-    title:parts.slice(1,-1).join(' · ')
-  };
+  const directoryInfo=DIRECTORY_INFO[pathParts[0]];
+  if(directoryInfo){
+    return{
+      category:directoryInfo.category,
+      title:directoryInfo.titles[base]||base.replace(/[_-]+/g,' ')
+    };
+  }
+
+  return{category:'기타',title:base.replace(/[_-]+/g,' ')};
 }
 
 function todayKey(){
@@ -311,10 +332,11 @@ function renderReviewDashboard(){
 }
 
 function createCard(file,lastAnswered){
-  const info=parseFilename(file.name);
+  const path=filePath(file);
+  const info=parseFilename(path);
   const a=document.createElement('a');
   a.className='card';
-  a.href=encodeURI(file.name);
+  a.href=encodeURI(path);
   a.setAttribute('aria-label',`${info.category} ${info.title} 열기`);
 
   const category=document.createElement('div');
@@ -325,8 +347,8 @@ function createCard(file,lastAnswered){
   title.className='card-title';
   title.textContent=info.title;
 
-  const isOxQuiz=/OX퀴즈/i.test(file.name);
-  const timestamp=lastAnswered.get(normalizeReviewFileName(file.name));
+  const isOxQuiz=/OX퀴즈/i.test(path);
+  const timestamp=lastAnswered.get(normalizeReviewFileName(path))||lastAnswered.get(normalizeReviewFileName(file.name));
   const study=document.createElement('div');
   study.className='card-study'+(timestamp?' has-history':'');
   if(timestamp){
@@ -342,7 +364,7 @@ function createCard(file,lastAnswered){
   meta.className='card-meta';
   const filename=document.createElement('span');
   filename.className='card-file';
-  filename.textContent=file.name;
+  filename.textContent=path;
   const arrow=document.createElement('span');
   arrow.className='card-arrow';
   arrow.setAttribute('aria-hidden','true');
@@ -355,7 +377,7 @@ function createCard(file,lastAnswered){
 }
 
 function renderChips(){
-  const categories=['전체',...new Set(allFiles.map(f=>parseFilename(f.name).category))].sort((a,b)=>a==='전체'?-1:b==='전체'?1:a.localeCompare(b,'ko'));
+  const categories=['전체',...new Set(allFiles.map(f=>parseFilename(filePath(f)).category))].sort((a,b)=>a==='전체'?-1:b==='전체'?1:a.localeCompare(b,'ko'));
   const host=$('chips');host.replaceChildren();
   categories.forEach(category=>{
     const btn=document.createElement('button');
@@ -370,12 +392,13 @@ function renderCards(){
   const q=normalize($('search').value);
   const sort=$('sort').value;
   let files=allFiles.filter(file=>{
-    const info=parseFilename(file.name);
+    const path=filePath(file);
+    const info=parseFilename(path);
     const matchesCategory=activeCategory==='전체'||info.category===activeCategory;
-    const matchesQuery=!q||normalize(`${info.category} ${info.title} ${file.name}`).includes(q);
+    const matchesQuery=!q||normalize(`${info.category} ${info.title} ${path}`).includes(q);
     return matchesCategory&&matchesQuery;
   });
-  files=[...files].sort((a,b)=>sort==='newest'?(b.sha||'').localeCompare(a.sha||''):a.name.localeCompare(b.name,'ko'));
+  files=[...files].sort((a,b)=>sort==='newest'?(b.sha||'').localeCompare(a.sha||''):filePath(a).localeCompare(filePath(b),'ko'));
   const lastAnswered=latestAnsweredByFile();
   const host=$('cards');host.replaceChildren();
   files.forEach(file=>host.appendChild(createCard(file,lastAnswered)));
@@ -389,7 +412,11 @@ async function loadFiles(){
     const res=await fetch(API_URL,{headers:{Accept:'application/vnd.github+json'}});
     if(!res.ok) throw new Error(`GitHub API ${res.status}`);
     const data=await res.json();
-    allFiles=data.filter(f=>f.type==='file'&&/\.html$/i.test(f.name)&&f.name.toLowerCase()!=='index.html');
+    if(!Array.isArray(data.tree)) throw new Error('GitHub 파일 트리 형식이 올바르지 않습니다.');
+    if(data.truncated) console.warn('GitHub 파일 트리가 일부만 반환되었습니다.');
+    allFiles=data.tree
+      .filter(f=>f.type==='blob'&&/\.html$/i.test(f.path)&&!/(^|\/)index\.html$/i.test(f.path)&&!/^templates\//i.test(f.path))
+      .map(f=>({name:f.path.split('/').pop(),path:f.path,sha:f.sha}));
     renderChips();renderCards();
   }catch(error){
     console.error(error);$('count').textContent='불러오기 실패';$('error').classList.add('show');
